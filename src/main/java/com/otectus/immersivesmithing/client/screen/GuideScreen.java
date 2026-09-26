@@ -18,13 +18,12 @@ import java.util.List;
 import java.util.Locale;
 
 /** Paged field guide. Translated paragraphs may use a "## " prefix for a section heading. */
-public class GuideScreen extends Screen {
-    private static final ResourceLocation TEXTURE = ImmersiveSmithing.id("textures/gui/guide.png");
+public class GuideScreen extends WorkshopScreen {
     private static final int LINE_HEIGHT = 13;
     private static final int ENTRY_HEIGHT = 22;
-    private static final int INK = 0xFF302A24;
-    private static final int INK_DIM = 0xFF63533E;
-    private static final int ACCENT = 0xFF754025;
+    private static final int INK = StonebornGui.TEXT;
+    private static final int INK_DIM = StonebornGui.TEXT_DIM;
+    private static final int ACCENT = StonebornGui.TEXT_WARM;
     private static int lastChapter = 1;
     private static int lastPage;
 
@@ -44,17 +43,17 @@ public class GuideScreen extends Screen {
     private Button prev, next;
 
     public GuideScreen(int chapter) {
-        super(Component.translatable("item.immersive_smithing.smithing_guide"));
+        super(Component.translatable("item.immersive_smithing.smithing_guide"), 320, 240);
         this.chapter = chapter > 0 ? Mth.clamp(chapter, 1, GuideData.chapterCount()) : lastChapter;
         this.page = chapter > 0 ? 0 : lastPage;
     }
 
     @Override
-    protected void init() {
-        panelWidth = Math.min(520, width - 16);
-        panelHeight = Math.min(324, height - 16);
-        left = (width - panelWidth) / 2;
-        top = (height - panelHeight) / 2;
+    protected void initPanel() {
+        panelWidth = Math.min(520, canvasWidth - 16);
+        panelHeight = Math.min(324, canvasHeight - 16);
+        left = (canvasWidth - panelWidth) / 2;
+        top = (canvasHeight - panelHeight) / 2;
         compact = panelWidth < 420;
         textX = left + (compact ? 20 : 178);
         textWidth = left + panelWidth - 20 - textX;
@@ -68,11 +67,12 @@ public class GuideScreen extends Screen {
         }
         addRenderableWidget(SmithingGui.button(left + panelWidth - 62, top + 12, 48, 20,
                 Component.translatable("gui.done"), b -> onClose()));
-        search = new EditBox(font, left + 20, top + 51, indexWidth() - 16, 18,
+        search = new EditBox(font, left + 20, top + 55, indexWidth() - 16, 12,
                 Component.translatable("screen.immersive_smithing.guide.search"));
+        search.setBordered(false);
         search.setMaxLength(80);
         search.setValue(query);
-        search.setTextColor(0xFFF0E4C8);
+        search.setTextColor(StonebornGui.TEXT);
         search.setHint(Component.translatable("screen.immersive_smithing.guide.search"));
         search.setResponder(value -> {
             query = value;
@@ -127,7 +127,7 @@ public class GuideScreen extends Screen {
                 protected void renderWidget(GuiGraphics g, int mx, int my, float partialTick) {
                     boolean selected = index == chapter;
                     if (selected || isHoveredOrFocused()) g.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(),
-                            selected ? 0xFFD0B78A : 0xFFEADDBe);
+                            selected ? StonebornGui.ROW_SELECTED : StonebornGui.ROW_HOVER);
                     if (selected) g.fill(getX(), getY() + 2, getX() + 2, getY() + getHeight() - 2, ACCENT);
                     if (isFocused()) g.renderOutline(getX(), getY(), getWidth(), getHeight(), ACCENT);
                     g.drawString(font, SmithingGui.clipped(font, getMessage(), getWidth() - 12), getX() + 6, getY() + 6,
@@ -209,7 +209,7 @@ public class GuideScreen extends Screen {
     private void remember() { lastChapter = chapter; lastPage = page; }
 
     @Override
-    public boolean mouseScrolled(double x, double y, double delta) {
+    protected boolean panelScrolled(double x, double y, double delta) {
         if (delta == 0 || x < left || x >= left + panelWidth || y < top + 40 || y >= top + panelHeight - 12) return false;
         if (indexVisible() && x < left + 18 + indexWidth()) {
             listScroll = Mth.clamp(listScroll - (int) Math.signum(delta), 0, Math.max(0, matches.size() - visibleChapters()));
@@ -240,46 +240,48 @@ public class GuideScreen extends Screen {
     public void tick() { search.tick(); }
 
     @Override
-    public void render(GuiGraphics g, int mx, int my, float partialTick) {
-        renderBackground(g);
-        g.blitNineSliced(TEXTURE, left, top, panelWidth, panelHeight, 12, 64, 64, 0, 0);
-        if (!compact) g.drawString(font, title, left + 20, top + 18, ACCENT, false);
+    protected void renderPanel(GuiGraphics g, int mx, int my, float partialTick) {
+        StonebornGui.panel(g, left, top, panelWidth, panelHeight);
+        g.fill(left + 6, top + 6, left + panelWidth - 6, top + 38, StonebornGui.SURFACE);
+        if (!compact) g.drawString(font, SmithingGui.clipped(font, title, panelWidth - 100), left + 20, top + 18, ACCENT, false);
         else {
             Component label = Component.translatable("screen.immersive_smithing.guide.chapter_count", chapter, GuideData.chapterCount());
             g.drawString(font, label, left + 102, top + 18, INK_DIM, false);
         }
-        g.fill(left + 16, top + 39, left + panelWidth - 16, top + 40, 0xFFBCA780);
+        g.fill(left + 16, top + 39, left + panelWidth - 16, top + 40, StonebornGui.BORDER);
         if (indexVisible()) {
-            g.blitNineSliced(TEXTURE, left + 12, top + 44, indexWidth() + 4, panelHeight - 58, 6, 32, 32, 64, 0);
+            StonebornGui.well(g, left + 12, top + 44, indexWidth() + 4, panelHeight - 58);
+            StonebornGui.well(g, search.getX() - 4, search.getY() - 4, search.getWidth() + 8, 20);
             if (matches.isEmpty()) g.drawWordWrap(font, Component.translatable("screen.immersive_smithing.guide.no_results"),
                     left + 24, top + 83, indexWidth() - 20, INK);
             if (matches.size() > visibleChapters()) {
                 int h = visibleChapters() * ENTRY_HEIGHT;
                 int thumb = Math.max(12, h * visibleChapters() / matches.size());
                 int y = top + 78 + (h - thumb) * listScroll / (matches.size() - visibleChapters());
-                g.fill(left + indexWidth() + 8, top + 78, left + indexWidth() + 10, top + 78 + h, 0xFFBCA780);
+                g.fill(left + indexWidth() + 8, top + 78, left + indexWidth() + 10, top + 78 + h, StonebornGui.BORDER);
                 g.fill(left + indexWidth() + 8, y, left + indexWidth() + 10, y + thumb, ACCENT);
             }
             Component count = Component.translatable("screen.immersive_smithing.guide.topics", matches.size());
             g.drawString(font, count, left + 24, top + panelHeight - 29, INK_DIM, false);
         }
         if (!compact || !contentsOpen) {
+            StonebornGui.well(g, textX - 8, top + 44, textWidth + 16, panelHeight - 88);
             int y = top + 48;
             for (FormattedCharSequence line : font.split(GuideData.chapterTitle(chapter).copy().withStyle(net.minecraft.ChatFormatting.BOLD), textWidth)) {
                 g.drawString(font, line, textX, y, ACCENT, false);
                 y += LINE_HEIGHT;
             }
-            g.fill(textX, bodyY - 7, textX + textWidth, bodyY - 6, 0xFFBCA780);
+            g.fill(textX, bodyY - 7, textX + textWidth, bodyY - 6, StonebornGui.BORDER);
             List<Line> lines = pages.get(page);
             for (int i = 0; i < lines.size(); i++) g.drawString(font, lines.get(i).text(), textX, bodyY + i * LINE_HEIGHT,
                     lines.get(i).heading() ? ACCENT : INK, false);
             int progressY = top + panelHeight - 48;
-            g.fill(textX, progressY, textX + textWidth, progressY + 2, 0xFFD9C8A5);
-            g.fill(textX, progressY, textX + textWidth * (page + 1) / pages.size(), progressY + 2, 0xFFA57C4B);
+            g.fill(textX, progressY, textX + textWidth, progressY + 2, StonebornGui.INSET);
+            g.fill(textX, progressY, textX + textWidth * (page + 1) / pages.size(), progressY + 2, StonebornGui.BRASS);
             Component label = Component.translatable("screen.immersive_smithing.guide.page", page + 1, pages.size());
             g.drawString(font, label, textX + (textWidth - font.width(label)) / 2, top + panelHeight - 30, INK_DIM, false);
         }
-        super.render(g, mx, my, partialTick);
+        super.renderPanel(g, mx, my, partialTick);
     }
 
     @Override

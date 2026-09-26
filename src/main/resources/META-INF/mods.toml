@@ -31,3 +31,12 @@ Metal equipment is forged, not crafted. Melt metal in the Smith's Forge, shape i
     versionRange="[15.0,)"
     ordering="NONE"
     side="BOTH"
+
+# Ordering only: loading after Apotheosis puts this mod's global loot modifier (forged_loot) after Apotheosis's, so the
+# affix gear Apotheosis adds to chest loot is graded like any other loot.
+[[dependencies.${mod_id}]]
+    modId="apotheosis"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"

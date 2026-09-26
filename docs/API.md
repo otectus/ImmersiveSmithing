@@ -298,6 +298,7 @@ one-slot container, so mods that reward crafting see forged items.
 | `IEquipmentClassifier` | `equipment_classifier` | Chooses the anvil pattern for an item. |
 | `IRecyclingValueProvider` | `recycling_provider` | Supplies metal content when nothing else does. |
 | `Predicate<ItemStack>` | `exclusion` | Excludes items from detection, suppression, recycling and quality. |
+| `IMeltVeto` | `melt_veto` | Refuses an item at the Smith's Forge (hand and automation) with a player-facing reason, for items whose other data melting would destroy. |
 
 ```java
 InterModComms.sendTo("immersive_smithing", ImmersiveSmithingAPI.IMC_CLASSIFIER,

@@ -36,7 +36,7 @@ import java.util.Locale;
  * client predicts feedback locally but only ever sends input events; the score shown at the end is the
  * server's.
  */
-public class ForgeMinigameScreen extends Screen {
+public class ForgeMinigameScreen extends WorkshopScreen {
     private enum Stage { SELECT, WAITING, READY, PLAYING, RESULT }
 
     private static final int MAX_WIDTH = 360;
@@ -71,7 +71,7 @@ public class ForgeMinigameScreen extends Screen {
     private boolean closedByServer;
 
     public ForgeMinigameScreen(OpenForgeScreenPacket offer) {
-        super(Component.translatable("screen.immersive_smithing.forge"));
+        super(Component.translatable("screen.immersive_smithing.forge"), 380, 244);
         this.offer = offer;
     }
 
@@ -80,11 +80,11 @@ public class ForgeMinigameScreen extends Screen {
     }
 
     @Override
-    protected void init() {
-        panelWidth = Math.min(MAX_WIDTH, width - 20);
-        panelHeight = Math.min(MAX_HEIGHT, height - 16);
-        left = (width - panelWidth) / 2;
-        top = (height - panelHeight) / 2;
+    protected void initPanel() {
+        panelWidth = Math.min(MAX_WIDTH, canvasWidth - 20);
+        panelHeight = Math.min(MAX_HEIGHT, canvasHeight - 16);
+        left = (canvasWidth - panelWidth) / 2;
+        top = (canvasHeight - panelHeight) / 2;
         listRows = Math.max(3, (panelHeight - LIST_TOP - 32) / ROW_HEIGHT);
         String previous = search != null ? search.getValue() : "";
         search = new EditBox(font, left + 60, top + 27, panelWidth - 76, 12, Component.translatable("screen.immersive_smithing.forge.search"));
@@ -162,7 +162,7 @@ public class ForgeMinigameScreen extends Screen {
     // ------------------------------------------------------------------ input
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    protected boolean panelClicked(double mouseX, double mouseY, int button) {
         if (stage == Stage.SELECT && button == 0) {
             if (overScrollbar(mouseX, mouseY) && maxScroll() > 0) {
                 draggingScrollbar = true;
@@ -180,7 +180,7 @@ public class ForgeMinigameScreen extends Screen {
             act();
             return true;
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.panelClicked(mouseX, mouseY, button);
     }
 
     @Override
@@ -205,27 +205,27 @@ public class ForgeMinigameScreen extends Screen {
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
+    protected boolean panelScrolled(double mouseX, double mouseY, double delta) {
         if (stage == Stage.SELECT) {
             scroll = Mth.clamp(scroll - (int) Math.signum(delta), 0, maxScroll());
             return true;
         }
-        return super.mouseScrolled(mouseX, mouseY, delta);
+        return super.panelScrolled(mouseX, mouseY, delta);
     }
 
     @Override
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+    protected boolean panelDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
         if (stage == Stage.SELECT && button == 0 && draggingScrollbar) {
             scrollFromMouse(mouseY);
             return true;
         }
-        return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
+        return super.panelDragged(mouseX, mouseY, button, dragX, dragY);
     }
 
     @Override
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+    protected boolean panelReleased(double mouseX, double mouseY, int button) {
         draggingScrollbar = false;
-        return super.mouseReleased(mouseX, mouseY, button);
+        return super.panelReleased(mouseX, mouseY, button);
     }
 
     private void select(OpenForgeScreenPacket.Entry entry) {
@@ -306,8 +306,7 @@ public class ForgeMinigameScreen extends Screen {
     // ------------------------------------------------------------------ rendering
 
     @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        renderBackground(g);
+    protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         SmithingGui.panel(g, left, top, panelWidth, panelHeight);
         Component title = Component.translatable("screen.immersive_smithing.forge.title", offer.familyName());
         Component units = MaterialUnits.describe(offer.moltenUnits());
@@ -323,7 +322,7 @@ public class ForgeMinigameScreen extends Screen {
             case PLAYING -> renderPlaying(g);
             case RESULT -> renderResult(g);
         }
-        super.render(g, mouseX, mouseY, partialTick);
+        super.renderPanel(g, mouseX, mouseY, partialTick);
         if (stage == Stage.SELECT) renderRowTooltip(g, mouseX, mouseY);
         renderHeaderTooltip(g, mouseX, mouseY);
     }
@@ -332,13 +331,14 @@ public class ForgeMinigameScreen extends Screen {
         int x = left + 10;
         int y = top + LIST_TOP;
         int w = panelWidth - 20;
+        StonebornGui.well(g, x - 1, y - 1, w + 2, listRows * ROW_HEIGHT + 2);
         SmithingGui.well(g, left + 11, top + 24, panelWidth - 22, 18);
         g.drawString(font, Component.translatable("screen.immersive_smithing.forge.search_label"), left + 17, top + 29, SmithingGui.TEXT_DIM, false);
         SmithingGui.well(g, x - 2, y - 2, w + 4, listRows * ROW_HEIGHT + 4);
         if (filtered.isEmpty()) {
             g.drawCenteredString(font, Component.translatable("screen.immersive_smithing.forge.no_match"), left + panelWidth / 2, y + 40, SmithingGui.TEXT_DIM);
         }
-        g.enableScissor(x, y, x + w - 7, y + listRows * ROW_HEIGHT);
+        scissor(g, x, y, x + w - 7, y + listRows * ROW_HEIGHT);
         for (int row = 0; row < listRows; row++) {
             int index = scroll + row;
             if (index >= filtered.size()) break;
@@ -402,7 +402,7 @@ public class ForgeMinigameScreen extends Screen {
             ax -= 18;
         }
         List<net.minecraft.util.FormattedCharSequence> lines = new ArrayList<>();
-        int tooltipWidth = Math.min(260, width - 24);
+        int tooltipWidth = Math.min(260, canvasWidth - 24);
         lines.addAll(font.split(e.result().getHoverName(), tooltipWidth));
         Component cost = Component.translatable("screen.immersive_smithing.forge.cost", MaterialUnits.describe(e.metalUnits()),
                 MaterialUnits.describe(offer.moltenUnits() - e.metalUnits())).withStyle(ChatFormatting.GRAY);
@@ -502,7 +502,7 @@ public class ForgeMinigameScreen extends Screen {
         int tx = left + 22;
         int ty = top + 132 - trackH / 2;
         SmithingGui.well(g, tx - 2, ty - 2, trackWidth + 4, trackH + 4);
-        g.fillGradient(tx, ty, tx + trackWidth, ty + trackH, 0xFF303538, 0xFF171A1C);
+        g.fillGradient(tx, ty, tx + trackWidth, ty + trackH, StonebornGui.SURFACE, StonebornGui.INSET);
         for (int i = 0; i <= 12; i++) {
             int tickX = tx + i * (trackWidth - 1) / 12;
             g.fill(tickX, ty + trackH - (i % 3 == 0 ? 5 : 3), tickX + 1, ty + trackH, 0xFF6B706B);

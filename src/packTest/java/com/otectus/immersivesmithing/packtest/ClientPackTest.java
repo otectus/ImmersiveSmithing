@@ -159,6 +159,7 @@ public final class ClientPackTest {
                         log("title screen reached after " + titleMs + " ms");
                     }
                     titleTicks++;
+                    if (titleTicks == 1) sizeWindow(mc, 1280, 720);
                     if (titleTicks == 60) {
                         if (!CREATE_WORLD) {
                             finish(mc, true, "title only");
@@ -226,6 +227,8 @@ public final class ClientPackTest {
                 originalVsync = mc.options.enableVsync().get();
                 originalFrameLimit = mc.options.framerateLimit().get();
                 originalRenderDistance = mc.options.renderDistance().get();
+                mc.options.enableVsync().set(false);
+                mc.options.framerateLimit().set(120);
                 runChecks(mc);
                 stageWorld(mc);
             }
@@ -325,8 +328,10 @@ public final class ClientPackTest {
             case 655 -> setGuiScale(mc, 2);
             case 675 -> shot(mc, "packtest_inventory_tools_scale_2");
             case 680 -> {
-                mc.getWindow().setWindowed(960, 720);
+                sizeWindow(mc, 960, 720);
                 setGuiScale(mc, 3);
+            }
+            case 700 -> {
                 boolean exact = mc.getWindow().getGuiScaledWidth() == 320 && mc.getWindow().getGuiScaledHeight() == 240;
                 Map<String, Object> minimum = new LinkedHashMap<>();
                 minimum.put("requested_framebuffer", "960x720");
@@ -335,8 +340,9 @@ public final class ClientPackTest {
                 minimum.put("exact_320x240", exact);
                 checks.put("gui_minimum_probe", minimum);
                 if (REQUIRE_EXACT_MINIMUM) checks.put("gui_exact_320x240_required", exact);
+                checks.put("gui_fitted_minimum_viewport", exact);
+                shot(mc, "packtest_inventory_tools_scale_3");
             }
-            case 700 -> shot(mc, "packtest_inventory_tools_scale_3");
             case 701 -> mc.setScreen(new FixedInventoryScreen(mc.player, true));
             case 704 -> shot(mc, "packtest_inventory_quality_tooltip");
             case 705 -> {
@@ -362,7 +368,7 @@ public final class ClientPackTest {
             case 779 -> shot(mc, "packtest_guide_search");
             case 780 -> {
                 enableAccessibilityMode();
-                mc.getWindow().setWindowed(originalWindowWidth, originalWindowHeight);
+                sizeWindow(mc, originalWindowWidth, originalWindowHeight);
                 setGuiScale(mc, 2);
                 ForgeMinigameScreen screen = new ForgeMinigameScreen(forgeOffer());
                 mc.setScreen(screen);
@@ -389,6 +395,34 @@ public final class ClientPackTest {
             }
         }
         if (t >= 895) advancedStep(mc, t);
+    }
+
+    /**
+     * A predictable test window. A tiling Wayland compositor ignores the requested size, so on Hyprland this
+     * client's own window (matched by process id) is floated and sized; nothing else on the desktop is touched.
+     */
+    private static void sizeWindow(Minecraft mc, int width, int height) {
+        mc.getWindow().setWindowed(width, height);
+        if (System.getenv("HYPRLAND_INSTANCE_SIGNATURE") == null) return;
+        String target = "window = \"pid:" + ProcessHandle.current().pid() + "\"";
+        Thread thread = new Thread(() -> {
+            // Hyprland 0.55+ takes Lua dispatchers.
+            for (String dispatch : new String[]{"hl.dsp.window.float({ action = \"enable\", " + target + " })",
+                    "hl.dsp.window.resize({ x = " + width + ", y = " + height + ", " + target + " })", "hl.dsp.window.move({ x = 40, y = 40, " + target + " })"}) {
+                try {
+                    new ProcessBuilder("hyprctl", "dispatch", dispatch).redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD)
+                            .start().waitFor();
+                } catch (IOException e) {
+                    log("hyprctl unavailable: " + e.getMessage());
+                    return;
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+        }, "smoketest-window");
+        thread.setDaemon(true);
+        thread.start();
     }
 
     private static void createWorld(Minecraft mc) {

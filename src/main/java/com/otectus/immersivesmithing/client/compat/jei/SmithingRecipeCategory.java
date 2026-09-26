@@ -1,6 +1,7 @@
 package com.otectus.immersivesmithing.client.compat.jei;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import com.otectus.immersivesmithing.client.screen.StonebornGui;
 import com.otectus.immersivesmithing.material.MaterialUnits;
 import com.otectus.immersivesmithing.recipe.AuxiliaryIngredient;
 import com.otectus.immersivesmithing.recipe.SmithingRecipe;
@@ -33,11 +34,11 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
     public static final RecipeType<SmithingRecipe> TYPE = RecipeType.create(ImmersiveSmithing.MOD_ID, "smithing", SmithingRecipe.class);
     private static final int WIDTH = 176;
     private static final int HEIGHT = 106;
-    private static final int SOOT = 0xFF24272B;
-    private static final int TIMBER = 0xFF49382E;
-    private static final int BRONZE = 0xFFA77D4F;
-    private static final int IVORY = 0xFFF1E5CF;
-    private static final int IVORY_DIM = 0xFFB8AA94;
+    private static final int SOOT = StonebornGui.SURFACE;
+    private static final int TIMBER = StonebornGui.BORDER;
+    private static final int BRONZE = StonebornGui.BRASS;
+    private static final int IVORY = StonebornGui.TEXT;
+    private static final int IVORY_DIM = StonebornGui.TEXT_DIM;
 
     private final IDrawable icon;
     private final IDrawable slot;
@@ -48,8 +49,8 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
 
     public SmithingRecipeCategory(IGuiHelper helper) {
         this.icon = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_ANVIL.get()));
-        this.slot = helper.getSlotDrawable();
-        this.arrow = helper.getRecipeArrow();
+        this.slot = StonebornJei.slot();
+        this.arrow = StonebornJei.arrow();
         this.forge = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_FORGE.get()));
         this.anvil = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_ANVIL.get()));
         this.trough = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_TROUGH.get()));
@@ -67,13 +68,16 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
 
     @Override
     public int getWidth() {
-        return WIDTH;
+        return WIDTH + 12;
     }
 
     @Override
     public int getHeight() {
-        return HEIGHT;
+        return HEIGHT + 12;
     }
+
+    @Override
+    public IDrawable getBackground() { return StonebornJei.background(getWidth(), getHeight()); }
 
     @Override
     public IDrawable getIcon() {
@@ -84,7 +88,7 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
     public void setRecipe(IRecipeLayoutBuilder builder, SmithingRecipe recipe, IFocusGroup focuses) {
         List<List<ItemStack>> metal = recipe.metalDisplay();
         for (int i = 0; i < Math.min(2, metal.size()); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, 1 + i * 18, 1)
+            builder.addSlot(RecipeIngredientRole.INPUT, 6 + (1 + i * 18), 6 + (1))
                     .addItemStacks(metal.get(i))
                     .setBackground(slot, -1, -1)
                     .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.metal",
@@ -94,26 +98,25 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
         for (int i = 0; i < Math.min(6, aux.size()); i++) {
             AuxiliaryIngredient a = aux.get(i);
             List<ItemStack> stacks = Arrays.stream(a.ingredient().getItems()).map(s -> s.copyWithCount(a.count())).toList();
-            builder.addSlot(RecipeIngredientRole.INPUT, 1 + (i % 3) * 18, 21 + (i / 3) * 18)
+            builder.addSlot(RecipeIngredientRole.INPUT, 6 + (1 + (i % 3) * 18), 6 + (21 + (i / 3) * 18))
                     .addItemStacks(stacks)
                     .setBackground(slot, -1, -1)
                     .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable(a.consumesEquipment()
                             ? "jei.immersive_smithing.equipment_consumed" : "jei.immersive_smithing.component_consumed")
                             .withStyle(ChatFormatting.GRAY)));
         }
-        builder.addSlot(RecipeIngredientRole.OUTPUT, WIDTH - 19, 19)
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 6 + (WIDTH - 19), 6 + (19))
                 .addItemStack(recipe.result())
-                .setOutputSlotBackground()
+                .setBackground(slot, -1, -1)
                 .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.quality_note")
                         .withStyle(ChatFormatting.GRAY)));
     }
 
     @Override
     public void draw(SmithingRecipe recipe, IRecipeSlotsView slots, GuiGraphics g, double mouseX, double mouseY) {
-        g.fill(0, 0, WIDTH, HEIGHT, SOOT);
-        g.fill(0, 0, WIDTH, 1, BRONZE);
-        g.fill(0, HEIGHT - 1, WIDTH, HEIGHT, TIMBER);
-        g.fill(53, 14, 155, 44, 0xFF151719);
+        g.pose().pushPose();
+        g.pose().translate(6, 6, 0);
+        g.fill(53, 14, 155, 44, StonebornGui.INSET);
         g.fill(53, 42, 155, 44, TIMBER);
         g.fill(53, 14, 155, 15, BRONZE);
         int y = 19;
@@ -134,6 +137,7 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
         if (recipe.auxiliary().size() > 6) {
             g.drawString(font, Component.translatable("jei.immersive_smithing.more_components", recipe.auxiliary().size() - 6), 42, 48, BRONZE, false);
         }
+            g.pose().popPose();
     }
 
     private static String trim(Font font, Component text, int width) {
@@ -143,6 +147,8 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
 
     @Override
     public List<Component> getTooltipStrings(SmithingRecipe recipe, IRecipeSlotsView slots, double mouseX, double mouseY) {
+        mouseX -= 6;
+        mouseY -= 6;
         List<Component> tips = new ArrayList<>();
         if (mouseY >= 19 && mouseY < 35) {
             if (mouseX >= 56 && mouseX < 72) {

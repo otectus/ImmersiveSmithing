@@ -1,5 +1,6 @@
 package com.otectus.immersivesmithing.blockentity;
 
+import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
 import com.otectus.immersivesmithing.block.SmithsForgeBlock;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.material.MaterialFamily;
@@ -60,7 +61,9 @@ public class SmithsForgeBlockEntity extends BlockEntity {
 
     public enum Result {
         OK, LOCKED, NOT_METAL, WRONG_FAMILY, FULL, NOT_FUEL, DIFFERENT_FUEL, LAVA_PRESENT, SOLID_FUEL_PRESENT,
-        NOTHING_TO_MELT, NO_FUEL, WRONG_FUEL, ALREADY_LIT, LAVA_NEEDS_NO_IGNITION, UNKNOWN_FAMILY;
+        NOTHING_TO_MELT, NO_FUEL, WRONG_FUEL, ALREADY_LIT, LAVA_NEEDS_NO_IGNITION, UNKNOWN_FAMILY,
+        /** Another mod refused melting this item ({@code ImmersiveSmithingAPI#meltVeto} gives the reason). */
+        VETOED;
 
         public String key() {
             return name().toLowerCase(Locale.ROOT);
@@ -189,6 +192,7 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         if (isLocked()) return fail(error, Result.LOCKED);
         Optional<MaterialResolver.Resolved> resolved = MaterialResolver.resolve(stack);
         if (resolved.isEmpty()) return fail(error, Result.NOT_METAL);
+        if (ImmersiveSmithingAPI.meltVeto(stack).isPresent()) return fail(error, Result.VETOED);
         MaterialResolver.Resolved r = resolved.get();
         if (family != null && !family.equals(r.family().id())) return fail(error, Result.WRONG_FAMILY);
         int space = capacity() - totalUnits();
@@ -644,7 +648,8 @@ public class SmithsForgeBlockEntity extends BlockEntity {
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return metal ? MaterialResolver.resolve(stack).isPresent() : isFuel(stack) && !stack.is(Items.LAVA_BUCKET);
+            if (!metal) return isFuel(stack) && !stack.is(Items.LAVA_BUCKET);
+            return MaterialResolver.resolve(stack).isPresent() && ImmersiveSmithingAPI.meltVeto(stack).isEmpty();
         }
     }
 }

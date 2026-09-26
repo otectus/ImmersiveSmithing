@@ -29,7 +29,7 @@ import java.util.Map;
  * ideal moment. Strikes are predicted locally and corrected by the server, which alone decides the score and
  * whether the timer ran out (Faulty).
  */
-public class AnvilMinigameScreen extends Screen {
+public class AnvilMinigameScreen extends WorkshopScreen {
     private enum Stage { READY, PLAYING, RESULT }
 
     private static final int MAX_WIDTH = 336;
@@ -65,7 +65,7 @@ public class AnvilMinigameScreen extends Screen {
     private record Spark(float x, float y, float vx, float vy, long born) {}
 
     public AnvilMinigameScreen(OpenAnvilScreenPacket session) {
-        super(Component.translatable("screen.immersive_smithing.anvil"));
+        super(Component.translatable("screen.immersive_smithing.anvil"), 352, 248);
         this.session = session;
         this.pattern = session.pattern();
         this.run = new AnvilRun(pattern, session.seed());
@@ -77,11 +77,11 @@ public class AnvilMinigameScreen extends Screen {
     }
 
     @Override
-    protected void init() {
-        panelWidth = Math.min(MAX_WIDTH, width - 16);
-        panelHeight = Math.min(MAX_HEIGHT, height - 8);
-        left = (width - panelWidth) / 2;
-        top = (height - panelHeight) / 2;
+    protected void initPanel() {
+        panelWidth = Math.min(MAX_WIDTH, canvasWidth - 16);
+        panelHeight = Math.min(MAX_HEIGHT, canvasHeight - 8);
+        left = (canvasWidth - panelWidth) / 2;
+        top = (canvasHeight - panelHeight) / 2;
         doneButton = SmithingGui.button(left + panelWidth / 2 - 45, top + panelHeight - 25, 90, 20,
                 Component.translatable("gui.done"), b -> onClose());
         doneButton.visible = stage == Stage.RESULT;
@@ -133,7 +133,7 @@ public class AnvilMinigameScreen extends Screen {
     // ------------------------------------------------------------------ input
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    protected boolean panelClicked(double mouseX, double mouseY, int button) {
         if (stage == Stage.PLAYING && button == 0) {
             double nx = (mouseX - areaX()) / AREA;
             double ny = (mouseY - areaY()) / AREA;
@@ -142,7 +142,7 @@ public class AnvilMinigameScreen extends Screen {
                 return true;
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.panelClicked(mouseX, mouseY, button);
     }
 
     private void strike(float x, float y) {
@@ -198,8 +198,7 @@ public class AnvilMinigameScreen extends Screen {
     // ------------------------------------------------------------------ rendering
 
     @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        renderBackground(g);
+    protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         long wall = Util.getMillis();
         float shakeX = 0F;
         float shakeY = 0F;
@@ -216,11 +215,11 @@ public class AnvilMinigameScreen extends Screen {
         int ax = areaX();
         int ay = areaY();
         SmithingGui.well(g, ax - 2, ay - 2, AREA + 4, AREA + 4);
-        g.fillGradient(ax, ay, ax + AREA, ay + AREA, 0xFF343A3C, 0xFF191D20);
+        g.fillGradient(ax, ay, ax + AREA, ay + AREA, StonebornGui.SURFACE, StonebornGui.INSET);
         // Quiet scored lines suggest a work surface without competing with the targets.
         for (int i = 1; i < 8; i++) {
-            g.fill(ax + i * 22, ay, ax + i * 22 + 1, ay + AREA, 0x183E484C);
-            g.fill(ax, ay + i * 22, ax + AREA, ay + i * 22 + 1, 0x183E484C);
+            g.fill(ax + i * 22, ay, ax + i * 22 + 1, ay + AREA, 0x18675D4E);
+            g.fill(ax, ay + i * 22, ax + AREA, ay + i * 22 + 1, 0x18675D4E);
         }
         renderSilhouette(g, ax, ay, shakeX, shakeY);
         g.pose().pushPose();
@@ -236,7 +235,7 @@ public class AnvilMinigameScreen extends Screen {
                         ax + AREA / 2, ay + AREA / 2 + 6, AREA - 20, SmithingGui.TEXT);
             }
             case PLAYING -> {
-                g.enableScissor(ax, ay, ax + AREA, ay + AREA);
+                scissor(g, ax, ay, ax + AREA, ay + AREA);
                 renderTargets(g, ax, ay);
                 g.disableScissor();
             }
@@ -252,7 +251,7 @@ public class AnvilMinigameScreen extends Screen {
         if (stage != Stage.RESULT) g.drawCenteredString(font,
                 Component.translatable("screen.immersive_smithing.anvil.timing"), ax + AREA / 2,
                 top + panelHeight - 17, SmithingGui.TEXT_DIM);
-        super.render(g, mouseX, mouseY, partialTick);
+        super.renderPanel(g, mouseX, mouseY, partialTick);
         if (font.width(title) > panelWidth - 24 && mouseX >= left + 10 && mouseX < left + panelWidth - 10
                 && mouseY >= top + 6 && mouseY < top + 22) {
             g.renderTooltip(font, title, mouseX, mouseY);

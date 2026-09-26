@@ -1,6 +1,7 @@
 package com.otectus.immersivesmithing.block;
 
 import com.otectus.immersivesmithing.advancement.ModAdvancements;
+import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.item.SmithingTongsItem;
@@ -293,6 +294,7 @@ public class SmithsForgeBlock extends BaseEntityBlock {
         int inserted = forge.insertMetal(held, wholeStack ? held.getCount() : 1, false, error);
         if (inserted <= 0) {
             if (error[0] == SmithsForgeBlockEntity.Result.WRONG_FAMILY) Feedback.fail(player, "result.wrong_family", familyName(forge));
+            else if (error[0] == SmithsForgeBlockEntity.Result.VETOED) Feedback.fail(player, ImmersiveSmithingAPI.meltVeto(held).orElse(Component.empty()));
             else Feedback.fail(player, "result." + error[0].key());
             return;
         }

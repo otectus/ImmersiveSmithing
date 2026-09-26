@@ -12,40 +12,21 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
-/**
- * Shared look of the smithing screens: dark iron panels with bronze trim and warm highlights. Every sprite
- * comes from {@code textures/gui/smithing.png} so resource packs can restyle the minigames.
- */
-public final class SmithingGui {
+/** Stoneborn workshop surfaces, with minigame colors and cues kept accessible. */
+public final class SmithingGui extends StonebornGui {
     public static final ResourceLocation TEXTURE = ImmersiveSmithing.id("textures/gui/smithing.png");
 
-    public static final int SOOT = 0xFF242A2C;
-    public static final int SOOT_DEEP = 0xFF151719;
-    public static final int TIMBER = 0xFF49382E;
-    public static final int BRONZE = 0xFFA77D4F;
+    public static final int SOOT = SURFACE;
+    public static final int SOOT_DEEP = INSET;
+    public static final int TIMBER = BORDER;
+    public static final int BRONZE = BRASS;
     public static final int HOT_ORANGE = 0xFFF08A38;
-    public static final int TEXT = 0xFFF1E5CF;
-    public static final int TEXT_DIM = 0xFFB8AA94;
-    public static final int TEXT_WARM = 0xFFFFB36B;
-    public static final int ROW_HOVER = 0x5049382E;
-    public static final int ROW_FOCUSED = 0x705D4635;
+    public static final int ROW_FOCUSED = ROW_SELECTED;
 
     public static void panel(GuiGraphics g, int x, int y, int w, int h) {
-        g.blitNineSliced(TEXTURE, x, y, w, h, 8, 64, 64, 0, 0);
-    }
-
-    public static void well(GuiGraphics g, int x, int y, int w, int h) {
-        g.blitNineSliced(TEXTURE, x, y, w, h, 4, 32, 32, 64, 0);
-    }
-
-    public static void rule(GuiGraphics g, int x, int y, int width) {
-        g.fill(x, y, x + width, y + 1, 0x8049362A);
-        g.fill(x, y + 1, x + width, y + 2, 0x80A77D4F);
-    }
-
-    public static String clipped(net.minecraft.client.gui.Font font, Component text, int width) {
-        if (font.width(text) <= width) return text.getString();
-        return font.plainSubstrByWidth(text.getString(), Math.max(0, width - font.width("..."))) + "...";
+        StonebornGui.panel(g, x, y, w, h);
+        g.fill(x + 6, y + 6, x + w - 6, y + 22, SURFACE);
+        g.fill(x + 8, y + 24, x + w - 8, y + h - 8, SURFACE);
     }
 
     public static int drawWrappedCentered(GuiGraphics g, net.minecraft.client.gui.Font font, Component text,
@@ -55,33 +36,6 @@ public final class SmithingGui {
             g.drawCenteredString(font, lines.get(i), centerX, y + i * 10, color);
         }
         return lines.size();
-    }
-
-    public static Button button(int x, int y, int width, int height, Component label, Button.OnPress onPress) {
-        return new SmithingButton(x, y, width, height, label, onPress);
-    }
-
-    private static final class SmithingButton extends Button {
-        private SmithingButton(int x, int y, int width, int height, Component label, OnPress onPress) {
-            super(x, y, width, height, label, onPress, DEFAULT_NARRATION);
-        }
-
-        @Override
-        protected void renderWidget(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-            int x = getX();
-            int y = getY();
-            int edge = active && isHoveredOrFocused() ? TEXT_WARM : BRONZE;
-            int fill = !active ? SOOT_DEEP : isHoveredOrFocused() ? 0xFF3B4142 : SOOT;
-            g.fill(x, y, x + getWidth(), y + getHeight(), edge);
-            g.fill(x + 1, y + 1, x + getWidth() - 1, y + getHeight() - 1, fill);
-            if (active && isHoveredOrFocused()) {
-                g.fill(x + 2, y + 2, x + getWidth() - 2, y + 3, 0x805D4635);
-            }
-            net.minecraft.client.gui.Font font = Minecraft.getInstance().font;
-            String text = clipped(font, getMessage(), getWidth() - 8);
-            g.drawCenteredString(font, text, x + getWidth() / 2, y + (getHeight() - 8) / 2, active ? TEXT : TEXT_DIM);
-            if (active && isFocused()) g.renderOutline(x + 2, y + 2, getWidth() - 4, getHeight() - 4, BRONZE);
-        }
     }
 
     /** Draws the ring (outline) or disc sprite centred on (cx, cy), tinted with an ARGB colour. */

@@ -1,11 +1,13 @@
 package com.otectus.immersivesmithing.api;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -23,6 +25,7 @@ public final class ImmersiveSmithingAPI {
     public static final String IMC_CLASSIFIER = "equipment_classifier";
     public static final String IMC_RECYCLING_PROVIDER = "recycling_provider";
     public static final String IMC_EXCLUSION = "exclusion";
+    public static final String IMC_MELT_VETO = "melt_veto";
 
     private static final List<ISmithingMaterialProvider> MATERIAL_PROVIDERS = new CopyOnWriteArrayList<>();
     private static final List<ISmithingRecipeProvider> RECIPE_PROVIDERS = new CopyOnWriteArrayList<>();
@@ -31,6 +34,7 @@ public final class ImmersiveSmithingAPI {
     private static final List<IEquipmentClassifier> CLASSIFIERS = new CopyOnWriteArrayList<>();
     private static final List<IRecyclingValueProvider> RECYCLING_PROVIDERS = new CopyOnWriteArrayList<>();
     private static final List<Predicate<ItemStack>> EXCLUSIONS = new CopyOnWriteArrayList<>();
+    private static final List<IMeltVeto> MELT_VETOES = new CopyOnWriteArrayList<>();
 
     public static void registerMaterialProvider(ISmithingMaterialProvider provider) { MATERIAL_PROVIDERS.add(provider); }
     public static void registerRecipeProvider(ISmithingRecipeProvider provider) { RECIPE_PROVIDERS.add(provider); }
@@ -47,6 +51,21 @@ public final class ImmersiveSmithingAPI {
     public static List<IShieldSmithingHandler> shieldHandlers() { return SHIELD_HANDLERS; }
     public static List<IEquipmentClassifier> classifiers() { return CLASSIFIERS; }
     public static List<IRecyclingValueProvider> recyclingProviders() { return RECYCLING_PROVIDERS; }
+
+    public static void registerMeltVeto(IMeltVeto veto) { MELT_VETOES.add(veto); }
+
+    /** The first registered reason to keep {@code stack} out of the forge, if any. A veto that throws is skipped. */
+    public static Optional<Component> meltVeto(ItemStack stack) {
+        for (IMeltVeto veto : MELT_VETOES) {
+            try {
+                Optional<Component> reason = veto.vetoMelting(stack);
+                if (reason.isPresent()) return reason;
+            } catch (RuntimeException e) {
+                ImmersiveSmithing.LOGGER.error("Melt veto {} failed for {}", veto.getClass().getName(), stack, e);
+            }
+        }
+        return Optional.empty();
+    }
 
     public static boolean isExcluded(ItemStack stack) {
         for (Predicate<ItemStack> p : EXCLUSIONS) {
@@ -69,6 +88,7 @@ public final class ImmersiveSmithingAPI {
                     case IMC_CLASSIFIER -> registerClassifier((IEquipmentClassifier) payload);
                     case IMC_RECYCLING_PROVIDER -> registerRecyclingProvider((IRecyclingValueProvider) payload);
                     case IMC_EXCLUSION -> registerExclusion((Predicate<ItemStack>) payload);
+                    case IMC_MELT_VETO -> registerMeltVeto((IMeltVeto) payload);
                     default -> ImmersiveSmithing.LOGGER.warn("Unknown IMC method '{}' from {}", msg.method(), msg.senderModId());
                 }
             } catch (ClassCastException e) {
