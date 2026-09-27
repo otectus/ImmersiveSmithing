@@ -1,89 +1,87 @@
 # Immersive Smithing
 
-**Metal equipment is forged, not crafted.** Melt metal in the Smith's Forge, shape it on the Smith's Anvil and
-quench it in the Smith's Trough. Your skill in two short minigames decides how long your gear lasts and how well it
-performs.
+**Make metal equipment with your hands.** Immersive Smithing turns the familiar sword, tool and armor crafting routine into a small workshop project. Melt metal in a Smith's Forge, work it at a Smith's Anvil, then quench it in a water-filled Smith's Trough. Two quick timing challenges determine how durable and effective the finished piece will be. A basic item takes about a minute to make, but a piece you are proud of can stay with you for a long time.
 
-![The smithing stations](https://raw.githubusercontent.com/otectus/Smithing/main/docs/visual-overhaul/after/ultima/packtest_world.png)
+![A smithing workshop](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/visual-overhaul/after/ultima/packtest_world.png)
 
-## Forge it yourself
+## Set up your workshop
 
-1. Load metal into the top of a **Smith's Forge** and fuel into the bottom, then light it.
-2. When the metal has melted, use **Smithing Tongs** on the forge, pick an item and play the **Forge minigame**:
-   stop the sweeping marker in the glowing zone.
-3. Set the hot workpiece on a **Smith's Anvil** and play the **Anvil minigame** with a **Smithing Hammer**: strike
-   each target as the ring closes on it.
-4. Quench the workpiece in a **Smith's Trough** filled with water.
+You can start with **stone Smithing Tongs**, a **stone Smithing Hammer** and three stations:
 
-Stone tongs and a stone hammer are enough to start, and one item takes about a minute. The **Smithing Guide**, an
-in-game book, explains every step and is handed out when you first get smithing tools.
+- **Smith's Forge:** Melts your metal. Craft it with five brick blocks, a furnace and three pieces of stone crafting material.
+- **Smith's Anvil:** Holds the hot workpiece while you shape it. Craft it with three iron ingots and four stone bricks. Your ordinary Minecraft anvil is still used for repairs and renaming.
+- **Smith's Trough:** Holds the water used to finish your work. Craft it with seven wooden slabs and an iron ingot.
 
-![Choosing a recipe at the forge](https://raw.githubusercontent.com/otectus/Smithing/main/docs/visual-overhaul/after/packtest_forge_select.png)
+The optional **Smith's Grindstone** refines finished gear using experience levels. Its recipe uses a regular grindstone, two iron ingots and a diamond. Tongs and hammers come in stone, iron, diamond and netherite versions. Stone tools are enough to begin; better tiers last longer and give you more time in the challenges, but they never grant a free quality bonus.
 
-![The Forge minigame](https://raw.githubusercontent.com/otectus/Smithing/main/docs/visual-overhaul/after/packtest_forge_play.png)
+You'll receive the **Smithing Guide** when you first obtain smithing tools. It explains the stations, metals, timing games and common problems in game. You can also craft another guide with a book and coal or charcoal.
 
-![The Anvil minigame](https://raw.githubusercontent.com/otectus/Smithing/main/docs/visual-overhaul/after/packtest_anvil.png)
+## From ingot to equipment
 
-## Skill makes better gear
+1. **Heat the metal.** Right-click the *upper half* of the Smith's Forge with ingots, nuggets, raw metal, metal blocks or old metal equipment. One click adds one item; sneak and right-click to add a stack. Each forge holds one kind of metal at a time. Put fuel such as wood, coal or charcoal in the *lower half*, then light the forge with Flint and Steel or a Fire Charge. A bucket of lava heats it without ignition. Wait until the metal is molten and the forge is ready.
+2. **Choose what to make.** Right-click the ready forge with *empty Smithing Tongs*. The recipe screen shows items you can afford with the metal in the forge and any other required ingredients in your inventory. An iron sword, for example, needs two iron ingots' worth of metal and a stick. Press **Space** or left-click as the moving marker crosses the glowing zone. Aim near its center for a better Forge score. When you finish, the hot workpiece is held in your tongs.
+3. **Shape it.** Right-click the Smith's Anvil with your loaded tongs to set the workpiece down. Use a Smithing Hammer on the anvil to begin the second challenge. Left-click near each target's center when its closing ring reaches it. Careful strikes improve the Anvil score. Empty tongs can pick a workpiece back up from the anvil.
+4. **Quench it.** Fill the Smith's Trough with a water bucket. One bucket provides four quenches by default. Pick up your shaped workpiece with empty tongs and right-click the trough. Your finished item goes into your inventory, or drops beside the trough if your inventory is full.
 
-- Your **Forge score** sets durability: from 75% to 125% of normal.
-- Your **Anvil score** sets efficacy: attack damage for weapons, mining speed for tools and armor points for armor,
-  from 85% to 115% of normal.
-- Items are labelled **Crude**, **Standard**, **Fine** or **Masterwork**. Let the anvil timer run out and the item
-  is **Faulty**.
-- Refine finished gear at the **Smith's Grindstone** for experience levels, or melt old and enchanted gear back
-  into the forge to recover its metal.
-- Tongs and hammers come in stone, iron, diamond and netherite. Better tools give more time in the minigames, never
-  better quality on their own.
+![Choose an item at the forge](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/visual-overhaul/after/packtest_forge_select.png)
 
-Netherite gear is forged straight from netherite ingots, no template or diamond gear needed, and netherite melts
-only with lava.
+![Shape a workpiece at the anvil](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/visual-overhaul/after/packtest_anvil.png)
 
-## Made for modpacks
+**A few useful workshop tips:** Netherite melts only with lava. A hot workpiece never cools. If it drops as an item, hold empty tongs and right-click in the air to pick it up. Closing a timing screen cancels that attempt safely; reserved ingredients are returned, and you can retry an unfinished anvil session.
 
-- **Automatic support for other mods.** Weapons, tools, armor and metal shields crafted from a single metal become
-  smithing recipes, and their crafting recipes are turned off. Modded metals are picked up from their
-  `forge:ingots` tags, and recipes that are unclear are left alone.
-- **Spartan Weaponry built in.** Every metal weapon of all 24 types, including throwing weapons, longbows and heavy
-  crossbows, has its own recipe and anvil pattern. Thrown weapons and fired arrows carry the weapon's quality.
-- **Metal shields** no longer need a wooden base shield, and smithing-table upgrades such as modded netherite gear
-  are forged from the metal instead.
-- **JEI** shows every smithing recipe in its own category.
-- **Datapacks and an API** can add or override metals, recipes, recycling values and minigame patterns.
-- **Pack metals ready to forge:** Cataclysm's black steel, ancient metal, witherite, cursium and ignitium, Ice and
-  Fire dragonsteel (Spartan Fire weapons included), Iron's mithril and pyrium, and Botania's manasteel, terrasteel
-  and elementium, each with its own tint, melt rule and upgrade cost. Boss-metal upgrades rework the piece you bring.
-- **Found gear is graded too**, never above Standard by default, so Fine and Masterwork always mean a smith's work.
-- **Every piece knows its smith.** Sign your work with a title and an inscription; the mark survives repairs,
-  enchanting and upgrades.
-- **Hooks for progression mods:** an `ItemSmithedEvent` for skills, gods and KubeJS, and Jade overlays for every station.
-- Tested with Spartan Weaponry, Spartan Shields and Immersive Armors, and in a 350+ mod pack.
+## Your skill shows in the finished piece
 
-## Made for servers
+Every forged item has two scores, each from 0 to 100. **Forge quality** controls durability, while **Anvil quality** affects the item's performance, such as weapon damage, tool mining speed or armor protection. A score of 50 gives ordinary performance. By default, Forge quality ranges from 75% to 125% of normal durability, and Anvil quality ranges from 85% to 115% of normal performance. The overall label combines both scores:
 
-- Minigames are checked and scored by the server, with latency compensation.
-- Hoppers and pipes can feed forges and fill troughs, but every item is still made by a player.
-- Toolsmiths, Weaponsmiths and Armorers trade smithing gear.
-- A server config covers recipe replacement, detection, forge fuel and capacity, minigame times, quality ranges,
-  recycling, the grindstone, villager trades and automation. Operators get `/immersivesmithing` commands that
-  explain every detection decision.
+- **Crude:** Below 35.
+- **Standard:** 35 to 69.
+- **Fine:** 70 to 89.
+- **Masterwork:** 90 and above.
 
-## Accessibility
+If time runs out at the forge, you still get a workpiece, but its Forge score is zero. If the anvil timer runs out before you finish shaping, the result is **Faulty**. Faulty gear still works, but by default it has half the normal durability and 70% of normal performance. Hover over finished equipment, or hold Shift for more quality detail.
 
-Client options for reduced screen shake and flashes, fewer particles, high-contrast minigames, larger or
-colorblind-safe targets, timing cue sounds and numeric quality scores. None of them make scoring easier.
+Want to improve a good piece? Hold it and use the **Smith's Grindstone** to improve its durability score, or sneak and use it to improve its performance score. The first click shows the experience-level cost; click again within three seconds to confirm. Each refinement adds five points up to 100, and enchantments stay on the item. Faulty equipment cannot be refined, but it can be melted down and forged again.
 
-## Requirements
+## Reforge, recycle and leave your mark
 
-- Minecraft 1.20.1 with Forge 47 or later.
-- Required on both the client and the server.
-- Optional: Just Enough Items.
+Recognized metal equipment can be put back into a forge, including enchanted or Faulty pieces. By default, you recover all of its metal. Melting removes the old item's enchantments, quality, name and other personal touches, so check the piece before recycling it.
+
+Every completed piece records its maker in the tooltip. After quenching, you can give your work a title and up to three lines of inscription, or skip that step and sign it later by sneak-using the Smith's Anvil while holding the piece. The smith who made it can sign it; Faulty work cannot be signed. The maker's mark survives normal repairs, enchanting, dyeing and supported upgrades. Melting the item removes it.
+
+## Metals and other mods
+
+Iron, gold, copper and netherite are built in. The forge also recognizes many metals added by other mods. A nugget counts as one metal unit, an ingot or raw metal as nine, and a storage block as 81. Metals melt at different speeds, and each forge handles one metal family at a time.
+
+Immersive Smithing looks for eligible weapons, tools, armor and metal shields made from a single metal plus ordinary components such as sticks or leather. It gives those items forging recipes and replaces their usual crafting recipes by default. Recipes that mix metals or cannot be identified reliably are left alone. **JEI**, if installed, shows available smithing recipes in a dedicated category, including recipes detected from other mods.
+
+Some notable integrations include:
+
+- **Spartan Weaponry:** Smith its metal weapons across all 24 weapon types, including throwing weapons, longbows and heavy crossbows. Thrown weapons retain their quality, and arrows or bolts inherit quality from the bow or crossbow that fires them.
+- **Modded metals and upgrades:** Built-in material definitions cover metals from Cataclysm, Ice and Fire, Iron's Spells 'n Spellbooks, Botania and MCA, among others, when those mods are present. Some upgrades are forged directly from the new metal, while others consume an existing piece and add metal to it. Netherite gear is forged directly from netherite ingots without a smithing template or a diamond base. Armor trims remain at the smithing table.
+- **Jade:** Shows useful station information in its block overlay when installed.
+- **Modpacks and datapacks:** Pack makers can add metals, recipes, recycling rules and timing patterns. Existing progression mods can respond when a player finishes smithing an item.
+
+Toolsmiths and Weaponsmiths can sell smithing tools, and they and Armorers can sell forged equipment. Eligible gear found in loot also receives a quality grade, usually Standard under the default settings.
+
+## Multiplayer, automation and options
+
+The server checks the timing challenges and calculates the results. Only one player can work on an anvil's piece at a time. Hoppers and pipes can feed metal and fuel into a forge and water into a trough, and comparators can read the forge and trough. Choosing a recipe, shaping the item and quenching it are jobs for a player.
+
+Server settings cover recipe replacement, which items are detected, melting, fuel, station capacity, timing, quality, recycling, trades and more. Client settings offer reduced screen shake and flashes, fewer particles, higher contrast, larger or colorblind-friendly targets, timing sounds and numeric quality scores. Visual options do not change the scoring windows. Server operators can use `/immersivesmithing report` and `/immersivesmithing recipe <item>` to investigate a missing modded recipe.
+
+## Requirements and upgrading
+
+- **Minecraft 1.20.1**, **Forge 47 or later** and **Java 17**.
+- Install Immersive Smithing on **both the client and server** for multiplayer.
+- **JEI** and **Jade** are optional. Compatibility features for other mods apply when those mods are installed.
+
+**Coming from Ote's Smithing?** Immersive Smithing uses a new mod ID and is not compatible with Ote's Smithing world data or datapacks. Old stations, tools, workpieces and quality data do not carry over. Back up your world before switching, and remove the old Ote's Smithing jar so the two mods do not load together.
 
 ## Links
 
-- [Source code](https://github.com/otectus/Smithing)
-- [Issue tracker](https://github.com/otectus/Smithing/issues)
-- [Changelog](https://github.com/otectus/Smithing/blob/main/CHANGELOG.md)
-- [Datapack and API documentation](https://github.com/otectus/Smithing/blob/main/docs/API.md)
+- [Source code](https://github.com/otectus/ImmersiveSmithing)
+- [Report an issue](https://github.com/otectus/ImmersiveSmithing/issues)
+- [Changelog](https://github.com/otectus/ImmersiveSmithing/blob/main/CHANGELOG.md)
+- [Datapack and developer documentation](https://github.com/otectus/ImmersiveSmithing/blob/main/docs/API.md)
 
 Licensed under GPL-3.0.
