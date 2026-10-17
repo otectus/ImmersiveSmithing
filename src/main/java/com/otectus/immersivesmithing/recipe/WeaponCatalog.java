@@ -36,8 +36,10 @@ import java.util.TreeSet;
  * The audit behind {@code docs/compatibility/inventory}: every piece of equipment a mod registers and what Immersive Smithing does with
  * it, from the live registry and the last rebuild. One entry per item: its anvil shape, the forge recipes that make it
  * (material, units, components), what became of each of the mod's own recipes for it (disabled, kept with a reason, or
- * untouched), whether it can carry quality and what it recycles for. Written by {@code /immersivesmithing catalog} and
- * by the GameTests, which compare it with the checked-in manifest.
+ * untouched), where its forge route comes from ({@code origin}: explicit, automatic or none), the configuration selectors
+ * that decided about it, whether it can carry quality and what it recycles for. Written by {@code /immersivesmithing
+ * catalog} and by the GameTests, which compare it with the checked-in manifest ({@code origin} and {@code selectors} are
+ * not compared).
  */
 public final class WeaponCatalog {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
@@ -132,6 +134,13 @@ public final class WeaponCatalog {
             natives.add(n);
         }
         out.add("native", natives);
+        // Where its forge route comes from, and the configuration selectors that decided anything about the item.
+        out.addProperty("origin", recipes.isEmpty() ? "none" : recipes.stream().allMatch(SmithingRecipe::isAuto) ? "automatic" : "explicit");
+        TreeSet<String> selectors = new TreeSet<>();
+        data.decisionsFor(item).forEach(d -> { if (d.selector() != null) selectors.add(d.selector()); });
+        JsonArray selectorArray = new JsonArray();
+        selectors.forEach(selectorArray::add);
+        out.add("selectors", selectorArray);
         out.addProperty("quality", QualityEligibility.canCarryQuality(stack));
         Optional<RecyclingValue> value = MaterialResolver.recyclingValue(stack);
         out.addProperty("recycling", value.map(v -> v.units() + " " + v.family()).orElse("none"));

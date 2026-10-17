@@ -117,6 +117,8 @@ public final class SmithingData {
     /** The recipes as the last datapack load produced them, before this rebuild disabled or added any. */
     public List<Recipe<?>> sourceRecipes() { return sources; }
     public CompatibilityReport report() { return report; }
+    /** What the rebuild decided about every recipe for this item, and the selector that decided, if one did. */
+    public List<RecipeDecisions.Decision> decisionsFor(Item item) { return report.decisions().decisionsFor(item); }
 
     /**
      * The recipes as the last datapack load produced them. The rebuild rewrites the recipe manager (disabled recipes
@@ -134,6 +136,7 @@ public final class SmithingData {
         CompatibilityReport report = new CompatibilityReport();
         AutoRecipeDetector.Scope scope = AutoRecipeDetector.Scope.fromConfig();
         report.integrations(Integrations.disabledNamespaces());
+        registerSelectors(report);
 
         // 1. Material families.
         List<MaterialDefinition> definitions = new ArrayList<>(MaterialDefinitionLoader.definitions());
@@ -155,6 +158,7 @@ public final class SmithingData {
 
         // 2. Explicit recipes (datapack), validated against the families that actually exist.
         List<Recipe<?>> all = sourceRecipes(manager);
+        report.decisions().sources(all);
         List<SmithingRecipe> active = new ArrayList<>();
         Set<ResourceLocation> removed = new HashSet<>();
         Set<Item> explicitResults = new HashSet<>();
@@ -166,7 +170,11 @@ public final class SmithingData {
             // A built-in crafting recipe (the bokken) follows its integration's switch like the forge recipes do.
             else if (Integrations.compatRecipeDisabled(r.getId()) != null) {
                 removed.add(r.getId());
-                report.invalidRecipe(r.getId(), Integrations.compatRecipeDisabled(r.getId()));
+                String reason = Integrations.compatRecipeDisabled(r.getId());
+                report.invalidRecipe(r.getId(), reason);
+                ItemStack result = resultOf(r, access);
+                if (!result.isEmpty()) report.decision(result.getItem(), r.getId(), RecipeDecisions.Origin.EXPLICIT, RecipeDecisions.Outcome.INACTIVE,
+                        null, reason, Integrations.configKey(Integrations.compatModOf(r.getId())));
             }
         }
         for (ISmithingRecipeProvider provider : ImmersiveSmithingAPI.recipeProviders()) {
@@ -178,19 +186,30 @@ public final class SmithingData {
         }
         explicit.sort(Comparator.comparing(r -> r.getId().toString()));
         Set<ResourceLocation> seenIds = new HashSet<>();
+        Set<String> familyBlacklist = Set.copyOf(ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST));
         for (SmithingRecipe r : explicit) {
             String reason = null;
+            String selector = null;
             if (!seenIds.add(r.getId())) reason = "duplicate recipe id";
-            else if (Integrations.compatRecipeDisabled(r.getId()) != null) reason = Integrations.compatRecipeDisabled(r.getId());
-            else if (materials.family(r.family()).isEmpty()) reason = "unknown material family " + r.family();
-            else if (r.result().is(ModTags.NON_SMITHABLE_EQUIPMENT) || ImmersiveSmithingAPI.isExcluded(r.result())) reason = "result is excluded from smithing";
-            else if (!r.follows().isEmpty() && r.follows().stream().noneMatch(loadedIds::contains)) {
+            else if (Integrations.compatRecipeDisabled(r.getId()) != null) {
+                reason = Integrations.compatRecipeDisabled(r.getId());
+                selector = Integrations.configKey(Integrations.compatModOf(r.getId()));
+            } else if (materials.family(r.family()).isEmpty()) {
+                reason = "unknown material family " + r.family();
+                if (familyBlacklist.contains(r.family().toString())) selector = "recipes.materialFamilyBlacklist = " + r.family();
+            } else if (r.result().is(ModTags.NON_SMITHABLE_EQUIPMENT)) {
+                reason = "result is excluded from smithing";
+                selector = "#" + ModTags.NON_SMITHABLE_EQUIPMENT.location();
+            } else if (ImmersiveSmithingAPI.isExcluded(r.result())) {
+                reason = "result is excluded from smithing";
+                selector = "API exclusion";
+            } else if (!r.follows().isEmpty() && r.follows().stream().noneMatch(loadedIds::contains)) {
                 // The pack removed the native recipe (or this version of the mod has none): the forge alternative goes too.
                 reason = "none of the native recipes it follows is loaded " + r.follows();
             }
             if (reason != null) {
                 removed.add(r.getId());
-                report.invalidRecipe(r, reason);
+                report.invalidRecipe(r, reason, selector);
                 continue;
             }
             active.add(r);
@@ -240,7 +259,11 @@ public final class SmithingData {
         if (replace) {
             boolean smithingTable = ServerConfig.get(ServerConfig.SUPPRESS_SMITHING_TABLE_UPGRADES);
             for (Recipe<?> r : all) {
-                if (r instanceof SmithingRecipe || scope.skipsRecipe(r.getId())) continue;
+                if (r instanceof SmithingRecipe) continue;
+                if (scope.skipsRecipe(r.getId())) {
+                    keptBySelector(report, r, access, "recipe blacklisted by config: never disabled", scope.recipeSelector(r.getId()));
+                    continue;
+                }
                 ItemStack result;
                 try {
                     result = r.getResultItem(access);
@@ -249,9 +272,17 @@ public final class SmithingData {
                 }
                 if (result.isEmpty()) continue;
                 List<SmithingRecipe> forge = forgeByResult.get(result.getItem());
-                if (forge == null) continue;
-                if (scope.skipsItem(result.getItem())) continue;
+                if (forge == null) {
+                    // Diamond, wooden, leather and other work no forge recipe makes: left exactly as it is.
+                    if (isNativeEquipmentRecipe(r, result) && !report.isRetained(r.getId())) report.untouched(r.getId(), result.getItem());
+                    continue;
+                }
+                if (scope.skipsItem(result.getItem())) {
+                    keptBySelector(report, r, access, scope.skipReason(result.getItem()) + ": never disabled", scope.itemSelector(result.getItem()));
+                    continue;
+                }
                 String kept = null;
+                SmithingRecipe by = null;
                 Set<ResourceLocation> named = declared.get(result.getItem());
                 if (named != null) {
                     if (r.getType() != RecipeType.CRAFTING && r.getType() != RecipeType.SMITHING) continue;
@@ -266,10 +297,12 @@ public final class SmithingData {
                         kept = "smithing-table upgrades are kept by the config";
                     }
                     if (kept != null) {
-                        report.retained(r.getId(), result.getItem(), kept);
+                        report.retained(r.getId(), result.getItem(), kept,
+                                kept.startsWith("smithing-table upgrades") ? "recipes.suppressSmithingTableUpgrades = false" : null);
                     } else {
                         suppressed.put(r.getId(), result.getItem());
-                        report.suppressed(r.getId(), result.getItem());
+                        report.suppressed(r.getId(), result.getItem(), forge.stream().filter(f -> f.replaces().contains(r.getId()))
+                                .map(SmithingRecipe::getId).findFirst().orElse(null));
                     }
                     continue;
                 }
@@ -281,14 +314,23 @@ public final class SmithingData {
                         if (a.base() != null) report.retained(r.getId(), result.getItem(), "remakes a finished piece without adding metal; kept next to the forge recipe");
                         continue;
                     }
-                    if (replacing(forge, r.getId(), a.family()) == null) {
+                    by = replacing(forge, r.getId(), a.family());
+                    if (by == null) {
                         kept = a.family() == null ? a.detail() + "; no forge recipe reproduces it" : "no forge recipe uses its metal " + a.family();
                     }
                 } else if (r.getType() == RecipeType.SMITHING) {
                     // Only upgrade recipes. Trim recipes report a sample armor piece as their result.
-                    if (!smithingTable || !(r instanceof SmithingTransformRecipe upgrade)) continue;
+                    if (!(r instanceof SmithingTransformRecipe upgrade)) continue;
+                    if (!smithingTable) {
+                        if (SourceRecipes.kind(r) == SourceRecipes.Kind.SMITHING_UPGRADE) {
+                            report.decision(result.getItem(), r.getId(), RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.KEPT, null,
+                                    "smithing-table upgrades are kept by the config", "recipes.suppressSmithingTableUpgrades = false");
+                        }
+                        continue;
+                    }
                     if (SourceRecipes.kind(r) != SourceRecipes.Kind.SMITHING_UPGRADE) continue; // custom: kept and reported
-                    if (replacingUpgrade(forge, upgrade, materials) == null) {
+                    by = replacingUpgrade(forge, upgrade, materials);
+                    if (by == null) {
                         kept = "no forge recipe reproduces this upgrade (its addition or base differs)";
                     }
                 } else {
@@ -299,7 +341,18 @@ public final class SmithingData {
                     continue;
                 }
                 suppressed.put(r.getId(), result.getItem());
-                report.suppressed(r.getId(), result.getItem());
+                report.suppressed(r.getId(), result.getItem(), by.getId());
+            }
+        } else {
+            // Native recipes stay by the config: say so for every one the forge would otherwise have looked at.
+            String selector = !ServerConfig.get(ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES) ? "recipes.replaceMetalEquipmentRecipes = false"
+                    : "recipes.allowVanillaCraftingAlongsideSmithing = true";
+            for (Recipe<?> r : all) {
+                if (r instanceof SmithingRecipe) continue;
+                ItemStack result = resultOf(r, access);
+                if (result.isEmpty() || !forgeByResult.containsKey(result.getItem()) || !isNativeEquipmentRecipe(r, result)) continue;
+                report.decision(result.getItem(), r.getId(), RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.KEPT, null,
+                        "native recipes are kept by the config", selector);
             }
         }
 
@@ -379,6 +432,35 @@ public final class SmithingData {
             sourceSnapshot = List.copyOf(fresh);
         }
         return sourceSnapshot;
+    }
+
+    /** The configuration options in effect, so the report can say what each one matched. */
+    private static void registerSelectors(CompatibilityReport report) {
+        ServerConfig.list(ServerConfig.RECIPE_BLACKLIST).forEach(id -> report.selector("recipes.recipeBlacklist = " + id));
+        ServerConfig.list(ServerConfig.MOD_BLACKLIST).forEach(ns -> report.selector("recipes.modBlacklist = " + ns));
+        ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST).forEach(f -> report.selector("recipes.materialFamilyBlacklist = " + f));
+        new java.util.TreeSet<>(Integrations.disabledNamespaces()).forEach(ns -> report.selector(Integrations.configKey(ns)));
+    }
+
+    /** A native crafting recipe or smithing-table upgrade of candidate equipment: what the forge could stand in for. */
+    private static boolean isNativeEquipmentRecipe(Recipe<?> r, ItemStack result) {
+        boolean type = r.getType() == RecipeType.CRAFTING || (r.getType() == RecipeType.SMITHING && r instanceof SmithingTransformRecipe);
+        return type && result.getCount() == 1 && EquipmentClassifier.isCandidate(result);
+    }
+
+    /** A native recipe a selector protects from being disabled, recorded as a decision of its result (if it makes equipment). */
+    private static void keptBySelector(CompatibilityReport report, Recipe<?> r, RegistryAccess access, String reason, String selector) {
+        ItemStack result = resultOf(r, access);
+        if (result.isEmpty() || !isNativeEquipmentRecipe(r, result)) return;
+        report.decision(result.getItem(), r.getId(), RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.KEPT, null, reason, selector);
+    }
+
+    private static ItemStack resultOf(Recipe<?> r, RegistryAccess access) {
+        try {
+            return r.getResultItem(access);
+        } catch (RuntimeException e) {
+            return ItemStack.EMPTY;
+        }
     }
 
     /** The forge recipe that replaces a crafting recipe: generated from it, or making its result from the same metal. */

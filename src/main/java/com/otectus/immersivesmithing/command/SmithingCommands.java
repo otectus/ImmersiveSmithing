@@ -15,6 +15,7 @@ import com.otectus.immersivesmithing.quality.QualityCalculator;
 import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.recipe.AuxiliaryIngredient;
 import com.otectus.immersivesmithing.recipe.CompatibilityReport;
+import com.otectus.immersivesmithing.recipe.RecipeDecisions;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.recipe.SmithingRecipe;
 import net.minecraft.ChatFormatting;
@@ -136,6 +137,16 @@ public final class SmithingCommands {
             if (suppressed.getValue() == item) {
                 send(c, Component.translatable("command.immersive_smithing.recipe.suppressed", suppressed.getKey().toString()));
             }
+        }
+        // Every recipe the rebuild considered for the item: what came of it, why, and the option that decided.
+        List<RecipeDecisions.Decision> decisions = data.decisionsFor(item);
+        if (!decisions.isEmpty()) {
+            send(c, Component.translatable("command.immersive_smithing.recipe.decisions", stack.getHoverName()));
+            for (RecipeDecisions.Decision d : decisions) {
+                send(c, Component.translatable("command.immersive_smithing.recipe.decision", data.report().decisions().describe(d)));
+            }
+        } else if (recipes.isEmpty()) {
+            send(c, Component.translatable("command.immersive_smithing.recipe.no_decisions", stack.getHoverName()));
         }
         return recipes.size();
     }

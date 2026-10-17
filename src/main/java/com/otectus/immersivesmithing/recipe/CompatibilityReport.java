@@ -6,6 +6,7 @@ import com.otectus.immersivesmithing.material.MaterialFamily;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -31,6 +32,12 @@ public final class CompatibilityReport {
     private final List<String> notes = new ArrayList<>();
     private final java.util.Map<String, Integer> inactiveBuiltIn = new java.util.TreeMap<>();
     private final java.util.Map<Item, List<String>> inactiveByResult = new java.util.HashMap<>();
+    private final List<String> notConsidered = new ArrayList<>();
+    private final List<String> untouched = new ArrayList<>();
+    /** Configured selectors and the matches that are not item decisions (a skipped material family). */
+    private final java.util.Map<String, Integer> selectors = new java.util.TreeMap<>();
+    private final List<String> selectorProblems = new ArrayList<>();
+    private final RecipeDecisions decisions = new RecipeDecisions();
 
     public void family(MaterialFamily f) {
         families.add(f.id() + (f.auto() ? " (auto)" : "") + ": " + f.sources().size() + " source items");
@@ -48,6 +55,7 @@ public final class CompatibilityReport {
 
     public void explicitRecipe(SmithingRecipe r) {
         explicitRecipes.add(r.getId() + " -> " + BuiltInRegistries.ITEM.getKey(r.resultItem()) + " [" + r.family() + ", " + r.metalUnits() + " units]");
+        decision(r.resultItem(), r.getId(), RecipeDecisions.Origin.EXPLICIT, RecipeDecisions.Outcome.ACTIVE, r.getId(), "", null);
     }
 
     public void invalidRecipe(ResourceLocation id, String reason) {
@@ -63,8 +71,14 @@ public final class CompatibilityReport {
 
     /** An inactive smithing recipe, remembered for the coverage catalog of its result. */
     public void invalidRecipe(SmithingRecipe recipe, String reason) {
+        invalidRecipe(recipe, reason, null);
+    }
+
+    /** An inactive smithing recipe and the configuration selector that made it so, if one did. */
+    public void invalidRecipe(SmithingRecipe recipe, String reason, @Nullable String selector) {
         invalidRecipe(recipe.getId(), reason);
         inactiveByResult.computeIfAbsent(recipe.resultItem(), k -> new ArrayList<>()).add(recipe.getId() + ": " + reason);
+        decision(recipe.resultItem(), recipe.getId(), RecipeDecisions.Origin.EXPLICIT, RecipeDecisions.Outcome.INACTIVE, null, reason, selector);
     }
 
     /** Why the built-in or datapack recipes for this item are inactive, if any are. */
@@ -84,22 +98,83 @@ public final class CompatibilityReport {
                 + " [" + r.family() + ", " + r.metalUnits() + " units, " + r.auxiliary().size() + " auxiliary"
                 + (reworks ? ", reworks the base piece" : "") + "]");
         log("Auto-detected smithing recipe for {} from {}", BuiltInRegistries.ITEM.getKey(r.resultItem()), r.sourceRecipe());
+        decision(r.resultItem(), r.sourceRecipe(), RecipeDecisions.Origin.AUTOMATIC, RecipeDecisions.Outcome.GENERATED, r.getId(), "", null);
     }
 
     public void skippedEquipment(Item item, ResourceLocation recipe, String reason) {
+        skippedEquipment(item, recipe, reason, null);
+    }
+
+    /** Equipment automatic detection made nothing for, and the configuration selector that decided, if one did. */
+    public void skippedEquipment(Item item, ResourceLocation recipe, String reason, @Nullable String selector) {
         skippedEquipment.add(BuiltInRegistries.ITEM.getKey(item) + " (" + recipe + "): " + reason);
         log("Not auto-detecting {} from {}: {}", BuiltInRegistries.ITEM.getKey(item), recipe, reason);
+        decision(item, recipe, RecipeDecisions.Origin.AUTOMATIC, RecipeDecisions.Outcome.SKIPPED, null, reason, selector);
+    }
+
+    /**
+     * A metal recipe whose result the forge does not consider at all (a crossbow, an item tagged non-smithable): not
+     * equipment the forge makes, so nothing is generated or disabled for it.
+     */
+    public void notConsidered(Item item, ResourceLocation recipe, String reason, @Nullable String selector) {
+        notConsidered.add(BuiltInRegistries.ITEM.getKey(item) + " (" + recipe + "): " + reason);
+        log("Not considering {} from {}: {}", BuiltInRegistries.ITEM.getKey(item), recipe, reason);
+        decision(item, recipe, RecipeDecisions.Origin.AUTOMATIC, RecipeDecisions.Outcome.SKIPPED, null, reason, selector);
     }
 
     public void suppressed(ResourceLocation recipe, Item result) {
+        suppressed(recipe, result, null);
+    }
+
+    /** A native recipe replaced by {@code by} (the forge recipe generated from it or making the same item) and removed. */
+    public void suppressed(ResourceLocation recipe, Item result, @Nullable ResourceLocation by) {
         suppressed.add(recipe + " -> " + BuiltInRegistries.ITEM.getKey(result));
+        decision(result, recipe, RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.DISABLED, by,
+                by != null ? "replaced by the forge recipe" : "replaced by a forge recipe", null);
     }
 
     /** A conventional recipe for smithable or candidate equipment that is deliberately left working, and why. */
     public void retained(ResourceLocation recipe, Item result, String reason) {
+        retained(recipe, result, reason, null);
+    }
+
+    public void retained(ResourceLocation recipe, Item result, String reason, @Nullable String selector) {
         retained.add(BuiltInRegistries.ITEM.getKey(result) + " (" + recipe + "): " + reason);
         retainedById.putIfAbsent(recipe, reason);
         log("Keeping {} for {}: {}", recipe, BuiltInRegistries.ITEM.getKey(result), reason);
+        decision(result, recipe, RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.KEPT, null, reason, selector);
+    }
+
+    /** A native recipe of equipment no forge recipe makes: it simply stays (diamond, wood, leather and other non-metal work). */
+    public void untouched(ResourceLocation recipe, Item result) {
+        untouched.add(BuiltInRegistries.ITEM.getKey(result) + " (" + recipe + ")");
+        decision(result, recipe, RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.UNTOUCHED, null, "no forge recipe makes this item", null);
+    }
+
+    /** A decision that is not a report line of its own (a second source for an item already made, a curated namespace...). */
+    public void decision(Item item, @Nullable ResourceLocation recipe, RecipeDecisions.Origin origin, RecipeDecisions.Outcome outcome,
+                         @Nullable ResourceLocation smithing, String reason, @Nullable String selector) {
+        decisions.add(new RecipeDecisions.Decision(item, recipe, origin, outcome, smithing, reason, selector));
+    }
+
+    public RecipeDecisions decisions() {
+        return decisions;
+    }
+
+    /** A configured selector ({@code recipes.modBlacklist = examplemod}); the report counts what it matched. */
+    public void selector(String selector) {
+        selectors.putIfAbsent(selector, 0);
+    }
+
+    /** A match of a selector that is no item decision (a material family it skipped). */
+    public void selectorMatched(String selector) {
+        selectors.merge(selector, 1, Integer::sum);
+    }
+
+    /** A selector entry that could not be used (unparsable, an unknown item or an empty tag). */
+    public void selectorProblem(String problem) {
+        selectorProblems.add(problem);
+        log(problem);
     }
 
     /** The integrations switched off in the server config. */
@@ -111,6 +186,9 @@ public final class CompatibilityReport {
         notes.add(note);
         log(note);
     }
+
+    /** Whether the native recipe is already reported as kept. */
+    boolean isRetained(ResourceLocation recipe) { return retainedById.containsKey(recipe); }
 
     public int autoCount() { return autoRecipes.size(); }
     public int explicitCount() { return explicitRecipes.size(); }
@@ -143,7 +221,28 @@ public final class CompatibilityReport {
         section(out, "Skipped or unsupported equipment", skippedEquipment);
         section(out, "Disabled crafting recipes", suppressed);
         section(out, "Native recipes kept (no forge recipe reproduces them, or the mod's own mechanic)", retained);
+        section(out, "Native equipment recipes left untouched (no forge recipe makes the item)", untouched);
+        section(out, "Metal recipes of items the forge does not consider", notConsidered);
+        section(out, "Configuration selectors (decisions each one made)", selectorLines());
+        section(out, "Exclusions applied", exclusionLines());
         section(out, "Notes", notes);
+        return out;
+    }
+
+    private List<String> selectorLines() {
+        java.util.Map<String, List<RecipeDecisions.Decision>> made = decisions.bySelector();
+        java.util.Map<String, Integer> counts = new java.util.TreeMap<>(selectors);
+        made.forEach((selector, list) -> counts.merge(selector, list.size(), Integer::sum));
+        List<String> out = new ArrayList<>();
+        counts.forEach((selector, count) -> out.add(selector + ": " + count + (count == 1 ? " match" : " matches")));
+        selectorProblems.forEach(problem -> out.add("problem: " + problem));
+        return out;
+    }
+
+    private List<String> exclusionLines() {
+        List<String> out = new ArrayList<>();
+        decisions.bySelector().forEach((selector, list) -> list.forEach(d ->
+                out.add(BuiltInRegistries.ITEM.getKey(d.output()) + " " + decisions.describe(d))));
         return out;
     }
 

@@ -9,6 +9,7 @@ import com.otectus.immersivesmithing.quality.QualityEligibility;
 import com.otectus.immersivesmithing.recipe.AutoRecipeDetector;
 import com.otectus.immersivesmithing.recipe.AuxiliaryIngredient;
 import com.otectus.immersivesmithing.recipe.CompatibilityReport;
+import com.otectus.immersivesmithing.recipe.RecipeDecisions;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.recipe.SmithingRecipe;
 import com.otectus.immersivesmithing.recipe.SourceRecipes;
@@ -258,6 +259,94 @@ public final class RecipePipelineGameTests {
         QualityData kept = QualityData.get(graded).orElseThrow();
         h.assertTrue(kept.forgeScore() == 3 && kept.anvilScore() == 4, "An already graded stack is never overwritten");
         for (ItemStack stack : loot) h.assertTrue(MakersMark.get(stack).isEmpty(), "Loot never gets a maker's mark");
+        h.succeed();
+    }
+
+    private static boolean decided(List<RecipeDecisions.Decision> decisions, RecipeDecisions.Outcome outcome, String recipe) {
+        return decisions.stream().anyMatch(d -> d.outcome() == outcome && recipe.equals(String.valueOf(d.recipe())));
+    }
+
+    @GameTest(template = "empty")
+    public static void everyRecipeOfEquipmentHasADecision(GameTestHelper h) {
+        SmithingData data = SmithingData.current();
+        for (var entry : data.suppressedRecipes().entrySet()) {
+            h.assertTrue(data.decisionsFor(entry.getValue()).stream().anyMatch(d -> entry.getKey().equals(d.recipe())
+                    && d.outcome() == RecipeDecisions.Outcome.DISABLED && d.smithing() != null),
+                    "Disabled " + entry.getKey() + " has its decision, naming the forge recipe that replaced it");
+        }
+        // The iron sword has a bundled forge recipe: detection leaves its crafting recipe to it, and that recipe disables it.
+        List<RecipeDecisions.Decision> iron = data.decisionsFor(Items.IRON_SWORD);
+        h.assertTrue(decided(iron, RecipeDecisions.Outcome.ACTIVE, "immersive_smithing:smithing/iron_sword"), "The explicit recipe is active: " + iron);
+        h.assertTrue(iron.stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.SKIPPED && d.reason().contains("explicit smithing recipe")),
+                "Automatic detection gives way to it");
+        h.assertTrue(iron.stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.DISABLED && "minecraft:iron_sword".equals(String.valueOf(d.recipe()))
+                && "immersive_smithing:smithing/iron_sword".equals(String.valueOf(d.smithing()))), "And the native recipe is disabled by it");
+        h.assertTrue("minecraft:crafting_shaped".equals(data.report().decisions().type(new ResourceLocation("minecraft", "iron_sword"))),
+                "A decision names its recipe's serializer");
+        // Chainmail leggings come from automatic detection (the test datapack's lapisine chain).
+        List<RecipeDecisions.Decision> leggings = data.decisionsFor(Items.CHAINMAIL_LEGGINGS);
+        h.assertTrue(leggings.stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.GENERATED && d.origin() == RecipeDecisions.Origin.AUTOMATIC
+                        && "immersive_smithing_test:chain_shape".equals(String.valueOf(d.recipe()))
+                        && "immersive_smithing:auto/minecraft/chainmail_leggings".equals(String.valueOf(d.smithing()))),
+                "The chain recipe generated its automatic forge recipe: " + leggings);
+        h.assertTrue(decided(leggings, RecipeDecisions.Outcome.DISABLED, "immersive_smithing_test:chain_shape"), "And was disabled by it");
+        // Formerly silent: equipment no forge recipe makes, and metal recipes of items the forge never considers.
+        h.assertTrue(decided(data.decisionsFor(Items.DIAMOND_SWORD), RecipeDecisions.Outcome.UNTOUCHED, "minecraft:diamond_sword"),
+                "The diamond sword's recipe is untouched, and the report says why");
+        h.assertTrue(data.decisionsFor(Items.CROSSBOW).stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.SKIPPED
+                && d.reason().contains("crossbows")), "A crossbow takes an iron ingot, but bows and crossbows are not forged untagged");
+        List<RecipeDecisions.Decision> netherite = data.decisionsFor(Items.NETHERITE_HELMET);
+        h.assertTrue(netherite.stream().anyMatch(d -> d.origin() == RecipeDecisions.Origin.EXPLICIT && d.outcome() == RecipeDecisions.Outcome.ACTIVE),
+                "The netherite helmet's explicit forge recipe is active: " + netherite);
+        h.assertTrue(decided(netherite, RecipeDecisions.Outcome.DISABLED, "minecraft:netherite_helmet_smithing"),
+                "The smithing-table upgrade it stands for is disabled");
+        List<String> lines = data.report().lines();
+        for (String section : List.of("== Configuration selectors", "== Exclusions applied", "== Native equipment recipes left untouched",
+                "== Metal recipes of items the forge does not consider")) {
+            h.assertTrue(lines.stream().anyMatch(l -> l.startsWith(section)), "The report has the section " + section);
+        }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void upgradesWithoutAMetalAdditionAreReported(GameTestHelper h) {
+        MinecraftServer server = h.getLevel().getServer();
+        var gem = new SmithingTransformRecipe(ImmersiveSmithing.id("test_gem_addition_upgrade"), Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(Items.DIAMOND_HOE), Ingredient.of(Items.AMETHYST_SHARD), new ItemStack(Items.GOLDEN_HOE));
+        CompatibilityReport report = new CompatibilityReport();
+        var context = new AutoRecipeDetector.UpgradeContext(List.<Recipe<?>>of(gem), server.registryAccess(), SmithingData.current().materials(),
+                new java.util.HashMap<>());
+        var generated = AutoRecipeDetector.generateUpgrades(List.<Recipe<?>>of(gem), context, new AutoRecipeDetector.Scope(Set.of(), Set.of()), report);
+        h.assertTrue(generated.isEmpty(), "An amethyst addition is no metal: nothing is generated");
+        h.assertTrue(report.skippedEquipment().stream().anyMatch(l -> l.startsWith("minecraft:golden_hoe (" + gem.getId() + ")")
+                && l.contains("no known metal")), "And the report says so instead of staying silent: " + report.skippedEquipment());
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void selectorsAreCountedAndNamedInDecisions(GameTestHelper h) {
+        MinecraftServer server = h.getLevel().getServer();
+        var config = TestSupport.isolateServerConfig();
+        try {
+            ServerConfig.RECIPE_BLACKLIST.set(List.of("immersive_smithing_test:chain_shape"));
+            SmithingData.rebuild(server);
+            SmithingData data = SmithingData.current();
+            String selector = "recipes.recipeBlacklist = immersive_smithing_test:chain_shape";
+            List<RecipeDecisions.Decision> leggings = data.decisionsFor(Items.CHAINMAIL_LEGGINGS);
+            h.assertTrue(leggings.stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.SKIPPED && selector.equals(d.selector())),
+                    "Detection names the selector that skipped the source: " + leggings);
+            h.assertTrue(leggings.stream().anyMatch(d -> d.outcome() == RecipeDecisions.Outcome.KEPT && selector.equals(d.selector())),
+                    "And the one that kept it from being disabled");
+            h.assertTrue(data.recipesProducing(Items.CHAINMAIL_LEGGINGS).isEmpty()
+                    && server.getRecipeManager().byKey(new ResourceLocation("immersive_smithing_test", "chain_shape")).isPresent(),
+                    "Nothing is generated from the blacklisted recipe, and it stays");
+            h.assertTrue(data.report().lines().stream().anyMatch(l -> l.trim().equals(selector + ": 2 matches")),
+                    "The report counts what the selector matched");
+        } finally {
+            ServerConfig.RECIPE_BLACKLIST.set(List.of());
+            TestSupport.restoreServerConfig(config);
+            SmithingData.rebuild(server);
+        }
         h.succeed();
     }
 

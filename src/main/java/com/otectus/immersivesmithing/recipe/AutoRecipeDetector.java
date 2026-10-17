@@ -105,6 +105,17 @@ public final class AutoRecipeDetector {
             return Integrations.disabledNamespaces().contains(namespace) ? "integration " + namespace + " is disabled in the config"
                     : "mod blacklisted by config";
         }
+
+        /** The configuration selector behind {@link #skipsRecipe}. */
+        public String recipeSelector(ResourceLocation recipeId) {
+            return "recipes.recipeBlacklist = " + recipeId;
+        }
+
+        /** The configuration selector behind {@link #skipsItem}: the integration switch, or the mod blacklist entry. */
+        public String itemSelector(Item item) {
+            String namespace = BuiltInRegistries.ITEM.getKey(item).getNamespace();
+            return Integrations.disabledNamespaces().contains(namespace) ? Integrations.configKey(namespace) : "recipes.modBlacklist = " + namespace;
+        }
     }
 
     /**
@@ -284,15 +295,40 @@ public final class AutoRecipeDetector {
     public static List<SmithingRecipe> generate(Collection<Analysis> analyses, Set<Item> explicitResults, Scope scope, CompatibilityReport report) {
         Map<Item, SmithingRecipe> generated = new LinkedHashMap<>();
         Set<Item> reported = new TreeSet<>(Comparator.comparing(i -> BuiltInRegistries.ITEM.getKey(i).toString()));
+        Set<Item> notConsidered = new HashSet<>();
 
         for (Analysis a : analyses) {
             Item item = a.result().getItem();
-            if (!EquipmentClassifier.isCandidate(a.result())) continue;
-            if (explicitResults.contains(item) || generated.containsKey(item) || scope.isCurated(item)) continue;
+            String notCandidate = EquipmentClassifier.whyNotCandidate(a.result());
+            if (notCandidate != null) {
+                // A metal recipe of something the forge never makes (a crossbow, an item tagged non-smithable): said once.
+                if (a.hasMetal() && !notCandidate.equals(EquipmentClassifier.NOT_EQUIPMENT) && notConsidered.add(item)) {
+                    report.notConsidered(item, a.recipeId(), notCandidate, EquipmentClassifier.candidacySelector(a.result()));
+                }
+                continue;
+            }
+            if (explicitResults.contains(item)) {
+                skippedSilently(report, item, a.recipeId(), null, "an explicit smithing recipe makes this item");
+                continue;
+            }
+            if (generated.containsKey(item)) {
+                skippedSilently(report, item, a.recipeId(), generated.get(item).getId(), "another source recipe already makes it");
+                continue;
+            }
+            if (scope.isCurated(item)) {
+                skippedSilently(report, item, a.recipeId(), null, "curated integration: forged only from its bundled recipes");
+                continue;
+            }
             ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
             String reason = null;
-            if (scope.skipsRecipe(a.recipeId())) reason = "recipe blacklisted by config";
-            else if (scope.skipsItem(item)) reason = scope.skipReason(item);
+            String selector = null;
+            if (scope.skipsRecipe(a.recipeId())) {
+                reason = "recipe blacklisted by config";
+                selector = scope.recipeSelector(a.recipeId());
+            } else if (scope.skipsItem(item)) {
+                reason = scope.skipReason(item);
+                selector = scope.itemSelector(item);
+            }
             else if (a.status() == Status.NOT_METAL) continue; // not metal equipment: nothing to report
             else if ((a.status() == Status.UPGRADE_CHAIN || a.status() == Status.EQUIPMENT_INGREDIENT) && a.base() != null) continue; // priced later from the piece's own recipe
             else if (a.status() != Status.OK) reason = a.detail();
@@ -303,7 +339,8 @@ public final class AutoRecipeDetector {
                     && a.metalSlots() < a.auxSlots() && a.units() < MaterialUnits.INGOT) reason = "not predominantly metal";
 
             if (reason != null) {
-                if (reported.add(item)) report.skippedEquipment(item, a.recipeId(), reason);
+                if (reported.add(item)) report.skippedEquipment(item, a.recipeId(), reason, selector);
+                else report.decision(item, a.recipeId(), RecipeDecisions.Origin.AUTOMATIC, RecipeDecisions.Outcome.SKIPPED, null, reason, selector);
                 continue;
             }
             ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
@@ -313,6 +350,11 @@ public final class AutoRecipeDetector {
             report.autoRecipe(recipe);
         }
         return new ArrayList<>(generated.values());
+    }
+
+    /** A source automatic detection passes over without a report line of its own: only its decision is recorded. */
+    private static void skippedSilently(CompatibilityReport report, Item item, ResourceLocation recipe, @Nullable ResourceLocation smithing, String reason) {
+        report.decision(item, recipe, RecipeDecisions.Origin.AUTOMATIC, RecipeDecisions.Outcome.SKIPPED, smithing, reason, null);
     }
 
     /** Whether every item an ingredient accepts is a shield (the base of a metal shield recipe). */
@@ -389,6 +431,7 @@ public final class AutoRecipeDetector {
         }
         upgrades.sort(Comparator.comparing(r -> r.getId().toString()));
         Map<Item, SmithingRecipe> generated = new LinkedHashMap<>();
+        Set<Item> notConsidered = new HashSet<>();
         for (SmithingTransformRecipe upgrade : upgrades) {
             ItemStack result;
             try {
@@ -396,10 +439,36 @@ public final class AutoRecipeDetector {
             } catch (RuntimeException e) {
                 continue;
             }
-            if (result.isEmpty() || result.getCount() != 1 || !EquipmentClassifier.isCandidate(result)) continue;
+            if (result.isEmpty() || result.getCount() != 1) continue;
             Item item = result.getItem();
-            if (context.smithable.containsKey(item) || generated.containsKey(item)) continue;
-            if (scope.skipsRecipe(upgrade.getId()) || scope.skipsItem(item) || scope.isCurated(item)) continue;
+            String notCandidate = EquipmentClassifier.whyNotCandidate(result);
+            if (notCandidate != null) {
+                if (!notCandidate.equals(EquipmentClassifier.NOT_EQUIPMENT) && !additionFamilies(upgrade, context.materials).isEmpty()
+                        && notConsidered.add(item)) {
+                    report.notConsidered(item, upgrade.getId(), notCandidate, EquipmentClassifier.candidacySelector(result));
+                }
+                continue;
+            }
+            if (context.smithable.containsKey(item)) {
+                skippedSilently(report, item, upgrade.getId(), context.smithable.get(item).getId(), "a forge recipe already makes this item");
+                continue;
+            }
+            if (generated.containsKey(item)) {
+                skippedSilently(report, item, upgrade.getId(), generated.get(item).getId(), "another upgrade already makes it");
+                continue;
+            }
+            if (scope.skipsRecipe(upgrade.getId())) {
+                report.skippedEquipment(item, upgrade.getId(), "recipe blacklisted by config", scope.recipeSelector(upgrade.getId()));
+                continue;
+            }
+            if (scope.skipsItem(item)) {
+                report.skippedEquipment(item, upgrade.getId(), scope.skipReason(item), scope.itemSelector(item));
+                continue;
+            }
+            if (scope.isCurated(item)) {
+                skippedSilently(report, item, upgrade.getId(), null, "curated integration: forged only from its bundled recipes");
+                continue;
+            }
             try {
                 upgradeRecipe(upgrade, result, context, report).ifPresent(r -> {
                     generated.put(item, r);
@@ -426,7 +495,11 @@ public final class AutoRecipeDetector {
                 }
             }
         }
-        if (families.isEmpty()) return java.util.Optional.empty(); // not a metal upgrade
+        if (families.isEmpty()) {
+            // Not a metal upgrade (a gem or a component as the addition): the smithing table keeps it.
+            report.skippedEquipment(item, upgrade.getId(), "upgrade addition is no known metal family");
+            return java.util.Optional.empty();
+        }
         if (families.size() != 1 || units.size() != 1) {
             report.skippedEquipment(item, upgrade.getId(), "upgrade addition is not a single metal family");
             return java.util.Optional.empty();
@@ -518,16 +591,19 @@ public final class AutoRecipeDetector {
         // Then say why the remaining ones were not converted.
         for (Analysis a : analyses) {
             Piece decision = pieceRecipe(a, context, scope, generated);
-            if (decision.reason() != null) report.skippedEquipment(a.result().getItem(), a.recipeId(), decision.reason());
+            if (decision.reason() != null) report.skippedEquipment(a.result().getItem(), a.recipeId(), decision.reason(), decision.selector());
         }
         return new ArrayList<>(generated.values());
     }
 
-    /** A recipe built from a piece, or why there is none (null when the decision is silent). */
-    private record Piece(@Nullable SmithingRecipe recipe, @Nullable String reason) {
-        static final Piece NONE = new Piece(null, null);
+    /** A recipe built from a piece, or why there is none (null when the decision is silent), and the selector that decided. */
+    private record Piece(@Nullable SmithingRecipe recipe, @Nullable String reason, @Nullable String selector) {
+        static final Piece NONE = new Piece(null, null, null);
         static Piece skip(boolean speak, String reason) {
-            return new Piece(null, speak ? reason : null);
+            return skip(speak, reason, null);
+        }
+        static Piece skip(boolean speak, String reason, @Nullable String selector) {
+            return new Piece(null, speak ? reason : null, selector);
         }
     }
 
@@ -540,8 +616,8 @@ public final class AutoRecipeDetector {
         if (!EquipmentClassifier.isCandidate(a.result())) return Piece.NONE;
         if (context.smithable.containsKey(item) || generated.containsKey(item) || scope.isCurated(item)) return Piece.NONE;
         boolean speak = !transform; // reworking a piece without any metal is not the forge's business
-        if (scope.skipsRecipe(a.recipeId())) return Piece.skip(speak, "recipe blacklisted by config");
-        if (scope.skipsItem(item)) return Piece.skip(speak, scope.skipReason(item));
+        if (scope.skipsRecipe(a.recipeId())) return Piece.skip(speak, "recipe blacklisted by config", scope.recipeSelector(a.recipeId()));
+        if (scope.skipsItem(item)) return Piece.skip(speak, scope.skipReason(item), scope.itemSelector(item));
         if (a.result().getCount() != 1) return Piece.skip(speak, "recipe makes more than one item");
         ItemStack[] bases = a.base().getItems();
         SmithingRecipe piece = null;
@@ -594,7 +670,7 @@ public final class AutoRecipeDetector {
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
         ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
         return new Piece(new SmithingRecipe(id, family, metalUnits, auxiliary, a.result().copy(), ForgePattern.STANDARD, null, true,
-                a.recipeId()).keepBaseData(keepBaseData), null);
+                a.recipeId()).keepBaseData(keepBaseData), null, null);
     }
 
     /** The broad kind a piece can grow within: one armour slot, shields, mining tools or weapons. */

@@ -68,6 +68,7 @@ public final class MaterialRegistry {
         for (MaterialDefinition def : definitions) {
             if (blacklist.contains(def.family().toString())) {
                 report.skippedFamily(def.family(), "blacklisted by config");
+                report.selectorMatched("recipes.materialFamilyBlacklist = " + def.family());
                 continue;
             }
             List<MaterialFamily.Source> sources = new ArrayList<>();

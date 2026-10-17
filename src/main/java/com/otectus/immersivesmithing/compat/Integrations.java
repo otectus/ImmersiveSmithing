@@ -91,6 +91,19 @@ public final class Integrations {
         return out;
     }
 
+    /** The server-config option that switches a namespace's integration off, as the report names selectors. */
+    public static String configKey(String namespace) {
+        if (namespace.equals(SPARTAN_WEAPONRY) || namespace.equals(SPARTAN_FIRE)) return "integrations.spartanWeaponry = false";
+        return switch (forNamespace(namespace).map(Integration::id).orElse("")) {
+            case EPIC_FIGHT -> "integrations.epicFight = false";
+            case SIMPLY_SWORDS -> "integrations.simplySwords = false";
+            case EPIC_KNIGHTS -> ServerConfig.get(ServerConfig.EPIC_KNIGHTS_INTEGRATION)
+                    ? "integrations.epicKnightsDisabledAddons = " + namespace : "integrations.epicKnights = false";
+            case TERRAFIRMACRAFT -> "integrations.terraFirmaCraft = false";
+            default -> "integrations (" + namespace + ")";
+        };
+    }
+
     /** The mod a built-in recipe under {@code immersive_smithing:compat/<modid>/} belongs to, or null. */
     @Nullable
     public static String compatModOf(ResourceLocation recipeId) {

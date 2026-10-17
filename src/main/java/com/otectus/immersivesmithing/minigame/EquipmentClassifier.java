@@ -112,6 +112,37 @@ public final class EquipmentClassifier {
                 || stack.canPerformAction(ToolActions.SHOVEL_DIG);
     }
 
+    /** {@link #whyNotCandidate} for items that are no equipment at all (they stack or never wear): not worth a report line. */
+    public static final String NOT_EQUIPMENT = "not equipment: it stacks or does not wear";
+
+    /** Why automatic detection does not consider an item, or null when it does ({@link #isCandidate}). */
+    @org.jetbrains.annotations.Nullable
+    public static String whyNotCandidate(ItemStack stack) {
+        if (isCandidate(stack)) return null;
+        if (stack.isEmpty()) return NOT_EQUIPMENT;
+        if (ImmersiveSmithingAPI.isExcluded(stack)) return "excluded from smithing by another mod (API exclusion)";
+        if (stack.is(ModTags.NON_SMITHABLE_EQUIPMENT)) return "tagged #" + ModTags.NON_SMITHABLE_EQUIPMENT.location();
+        Item item = stack.getItem();
+        if (stack.getMaxStackSize() != 1 || !stack.isDamageableItem()) return NOT_EQUIPMENT;
+        if (item instanceof ProjectileWeaponItem || item instanceof FishingRodItem || item instanceof TridentItem
+                || stack.is(Tags.Items.TOOLS_BOWS) || stack.is(Tags.Items.TOOLS_CROSSBOWS)
+                || stack.is(Tags.Items.TOOLS_FISHING_RODS) || stack.is(Tags.Items.TOOLS_TRIDENTS)) {
+            return "bows, crossbows, fishing rods and tridents are forged only when tagged #" + ModTags.SMITHABLE_EQUIPMENT.location();
+        }
+        if (isShield(stack)) return "tagged #" + ModTags.NON_SMITHABLE_SHIELDS.location();
+        return "not recognised as a weapon, tool, armour piece or shield (tag it #" + ModTags.SMITHABLE_EQUIPMENT.location() + ")";
+    }
+
+    /** The datapack switch behind {@link #whyNotCandidate}, for the report's selectors; null when no tag or exclusion decided. */
+    @org.jetbrains.annotations.Nullable
+    public static String candidacySelector(ItemStack stack) {
+        if (stack.isEmpty() || isCandidate(stack)) return null;
+        if (ImmersiveSmithingAPI.isExcluded(stack)) return "API exclusion";
+        if (stack.is(ModTags.NON_SMITHABLE_EQUIPMENT)) return "#" + ModTags.NON_SMITHABLE_EQUIPMENT.location();
+        if (isShield(stack) && stack.is(ModTags.NON_SMITHABLE_SHIELDS)) return "#" + ModTags.NON_SMITHABLE_SHIELDS.location();
+        return null;
+    }
+
     /**
      * Shields, including anything that blocks like one. A weapon that can also block (Epic Knights' swords) stays a
      * weapon: it deals attack damage of its own, so quality scales that damage.
