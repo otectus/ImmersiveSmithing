@@ -15,10 +15,11 @@ import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-/** Client-only mod-bus registration. Reached only through DistExecutor, so it never loads on a server. */
+/** Client-only registration (mod bus, plus the server config's logout listener). Reached only through DistExecutor, so it never loads on a server. */
 public final class ClientSetup {
 
     public static void init(IEventBus modBus) {
@@ -27,6 +28,7 @@ public final class ClientSetup {
         modBus.addListener(StationNotices::register);
         modBus.addListener(ClientSetup::onRegisterParticles);
         modBus.addListener(ClientSetup::onRegisterModels);
+        MinecraftForge.EVENT_BUS.addListener(ClientConfigSync::onLoggingOut);
     }
 
     private static void onRegisterModels(ModelEvent.RegisterAdditional event) {

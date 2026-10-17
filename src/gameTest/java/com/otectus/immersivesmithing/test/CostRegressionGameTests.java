@@ -1,6 +1,5 @@
 package com.otectus.immersivesmithing.test;
 
-import com.electronwill.nightconfig.core.CommentedConfig;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.api.ISmithingCostModifier;
 import com.otectus.immersivesmithing.api.ISmithingRecipeGate;
@@ -56,7 +55,7 @@ public final class CostRegressionGameTests {
         ISmithingCostModifier half = new ISmithingCostModifier() {
             @Override public int metalUnits(ServerPlayer smith, SmithingRecipe r, int units) { return units / 2; }
         };
-        CommentedConfig originalConfig = TestSupport.isolateServerConfig();
+        var originalConfig = TestSupport.isolateServerConfig();
         ItemStack piece;
         try {
             ServerConfig.RECYCLING_EFFICIENCY.set(1.0);
@@ -90,7 +89,7 @@ public final class CostRegressionGameTests {
     public static void craftingRepairCannotWashOffDiscounts(GameTestHelper h) {
         FakePlayer player = TestSupport.player(h);
         CraftingMenu menu = new CraftingMenu(1, player.getInventory(), ContainerLevelAccess.create(h.getLevel(), h.absolutePos(TestSupport.STATION)));
-        CommentedConfig originalConfig = TestSupport.isolateServerConfig();
+        var originalConfig = TestSupport.isolateServerConfig();
         try {
             ServerConfig.INHERIT_QUALITY_ON_CRAFT.set(false);
             for (int slot = 1; slot <= 2; slot++) {

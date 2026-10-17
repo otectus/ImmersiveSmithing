@@ -1,6 +1,5 @@
 package com.otectus.immersivesmithing.test;
 
-import com.electronwill.nightconfig.core.CommentedConfig;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -172,7 +171,7 @@ public final class CoverageGameTests {
         MinecraftServer server = h.getLevel().getServer();
         Map<String, String> before = dispositions(h);
         Set<ResourceLocation> bundledBefore = bundled().stream().map(Recipe::getId).collect(Collectors.toSet());
-        CommentedConfig config = TestSupport.isolateServerConfig();
+        var config = TestSupport.isolateServerConfig();
         try {
             ServerConfig.AUTO_DETECT_EQUIPMENT.set(false);
             SmithingData.rebuild(server);
@@ -308,7 +307,7 @@ public final class CoverageGameTests {
         Set<ResourceLocation> before = ids(server);
         SmithingData.rebuild(server);
         h.assertTrue(ids(server).equals(before), "A second rebuild changes nothing");
-        CommentedConfig config = TestSupport.isolateServerConfig();
+        var config = TestSupport.isolateServerConfig();
         try {
             record Case(ForgeConfigSpec.BooleanValue option, List<String> namespaces) {}
             List<Case> cases = new ArrayList<>();

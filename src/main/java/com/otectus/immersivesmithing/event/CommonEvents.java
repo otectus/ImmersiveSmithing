@@ -9,18 +9,23 @@ import com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.command.SmithingCommands;
 import com.otectus.immersivesmithing.config.ServerConfig;
+import com.otectus.immersivesmithing.config.ServerConfigSource;
 import com.otectus.immersivesmithing.material.MaterialDefinitionLoader;
 import com.otectus.immersivesmithing.material.RecyclingOverrideLoader;
 import com.otectus.immersivesmithing.quality.QualityInheritance;
 import com.otectus.immersivesmithing.quality.GrindstonePreview;
 import com.otectus.immersivesmithing.network.ModNetwork;
+import com.otectus.immersivesmithing.network.packet.ConfigSyncPacket;
 import com.otectus.immersivesmithing.network.packet.GrindstonePreviewPacket;
 import com.otectus.immersivesmithing.minigame.PatternLoader;
 import com.otectus.immersivesmithing.minigame.SessionManager;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.util.Feedback;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -35,6 +40,7 @@ import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.event.server.ServerStoppingEvent;
@@ -60,6 +66,12 @@ public final class CommonEvents {
         event.addListener(new PatternLoader(PatternLoader.Kind.ANVIL));
     }
 
+    /** Forge has bound the world's own server config by now; a shared file in config/ replaces it for this run. */
+    @SubscribeEvent
+    public static void onServerAboutToStart(ServerAboutToStartEvent event) {
+        ServerConfigSource.onServerAboutToStart(event.getServer());
+    }
+
     /** First build, once tags are bound and before any player can join. */
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
@@ -68,15 +80,35 @@ public final class CommonEvents {
 
     /**
      * After /reload the new tags are bound and this fires before the recipe packet is sent, so rebuilding here
-     * means clients receive the updated (filtered and generated) recipe list.
+     * means clients receive the updated (filtered and generated) recipe list. Remote clients get the effective server
+     * config with it (all of them after a reload, the joining one on login), ahead of the tag and recipe packets.
      */
     @SubscribeEvent
     public static void onDatapackSync(OnDatapackSyncEvent event) {
-        if (event.getPlayer() == null) {
-            SmithingData.rebuild(event.getPlayerList().getServer());
-        } else if (SmithingData.isDirty()) {
-            SmithingData.rebuild(event.getPlayerList().getServer());
+        MinecraftServer server = event.getPlayerList().getServer();
+        ServerPlayer joining = event.getPlayer();
+        if (joining == null || SmithingData.isDirty()) SmithingData.rebuild(server);
+        byte[] toml = ServerConfigSource.effectiveToml();
+        if (toml == null) return;
+        for (ServerPlayer player : joining != null ? java.util.List.of(joining) : event.getPlayerList().getPlayers()) {
+            if (isRemote(player)) ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), new ConfigSyncPacket(toml));
         }
+    }
+
+    /** A connection that does not share this server's JVM (a dedicated server's players, LAN guests). */
+    private static boolean isRemote(ServerPlayer player) {
+        return !(player instanceof FakePlayer) && player.connection != null && !player.connection.connection.isMemoryConnection();
+    }
+
+    /** A shared config that could not be read: the host of an integrated server is told, in red, which file and why. */
+    @SubscribeEvent
+    public static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer player) || ServerConfigSource.mode() != ServerConfigSource.Mode.SHARED_INVALID) return;
+        MinecraftServer server = player.getServer();
+        if (server == null || !server.isSingleplayerOwner(player.getGameProfile())) return;
+        ServerConfigSource.Status status = ServerConfigSource.status();
+        player.sendSystemMessage(Component.translatable("message.immersive_smithing.config_shared_invalid",
+                String.valueOf(status.lastError()), String.valueOf(status.activePath())).withStyle(ChatFormatting.RED));
     }
 
     @SubscribeEvent
@@ -87,6 +119,7 @@ public final class CommonEvents {
     @SubscribeEvent
     public static void onServerStopped(ServerStoppedEvent event) {
         SmithingData.reset();
+        ServerConfigSource.reset();
     }
 
     @SubscribeEvent

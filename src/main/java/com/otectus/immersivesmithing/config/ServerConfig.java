@@ -5,9 +5,10 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import java.util.List;
 
 /**
- * Gameplay configuration. SERVER configs are per world and synced to clients, so the client can read
- * these values once it has joined a world. Every read goes through the helpers at the bottom, which fall
- * back to defaults while no world is loaded.
+ * Gameplay configuration, registered as Forge's SERVER type. The values come from the world's own file or, when
+ * {@code config/immersive_smithing-server.toml} exists, from that shared file ({@link ServerConfigSource}); remote clients
+ * receive the effective values on login and after every reload, so the client can read them once it has joined a world.
+ * Every read goes through the helpers at the bottom, which fall back to defaults while no world is loaded.
  */
 public final class ServerConfig {
     public static final ForgeConfigSpec SPEC;

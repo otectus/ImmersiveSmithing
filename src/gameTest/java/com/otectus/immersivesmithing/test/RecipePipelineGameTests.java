@@ -1,6 +1,5 @@
 package com.otectus.immersivesmithing.test;
 
-import com.electronwill.nightconfig.core.CommentedConfig;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.loot.ForgedLootModifier;
@@ -75,7 +74,7 @@ public final class RecipePipelineGameTests {
         h.assertTrue(server.getRecipeManager().getRecipes().size() == before.size(), "No generated recipe is duplicated");
         ResourceLocation ironSword = new ResourceLocation("minecraft", "iron_sword");
         h.assertTrue(server.getRecipeManager().byKey(ironSword).isEmpty(), "The vanilla iron sword recipe is disabled");
-        CommentedConfig config = TestSupport.isolateServerConfig();
+        var config = TestSupport.isolateServerConfig();
         try {
             ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES.set(false);
             SmithingData.rebuild(server);

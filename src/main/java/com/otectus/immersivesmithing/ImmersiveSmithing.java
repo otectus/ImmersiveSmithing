@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.otectus.immersivesmithing.client.ClientSetup;
 import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.config.ServerConfig;
+import com.otectus.immersivesmithing.config.ServerConfigSource;
 import com.otectus.immersivesmithing.network.ModNetwork;
 import com.otectus.immersivesmithing.registry.ModBlockEntities;
 import com.otectus.immersivesmithing.registry.ModBlocks;
@@ -21,8 +22,10 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.server.ServerLifecycleHooks;
 import org.slf4j.Logger;
 
 @Mod(ImmersiveSmithing.MOD_ID)
@@ -50,11 +53,28 @@ public class ImmersiveSmithing {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
 
         modBus.addListener(this::commonSetup);
+        modBus.addListener(ImmersiveSmithing::onConfigReloading);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientSetup.init(modBus));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(ModNetwork::register);
+    }
+
+    /**
+     * Forge's file watcher reloaded the world's server config on its own thread (world mode applies the values live, as
+     * before). Only logged: recipe and integration options take effect with the rebuild of {@code /immersivesmithing reload}.
+     */
+    private static void onConfigReloading(final ModConfigEvent.Reloading event) {
+        ModConfig config = event.getConfig();
+        if (config.getType() != ModConfig.Type.SERVER || !config.getModId().equals(MOD_ID) || ServerLifecycleHooks.getCurrentServer() == null) return;
+        if (ServerConfigSource.mode() == ServerConfigSource.Mode.SHARED) {
+            LOGGER.info("Immersive Smithing: {} changed, but it is inactive: the shared file {} is in use",
+                    config.getFileName(), ServerConfigSource.sharedPath());
+        } else {
+            LOGGER.info("Immersive Smithing: {} changed; run /immersivesmithing reload to apply recipe and integration options",
+                    config.getFileName());
+        }
     }
 
     public static ResourceLocation id(String path) {

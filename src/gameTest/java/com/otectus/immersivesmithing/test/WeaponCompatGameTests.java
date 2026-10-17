@@ -1,6 +1,5 @@
 package com.otectus.immersivesmithing.test;
 
-import com.electronwill.nightconfig.core.CommentedConfig;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.loot.ForgedLootModifier;
@@ -453,7 +452,7 @@ public final class WeaponCompatGameTests {
         List<Case> cases = new ArrayList<>();
         if (loaded(EF)) cases.add(new Case(EF, ServerConfig.EPIC_FIGHT_INTEGRATION, "epicfight:iron_longsword", "epicfight:uchigatana"));
         if (loaded(SS)) cases.add(new Case(SS, ServerConfig.SIMPLY_SWORDS_INTEGRATION, "simplyswords:netherite_longsword", "simplyswords:brimstone_claymore"));
-        CommentedConfig config = TestSupport.isolateServerConfig();
+        var config = TestSupport.isolateServerConfig();
         try {
             for (Case c : cases) {
                 Set<ResourceLocation> before = server.getRecipeManager().getRecipes().stream().map(Recipe::getId).collect(Collectors.toSet());

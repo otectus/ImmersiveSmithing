@@ -4,8 +4,7 @@ import com.electronwill.nightconfig.core.CommentedConfig;
 import com.electronwill.nightconfig.toml.TomlParser;
 import com.electronwill.nightconfig.toml.TomlWriter;
 import com.mojang.authlib.GameProfile;
-import com.otectus.immersivesmithing.ImmersiveSmithing;
-import com.otectus.immersivesmithing.config.ServerConfig;
+import com.otectus.immersivesmithing.config.ServerConfigSource;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import com.otectus.immersivesmithing.workpiece.WorkpieceState;
 import com.otectus.immersivesmithing.minigame.EquipmentClassifier;
@@ -19,8 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.fml.config.ConfigTracker;
-import net.minecraftforge.fml.config.ModConfig;
 
 import java.util.UUID;
 
@@ -28,21 +25,21 @@ final class TestSupport {
     static final BlockPos STATION = new BlockPos(2, 1, 2);
 
     /**
-     * Swaps the server config for an in-memory copy and returns the original for {@link #restoreServerConfig}. Options
-     * changed in between are never saved, so Forge's config file watcher, which reloads the file on another thread after
-     * every save, cannot undo one of them while a test rebuilds with it.
+     * Swaps the effective server config (the world file, or the shared file in shared mode) for an in-memory copy and
+     * returns what to put back with {@link #restoreServerConfig}. Options changed in between are never saved, so Forge's
+     * config file watcher, which reloads the file on another thread after every save, cannot undo one of them while a test
+     * rebuilds with it.
      */
-    static CommentedConfig isolateServerConfig() {
-        CommentedConfig original = ConfigTracker.INSTANCE.configSets().get(ModConfig.Type.SERVER).stream()
-                .filter(config -> config.getModId().equals(ImmersiveSmithing.MOD_ID))
-                .findFirst().orElseThrow().getConfigData();
+    static ServerConfigSource.Snapshot isolateServerConfig() {
+        ServerConfigSource.Snapshot original = ServerConfigSource.snapshot();
+        CommentedConfig active = java.util.Objects.requireNonNull(original.active(), "no server config is loaded");
         // A TOML round-trip deep-copies nested tables and comments without retaining file-backed subconfigs.
-        ServerConfig.SPEC.setConfig(new TomlParser().parse(new TomlWriter().writeToString(original)));
+        ServerConfigSource.bindDetached(new TomlParser().parse(new TomlWriter().writeToString(active)));
         return original;
     }
 
-    static void restoreServerConfig(CommentedConfig original) {
-        ServerConfig.SPEC.setConfig(original);
+    static void restoreServerConfig(ServerConfigSource.Snapshot original) {
+        ServerConfigSource.restore(original);
     }
 
     static FakePlayer player(GameTestHelper h) {

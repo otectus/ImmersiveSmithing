@@ -5,6 +5,7 @@ import com.otectus.immersivesmithing.network.packet.AnvilStrikePacket;
 import com.otectus.immersivesmithing.network.packet.AnvilStrikeResultPacket;
 import com.otectus.immersivesmithing.network.packet.CancelSessionPacket;
 import com.otectus.immersivesmithing.network.packet.CloseSessionPacket;
+import com.otectus.immersivesmithing.network.packet.ConfigSyncPacket;
 import com.otectus.immersivesmithing.network.packet.ForgeActionPacket;
 import com.otectus.immersivesmithing.network.packet.ForgeActionResultPacket;
 import com.otectus.immersivesmithing.network.packet.ForgeStartPacket;
@@ -23,7 +24,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 /** Small, purpose-specific packets. Clients report inputs only; the server owns every outcome. */
 public final class ModNetwork {
-    private static final String VERSION = "3";
+    private static final String VERSION = "4";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(ImmersiveSmithing.id("main"),
             () -> VERSION, VERSION::equals, VERSION::equals);
 
@@ -80,6 +81,10 @@ public final class ModNetwork {
         CHANNEL.messageBuilder(GrindstonePreviewPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
                 .encoder(GrindstonePreviewPacket::encode).decoder(GrindstonePreviewPacket::decode)
                 .consumerMainThread(GrindstonePreviewPacket::handle).add();
+        // Server -> client (protocol 4)
+        CHANNEL.messageBuilder(ConfigSyncPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(ConfigSyncPacket::encode).decoder(ConfigSyncPacket::decode)
+                .consumerMainThread(ConfigSyncPacket::handle).add();
     }
 
     private ModNetwork() {}

@@ -4,6 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import com.otectus.immersivesmithing.config.ServerConfigSource;
 import com.otectus.immersivesmithing.material.MaterialFamily;
 import com.otectus.immersivesmithing.material.MaterialRegistry;
 import com.otectus.immersivesmithing.material.MaterialResolver;
@@ -34,13 +35,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/** {@code /immersivesmithing reload|material|recipe|quality|report|catalog|session} for administrators and pack authors. */
+/** {@code /immersivesmithing reload|config|material|recipe|quality|report|catalog|session} for administrators and pack authors. */
 public final class SmithingCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext context) {
         dispatcher.register(Commands.literal("immersivesmithing")
                 .requires(s -> s.hasPermission(2))
                 .then(Commands.literal("reload").executes(SmithingCommands::reload))
+                .then(Commands.literal("config").executes(SmithingCommands::config))
                 .then(Commands.literal("material").then(Commands.argument("item", ItemArgument.item(context))
                         .executes(c -> material(c, ItemArgument.getItem(c, "item").getItem()))))
                 .then(Commands.literal("recipe").then(Commands.argument("item", ItemArgument.item(context))
@@ -54,11 +56,37 @@ public final class SmithingCommands {
                 .then(Commands.literal("session").executes(SmithingCommands::sessions)));
     }
 
-    /** A full datapack reload: tags, materials, patterns, recipes and recipe suppression are all rebuilt. */
+    /**
+     * Re-reads the server config, then a full datapack reload: tags, materials, patterns, recipes and recipe suppression
+     * are all rebuilt with the new values, and remote clients receive them. A config that cannot be read aborts before
+     * anything changes; the last good one stays in use.
+     */
     private static int reload(CommandContext<CommandSourceStack> c) {
         CommandSourceStack source = c.getSource();
+        ServerConfigSource.ReloadResult config = ServerConfigSource.reload();
+        if (!config.ok()) {
+            source.sendFailure(Component.translatable("command.immersive_smithing.reload.config_failed", config.error()));
+            return 0;
+        }
         source.sendSuccess(() -> Component.translatable("command.immersive_smithing.reload"), true);
         ReloadCommand.reloadPacks(source.getServer().getPackRepository().getSelectedIds(), source);
+        return 1;
+    }
+
+    /** Which file the server config comes from, and what a restart would change. */
+    private static int config(CommandContext<CommandSourceStack> c) {
+        ServerConfigSource.Status status = ServerConfigSource.status();
+        send(c, Component.translatable("command.immersive_smithing.config.source", status.mode().name(), String.valueOf(status.activePath())));
+        send(c, Component.translatable(status.sharedFileExists() ? "command.immersive_smithing.config.shared_present"
+                : "command.immersive_smithing.config.shared_absent", status.sharedPath().toString()));
+        if (status.lastError() != null) {
+            c.getSource().sendFailure(Component.translatable("command.immersive_smithing.config.error", status.lastError()));
+        }
+        if (status.mode() == ServerConfigSource.Mode.WORLD && status.sharedFileExists()) {
+            send(c, Component.translatable("command.immersive_smithing.config.restart_for_shared"));
+        } else if (status.mode() == ServerConfigSource.Mode.SHARED && !status.sharedFileExists()) {
+            send(c, Component.translatable("command.immersive_smithing.config.restart_for_world"));
+        }
         return 1;
     }
 
