@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:common_hauberk"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 32,
+  "result": {
+    "item": "darkagesarmory:common_hauberk"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "darkagesarmory:common_hauberk"
+  ]
+}

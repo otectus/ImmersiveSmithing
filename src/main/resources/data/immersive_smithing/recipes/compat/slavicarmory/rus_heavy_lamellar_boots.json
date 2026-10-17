@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:rus_heavy_lamellar_boots"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:leather"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 12
+    }
+  ],
+  "result": {
+    "item": "slavicarmory:rus_heavy_lamellar_boots"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:boots",
+  "replaces": [
+    "slavicarmory:rus_heavy_lamellar_boots"
+  ]
+}

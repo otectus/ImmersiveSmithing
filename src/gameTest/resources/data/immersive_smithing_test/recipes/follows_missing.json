@@ -1,0 +1,7 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 9,
+  "result": { "item": "minecraft:bucket" },
+  "replaces": ["immersive_smithing_test:does_not_exist"]
+}

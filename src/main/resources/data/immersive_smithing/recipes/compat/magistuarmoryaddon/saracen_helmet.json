@@ -1,0 +1,43 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:saracen_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 58,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:red_dye"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:string"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:saracen_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "magistuarmoryaddon:saracen_helmet"
+  ]
+}

@@ -43,8 +43,10 @@ public final class CompatGameTests {
         for (SmithingRecipe r : auto) {
             h.assertTrue(r.sourceRecipe() != null, "Auto recipe records its source");
             h.assertTrue(rm.byKey(r.getId()).isPresent(), "Auto recipe is in the recipe manager: " + r.getId());
-            h.assertTrue(rm.byKey(r.sourceRecipe()).isEmpty(), "Source crafting recipe is disabled: " + r.sourceRecipe());
-            h.assertTrue(data.suppressedRecipes().containsKey(r.sourceRecipe()), "Suppression recorded: " + r.sourceRecipe());
+            // A recipe that only remakes a finished piece (a sword set on a shaft) stays next to the forge recipe.
+            boolean kept = data.report().retainedRecipes().stream().anyMatch(l -> l.contains("(" + r.sourceRecipe() + "): remakes a finished piece"));
+            h.assertTrue(rm.byKey(r.sourceRecipe()).isEmpty() != kept, "Source recipe disabled unless it remakes a piece: " + r.sourceRecipe());
+            h.assertTrue(data.suppressedRecipes().containsKey(r.sourceRecipe()) != kept, "Suppression recorded: " + r.sourceRecipe());
             h.assertTrue(r.metalUnits() > 0 && data.materials().family(r.family()).isPresent(), "Valid family and units: " + r.getId());
             String path = BuiltInRegistries.ITEM.getKey(r.resultItem()).getPath();
             h.assertTrue(!path.startsWith("wooden_") && !path.startsWith("diamond_") && !path.startsWith("stone_") && !path.startsWith("leather_"),

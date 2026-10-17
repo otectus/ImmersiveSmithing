@@ -1,0 +1,43 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:saracen_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:red_dye"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:saracen_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "magistuarmoryaddon:saracen_chestplate"
+  ]
+}

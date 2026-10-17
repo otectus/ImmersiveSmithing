@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:segmentata"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 63,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:plates/bronze"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:segmentata"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "antiquelegacy:segmentata"
+  ]
+}

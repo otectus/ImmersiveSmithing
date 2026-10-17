@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:thracian_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 48,
+  "result": {
+    "item": "antiquelegacy:thracian_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "antiquelegacy:thracian_helmet"
+  ]
+}

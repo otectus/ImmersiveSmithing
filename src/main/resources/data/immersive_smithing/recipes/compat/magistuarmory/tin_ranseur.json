@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:tin_ranseur"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:tin",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:poles"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:tin_ranseur"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pike",
+  "replaces": [
+    "magistuarmory:tin_ranseur"
+  ]
+}

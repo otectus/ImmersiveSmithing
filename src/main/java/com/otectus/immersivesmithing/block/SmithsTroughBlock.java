@@ -12,6 +12,7 @@ import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
 import com.otectus.immersivesmithing.item.SmithingTongsItem;
 import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.quality.SmithingQuality;
+import com.otectus.immersivesmithing.material.RecyclingData;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.util.Feedback;
@@ -55,12 +56,11 @@ import java.util.Optional;
 /** The Smith's Trough: water in, finished equipment out. No minigame, no cooling over time. */
 public class SmithsTroughBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    /** Floor on its feet, staves and ends round an open basin (1.2 geometry; the straps are painted). */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(2, 0, 3, 4, 1, 13), Block.box(12, 0, 3, 14, 1, 13),
-            Block.box(1, 1, 3, 15, 3, 13), Block.box(1, 3, 3, 15, 9, 4),
-            Block.box(1, 3, 12, 15, 9, 13), Block.box(1, 3, 4, 2, 9, 12), Block.box(14, 3, 4, 15, 9, 12),
-            Block.box(3, 2, 2, 4, 9, 3), Block.box(12, 2, 2, 13, 9, 3),
-            Block.box(3, 2, 13, 4, 9, 14), Block.box(12, 2, 13, 13, 9, 14)));
+            Block.box(1, 0, 3, 15, 3, 13),
+            Block.box(1, 3, 3, 15, 9, 4), Block.box(1, 3, 12, 15, 9, 13),
+            Block.box(1, 3, 4, 2, 9, 12), Block.box(14, 3, 4, 15, 9, 12)));
 
     public SmithsTroughBlock(Properties properties) {
         super(properties);
@@ -181,6 +181,7 @@ public class SmithsTroughBlock extends BaseEntityBlock {
         quality.apply(result);
         // As if crafted: the crafted statistic, plus items that initialise their NBT on craft (Spartan throwing weapons).
         result.onCraftedBy(player.level(), player, result.getCount());
+        RecyclingData.record(result, workpiece.family(), workpiece.metalUnits());
         MakersMark.stamp(result, player);
         BlockPos pos = trough.getBlockPos();
         // Progression mods hear about the piece before it lands in the inventory and may still change it.

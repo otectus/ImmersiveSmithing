@@ -1,0 +1,88 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    }
+  ],
+  "mod": "antiquelegacy",
+  "tested_version": "1.13",
+  "policies": [
+    {
+      "items": [
+        "antiquelegacy:black_celtic_pants",
+        "antiquelegacy:brown_celtic_pants",
+        "antiquelegacy:celtic_pants",
+        "antiquelegacy:celtic_tunic",
+        "antiquelegacy:celtic_tunic_boots",
+        "antiquelegacy:fabric_left_hand_manika_decoration",
+        "antiquelegacy:fabric_right_hand_manika_decoration",
+        "antiquelegacy:green_celtic_pants",
+        "antiquelegacy:phrygian_cap",
+        "antiquelegacy:red_celtic_pants",
+        "antiquelegacy:sandals",
+        "antiquelegacy:short_phrygian_cap",
+        "antiquelegacy:subarmalis_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_hoplon",
+        "antiquelegacy:bronze_imperial_scutum",
+        "antiquelegacy:bronze_republic_scutum",
+        "antiquelegacy:bronze_tureos",
+        "antiquelegacy:pelta"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks"
+    },
+    {
+      "items": [
+        "antiquelegacy:linothorax"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 2 units of forge:bronze on 6 other parts"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronzed_gallea"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with antiquelegacy:bronze_ingot"
+    },
+    {
+      "items": [
+        "antiquelegacy:tinned_muscle_cuirass",
+        "antiquelegacy:tinned_phrygian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with antiquelegacy:tin_ingot"
+    },
+    {
+      "items": [
+        "antiquelegacy:gilded_gallea"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "antiquelegacy:fur_cloak_decoration",
+        "antiquelegacy:golden_laurel_wreath_decoration",
+        "antiquelegacy:laurel_wreath_decoration"
+      ],
+      "disposition": "protected_loot",
+      "reason": "Antique Legacy loot decoration; the mod ships no recipe"
+    },
+    {
+      "items": [
+        "antiquelegacy:weathered_corinthian_helmet",
+        "antiquelegacy:weathered_eagle_standard"
+      ],
+      "disposition": "protected_loot",
+      "reason": "weathered antique found as loot; the eagle standard is restored with Antique Legacy's own gilding-template recipe"
+    }
+  ]
+}

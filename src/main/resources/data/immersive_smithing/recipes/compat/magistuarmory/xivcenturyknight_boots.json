@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:xivcenturyknight_boots"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:xivcenturyknight_boots"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:boots",
+  "replaces": [
+    "magistuarmory:xivcenturyknight_boots"
+  ]
+}

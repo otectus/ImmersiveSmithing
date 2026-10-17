@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:right_gladiator_shoulder_pad_decoration"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:right_gladiator_shoulder_pad_decoration"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "antiquelegacy:right_gladiator_shoulder_pad_decoration"
+  ]
+}

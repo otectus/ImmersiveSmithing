@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:erikhonka"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 46,
+  "result": {
+    "item": "slavicarmory:erikhonka"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "slavicarmory:erikhonka"
+  ]
+}

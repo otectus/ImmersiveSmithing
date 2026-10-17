@@ -15,6 +15,8 @@ public final class ForgeSession extends SmithingSession {
     /** Offered recipe ids; a selection outside this list is rejected. */
     List<ResourceLocation> offered = List.of();
     SmithingRecipe recipe;
+    /** Units the forge charges this smith for {@link #recipe}: the recipe's own through the registered cost modifiers. */
+    int metalUnits;
     ForgePattern pattern;
     ForgeRun run;
 

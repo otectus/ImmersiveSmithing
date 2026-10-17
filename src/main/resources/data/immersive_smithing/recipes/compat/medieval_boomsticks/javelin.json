@@ -1,0 +1,50 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "medieval_boomsticks"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "medieval_boomsticks",
+      "versions": "[1.2,1.3)"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "medieval_boomsticks:javelin"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "medieval_boomsticks:canvas"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "medieval_boomsticks:finished_shaft"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "medieval_boomsticks:canvas"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "medieval_boomsticks:finished_shaft"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "medieval_boomsticks:javelin"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:javelin",
+  "replaces": [
+    "medieval_boomsticks:javelin"
+  ]
+}

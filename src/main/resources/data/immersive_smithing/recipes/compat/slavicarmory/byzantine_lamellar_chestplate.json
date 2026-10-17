@@ -1,0 +1,49 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:byzantine_lamellar_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 90,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:red_dye"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:leather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 20
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 8
+    }
+  ],
+  "result": {
+    "item": "slavicarmory:byzantine_lamellar_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "slavicarmory:byzantine_lamellar_chestplate"
+  ]
+}

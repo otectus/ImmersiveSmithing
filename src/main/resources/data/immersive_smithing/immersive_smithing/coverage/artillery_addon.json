@@ -1,0 +1,93 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "artillery_addon"
+    }
+  ],
+  "mod": "artillery_addon",
+  "tested_version": "1.16.2",
+  "policies": [
+    {
+      "items": [
+        "artillery_addon:arquebus",
+        "artillery_addon:dual_wheellock_carbine",
+        "artillery_addon:dual_wheellock_pistol",
+        "artillery_addon:hackbut",
+        "artillery_addon:harquebus",
+        "artillery_addon:markmengonne",
+        "artillery_addon:matchlock_carbine",
+        "artillery_addon:matchlock_musket",
+        "artillery_addon:matchlock_pistol",
+        "artillery_addon:taccola_handgonne",
+        "artillery_addon:toradar_rifle",
+        "artillery_addon:wheellock_breechloading_rifle",
+        "artillery_addon:wheellock_hand_mortar",
+        "artillery_addon:wheellock_hunting_rifle",
+        "artillery_addon:wheellock_musket",
+        "artillery_addon:wheellock_pistol",
+        "artillery_addon:wheellock_wallgun"
+      ],
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod"
+    },
+    {
+      "items": [
+        "artillery_addon:fire_lance"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of forge:steel on 3 other parts"
+    },
+    {
+      "items": [
+        "artillery_addon:wheellock_designs"
+      ],
+      "disposition": "non_equipment",
+      "reason": "firearm blueprint item"
+    },
+    {
+      "items": [
+        "artillery_addon:gunsmithkit"
+      ],
+      "disposition": "non_equipment",
+      "reason": "gunsmith's repair kit (a firearm component)"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_ramrod",
+        "artillery_addon:ramrod",
+        "artillery_addon:worm_ramrod"
+      ],
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_wheellock_spanner",
+        "artillery_addon:wheellock_spanner"
+      ],
+      "disposition": "non_equipment",
+      "reason": "loading tool for wheellock firearms"
+    },
+    {
+      "items": [
+        "artillery_addon:boneflask",
+        "artillery_addon:horn_flask",
+        "artillery_addon:wooden_flasks"
+      ],
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)"
+    },
+    {
+      "items": [
+        "artillery_addon:chu_ko_nu",
+        "artillery_addon:improved_gunsmithkit",
+        "artillery_addon:noble_handgonne",
+        "artillery_addon:tiller_gun",
+        "artillery_addon:windlass_crossbow"
+      ],
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:northern_leggings"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 40,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "ekotsk:northern_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:northern_leggings"
+  ]
+}

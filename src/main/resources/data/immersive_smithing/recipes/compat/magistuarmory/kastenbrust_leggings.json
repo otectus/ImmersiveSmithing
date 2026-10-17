@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:kastenbrust_leggings"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 64,
+  "result": {
+    "item": "magistuarmory:kastenbrust_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "magistuarmory:kastenbrust_leggings"
+  ]
+}

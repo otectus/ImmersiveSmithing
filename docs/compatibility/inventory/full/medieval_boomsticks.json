@@ -1,0 +1,329 @@
+{
+  "mod": "medieval_boomsticks",
+  "version": "1.2",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "tested_version": "1.2",
+  "items": [
+    {
+      "id": "medieval_boomsticks:arbalest",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:arbalest",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:arquebus",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:arquebus",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "medieval_boomsticks:eveningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:eveningstar",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "36 forge:steel",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:gotheveningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:gothiceveningstar",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "36 forge:steel",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:handgonne",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/iron_throwing_axe",
+          "material": "minecraft:iron",
+          "units": 28,
+          "components": [
+            "3x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:tomahawk"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:iron_throwing_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "28 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/iron_throwing_axe",
+      "acquisition": "Forged; replaces `medieval_boomsticks:iron_throwing_axe`."
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_knife",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/iron_throwing_knife",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:throwing_knife"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:iron_throwing_knife",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/iron_throwing_knife",
+      "acquisition": "Forged; replaces `medieval_boomsticks:iron_throwing_knife`."
+    },
+    {
+      "id": "medieval_boomsticks:javelin",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/javelin",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "1x medieval_boomsticks:canvas",
+            "1x medieval_boomsticks:finished_shaft"
+          ],
+          "pattern": "immersive_smithing:javelin"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:javelin",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/javelin",
+      "acquisition": "Forged; replaces `medieval_boomsticks:javelin`."
+    },
+    {
+      "id": "medieval_boomsticks:morningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:morningstar",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "27 forge:steel",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:smithing_bellows",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:bellows",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it",
+      "acquisition": "Tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it."
+    },
+    {
+      "id": "medieval_boomsticks:smithing_hammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:hammer",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it",
+      "acquisition": "Tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it."
+    },
+    {
+      "id": "medieval_boomsticks:smithing_tongs",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:tongs",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it",
+      "acquisition": "Tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it."
+    },
+    {
+      "id": "medieval_boomsticks:spikedhandgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:spikedhandgonne",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it",
+      "acquisition": "Needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it."
+    },
+    {
+      "id": "medieval_boomsticks:war_dart",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/war_dart",
+          "material": "minecraft:iron",
+          "units": 3,
+          "components": [
+            "1x medieval_boomsticks:finished_shaft",
+            "1x minecraft:feather"
+          ],
+          "pattern": "immersive_smithing:javelin"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:throwing_wardart",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "3 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/war_dart",
+      "acquisition": "Forged; replaces `medieval_boomsticks:throwing_wardart`."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 4,
+    "native_assembly": 7,
+    "non_equipment": 3
+  }
+}

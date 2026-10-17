@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:chiton_decoration"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 2,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:chiton_decoration"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "antiquelegacy:chiton_decoration"
+  ]
+}

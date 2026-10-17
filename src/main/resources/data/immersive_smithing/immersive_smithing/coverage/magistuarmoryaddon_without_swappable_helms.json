@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    }
+  ],
+  "mod": "magistuarmoryaddon",
+  "policies": [
+    {
+      "items": [
+        "magistuarmoryaddon:opened_sallet"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "an open visor state: reached only by switching a closed helmet with Swappable Helms"
+    }
+  ]
+}

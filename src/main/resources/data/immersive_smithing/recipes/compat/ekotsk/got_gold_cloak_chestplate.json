@@ -1,0 +1,39 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:got_gold_cloak_chestplate"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:gambeson_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:gilded_steel",
+  "metal_units": 76,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:gambeson_chestplate"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "ekotsk:got_gold_cloak_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "ekotsk:got_gold_cloak_chestplate"
+  ]
+}

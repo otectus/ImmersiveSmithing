@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:lannister_leggings"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 58,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gilded_steel"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "ekotsk:lannister_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:lannister_leggings"
+  ]
+}

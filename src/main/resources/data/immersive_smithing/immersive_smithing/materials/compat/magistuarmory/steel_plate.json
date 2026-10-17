@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:steel_plate"
+    }
+  ],
+  "family": "forge:steel",
+  "sources_only": true,
+  "sources": [
+    {
+      "item": "magistuarmory:steel_plate",
+      "units": 9
+    }
+  ]
+}

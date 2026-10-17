@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "simplyswords:diamond_greataxe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_greataxe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_greataxe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_greataxe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_greataxe",
+      "required": false
+    }
+  ]
+}

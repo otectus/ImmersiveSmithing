@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:iron_triarii_spear"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 10,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:poles"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:iron_triarii_spear"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:spear",
+  "replaces": [
+    "antiquelegacy:iron_triarii_spear"
+  ]
+}

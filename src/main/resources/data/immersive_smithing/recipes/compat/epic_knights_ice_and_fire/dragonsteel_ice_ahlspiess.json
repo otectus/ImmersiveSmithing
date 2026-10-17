@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ice_and_fire"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epic_knights_ice_and_fire:dragonsteel_ice_ahlspiess"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:ice_dragonsteel",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:poles/witherbone"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "epic_knights_ice_and_fire:dragonsteel_ice_ahlspiess"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pike",
+  "replaces": [
+    "epic_knights_ice_and_fire:dragonsteel_ice_ahlspiess"
+  ]
+}

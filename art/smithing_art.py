@@ -114,41 +114,17 @@ BOOK = [
 '...oooooooooo...',
 '................']
 
-def gui_stone():
-    """Quiet 16x8 masonry, using the Stoneborn GUI ramp in Ultima's inventory and anvil.
-
-    Original tile layout: the text and controls sit on solid insets, leaving masonry as the surround.
-    """
-    im = Image.new('RGBA', (32, 32), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    d.rectangle((0, 0, 31, 31), fill='#242426')
-    for row in range(4):
-        y = row * 8
-        for col in range(-1, 3):
-            x = col * 16 + (8 if row % 2 else 0)
-            d.rectangle((x + 1, y + 1, x + 15, y + 6), fill='#3a3939')
-            d.line((x + 2, y + 1, x + 14, y + 1), fill='#484848')
-            d.line((x + 1, y + 2, x + 1, y + 5), fill='#404040')
-            d.rectangle((x + 3, y + 2, x + 7, y + 3), fill='#404040')
-            d.line((x + 9, y + 5, x + 13, y + 5), fill='#343434')
-            d.point((x + 12, y + 2), fill='#434445')
-            d.line((x + 2, y + 7, x + 15, y + 7), fill='#313131')
+def worked_timber():
+    """Warm worn planks: dark seams every five pixels, knots and lit grain."""
+    im,d=canvas((16,16),'#6b5037')
+    for x in [0,5,10,15]: d.line((x,0,x,15),fill=WOOD[0]);d.line((x+1,0,x+1,15),fill='#97734d')
+    for pts in [[(3,1),(3,5),(2,6),(2,9)],[(8,8),(7,9),(7,13)],[(13,2),(12,3),(12,6)],[(13,10),(13,15)]]:d.line(pts,fill=WOOD[1])
+    for x,y in [(2,1),(7,4),(12,8),(2,12)]:d.line((x,y,x,y+2),fill='#af8957')
+    d.line((2,0,4,0),fill=WOOD[4]);d.line((11,0,14,0),fill=WOOD[4])
     return im
-
-
-def gui_slot():
-    """The shared 18px recessed slot, also used by the JEI categories."""
-    im = Image.new('RGBA', (18, 18), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    d.rectangle((0, 0, 17, 17), fill='#675d4e')
-    d.line((0, 0, 17, 0), fill='#151310')
-    d.line((0, 0, 0, 17), fill='#151310')
-    d.rectangle((1, 1, 16, 16), fill='#37322a')
-    return im
-
 
 def textures():
-    out = {'gui/stone.png': gui_stone(), 'gui/slot.png': gui_slot()}
+    out = {}
     for tier, ramp in TIERS.items():
         palette = {str(i):v for i,v in enumerate(ramp)} | {'o':IRON[0], 'b':BRONZE[2], 'H':WOOD[4], 'h':WOOD[2]}
         hammer = sprite(HAMMER, palette)
@@ -191,12 +167,6 @@ def textures():
     d.rectangle((0,0,15,1), fill=IRON[3]); d.line((0,2,15,2), fill=IRON[2]); d.line((0,14,15,14), fill=IRON[0])
     for x,y in [(2,5),(11,11),(8,3)]: d.line((x,y,x+2,y),fill=IRON[2])
     out['block/iron_plate.png']=im
-    im,d=canvas((16,16),IRON[2])
-    for y in [0,8]:
-        d.line((0,y,15,y),fill=IRON[4]); d.line((0,y+7,15,y+7),fill=IRON[0])
-        for x in [2,13]:
-            d.rectangle((x,y+3,x+1,y+4),fill=IRON[0]); d.point((x,y+3),fill=BRONZE[2]); d.point((x+1,y+3),fill=BRONZE[3])
-    out['block/iron_strap.png']=im
     im,d=canvas((16,16),'#181a1c')
     for box in [(1,3,5,4),(9,1,12,2),(6,10,12,12),(0,14,3,15)]: d.rectangle(box,fill='#242528')
     d.line((2,4,4,4),fill='#303136'); d.line((8,10,11,10),fill='#343238')
@@ -216,12 +186,22 @@ def textures():
     im,d=canvas((16,16),IRON[2]);d.rectangle((0,0,15,2),fill=IRON[3]);d.line((0,0,15,0),fill=IRON[4]);d.rectangle((0,12,15,15),fill=IRON[1])
     for box in [(2,5,4,5),(10,3,13,3),(7,9,9,9)]: d.rectangle(box,fill=IRON[3])
     out['block/smiths_anvil_body.png']=im
-    im,d=canvas((16,16),'#6b5037')
-    for x in [0,5,10,15]: d.line((x,0,x,15),fill=WOOD[0]);d.line((x+1,0,x+1,15),fill='#97734d')
-    for pts in [[(3,1),(3,5),(2,6),(2,9)],[(8,8),(7,9),(7,13)],[(13,2),(12,3),(12,6)],[(13,10),(13,15)]]:d.line(pts,fill=WOOD[1])
-    for x,y in [(2,1),(7,4),(12,8),(2,12)]:d.line((x,y,x,y+2),fill='#af8957')
-    d.line((2,0,4,0),fill=WOOD[4]);d.line((11,0,14,0),fill=WOOD[4])
-    out['block/worked_timber.png']=im
+    out['block/worked_timber.png']=worked_timber()
+    # Station details that used to be separate cuboids are painted on the faces that carried them (1.2 geometry pass).
+    # Anvil stump: two forged bands at the heights of the old band rings (y 2-3 and 7-8, texture rows 13 and 8).
+    im=worked_timber(); d=ImageDraw.Draw(im)
+    for row in [8,13]:
+        d.line((0,row,15,row),fill=IRON[3]); d.line((0,row+1,15,row+1),fill=IRON[1])
+        for x in [2,8,13]: d.point((x,row),fill=BRONZE[2])
+        d.point((8,row),fill=BRONZE[3])
+    out['block/anvil_stump.png']=im
+    # Trough staves: two iron straps down each face (where the old strap cuboids stood, x 3-4 and 12-13) with rivets.
+    im=worked_timber(); d=ImageDraw.Draw(im)
+    for col in [3,12]:
+        d.line((col,0,col,15),fill=IRON[3]); d.line((col+1,0,col+1,15),fill=IRON[1])
+        for y in [7,11,14]: d.point((col,y),fill=BRONZE[2])
+    d.line((0,7,15,7),fill=WOOD[1])
+    out['block/trough_staves.png']=im
     im,d=canvas((16,16),WOOD[2])
     for a,c in [(0,WOOD[0]),(1,WOOD[3]),(3,WOOD[1]),(4,WOOD[4]),(6,WOOD[1])]: d.rectangle((a,a,15-a,15-a),outline=c)
     d.line((8,0,8,3),fill=WOOD[0]); d.line((13,11,15,13),fill=WOOD[0])
@@ -252,21 +232,12 @@ def textures():
         im,d=canvas((8,8))
         for x,y in [(3,2),(3,3),(3,4),(4,3)][:4-frame]:d.point((x,y),fill='white')
         out[f'particle/spark_{frame}.png']=im
-    # Restrained forged frame. Source rectangles are stable resource-pack contracts.
+    # Minigame target sprites only: ring (96,0,64,64) and disc (160,0,64,64), a stable resource-pack contract.
+    # The screens themselves are drawn from Minecraft's own GUI textures; there is no themed frame any more.
     im,d=canvas((256,256))
-    for a,c in [(0,IRON[0]),(1,IRON[4]),(2,IRON[2]),(3,IRON[1]),(4,IRON[0]),(5,'#26292d')]:
-        d.rectangle((a,a,63-a,63-a),fill=c)
-    for x,y in [(3,3),(59,3),(3,59),(59,59)]:d.rectangle((x,y,x+1,y+1),fill=BRONZE[2]);d.point((x,y),fill=BRONZE[3])
-    d.line((8,2,55,2),fill=BRONZE[1])
-    d.rectangle((64,0,95,31),fill=IRON[0]);d.line((64,31,95,31),fill=IRON[3]);d.line((95,0,95,31),fill=IRON[3]);d.rectangle((66,2,93,29),fill='#171a1e')
     # Hard edged targets; alpha only at the outermost circle boundary is unnecessary at pixel GUI scale.
     for x,y in [(96,0),(160,0)]:
         d.ellipse((x+2,y+2,x+61,y+61),fill='white')
     d.ellipse((102,6,153,57),fill=(0,0,0,0))
     out['gui/smithing.png']=im
-    im,d=canvas((256,256))
-    for a,c in [(0,IRON[0]),(1,WOOD[3]),(2,WOOD[1]),(8,WOOD[0]),(9,'#b99c6d'),(10,'#e0cfaa'),(12,'#f0e4c8')]:d.rectangle((a,a,63-a,63-a),fill=c)
-    for x,y in [(4,4),(58,4),(4,58),(58,58)]:d.point((x,y),fill=BRONZE[3])
-    d.rectangle((64,0,95,31),fill='#bba077');d.rectangle((65,1,94,30),fill='#dfceaa')
-    out['gui/guide.png']=im
     return out

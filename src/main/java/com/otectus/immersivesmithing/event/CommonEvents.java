@@ -11,10 +11,10 @@ import com.otectus.immersivesmithing.command.SmithingCommands;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.material.MaterialDefinitionLoader;
 import com.otectus.immersivesmithing.material.RecyclingOverrideLoader;
-import com.otectus.immersivesmithing.minigame.EquipmentClassifier;
-import com.otectus.immersivesmithing.quality.MakersMark;
-import com.otectus.immersivesmithing.quality.QualityData;
-import net.minecraft.world.Container;
+import com.otectus.immersivesmithing.quality.QualityInheritance;
+import com.otectus.immersivesmithing.quality.GrindstonePreview;
+import com.otectus.immersivesmithing.network.ModNetwork;
+import com.otectus.immersivesmithing.network.packet.GrindstonePreviewPacket;
 import com.otectus.immersivesmithing.minigame.PatternLoader;
 import com.otectus.immersivesmithing.minigame.SessionManager;
 import com.otectus.immersivesmithing.recipe.SmithingData;
@@ -42,6 +42,9 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.network.PacketDistributor;
+import net.minecraftforge.common.util.FakePlayer;
+import net.minecraft.world.phys.BlockHitResult;
 
 /** Gameplay events (Forge bus). */
 @Mod.EventBusSubscriber(modid = ImmersiveSmithing.MOD_ID)
@@ -52,6 +55,7 @@ public final class CommonEvents {
     public static void onAddReloadListeners(AddReloadListenerEvent event) {
         event.addListener(new MaterialDefinitionLoader(event.getConditionContext()));
         event.addListener(new RecyclingOverrideLoader(event.getConditionContext()));
+        event.addListener(new com.otectus.immersivesmithing.compat.CoveragePolicies(event.getConditionContext()));
         event.addListener(new PatternLoader(PatternLoader.Kind.FORGE));
         event.addListener(new PatternLoader(PatternLoader.Kind.ANVIL));
     }
@@ -88,6 +92,17 @@ public final class CommonEvents {
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) SessionManager.tick(event.getServer());
+    }
+
+    /** Jade 11 cannot request data for a block without a block entity. Send the looked-at grindstone's quote ourselves. */
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase != TickEvent.Phase.END || !(event.player instanceof ServerPlayer player)
+                || player instanceof FakePlayer || player.tickCount % 10 != 0 || player.getMainHandItem().isEmpty()) return;
+        if (player.pick(ServerConfig.get(ServerConfig.MAX_STATION_DISTANCE), 1F, false) instanceof BlockHitResult hit) {
+            GrindstonePreview.forPlayer(player, hit.getBlockPos()).ifPresent(preview ->
+                    ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), new GrindstonePreviewPacket(preview)));
+        }
     }
 
     @SubscribeEvent
@@ -137,26 +152,13 @@ public final class CommonEvents {
     }
 
     /**
-     * Quality inheritance: a recipe that turns one smithed piece into another (dyeing a helmet, an elemental
-     * upgrade of a sword) keeps the quality and the maker's mark of the piece it consumed. Only when exactly one
-     * input is graded and the result is graded equipment without a grade of its own.
+     * Quality inheritance when a crafted result is taken. The crafting preview normally carries it already
+     * ({@code CraftingMenuMixin}); this covers crafting screens that replace the vanilla grid. See {@link QualityInheritance}.
      */
     @SubscribeEvent
     public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
-        if (!ServerConfig.get(ServerConfig.INHERIT_QUALITY_ON_CRAFT)) return;
-        ItemStack result = event.getCrafting();
-        if (result.isEmpty() || QualityData.has(result) || !EquipmentClassifier.isCandidate(result)) return;
-        Container inputs = event.getInventory();
-        ItemStack source = ItemStack.EMPTY;
-        for (int i = 0; i < inputs.getContainerSize(); i++) {
-            ItemStack input = inputs.getItem(i);
-            if (input.isEmpty() || !QualityData.has(input)) continue;
-            if (!source.isEmpty()) return; // two graded inputs: no honest answer
-            source = input;
-        }
-        if (source.isEmpty()) return;
-        QualityData.get(source).ifPresent(q -> q.apply(result));
-        MakersMark.copy(source, result);
+        if (event.getEntity().level().isClientSide) return;
+        QualityInheritance.inherit(event.getCrafting(), event.getInventory());
     }
 
     /** The first smithing advancement hands out the Smithing Guide, once per player. */

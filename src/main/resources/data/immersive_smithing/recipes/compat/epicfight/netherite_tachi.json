@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicfight"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epicfight:netherite_tachi"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "epicfight:netherite_tachi"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:katana",
+  "replaces": [
+    "epicfight:netherite_tachi"
+  ]
+}

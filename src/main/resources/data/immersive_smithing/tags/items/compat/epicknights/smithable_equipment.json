@@ -1,0 +1,61 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "artillery_addon:bronze_handgonne",
+      "required": false
+    },
+    {
+      "id": "artillery_addon:hand_cannon",
+      "required": false
+    },
+    {
+      "id": "artillery_addon:handgonne",
+      "required": false
+    },
+    {
+      "id": "artillery_addon:mini_pistola",
+      "required": false
+    },
+    {
+      "id": "magistuarmory:heavy_crossbow",
+      "required": false
+    },
+    {
+      "id": "magistuarmoryaddon:golden_cross_necklace_decoration",
+      "required": false
+    },
+    {
+      "id": "magistuarmoryaddon:golden_necklace_decoration",
+      "required": false
+    },
+    {
+      "id": "magistuarmoryaddon:silver_cross_necklace_decoration",
+      "required": false
+    },
+    {
+      "id": "magistuarmoryaddon:silver_necklace_decoration",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_axe",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_knife",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:javelin",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:war_dart",
+      "required": false
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_hood_decoration",
+      "required": false
+    }
+  ]
+}

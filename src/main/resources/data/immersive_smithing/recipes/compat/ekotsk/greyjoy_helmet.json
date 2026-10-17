@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:greyjoy_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 76,
+  "result": {
+    "item": "ekotsk:greyjoy_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "ekotsk:greyjoy_helmet"
+  ]
+}

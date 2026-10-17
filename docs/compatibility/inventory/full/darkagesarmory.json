@@ -1,0 +1,2886 @@
+{
+  "mod": "darkagesarmory",
+  "version": "1.1",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "tested_version": "1.1",
+  "items": [
+    {
+      "id": "darkagesarmory:balyk_sook_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/balyk_sook_lamellar_chestplate",
+          "material": "forge:steel",
+          "units": 31,
+          "components": [
+            "1x #forge:nuggets/gold",
+            "21x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:balyk_sook_lamellar_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "31 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/balyk_sook_lamellar_chestplate",
+      "acquisition": "Forged; replaces `darkagesarmory:balyk_sook_lamellar_chestplate`."
+    },
+    {
+      "id": "darkagesarmory:bandenhelm",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/bandenhelm",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:bandenhelm",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/bandenhelm",
+      "acquisition": "Forged; replaces `darkagesarmory:bandenhelm`."
+    },
+    {
+      "id": "darkagesarmory:benty_grange_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/benty_grange_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "1x minecraft:leather",
+            "2x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:benty_grange_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/benty_grange_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:benty_grange_helmet`."
+    },
+    {
+      "id": "darkagesarmory:birka_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/birka_helmet",
+          "material": "forge:steel",
+          "units": 49,
+          "components": [
+            "3x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:birka_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/birka_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:birka_helmet`."
+    },
+    {
+      "id": "darkagesarmory:black_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:black_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:black_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:black_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:broa_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/broa_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "3x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:broa_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/broa_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:broa_helmet`."
+    },
+    {
+      "id": "darkagesarmory:brown_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:brown_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:brown_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:brown_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:common_hauberk",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/common_hauberk",
+          "material": "forge:steel",
+          "units": 32,
+          "components": [],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:common_hauberk",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "32 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/common_hauberk",
+      "acquisition": "Forged; replaces `darkagesarmory:common_hauberk`."
+    },
+    {
+      "id": "darkagesarmory:common_hauberk_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/common_hauberk_boots",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "4x minecraft:leather"
+          ],
+          "pattern": "immersive_smithing:boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:common_hauberk_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/common_hauberk_boots",
+      "acquisition": "Forged; replaces `darkagesarmory:common_hauberk_boots`."
+    },
+    {
+      "id": "darkagesarmory:coppergate_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/coppergate_helmet",
+          "material": "forge:steel",
+          "units": 49,
+          "components": [
+            "3x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:coppergate_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/coppergate_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:coppergate_helmet`."
+    },
+    {
+      "id": "darkagesarmory:desjatinna_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/desjatinna_helmet",
+          "material": "forge:steel",
+          "units": 49,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:desjatinna_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/desjatinna_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:desjatinna_helmet`."
+    },
+    {
+      "id": "darkagesarmory:early_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:early_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:fur_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:fur_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:gilded_desjatinna_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gilded_desjatinna_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "darkagesarmory:gilded_hauberk_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gilded_hauberk_boots_gilding",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "darkagesarmory:gilded_hauberk_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gilded_hauberk_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "32 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "darkagesarmory:gilded_tjele",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gilded_tjele_gilding",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "darkagesarmory:gjermundbu_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/gjermundbu_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gjermundbu_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/gjermundbu_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:gjermundbu_helmet`."
+    },
+    {
+      "id": "darkagesarmory:golden_migration_era_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/golden_migration_era_sword",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "4x #forge:nuggets/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:golden_migration_era_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/golden_migration_era_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:golden_migration_era_sword`."
+    },
+    {
+      "id": "darkagesarmory:gorzuchy_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/gorzuchy_helmet",
+          "material": "forge:steel",
+          "units": 49,
+          "components": [
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:gorzuchy_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/gorzuchy_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:gorzuchy_helmet`."
+    },
+    {
+      "id": "darkagesarmory:green_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:green_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:green_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:green_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:kerch_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/kerch_helmet",
+          "material": "forge:steel",
+          "units": 36,
+          "components": [
+            "14x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:kerch_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/kerch_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:kerch_helmet`."
+    },
+    {
+      "id": "darkagesarmory:leiden_bandhelmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/leiden_bandhelmet",
+          "material": "forge:steel",
+          "units": 46,
+          "components": [
+            "1x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:leiden_bandhelmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/leiden_bandhelmet",
+      "acquisition": "Forged; replaces `darkagesarmory:leiden_bandhelmet`."
+    },
+    {
+      "id": "darkagesarmory:lokrume_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/lokrume_helmet",
+          "material": "forge:steel",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:lokrume_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/lokrume_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:lokrume_helmet`."
+    },
+    {
+      "id": "darkagesarmory:lombard_lamellar_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/lombard_lamellar_boots",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "4x minecraft:leather",
+            "7x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:lombard_lamellar_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/lombard_lamellar_boots",
+      "acquisition": "Forged; replaces `darkagesarmory:lombard_lamellar_boots`."
+    },
+    {
+      "id": "darkagesarmory:lombard_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/lombard_lamellar_chestplate",
+          "material": "forge:steel",
+          "units": 31,
+          "components": [
+            "23x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:lombard_lamellar_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "31 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/lombard_lamellar_chestplate",
+      "acquisition": "Forged; replaces `darkagesarmory:lombard_lamellar_chestplate`."
+    },
+    {
+      "id": "darkagesarmory:pecs_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/pecs_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:pecs_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/pecs_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:pecs_helmet`."
+    },
+    {
+      "id": "darkagesarmory:pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/pillbox_cap",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/pillbox_cap",
+      "acquisition": "Forged; replaces `darkagesarmory:pillbox_cap`."
+    },
+    {
+      "id": "darkagesarmory:red_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:red_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:red_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:red_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:rich_byrnie_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/rich_byrnie_boots",
+          "material": "forge:steel",
+          "units": 13,
+          "components": [
+            "4x minecraft:leather",
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:rich_byrnie_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "13 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/rich_byrnie_boots",
+      "acquisition": "Forged; replaces `darkagesarmory:rich_byrnie_boots`."
+    },
+    {
+      "id": "darkagesarmory:rich_byrnie_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/rich_byrnie_chestplate",
+          "material": "forge:steel",
+          "units": 36,
+          "components": [
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:rich_byrnie_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/rich_byrnie_chestplate",
+      "acquisition": "Forged; replaces `darkagesarmory:rich_byrnie_chestplate`."
+    },
+    {
+      "id": "darkagesarmory:somme_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/somme_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:somme_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/somme_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:somme_helmet`."
+    },
+    {
+      "id": "darkagesarmory:stafforshire_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/stafforshire_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "1x #forge:ingots/gold",
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:stafforshire_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/stafforshire_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:stafforshire_helmet`."
+    },
+    {
+      "id": "darkagesarmory:steel_byzantine_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_byzantine_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #forge:rods/wooden",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_byzantine_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_byzantine_axe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_byzantine_axe`."
+    },
+    {
+      "id": "darkagesarmory:steel_crayke_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_crayke_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #forge:rods/wooden",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_crayke_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_crayke_axe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_crayke_axe`."
+    },
+    {
+      "id": "darkagesarmory:steel_decorated_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_decorated_spear",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "1x minecraft:blue_dye",
+            "1x minecraft:red_dye",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_decorated_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_decorated_spear",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_decorated_spear`."
+    },
+    {
+      "id": "darkagesarmory:steel_falkoping_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_falkoping_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_falkoping_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_falkoping_axe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_falkoping_axe`."
+    },
+    {
+      "id": "darkagesarmory:steel_harnham_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_harnham_spear",
+          "material": "forge:steel",
+          "units": 11,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_harnham_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "11 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_harnham_spear",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_harnham_spear`."
+    },
+    {
+      "id": "darkagesarmory:steel_jarls_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_jarls_sword",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "4x #forge:nuggets/bronze",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_jarls_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_jarls_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_jarls_sword`."
+    },
+    {
+      "id": "darkagesarmory:steel_javelin",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_javelin",
+          "material": "forge:steel",
+          "units": 10,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:javelin"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_javelin",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_javelin",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_javelin`."
+    },
+    {
+      "id": "darkagesarmory:steel_kingston_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_kingston_spear",
+          "material": "forge:steel",
+          "units": 11,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_kingston_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "11 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_kingston_spear",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_kingston_spear`."
+    },
+    {
+      "id": "darkagesarmory:steel_langseax",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_langseax",
+          "material": "forge:steel",
+          "units": 10,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_langseax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_langseax",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_langseax`."
+    },
+    {
+      "id": "darkagesarmory:steel_magyar_sabre",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_magyar_sabre",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:saber"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_magyar_sabre",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_magyar_sabre",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_magyar_sabre`."
+    },
+    {
+      "id": "darkagesarmory:steel_migration_era_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_migration_era_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_migration_era_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_migration_era_axe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_migration_era_axe`."
+    },
+    {
+      "id": "darkagesarmory:steel_rich_nordic_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_rich_nordic_sword",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "2x #forge:ingots/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_rich_nordic_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_rich_nordic_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_rich_nordic_sword`."
+    },
+    {
+      "id": "darkagesarmory:steel_rich_saxon_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_rich_saxon_sword",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "2x #forge:ingots/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_rich_saxon_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_rich_saxon_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_rich_saxon_sword`."
+    },
+    {
+      "id": "darkagesarmory:steel_runic_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_runic_sword",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "1x minecraft:black_dye",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_runic_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_runic_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_runic_sword`."
+    },
+    {
+      "id": "darkagesarmory:steel_scramasax",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_scramasax",
+          "material": "forge:steel",
+          "units": 10,
+          "components": [
+            "2x #forge:nuggets/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_scramasax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_scramasax",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_scramasax`."
+    },
+    {
+      "id": "darkagesarmory:steel_sittingbourne_seax",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_sittingbourne_seax",
+          "material": "forge:steel",
+          "units": 10,
+          "components": [
+            "2x #forge:nuggets/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_sittingbourne_seax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_sittingbourne_seax",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_sittingbourne_seax`."
+    },
+    {
+      "id": "darkagesarmory:steel_small_broadaxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_small_broadaxe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_small_broadaxe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_small_broadaxe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_small_broadaxe`."
+    },
+    {
+      "id": "darkagesarmory:steel_small_seax",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_small_seax",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_small_seax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_small_seax",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_small_seax`."
+    },
+    {
+      "id": "darkagesarmory:steel_sutton_hoo_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_sutton_hoo_axe",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "1x #forge:rods/wooden",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_sutton_hoo_axe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_sutton_hoo_axe",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_sutton_hoo_axe`."
+    },
+    {
+      "id": "darkagesarmory:steel_sutton_hoo_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_sutton_hoo_sword",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "4x #forge:nuggets/gold",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_sutton_hoo_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_sutton_hoo_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_sutton_hoo_sword`."
+    },
+    {
+      "id": "darkagesarmory:steel_viking_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/steel_viking_sword",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:steel_viking_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/steel_viking_sword",
+      "acquisition": "Forged; replaces `darkagesarmory:steel_viking_sword`."
+    },
+    {
+      "id": "darkagesarmory:stromovka_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/stromovka_helmet",
+          "material": "forge:steel",
+          "units": 50,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:stromovka_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "50 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/stromovka_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:stromovka_helmet`."
+    },
+    {
+      "id": "darkagesarmory:sutton_hoo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/sutton_hoo_helmet",
+          "material": "forge:steel",
+          "units": 56,
+          "components": [
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:sutton_hoo_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "56 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/sutton_hoo_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:sutton_hoo_helmet`."
+    },
+    {
+      "id": "darkagesarmory:telje",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/telje",
+          "material": "forge:steel",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:telje",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/telje",
+      "acquisition": "Forged; replaces `darkagesarmory:telje`."
+    },
+    {
+      "id": "darkagesarmory:trosino_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/trosino_helmet",
+          "material": "forge:steel",
+          "units": 40,
+          "components": [
+            "11x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:trosino_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "40 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/trosino_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:trosino_helmet`."
+    },
+    {
+      "id": "darkagesarmory:ultuna_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/ultuna_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "1x #forge:nuggets/gold",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:ultuna_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/ultuna_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:ultuna_helmet`."
+    },
+    {
+      "id": "darkagesarmory:valsgarde_5",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/valsgarde_5",
+          "material": "forge:steel",
+          "units": 54,
+          "components": [
+            "3x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:valsgarde_5",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/valsgarde_5",
+      "acquisition": "Forged; replaces `darkagesarmory:valsgarde_5`."
+    },
+    {
+      "id": "darkagesarmory:valsgarde_8",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/valsgarde_8",
+          "material": "forge:steel",
+          "units": 50,
+          "components": [
+            "2x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:valsgarde_8",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "50 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/valsgarde_8",
+      "acquisition": "Forged; replaces `darkagesarmory:valsgarde_8`."
+    },
+    {
+      "id": "darkagesarmory:vendel_1",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/vendel_1",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "4x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:vendel_1",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/vendel_1",
+      "acquisition": "Forged; replaces `darkagesarmory:vendel_1`."
+    },
+    {
+      "id": "darkagesarmory:vendel_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/vendel_greaves",
+          "material": "forge:steel",
+          "units": 22,
+          "components": [
+            "1x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:vendel_greaves",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/vendel_greaves",
+      "acquisition": "Forged; replaces `darkagesarmory:vendel_greaves`."
+    },
+    {
+      "id": "darkagesarmory:vendel_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/vendel_helmet",
+          "material": "forge:steel",
+          "units": 45,
+          "components": [
+            "4x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:vendel_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/vendel_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:vendel_helmet`."
+    },
+    {
+      "id": "darkagesarmory:verden_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/verden_helmet",
+          "material": "forge:steel",
+          "units": 49,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:verden_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/verden_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:verden_helmet`."
+    },
+    {
+      "id": "darkagesarmory:white_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:white_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:white_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:white_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:winingas",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/winingas",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [],
+          "pattern": "immersive_smithing:leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:winingas",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/winingas",
+      "acquisition": "Forged; replaces `darkagesarmory:winingas`."
+    },
+    {
+      "id": "darkagesarmory:wollaston_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/wollaston_helmet",
+          "material": "forge:steel",
+          "units": 47,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:wollaston_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "47 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/wollaston_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:wollaston_helmet`."
+    },
+    {
+      "id": "darkagesarmory:yarm_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/yarm_helmet",
+          "material": "forge:steel",
+          "units": 63,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yarm_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/yarm_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:yarm_helmet`."
+    },
+    {
+      "id": "darkagesarmory:yellow_birka_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_birka_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_birka_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_birka_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_early_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_early_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_klappenrock_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_klappenrock_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_late_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_late_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_oaterned_pillbox_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_oaterned_pillbox_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_patterned_eastern_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_patterned_eastern_hat",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_rich_eastern_caftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_rich_eastern_caftan",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "1 minecraft:gold",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts",
+      "acquisition": "Not predominantly metal: 1 units of minecraft:gold on 8 other parts."
+    },
+    {
+      "id": "darkagesarmory:yellow_saxon_tunic_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_saxon_tunic_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:yellow_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "darkagesarmory:yellow_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "darkagesarmory:zlin_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/darkagesarmory/zlin_helmet",
+          "material": "forge:steel",
+          "units": 50,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "darkagesarmory:zlin_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "50 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/darkagesarmory/zlin_helmet",
+      "acquisition": "Forged; replaces `darkagesarmory:zlin_helmet`."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 59,
+    "native_nonmetal_recipe": 63,
+    "native_transformation": 4
+  }
+}

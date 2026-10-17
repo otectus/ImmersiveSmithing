@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:steel_sutton_hoo_axe"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:rods/wooden"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:steel_sutton_hoo_axe"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:axe",
+  "replaces": [
+    "darkagesarmory:steel_sutton_hoo_axe"
+  ]
+}

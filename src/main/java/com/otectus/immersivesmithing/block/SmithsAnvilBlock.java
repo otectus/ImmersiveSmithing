@@ -50,34 +50,15 @@ import java.util.Optional;
 public class SmithsAnvilBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
+    /** Round stump (a core and two side blocks), foot, waist, working face and horn (1.2 geometry; one box for the horn). */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(4, 0, 2, 12, 9, 4),
             Block.box(2, 0, 4, 14, 9, 12),
+            Block.box(4, 0, 2, 12, 9, 4),
             Block.box(4, 0, 12, 12, 9, 14),
-            Block.box(4, 2, 1.75, 12, 3, 2),
-            Block.box(1.75, 2, 4, 2, 3, 12),
-            Block.box(14, 2, 4, 14.25, 3, 12),
-            Block.box(4, 2, 14, 12, 3, 14.25),
-            Block.box(2, 2, 3.75, 4, 3, 4),
-            Block.box(12, 2, 3.75, 14, 3, 4),
-            Block.box(2, 2, 12, 4, 3, 12.25),
-            Block.box(12, 2, 12, 14, 3, 12.25),
-            Block.box(4, 7, 1.75, 12, 8, 2),
-            Block.box(1.75, 7, 4, 2, 8, 12),
-            Block.box(14, 7, 4, 14.25, 8, 12),
-            Block.box(4, 7, 14, 12, 8, 14.25),
-            Block.box(2, 7, 3.75, 4, 8, 4),
-            Block.box(12, 7, 3.75, 14, 8, 4),
-            Block.box(2, 7, 12, 4, 8, 12.25),
-            Block.box(12, 7, 12, 14, 8, 12.25),
             Block.box(4, 9, 5, 12, 10, 13),
-            Block.box(5, 10, 6, 11, 11, 12),
-            Block.box(6, 11, 6, 10, 13, 12),
-            Block.box(5, 13, 4, 11, 14, 14),
-            Block.box(4, 14, 4, 12, 16, 15),
-            Block.box(5, 14, 2, 11, 15.5, 4),
-            Block.box(6, 14, 1, 10, 15, 2),
-            Block.box(7, 14, 0, 9, 14.5, 1)));
+            Block.box(6, 10, 6, 10, 13, 12),
+            Block.box(4, 13, 4, 12, 16, 15),
+            Block.box(6, 14, 0, 10, 15.5, 4)));
 
     public SmithsAnvilBlock(Properties properties) {
         super(properties);

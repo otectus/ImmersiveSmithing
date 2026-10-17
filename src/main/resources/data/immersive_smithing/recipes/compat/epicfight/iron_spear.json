@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicfight"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epicfight:iron_spear"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "epicfight:iron_spear"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:spear",
+  "derived_from": [
+    "epicfight:iron_spear"
+  ]
+}

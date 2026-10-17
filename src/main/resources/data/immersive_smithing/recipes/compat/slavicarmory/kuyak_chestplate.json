@@ -1,0 +1,44 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:kuyak_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 63,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather_chestplate"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:leather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 8
+    }
+  ],
+  "result": {
+    "item": "slavicarmory:kuyak_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "slavicarmory:kuyak_chestplate",
+    "slavicarmory:kuyak_chestplate_alt"
+  ]
+}

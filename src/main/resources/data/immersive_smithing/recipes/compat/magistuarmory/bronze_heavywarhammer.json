@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:bronze_heavywarhammer"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:rods/wooden"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:bronze_heavywarhammer"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:battle_hammer",
+  "replaces": [
+    "magistuarmory:bronze_heavywarhammer"
+  ]
+}

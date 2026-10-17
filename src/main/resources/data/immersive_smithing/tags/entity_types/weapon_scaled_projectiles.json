@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "simplyswords:thrown_sword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:spear_entity",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_entity",
+      "required": false
+    },
+    {
+      "id": "simplyswords:frostfall_entity",
+      "required": false
+    },
+    {
+      "id": "simplyswords:livyatan_entity",
+      "required": false
+    }
+  ]
+}

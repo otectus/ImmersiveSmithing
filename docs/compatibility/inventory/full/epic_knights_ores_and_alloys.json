@@ -1,0 +1,737 @@
+{
+  "mod": "epic_knights_ores_and_alloys",
+  "version": "1.1",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "items": [
+    {
+      "id": "epic_knights_ores_and_alloys:bronze_axe",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_axe",
+          "material": "forge:bronze",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:bronze_axe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_axe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:bronze_axe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:bronze_hoe",
+      "kind": "tool",
+      "shape": "immersive_smithing:hoe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_hoe",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:hoe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:bronze_hoe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_hoe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:bronze_hoe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:bronze_pickaxe",
+      "kind": "tool",
+      "shape": "immersive_smithing:pickaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_pickaxe",
+          "material": "forge:bronze",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:pickaxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:bronze_pickaxe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_pickaxe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:bronze_pickaxe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:bronze_shovel",
+      "kind": "tool",
+      "shape": "immersive_smithing:shovel",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_shovel",
+          "material": "forge:bronze",
+          "units": 9,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:shovel"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:bronze_shovel_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_shovel",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:bronze_shovel_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:bronze_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_sword",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:bronze_sword_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/bronze_sword",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:bronze_sword_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:copper_axe",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_axe",
+          "material": "minecraft:copper",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:copper_axe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:copper",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_axe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:copper_axe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:copper_hoe",
+      "kind": "tool",
+      "shape": "immersive_smithing:hoe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_hoe",
+          "material": "minecraft:copper",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:hoe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:copper_hoe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:copper",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_hoe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:copper_hoe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:copper_pickaxe",
+      "kind": "tool",
+      "shape": "immersive_smithing:pickaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_pickaxe",
+          "material": "minecraft:copper",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:pickaxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:copper_pickaxe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:copper",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_pickaxe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:copper_pickaxe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:copper_shovel",
+      "kind": "tool",
+      "shape": "immersive_smithing:shovel",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_shovel",
+          "material": "minecraft:copper",
+          "units": 9,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:shovel"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:copper_shovel_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:copper",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_shovel",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:copper_shovel_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:copper_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_sword",
+          "material": "minecraft:copper",
+          "units": 18,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:copper_sword_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:copper",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/copper_sword",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:copper_sword_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:silver_axe",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_axe",
+          "material": "forge:silver",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:silver_axe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:silver",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_axe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:silver_axe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:silver_hoe",
+      "kind": "tool",
+      "shape": "immersive_smithing:hoe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_hoe",
+          "material": "forge:silver",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:hoe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:silver_hoe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:silver",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_hoe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:silver_hoe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:silver_pickaxe",
+      "kind": "tool",
+      "shape": "immersive_smithing:pickaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_pickaxe",
+          "material": "forge:silver",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:pickaxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:silver_pickaxe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:silver",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_pickaxe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:silver_pickaxe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:silver_shovel",
+      "kind": "tool",
+      "shape": "immersive_smithing:shovel",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_shovel",
+          "material": "forge:silver",
+          "units": 9,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:shovel"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:silver_shovel_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:silver",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_shovel",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:silver_shovel_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:silver_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_sword",
+          "material": "forge:silver",
+          "units": 18,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:silver_sword_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:silver",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/silver_sword",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:silver_sword_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:steel_axe",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:steel_axe_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_axe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:steel_axe_r`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:steel_hoe",
+      "kind": "tool",
+      "shape": "immersive_smithing:hoe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_hoe",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:hoe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:steel_hoe_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_hoe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:steel_hoe_r`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:steel_pickaxe",
+      "kind": "tool",
+      "shape": "immersive_smithing:pickaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_pickaxe",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:pickaxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:steel_pickaxe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_pickaxe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:steel_pickaxe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:steel_shovel",
+      "kind": "tool",
+      "shape": "immersive_smithing:shovel",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_shovel",
+          "material": "forge:steel",
+          "units": 9,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:shovel"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:steel_shovel_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_shovel",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:steel_shovel_r`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:steel_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_sword",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:steel_sword_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/steel_sword",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:steel_sword_r`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:tin_axe",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_axe",
+          "material": "forge:tin",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_axe_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:tin",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_axe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:tin_axe_r`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:tin_hoe",
+      "kind": "tool",
+      "shape": "immersive_smithing:hoe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_hoe",
+          "material": "forge:tin",
+          "units": 18,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:hoe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_hoe_r",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_hoe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:tin",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_hoe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:tin_hoe_r`, `epic_knights_ores_and_alloys:tin_hoe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:tin_pickaxe",
+      "kind": "tool",
+      "shape": "immersive_smithing:pickaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_pickaxe",
+          "material": "forge:tin",
+          "units": 27,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:pickaxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_pickaxe_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:tin",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_pickaxe",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:tin_pickaxe_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:tin_shovel",
+      "kind": "tool",
+      "shape": "immersive_smithing:shovel",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_shovel",
+          "material": "forge:tin",
+          "units": 9,
+          "components": [
+            "2x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:shovel"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_shovel_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:tin",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_shovel",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:tin_shovel_recipe`."
+    },
+    {
+      "id": "epic_knights_ores_and_alloys:tin_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_sword",
+          "material": "forge:tin",
+          "units": 18,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights_ores_and_alloys:tin_sword_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:tin",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights_ores_and_alloys/tin_sword",
+      "acquisition": "Forged; replaces `epic_knights_ores_and_alloys:tin_sword_recipe`."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 25
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:kingsguard_chestplate"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:woolen_fabric"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 123,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:woolen_fabric"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "forge:dyes/white"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "ekotsk:kingsguard_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "ekotsk:kingsguard_chestplate"
+  ]
+}

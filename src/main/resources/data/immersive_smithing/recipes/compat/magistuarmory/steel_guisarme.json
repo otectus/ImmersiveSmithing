@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:steel_guisarme"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:poles"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:steel_guisarme"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:glaive",
+  "replaces": [
+    "magistuarmory:steel_guisarme"
+  ]
+}

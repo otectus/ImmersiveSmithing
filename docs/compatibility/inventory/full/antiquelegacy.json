@@ -1,0 +1,2741 @@
+{
+  "mod": "antiquelegacy",
+  "version": "1.13",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "tested_version": "1.13",
+  "items": [
+    {
+      "id": "antiquelegacy:agen_port_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/agen_port_helmet",
+          "material": "minecraft:iron",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:agen_port_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/agen_port_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:agen_port_helmet`."
+    },
+    {
+      "id": "antiquelegacy:attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/attic_helmet",
+          "material": "forge:bronze",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:attic_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/attic_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:attic_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bell_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bell_cuirass",
+          "material": "forge:bronze",
+          "units": 72,
+          "components": [],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bell_cuirass",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "72 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bell_cuirass",
+      "acquisition": "Forged; replaces `antiquelegacy:bell_cuirass`."
+    },
+    {
+      "id": "antiquelegacy:beotian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/beotian_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:beotian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/beotian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:beotian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:black_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:black_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:bronze_apulo_corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_apulo_corinthian_helmet",
+          "material": "forge:bronze",
+          "units": 54,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_apulo_corinthian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_apulo_corinthian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_apulo_corinthian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_coolus",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_coolus",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_coolus",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_coolus",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_coolus`."
+    },
+    {
+      "id": "antiquelegacy:bronze_hoplon",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_hoplon",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "45 forge:bronze",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "antiquelegacy:bronze_imperial_scutum",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_imperial_scutum",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "antiquelegacy:bronze_intercisa",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_intercisa",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_intercisa",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_intercisa",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_intercisa`."
+    },
+    {
+      "id": "antiquelegacy:bronze_left_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_left_hand_manika_decoration",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_left_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_left_hand_manika_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_left_hand_manika_decoration`."
+    },
+    {
+      "id": "antiquelegacy:bronze_melos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_melos",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_melos",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_melos",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_melos`."
+    },
+    {
+      "id": "antiquelegacy:bronze_montefortino_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_montefortino_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_montefortino_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_montefortino_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_montefortino_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_muscle_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_muscle_cuirass",
+          "material": "forge:bronze",
+          "units": 72,
+          "components": [],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_muscle_cuirass",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "72 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_muscle_cuirass",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_muscle_cuirass`."
+    },
+    {
+      "id": "antiquelegacy:bronze_niederbieber_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_niederbieber_helmet",
+          "material": "forge:bronze",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_niederbieber_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_niederbieber_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_niederbieber_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_phrygian_helmet",
+          "material": "forge:bronze",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_phrygian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_phrygian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_phrygian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_pilos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_pilos",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_pilos",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_pilos",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_pilos`."
+    },
+    {
+      "id": "antiquelegacy:bronze_pilos_closet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_pilos_closet",
+          "material": "forge:bronze",
+          "units": 65,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_pilos_closet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "65 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_pilos_closet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_pilos_closet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_republic_scutum",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_republic_scutum",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "antiquelegacy:bronze_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_ridge_helmet",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_ridge_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_ridge_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_ridge_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_right_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_right_hand_manika_decoration",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_right_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_right_hand_manika_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_right_hand_manika_decoration`."
+    },
+    {
+      "id": "antiquelegacy:bronze_roman_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_roman_greaves",
+          "material": "forge:bronze",
+          "units": 22,
+          "components": [
+            "1x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_roman_greaves",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_roman_greaves",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_roman_greaves`."
+    },
+    {
+      "id": "antiquelegacy:bronze_scythian_scale_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_scythian_scale_helmet",
+          "material": "forge:bronze",
+          "units": 27,
+          "components": [
+            "20x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_scythian_scale_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_scythian_scale_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_scythian_scale_helmet`."
+    },
+    {
+      "id": "antiquelegacy:bronze_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/bronze_squamata",
+          "material": "forge:bronze",
+          "units": 22,
+          "components": [
+            "3x minecraft:leather",
+            "15x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_squamata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/bronze_squamata",
+      "acquisition": "Forged; replaces `antiquelegacy:bronze_squamata`."
+    },
+    {
+      "id": "antiquelegacy:bronze_tureos",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronze_tureos",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "antiquelegacy:bronzed_gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:bronzed_gallea_bronzening",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with antiquelegacy:bronze_ingot",
+      "acquisition": "Made from another piece: gilding with antiquelegacy:bronze_ingot."
+    },
+    {
+      "id": "antiquelegacy:brown_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:brown_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:cardiophylax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/cardiophylax",
+          "material": "forge:bronze",
+          "units": 9,
+          "components": [
+            "3x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:cardiophylax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/cardiophylax",
+      "acquisition": "Forged; replaces `antiquelegacy:cardiophylax`."
+    },
+    {
+      "id": "antiquelegacy:celtic_montefortino_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/celtic_montefortino_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_montefortino_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/celtic_montefortino_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:celtic_montefortino_helmet`."
+    },
+    {
+      "id": "antiquelegacy:celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:celtic_tunic",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_tunic",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:celtic_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:chalcidian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/chalcidian_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:chalcidian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/chalcidian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:chalcidian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:chiton_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/chiton_decoration",
+          "material": "forge:bronze",
+          "units": 2,
+          "components": [
+            "2x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:chiton_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "2 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/chiton_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:chiton_decoration`."
+    },
+    {
+      "id": "antiquelegacy:corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/corinthian_helmet",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:corinthian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/corinthian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:corinthian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:eagle_standard",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/eagle_standard",
+          "material": "forge:bronze",
+          "units": 27,
+          "components": [
+            "1x #forge:nuggets/iron",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:eagle_standard",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "antiquelegacy:eagle_standard_repairing",
+          "type": "minecraft:smithing_transform",
+          "state": "kept: not one of the native recipes the built-in forge recipe replaces (kept by design)"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/eagle_standard",
+      "acquisition": "Forged; replaces `antiquelegacy:eagle_standard`; keeps `antiquelegacy:eagle_standard_repairing`."
+    },
+    {
+      "id": "antiquelegacy:fabric_left_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:fabric_left_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:fabric_right_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:fabric_right_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:fur_cloak_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Antique Legacy loot decoration; the mod ships no recipe",
+      "acquisition": "Antique Legacy loot decoration; the mod ships no recipe."
+    },
+    {
+      "id": "antiquelegacy:gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/gallea",
+          "material": "minecraft:iron",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:gallea",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/gallea",
+      "acquisition": "Forged; replaces `antiquelegacy:gallea`."
+    },
+    {
+      "id": "antiquelegacy:gilded_gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:gilded_gallea_gilding",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "antiquelegacy:golden_laurel_wreath_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Antique Legacy loot decoration; the mod ships no recipe",
+      "acquisition": "Antique Legacy loot decoration; the mod ships no recipe."
+    },
+    {
+      "id": "antiquelegacy:golden_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/golden_ridge_helmet",
+          "material": "minecraft:gold",
+          "units": 45,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:golden_ridge_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/golden_ridge_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:golden_ridge_helmet`."
+    },
+    {
+      "id": "antiquelegacy:greek_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/greek_greaves",
+          "material": "forge:bronze",
+          "units": 22,
+          "components": [],
+          "pattern": "immersive_smithing:leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:greek_greaves",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/greek_greaves",
+      "acquisition": "Forged; replaces `antiquelegacy:greek_greaves`."
+    },
+    {
+      "id": "antiquelegacy:green_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:green_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:hamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/hamata",
+          "material": "minecraft:iron",
+          "units": 13,
+          "components": [
+            "2x minecraft:leather",
+            "3x #forge:plates/bronze"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:hamata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "13 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/hamata",
+      "acquisition": "Forged; replaces `antiquelegacy:hamata`."
+    },
+    {
+      "id": "antiquelegacy:hamata_optio",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/hamata_optio",
+          "material": "minecraft:iron",
+          "units": 13,
+          "components": [
+            "3x #forge:plates/bronze",
+            "2x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:hamata_optio",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "13 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/hamata_optio",
+      "acquisition": "Forged; replaces `antiquelegacy:hamata_optio`."
+    },
+    {
+      "id": "antiquelegacy:heddernheim_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/heddernheim_helmet",
+          "material": "minecraft:iron",
+          "units": 36,
+          "components": [
+            "1x minecraft:feather",
+            "1x #forge:plates/bronze"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:heddernheim_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/heddernheim_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:heddernheim_helmet`."
+    },
+    {
+      "id": "antiquelegacy:illirian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/illirian_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:illirian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/illirian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:illirian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_antique_dagger",
+          "material": "minecraft:iron",
+          "units": 10,
+          "components": [
+            "2x #forge:nuggets/bronze",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_antique_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_antique_dagger",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_antique_dagger`."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_antique_spear",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_antique_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_antique_spear",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_antique_spear`."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_antique_sword",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #forge:nuggets/bronze",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_antique_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_antique_sword",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_antique_sword`."
+    },
+    {
+      "id": "antiquelegacy:iron_celtic_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_celtic_sword",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #forge:ingots/bronze",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_celtic_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_celtic_sword",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_celtic_sword`."
+    },
+    {
+      "id": "antiquelegacy:iron_doru",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_doru",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "1x #forge:nuggets/bronze",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_doru",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_doru",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_doru`."
+    },
+    {
+      "id": "antiquelegacy:iron_early_spatha",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_early_spatha",
+          "material": "minecraft:iron",
+          "units": 20,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_early_spatha",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "20 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_early_spatha",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_early_spatha`."
+    },
+    {
+      "id": "antiquelegacy:iron_gladiator_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_gladiator_sword",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #forge:nuggets/bronze",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_gladiator_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_gladiator_sword",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_gladiator_sword`."
+    },
+    {
+      "id": "antiquelegacy:iron_gladius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_gladius",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_gladius",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_gladius",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_gladius`."
+    },
+    {
+      "id": "antiquelegacy:iron_intercisa",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_intercisa",
+          "material": "minecraft:iron",
+          "units": 46,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_intercisa",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_intercisa",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_intercisa`."
+    },
+    {
+      "id": "antiquelegacy:iron_kopis",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_kopis",
+          "material": "minecraft:iron",
+          "units": 19,
+          "components": [
+            "1x #forge:rods/wooden"
+          ],
+          "pattern": "immersive_smithing:saber"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_kopis",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "19 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_kopis",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_kopis`."
+    },
+    {
+      "id": "antiquelegacy:iron_left_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_left_hand_manika_decoration",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_left_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_left_hand_manika_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_left_hand_manika_decoration`."
+    },
+    {
+      "id": "antiquelegacy:iron_melos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_melos",
+          "material": "minecraft:iron",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_melos",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_melos",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_melos`."
+    },
+    {
+      "id": "antiquelegacy:iron_niederbieber_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_niederbieber_helmet",
+          "material": "minecraft:iron",
+          "units": 45,
+          "components": [
+            "3x #forge:nuggets/bronze"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_niederbieber_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_niederbieber_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_niederbieber_helmet`."
+    },
+    {
+      "id": "antiquelegacy:iron_pilos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_pilos",
+          "material": "minecraft:iron",
+          "units": 45,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_pilos",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_pilos",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_pilos`."
+    },
+    {
+      "id": "antiquelegacy:iron_republic_gladius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_republic_gladius",
+          "material": "minecraft:iron",
+          "units": 20,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_republic_gladius",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "20 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_republic_gladius",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_republic_gladius`."
+    },
+    {
+      "id": "antiquelegacy:iron_retiarius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_retiarius",
+          "material": "minecraft:iron",
+          "units": 12,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_retiarius",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "12 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_retiarius",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_retiarius`."
+    },
+    {
+      "id": "antiquelegacy:iron_rhomphaia",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_rhomphaia",
+          "material": "minecraft:iron",
+          "units": 19,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:greatsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_rhomphaia",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "19 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_rhomphaia",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_rhomphaia`."
+    },
+    {
+      "id": "antiquelegacy:iron_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_ridge_helmet",
+          "material": "minecraft:iron",
+          "units": 46,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_ridge_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_ridge_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_ridge_helmet`."
+    },
+    {
+      "id": "antiquelegacy:iron_right_hand_manika_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_right_hand_manika_decoration",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_right_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_right_hand_manika_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_right_hand_manika_decoration`."
+    },
+    {
+      "id": "antiquelegacy:iron_roman_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_roman_greaves",
+          "material": "minecraft:iron",
+          "units": 22,
+          "components": [
+            "1x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_roman_greaves",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_roman_greaves",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_roman_greaves`."
+    },
+    {
+      "id": "antiquelegacy:iron_sarissa",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_sarissa",
+          "material": "minecraft:iron",
+          "units": 19,
+          "components": [
+            "2x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:pike"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_sarissa",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "19 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_sarissa",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_sarissa`."
+    },
+    {
+      "id": "antiquelegacy:iron_scythian_scale_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_scythian_scale_helmet",
+          "material": "minecraft:iron",
+          "units": 27,
+          "components": [
+            "20x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_scythian_scale_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_scythian_scale_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_scythian_scale_helmet`."
+    },
+    {
+      "id": "antiquelegacy:iron_sica",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_sica",
+          "material": "minecraft:iron",
+          "units": 11,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_sica",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "11 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_sica",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_sica`."
+    },
+    {
+      "id": "antiquelegacy:iron_single_edged_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_single_edged_sword",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_single_edged_sword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_single_edged_sword",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_single_edged_sword`."
+    },
+    {
+      "id": "antiquelegacy:iron_spatha",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_spatha",
+          "material": "minecraft:iron",
+          "units": 20,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_spatha",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "20 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_spatha",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_spatha`."
+    },
+    {
+      "id": "antiquelegacy:iron_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_squamata",
+          "material": "minecraft:iron",
+          "units": 22,
+          "components": [
+            "3x minecraft:leather",
+            "15x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_squamata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_squamata",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_squamata`."
+    },
+    {
+      "id": "antiquelegacy:iron_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_thorax",
+          "material": "minecraft:iron",
+          "units": 54,
+          "components": [
+            "2x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_thorax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_thorax",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_thorax`."
+    },
+    {
+      "id": "antiquelegacy:iron_triarii_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_triarii_spear",
+          "material": "minecraft:iron",
+          "units": 10,
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_triarii_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_triarii_spear",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_triarii_spear`."
+    },
+    {
+      "id": "antiquelegacy:iron_xiphos",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/iron_xiphos",
+          "material": "minecraft:iron",
+          "units": 28,
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_xiphos",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "28 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/iron_xiphos",
+      "acquisition": "Forged; replaces `antiquelegacy:iron_xiphos`."
+    },
+    {
+      "id": "antiquelegacy:kuban_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/kuban_helmet",
+          "material": "forge:bronze",
+          "units": 49,
+          "components": [
+            "5x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:kuban_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "49 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/kuban_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:kuban_helmet`."
+    },
+    {
+      "id": "antiquelegacy:la_gorge_meillet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/la_gorge_meillet",
+          "material": "forge:bronze",
+          "units": 46,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:la_gorge_meillet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "46 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/la_gorge_meillet",
+      "acquisition": "Forged; replaces `antiquelegacy:la_gorge_meillet`."
+    },
+    {
+      "id": "antiquelegacy:late_hamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/late_hamata",
+          "material": "minecraft:iron",
+          "units": 36,
+          "components": [],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:late_hamata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/late_hamata",
+      "acquisition": "Forged; replaces `antiquelegacy:late_hamata`."
+    },
+    {
+      "id": "antiquelegacy:laurel_wreath_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Antique Legacy loot decoration; the mod ships no recipe",
+      "acquisition": "Antique Legacy loot decoration; the mod ships no recipe."
+    },
+    {
+      "id": "antiquelegacy:left_gladiator_shoulder_pad_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/left_gladiator_shoulder_pad_decoration",
+          "material": "forge:bronze",
+          "units": 9,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:left_gladiator_shoulder_pad_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/left_gladiator_shoulder_pad_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:left_gladiator_shoulder_pad_decoration`."
+    },
+    {
+      "id": "antiquelegacy:linothorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:linothorax",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "2 forge:bronze",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 2 units of forge:bronze on 6 other parts",
+      "acquisition": "Not predominantly metal: 2 units of forge:bronze on 6 other parts."
+    },
+    {
+      "id": "antiquelegacy:murmillo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/murmillo_helmet",
+          "material": "forge:bronze",
+          "units": 54,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:murmillo_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/murmillo_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:murmillo_helmet`."
+    },
+    {
+      "id": "antiquelegacy:musculata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/musculata",
+          "material": "minecraft:iron",
+          "units": 27,
+          "components": [
+            "5x #forge:plates/bronze"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:musculata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/musculata",
+      "acquisition": "Forged; replaces `antiquelegacy:musculata`."
+    },
+    {
+      "id": "antiquelegacy:officer_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/officer_squamata",
+          "material": "minecraft:iron",
+          "units": 13,
+          "components": [
+            "3x minecraft:leather",
+            "2x #magistuarmory:lamellar_rows/bronze",
+            "9x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:officer_squamata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "13 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/officer_squamata",
+      "acquisition": "Forged; replaces `antiquelegacy:officer_squamata`."
+    },
+    {
+      "id": "antiquelegacy:open_attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/open_attic_helmet",
+          "material": "forge:bronze",
+          "units": 47,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:open_attic_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "47 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/open_attic_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:open_attic_helmet`."
+    },
+    {
+      "id": "antiquelegacy:pelta",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:pelta",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "antiquelegacy:phrygian_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:phrygian_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:provocator_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/provocator_helmet",
+          "material": "forge:bronze",
+          "units": 54,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:provocator_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/provocator_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:provocator_helmet`."
+    },
+    {
+      "id": "antiquelegacy:red_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:red_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:right_gladiator_shoulder_pad_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/right_gladiator_shoulder_pad_decoration",
+          "material": "forge:bronze",
+          "units": 9,
+          "components": [
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:right_gladiator_shoulder_pad_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/right_gladiator_shoulder_pad_decoration",
+      "acquisition": "Forged; replaces `antiquelegacy:right_gladiator_shoulder_pad_decoration`."
+    },
+    {
+      "id": "antiquelegacy:roman_parade_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/roman_parade_helmet",
+          "material": "forge:bronze",
+          "units": 54,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:roman_parade_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/roman_parade_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:roman_parade_helmet`."
+    },
+    {
+      "id": "antiquelegacy:sandals",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:sandals",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:sava_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/sava_helmet",
+          "material": "minecraft:iron",
+          "units": 27,
+          "components": [
+            "2x #forge:plates/bronze"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:sava_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/sava_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:sava_helmet`."
+    },
+    {
+      "id": "antiquelegacy:scale_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/scale_thorax",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "3x minecraft:leather",
+            "2x #forge:nuggets/copper",
+            "6x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:scale_thorax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/scale_thorax",
+      "acquisition": "Forged; replaces `antiquelegacy:scale_thorax`."
+    },
+    {
+      "id": "antiquelegacy:scythian_attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/scythian_attic_helmet",
+          "material": "forge:bronze",
+          "units": 45,
+          "components": [
+            "1x #magistuarmory:lamellar_rows/iron",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:scythian_attic_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "45 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/scythian_attic_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:scythian_attic_helmet`."
+    },
+    {
+      "id": "antiquelegacy:scythian_scale_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/scythian_scale_thorax",
+          "material": "forge:bronze",
+          "units": 13,
+          "components": [
+            "3x minecraft:leather",
+            "2x #forge:nuggets/iron",
+            "9x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:scythian_scale_thorax",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "13 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/scythian_scale_thorax",
+      "acquisition": "Forged; replaces `antiquelegacy:scythian_scale_thorax`."
+    },
+    {
+      "id": "antiquelegacy:secutor_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/secutor_helmet",
+          "material": "forge:bronze",
+          "units": 54,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:secutor_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/secutor_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:secutor_helmet`."
+    },
+    {
+      "id": "antiquelegacy:segmentata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/segmentata",
+          "material": "minecraft:iron",
+          "units": 63,
+          "components": [
+            "1x #forge:plates/bronze"
+          ],
+          "pattern": "immersive_smithing:chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:segmentata",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "63 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/segmentata",
+      "acquisition": "Forged; replaces `antiquelegacy:segmentata`."
+    },
+    {
+      "id": "antiquelegacy:short_phrygian_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:short_phrygian_cap",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:subarmalis_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:subarmalis_decoration",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "antiquelegacy:thracian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/thracian_helmet",
+          "material": "forge:bronze",
+          "units": 48,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:thracian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/thracian_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:thracian_helmet`."
+    },
+    {
+      "id": "antiquelegacy:tinned_muscle_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:tinned_muscle_cuirass_tinning",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "72 forge:bronze",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with antiquelegacy:tin_ingot",
+      "acquisition": "Made from another piece: gilding with antiquelegacy:tin_ingot."
+    },
+    {
+      "id": "antiquelegacy:tinned_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:tinned_phrygian_helmet_tinning",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "48 forge:bronze",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with antiquelegacy:tin_ingot",
+      "acquisition": "Made from another piece: gilding with antiquelegacy:tin_ingot."
+    },
+    {
+      "id": "antiquelegacy:waterloo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/antiquelegacy/waterloo_helmet",
+          "material": "forge:bronze",
+          "units": 63,
+          "components": [],
+          "pattern": "immersive_smithing:helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "antiquelegacy:waterloo_helmet",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "63 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/antiquelegacy/waterloo_helmet",
+      "acquisition": "Forged; replaces `antiquelegacy:waterloo_helmet`."
+    },
+    {
+      "id": "antiquelegacy:weathered_corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "weathered antique found as loot; the eagle standard is restored with Antique Legacy's own gilding-template recipe",
+      "acquisition": "Weathered antique found as loot; the eagle standard is restored with Antique Legacy's own gilding-template recipe."
+    },
+    {
+      "id": "antiquelegacy:weathered_eagle_standard",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "weathered antique found as loot; the eagle standard is restored with Antique Legacy's own gilding-template recipe",
+      "acquisition": "Weathered antique found as loot; the eagle standard is restored with Antique Legacy's own gilding-template recipe."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 81,
+    "native_nonmetal_recipe": 19,
+    "native_transformation": 4,
+    "protected_loot": 5
+  }
+}

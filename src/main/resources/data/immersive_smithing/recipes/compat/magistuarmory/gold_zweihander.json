@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:gold_zweihander"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:gold_zweihander"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:greatsword",
+  "replaces": [
+    "magistuarmory:gold_zweihander"
+  ]
+}

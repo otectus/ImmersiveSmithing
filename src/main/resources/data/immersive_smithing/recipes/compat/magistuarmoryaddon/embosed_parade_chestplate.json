@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:embosed_parade_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 128,
+  "result": {
+    "item": "magistuarmoryaddon:embosed_parade_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "magistuarmoryaddon:embosed_parade_chestplate"
+  ]
+}

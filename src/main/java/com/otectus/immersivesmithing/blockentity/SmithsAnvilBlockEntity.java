@@ -102,16 +102,29 @@ public class SmithsAnvilBlockEntity extends BlockEntity {
         workpiece = tag.contains("Workpiece", Tag.TAG_COMPOUND) ? WorkpieceCodec.load(tag.getCompound("Workpiece")).orElse(null) : null;
     }
 
+    /**
+     * Always carries the occupancy flag. An empty anvil would otherwise send an empty tag, which
+     * {@link ClientboundBlockEntityDataPacket} turns into null and the client never loads, so a workpiece taken with
+     * tongs stayed drawn on every client until the chunk was sent again.
+     */
     @Override
     public CompoundTag getUpdateTag() {
         CompoundTag tag = super.getUpdateTag();
         saveAdditional(tag);
+        tag.putBoolean("Occupied", workpiece != null);
         return tag;
     }
 
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    /** Loads every update, including an empty one, so the client can never keep a workpiece the server no longer has. */
+    @Override
+    public void onDataPacket(net.minecraft.network.Connection net, ClientboundBlockEntityDataPacket packet) {
+        CompoundTag tag = packet.getTag();
+        load(tag != null ? tag : new CompoundTag());
     }
 
     private void sync() {

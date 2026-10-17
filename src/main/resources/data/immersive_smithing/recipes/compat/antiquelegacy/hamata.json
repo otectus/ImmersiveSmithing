@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:hamata"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 13,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "forge:plates/bronze"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:hamata"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "antiquelegacy:hamata"
+  ]
+}

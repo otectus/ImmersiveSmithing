@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:gallowglass_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:woolen_fabrics"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:gallowglass_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "magistuarmoryaddon:gallowglass_chestplate"
+  ]
+}

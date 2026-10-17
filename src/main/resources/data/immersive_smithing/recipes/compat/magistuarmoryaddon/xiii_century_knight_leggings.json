@@ -1,0 +1,39 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:xiii_century_knight_leggings"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:pantyhose"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 22,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:pantyhose"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:xiii_century_knight_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "magistuarmoryaddon:xiii_century_knight_leggings"
+  ]
+}

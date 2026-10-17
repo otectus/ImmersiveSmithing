@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:iron_niederbieber_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/bronze"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:iron_niederbieber_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "antiquelegacy:iron_niederbieber_helmet"
+  ]
+}

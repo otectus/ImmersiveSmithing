@@ -1,0 +1,86 @@
+{
+  "inputs": {
+    "antiquelegacy": {
+      "file": "epic-knights-antique-legacy-4DhbZFhg.jar",
+      "sha256": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+      "version": "1.13"
+    },
+    "artillery_addon": {
+      "file": "epic-knights-artillery-addon-1307540-8812944.jar",
+      "sha256": "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2",
+      "version": "1.16.2"
+    },
+    "darkagesarmory": {
+      "file": "epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "sha256": "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae",
+      "version": "1.1"
+    },
+    "ekotsk": {
+      "file": "epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "sha256": "21d9d8c6571aaabd6c35ef277449f4c62fe1a8e1737980639150af43f0bfc187",
+      "version": "1.20.1_1.5.0"
+    },
+    "epic_knights_ice_and_fire": {
+      "file": "epic-knights-ice-and-fire-1151603-5972466.jar",
+      "sha256": "2c1c89c8c4d7bb077c5f235e763471e0b4204ffd59aafb950c33e37c90c87c80",
+      "version": "1.0"
+    },
+    "epic_knights_ores_and_alloys": {
+      "file": "epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "sha256": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7",
+      "version": "1.1"
+    },
+    "epicfight": {
+      "file": "epic-fight-KEBfkBat.jar",
+      "sha256": "69566cf70ae2d91d3f2564c608f014c87e290cef6215c2a27719851165485f73",
+      "version": "20.14.17"
+    },
+    "epicknights_open_helms": {
+      "file": "epic-knights-open-helms-1176829-7493041.jar",
+      "sha256": "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca",
+      "version": "1.3"
+    },
+    "forge": {
+      "file": "forge-1.20.1-47.4.23-universal.jar",
+      "sha256": "98a6c0a2318c1788db6f592357eb00d09b15316f054942ba432f71027f074fef",
+      "version": "-"
+    },
+    "iceandfire": {
+      "file": "ice-and-fire-dragons-EzN8KQYF.jar",
+      "sha256": "2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82",
+      "version": "2.1.13-1.20.1"
+    },
+    "magistuarmory": {
+      "file": "epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "sha256": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+      "version": "10.15"
+    },
+    "magistuarmoryaddon": {
+      "file": "epic-knights-addon-xnYQSIH7.jar",
+      "sha256": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193",
+      "version": "2.6"
+    },
+    "medieval_boomsticks": {
+      "file": "medieval-boomsticks-1123016-6148892.jar",
+      "sha256": "732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6",
+      "version": "1.2"
+    },
+    "minecraft": {
+      "file": "client-extra.jar",
+      "sha256": "f43d1ac034a8907edab190a17501fd4ca2b0af107d4231da364eeca8ab5ee317",
+      "version": "-"
+    },
+    "quick_swap": {
+      "file": "swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "sha256": "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49",
+      "version": "0.1.0"
+    },
+    "slavicarmory": {
+      "file": "epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "sha256": "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d",
+      "version": "2.1"
+    }
+  },
+  "manifest_sha256": "dfe4e9f486f0338fadc09ab28f335d1c9a080b5f6f6246eea99cef38a7e3d88c",
+  "registry_sha256": "d678b76233ba05db59b16451cf8da6d402398f8e676a01544054a771dd184fc4"
+}

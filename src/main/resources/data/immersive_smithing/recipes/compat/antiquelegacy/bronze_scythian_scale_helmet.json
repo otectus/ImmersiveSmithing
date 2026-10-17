@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:bronze_scythian_scale_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 20
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:bronze_scythian_scale_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "antiquelegacy:bronze_scythian_scale_helmet"
+  ]
+}

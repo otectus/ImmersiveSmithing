@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:alla_tedesca_boots"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:red_dye"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:alla_tedesca_boots"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:boots",
+  "replaces": [
+    "magistuarmoryaddon:alla_tedesca_boots"
+  ]
+}

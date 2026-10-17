@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "simplyswords:decaying_relic",
+      "required": false
+    },
+    {
+      "id": "simplyswords:diamond_scythe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_scythe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_scythe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:magiscythe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_scythe",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_scythe",
+      "required": false
+    }
+  ]
+}

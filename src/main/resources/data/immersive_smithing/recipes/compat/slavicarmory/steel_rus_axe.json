@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:steel_rus_axe"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "slavicarmory:steel_rus_axe"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:axe",
+  "replaces": [
+    "slavicarmory:steel_rus_axe"
+  ]
+}

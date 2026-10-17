@@ -1,0 +1,46 @@
+{
+  "targets": [
+    [
+      0.528,
+      0.176
+    ],
+    [
+      0.757,
+      0.271
+    ],
+    [
+      0.852,
+      0.5
+    ],
+    [
+      0.757,
+      0.729
+    ],
+    [
+      0.528,
+      0.824
+    ],
+    [
+      0.299,
+      0.729
+    ],
+    [
+      0.205,
+      0.5
+    ],
+    [
+      0.299,
+      0.271
+    ]
+  ],
+  "strikes": 8,
+  "target_radius": 0.075,
+  "target_lifetime": 1.8,
+  "ideal_fraction": 0.6,
+  "gap": 0.25,
+  "jitter": 0.03,
+  "time_multiplier": 1.0,
+  "categories": [
+    "immersive_smithing:chakrams"
+  ]
+}

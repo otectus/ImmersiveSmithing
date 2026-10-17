@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "artillery_addon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "artillery_addon:hand_cannon"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "minecraft:planks"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "artillery_addon:hand_cannon"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:heavy_crossbow",
+  "replaces": [
+    "artillery_addon:handcannonrecipe"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:benty_grange_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gold"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:benty_grange_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "darkagesarmory:benty_grange_helmet"
+  ]
+}

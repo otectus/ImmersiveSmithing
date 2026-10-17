@@ -1,0 +1,53 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "epicfight:diamond_longsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:golden_longsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:iron_longsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:netherite_longsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:stone_longsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:wooden_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:diamond_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_longsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:toxic_longsword",
+      "required": false
+    }
+  ]
+}

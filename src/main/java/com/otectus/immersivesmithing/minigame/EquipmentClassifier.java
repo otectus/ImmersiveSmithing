@@ -112,9 +112,23 @@ public final class EquipmentClassifier {
                 || stack.canPerformAction(ToolActions.SHOVEL_DIG);
     }
 
+    /**
+     * Shields, including anything that blocks like one. A weapon that can also block (Epic Knights' swords) stays a
+     * weapon: it deals attack damage of its own, so quality scales that damage.
+     */
     public static boolean isShield(ItemStack stack) {
-        return stack.getItem() instanceof ShieldItem || stack.canPerformAction(ToolActions.SHIELD_BLOCK)
-                || stack.is(Tags.Items.TOOLS_SHIELDS) || stack.is(ModTags.SMITHABLE_SHIELDS);
+        if (stack.getItem() instanceof ShieldItem || stack.is(Tags.Items.TOOLS_SHIELDS) || stack.is(ModTags.SMITHABLE_SHIELDS)) return true;
+        return stack.canPerformAction(ToolActions.SHIELD_BLOCK) && !hasOwnAttackDamage(stack);
+    }
+
+    /** Main-hand attack damage the item itself grants. Read without firing ItemAttributeModifierEvent (safe inside it). */
+    public static boolean hasOwnAttackDamage(ItemStack stack) {
+        try {
+            return stack.getItem().getAttributeModifiers(EquipmentSlot.MAINHAND, stack).get(Attributes.ATTACK_DAMAGE).stream()
+                    .anyMatch(m -> m.getAmount() > 0);
+        } catch (RuntimeException e) {
+            return false;
+        }
     }
 
     public static EquipmentSlot armorSlot(ItemStack stack) {

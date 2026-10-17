@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ice_and_fire"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epic_knights_ice_and_fire:dragonsteel_lightning_shortsword"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:lightning_dragonsteel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:bones/wither"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "epic_knights_ice_and_fire:dragonsteel_lightning_shortsword"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:sword",
+  "replaces": [
+    "epic_knights_ice_and_fire:dragonsteel_lightning_shortsword"
+  ]
+}

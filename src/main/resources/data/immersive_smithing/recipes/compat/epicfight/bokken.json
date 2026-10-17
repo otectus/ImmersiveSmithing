@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicfight"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epicfight:bokken"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "pattern": [
+    "  P",
+    " P ",
+    "S  "
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "epicfight:bokken"
+  }
+}

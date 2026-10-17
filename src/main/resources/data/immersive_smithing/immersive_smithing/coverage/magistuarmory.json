@@ -1,0 +1,199 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    }
+  ],
+  "mod": "magistuarmory",
+  "tested_version": "10.15",
+  "policies": [
+    {
+      "items": [
+        "magistuarmory:coif",
+        "magistuarmory:flowercrown_decoration",
+        "magistuarmory:gambeson_boots",
+        "magistuarmory:gambeson_chestplate",
+        "magistuarmory:longbow",
+        "magistuarmory:pantyhose"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "magistuarmory:chainmail_boots",
+        "magistuarmory:cuirassier_boots",
+        "magistuarmory:cuirassier_leggings"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)"
+    },
+    {
+      "items": [
+        "magistuarmory:stone_ahlspiess",
+        "magistuarmory:stone_bastardsword",
+        "magistuarmory:stone_buckler",
+        "magistuarmory:stone_chainmorgenstern",
+        "magistuarmory:stone_chivalrylance",
+        "magistuarmory:stone_claymore",
+        "magistuarmory:stone_concavehalberd",
+        "magistuarmory:stone_ellipticalshield",
+        "magistuarmory:stone_estoc",
+        "magistuarmory:stone_flamebladedsword",
+        "magistuarmory:stone_guisarme",
+        "magistuarmory:stone_heatershield",
+        "magistuarmory:stone_heavymace",
+        "magistuarmory:stone_heavywarhammer",
+        "magistuarmory:stone_katzbalger",
+        "magistuarmory:stone_kiteshield",
+        "magistuarmory:stone_lochaberaxe",
+        "magistuarmory:stone_lucernhammer",
+        "magistuarmory:stone_morgenstern",
+        "magistuarmory:stone_pavese",
+        "magistuarmory:stone_pike",
+        "magistuarmory:stone_ranseur",
+        "magistuarmory:stone_rondache",
+        "magistuarmory:stone_roundshield",
+        "magistuarmory:stone_shortsword",
+        "magistuarmory:stone_stylet",
+        "magistuarmory:stone_target",
+        "magistuarmory:stone_tartsche",
+        "magistuarmory:stone_zweihander"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone"
+    },
+    {
+      "items": [
+        "magistuarmory:diamond_ahlspiess",
+        "magistuarmory:diamond_bastardsword",
+        "magistuarmory:diamond_buckler",
+        "magistuarmory:diamond_chainmorgenstern",
+        "magistuarmory:diamond_chivalrylance",
+        "magistuarmory:diamond_claymore",
+        "magistuarmory:diamond_concavehalberd",
+        "magistuarmory:diamond_ellipticalshield",
+        "magistuarmory:diamond_estoc",
+        "magistuarmory:diamond_flamebladedsword",
+        "magistuarmory:diamond_guisarme",
+        "magistuarmory:diamond_heatershield",
+        "magistuarmory:diamond_heavymace",
+        "magistuarmory:diamond_heavywarhammer",
+        "magistuarmory:diamond_katzbalger",
+        "magistuarmory:diamond_kiteshield",
+        "magistuarmory:diamond_lochaberaxe",
+        "magistuarmory:diamond_lucernhammer",
+        "magistuarmory:diamond_morgenstern",
+        "magistuarmory:diamond_pavese",
+        "magistuarmory:diamond_pike",
+        "magistuarmory:diamond_ranseur",
+        "magistuarmory:diamond_rondache",
+        "magistuarmory:diamond_roundshield",
+        "magistuarmory:diamond_shortsword",
+        "magistuarmory:diamond_stylet",
+        "magistuarmory:diamond_target",
+        "magistuarmory:diamond_tartsche",
+        "magistuarmory:diamond_zweihander"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond"
+    },
+    {
+      "items": [
+        "magistuarmory:wood_ahlspiess",
+        "magistuarmory:wood_bastardsword",
+        "magistuarmory:wood_buckler",
+        "magistuarmory:wood_chainmorgenstern",
+        "magistuarmory:wood_chivalrylance",
+        "magistuarmory:wood_claymore",
+        "magistuarmory:wood_concavehalberd",
+        "magistuarmory:wood_ellipticalshield",
+        "magistuarmory:wood_estoc",
+        "magistuarmory:wood_flamebladedsword",
+        "magistuarmory:wood_guisarme",
+        "magistuarmory:wood_heatershield",
+        "magistuarmory:wood_heavymace",
+        "magistuarmory:wood_heavywarhammer",
+        "magistuarmory:wood_katzbalger",
+        "magistuarmory:wood_kiteshield",
+        "magistuarmory:wood_lochaberaxe",
+        "magistuarmory:wood_lucernhammer",
+        "magistuarmory:wood_morgenstern",
+        "magistuarmory:wood_pavese",
+        "magistuarmory:wood_pike",
+        "magistuarmory:wood_ranseur",
+        "magistuarmory:wood_rondache",
+        "magistuarmory:wood_roundshield",
+        "magistuarmory:wood_shortsword",
+        "magistuarmory:wood_stylet",
+        "magistuarmory:wood_target",
+        "magistuarmory:wood_tartsche",
+        "magistuarmory:wood_zweihander"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks"
+    },
+    {
+      "items": [
+        "magistuarmory:ceremonial_boots",
+        "magistuarmory:ceremonial_chestplate",
+        "magistuarmory:ceremonialarmet",
+        "magistuarmory:noble_sword"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmory:maximilian_boots",
+        "magistuarmory:maximilian_chestplate",
+        "magistuarmory:maximilian_helmet",
+        "magistuarmory:maximilian_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: template upgrade with minecraft:blaze_powder"
+    },
+    {
+      "items": [
+        "magistuarmory:corruptedroundshield"
+      ],
+      "disposition": "protected_loot",
+      "reason": "corrupted loot shield from Epic Knights chests"
+    },
+    {
+      "items": [
+        "magistuarmory:rusted_bastardsword",
+        "magistuarmory:rusted_heavymace",
+        "magistuarmory:rustedbarbute",
+        "magistuarmory:rustedchainmail_boots",
+        "magistuarmory:rustedchainmail_chestplate",
+        "magistuarmory:rustedchainmail_helmet",
+        "magistuarmory:rustedchainmail_leggings",
+        "magistuarmory:rustedcrusader_boots",
+        "magistuarmory:rustedcrusader_chestplate",
+        "magistuarmory:rustedgreathelm",
+        "magistuarmory:rustedhalfarmor_chestplate",
+        "magistuarmory:rustedkettlehat",
+        "magistuarmory:rustednorman_helmet"
+      ],
+      "disposition": "protected_loot",
+      "reason": "rusted loot from Epic Knights chests: never manufactured"
+    },
+    {
+      "items": [
+        "magistuarmory:crown_decoration",
+        "magistuarmory:minicrown_decoration"
+      ],
+      "disposition": "protected_loot",
+      "reason": "wearable crown found as loot or traded by Epic Knights villagers: never manufactured"
+    },
+    {
+      "items": [
+        "magistuarmory:club"
+      ],
+      "disposition": "protected_loot",
+      "reason": "wooden club carried by Epic Knights mobs; the mod ships no recipe"
+    }
+  ]
+}

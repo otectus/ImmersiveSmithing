@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "particle": "#wood",
+    "particle": "#side",
+    "side": "immersive_smithing:block/trough_staves",
     "wood": "immersive_smithing:block/worked_timber",
     "end": "immersive_smithing:block/timber_end",
-    "strap": "immersive_smithing:block/iron_strap",
     "iron": "immersive_smithing:block/iron_plate"
   },
   "elements": [
@@ -21,25 +21,6 @@
         13
       ],
       "faces": {
-        "down": {
-          "uv": [
-            2,
-            3,
-            4,
-            13
-          ],
-          "texture": "#iron",
-          "cullface": "down"
-        },
-        "up": {
-          "uv": [
-            2,
-            3,
-            4,
-            13
-          ],
-          "texture": "#iron"
-        },
         "north": {
           "uv": [
             12,
@@ -58,6 +39,15 @@
           ],
           "texture": "#iron"
         },
+        "east": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#iron"
+        },
         "west": {
           "uv": [
             3,
@@ -67,14 +57,15 @@
           ],
           "texture": "#iron"
         },
-        "east": {
+        "down": {
           "uv": [
+            2,
             3,
-            15,
-            13,
-            16
+            4,
+            13
           ],
-          "texture": "#iron"
+          "texture": "#iron",
+          "cullface": "down"
         }
       }
     },
@@ -91,25 +82,6 @@
         13
       ],
       "faces": {
-        "down": {
-          "uv": [
-            12,
-            3,
-            14,
-            13
-          ],
-          "texture": "#iron",
-          "cullface": "down"
-        },
-        "up": {
-          "uv": [
-            12,
-            3,
-            14,
-            13
-          ],
-          "texture": "#iron"
-        },
         "north": {
           "uv": [
             2,
@@ -128,6 +100,15 @@
           ],
           "texture": "#iron"
         },
+        "east": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#iron"
+        },
         "west": {
           "uv": [
             3,
@@ -137,14 +118,15 @@
           ],
           "texture": "#iron"
         },
-        "east": {
+        "down": {
           "uv": [
+            12,
             3,
-            15,
-            13,
-            16
+            14,
+            13
           ],
-          "texture": "#iron"
+          "texture": "#iron",
+          "cullface": "down"
         }
       }
     },
@@ -161,14 +143,41 @@
         13
       ],
       "faces": {
-        "down": {
+        "north": {
           "uv": [
             1,
-            3,
+            13,
             15,
-            13
+            15
           ],
-          "texture": "#end"
+          "texture": "#side"
+        },
+        "south": {
+          "uv": [
+            1,
+            13,
+            15,
+            15
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            3,
+            13,
+            13,
+            15
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            3,
+            13,
+            13,
+            15
+          ],
+          "texture": "#side"
         },
         "up": {
           "uv": [
@@ -179,39 +188,12 @@
           ],
           "texture": "#end"
         },
-        "north": {
+        "down": {
           "uv": [
             1,
-            13,
-            15,
-            15
-          ],
-          "texture": "#wood"
-        },
-        "south": {
-          "uv": [
-            1,
-            13,
-            15,
-            15
-          ],
-          "texture": "#wood"
-        },
-        "west": {
-          "uv": [
             3,
-            13,
-            13,
-            15
-          ],
-          "texture": "#wood"
-        },
-        "east": {
-          "uv": [
-            3,
-            13,
-            13,
-            15
+            15,
+            13
           ],
           "texture": "#wood"
         }
@@ -230,24 +212,6 @@
         4
       ],
       "faces": {
-        "down": {
-          "uv": [
-            1,
-            12,
-            15,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "up": {
-          "uv": [
-            1,
-            3,
-            15,
-            4
-          ],
-          "texture": "#wood"
-        },
         "north": {
           "uv": [
             1,
@@ -255,22 +219,13 @@
             15,
             13
           ],
-          "texture": "#wood"
+          "texture": "#side"
         },
         "south": {
           "uv": [
             1,
             7,
             15,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "west": {
-          "uv": [
-            3,
-            7,
-            4,
             13
           ],
           "texture": "#wood"
@@ -282,7 +237,25 @@
             13,
             13
           ],
-          "texture": "#wood"
+          "texture": "#end"
+        },
+        "west": {
+          "uv": [
+            3,
+            7,
+            4,
+            13
+          ],
+          "texture": "#end"
+        },
+        "up": {
+          "uv": [
+            1,
+            3,
+            15,
+            4
+          ],
+          "texture": "#end"
         }
       }
     },
@@ -299,33 +272,6 @@
         13
       ],
       "faces": {
-        "down": {
-          "uv": [
-            1,
-            3,
-            15,
-            4
-          ],
-          "texture": "#wood"
-        },
-        "up": {
-          "uv": [
-            1,
-            12,
-            15,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "north": {
-          "uv": [
-            1,
-            7,
-            15,
-            13
-          ],
-          "texture": "#wood"
-        },
         "south": {
           "uv": [
             1,
@@ -333,13 +279,13 @@
             15,
             13
           ],
-          "texture": "#wood"
+          "texture": "#side"
         },
-        "west": {
+        "north": {
           "uv": [
-            12,
+            1,
             7,
-            13,
+            15,
             13
           ],
           "texture": "#wood"
@@ -351,7 +297,25 @@
             4,
             13
           ],
-          "texture": "#wood"
+          "texture": "#end"
+        },
+        "west": {
+          "uv": [
+            12,
+            7,
+            13,
+            13
+          ],
+          "texture": "#end"
+        },
+        "up": {
+          "uv": [
+            1,
+            12,
+            15,
+            13
+          ],
+          "texture": "#end"
         }
       }
     },
@@ -368,12 +332,21 @@
         12
       ],
       "faces": {
-        "down": {
+        "west": {
           "uv": [
-            1,
             4,
-            2,
-            12
+            7,
+            12,
+            13
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            4,
+            7,
+            12,
+            13
           ],
           "texture": "#wood"
         },
@@ -383,42 +356,6 @@
             4,
             2,
             12
-          ],
-          "texture": "#wood"
-        },
-        "north": {
-          "uv": [
-            14,
-            7,
-            15,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "south": {
-          "uv": [
-            1,
-            7,
-            2,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "west": {
-          "uv": [
-            4,
-            7,
-            12,
-            13
-          ],
-          "texture": "#end"
-        },
-        "east": {
-          "uv": [
-            4,
-            7,
-            12,
-            13
           ],
           "texture": "#end"
         }
@@ -437,335 +374,32 @@
         12
       ],
       "faces": {
-        "down": {
+        "east": {
+          "uv": [
+            4,
+            7,
+            12,
+            13
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            4,
+            7,
+            12,
+            13
+          ],
+          "texture": "#wood"
+        },
+        "up": {
           "uv": [
             14,
             4,
             15,
             12
           ],
-          "texture": "#wood"
-        },
-        "up": {
-          "uv": [
-            14,
-            4,
-            15,
-            12
-          ],
-          "texture": "#wood"
-        },
-        "north": {
-          "uv": [
-            1,
-            7,
-            2,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "south": {
-          "uv": [
-            14,
-            7,
-            15,
-            13
-          ],
-          "texture": "#wood"
-        },
-        "west": {
-          "uv": [
-            4,
-            7,
-            12,
-            13
-          ],
           "texture": "#end"
-        },
-        "east": {
-          "uv": [
-            4,
-            7,
-            12,
-            13
-          ],
-          "texture": "#end"
-        }
-      }
-    },
-    {
-      "name": "Front left strap",
-      "from": [
-        3,
-        2,
-        2
-      ],
-      "to": [
-        4,
-        9,
-        3
-      ],
-      "faces": {
-        "down": {
-          "uv": [
-            3,
-            13,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "up": {
-          "uv": [
-            3,
-            2,
-            4,
-            3
-          ],
-          "texture": "#strap"
-        },
-        "north": {
-          "uv": [
-            12,
-            7,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "south": {
-          "uv": [
-            3,
-            7,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "west": {
-          "uv": [
-            2,
-            7,
-            3,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "east": {
-          "uv": [
-            13,
-            7,
-            14,
-            14
-          ],
-          "texture": "#strap"
-        }
-      }
-    },
-    {
-      "name": "Front right strap",
-      "from": [
-        12,
-        2,
-        2
-      ],
-      "to": [
-        13,
-        9,
-        3
-      ],
-      "faces": {
-        "down": {
-          "uv": [
-            12,
-            13,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "up": {
-          "uv": [
-            12,
-            2,
-            13,
-            3
-          ],
-          "texture": "#strap"
-        },
-        "north": {
-          "uv": [
-            3,
-            7,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "south": {
-          "uv": [
-            12,
-            7,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "west": {
-          "uv": [
-            2,
-            7,
-            3,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "east": {
-          "uv": [
-            13,
-            7,
-            14,
-            14
-          ],
-          "texture": "#strap"
-        }
-      }
-    },
-    {
-      "name": "Back left strap",
-      "from": [
-        3,
-        2,
-        13
-      ],
-      "to": [
-        4,
-        9,
-        14
-      ],
-      "faces": {
-        "down": {
-          "uv": [
-            3,
-            2,
-            4,
-            3
-          ],
-          "texture": "#strap"
-        },
-        "up": {
-          "uv": [
-            3,
-            13,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "north": {
-          "uv": [
-            12,
-            7,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "south": {
-          "uv": [
-            3,
-            7,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "west": {
-          "uv": [
-            13,
-            7,
-            14,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "east": {
-          "uv": [
-            2,
-            7,
-            3,
-            14
-          ],
-          "texture": "#strap"
-        }
-      }
-    },
-    {
-      "name": "Back right strap",
-      "from": [
-        12,
-        2,
-        13
-      ],
-      "to": [
-        13,
-        9,
-        14
-      ],
-      "faces": {
-        "down": {
-          "uv": [
-            12,
-            2,
-            13,
-            3
-          ],
-          "texture": "#strap"
-        },
-        "up": {
-          "uv": [
-            12,
-            13,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "north": {
-          "uv": [
-            3,
-            7,
-            4,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "south": {
-          "uv": [
-            12,
-            7,
-            13,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "west": {
-          "uv": [
-            13,
-            7,
-            14,
-            14
-          ],
-          "texture": "#strap"
-        },
-        "east": {
-          "uv": [
-            2,
-            7,
-            3,
-            14
-          ],
-          "texture": "#strap"
         }
       }
     }

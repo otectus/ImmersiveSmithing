@@ -1,0 +1,65 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "epicfight:diamond_greatsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:golden_greatsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:iron_greatsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:netherite_greatsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:stone_greatsword",
+      "required": false
+    },
+    {
+      "id": "epicfight:wooden_greatsword",
+      "required": false
+    },
+    {
+      "id": "simplyswords:brimstone_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:diamond_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_claymore",
+      "required": false
+    },
+    {
+      "id": "simplyswords:the_devourer",
+      "required": false
+    },
+    {
+      "id": "simplyswords:twisted_blade",
+      "required": false
+    },
+    {
+      "id": "simplyswords:watcher_claymore",
+      "required": false
+    }
+  ]
+}

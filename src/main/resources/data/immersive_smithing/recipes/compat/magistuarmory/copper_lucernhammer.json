@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:copper_lucernhammer"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:copper",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:rods/wooden"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:copper_lucernhammer"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:warhammer",
+  "replaces": [
+    "magistuarmory:copper_lucernhammer"
+  ]
+}

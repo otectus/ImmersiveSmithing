@@ -1,5 +1,7 @@
 # Before and after
 
+> **History.** This documents the 1.0.0 visual overhaul. Its station models and effects are still current. Its iron-framed screens are not: the Stoneborn theme (`91170a4`) replaced them, and 1.1.0 replaced Stoneborn with Minecraft's own look. For the current screens, see [the vanilla GUI review](../vanilla-gui/REVIEW.md).
+
 Actual Minecraft screenshots, captured with ordinary rendering and no shader pack. The baseline was recorded on clean `main` at `3840ff0` before editing. Viewports differ between the desktop baseline and the isolated final capture; these are visual comparisons, not pixel-difference tests. Ultima images include that pack's fonts, floor textures and HUD. Open an image for its original resolution.
 
 | View | Before | After |

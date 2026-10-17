@@ -32,6 +32,10 @@
     {
       "id": "cataclysm:cursium_boots",
       "required": false
+    },
+    {
+      "id": "#immersive_smithing:compat/epicknights/smithable_equipment",
+      "required": false
     }
   ]
 }

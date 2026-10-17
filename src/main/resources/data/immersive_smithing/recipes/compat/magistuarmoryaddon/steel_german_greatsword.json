@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:steel_german_greatsword"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:steel_german_greatsword"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:greatsword",
+  "replaces": [
+    "magistuarmoryaddon:steel_german_greatsword"
+  ]
+}

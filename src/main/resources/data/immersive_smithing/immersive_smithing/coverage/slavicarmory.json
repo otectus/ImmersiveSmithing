@@ -1,0 +1,67 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    }
+  ],
+  "mod": "slavicarmory",
+  "tested_version": "2.1",
+  "policies": [
+    {
+      "items": [
+        "slavicarmory:kaftan",
+        "slavicarmory:kaftan_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "slavicarmory:rus_gambeson",
+        "slavicarmory:rus_gambeson_boots",
+        "slavicarmory:shapka"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)"
+    },
+    {
+      "items": [
+        "slavicarmory:bahteretz_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 3/2 units of forge:steel on 4 other parts"
+    },
+    {
+      "items": [
+        "slavicarmory:lamellar_mail_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 9/4 units of forge:steel on 4 other parts"
+    },
+    {
+      "items": [
+        "slavicarmory:gilded_andreevski_helmet",
+        "slavicarmory:gilded_bahteretz_chestplate",
+        "slavicarmory:gilded_byzantine_lamellar_chestplate",
+        "slavicarmory:gilded_byzantine_scale_chestplate",
+        "slavicarmory:gilded_eastern_kettlehat",
+        "slavicarmory:gilded_erikhonka",
+        "slavicarmory:gilded_gnezdovo_helmet",
+        "slavicarmory:gilded_lamellar_mail_chestplate",
+        "slavicarmory:gilded_late_phrygian_helmet",
+        "slavicarmory:gilded_nikolskoe_helmet",
+        "slavicarmory:gilded_raikovec_helmet",
+        "slavicarmory:gilded_rus_heavy_lamellar_boots",
+        "slavicarmory:gilded_rus_heavy_lamellar_chestplate",
+        "slavicarmory:gilded_rus_scale_boots",
+        "slavicarmory:gilded_rus_scale_chestplate",
+        "slavicarmory:gilded_shater_helmet",
+        "slavicarmory:gilded_tagancha_helmet",
+        "slavicarmory:gilded_yushman_chestplate"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    }
+  ]
+}

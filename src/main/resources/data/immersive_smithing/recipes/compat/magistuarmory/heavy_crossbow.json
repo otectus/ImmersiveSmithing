@@ -1,0 +1,43 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:heavy_crossbow"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:string"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:tripwire_hook"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:poles"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:heavy_crossbow"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:heavy_crossbow",
+  "replaces": [
+    "magistuarmory:heavy_crossbow"
+  ]
+}

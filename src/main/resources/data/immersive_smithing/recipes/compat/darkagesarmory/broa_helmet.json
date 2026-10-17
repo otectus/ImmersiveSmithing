@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:broa_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gold"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:broa_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "darkagesarmory:broa_helmet"
+  ]
+}

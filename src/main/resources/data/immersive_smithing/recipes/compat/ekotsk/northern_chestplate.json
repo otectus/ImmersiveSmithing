@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:northern_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 54,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:leather_chestplate"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "ekotsk:northern_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "ekotsk:northern_chestplate"
+  ]
+}

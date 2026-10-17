@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "epicfight:diamond_dagger",
+      "required": false
+    },
+    {
+      "id": "epicfight:golden_dagger",
+      "required": false
+    },
+    {
+      "id": "epicfight:iron_dagger",
+      "required": false
+    },
+    {
+      "id": "epicfight:netherite_dagger",
+      "required": false
+    },
+    {
+      "id": "epicfight:stone_dagger",
+      "required": false
+    },
+    {
+      "id": "epicfight:wooden_dagger",
+      "required": false
+    }
+  ]
+}

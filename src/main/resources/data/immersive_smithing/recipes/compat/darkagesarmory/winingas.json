@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:winingas"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "result": {
+    "item": "darkagesarmory:winingas"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "darkagesarmory:winingas"
+  ]
+}

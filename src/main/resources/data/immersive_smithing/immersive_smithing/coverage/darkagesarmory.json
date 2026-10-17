@@ -1,0 +1,97 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    }
+  ],
+  "mod": "darkagesarmory",
+  "tested_version": "1.1",
+  "policies": [
+    {
+      "items": [
+        "darkagesarmory:black_birka_tunic_boots",
+        "darkagesarmory:black_birka_tunic_decoration",
+        "darkagesarmory:black_early_tunic_decoration",
+        "darkagesarmory:black_klappenrock_tunic_decoration",
+        "darkagesarmory:black_late_saxon_tunic_decoration",
+        "darkagesarmory:black_oaterned_pillbox_cap",
+        "darkagesarmory:black_patterned_eastern_hat",
+        "darkagesarmory:black_saxon_tunic_decoration",
+        "darkagesarmory:black_tunic_boots",
+        "darkagesarmory:brown_birka_tunic_boots",
+        "darkagesarmory:brown_birka_tunic_decoration",
+        "darkagesarmory:brown_early_tunic_decoration",
+        "darkagesarmory:brown_klappenrock_tunic_decoration",
+        "darkagesarmory:brown_late_saxon_tunic_decoration",
+        "darkagesarmory:brown_oaterned_pillbox_cap",
+        "darkagesarmory:brown_patterned_eastern_hat",
+        "darkagesarmory:brown_saxon_tunic_decoration",
+        "darkagesarmory:brown_tunic_boots",
+        "darkagesarmory:early_tunic_boots",
+        "darkagesarmory:eastern_hat",
+        "darkagesarmory:fur_pillbox_cap",
+        "darkagesarmory:green_birka_tunic_boots",
+        "darkagesarmory:green_birka_tunic_decoration",
+        "darkagesarmory:green_early_tunic_decoration",
+        "darkagesarmory:green_klappenrock_tunic_decoration",
+        "darkagesarmory:green_late_saxon_tunic_decoration",
+        "darkagesarmory:green_oaterned_pillbox_cap",
+        "darkagesarmory:green_patterned_eastern_hat",
+        "darkagesarmory:green_saxon_tunic_decoration",
+        "darkagesarmory:green_tunic_boots",
+        "darkagesarmory:red_birka_tunic_boots",
+        "darkagesarmory:red_birka_tunic_decoration",
+        "darkagesarmory:red_early_tunic_decoration",
+        "darkagesarmory:red_klappenrock_tunic_decoration",
+        "darkagesarmory:red_late_saxon_tunic_decoration",
+        "darkagesarmory:red_oaterned_pillbox_cap",
+        "darkagesarmory:red_patterned_eastern_hat",
+        "darkagesarmory:red_saxon_tunic_decoration",
+        "darkagesarmory:red_tunic_boots",
+        "darkagesarmory:white_birka_tunic_boots",
+        "darkagesarmory:white_birka_tunic_decoration",
+        "darkagesarmory:white_early_tunic_decoration",
+        "darkagesarmory:white_klappenrock_tunic_decoration",
+        "darkagesarmory:white_late_saxon_tunic_decoration",
+        "darkagesarmory:white_oaterned_pillbox_cap",
+        "darkagesarmory:white_patterned_eastern_hat",
+        "darkagesarmory:white_saxon_tunic_decoration",
+        "darkagesarmory:white_tunic_boots",
+        "darkagesarmory:yellow_birka_tunic_boots",
+        "darkagesarmory:yellow_birka_tunic_decoration",
+        "darkagesarmory:yellow_early_tunic_decoration",
+        "darkagesarmory:yellow_klappenrock_tunic_decoration",
+        "darkagesarmory:yellow_late_saxon_tunic_decoration",
+        "darkagesarmory:yellow_oaterned_pillbox_cap",
+        "darkagesarmory:yellow_patterned_eastern_hat",
+        "darkagesarmory:yellow_saxon_tunic_decoration",
+        "darkagesarmory:yellow_tunic_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "darkagesarmory:black_rich_eastern_caftan",
+        "darkagesarmory:brown_rich_eastern_caftan",
+        "darkagesarmory:green_rich_eastern_caftan",
+        "darkagesarmory:red_rich_eastern_caftan",
+        "darkagesarmory:white_rich_eastern_caftan",
+        "darkagesarmory:yellow_rich_eastern_caftan"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of minecraft:gold on 8 other parts"
+    },
+    {
+      "items": [
+        "darkagesarmory:gilded_desjatinna_helmet",
+        "darkagesarmory:gilded_hauberk_boots",
+        "darkagesarmory:gilded_hauberk_chestplate",
+        "darkagesarmory:gilded_tjele"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    }
+  ]
+}

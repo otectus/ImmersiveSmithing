@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:bronze_rondache"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:wood_roundshield"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 72,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:wood_roundshield"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:bronze_rondache"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:bronze_rondache"
+  ]
+}

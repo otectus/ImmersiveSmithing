@@ -1,0 +1,484 @@
+{
+  "runs": {
+    "before": 3,
+    "after": 3
+  },
+  "settings": {
+    "window": "1280x720",
+    "vsync": false,
+    "frame_limit": 260,
+    "render_distance": 8,
+    "gl_renderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+    "gl_version": "4.6.0 NVIDIA 615.78.08",
+    "java": "17.0.20.1",
+    "warmup_frames": 120,
+    "sample_frames_min": 600,
+    "sample_seconds_min": 5
+  },
+  "scenes": {
+    "single_idle": {
+      "before": {
+        "fps": 3281.55,
+        "p50": 0.16,
+        "p95": 0.7,
+        "p99": 3.87,
+        "fps_min": 1029.77,
+        "fps_max": 4239.2,
+        "stations": 1
+      },
+      "after": {
+        "fps": 3762.99,
+        "p50": 0.16,
+        "p95": 0.54,
+        "p99": 2.82,
+        "fps_min": 3501.62,
+        "fps_max": 4181.11,
+        "stations": 1
+      },
+      "change_percent": 14.7
+    },
+    "workshop_idle": {
+      "before": {
+        "fps": 3791.76,
+        "p50": 0.16,
+        "p95": 0.59,
+        "p99": 2.85,
+        "fps_min": 975.66,
+        "fps_max": 4032.84,
+        "stations": 4
+      },
+      "after": {
+        "fps": 3594.5,
+        "p50": 0.17,
+        "p95": 0.56,
+        "p99": 2.87,
+        "fps_min": 2089.64,
+        "fps_max": 3671.75,
+        "stations": 4
+      },
+      "change_percent": -5.2
+    },
+    "outline_forge": {
+      "before": {
+        "fps": 1965.91,
+        "p50": 0.44,
+        "p95": 0.61,
+        "p99": 3.13,
+        "fps_min": 862.84,
+        "fps_max": 2062.08,
+        "stations": 4
+      },
+      "after": {
+        "fps": 2807.38,
+        "p50": 0.26,
+        "p95": 0.58,
+        "p99": 2.71,
+        "fps_min": 1692.31,
+        "fps_max": 2973.72,
+        "stations": 4
+      },
+      "change_percent": 42.8
+    },
+    "outline_anvil": {
+      "before": {
+        "fps": 1399.85,
+        "p50": 0.66,
+        "p95": 0.85,
+        "p99": 2.71,
+        "fps_min": 749.19,
+        "fps_max": 1418.42,
+        "stations": 4
+      },
+      "after": {
+        "fps": 2175.51,
+        "p50": 0.38,
+        "p95": 0.68,
+        "p99": 3.1,
+        "fps_min": 1464.8,
+        "fps_max": 2276.04,
+        "stations": 4
+      },
+      "change_percent": 55.4
+    },
+    "outline_trough": {
+      "before": {
+        "fps": 3003.62,
+        "p50": 0.2,
+        "p95": 0.76,
+        "p99": 3.28,
+        "fps_min": 921.86,
+        "fps_max": 3591.99,
+        "stations": 4
+      },
+      "after": {
+        "fps": 2790.54,
+        "p50": 0.2,
+        "p95": 0.77,
+        "p99": 3.92,
+        "fps_min": 1968.94,
+        "fps_max": 3162.2,
+        "stations": 4
+      },
+      "change_percent": -7.1
+    },
+    "outline_grindstone": {
+      "before": {
+        "fps": 2293.76,
+        "p50": 0.34,
+        "p95": 0.59,
+        "p99": 3.83,
+        "fps_min": 929.66,
+        "fps_max": 2475.85,
+        "stations": 4
+      },
+      "after": {
+        "fps": 2565.66,
+        "p50": 0.3,
+        "p95": 0.57,
+        "p99": 4.1,
+        "fps_min": 1520.78,
+        "fps_max": 2778.99,
+        "stations": 4
+      },
+      "change_percent": 11.9
+    },
+    "workshop_active": {
+      "before": {
+        "fps": 3010.0,
+        "p50": 0.19,
+        "p95": 0.74,
+        "p99": 3.69,
+        "fps_min": 1026.55,
+        "fps_max": 3229.06,
+        "stations": 4
+      },
+      "after": {
+        "fps": 3618.09,
+        "p50": 0.19,
+        "p95": 0.52,
+        "p99": 2.85,
+        "fps_min": 1401.97,
+        "fps_max": 3626.3,
+        "stations": 4
+      },
+      "change_percent": 20.2
+    },
+    "grid32_idle": {
+      "before": {
+        "fps": 2960.35,
+        "p50": 0.2,
+        "p95": 0.76,
+        "p99": 3.67,
+        "fps_min": 967.91,
+        "fps_max": 3011.29,
+        "stations": 32
+      },
+      "after": {
+        "fps": 3129.0,
+        "p50": 0.21,
+        "p95": 0.58,
+        "p99": 3.44,
+        "fps_min": 1267.37,
+        "fps_max": 3483.55,
+        "stations": 32
+      },
+      "change_percent": 5.7
+    },
+    "grid32_active": {
+      "before": {
+        "fps": 2946.1,
+        "p50": 0.24,
+        "p95": 0.7,
+        "p99": 3.32,
+        "fps_min": 996.84,
+        "fps_max": 3140.19,
+        "stations": 32
+      },
+      "after": {
+        "fps": 3358.71,
+        "p50": 0.23,
+        "p95": 0.39,
+        "p99": 2.53,
+        "fps_min": 1292.05,
+        "fps_max": 4226.33,
+        "stations": 32
+      },
+      "change_percent": 14.0
+    },
+    "grid128_idle": {
+      "before": {
+        "fps": 2602.12,
+        "p50": 0.26,
+        "p95": 1.19,
+        "p99": 3.08,
+        "fps_min": 896.98,
+        "fps_max": 2874.76,
+        "stations": 128
+      },
+      "after": {
+        "fps": 2942.49,
+        "p50": 0.27,
+        "p95": 0.44,
+        "p99": 2.46,
+        "fps_min": 2211.54,
+        "fps_max": 3878.32,
+        "stations": 128
+      },
+      "change_percent": 13.1
+    },
+    "grid128_active": {
+      "before": {
+        "fps": 1841.67,
+        "p50": 0.5,
+        "p95": 0.78,
+        "p99": 2.64,
+        "fps_min": 833.36,
+        "fps_max": 1854.9,
+        "stations": 128
+      },
+      "after": {
+        "fps": 1882.17,
+        "p50": 0.5,
+        "p95": 0.7,
+        "p99": 2.08,
+        "fps_min": 1216.14,
+        "fps_max": 2252.64,
+        "stations": 128
+      },
+      "change_percent": 2.2
+    },
+    "grid128_active_rotating": {
+      "before": {
+        "fps": 1659.72,
+        "p50": 0.55,
+        "p95": 0.87,
+        "p99": 3.57,
+        "fps_min": 791.05,
+        "fps_max": 1758.66,
+        "stations": 128
+      },
+      "after": {
+        "fps": 1791.01,
+        "p50": 0.48,
+        "p95": 0.78,
+        "p99": 2.32,
+        "fps_min": 1063.8,
+        "fps_max": 2121.57,
+        "stations": 128
+      },
+      "change_percent": 7.9
+    },
+    "grid128_active_night": {
+      "before": {
+        "fps": 1441.34,
+        "p50": 0.65,
+        "p95": 0.88,
+        "p99": 1.94,
+        "fps_min": 714.43,
+        "fps_max": 1662.14,
+        "stations": 128
+      },
+      "after": {
+        "fps": 1543.67,
+        "p50": 0.61,
+        "p95": 0.79,
+        "p99": 2.82,
+        "fps_min": 933.62,
+        "fps_max": 1685.48,
+        "stations": 128
+      },
+      "change_percent": 7.1
+    },
+    "grid128_active_no_particles": {
+      "before": {
+        "fps": 1502.8,
+        "p50": 0.62,
+        "p95": 0.83,
+        "p99": 2.0,
+        "fps_min": 732.45,
+        "fps_max": 1660.08,
+        "stations": 128
+      },
+      "after": {
+        "fps": 1606.45,
+        "p50": 0.6,
+        "p95": 0.79,
+        "p99": 1.93,
+        "fps_min": 997.91,
+        "fps_max": 1750.62,
+        "stations": 128
+      },
+      "change_percent": 6.9
+    }
+  },
+  "meshing": {
+    "block.immersive_smithing.smiths_forge": {
+      "before_us": 219.39,
+      "after_us": 47.37,
+      "before_vertices": 888,
+      "after_vertices": 176,
+      "before_runs_us": [
+        219.39,
+        217.4,
+        356.64
+      ],
+      "after_runs_us": [
+        49.29,
+        47.37,
+        44.87
+      ]
+    },
+    "block.immersive_smithing.smiths_anvil": {
+      "before_us": 157.14,
+      "after_us": 41.09,
+      "before_vertices": 648,
+      "after_vertices": 164,
+      "before_runs_us": [
+        154.45,
+        157.14,
+        259.79
+      ],
+      "after_runs_us": [
+        41.13,
+        41.03,
+        41.09
+      ]
+    },
+    "block.immersive_smithing.smiths_trough": {
+      "before_us": 65.39,
+      "after_us": 33.04,
+      "before_vertices": 264,
+      "after_vertices": 128,
+      "before_runs_us": [
+        65.39,
+        64.24,
+        105.92
+      ],
+      "after_runs_us": [
+        31.48,
+        34.06,
+        33.04
+      ]
+    },
+    "block.immersive_smithing.smiths_grindstone": {
+      "before_us": 65.2,
+      "after_us": 38.8,
+      "before_vertices": 264,
+      "after_vertices": 152,
+      "before_runs_us": [
+        65.2,
+        63.81,
+        112.23
+      ],
+      "after_runs_us": [
+        38.53,
+        39.85,
+        38.8
+      ]
+    }
+  },
+  "structure": {
+    "block.immersive_smithing.smiths_forge": {
+      "before": {
+        "baked_quads": 222,
+        "outline_boxes": 22,
+        "outline_edges": 108
+      },
+      "after": {
+        "baked_quads": 44,
+        "outline_boxes": 10,
+        "outline_edges": 66
+      }
+    },
+    "block.immersive_smithing.smiths_anvil": {
+      "before": {
+        "baked_quads": 162,
+        "outline_boxes": 32,
+        "outline_edges": 270
+      },
+      "after": {
+        "baked_quads": 41,
+        "outline_boxes": 10,
+        "outline_edges": 84
+      }
+    },
+    "block.immersive_smithing.smiths_trough": {
+      "before": {
+        "baked_quads": 66,
+        "outline_boxes": 11,
+        "outline_edges": 96
+      },
+      "after": {
+        "baked_quads": 32,
+        "outline_boxes": 5,
+        "outline_edges": 24
+      }
+    },
+    "block.immersive_smithing.smiths_grindstone": {
+      "before": {
+        "baked_quads": 66,
+        "outline_boxes": 13,
+        "outline_edges": 150
+      },
+      "after": {
+        "baked_quads": 38,
+        "outline_boxes": 10,
+        "outline_edges": 120
+      }
+    }
+  },
+  "geometry": {
+    "before": {
+      "block.immersive_smithing.smiths_forge": [
+        22,
+        25,
+        22,
+        22
+      ],
+      "block.immersive_smithing.smiths_anvil": [
+        32,
+        32,
+        32,
+        36
+      ],
+      "block.immersive_smithing.smiths_trough": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "block.immersive_smithing.smiths_grindstone": [
+        13,
+        13,
+        13,
+        13
+      ]
+    },
+    "after": {
+      "block.immersive_smithing.smiths_forge": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "block.immersive_smithing.smiths_anvil": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "block.immersive_smithing.smiths_trough": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "block.immersive_smithing.smiths_grindstone": [
+        10,
+        10,
+        10,
+        10
+      ]
+    }
+  }
+}

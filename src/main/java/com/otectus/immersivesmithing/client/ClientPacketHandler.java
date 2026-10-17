@@ -12,6 +12,7 @@ import com.otectus.immersivesmithing.network.packet.OpenAnvilScreenPacket;
 import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
 import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
 import com.otectus.immersivesmithing.network.packet.StationEffectPacket;
+import com.otectus.immersivesmithing.network.packet.StationNoticePacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -48,7 +49,11 @@ public final class ClientPacketHandler {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen instanceof ForgeMinigameScreen forge && forge.sessionId() == packet.sessionId()) forge.closeByServer();
         else if (mc.screen instanceof AnvilMinigameScreen anvil && anvil.sessionId() == packet.sessionId()) anvil.closeByServer();
-        if (mc.player != null) mc.player.displayClientMessage(packet.reason(), true);
+        if (mc.player != null && !packet.reason().getString().isEmpty()) StationNotices.show(packet.reason(), true);
+    }
+
+    public static void stationNotice(StationNoticePacket packet) {
+        StationNotices.show(packet.message(), packet.failure());
     }
 
     public static void openMakersMark(OpenMakersMarkPacket packet) {

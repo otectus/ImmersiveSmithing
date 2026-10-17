@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/** {@code /immersivesmithing reload|material|recipe|quality|report|session} for administrators and pack authors. */
+/** {@code /immersivesmithing reload|material|recipe|quality|report|catalog|session} for administrators and pack authors. */
 public final class SmithingCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext context) {
@@ -47,6 +47,10 @@ public final class SmithingCommands {
                         .executes(c -> recipe(c, ItemArgument.getItem(c, "item").getItem()))))
                 .then(Commands.literal("quality").executes(SmithingCommands::quality))
                 .then(Commands.literal("report").executes(SmithingCommands::report))
+                .then(Commands.literal("catalog").then(Commands.argument("modid", com.mojang.brigadier.arguments.StringArgumentType.word())
+                        .suggests((ctx, builder) -> net.minecraft.commands.SharedSuggestionProvider.suggest(
+                                net.minecraftforge.fml.ModList.get().getMods().stream().map(m -> m.getModId()), builder))
+                        .executes(SmithingCommands::catalog)))
                 .then(Commands.literal("session").executes(SmithingCommands::sessions)));
     }
 
@@ -131,6 +135,20 @@ public final class SmithingCommands {
             Path file = report.write(dir);
             report.lines().forEach(ImmersiveSmithing.LOGGER::info);
             send(c, Component.translatable("command.immersive_smithing.report", report.summary(), file.toString()));
+            return 1;
+        } catch (IOException e) {
+            c.getSource().sendFailure(Component.translatable("command.immersive_smithing.report.failed", e.getMessage()));
+            return 0;
+        }
+    }
+
+    private static int catalog(CommandContext<CommandSourceStack> c) {
+        String modId = com.mojang.brigadier.arguments.StringArgumentType.getString(c, "modid");
+        Path dir = c.getSource().getServer().getServerDirectory().toPath().resolve("logs");
+        try {
+            var catalog = com.otectus.immersivesmithing.recipe.WeaponCatalog.build(modId, c.getSource().getServer().registryAccess());
+            Path file = com.otectus.immersivesmithing.recipe.WeaponCatalog.write(dir, modId, c.getSource().getServer().registryAccess());
+            send(c, Component.translatable("command.immersive_smithing.catalog", modId, catalog.getAsJsonArray("items").size(), file.toString()));
             return 1;
         } catch (IOException e) {
             c.getSource().sendFailure(Component.translatable("command.immersive_smithing.report.failed", e.getMessage()));

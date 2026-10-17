@@ -15,13 +15,15 @@ import com.otectus.immersivesmithing.network.packet.SignWorkPacket;
 import com.otectus.immersivesmithing.network.packet.SelectForgeRecipePacket;
 import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
 import com.otectus.immersivesmithing.network.packet.StationEffectPacket;
+import com.otectus.immersivesmithing.network.packet.StationNoticePacket;
+import com.otectus.immersivesmithing.network.packet.GrindstonePreviewPacket;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
 /** Small, purpose-specific packets. Clients report inputs only; the server owns every outcome. */
 public final class ModNetwork {
-    private static final String VERSION = "1";
+    private static final String VERSION = "3";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(ImmersiveSmithing.id("main"),
             () -> VERSION, VERSION::equals, VERSION::equals);
 
@@ -71,6 +73,13 @@ public final class ModNetwork {
         CHANNEL.messageBuilder(SignWorkPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
                 .encoder(SignWorkPacket::encode).decoder(SignWorkPacket::decode)
                 .consumerNetworkThread(SignWorkPacket::handle).add();
+        // Server -> client (protocol 2)
+        CHANNEL.messageBuilder(StationNoticePacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(StationNoticePacket::encode).decoder(StationNoticePacket::decode)
+                .consumerMainThread(StationNoticePacket::handle).add();
+        CHANNEL.messageBuilder(GrindstonePreviewPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(GrindstonePreviewPacket::encode).decoder(GrindstonePreviewPacket::decode)
+                .consumerMainThread(GrindstonePreviewPacket::handle).add();
     }
 
     private ModNetwork() {}

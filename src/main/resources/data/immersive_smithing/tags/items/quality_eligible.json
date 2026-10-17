@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#simplyswords:uniques",
+      "required": false
+    },
+    {
+      "id": "#simplyswords:runic_weapons",
+      "required": false
+    },
+    {
+      "id": "simplyswords:sword_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "#immersive_smithing:compat/epicknights/quality_eligible",
+      "required": false
+    }
+  ]
+}

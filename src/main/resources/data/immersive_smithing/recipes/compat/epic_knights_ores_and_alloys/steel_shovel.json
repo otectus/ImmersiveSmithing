@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ores_and_alloys"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epic_knights_ores_and_alloys:steel_shovel"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "epic_knights_ores_and_alloys:steel_shovel"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shovel",
+  "replaces": [
+    "epic_knights_ores_and_alloys:steel_shovel_r"
+  ]
+}

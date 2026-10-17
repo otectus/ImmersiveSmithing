@@ -1,6 +1,7 @@
 package com.otectus.immersivesmithing.recipe;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import com.otectus.immersivesmithing.compat.Integrations;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.material.MaterialFamily;
 import com.otectus.immersivesmithing.material.MaterialRegistry;
@@ -16,7 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmithingTransformRecipe;
 import org.jetbrains.annotations.Nullable;
@@ -36,44 +37,102 @@ import java.util.TreeSet;
  * Conservative recipe analysis. A crafting recipe becomes a smithing recipe only when every ingredient is
  * either entirely one metal family or entirely non-metal, exactly one family is involved, and the result is
  * recognisable equipment. Anything ambiguous is skipped and reported, never guessed.
+ *
+ * <p>The result's repair material decides its primary material: a diamond weapon with iron-nugget fittings is not iron
+ * equipment, and a gold weapon with iron-nugget fittings is gold equipment whose nuggets are components. Only recipe
+ * classes whose behaviour the forge reproduces are analysed at all ({@link SourceRecipes}).</p>
  */
 public final class AutoRecipeDetector {
 
-    public enum Status { OK, UPGRADE_CHAIN, NOT_METAL, MULTI_METAL, MIXED_INGREDIENT, EQUIPMENT_INGREDIENT, EMPTY_INGREDIENT, ERROR }
+    public enum Status { OK, UPGRADE_CHAIN, NOT_METAL, NON_METAL_PRIMARY, MULTI_METAL, MIXED_INGREDIENT, EQUIPMENT_INGREDIENT, EMPTY_INGREDIENT, ERROR }
 
     /**
      * @param base for {@link Status#UPGRADE_CHAIN}: the one ingredient that is a finished piece of the same class as
      *             the result (a manasteel helmet reworked into a terrasteel helmet); null otherwise.
+     * @param kind the source recipe's class, which decides whether the result keeps a reworked piece's data.
      */
     public record Analysis(ResourceLocation recipeId, ItemStack result, Status status, @Nullable ResourceLocation family,
                            int units, List<AuxiliaryIngredient> auxiliary, int metalSlots, int auxSlots, String detail,
-                           @Nullable Ingredient base) {
+                           @Nullable Ingredient base, SourceRecipes.Kind kind) {
         public Analysis(ResourceLocation recipeId, ItemStack result, Status status, @Nullable ResourceLocation family,
                         int units, List<AuxiliaryIngredient> auxiliary, int metalSlots, int auxSlots, String detail) {
-            this(recipeId, result, status, family, units, auxiliary, metalSlots, auxSlots, detail, null);
+            this(recipeId, result, status, family, units, auxiliary, metalSlots, auxSlots, detail, null, SourceRecipes.Kind.PLAIN_CRAFTING);
         }
 
         /** Whether any ingredient was recognised as metal, which makes the recipe eligible for suppression. */
         public boolean hasMetal() {
             return metalSlots > 0;
         }
+
+        Analysis withKind(SourceRecipes.Kind kind) {
+            return new Analysis(recipeId, result, status, family, units, auxiliary, metalSlots, auxSlots, detail, base, kind);
+        }
+    }
+
+    /**
+     * What detection must leave alone in one rebuild: blacklisted recipe ids, and the item namespaces of blacklisted mods
+     * and of integrations that are switched off. Curated namespaces (Epic Fight, Epic Knights) are forged only from their
+     * bundled recipes: detection never generates anything for them, but their native recipes can still be replaced.
+     */
+    public record Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces, Set<String> curatedNamespaces) {
+        public Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces) {
+            this(recipeBlacklist, skippedNamespaces, Set.of());
+        }
+
+        public static Scope fromConfig() {
+            Set<String> namespaces = new HashSet<>(ServerConfig.list(ServerConfig.MOD_BLACKLIST));
+            namespaces.addAll(Integrations.disabledNamespaces());
+            return new Scope(Set.copyOf(ServerConfig.list(ServerConfig.RECIPE_BLACKLIST)), Set.copyOf(namespaces),
+                    Set.copyOf(Integrations.curatedNamespaces()));
+        }
+
+        public boolean skipsRecipe(ResourceLocation recipeId) {
+            return recipeBlacklist.contains(recipeId.toString());
+        }
+
+        public boolean skipsItem(Item item) {
+            return skippedNamespaces.contains(BuiltInRegistries.ITEM.getKey(item).getNamespace());
+        }
+
+        /** Forged only from bundled recipes: automatic detection stays silent about it. */
+        public boolean isCurated(Item item) {
+            return curatedNamespaces.contains(BuiltInRegistries.ITEM.getKey(item).getNamespace());
+        }
+
+        /** Why an item's namespace is skipped, for the report. */
+        public String skipReason(Item item) {
+            String namespace = BuiltInRegistries.ITEM.getKey(item).getNamespace();
+            return Integrations.disabledNamespaces().contains(namespace) ? "integration " + namespace + " is disabled in the config"
+                    : "mod blacklisted by config";
+        }
     }
 
     /**
      * Analyses every crafting recipe whose result is a single unstackable item, plus every recipe of an item that
-     * already has an explicit smithing recipe (so its conventional recipe can be disabled even if it stacks).
+     * already has an explicit smithing recipe (so its conventional recipe can be disabled even if it stacks). Recipes
+     * of a custom class are not analysed; when they make equipment they are reported as kept.
      */
-    public static Map<ResourceLocation, Analysis> analyzeCrafting(RecipeManager manager, RegistryAccess access, MaterialRegistry materials,
-                                                                  Set<Item> alwaysAnalyse) {
+    public static Map<ResourceLocation, Analysis> analyzeCrafting(Collection<Recipe<?>> source, RegistryAccess access, MaterialRegistry materials,
+                                                                  Set<Item> alwaysAnalyse, CompatibilityReport report) {
         Map<ResourceLocation, Analysis> out = new LinkedHashMap<>();
-        List<CraftingRecipe> recipes = new ArrayList<>(manager.getAllRecipesFor(RecipeType.CRAFTING));
+        List<CraftingRecipe> recipes = new ArrayList<>();
+        for (Recipe<?> r : source) {
+            if (r instanceof CraftingRecipe crafting && r.getType() == RecipeType.CRAFTING) recipes.add(crafting);
+        }
         recipes.sort(Comparator.comparing(r -> r.getId().toString()));
         for (CraftingRecipe recipe : recipes) {
             try {
                 if (recipe.isSpecial()) continue;
                 ItemStack result = recipe.getResultItem(access);
                 if (result.isEmpty() || (result.getMaxStackSize() != 1 && !alwaysAnalyse.contains(result.getItem()))) continue;
-                out.put(recipe.getId(), analyze(recipe.getId(), recipe.getIngredients(), result, materials));
+                SourceRecipes.Kind kind = SourceRecipes.kind(recipe);
+                if (!kind.isAdaptable()) {
+                    if (EquipmentClassifier.isCandidate(result)) {
+                        report.retained(recipe.getId(), result.getItem(), "custom recipe type " + SourceRecipes.describe(recipe) + " is never converted");
+                    }
+                    continue;
+                }
+                out.put(recipe.getId(), analyze(recipe.getId(), recipe.getIngredients(), result, materials).withKind(kind));
             } catch (RuntimeException e) {
                 ImmersiveSmithing.LOGGER.debug("Could not analyse recipe {}: {}", recipe.getId(), e.toString());
             }
@@ -83,7 +142,9 @@ public final class AutoRecipeDetector {
 
     public static Analysis analyze(ResourceLocation id, List<Ingredient> ingredients, ItemStack result, MaterialRegistry materials) {
         boolean shieldResult = EquipmentClassifier.isShield(result);
+        Primary primary = primaryMaterial(result, ingredients, materials);
         Map<ResourceLocation, Integer> families = new LinkedHashMap<>();
+        Map<ResourceLocation, Integer> fittings = new LinkedHashMap<>();
         Map<String, AuxBucket> aux = new LinkedHashMap<>();
         List<Ingredient> equipmentIngredients = new ArrayList<>();
         int metalSlots = 0;
@@ -122,30 +183,87 @@ public final class AutoRecipeDetector {
                 metalSlots++;
                 return new Analysis(id, result, Status.MIXED_INGREDIENT, null, 0, List.of(), metalSlots, auxSlots,
                         "an ingredient mixes metals, unit values or non-metal items");
+            } else if (primary.family() != null && !primary.family().equals(ingFamilies.iterator().next())) {
+                // Fittings of another metal on a piece whose repair material is this metal: components, not stock.
+                auxSlots++;
+                aux.computeIfAbsent(key(items), k -> new AuxBucket(ingredient)).count++;
+                fittings.merge(ingFamilies.iterator().next(), ingUnits.iterator().next(), Integer::sum);
             } else {
                 metalSlots++;
                 families.merge(ingFamilies.iterator().next(), ingUnits.iterator().next(), Integer::sum);
             }
         }
+        if (primary.nonMetal() && !families.isEmpty()) {
+            // Diamond, leather or bone equipment with metal fittings (a nugget on a leather helmet): not metal equipment.
+            return new Analysis(id, result, Status.NON_METAL_PRIMARY, null, 0, List.of(), metalSlots, auxSlots,
+                    "not predominantly metal: its repair material is not metal");
+        }
         if (families.isEmpty()) {
             // Bone, chitin or cloth work, whatever it is built on: not the forge's business, and not worth reporting.
-            return new Analysis(id, result, Status.NOT_METAL, null, 0, List.of(), 0, auxSlots, "no metal ingredient");
+            // A single finished piece among the ingredients is remembered: the result keeps that piece's metal for recycling.
+            Ingredient piece = equipmentIngredients.size() == 1 ? equipmentIngredients.get(0) : null;
+            List<AuxiliaryIngredient> components = aux.values().stream().map(b -> new AuxiliaryIngredient(b.ingredient, b.count)).toList();
+            return new Analysis(id, result, Status.NOT_METAL, null, 0, components, 0, auxSlots, "no metal ingredient", piece,
+                    SourceRecipes.Kind.PLAIN_CRAFTING);
         }
-        if (families.size() > 1) {
+        int primaryUnits = families.values().stream().mapToInt(Integer::intValue).sum();
+        int fittingUnits = fittings.values().stream().mapToInt(Integer::intValue).sum();
+        if (families.size() > 1 || (!fittings.isEmpty() && fittingUnits >= primaryUnits)) {
+            // Fittings must be the smaller part; as much of another metal as of the primary one is a true alloy recipe.
+            Set<ResourceLocation> all = new java.util.LinkedHashSet<>(families.keySet());
+            all.addAll(fittings.keySet());
             return new Analysis(id, result, Status.MULTI_METAL, null, 0, List.of(), metalSlots, auxSlots,
-                    "uses several metal families " + families.keySet());
+                    "uses several metal families " + all);
         }
         Map.Entry<ResourceLocation, Integer> only = families.entrySet().iterator().next();
         List<AuxiliaryIngredient> auxiliary = aux.values().stream().map(b -> new AuxiliaryIngredient(b.ingredient, b.count)).toList();
         if (!equipmentIngredients.isEmpty()) {
             if (equipmentIngredients.size() == 1 && isUpgradeBase(equipmentIngredients.get(0), result)) {
                 return new Analysis(id, result, Status.UPGRADE_CHAIN, only.getKey(), only.getValue(), auxiliary, metalSlots, auxSlots,
-                        "reworks a finished piece", equipmentIngredients.get(0));
+                        "reworks a finished piece", equipmentIngredients.get(0), SourceRecipes.Kind.PLAIN_CRAFTING);
             }
+            Ingredient piece = equipmentIngredients.size() == 1 ? equipmentIngredients.get(0) : null;
             return new Analysis(id, result, Status.EQUIPMENT_INGREDIENT, only.getKey(), only.getValue(), auxiliary, metalSlots, auxSlots,
-                    "uses equipment as an ingredient");
+                    piece != null ? "uses equipment as an ingredient" : "uses equipment as an ingredient (several pieces)",
+                    piece, SourceRecipes.Kind.PLAIN_CRAFTING);
         }
         return new Analysis(id, result, Status.OK, only.getKey(), only.getValue(), auxiliary, metalSlots, auxSlots, "");
+    }
+
+    /**
+     * The result's primary material: the metal family of the ingredients it accepts as repair material, or non-metal
+     * when its repair material is not metal. {@link Primary#NONE} when no ingredient is a repair material or the answer
+     * is ambiguous; the general rules then apply unchanged.
+     */
+    record Primary(@Nullable ResourceLocation family, boolean nonMetal) {
+        static final Primary NONE = new Primary(null, false);
+    }
+
+    static Primary primaryMaterial(ItemStack result, List<Ingredient> ingredients, MaterialRegistry materials) {
+        Set<ResourceLocation> families = new HashSet<>();
+        boolean nonMetal = false;
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.isEmpty()) continue;
+            for (ItemStack candidate : ingredient.getItems()) {
+                if (!isRepairMaterial(result, candidate)) continue;
+                MaterialRegistry.Entry entry = materials.lookup(candidate.getItem());
+                if (entry == null) nonMetal = true;
+                else families.add(entry.family());
+            }
+        }
+        if (nonMetal && families.isEmpty()) return new Primary(null, true);
+        if (!nonMetal && families.size() == 1) return new Primary(families.iterator().next(), false);
+        return Primary.NONE;
+    }
+
+    /** Whether {@code candidate} repairs {@code result} at an anvil. Equipment never counts (self-repairing items). */
+    static boolean isRepairMaterial(ItemStack result, ItemStack candidate) {
+        if (candidate.isEmpty() || candidate.isDamageableItem()) return false;
+        try {
+            return result.getItem().isValidRepairItem(result, candidate);
+        } catch (RuntimeException e) {
+            return false;
+        }
     }
 
     /** Whether every item an ingredient accepts is candidate equipment of the same class as the result. */
@@ -163,22 +281,20 @@ public final class AutoRecipeDetector {
     }
 
     /** Turns successful analyses of candidate equipment into automatic smithing recipes. */
-    public static List<SmithingRecipe> generate(Collection<Analysis> analyses, Set<Item> explicitResults, CompatibilityReport report) {
-        Set<String> recipeBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.RECIPE_BLACKLIST));
-        Set<String> modBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.MOD_BLACKLIST));
+    public static List<SmithingRecipe> generate(Collection<Analysis> analyses, Set<Item> explicitResults, Scope scope, CompatibilityReport report) {
         Map<Item, SmithingRecipe> generated = new LinkedHashMap<>();
         Set<Item> reported = new TreeSet<>(Comparator.comparing(i -> BuiltInRegistries.ITEM.getKey(i).toString()));
 
         for (Analysis a : analyses) {
             Item item = a.result().getItem();
             if (!EquipmentClassifier.isCandidate(a.result())) continue;
-            if (explicitResults.contains(item) || generated.containsKey(item)) continue;
+            if (explicitResults.contains(item) || generated.containsKey(item) || scope.isCurated(item)) continue;
             ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
             String reason = null;
-            if (recipeBlacklist.contains(a.recipeId().toString())) reason = "recipe blacklisted by config";
-            else if (modBlacklist.contains(itemId.getNamespace())) reason = "mod blacklisted by config";
+            if (scope.skipsRecipe(a.recipeId())) reason = "recipe blacklisted by config";
+            else if (scope.skipsItem(item)) reason = scope.skipReason(item);
             else if (a.status() == Status.NOT_METAL) continue; // not metal equipment: nothing to report
-            else if (a.status() == Status.UPGRADE_CHAIN) continue; // priced later, once the base's own recipe is known
+            else if ((a.status() == Status.UPGRADE_CHAIN || a.status() == Status.EQUIPMENT_INGREDIENT) && a.base() != null) continue; // priced later from the piece's own recipe
             else if (a.status() != Status.OK) reason = a.detail();
             else if (a.result().getCount() != 1) reason = "recipe makes more than one item";
             else if (EquipmentClassifier.isShield(a.result()) && !a.result().is(ModTags.SMITHABLE_SHIELDS)
@@ -217,15 +333,23 @@ public final class AutoRecipeDetector {
         final Map<Item, List<CraftingRecipe>> craftingByResult = new HashMap<>();
         final List<ItemStack> unstackables = new ArrayList<>();
 
-        public UpgradeContext(RecipeManager manager, RegistryAccess access, MaterialRegistry materials, Map<Item, SmithingRecipe> smithable) {
+        public UpgradeContext(net.minecraft.world.item.crafting.RecipeManager manager, RegistryAccess access, MaterialRegistry materials,
+                              Map<Item, SmithingRecipe> smithable) {
+            this(manager.getRecipes(), access, materials, smithable);
+        }
+
+        public UpgradeContext(Collection<Recipe<?>> source, RegistryAccess access, MaterialRegistry materials, Map<Item, SmithingRecipe> smithable) {
             this.access = access;
             this.materials = materials;
             this.smithable = smithable;
-            List<CraftingRecipe> crafting = new ArrayList<>(manager.getAllRecipesFor(RecipeType.CRAFTING));
+            List<CraftingRecipe> crafting = new ArrayList<>();
+            for (Recipe<?> r : source) {
+                if (r instanceof CraftingRecipe c && r.getType() == RecipeType.CRAFTING) crafting.add(c);
+            }
             crafting.sort(Comparator.comparing(r -> r.getId().toString()));
             for (CraftingRecipe r : crafting) {
                 try {
-                    if (r.isSpecial()) continue;
+                    if (r.isSpecial() || !SourceRecipes.kind(r).isCrafting()) continue;
                     ItemStack result = r.getResultItem(access);
                     if (!result.isEmpty()) craftingByResult.computeIfAbsent(result.getItem(), k -> new ArrayList<>()).add(r);
                 } catch (RuntimeException ignored) {
@@ -245,12 +369,23 @@ public final class AutoRecipeDetector {
      * smithing recipe if it has one, otherwise its crafting recipe, where ingredients the base accepts as a repair
      * material (or gems/ingots) count as material slots.
      */
-    public static List<SmithingRecipe> generateUpgrades(RecipeManager manager, UpgradeContext context, CompatibilityReport report) {
-        Set<String> recipeBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.RECIPE_BLACKLIST));
-        Set<String> modBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.MOD_BLACKLIST));
+    public static List<SmithingRecipe> generateUpgrades(Collection<Recipe<?>> source, UpgradeContext context, Scope scope, CompatibilityReport report) {
         List<SmithingTransformRecipe> upgrades = new ArrayList<>();
-        for (var r : manager.getAllRecipesFor(RecipeType.SMITHING)) {
-            if (r instanceof SmithingTransformRecipe t) upgrades.add(t);
+        for (Recipe<?> r : source) {
+            if (r.getType() != RecipeType.SMITHING || !(r instanceof SmithingTransformRecipe t)) continue;
+            if (SourceRecipes.kind(r) == SourceRecipes.Kind.SMITHING_UPGRADE) {
+                upgrades.add(t);
+                continue;
+            }
+            // A subclass with its own assembly (a reroll that removes a rolled power) stays on the smithing table.
+            try {
+                ItemStack result = t.getResultItem(context.access);
+                if (!result.isEmpty() && EquipmentClassifier.isCandidate(result)) {
+                    report.retained(t.getId(), result.getItem(), "custom smithing recipe " + SourceRecipes.describe(t) + " is never converted");
+                }
+            } catch (RuntimeException ignored) {
+                // a broken third-party recipe is not reported
+            }
         }
         upgrades.sort(Comparator.comparing(r -> r.getId().toString()));
         Map<Item, SmithingRecipe> generated = new LinkedHashMap<>();
@@ -264,8 +399,7 @@ public final class AutoRecipeDetector {
             if (result.isEmpty() || result.getCount() != 1 || !EquipmentClassifier.isCandidate(result)) continue;
             Item item = result.getItem();
             if (context.smithable.containsKey(item) || generated.containsKey(item)) continue;
-            ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
-            if (recipeBlacklist.contains(upgrade.getId().toString()) || modBlacklist.contains(itemId.getNamespace())) continue;
+            if (scope.skipsRecipe(upgrade.getId()) || scope.skipsItem(item) || scope.isCurated(item)) continue;
             try {
                 upgradeRecipe(upgrade, result, context, report).ifPresent(r -> {
                     generated.put(item, r);
@@ -319,7 +453,7 @@ public final class AutoRecipeDetector {
                 auxiliary = baseRecipe.auxiliary();
             } else {
                 for (CraftingRecipe crafting : context.craftingByResult.getOrDefault(base.getItem(), List.of())) {
-                    Shape shape = baseShape(base, crafting.getIngredients(), EquipmentClassifier.isShield(result));
+                    Shape shape = baseShape(base, crafting.getIngredients(), EquipmentClassifier.isShield(result), context, 0);
                     if (shape != null) {
                         metalUnits = shape.primarySlots * perAddition;
                         auxiliary = shape.auxiliary;
@@ -336,89 +470,166 @@ public final class AutoRecipeDetector {
         }
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
         ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
-        return java.util.Optional.of(new SmithingRecipe(id, family, metalUnits, auxiliary, result.copy(), ForgePattern.STANDARD, null, true, upgrade.getId()));
+        // A smithing-table upgrade hands the base piece's data to the result; a reworked base does the same here.
+        return java.util.Optional.of(new SmithingRecipe(id, family, metalUnits, auxiliary, result.copy(), ForgePattern.STANDARD, null, true,
+                upgrade.getId()).keepBaseData(true));
     }
 
-    static UpgradePolicy policy(MaterialRegistry materials, ResourceLocation family) {
+    public static UpgradePolicy policy(MaterialRegistry materials, ResourceLocation family) {
         return materials.family(family).map(MaterialFamily::upgradePolicy).orElse(UpgradePolicy.SHAPE);
     }
 
-    // ------------------------------------------------------------------ crafting upgrade chains
+    /** The metal families a smithing-table upgrade's addition slot accepts; empty when the addition is not metal. */
+    public static Set<ResourceLocation> additionFamilies(SmithingTransformRecipe upgrade, MaterialRegistry materials) {
+        Set<ResourceLocation> families = new HashSet<>();
+        for (var family : materials.families()) {
+            for (var source : family.sources()) {
+                if (upgrade.isAdditionIngredient(new ItemStack(source.item()))) families.add(family.id());
+            }
+        }
+        return families;
+    }
+
+    // ------------------------------------------------------------------ recipes built on a finished piece
 
     /**
-     * Crafting recipes that rework a finished piece with more metal (Botania's terrasteel armour is made from
-     * manasteel armour and terrasteel). Priced like a smithing-table upgrade: the base's shape in the new metal
-     * under the {@code shape} policy, or the metal the recipe asks for plus the base piece itself under
-     * {@code addition}. A base with no metal shape of its own always uses {@code addition}.
+     * Crafting recipes that use exactly one finished piece. When the forge makes that piece from the same metal as the
+     * rest of the recipe (or the recipe adds no metal at all), the piece grows: the forge makes the result from the
+     * piece's own recipe plus the recipe's metal and components (Epic Fight's iron longsword is an iron sword and two
+     * ingots: 36 units and a stick). A piece reworked with another metal (Botania's terrasteel armour from manasteel
+     * armour) is priced like a smithing-table upgrade: the base's shape in the new metal under the {@code shape} policy,
+     * or the metal the recipe asks for plus the base piece itself under {@code addition}.
      */
-    public static List<SmithingRecipe> generateChains(Collection<Analysis> analyses, UpgradeContext context, CompatibilityReport report) {
-        Set<String> recipeBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.RECIPE_BLACKLIST));
-        Set<String> modBlacklist = new HashSet<>(ServerConfig.list(ServerConfig.MOD_BLACKLIST));
+    public static List<SmithingRecipe> generateChains(Collection<Analysis> analyses, UpgradeContext context, Scope scope, CompatibilityReport report) {
         Map<Item, SmithingRecipe> generated = new LinkedHashMap<>();
+        // A piece can itself be built on a piece: a few passes reach the end of such a chain.
+        for (int pass = 0; pass < 4; pass++) {
+            boolean added = false;
+            for (Analysis a : analyses) {
+                Piece decision = pieceRecipe(a, context, scope, generated);
+                if (decision.recipe() == null) continue;
+                generated.put(decision.recipe().resultItem(), decision.recipe());
+                context.smithable.put(decision.recipe().resultItem(), decision.recipe());
+                report.autoRecipe(decision.recipe());
+                added = true;
+            }
+            if (!added) break;
+        }
+        // Then say why the remaining ones were not converted.
         for (Analysis a : analyses) {
-            if (a.status() != Status.UPGRADE_CHAIN || a.base() == null) continue;
-            Item item = a.result().getItem();
-            if (!EquipmentClassifier.isCandidate(a.result())) continue;
-            if (context.smithable.containsKey(item) || generated.containsKey(item)) continue;
-            ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
-            if (recipeBlacklist.contains(a.recipeId().toString())) {
-                report.skippedEquipment(item, a.recipeId(), "recipe blacklisted by config");
-                continue;
-            }
-            if (modBlacklist.contains(itemId.getNamespace())) {
-                report.skippedEquipment(item, a.recipeId(), "mod blacklisted by config");
-                continue;
-            }
-            if (a.result().getCount() != 1) {
-                report.skippedEquipment(item, a.recipeId(), "recipe makes more than one item");
-                continue;
-            }
-            ItemStack[] bases = a.base().getItems();
-            boolean smithableBase = false;
-            for (ItemStack base : bases) {
-                if (context.smithable.containsKey(base.getItem())) smithableBase = true;
-            }
-            if (!smithableBase) {
-                report.skippedEquipment(item, a.recipeId(), "reworks a piece the forge does not make: "
-                        + BuiltInRegistries.ITEM.getKey(bases[0].getItem()));
-                continue;
-            }
-            int metalUnits = -1;
-            List<AuxiliaryIngredient> auxiliary = List.of();
-            if (policy(context.materials, a.family()) == UpgradePolicy.SHAPE) {
-                for (ItemStack base : bases) {
-                    SmithingRecipe baseRecipe = context.smithable.get(base.getItem());
-                    if (baseRecipe != null) {
-                        metalUnits = baseRecipe.metalUnits();
-                        List<AuxiliaryIngredient> merged = new ArrayList<>(baseRecipe.auxiliary());
-                        merged.addAll(a.auxiliary());
-                        auxiliary = merged;
-                        break;
-                    }
-                }
-            }
-            if (metalUnits <= 0) {
-                metalUnits = a.units();
-                List<AuxiliaryIngredient> merged = new ArrayList<>();
-                merged.add(new AuxiliaryIngredient(a.base(), 1, true));
-                merged.addAll(a.auxiliary());
-                auxiliary = merged;
-            }
-            ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
-            SmithingRecipe recipe = new SmithingRecipe(id, a.family(), metalUnits, auxiliary, a.result().copy(),
-                    ForgePattern.STANDARD, null, true, a.recipeId());
-            generated.put(item, recipe);
-            context.smithable.put(item, recipe);
-            report.autoRecipe(recipe);
+            Piece decision = pieceRecipe(a, context, scope, generated);
+            if (decision.reason() != null) report.skippedEquipment(a.result().getItem(), a.recipeId(), decision.reason());
         }
         return new ArrayList<>(generated.values());
     }
 
+    /** A recipe built from a piece, or why there is none (null when the decision is silent). */
+    private record Piece(@Nullable SmithingRecipe recipe, @Nullable String reason) {
+        static final Piece NONE = new Piece(null, null);
+        static Piece skip(boolean speak, String reason) {
+            return new Piece(null, speak ? reason : null);
+        }
+    }
+
+    private static Piece pieceRecipe(Analysis a, UpgradeContext context, Scope scope, Map<Item, SmithingRecipe> generated) {
+        boolean chain = a.status() == Status.UPGRADE_CHAIN;
+        boolean component = a.status() == Status.EQUIPMENT_INGREDIENT;
+        boolean transform = a.status() == Status.NOT_METAL;
+        if (!(chain || component || transform) || a.base() == null) return Piece.NONE;
+        Item item = a.result().getItem();
+        if (!EquipmentClassifier.isCandidate(a.result())) return Piece.NONE;
+        if (context.smithable.containsKey(item) || generated.containsKey(item) || scope.isCurated(item)) return Piece.NONE;
+        boolean speak = !transform; // reworking a piece without any metal is not the forge's business
+        if (scope.skipsRecipe(a.recipeId())) return Piece.skip(speak, "recipe blacklisted by config");
+        if (scope.skipsItem(item)) return Piece.skip(speak, scope.skipReason(item));
+        if (a.result().getCount() != 1) return Piece.skip(speak, "recipe makes more than one item");
+        ItemStack[] bases = a.base().getItems();
+        SmithingRecipe piece = null;
+        ItemStack pieceStack = ItemStack.EMPTY;
+        for (ItemStack base : bases) {
+            piece = context.smithable.get(base.getItem());
+            if (piece != null) {
+                pieceStack = base;
+                break;
+            }
+        }
+        if (piece == null) {
+            String baseId = String.valueOf(BuiltInRegistries.ITEM.getKey(bases[0].getItem()));
+            return Piece.skip(speak, chain ? "reworks a piece the forge does not make: " + baseId
+                    : "uses equipment as an ingredient that the forge does not make: " + baseId);
+        }
+        ResourceLocation family;
+        int metalUnits;
+        List<AuxiliaryIngredient> auxiliary;
+        boolean keepBaseData;
+        if (a.family() == null || a.family().equals(piece.family())) {
+            // The piece grows (a sword lengthened into a longsword, set on a shaft as a spear): the forge makes the whole
+            // result from the same metal. Only within one kind of equipment: a pickaxe never becomes boots.
+            if (!equipmentKind(pieceStack).equals(equipmentKind(a.result()))) {
+                return Piece.skip(speak, "uses equipment as an ingredient of another kind: " + BuiltInRegistries.ITEM.getKey(pieceStack.getItem()));
+            }
+            family = piece.family();
+            metalUnits = piece.metalUnits() + a.units();
+            auxiliary = merge(piece.auxiliary(), a.auxiliary());
+            keepBaseData = false;
+        } else if (chain) {
+            family = a.family();
+            metalUnits = -1;
+            auxiliary = List.of();
+            if (policy(context.materials, a.family()) == UpgradePolicy.SHAPE) {
+                metalUnits = piece.metalUnits();
+                auxiliary = merge(piece.auxiliary(), a.auxiliary());
+            }
+            if (metalUnits <= 0) {
+                metalUnits = a.units();
+                List<AuxiliaryIngredient> rework = new ArrayList<>();
+                rework.add(new AuxiliaryIngredient(a.base(), 1, true));
+                auxiliary = merge(rework, a.auxiliary());
+            }
+            // A plain crafting recipe makes a fresh piece; a data-carrying one (Botania's armor upgrade) keeps the base's.
+            keepBaseData = a.kind().carriesBaseData();
+        } else {
+            return Piece.skip(speak, "uses equipment as an ingredient made of another metal (" + piece.family() + ")");
+        }
+        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+        ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
+        return new Piece(new SmithingRecipe(id, family, metalUnits, auxiliary, a.result().copy(), ForgePattern.STANDARD, null, true,
+                a.recipeId()).keepBaseData(keepBaseData), null);
+    }
+
+    /** The broad kind a piece can grow within: one armour slot, shields, mining tools or weapons. */
+    static String equipmentKind(ItemStack stack) {
+        net.minecraft.world.entity.EquipmentSlot slot = EquipmentClassifier.armorSlot(stack);
+        if (slot != null) return "armor:" + slot.getName();
+        if (EquipmentClassifier.isShield(stack)) return "shield";
+        if (com.otectus.immersivesmithing.quality.QualityHooks.isMiningTool(stack)) return "tool";
+        return "weapon";
+    }
+
+    /** Joins two auxiliary lists, adding the counts of identical ingredients (a sword's stick and a spear's two sticks). */
+    static List<AuxiliaryIngredient> merge(List<AuxiliaryIngredient> first, List<AuxiliaryIngredient> second) {
+        Map<String, AuxiliaryIngredient> out = new LinkedHashMap<>();
+        for (List<AuxiliaryIngredient> list : List.of(first, second)) {
+            for (AuxiliaryIngredient aux : list) {
+                String k = key(aux.ingredient().getItems()) + "|" + aux.consumesEquipment();
+                AuxiliaryIngredient previous = out.get(k);
+                out.put(k, previous == null ? aux : new AuxiliaryIngredient(previous.ingredient(), previous.count() + aux.count(), aux.consumesEquipment()));
+            }
+        }
+        return List.copyOf(out.values());
+    }
+
     private record Shape(int primarySlots, List<AuxiliaryIngredient> auxiliary) {}
 
-    /** Splits a base item's crafting recipe into its material slots and everything else, or null if unusable. */
-    private static Shape baseShape(ItemStack base, List<Ingredient> ingredients, boolean shieldResult) {
+    /**
+     * Splits a base item's crafting recipe into its material slots and everything else, or null if unusable. A finished
+     * piece among the ingredients counts with its own shape when that shape is gems or ingots (a diamond longsword is a
+     * diamond sword and two diamonds). A piece of leather or cloth leaves the base without a metal shape (Iron's Spells'
+     * wandering magician boots are leather boots and arcane essence), so its upgrade reworks it under {@code addition}.
+     */
+    private static Shape baseShape(ItemStack base, List<Ingredient> ingredients, boolean shieldResult, UpgradeContext context, int depth) {
         int primary = 0;
+        List<AuxiliaryIngredient> nested = new ArrayList<>();
         Map<String, AuxBucket> aux = new LinkedHashMap<>();
         for (Ingredient ingredient : ingredients) {
             if (ingredient.isEmpty()) continue;
@@ -427,21 +638,37 @@ public final class AutoRecipeDetector {
             boolean material = false;
             boolean equipment = false;
             for (ItemStack s : items) {
-                if (base.getItem().isValidRepairItem(base, s) || s.is(net.minecraftforge.common.Tags.Items.GEMS)
-                        || s.is(net.minecraftforge.common.Tags.Items.INGOTS)) material = true;
+                // The base's repair material counts in its own recipe; inside a nested piece only gems and ingots do.
+                boolean stock = s.is(net.minecraftforge.common.Tags.Items.GEMS) || s.is(net.minecraftforge.common.Tags.Items.INGOTS);
+                if (stock || (depth == 0 && base.getItem().isValidRepairItem(base, s))) material = true;
                 if (s.isDamageableItem()) equipment = true;
             }
             if (material) {
                 primary++;
             } else if (equipment) {
                 if (shieldResult && isBaseShield(items)) continue;
-                return null;
+                Shape inner = depth < 2 ? pieceShape(base, items, shieldResult, context, depth + 1) : null;
+                if (inner == null) return null;
+                primary += inner.primarySlots;
+                nested = merge(nested, inner.auxiliary);
             } else {
                 aux.computeIfAbsent(key(items), k -> new AuxBucket(ingredient)).count++;
             }
         }
         if (primary == 0) return null;
-        return new Shape(primary, aux.values().stream().map(b -> new AuxiliaryIngredient(b.ingredient, b.count)).toList());
+        return new Shape(primary, merge(nested, aux.values().stream().map(b -> new AuxiliaryIngredient(b.ingredient, b.count)).toList()));
+    }
+
+    /** The shape of the first alternative of a finished-piece ingredient that has a usable crafting recipe. */
+    @Nullable
+    private static Shape pieceShape(ItemStack base, ItemStack[] items, boolean shieldResult, UpgradeContext context, int depth) {
+        for (ItemStack piece : items) {
+            for (CraftingRecipe crafting : context.craftingByResult.getOrDefault(piece.getItem(), List.of())) {
+                Shape shape = baseShape(base, crafting.getIngredients(), shieldResult, context, depth);
+                if (shape != null) return shape;
+            }
+        }
+        return null;
     }
 
     private static String key(ItemStack[] items) {

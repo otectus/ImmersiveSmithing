@@ -59,8 +59,9 @@ public class SmithsForgeRenderer implements BlockEntityRenderer<SmithsForgeBlock
         pose.translate(-0.5, 0, -0.5);
 
         if (forge.hasLava()) {
+            // The firebox: inside the walls (x 4-12) from the mouth (z 1) to the back wall (z 12), on its floor.
             RenderUtil.horizontalQuad(pose, buffers.getBuffer(RenderType.entitySolid(TextureAtlas.LOCATION_BLOCKS)),
-                    RenderUtil.sprite(LAVA), 3 / 16F, 1 / 16F, 13 / 16F, 13 / 16F, 3 / 16F, 0xFFFFFFFF, LightTexture.FULL_BRIGHT);
+                    RenderUtil.sprite(LAVA), 4 / 16F, 1 / 16F, 12 / 16F, 12 / 16F, 3 / 16F, 0xFFFFFFFF, LightTexture.FULL_BRIGHT);
         } else {
             ItemStack fuel = !forge.fuel().isEmpty() ? forge.fuel() : forge.burningFuel();
             int count = Math.min(distant ? 1 : FUEL.length, fuelStage(forge.fuel().getCount()) + (forge.burningFuel().isEmpty() ? 0 : 1));
@@ -81,15 +82,9 @@ public class SmithsForgeRenderer implements BlockEntityRenderer<SmithsForgeBlock
             poolY = (10.25F + 3.25F * fill) / 16F;
             // Warm emission is always legible, even for dark modded metals. Family tint is restrained in hot metal.
             int tint = RenderUtil.mixColor(0xFFFFFF, forge.familyTint(), 0.18F);
-            // Follow the stepped round basin; a square pool would show through its corner stones.
-            var consumer = buffers.getBuffer(RenderType.entitySolid(TextureAtlas.LOCATION_BLOCKS));
-            var molten = RenderUtil.sprite(MOLTEN);
-            RenderUtil.horizontalQuad(pose, consumer, molten, 4 / 16F, 2 / 16F, 12 / 16F, 4 / 16F,
-                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
-            RenderUtil.horizontalQuad(pose, consumer, molten, 2 / 16F, 4 / 16F, 14 / 16F, 12 / 16F,
-                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
-            RenderUtil.horizontalQuad(pose, consumer, molten, 4 / 16F, 12 / 16F, 12 / 16F, 14 / 16F,
-                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
+            // The basin inside the rim stones (x and z 3-13), above the hearth (y 10) and below the rim top (y 14).
+            RenderUtil.horizontalQuad(pose, buffers.getBuffer(RenderType.entitySolid(TextureAtlas.LOCATION_BLOCKS)), RenderUtil.sprite(MOLTEN),
+                    3 / 16F, 3 / 16F, 13 / 16F, 13 / 16F, poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
         }
         List<SmithsForgeBlockEntity.Deposit> deposits = forge.deposits();
         if (!deposits.isEmpty()) {

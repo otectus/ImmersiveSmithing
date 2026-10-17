@@ -160,8 +160,9 @@ public final class QualityHooks {
                 || stack.canPerformAction(ToolActions.HOE_DIG);
     }
 
+    /** Shields stay efficacy-neutral; a weapon that can also block is still a weapon (see EquipmentClassifier). */
     public static boolean isShield(ItemStack stack) {
-        return stack.getItem() instanceof ShieldItem || stack.canPerformAction(ToolActions.SHIELD_BLOCK);
+        return com.otectus.immersivesmithing.minigame.EquipmentClassifier.isShield(stack);
     }
 
     private QualityHooks() {}

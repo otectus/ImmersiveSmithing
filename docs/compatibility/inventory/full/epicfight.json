@@ -1,0 +1,831 @@
+{
+  "mod": "epicfight",
+  "version": "20.14.17",
+  "integration": "epicfight",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "tested_version": "20.14.17",
+  "items": [
+    {
+      "id": "epicfight:bokken",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/bokken",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafting recipe shipped by Immersive Smithing (the mod ships none)",
+      "acquisition": "Crafting recipe shipped by Immersive Smithing (the mod ships none)."
+    },
+    {
+      "id": "epicfight:diamond_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:diamond_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond",
+      "acquisition": "Not metal work: repaired with minecraft:diamond."
+    },
+    {
+      "id": "epicfight:diamond_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:diamond_greatsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond",
+      "acquisition": "Not metal work: repaired with minecraft:diamond."
+    },
+    {
+      "id": "epicfight:diamond_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:diamond_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond",
+      "acquisition": "Not metal work: repaired with minecraft:diamond."
+    },
+    {
+      "id": "epicfight:diamond_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:diamond_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond",
+      "acquisition": "Not metal work: repaired with minecraft:diamond."
+    },
+    {
+      "id": "epicfight:diamond_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:diamond_tachi",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond",
+      "acquisition": "Not metal work: repaired with minecraft:diamond."
+    },
+    {
+      "id": "epicfight:glove",
+      "kind": "weapon",
+      "shape": "immersive_smithing:cestus",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/glove",
+          "material": "minecraft:iron",
+          "units": 2,
+          "components": [
+            "2x minecraft:leather"
+          ],
+          "pattern": "immersive_smithing:cestus"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:glove",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "2 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/glove",
+      "acquisition": "Forged; replaces `epicfight:glove`."
+    },
+    {
+      "id": "epicfight:golden_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/golden_dagger",
+          "material": "minecraft:gold",
+          "units": 9,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:golden_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/golden_dagger",
+      "acquisition": "Forged; replaces `epicfight:golden_dagger`."
+    },
+    {
+      "id": "epicfight:golden_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/golden_greatsword",
+          "material": "minecraft:gold",
+          "units": 54,
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:greatsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:golden_greatsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/golden_greatsword",
+      "acquisition": "Forged; replaces `epicfight:golden_greatsword`."
+    },
+    {
+      "id": "epicfight:golden_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/golden_longsword",
+          "material": "minecraft:gold",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:golden_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/golden_longsword",
+      "acquisition": "Forged; replaces `epicfight:golden_longsword`."
+    },
+    {
+      "id": "epicfight:golden_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/golden_spear",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "3x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:golden_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "kept: remakes a finished piece without adding metal; kept next to the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/golden_spear",
+      "acquisition": "Forged; keeps `epicfight:golden_spear`."
+    },
+    {
+      "id": "epicfight:golden_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/golden_tachi",
+          "material": "minecraft:gold",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:golden_tachi",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:gold",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/golden_tachi",
+      "acquisition": "Forged; replaces `epicfight:golden_tachi`."
+    },
+    {
+      "id": "epicfight:iron_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/iron_dagger",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:iron_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/iron_dagger",
+      "acquisition": "Forged; replaces `epicfight:iron_dagger`."
+    },
+    {
+      "id": "epicfight:iron_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/iron_greatsword",
+          "material": "minecraft:iron",
+          "units": 54,
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:greatsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:iron_greatsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/iron_greatsword",
+      "acquisition": "Forged; replaces `epicfight:iron_greatsword`."
+    },
+    {
+      "id": "epicfight:iron_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/iron_longsword",
+          "material": "minecraft:iron",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:iron_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/iron_longsword",
+      "acquisition": "Forged; replaces `epicfight:iron_longsword`."
+    },
+    {
+      "id": "epicfight:iron_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/iron_spear",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "3x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:iron_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "kept: remakes a finished piece without adding metal; kept next to the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/iron_spear",
+      "acquisition": "Forged; keeps `epicfight:iron_spear`."
+    },
+    {
+      "id": "epicfight:iron_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/iron_tachi",
+          "material": "minecraft:iron",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:iron_tachi",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/iron_tachi",
+      "acquisition": "Forged; replaces `epicfight:iron_tachi`."
+    },
+    {
+      "id": "epicfight:netherite_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/netherite_dagger",
+          "material": "minecraft:netherite",
+          "units": 9,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:dagger"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:netherite_dagger",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/netherite_dagger",
+      "acquisition": "Forged; replaces `epicfight:netherite_dagger`."
+    },
+    {
+      "id": "epicfight:netherite_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/netherite_greatsword",
+          "material": "minecraft:netherite",
+          "units": 54,
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:greatsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:netherite_greatsword",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "54 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/netherite_greatsword",
+      "acquisition": "Forged; replaces `epicfight:netherite_greatsword`."
+    },
+    {
+      "id": "epicfight:netherite_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/netherite_longsword",
+          "material": "minecraft:netherite",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:netherite_longsword",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/netherite_longsword",
+      "acquisition": "Forged; replaces `epicfight:netherite_longsword`."
+    },
+    {
+      "id": "epicfight:netherite_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/netherite_spear",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "3x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:netherite_spear",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/netherite_spear",
+      "acquisition": "Forged; replaces `epicfight:netherite_spear`."
+    },
+    {
+      "id": "epicfight:netherite_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/netherite_tachi",
+          "material": "minecraft:netherite",
+          "units": 36,
+          "components": [
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epicfight:netherite_tachi",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "36 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/netherite_tachi",
+      "acquisition": "Forged; replaces `epicfight:netherite_tachi`."
+    },
+    {
+      "id": "epicfight:stone_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:stone_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone",
+      "acquisition": "Not metal work: repaired with minecraft:cobblestone."
+    },
+    {
+      "id": "epicfight:stone_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:stone_greatsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone",
+      "acquisition": "Not metal work: repaired with minecraft:cobblestone."
+    },
+    {
+      "id": "epicfight:stone_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:stone_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone",
+      "acquisition": "Not metal work: repaired with minecraft:cobblestone."
+    },
+    {
+      "id": "epicfight:stone_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:stone_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone",
+      "acquisition": "Not metal work: repaired with minecraft:cobblestone."
+    },
+    {
+      "id": "epicfight:stone_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:stone_tachi",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone",
+      "acquisition": "Not metal work: repaired with minecraft:cobblestone."
+    },
+    {
+      "id": "epicfight:stray_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe",
+      "acquisition": "Cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe."
+    },
+    {
+      "id": "epicfight:stray_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe",
+      "acquisition": "Cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe."
+    },
+    {
+      "id": "epicfight:stray_robe",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe",
+      "acquisition": "Cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe."
+    },
+    {
+      "id": "epicfight:uchigatana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epicfight/uchigatana",
+          "material": "minecraft:iron",
+          "units": 36,
+          "components": [
+            "1x minecraft:diamond",
+            "2x minecraft:leather",
+            "1x minecraft:stick"
+          ],
+          "pattern": "immersive_smithing:katana"
+        }
+      ],
+      "native": [],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epicfight/uchigatana",
+      "acquisition": "Forged."
+    },
+    {
+      "id": "epicfight:wooden_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:dagger",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:wooden_dagger",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "epicfight:wooden_greatsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:wooden_greatsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "epicfight:wooden_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:wooden_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "epicfight:wooden_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:wooden_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    },
+    {
+      "id": "epicfight:wooden_tachi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epicfight:wooden_tachi",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks",
+      "acquisition": "Not metal work: repaired with minecraft:oak_planks."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 17,
+    "native_nonmetal_recipe": 16,
+    "non_equipment": 3
+  }
+}

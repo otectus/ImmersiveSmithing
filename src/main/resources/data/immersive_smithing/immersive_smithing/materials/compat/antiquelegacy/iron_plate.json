@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:iron_plate"
+    }
+  ],
+  "family": "minecraft:iron",
+  "sources_only": true,
+  "sources": [
+    {
+      "item": "antiquelegacy:iron_plate",
+      "units": 9
+    }
+  ]
+}

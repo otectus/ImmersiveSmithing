@@ -25,7 +25,12 @@ public final class CompatibilityReport {
     private final List<String> autoRecipes = new ArrayList<>();
     private final List<String> skippedEquipment = new ArrayList<>();
     private final List<String> suppressed = new ArrayList<>();
+    private final List<String> retained = new ArrayList<>();
+    private final java.util.Map<ResourceLocation, String> retainedById = new java.util.LinkedHashMap<>();
+    private final List<String> integrations = new ArrayList<>();
     private final List<String> notes = new ArrayList<>();
+    private final java.util.Map<String, Integer> inactiveBuiltIn = new java.util.TreeMap<>();
+    private final java.util.Map<Item, List<String>> inactiveByResult = new java.util.HashMap<>();
 
     public void family(MaterialFamily f) {
         families.add(f.id() + (f.auto() ? " (auto)" : "") + ": " + f.sources().size() + " source items");
@@ -47,7 +52,30 @@ public final class CompatibilityReport {
 
     public void invalidRecipe(ResourceLocation id, String reason) {
         invalidRecipes.add(id + ": " + reason);
-        ImmersiveSmithing.LOGGER.warn("Smithing recipe {} is inactive: {}", id, reason);
+        if (com.otectus.immersivesmithing.compat.Integrations.compatModOf(id) != null) {
+            // Built-in recipes for a mod whose metal or integration is missing: one summary line per reason, not hundreds.
+            inactiveBuiltIn.merge(reason.startsWith("none of the native recipes") ? "the native recipe it follows is not loaded" : reason, 1, Integer::sum);
+            log("Built-in smithing recipe {} is inactive: {}", id, reason);
+        } else {
+            ImmersiveSmithing.LOGGER.warn("Smithing recipe {} is inactive: {}", id, reason);
+        }
+    }
+
+    /** An inactive smithing recipe, remembered for the coverage catalog of its result. */
+    public void invalidRecipe(SmithingRecipe recipe, String reason) {
+        invalidRecipe(recipe.getId(), reason);
+        inactiveByResult.computeIfAbsent(recipe.resultItem(), k -> new ArrayList<>()).add(recipe.getId() + ": " + reason);
+    }
+
+    /** Why the built-in or datapack recipes for this item are inactive, if any are. */
+    public List<String> inactiveFor(Item item) {
+        return inactiveByResult.getOrDefault(item, List.of());
+    }
+
+    /** Logs the summary of inactive built-in recipes once per rebuild. */
+    public void logInactiveBuiltIn() {
+        inactiveBuiltIn.forEach((reason, count) ->
+                ImmersiveSmithing.LOGGER.info("Immersive Smithing: {} built-in recipe(s) inactive: {}", count, reason));
     }
 
     public void autoRecipe(SmithingRecipe r) {
@@ -67,6 +95,18 @@ public final class CompatibilityReport {
         suppressed.add(recipe + " -> " + BuiltInRegistries.ITEM.getKey(result));
     }
 
+    /** A conventional recipe for smithable or candidate equipment that is deliberately left working, and why. */
+    public void retained(ResourceLocation recipe, Item result, String reason) {
+        retained.add(BuiltInRegistries.ITEM.getKey(result) + " (" + recipe + "): " + reason);
+        retainedById.putIfAbsent(recipe, reason);
+        log("Keeping {} for {}: {}", recipe, BuiltInRegistries.ITEM.getKey(result), reason);
+    }
+
+    /** The integrations switched off in the server config. */
+    public void integrations(java.util.Collection<String> disabled) {
+        for (String modId : disabled) integrations.add(modId + ": disabled in the config, left exactly as the mod ships it");
+    }
+
     public void note(String note) {
         notes.add(note);
         log(note);
@@ -77,19 +117,23 @@ public final class CompatibilityReport {
     public int suppressedCount() { return suppressed.size(); }
     public int familyCount() { return families.size(); }
     public int skippedCount() { return skippedEquipment.size(); }
+    public int retainedCount() { return retained.size(); }
     public List<String> skippedEquipment() { return List.copyOf(skippedEquipment); }
+    public List<String> retainedRecipes() { return List.copyOf(retained); }
+    public java.util.Map<ResourceLocation, String> retainedById() { return java.util.Map.copyOf(retainedById); }
 
     public String summary() {
         return families.size() + " material families, " + explicitRecipes.size() + " explicit and " + autoRecipes.size()
                 + " automatic smithing recipes, " + suppressed.size() + " crafting recipes disabled, "
-                + skippedEquipment.size() + " equipment recipes skipped";
+                + retained.size() + " kept, " + skippedEquipment.size() + " equipment recipes skipped";
     }
 
     public List<String> lines() {
         List<String> out = new ArrayList<>();
         out.add("Immersive Smithing compatibility report - " + LocalDateTime.now());
         out.add(summary());
-        section(out, "Coverage by mod (explicit / automatic / skipped)", coverage());
+        section(out, "Coverage by mod (explicit / automatic / skipped / native kept)", coverage());
+        section(out, "Integrations switched off", integrations);
         section(out, "Material families", families);
         section(out, "Skipped material families", skippedFamilies);
         section(out, "Ambiguous material items (claimed by several families, ignored)", ambiguousItems);
@@ -98,6 +142,7 @@ public final class CompatibilityReport {
         section(out, "Automatically detected equipment", autoRecipes);
         section(out, "Skipped or unsupported equipment", skippedEquipment);
         section(out, "Disabled crafting recipes", suppressed);
+        section(out, "Native recipes kept (no forge recipe reproduces them, or the mod's own mechanic)", retained);
         section(out, "Notes", notes);
         return out;
     }
@@ -110,14 +155,15 @@ public final class CompatibilityReport {
                 String id = column == 0 ? line.substring(line.indexOf("-> ") + 3) : line;
                 int colon = id.indexOf(':');
                 if (colon <= 0) continue;
-                counts.computeIfAbsent(id.substring(0, colon), k -> new int[3])[column]++;
+                counts.computeIfAbsent(id.substring(0, colon), k -> new int[4])[column]++;
             }
         };
         tally.accept(explicitRecipes, 0);
         tally.accept(autoRecipes, 1);
         tally.accept(skippedEquipment, 2);
+        tally.accept(retained, 3);
         List<String> out = new ArrayList<>();
-        counts.forEach((ns, c) -> out.add(String.format("%-24s %4d / %4d / %4d", ns, c[0], c[1], c[2])));
+        counts.forEach((ns, c) -> out.add(String.format("%-24s %4d / %4d / %4d / %4d", ns, c[0], c[1], c[2], c[3])));
         return out;
     }
 

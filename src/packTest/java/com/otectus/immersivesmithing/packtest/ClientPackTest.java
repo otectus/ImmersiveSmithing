@@ -2,6 +2,7 @@ package com.otectus.immersivesmithing.packtest;
 
 import com.google.gson.GsonBuilder;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import com.otectus.immersivesmithing.material.MaterialResolver;
 import com.otectus.immersivesmithing.block.SmithsAnvilBlock;
 import com.otectus.immersivesmithing.block.SmithsForgeBlock;
 import com.otectus.immersivesmithing.block.SmithsGrindstoneBlock;
@@ -31,6 +32,7 @@ import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.registry.ModBlocks;
 import com.otectus.immersivesmithing.registry.ModItems;
+import com.otectus.immersivesmithing.registry.ModTags;
 import com.otectus.immersivesmithing.util.StationEffects;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
@@ -62,6 +64,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.LevelSettings;
@@ -70,6 +73,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.WorldOptions;
 import net.minecraft.world.level.levelgen.presets.WorldPresets;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
@@ -85,6 +91,7 @@ import java.util.LinkedHashMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
@@ -142,6 +149,13 @@ public final class ClientPackTest {
     private static final Map<Direction, BlockPos> galleryCenters = new LinkedHashMap<>();
     private static int galleryCaptureIndex;
     private static int overlayClearedAt = -1;
+    private static BlockPos pickupAnvil;
+    private static volatile ItemStack pickupTongs = ItemStack.EMPTY;
+    private static volatile Boolean pickupServerState;
+    private static int anvilPhaseTicks = -1;
+    private static int anvilSeenAt = -1;
+    private static int anvilPickedAt = -1;
+    private static int anvilShotAt = -1;
 
     @SubscribeEvent
     public static void onTick(TickEvent.ClientTickEvent event) {
@@ -179,6 +193,14 @@ public final class ClientPackTest {
             if (settledAt < 0 && !settle(mc)) return;
             if (ShowcaseCapture.enabled()) {
                 ShowcaseCapture.tick(mc);
+                return;
+            }
+            if (StoreScreenshots.enabled()) {
+                StoreScreenshots.tick(mc);
+                return;
+            }
+            if (StationBenchmark.enabled()) {
+                StationBenchmark.tick(mc);
                 return;
             }
             step(mc, worldTicks - settledAt + 40);
@@ -232,6 +254,13 @@ public final class ClientPackTest {
                 runChecks(mc);
                 stageWorld(mc);
             }
+            // Tongs pickup through the real block interaction; the client's own block entity must follow each change.
+            case 100 -> tongsAtPickupAnvil(mc, true);
+            case 110 -> checkPickupAnvil(mc, "anvil_pickup_1", false);
+            case 112 -> tongsAtPickupAnvil(mc, false);
+            case 122 -> checkPickupAnvil(mc, "anvil_place_back", true);
+            case 124 -> tongsAtPickupAnvil(mc, true);
+            case 134 -> checkPickupAnvil(mc, "anvil_pickup_2", false);
             case 196 -> mc.options.hideGui = true;
             case 200 -> shot(mc, "packtest_world");
             case 201 -> camera(mc, 1.9, -2.4, 47F, true);
@@ -367,7 +396,8 @@ public final class ClientPackTest {
             }
             case 779 -> shot(mc, "packtest_guide_search");
             case 780 -> {
-                enableAccessibilityMode();
+                accessibility(true);
+                checks.put("accessibility_mode", "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles");
                 sizeWindow(mc, originalWindowWidth, originalWindowHeight);
                 setGuiScale(mc, 2);
                 ForgeMinigameScreen screen = new ForgeMinigameScreen(forgeOffer());
@@ -375,12 +405,16 @@ public final class ClientPackTest {
                 screen.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 0,
                         new ItemStack(Items.IRON_PICKAXE)));
             }
-            case 805 -> shot(mc, "packtest_forge_accessibility");
+            case 795 -> accessibility(true);
+            case 805 -> {
+                checks.put("accessibility_mode_applied", accessibility(true));
+                shot(mc, "packtest_forge_accessibility");
+            }
             case 810 -> mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO,
                     new ItemStack(Items.IRON_SWORD), PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 0)));
             case 835 -> shot(mc, "packtest_anvil_accessibility");
             case 840 -> {
-                restoreAccessibilityMode();
+                accessibility(false);
                 openJei(mc);
             }
             case 870 -> {
@@ -401,7 +435,7 @@ public final class ClientPackTest {
      * A predictable test window. A tiling Wayland compositor ignores the requested size, so on Hyprland this
      * client's own window (matched by process id) is floated and sized; nothing else on the desktop is touched.
      */
-    private static void sizeWindow(Minecraft mc, int width, int height) {
+    static void sizeWindow(Minecraft mc, int width, int height) {
         mc.getWindow().setWindowed(width, height);
         if (System.getenv("HYPRLAND_INSTANCE_SIGNATURE") == null) return;
         String target = "window = \"pid:" + ProcessHandle.current().pid() + "\"";
@@ -479,6 +513,49 @@ public final class ClientPackTest {
             List<SmithingRecipe> terrasteel = data.recipesProducing(item("botania:terrasteel_helmet"));
             checks.put("botania_terrasteel_helmet_chain", !terrasteel.isEmpty()
                     && terrasteel.get(0).auxiliary().stream().anyMatch(AuxiliaryIngredient::consumesEquipment));
+        }
+        if (EXPECT.contains("epicfight")) {
+            List<SmithingRecipe> longsword = data.recipesProducing(item("epicfight:iron_longsword"));
+            checks.put("epicfight_iron_longsword_36_units", !longsword.isEmpty() && longsword.get(0).metalUnits() == 36);
+            if (server != null) {
+                checks.put("epicfight_longsword_crafting_replaced", server.getRecipeManager().byKey(new ResourceLocation("epicfight", "iron_longsword")).isEmpty());
+                // Sword plus sticks adds no metal: a remake of a finished piece, kept beside the forge recipe.
+                checks.put("epicfight_spear_remake_kept", server.getRecipeManager().byKey(new ResourceLocation("epicfight", "iron_spear")).isPresent());
+            }
+            List<SmithingRecipe> uchigatana = data.recipesProducing(item("epicfight:uchigatana"));
+            checks.put("epicfight_uchigatana_forged_36_iron", !uchigatana.isEmpty() && uchigatana.get(0).metalUnits() == 36
+                    && uchigatana.get(0).family().equals(new ResourceLocation("minecraft", "iron")));
+        }
+        if (EXPECT.contains("epicknights")) {
+            List<SmithingRecipe> armet = data.recipesProducing(item("magistuarmory:armet"));
+            checks.put("epicknights_armet_72_steel", !armet.isEmpty() && armet.get(0).metalUnits() == 72
+                    && armet.get(0).family().equals(new ResourceLocation("forge", "steel")));
+            checks.put("epicknights_steel_plate_melts_for_9", MaterialResolver.resolve(new ItemStack(item("magistuarmory:steel_plate")))
+                    .filter(m -> m.family().id().equals(new ResourceLocation("forge", "steel")) && m.unitsEach() == 9).isPresent());
+            if (server != null) {
+                RecipeManager recipes = server.getRecipeManager();
+                checks.put("epicknights_armet_crafting_replaced", recipes.byKey(new ResourceLocation("magistuarmory", "armet")).isEmpty());
+                // Gilding adds gold to a finished armet: a native transformation, kept beside the forge recipe.
+                checks.put("epicknights_ceremonial_gilding_kept", recipes.byKey(new ResourceLocation("magistuarmory", "ceremonialarmet")).isPresent());
+                if (mc.getConnection() != null) {
+                    // The client's recipe book and JEI see the rewritten recipe set, not the datapack's original one.
+                    RecipeManager client = mc.getConnection().getRecipeManager();
+                    checks.put("epicknights_client_recipes_match_server", client.getRecipes().size() == recipes.getRecipes().size()
+                            && client.byKey(new ResourceLocation("magistuarmory", "armet")).isEmpty()
+                            && client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet")).isPresent());
+                }
+            }
+        }
+        if (EXPECT.contains("simplyswords")) {
+            List<SmithingRecipe> twinblade = data.recipesProducing(item("simplyswords:iron_twinblade"));
+            checks.put("simplyswords_iron_twinblade_pattern", !twinblade.isEmpty() && twinblade.get(0).anvilPattern().equals(ImmersiveSmithing.id("twinblade")));
+            if (server != null) {
+                checks.put("simplyswords_twinblade_crafting_replaced", server.getRecipeManager().byKey(new ResourceLocation("simplyswords", "iron_twinblade")).isEmpty());
+                checks.put("simplyswords_runic_reroll_kept", server.getRecipeManager().byKey(new ResourceLocation("simplyswords", "runic2_longsword")).isPresent());
+            }
+            ItemStack unique = new ItemStack(item("simplyswords:brimstone_claymore"));
+            checks.put("simplyswords_unique_quality_eligible", unique.is(ModTags.QUALITY_ELIGIBLE));
+            checks.put("simplyswords_unique_non_recyclable", unique.is(ModTags.NON_RECYCLABLE));
         }
         if (EXPECT.contains("signing")) {
             checks.put("signing_enabled", ServerConfig.get(ServerConfig.ENABLE_SIGNING));
@@ -567,6 +644,9 @@ public final class ClientPackTest {
             trough.addBucket();
             trough.addBucket();
             level.setBlockAndUpdate(base.offset(4, 0, -4), ModBlocks.SMITHS_GRINDSTONE.get().defaultBlockState().setValue(SmithsGrindstoneBlock.FACING, Direction.SOUTH));
+            pickupAnvil = base.offset(6, 0, -4);
+            level.setBlockAndUpdate(pickupAnvil, ModBlocks.SMITHS_ANVIL.get().defaultBlockState().setValue(SmithsAnvilBlock.FACING, Direction.SOUTH));
+            ((SmithsAnvilBlockEntity) level.getBlockEntity(pickupAnvil)).setWorkpiece(workpiece(Items.IRON_SWORD, 18, WorkpieceState.FORGED, "sword"));
 
             ItemStack tongs = new ItemStack(ModItems.tongs(SmithingTier.IRON));
             WorkpieceCodec.setHeld(tongs, workpiece(Items.IRON_AXE, 27, WorkpieceState.SHAPED, "axe"));
@@ -666,6 +746,7 @@ public final class ClientPackTest {
                 resourceReload.join();
                 checks.put("resource_reload", true);
                 checks.put("jei_runtime_available", PackTestJeiPlugin.runtime() != null);
+                accessibility(false);
                 setGuiScale(mc, originalGuiScale);
                 Direction facing = galleryCenters.keySet().iterator().next();
                 setDayAndCamera(mc, 6000, galleryCenters.get(facing), facing);
@@ -750,12 +831,56 @@ public final class ClientPackTest {
                 checks.put("frame_times_32_active", frameMeasurement.result());
                 checks.put("frame_measurement_real_render_frames", true);
                 shot(mc, "packtest_performance_32_active");
-                advance(t, 10);
+                // GUI scale 4 needs a 1280 x 960 framebuffer (320 x 240 logical). The option clamps to what the
+                // current window allows, so the window is resized first and the scale set once it has settled.
+                mc.setScreen(null);
+                sizeWindow(mc, 1280, 960);
+                advance(t, 20);
             }
             case 13 -> {
+                setGuiScale(mc, 4);
+                checks.put("gui_scale_4_rendered", mc.getWindow().getGuiScale() == 4 && mc.getWindow().getGuiScaledWidth() >= 320
+                        && mc.getWindow().getGuiScaledHeight() >= 240);
+                mc.setScreen(new ForgeMinigameScreen(longForgeOffer()));
+                advance(t, 15);
+            }
+            case 14 -> {
+                shot(mc, "packtest_forge_select_scale_4");
+                if (mc.screen instanceof ForgeMinigameScreen s) {
+                    s.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 0, new ItemStack(Items.IRON_PICKAXE)));
+                }
+                advance(t, 15);
+            }
+            case 15 -> {
+                shot(mc, "packtest_forge_play_scale_4");
+                mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO, new ItemStack(Items.IRON_SWORD),
+                        PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 0)));
+                advance(t, 15);
+            }
+            case 16 -> {
+                shot(mc, "packtest_anvil_scale_4");
+                mc.setScreen(new GuideScreen(2));
+                advance(t, 15);
+            }
+            case 17 -> {
+                shot(mc, "packtest_guide_scale_4");
+                mc.setScreen(new MakersMarkScreen(0, signablePiece(mc)));
+                advance(t, 10);
+            }
+            case 18 -> {
+                shot(mc, "packtest_makers_mark_scale_4");
+                mc.setScreen(null);
+                sizeWindow(mc, originalWindowWidth, originalWindowHeight);
+                // Not setGuiScale: that would overwrite the measured gui_scale_N entry with this window's size.
+                mc.options.guiScale().set(originalGuiScale);
+                mc.resizeDisplay();
+                advance(t, 10);
+            }
+            case 19 -> {
                 mc.options.enableVsync().set(originalVsync);
                 mc.options.framerateLimit().set(originalFrameLimit);
                 mc.options.renderDistance().set(originalRenderDistance);
+                checks.put("accessibility_settings_restored", accessibility(false));
                 boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
                 finish(mc, pass, pass ? "all visual, data and runtime checks passed" : "a check failed");
             }
@@ -840,6 +965,35 @@ public final class ClientPackTest {
                 checks.put("anvil_effect_source", "server StationEffectPacket injection; minigame strike remains server-authoritative");
             }
         });
+    }
+
+    /** A fake player right-clicks the pickup anvil with the same tongs: empty tongs take, loaded tongs place. */
+    private static void tongsAtPickupAnvil(Minecraft mc, boolean expectEmptyTongs) {
+        IntegratedServer server = mc.getSingleplayerServer();
+        if (server == null || pickupAnvil == null) return;
+        server.execute(() -> {
+            ServerLevel level = server.overworld();
+            if (pickupTongs.isEmpty()) pickupTongs = new ItemStack(ModItems.tongs(SmithingTier.IRON));
+            if (WorkpieceCodec.isHolding(pickupTongs) == expectEmptyTongs) checks.put("anvil_pickup_tongs_state", false);
+            FakePlayer fake = FakePlayerFactory.getMinecraft(level);
+            fake.setItemInHand(InteractionHand.MAIN_HAND, pickupTongs);
+            level.getBlockState(pickupAnvil).use(level, fake, InteractionHand.MAIN_HAND,
+                    new BlockHitResult(Vec3.atCenterOf(pickupAnvil), Direction.UP, pickupAnvil, false));
+            pickupTongs = fake.getMainHandItem();
+            fake.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+            pickupServerState = level.getBlockEntity(pickupAnvil) instanceof SmithsAnvilBlockEntity anvil && anvil.hasWorkpiece();
+        });
+    }
+
+    /** Server, tongs and the rendering client agree: exactly one workpiece, either on the anvil or in the tongs. */
+    private static void checkPickupAnvil(Minecraft mc, String name, boolean expectOnAnvil) {
+        Boolean server = pickupServerState;
+        boolean client = mc.level != null && mc.level.getBlockEntity(pickupAnvil) instanceof SmithsAnvilBlockEntity anvil && anvil.hasWorkpiece();
+        boolean tongs = WorkpieceCodec.isHolding(pickupTongs);
+        boolean pass = server != null && server == expectOnAnvil && client == expectOnAnvil && tongs != expectOnAnvil;
+        checks.put(name + "_server_client_tongs", server + "/" + client + "/" + tongs);
+        checks.put(name, pass);
+        log(name + ": server=" + server + " client=" + client + " tongs=" + tongs + " -> " + (pass ? "ok" : "MISMATCH"));
     }
 
     private static void useStation(ServerLevel level, ServerPlayer player, BlockPos pos) {
@@ -929,24 +1083,26 @@ public final class ClientPackTest {
         }
     }
 
-    private static void enableAccessibilityMode() {
-        ClientConfig.REDUCED_SCREEN_SHAKE.set(true);
-        ClientConfig.REDUCED_FLASHES.set(true);
-        ClientConfig.HIGH_CONTRAST_MINIGAMES.set(true);
-        ClientConfig.LARGE_MINIGAME_TARGETS.set(true);
-        ClientConfig.COLORBLIND_SAFE_TARGETS.set(true);
-        ClientConfig.PARTICLE_AMOUNT.set(ClientConfig.ParticleAmount.MINIMAL);
-        checks.put("accessibility_mode", "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles");
+    /**
+     * Sets the six accessibility options to the full accessibility mode, or back to the player's own values, and
+     * returns true when every one already matched. Forge autosaves each option and its file watcher reloads the
+     * file, so a reload landing between two quick writes can revert one of them; callers converge on later ticks.
+     */
+    private static boolean accessibility(boolean mode) {
+        boolean settled = converge(ClientConfig.REDUCED_SCREEN_SHAKE, mode || originalReducedShake);
+        settled &= converge(ClientConfig.REDUCED_FLASHES, mode || originalReducedFlashes);
+        settled &= converge(ClientConfig.HIGH_CONTRAST_MINIGAMES, mode || originalHighContrast);
+        settled &= converge(ClientConfig.LARGE_MINIGAME_TARGETS, mode || originalLargeTargets);
+        settled &= converge(ClientConfig.COLORBLIND_SAFE_TARGETS, mode || originalColorblind);
+        settled &= converge(ClientConfig.PARTICLE_AMOUNT, mode ? ClientConfig.ParticleAmount.MINIMAL : originalParticles);
+        return settled;
     }
 
-    private static void restoreAccessibilityMode() {
-        ClientConfig.REDUCED_SCREEN_SHAKE.set(originalReducedShake);
-        ClientConfig.REDUCED_FLASHES.set(originalReducedFlashes);
-        ClientConfig.HIGH_CONTRAST_MINIGAMES.set(originalHighContrast);
-        ClientConfig.LARGE_MINIGAME_TARGETS.set(originalLargeTargets);
-        ClientConfig.COLORBLIND_SAFE_TARGETS.set(originalColorblind);
-        ClientConfig.PARTICLE_AMOUNT.set(originalParticles);
-        checks.put("accessibility_settings_restored", true);
+    /** Writes the value only when it differs; true when it already matched. */
+    private static <T> boolean converge(ForgeConfigSpec.ConfigValue<T> value, T target) {
+        if (Objects.equals(value.get(), target)) return true;
+        value.set(target);
+        return false;
     }
 
     private static void openJei(Minecraft mc) {
@@ -977,11 +1133,11 @@ public final class ClientPackTest {
         int joinedTicks = multiplayerTicks - multiplayerJoinedAt;
         // The observer exits immediately after acknowledging the hammer. Consume that acknowledgement
         // before requiring its entity to remain in the level, or disconnect timing can strand the leader.
-        if ("leader".equals(MULTIPLAYER_ROLE) && multiplayerReady
+        if (anvilPhaseTicks >= 0 || ("leader".equals(MULTIPLAYER_ROLE) && multiplayerReady
                 && Files.exists(MULTIPLAYER_SHARED.resolve("hammer-observed"))
-                && checks.containsKey("leader_first_person_hammer_captured")) {
-            checks.put("leader_remote_tongs_and_hammer_observed", true);
-            finish(mc, true, "leader produced real loaded-tongs and hammer multiplayer swings");
+                && checks.containsKey("leader_first_person_hammer_captured"))) {
+            checks.put("leader".equals(MULTIPLAYER_ROLE) ? "leader_remote_tongs_and_hammer_observed" : "remote_hammer_swing_observed", true);
+            multiplayerAnvilPhase(mc);
             return;
         }
         if (mc.level.players().size() < 2 || !Files.exists(MULTIPLAYER_SHARED.resolve("server-ready"))) {
@@ -992,6 +1148,7 @@ public final class ClientPackTest {
         if ("leader".equals(MULTIPLAYER_ROLE)) {
             if (!multiplayerReady && joinedTicks >= 160) {
                 multiplayerReady = true;
+                recipeSyncChecks(mc);
                 checks.put("leader_loaded_tongs", WorkpieceCodec.isHolding(mc.player.getMainHandItem()));
                 shot(mc, "packtest_multiplayer_leader_loaded_tongs");
                 marker("leader-ready");
@@ -1020,7 +1177,7 @@ public final class ClientPackTest {
                 if (Files.exists(MULTIPLAYER_SHARED.resolve("hammer-observed"))
                         && checks.containsKey("leader_first_person_hammer_captured")) {
                     checks.put("leader_remote_tongs_and_hammer_observed", true);
-                    finish(mc, true, "leader produced real loaded-tongs and hammer multiplayer swings");
+                    multiplayerAnvilPhase(mc);
                 }
             }
         } else if ("peer".equals(MULTIPLAYER_ROLE)) {
@@ -1029,6 +1186,7 @@ public final class ClientPackTest {
             if (remote == null) return;
             if (!multiplayerReady && joinedTicks >= 160) {
                 multiplayerReady = true;
+                recipeSyncChecks(mc);
                 checks.put("remote_sky_light", mc.level.getBrightness(net.minecraft.world.level.LightLayer.SKY, remote.blockPosition()));
                 checks.put("remote_block_light", mc.level.getBrightness(net.minecraft.world.level.LightLayer.BLOCK, remote.blockPosition()));
                 checks.put("fixture_lighting", "vanilla night vision for pose inspection; station lighting tested separately");
@@ -1056,7 +1214,7 @@ public final class ClientPackTest {
                 marker("hammer-observed");
             }
             if (remoteHammerSwingObserved) {
-                finish(mc, true, "remote loaded-tongs and hammer swings synchronized and rendered");
+                multiplayerAnvilPhase(mc);
             } else if (joinedTicks >= 1200) {
                 checks.putIfAbsent("remote_loaded_tongs_swing_observed", remoteSwingObserved);
                 checks.putIfAbsent("remote_hammer_swing_observed", false);
@@ -1064,6 +1222,81 @@ public final class ClientPackTest {
             }
         } else {
             throw new IllegalStateException("unknown multiplayer role " + MULTIPLAYER_ROLE);
+        }
+    }
+
+    /**
+     * Both clients: the server places a workpiece on an anvil between the players; each client must render it, then,
+     * after the leader's empty tongs take it, each client's own block entity must be empty (and the leader's tongs
+     * loaded) - the report was a workpiece still drawn on the anvil after a tongs pickup.
+     */
+    private static void multiplayerAnvilPhase(Minecraft mc) throws IOException {
+        String role = MULTIPLAYER_ROLE;
+        if (anvilPhaseTicks < 0) {
+            anvilPhaseTicks = 0;
+            marker(role + "-swings-done");
+        }
+        anvilPhaseTicks++;
+        if (anvilShotAt >= 0) {
+            if (anvilPhaseTicks - anvilShotAt >= 10) {
+                boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
+                finish(mc, pass, pass ? "remote swings synchronized and the anvil pickup cleared on this client"
+                        : "a multiplayer check failed");
+            }
+            return;
+        }
+        if (anvilPhaseTicks > 1200) {
+            checks.putIfAbsent(role + "_anvil_empty_after_pickup", false);
+            finish(mc, false, "the anvil pickup phase did not complete");
+            return;
+        }
+        if (!Files.exists(MULTIPLAYER_SHARED.resolve("anvil-placed"))) return;
+        BlockPos anvilPos = MultiplayerPackTestFixture.ANVIL;
+        boolean occupied = mc.level.getBlockEntity(anvilPos) instanceof SmithsAnvilBlockEntity anvil && anvil.hasWorkpiece();
+        if (anvilSeenAt < 0) {
+            if (!occupied) return;
+            mc.player.setXRot("leader".equals(role) ? 45F : 30F);
+            checks.put(role + "_anvil_visible_before_pickup", true);
+            anvilSeenAt = anvilPhaseTicks;
+            return;
+        }
+        if (anvilPhaseTicks == anvilSeenAt + 10) {
+            shot(mc, "packtest_multiplayer_" + role + "_anvil_before_pickup");
+            marker(role + "-anvil-seen");
+            return;
+        }
+        if (!Files.exists(MULTIPLAYER_SHARED.resolve("anvil-picked"))) return;
+        if (anvilPickedAt < 0) anvilPickedAt = anvilPhaseTicks;
+        if (anvilPhaseTicks - anvilPickedAt < 20) return;
+        String server = Files.readString(MULTIPLAYER_SHARED.resolve("anvil-picked"), StandardCharsets.UTF_8).trim();
+        checks.put(role + "_anvil_server_state", server);
+        checks.put(role + "_anvil_server_empty_and_tongs_loaded", server.contains("server_empty=true") && server.contains("tongs_loaded=true"));
+        checks.put(role + "_anvil_empty_after_pickup", !occupied);
+        if ("leader".equals(role)) checks.put("leader_tongs_loaded_after_pickup", WorkpieceCodec.isHolding(mc.player.getMainHandItem()));
+        shot(mc, "packtest_multiplayer_" + role + "_anvil_after_pickup");
+        anvilShotAt = anvilPhaseTicks;
+    }
+
+    /**
+     * Dedicated server: the recipes this client received are the server's set after the smithing rewrite (forge recipes
+     * added, the crafting recipes they replace removed), so the recipe book and JEI show what the server allows.
+     */
+    private static void recipeSyncChecks(Minecraft mc) throws IOException {
+        String role = MULTIPLAYER_ROLE;
+        String server = Files.readString(MULTIPLAYER_SHARED.resolve("server-recipes"), StandardCharsets.UTF_8);
+        RecipeManager client = mc.getConnection().getRecipeManager();
+        checks.put(role + "_recipe_count", client.getRecipes().size());
+        checks.put(role + "_recipes_match_server", server.contains("count=" + client.getRecipes().size() + "\n"));
+        if (EXPECT.contains("epicknights")) {
+            checks.put(role + "_epicknights_armet_forged_not_crafted", client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet")).isPresent()
+                    && client.byKey(new ResourceLocation("magistuarmory", "armet")).isEmpty());
+            checks.put(role + "_epicknights_ceremonial_gilding_kept", client.byKey(new ResourceLocation("magistuarmory", "ceremonialarmet")).isPresent());
+        }
+        if (EXPECT.contains("epicfight")) {
+            checks.put(role + "_epicfight_uchigatana_forged", client.byKey(ImmersiveSmithing.id("compat/epicfight/uchigatana")).isPresent());
+            checks.put(role + "_epicfight_bokken_crafted", client.byKey(ImmersiveSmithing.id("compat/epicfight/bokken")).isPresent());
+            checks.put(role + "_epicfight_longsword_forged_not_crafted", client.byKey(ImmersiveSmithing.id("compat/epicfight/iron_longsword")).isPresent()
+                    && client.byKey(new ResourceLocation("epicfight", "iron_longsword")).isEmpty());
         }
     }
 
@@ -1192,10 +1425,10 @@ public final class ClientPackTest {
             GuideScreen guide = new GuideScreen(1);
             mc.setScreen(guide);
             guide.init(mc, size[0], size[1]);
-            var previous = guideButton(guide, "screen.immersive_smithing.guide.previous");
+            var previous = guide.pageButton(false);
             passed &= previous != null && !previous.active;
             guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_PAGE_DOWN, 0, 0);
-            previous = guideButton(guide, "screen.immersive_smithing.guide.previous");
+            previous = guide.pageButton(false);
             passed &= previous != null && previous.active;
             var contents = guideButton(guide, "screen.immersive_smithing.guide.contents");
             if (contents != null) contents.onPress();
@@ -1213,9 +1446,9 @@ public final class ClientPackTest {
                     .filter(b -> b.getMessage().getString().startsWith(grindstoneChapter + ".")).findFirst().orElseThrow();
             guide.setFocused(chapter);
             passed &= guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER, 0, 0);
-            passed &= guideButton(guide, "screen.immersive_smithing.guide.next").visible;
+            passed &= guide.pageButton(true).visible;
             guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_HOME, 0, 0);
-            passed &= !guideButton(guide, "screen.immersive_smithing.guide.previous").active;
+            passed &= !guide.pageButton(false).active;
             for (var child : guide.children()) {
                 if (child instanceof net.minecraft.client.gui.components.AbstractWidget widget && widget.visible) {
                     passed &= widget.getX() >= 0 && widget.getY() >= 0
@@ -1248,7 +1481,9 @@ public final class ClientPackTest {
                 heading.setAccessible(true);
                 if ((boolean) heading.invoke(lines.get(lines.size() - 1))) return false;
             }
-            String source = Component.translatable(com.otectus.immersivesmithing.guide.GuideData.textKey(chapter)).getString().replace("## ", "");
+            // The book opens each chapter with its title, then the chapter text.
+            String source = com.otectus.immersivesmithing.guide.GuideData.chapterTitle(chapter).getString()
+                    + Component.translatable(com.otectus.immersivesmithing.guide.GuideData.textKey(chapter)).getString().replace("## ", "");
             return source.replaceAll("\\s+", "").equals(rendered.toString().replaceAll("\\s+", ""));
         } catch (ReflectiveOperationException exception) {
             throw new IllegalStateException("Guide page inspection failed", exception);

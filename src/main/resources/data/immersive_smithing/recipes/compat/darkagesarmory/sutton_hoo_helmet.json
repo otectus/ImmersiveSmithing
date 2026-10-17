@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:sutton_hoo_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 56,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gold"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:sutton_hoo_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "darkagesarmory:sutton_hoo_helmet"
+  ]
+}

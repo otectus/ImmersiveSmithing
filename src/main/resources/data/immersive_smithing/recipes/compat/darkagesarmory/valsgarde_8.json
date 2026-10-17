@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:valsgarde_8"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 50,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gold"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:valsgarde_8"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "darkagesarmory:valsgarde_8"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicknights_open_helms"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epicknights_open_helms:onepiecesallet_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 72,
+  "result": {
+    "item": "epicknights_open_helms:onepiecesallet_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "epicknights_open_helms:onepiecesalletrecipe"
+  ]
+}

@@ -1,4 +1,13 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    {
+      "id": "#simplyswords:uniques",
+      "required": false
+    },
+    {
+      "id": "#immersive_smithing:compat/epicknights/non_recyclable",
+      "required": false
+    }
+  ]
 }

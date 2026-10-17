@@ -1,0 +1,9 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 5,
+  "auxiliary": [{ "ingredient": { "item": "minecraft:scute" }, "count": 1 }],
+  "result": { "item": "minecraft:carrot_on_a_stick" },
+  "anvil_pattern": "immersive_smithing:generic_tool",
+  "replaces": ["immersive_smithing_test:followed_crafting"]
+}

@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:silver_flamebladedsword"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:silver",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:hilts"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:silver_flamebladedsword"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:greatsword",
+  "replaces": [
+    "magistuarmory:silver_flamebladedsword"
+  ]
+}

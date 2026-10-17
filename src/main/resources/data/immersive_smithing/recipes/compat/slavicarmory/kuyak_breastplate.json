@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "slavicarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "slavicarmory:kuyak_breastplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:leather_chestplate"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "slavicarmory:kuyak_breastplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "slavicarmory:kuyak_breastsplate"
+  ]
+}

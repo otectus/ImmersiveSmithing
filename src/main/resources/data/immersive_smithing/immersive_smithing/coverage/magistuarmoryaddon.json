@@ -1,0 +1,348 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    }
+  ],
+  "mod": "magistuarmoryaddon",
+  "tested_version": "2.6",
+  "policies": [
+    {
+      "items": [
+        "magistuarmoryaddon:darkblued_armet",
+        "magistuarmoryaddon:darkblued_sallet"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "its darkening recipe uses the removed minecraft:smithing type, so the add-on ships no working route"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:black_puff_and_slash_chestplate",
+        "magistuarmoryaddon:black_puff_and_slash_leggings",
+        "magistuarmoryaddon:blue_puff_and_slash_chestplate",
+        "magistuarmoryaddon:blue_puff_and_slash_leggings",
+        "magistuarmoryaddon:brown_puff_and_slash_chestplate",
+        "magistuarmoryaddon:brown_puff_and_slash_leggings",
+        "magistuarmoryaddon:condottiero_cap",
+        "magistuarmoryaddon:cyan_puff_and_slash_chestplate",
+        "magistuarmoryaddon:cyan_puff_and_slash_leggings",
+        "magistuarmoryaddon:doublet",
+        "magistuarmoryaddon:fancy_hat",
+        "magistuarmoryaddon:gray_puff_and_slash_chestplate",
+        "magistuarmoryaddon:gray_puff_and_slash_leggings",
+        "magistuarmoryaddon:green_puff_and_slash_chestplate",
+        "magistuarmoryaddon:green_puff_and_slash_leggings",
+        "magistuarmoryaddon:landsknecht_black_hat_decoration",
+        "magistuarmoryaddon:landsknecht_blue_hat_decoration",
+        "magistuarmoryaddon:landsknecht_brown_hat_decoration",
+        "magistuarmoryaddon:landsknecht_cyan_hat_decoration",
+        "magistuarmoryaddon:landsknecht_gray_hat_decoration",
+        "magistuarmoryaddon:landsknecht_green_hat_decoration",
+        "magistuarmoryaddon:landsknecht_light_blue_hat_decoration",
+        "magistuarmoryaddon:landsknecht_light_gray_hat_decoration",
+        "magistuarmoryaddon:landsknecht_lime_hat_decoration",
+        "magistuarmoryaddon:landsknecht_magenta_hat_decoration",
+        "magistuarmoryaddon:landsknecht_orange_hat_decoration",
+        "magistuarmoryaddon:landsknecht_pink_hat_decoration",
+        "magistuarmoryaddon:landsknecht_purple_hat_decoration",
+        "magistuarmoryaddon:landsknecht_red_hat_decoration",
+        "magistuarmoryaddon:landsknecht_white_hat_decoration",
+        "magistuarmoryaddon:landsknecht_yellow_hat_decoration",
+        "magistuarmoryaddon:light_blue_puff_and_slash_chestplate",
+        "magistuarmoryaddon:light_blue_puff_and_slash_leggings",
+        "magistuarmoryaddon:light_gray_puff_and_slash_chestplate",
+        "magistuarmoryaddon:light_gray_puff_and_slash_leggings",
+        "magistuarmoryaddon:lime_puff_and_slash_chestplate",
+        "magistuarmoryaddon:lime_puff_and_slash_leggings",
+        "magistuarmoryaddon:linen_coif",
+        "magistuarmoryaddon:magenta_puff_and_slash_chestplate",
+        "magistuarmoryaddon:magenta_puff_and_slash_leggings",
+        "magistuarmoryaddon:orange_puff_and_slash_chestplate",
+        "magistuarmoryaddon:orange_puff_and_slash_leggings",
+        "magistuarmoryaddon:pink_puff_and_slash_chestplate",
+        "magistuarmoryaddon:pink_puff_and_slash_leggings",
+        "magistuarmoryaddon:purple_puff_and_slash_chestplate",
+        "magistuarmoryaddon:purple_puff_and_slash_leggings",
+        "magistuarmoryaddon:red_puff_and_slash_chestplate",
+        "magistuarmoryaddon:red_puff_and_slash_leggings",
+        "magistuarmoryaddon:shoes",
+        "magistuarmoryaddon:straw_hat",
+        "magistuarmoryaddon:tilted_puff_and_slash_hat",
+        "magistuarmoryaddon:tunic",
+        "magistuarmoryaddon:tunic_boots",
+        "magistuarmoryaddon:white_puff_and_slash_chestplate",
+        "magistuarmoryaddon:white_puff_and_slash_leggings",
+        "magistuarmoryaddon:yellow_puff_and_slash_chestplate",
+        "magistuarmoryaddon:yellow_puff_and_slash_leggings"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:puff_and_slash_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:leather"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:training_sword"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:steel_lance"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of forge:steel on 2 other parts"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_bellows_maximilian_helmet",
+        "magistuarmoryaddon:dark_crusader_boots",
+        "magistuarmoryaddon:dark_crusader_chestplate",
+        "magistuarmoryaddon:dark_crusader_helmet",
+        "magistuarmoryaddon:dark_crusader_leggings",
+        "magistuarmoryaddon:dark_early_cabasset",
+        "magistuarmoryaddon:dark_gothic_boots",
+        "magistuarmoryaddon:dark_gothic_chestplate",
+        "magistuarmoryaddon:dark_gothic_helmet",
+        "magistuarmoryaddon:dark_gothic_leggings",
+        "magistuarmoryaddon:dark_grand_bascinet",
+        "magistuarmoryaddon:dark_greenwich_armet",
+        "magistuarmoryaddon:dark_greenwich_boots",
+        "magistuarmoryaddon:dark_greenwich_chestplate",
+        "magistuarmoryaddon:dark_heavy_brigandine_boots",
+        "magistuarmoryaddon:dark_heavy_brigandine_chestplate",
+        "magistuarmoryaddon:dark_heavy_brigandine_leggings",
+        "magistuarmoryaddon:dark_heavy_cuirassier_boots",
+        "magistuarmoryaddon:dark_heavy_cuirassier_chestplate",
+        "magistuarmoryaddon:dark_jousting_boots",
+        "magistuarmoryaddon:dark_jousting_chestplate",
+        "magistuarmoryaddon:dark_jousting_helmet",
+        "magistuarmoryaddon:dark_jousting_leggings",
+        "magistuarmoryaddon:dark_kastenbrust_boots",
+        "magistuarmoryaddon:dark_kastenbrust_chestplate",
+        "magistuarmoryaddon:dark_kastenbrust_leggings",
+        "magistuarmoryaddon:dark_knight_boots",
+        "magistuarmoryaddon:dark_knight_chestplate",
+        "magistuarmoryaddon:dark_knight_helmet",
+        "magistuarmoryaddon:dark_knight_leggings",
+        "magistuarmoryaddon:dark_late_sallet",
+        "magistuarmoryaddon:dark_maximilian_boots",
+        "magistuarmoryaddon:dark_maximilian_chestplate",
+        "magistuarmoryaddon:dark_maximilian_helmet",
+        "magistuarmoryaddon:dark_maximilian_leggings",
+        "magistuarmoryaddon:dark_peascod_chestplate",
+        "magistuarmoryaddon:dark_proto_maximilian_boots",
+        "magistuarmoryaddon:dark_proto_maximilian_chestplate",
+        "magistuarmoryaddon:gilded_dark_close_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:black_dye"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:darkblued_gothic_boots",
+        "magistuarmoryaddon:darkblued_gothic_chestplate",
+        "magistuarmoryaddon:darkblued_gothic_leggings",
+        "magistuarmoryaddon:darkblued_greenwich_armet",
+        "magistuarmoryaddon:darkblued_greenwich_boots",
+        "magistuarmoryaddon:darkblued_greenwich_chestplate",
+        "magistuarmoryaddon:darkblued_kastenbrust_boots",
+        "magistuarmoryaddon:darkblued_kastenbrust_chestplate",
+        "magistuarmoryaddon:darkblued_kastenbrust_leggings",
+        "magistuarmoryaddon:darkblued_knight_boots",
+        "magistuarmoryaddon:darkblued_knight_chestplate",
+        "magistuarmoryaddon:darkblued_knight_leggings",
+        "magistuarmoryaddon:darkblued_maximilian_boots",
+        "magistuarmoryaddon:darkblued_maximilian_chestplate",
+        "magistuarmoryaddon:darkblued_maximilian_helmet",
+        "magistuarmoryaddon:darkblued_maximilian_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:lapis_lazuli"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_darkblued_greenwich_armet",
+        "magistuarmoryaddon:gilded_darkblued_greenwich_boots",
+        "magistuarmoryaddon:gilded_darkblued_greenwich_chestplate"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:lapis_lazuli; gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:red_greathelm"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:red_dye"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:white_greathelm"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:white_dye"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:yellow_greathelm"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: darkening with minecraft:yellow_dye"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_articulated_chestplate",
+        "magistuarmoryaddon:fully_gilded_milanese_armet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_grilled_helmet",
+        "magistuarmoryaddon:fully_gilded_jousting_boots",
+        "magistuarmoryaddon:fully_gilded_jousting_chestplate",
+        "magistuarmoryaddon:fully_gilded_jousting_helmet",
+        "magistuarmoryaddon:fully_gilded_jousting_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_armet",
+        "magistuarmoryaddon:fully_gilded_gothic_leggings",
+        "magistuarmoryaddon:fully_gilded_grand_bascinet",
+        "magistuarmoryaddon:fully_gilded_kastenbrust_leggings",
+        "magistuarmoryaddon:fully_gilded_knight_boots",
+        "magistuarmoryaddon:fully_gilded_knight_chestplate",
+        "magistuarmoryaddon:fully_gilded_knight_leggings",
+        "magistuarmoryaddon:fully_gilded_maximilian_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_kastenbrust_boots",
+        "magistuarmoryaddon:fully_gilded_kastenbrust_chestplate",
+        "magistuarmoryaddon:fully_gilded_sallet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_gothic_boots",
+        "magistuarmoryaddon:fully_gilded_gothic_chestplate",
+        "magistuarmoryaddon:fully_gilded_greenwich_boots",
+        "magistuarmoryaddon:fully_gilded_maximilian_boots",
+        "magistuarmoryaddon:fully_gilded_maximilian_chestplate",
+        "magistuarmoryaddon:fully_gilded_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilded_greenwich_armet",
+        "magistuarmoryaddon:fully_gilded_greenwich_chestplate"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot; full gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:silvered_dark_bellows_maximilian_helmet",
+        "magistuarmoryaddon:silvered_dark_maximilian_boots",
+        "magistuarmoryaddon:silvered_dark_maximilian_chestplate",
+        "magistuarmoryaddon:silvered_dark_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with epic_knights_ores_and_alloys:silver_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:ceremonial_kastenbrust_boots",
+        "magistuarmoryaddon:ceremonial_kastenbrust_chestplate",
+        "magistuarmoryaddon:gilded_cabasset",
+        "magistuarmoryaddon:gilded_chainmail_chestplate",
+        "magistuarmoryaddon:gilded_chainmail_coif",
+        "magistuarmoryaddon:gilded_chainmail_leggings",
+        "magistuarmoryaddon:gilded_close_helmet",
+        "magistuarmoryaddon:gilded_early_cabasset",
+        "magistuarmoryaddon:gilded_exquisite_maximilian_helmet",
+        "magistuarmoryaddon:gilded_fox_grotesque_maximilian_helmet",
+        "magistuarmoryaddon:gilded_gothic_boots",
+        "magistuarmoryaddon:gilded_gothic_chestplate",
+        "magistuarmoryaddon:gilded_grand_bascinet",
+        "magistuarmoryaddon:gilded_greathelm",
+        "magistuarmoryaddon:gilded_greenwich_armet",
+        "magistuarmoryaddon:gilded_greenwich_boots",
+        "magistuarmoryaddon:gilded_greenwich_chestplate",
+        "magistuarmoryaddon:gilded_grilled_helmet",
+        "magistuarmoryaddon:gilded_half_armor",
+        "magistuarmoryaddon:gilded_heavy_brigandine_boots",
+        "magistuarmoryaddon:gilded_heavy_brigandine_chestplate",
+        "magistuarmoryaddon:gilded_heavy_brigandine_leggings",
+        "magistuarmoryaddon:gilded_maximilian_boots",
+        "magistuarmoryaddon:gilded_maximilian_chestplate",
+        "magistuarmoryaddon:gilded_maximilian_helmet",
+        "magistuarmoryaddon:gilded_peascod_chestplate",
+        "magistuarmoryaddon:gilded_sallet",
+        "magistuarmoryaddon:gilded_steel_puff_and_slash_boots",
+        "magistuarmoryaddon:gilded_steel_puff_and_slash_chestplate",
+        "magistuarmoryaddon:gilded_sugarloaf_helmet",
+        "magistuarmoryaddon:gilded_xivcenturyknight_boots",
+        "magistuarmoryaddon:gilded_xivcenturyknight_chestplate",
+        "magistuarmoryaddon:rich_saxon_sword"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_gilded_greenwich_armet",
+        "magistuarmoryaddon:dark_gilded_greenwich_boots",
+        "magistuarmoryaddon:dark_gilded_greenwich_chestplate",
+        "magistuarmoryaddon:gilded_dark_gothic_boots",
+        "magistuarmoryaddon:gilded_dark_gothic_chestplate",
+        "magistuarmoryaddon:gilded_dark_peascod_chestplate",
+        "magistuarmoryaddon:gilded_dark_sallet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot; darkening with minecraft:black_dye"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:bellows_maximilian_helmet",
+        "magistuarmoryaddon:devilish_grotesque_maximilian_helmet",
+        "magistuarmoryaddon:exquisite_maximilian_helmet",
+        "magistuarmoryaddon:facial_grotesque_maximilian_helmet",
+        "magistuarmoryaddon:fox_grotesque_maximilian_helmet",
+        "magistuarmoryaddon:maximilian_burgonet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: template upgrade with minecraft:blaze_powder"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_gilded_parade_boots",
+        "magistuarmoryaddon:dark_gilded_parade_burgonet",
+        "magistuarmoryaddon:dark_gilded_parade_chestplate",
+        "magistuarmoryaddon:dueling_shield",
+        "magistuarmoryaddon:silvered_dark_half_armor"
+      ],
+      "disposition": "protected_loot",
+      "reason": "Epic Knights: Addon loot piece; the mod ships no recipe"
+    }
+  ]
+}

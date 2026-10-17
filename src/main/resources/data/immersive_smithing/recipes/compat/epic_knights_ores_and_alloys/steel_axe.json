@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ores_and_alloys"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epic_knights_ores_and_alloys:steel_axe"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "epic_knights_ores_and_alloys:steel_axe"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:axe",
+  "replaces": [
+    "epic_knights_ores_and_alloys:steel_axe_r"
+  ]
+}

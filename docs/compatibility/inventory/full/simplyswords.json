@@ -1,0 +1,2683 @@
+{
+  "mod": "simplyswords",
+  "version": "1.70.2-1.20.1",
+  "integration": "simplyswords",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "items": [
+    {
+      "id": "simplyswords:arcanethyst",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:awakened_lichblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:bloodwake",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:bramblethorn",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:brimstone_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:caelestis",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:chompolotl",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:dawnquiver",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:decaying_relic",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:diamond_chakram",
+      "kind": "weapon",
+      "shape": "immersive_smithing:chakram",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_chakram",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_claymore",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_cutlass",
+      "kind": "weapon",
+      "shape": "immersive_smithing:saber",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_cutlass",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:glaive",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_glaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_greataxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battleaxe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_greataxe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_greathammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_greathammer",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:halberd",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_halberd",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_katana",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:rapier",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_rapier",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:parrying_dagger",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_sai",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_scythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_scythe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_twinblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:twinblade",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_twinblade",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:diamond_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:diamond_warglaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafted as the mod ships it",
+      "acquisition": "Diamond weapon: crafted exactly as Simply Swords ships it (any iron nuggets are fittings, not stock)."
+    },
+    {
+      "id": "simplyswords:dormant_relic",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:dreadwhisper",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:emberblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:emberlash",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:enigma",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:flamewind",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:frostfall",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:gloampiercer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:gold_chakram",
+      "kind": "weapon",
+      "shape": "immersive_smithing:chakram",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_chakram",
+          "material": "minecraft:gold",
+          "units": 27,
+          "components": [
+            "4x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:chakram",
+          "from": "simplyswords:gold_chakram"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_chakram",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_chakram",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_claymore",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "4x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:greatsword",
+          "from": "simplyswords:gold_claymore"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_claymore",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_claymore",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_cutlass",
+      "kind": "weapon",
+      "shape": "immersive_smithing:saber",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_cutlass",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:saber",
+          "from": "simplyswords:gold_cutlass"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_cutlass",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_cutlass",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:glaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_glaive",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:glaive",
+          "from": "simplyswords:gold_glaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_glaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_glaive",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_greataxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battleaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_greataxe",
+          "material": "minecraft:gold",
+          "units": 27,
+          "components": [
+            "2x minecraft:iron_nugget",
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battleaxe",
+          "from": "simplyswords:gold_greataxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_greataxe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_greataxe",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_greathammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_greathammer",
+          "material": "minecraft:gold",
+          "units": 27,
+          "components": [
+            "3x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battle_hammer",
+          "from": "simplyswords:gold_greathammer"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_greathammer",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_greathammer",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:halberd",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_halberd",
+          "material": "minecraft:gold",
+          "units": 27,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "simplyswords:gold_halberd"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_halberd",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_halberd",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:gold_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_katana",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "simplyswords:gold_katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_katana",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_katana",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_longsword",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:longsword",
+          "from": "simplyswords:gold_longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_longsword",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:rapier",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_rapier",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "simplyswords:gold_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_rapier",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_rapier",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:parrying_dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_sai",
+          "material": "minecraft:gold",
+          "units": 9,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:parrying_dagger",
+          "from": "simplyswords:gold_sai"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_sai",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_sai",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_scythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_scythe",
+          "material": "minecraft:gold",
+          "units": 27,
+          "components": [
+            "3x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:scythe",
+          "from": "simplyswords:gold_scythe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_scythe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_scythe",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_spear",
+          "material": "minecraft:gold",
+          "units": 9,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "simplyswords:gold_spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_spear",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_twinblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:twinblade",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_twinblade",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:twinblade",
+          "from": "simplyswords:gold_twinblade"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_twinblade",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_twinblade",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:gold_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/gold_warglaive",
+          "material": "minecraft:gold",
+          "units": 18,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:warglaive",
+          "from": "simplyswords:gold_warglaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:gold_warglaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:gold",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/gold_warglaive",
+      "acquisition": "Gold weapon with iron-nugget fittings: forged from gold, the nuggets taken as components."
+    },
+    {
+      "id": "simplyswords:harbinger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:hearthflame",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:hiveheart",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:icewhisper",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:ionbound_stormscale",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:iron_chakram",
+      "kind": "weapon",
+      "shape": "immersive_smithing:chakram",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_chakram",
+          "material": "minecraft:iron",
+          "units": 31,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:chakram",
+          "from": "simplyswords:iron_chakram"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_chakram",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "31 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_chakram",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_claymore",
+          "material": "minecraft:iron",
+          "units": 22,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:greatsword",
+          "from": "simplyswords:iron_claymore"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_claymore",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "22 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_claymore",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_cutlass",
+      "kind": "weapon",
+      "shape": "immersive_smithing:saber",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_cutlass",
+          "material": "minecraft:iron",
+          "units": 19,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:saber",
+          "from": "simplyswords:iron_cutlass"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_cutlass",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "19 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_cutlass",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:glaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_glaive",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:glaive",
+          "from": "simplyswords:iron_glaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_glaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_glaive",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_greataxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battleaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_greataxe",
+          "material": "minecraft:iron",
+          "units": 29,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battleaxe",
+          "from": "simplyswords:iron_greataxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_greataxe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "29 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_greataxe",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_greathammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_greathammer",
+          "material": "minecraft:iron",
+          "units": 30,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battle_hammer",
+          "from": "simplyswords:iron_greathammer"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_greathammer",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "30 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_greathammer",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:halberd",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_halberd",
+          "material": "minecraft:iron",
+          "units": 28,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "simplyswords:iron_halberd"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_halberd",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "28 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_halberd",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_katana",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "simplyswords:iron_katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_katana",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_katana",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_longsword",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:longsword",
+          "from": "simplyswords:iron_longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_longsword",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_longsword",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:rapier",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_rapier",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "simplyswords:iron_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_rapier",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_rapier",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:parrying_dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_sai",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:parrying_dagger",
+          "from": "simplyswords:iron_sai"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_sai",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_sai",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_scythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_scythe",
+          "material": "minecraft:iron",
+          "units": 27,
+          "components": [
+            "3x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:scythe",
+          "from": "simplyswords:iron_scythe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_scythe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_scythe",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_spear",
+          "material": "minecraft:iron",
+          "units": 9,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "simplyswords:iron_spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_spear",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_spear",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_twinblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:twinblade",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_twinblade",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:twinblade",
+          "from": "simplyswords:iron_twinblade"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_twinblade",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_twinblade",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:iron_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/iron_warglaive",
+          "material": "minecraft:iron",
+          "units": 19,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:warglaive",
+          "from": "simplyswords:iron_warglaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:iron_warglaive",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "19 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/iron_warglaive",
+      "acquisition": "Ordinary metal weapon: forged; the crafting recipe is replaced."
+    },
+    {
+      "id": "simplyswords:livyatan",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:magiblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:magiscythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:magispear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:mjolnir",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:molten_edge",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:netherite_chakram",
+      "kind": "weapon",
+      "shape": "immersive_smithing:chakram",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_chakram",
+          "material": "minecraft:netherite",
+          "units": 27,
+          "components": [
+            "4x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:chakram",
+          "from": "simplyswords:netherite_chakram"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_chakram",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_chakram",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_claymore",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "4x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:greatsword",
+          "from": "simplyswords:netherite_claymore"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_claymore",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_claymore",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_cutlass",
+      "kind": "weapon",
+      "shape": "immersive_smithing:saber",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_cutlass",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:saber",
+          "from": "simplyswords:netherite_cutlass"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_cutlass",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_cutlass",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:glaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_glaive",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:glaive",
+          "from": "simplyswords:netherite_glaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_glaive",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_glaive",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_greataxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battleaxe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_greataxe",
+          "material": "minecraft:netherite",
+          "units": 27,
+          "components": [
+            "2x minecraft:iron_nugget",
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battleaxe",
+          "from": "simplyswords:netherite_greataxe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_greataxe",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_greataxe",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_greathammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_greathammer",
+          "material": "minecraft:netherite",
+          "units": 27,
+          "components": [
+            "3x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:battle_hammer",
+          "from": "simplyswords:netherite_greathammer"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_greathammer",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_greathammer",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:halberd",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_halberd",
+          "material": "minecraft:netherite",
+          "units": 27,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "simplyswords:netherite_halberd"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_halberd",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_halberd",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:netherite_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_katana",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "simplyswords:netherite_katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_katana",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_katana",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_longsword",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:longsword",
+          "from": "simplyswords:netherite_longsword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_longsword",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_longsword",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:rapier",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_rapier",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "simplyswords:netherite_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_rapier",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_rapier",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:parrying_dagger",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_sai",
+          "material": "minecraft:netherite",
+          "units": 9,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:parrying_dagger",
+          "from": "simplyswords:netherite_sai"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_sai",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_sai",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_scythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_scythe",
+          "material": "minecraft:netherite",
+          "units": 27,
+          "components": [
+            "3x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:scythe",
+          "from": "simplyswords:netherite_scythe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_scythe",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_scythe",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_spear",
+          "material": "minecraft:netherite",
+          "units": 9,
+          "components": [
+            "2x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "simplyswords:netherite_spear"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_spear",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_spear",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_twinblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:twinblade",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_twinblade",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:twinblade",
+          "from": "simplyswords:netherite_twinblade"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_twinblade",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_twinblade",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced."
+    },
+    {
+      "id": "simplyswords:netherite_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/netherite_warglaive",
+          "material": "minecraft:netherite",
+          "units": 18,
+          "components": [
+            "1x minecraft:iron_nugget",
+            "1x #c:wood_sticks"
+          ],
+          "pattern": "immersive_smithing:warglaive",
+          "from": "simplyswords:netherite_warglaive"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:netherite_warglaive",
+          "type": "minecraft:smithing_transform",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/netherite_warglaive",
+      "acquisition": "Netherite upgrade: forged from netherite in the diamond piece's shape (no template, no diamond piece). Simply Swords' smithing-table upgrade is replaced. Iron-nugget fittings stay components."
+    },
+    {
+      "id": "simplyswords:ribboncleaver",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:riftmane",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:righteous_relic",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:runic_chakram",
+      "kind": "weapon",
+      "shape": "immersive_smithing:chakram",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_chakram",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_chakram",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_claymore",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_claymore",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_cutlass",
+      "kind": "weapon",
+      "shape": "immersive_smithing:saber",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_cutlass",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_cutlass",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:glaive",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_glaive",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_glaive",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_greataxe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battleaxe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_greataxe",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_greataxe",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_greathammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:battle_hammer",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_greathammer",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_greathammer",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:halberd",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_halberd",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_halberd",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:katana",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_katana",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_katana",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_longsword",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_longsword",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:rapier",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_rapier",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_rapier",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:parrying_dagger",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_sai",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_sai",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_scythe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:scythe",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_scythe",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_scythe",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_spear",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_spear",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "9 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_twinblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:twinblade",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_twinblade",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_twinblade",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:runic_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "simplyswords:runic2_warglaive",
+          "type": "simplyswords:smithing_reroll",
+          "state": "kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted"
+        },
+        {
+          "recipe": "simplyswords:runic_warglaive",
+          "type": "minecraft:smithing_transform",
+          "state": "untouched"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:netherite",
+      "disposition": "native_transformation",
+      "reason": "made by the mod's own recipe, kept: custom smithing recipe simplyswords:smithing_reroll (net.sweenus.simplyswords.recipe.RunicRerollRecipe) is never converted",
+      "acquisition": "Runic upgrade of the netherite weapon (runic tablet and a diamond) and its reroll both stay on the smithing table. Quality and mark carry through both; the reroll still clears the rolled power. Melts for the netherite base's metal only."
+    },
+    {
+      "id": "simplyswords:shadowsting",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:slumbering_lichblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:soulkeeper",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:soulpyre",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:soulrender",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:soulstalker",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:soulstealer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:stars_edge",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:stormbringer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:storms_edge",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:stormscale",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:sunfire",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:sword_on_a_stick",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:auto/simplyswords/sword_on_a_stick",
+          "material": "minecraft:iron",
+          "units": 18,
+          "components": [
+            "2x #c:wood_sticks",
+            "1x minecraft:string"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "simplyswords:sword_on_a_stick"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "simplyswords:sword_on_a_stick",
+          "type": "minecraft:crafting_shaped",
+          "state": "kept: remakes a finished piece without adding metal; kept next to the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 minecraft:iron",
+      "disposition": "forge_auto",
+      "reason": "immersive_smithing:auto/simplyswords/sword_on_a_stick",
+      "acquisition": "A longsword set on a stick. Simply Swords' recipe stays (the longsword's quality and mark carry over); the forge also makes it directly from the longsword's metal, the sticks and the string."
+    },
+    {
+      "id": "simplyswords:tainted_relic",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:tempest",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:the_devourer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:thunderbrand",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:toxic_longsword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:longsword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:twisted_blade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:waking_lichblade",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:watcher_claymore",
+      "kind": "weapon",
+      "shape": "immersive_smithing:greatsword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:watching_warglaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:warglaive",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:waxweaver",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:whisperwind",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:wickpiercer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:spear",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:wraithfang",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    },
+    {
+      "id": "simplyswords:wraithmaw",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "loot or unique: graded when found, never forged",
+      "acquisition": "Unique weapon: found as loot or made by Simply Swords' own mechanics. Graded when found, refined at the grindstone; never forged and never melted down."
+    }
+  ],
+  "dispositions": {
+    "forge_auto": 46,
+    "native_nonmetal_recipe": 15,
+    "native_transformation": 15,
+    "protected_loot": 57
+  }
+}

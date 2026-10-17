@@ -238,9 +238,14 @@ public final class DataGameTests {
         if (!ModList.get().isLoaded("spartanweaponry")) {
             RecipeManager rm = h.getLevel().getServer().getRecipeManager();
             h.assertTrue(rm.byKey(ImmersiveSmithing.id("compat/spartanweaponry/iron_longsword")).isEmpty(), "Conditioned out without Spartan Weaponry");
-            long compat = SmithingData.current().recipes().stream().filter(r -> r.getId().getPath().startsWith("compat/")).count();
-            h.assertTrue(compat == 0, "No compat recipes without their mod, found " + compat);
-            h.assertTrue(SmithingData.current().materials().family(new ResourceLocation("forge", "steel")).isEmpty(), "Modded metal families need their ingots");
+            long compat = SmithingData.current().recipes().stream()
+                    .filter(r -> r.getId().getPath().startsWith("compat/spartanweaponry/") || r.getId().getPath().startsWith("compat/spartanfire/")).count();
+            h.assertTrue(compat == 0, "No Spartan recipes without Spartan, found " + compat);
+            // Steel only exists while some mod provides steel ingots (Epic Knights does).
+            boolean steelIngots = net.minecraft.core.registries.BuiltInRegistries.ITEM.getTag(
+                    net.minecraft.tags.ItemTags.create(new ResourceLocation("forge", "ingots/steel"))).map(t -> t.size() > 0).orElse(false);
+            h.assertTrue(steelIngots || SmithingData.current().materials().family(new ResourceLocation("forge", "steel")).isEmpty(),
+                    "Modded metal families need their ingots");
         }
         h.succeed();
     }

@@ -9,7 +9,10 @@ import com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
 import com.otectus.immersivesmithing.material.MaterialUnits;
+import com.otectus.immersivesmithing.client.GrindstonePreviews;
+import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.quality.QualityData;
+import com.otectus.immersivesmithing.quality.QualityEligibility;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -170,18 +173,32 @@ public class SmithingJadePlugin implements IWailaPlugin {
 
         @Override
         public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+            if (!ServerConfig.get(ServerConfig.ENABLE_SMITH_GRINDSTONE)) {
+                tooltip.add(Component.translatable("message.immersive_smithing.grindstone_disabled").withStyle(ChatFormatting.GRAY));
+                return;
+            }
             ItemStack held = accessor.getPlayer().getMainHandItem();
             QualityData quality = QualityData.get(held).orElse(null);
             if (quality == null) {
-                tooltip.add(line("grindstone.hint").withStyle(ChatFormatting.GRAY));
-                return;
+                if (!QualityEligibility.canCarryQuality(held, accessor.getLevel())) {
+                    tooltip.add(line("grindstone.hint").withStyle(ChatFormatting.GRAY));
+                    return;
+                }
+                // Not graded yet: refining starts from the neutral grade.
+                quality = QualityEligibility.neutral();
+                tooltip.add(line("grindstone.ungraded").withStyle(ChatFormatting.GRAY));
             }
             if (quality.faulty()) {
                 tooltip.add(line("grindstone.faulty").withStyle(ChatFormatting.RED));
                 return;
             }
-            tooltip.add(line("grindstone.durability", quality.forgeScore(), SmithsGrindstoneBlock.levelCost(quality.forgeScore())).withStyle(ChatFormatting.GRAY));
-            tooltip.add(line("grindstone.efficacy", quality.anvilScore(), SmithsGrindstoneBlock.levelCost(quality.anvilScore())).withStyle(ChatFormatting.GRAY));
+            var quote = GrindstonePreviews.current(accessor.getLevel(), accessor.getPosition(), held);
+            if (quote.isEmpty()) {
+                tooltip.add(line("grindstone.waiting").withStyle(ChatFormatting.GRAY));
+                return;
+            }
+            tooltip.add(line("grindstone.durability", quality.forgeScore(), quote.get().durabilityCost()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(line("grindstone.efficacy", quality.anvilScore(), quote.get().efficacyCost()).withStyle(ChatFormatting.GRAY));
         }
 
         @Override

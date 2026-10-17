@@ -1,7 +1,7 @@
 package com.otectus.immersivesmithing.client.compat.jei;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
-import com.otectus.immersivesmithing.client.screen.StonebornGui;
+import com.otectus.immersivesmithing.client.screen.VanillaGui;
 import com.otectus.immersivesmithing.material.MaterialUnits;
 import com.otectus.immersivesmithing.recipe.AuxiliaryIngredient;
 import com.otectus.immersivesmithing.recipe.SmithingRecipe;
@@ -27,30 +27,33 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Shows the whole conceptual process: metal and auxiliary components, then Forge, hot workpiece, Anvil,
- * Trough, and the finished equipment, with material family, unit cost and patterns.
+ * The whole process in JEI's own vanilla style: metal and components in standard slots, Forge, Anvil and Trough
+ * joined by JEI's recipe arrows, the finished piece in the output slot, and dark grey notes on material, pattern and
+ * quality. Everything is JEI's standard drawables on its own background; nothing here is themed.
  */
 public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
     public static final RecipeType<SmithingRecipe> TYPE = RecipeType.create(ImmersiveSmithing.MOD_ID, "smithing", SmithingRecipe.class);
-    private static final int WIDTH = 176;
-    private static final int HEIGHT = 106;
-    private static final int SOOT = StonebornGui.SURFACE;
-    private static final int TIMBER = StonebornGui.BORDER;
-    private static final int BRONZE = StonebornGui.BRASS;
-    private static final int IVORY = StonebornGui.TEXT;
-    private static final int IVORY_DIM = StonebornGui.TEXT_DIM;
+    private static final int WIDTH = 186;
+    private static final int HEIGHT = 104;
+    private static final int PROCESS_X = 60;
+    private static final int PROCESS_Y = 20;
+    private static final int OUTPUT_X = 160;
 
+    private final IDrawable background;
     private final IDrawable icon;
     private final IDrawable slot;
+    private final IDrawable outputSlot;
     private final IDrawable arrow;
     private final IDrawable forge;
     private final IDrawable anvil;
     private final IDrawable trough;
 
     public SmithingRecipeCategory(IGuiHelper helper) {
+        this.background = helper.createBlankDrawable(WIDTH, HEIGHT);
         this.icon = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_ANVIL.get()));
-        this.slot = StonebornJei.slot();
-        this.arrow = StonebornJei.arrow();
+        this.slot = helper.getSlotDrawable();
+        this.outputSlot = helper.getOutputSlot();
+        this.arrow = helper.getRecipeArrow();
         this.forge = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_FORGE.get()));
         this.anvil = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_ANVIL.get()));
         this.trough = helper.createDrawableItemStack(new ItemStack(ModItems.SMITHS_TROUGH.get()));
@@ -68,16 +71,18 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
 
     @Override
     public int getWidth() {
-        return WIDTH + 12;
+        return WIDTH;
     }
 
     @Override
     public int getHeight() {
-        return HEIGHT + 12;
+        return HEIGHT;
     }
 
     @Override
-    public IDrawable getBackground() { return StonebornJei.background(getWidth(), getHeight()); }
+    public IDrawable getBackground() {
+        return background;
+    }
 
     @Override
     public IDrawable getIcon() {
@@ -88,7 +93,7 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
     public void setRecipe(IRecipeLayoutBuilder builder, SmithingRecipe recipe, IFocusGroup focuses) {
         List<List<ItemStack>> metal = recipe.metalDisplay();
         for (int i = 0; i < Math.min(2, metal.size()); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, 6 + (1 + i * 18), 6 + (1))
+            builder.addSlot(RecipeIngredientRole.INPUT, 1 + i * 18, 1)
                     .addItemStacks(metal.get(i))
                     .setBackground(slot, -1, -1)
                     .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.metal",
@@ -98,70 +103,59 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
         for (int i = 0; i < Math.min(6, aux.size()); i++) {
             AuxiliaryIngredient a = aux.get(i);
             List<ItemStack> stacks = Arrays.stream(a.ingredient().getItems()).map(s -> s.copyWithCount(a.count())).toList();
-            builder.addSlot(RecipeIngredientRole.INPUT, 6 + (1 + (i % 3) * 18), 6 + (21 + (i / 3) * 18))
+            builder.addSlot(RecipeIngredientRole.INPUT, 1 + (i % 3) * 18, 21 + (i / 3) * 18)
                     .addItemStacks(stacks)
                     .setBackground(slot, -1, -1)
                     .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable(a.consumesEquipment()
                             ? "jei.immersive_smithing.equipment_consumed" : "jei.immersive_smithing.component_consumed")
                             .withStyle(ChatFormatting.GRAY)));
         }
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 6 + (WIDTH - 19), 6 + (19))
+        builder.addSlot(RecipeIngredientRole.OUTPUT, OUTPUT_X + 5, PROCESS_Y - 4)
                 .addItemStack(recipe.result())
-                .setBackground(slot, -1, -1)
+                .setBackground(outputSlot, -5, -5)
                 .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.quality_note")
                         .withStyle(ChatFormatting.GRAY)));
     }
 
     @Override
     public void draw(SmithingRecipe recipe, IRecipeSlotsView slots, GuiGraphics g, double mouseX, double mouseY) {
-        g.pose().pushPose();
-        g.pose().translate(6, 6, 0);
-        g.fill(53, 14, 155, 44, StonebornGui.INSET);
-        g.fill(53, 42, 155, 44, TIMBER);
-        g.fill(53, 14, 155, 15, BRONZE);
-        int y = 19;
-        forge.draw(g, 56, y);
-        arrow.draw(g, 72, y);
-        anvil.draw(g, 96, y);
-        arrow.draw(g, 112, y);
-        trough.draw(g, 136, y);
+        forge.draw(g, PROCESS_X, PROCESS_Y - 4);
+        arrow.draw(g, PROCESS_X + 17, PROCESS_Y - 4);
+        anvil.draw(g, PROCESS_X + 42, PROCESS_Y - 4);
+        arrow.draw(g, PROCESS_X + 59, PROCESS_Y - 4);
+        trough.draw(g, PROCESS_X + 84, PROCESS_Y - 4);
         Font font = Minecraft.getInstance().font;
         Component metal = Component.translatable("jei.immersive_smithing.material", recipe.familyName(), MaterialUnits.describe(recipe.metalUnits()));
-        g.drawString(font, trim(font, metal, WIDTH), 0, 59, IVORY, false);
-        Component pattern = Component.translatable("jei.immersive_smithing.pattern",
-                Component.translatable("pattern." + recipe.anvilPattern().getNamespace() + "." + recipe.anvilPattern().getPath()));
+        g.drawString(font, VanillaGui.clipped(font, metal, WIDTH), 0, 60, VanillaGui.LABEL, false);
+        Component pattern = Component.translatable("jei.immersive_smithing.pattern", patternName(recipe));
         if (recipe.isAuto()) pattern = pattern.copy().append(Component.translatable("jei.immersive_smithing.auto"));
-        g.drawString(font, trim(font, pattern, WIDTH), 0, 71, IVORY_DIM, false);
-        g.drawString(font, Component.translatable("jei.immersive_smithing.quality_forge"), 0, 83, BRONZE, false);
-        g.drawString(font, Component.translatable("jei.immersive_smithing.quality_anvil"), 0, 94, BRONZE, false);
+        g.drawString(font, VanillaGui.clipped(font, pattern, WIDTH), 0, 71, VanillaGui.LABEL_DIM, false);
+        g.drawString(font, VanillaGui.clipped(font, Component.translatable("jei.immersive_smithing.quality_forge"), WIDTH), 0, 82, VanillaGui.LABEL, false);
+        g.drawString(font, VanillaGui.clipped(font, Component.translatable("jei.immersive_smithing.quality_anvil"), WIDTH), 0, 93, VanillaGui.LABEL, false);
         if (recipe.auxiliary().size() > 6) {
-            g.drawString(font, Component.translatable("jei.immersive_smithing.more_components", recipe.auxiliary().size() - 6), 42, 48, BRONZE, false);
+            g.drawString(font, Component.translatable("jei.immersive_smithing.more_components", recipe.auxiliary().size() - 6), 58, 46, VanillaGui.LABEL, false);
         }
-            g.pose().popPose();
     }
 
-    private static String trim(Font font, Component text, int width) {
-        if (font.width(text) <= width) return text.getString();
-        return font.plainSubstrByWidth(text.getString(), width - font.width("...")) + "...";
+    private static Component patternName(SmithingRecipe recipe) {
+        return Component.translatable("pattern." + recipe.anvilPattern().getNamespace() + "." + recipe.anvilPattern().getPath());
     }
 
     @Override
     public List<Component> getTooltipStrings(SmithingRecipe recipe, IRecipeSlotsView slots, double mouseX, double mouseY) {
-        mouseX -= 6;
-        mouseY -= 6;
         List<Component> tips = new ArrayList<>();
-        if (mouseY >= 19 && mouseY < 35) {
-            if (mouseX >= 56 && mouseX < 72) {
+        if (mouseY >= PROCESS_Y - 4 && mouseY < PROCESS_Y + 12) {
+            if (mouseX >= PROCESS_X && mouseX < PROCESS_X + 16) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_forge"));
                 tips.add(Component.translatable("jei.immersive_smithing.step.forge").withStyle(ChatFormatting.GRAY));
-            } else if (mouseX >= 96 && mouseX < 112) {
+            } else if (mouseX >= PROCESS_X + 42 && mouseX < PROCESS_X + 58) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_anvil"));
                 tips.add(Component.translatable("jei.immersive_smithing.step.anvil").withStyle(ChatFormatting.GRAY));
-            } else if (mouseX >= 136 && mouseX < 152) {
+            } else if (mouseX >= PROCESS_X + 84 && mouseX < PROCESS_X + 100) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_trough"));
                 tips.add(Component.translatable("jei.immersive_smithing.step.trough").withStyle(ChatFormatting.GRAY));
             }
-        } else if (mouseY >= 58 && mouseY < 70) {
+        } else if (mouseY >= 59 && mouseY < 70) {
             tips.add(Component.translatable("jei.immersive_smithing.material", recipe.familyName(), MaterialUnits.describe(recipe.metalUnits())));
             tips.add(Component.translatable("jei.immersive_smithing.metal_cost_explainer").withStyle(ChatFormatting.GRAY));
             if (!recipe.auxiliary().isEmpty()) {
@@ -172,10 +166,9 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
                     tips.add(Component.translatable("jei.immersive_smithing.component_line", auxiliary.count(), name).withStyle(ChatFormatting.GRAY));
                 }
             }
-        } else if (mouseY >= 70 && mouseY < 82) {
-            tips.add(Component.translatable("jei.immersive_smithing.pattern",
-                    Component.translatable("pattern." + recipe.anvilPattern().getNamespace() + "." + recipe.anvilPattern().getPath())));
-        } else if (mouseY >= 82) {
+        } else if (mouseY >= 70 && mouseY < 81) {
+            tips.add(Component.translatable("jei.immersive_smithing.pattern", patternName(recipe)));
+        } else if (mouseY >= 81) {
             tips.add(Component.translatable("jei.immersive_smithing.quality_note").withStyle(ChatFormatting.GRAY));
         }
         return tips;

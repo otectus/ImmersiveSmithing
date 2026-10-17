@@ -33,6 +33,11 @@ public final class MaterialResolver {
 
     /** The unscaled metal content of a piece of equipment, if it can be determined safely. */
     public static Optional<RecyclingValue> recyclingValue(ItemStack stack) {
+        return baseRecyclingValue(stack).flatMap(value -> RecyclingData.limit(stack, value));
+    }
+
+    /** Recipe/provider value before the per-piece cap; exclusions still apply. */
+    static Optional<RecyclingValue> baseRecyclingValue(ItemStack stack) {
         if (stack.isEmpty() || stack.is(ModTags.NON_RECYCLABLE) || ImmersiveSmithingAPI.isExcluded(stack)) return Optional.empty();
         SmithingData data = SmithingData.current();
         if (data.isRecyclingExcluded(stack.getItem())) return Optional.empty();

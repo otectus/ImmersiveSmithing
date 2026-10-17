@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmoryaddon:patrician_tuher_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 81,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "magistuarmoryaddon:patrician_tuher_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "magistuarmoryaddon:patrician_tuher_helmet"
+  ]
+}

@@ -448,6 +448,13 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         updateBlockState();
     }
 
+    /** Copies of the escrowed components, for building the result before anything is consumed. */
+    public List<ItemStack> escrowView() {
+        List<ItemStack> out = new ArrayList<>(escrow.size());
+        for (ItemStack stack : escrow) out.add(stack.copy());
+        return out;
+    }
+
     /** Hands the escrow back to the caller for refunding and clears it, so it can only be refunded once. */
     public List<ItemStack> takeEscrow() {
         List<ItemStack> out = new ArrayList<>(escrow);

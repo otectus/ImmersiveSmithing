@@ -41,7 +41,7 @@ public final class IntegrationGameTests {
     }
 
     private static boolean skipped(String item, String reason) {
-        return SmithingData.current().report().skippedEquipment().stream().anyMatch(l -> l.startsWith(item + " ") && l.endsWith(reason));
+        return SmithingData.current().report().skippedEquipment().stream().anyMatch(l -> l.startsWith(item + " ") && l.contains(reason));
     }
 
     @GameTest(template = "empty")

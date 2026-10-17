@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:blacked_steel_plate"
+    }
+  ],
+  "family": "forge:blacked_steel",
+  "sources_only": true,
+  "sources": [
+    {
+      "item": "ekotsk:blacked_steel_plate",
+      "units": 9
+    }
+  ]
+}

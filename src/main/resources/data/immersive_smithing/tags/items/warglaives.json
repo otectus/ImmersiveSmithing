@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "simplyswords:diamond_warglaive",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_warglaive",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_warglaive",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_warglaive",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_warglaive",
+      "required": false
+    },
+    {
+      "id": "simplyswords:watching_warglaive",
+      "required": false
+    }
+  ]
+}

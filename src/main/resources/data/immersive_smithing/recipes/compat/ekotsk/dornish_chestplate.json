@@ -1,0 +1,57 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:dornish_chestplate"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:woolen_fabric"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 54,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:woolen_fabric"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:leather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:dyes/orange"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 24
+    }
+  ],
+  "result": {
+    "item": "ekotsk:dornish_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "ekotsk:dornish_chestplate"
+  ]
+}

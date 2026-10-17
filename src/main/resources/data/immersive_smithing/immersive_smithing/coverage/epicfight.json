@@ -1,0 +1,61 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicfight"
+    }
+  ],
+  "mod": "epicfight",
+  "tested_version": "20.14.17",
+  "policies": [
+    {
+      "items": [
+        "epicfight:bokken"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "crafting recipe shipped by Immersive Smithing (the mod ships none)"
+    },
+    {
+      "items": [
+        "epicfight:stone_dagger",
+        "epicfight:stone_greatsword",
+        "epicfight:stone_longsword",
+        "epicfight:stone_spear",
+        "epicfight:stone_tachi"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:cobblestone"
+    },
+    {
+      "items": [
+        "epicfight:diamond_dagger",
+        "epicfight:diamond_greatsword",
+        "epicfight:diamond_longsword",
+        "epicfight:diamond_spear",
+        "epicfight:diamond_tachi"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:diamond"
+    },
+    {
+      "items": [
+        "epicfight:wooden_dagger",
+        "epicfight:wooden_greatsword",
+        "epicfight:wooden_longsword",
+        "epicfight:wooden_spear",
+        "epicfight:wooden_tachi"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:oak_planks"
+    },
+    {
+      "items": [
+        "epicfight:stray_hat",
+        "epicfight:stray_pants",
+        "epicfight:stray_robe"
+      ],
+      "disposition": "non_equipment",
+      "reason": "cloth armour worn by Epic Fight's stray mobs: not metal work, no recipe"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:steel_ellipticalshield"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:wood_ellipticalshield"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:wood_ellipticalshield"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:steel_ellipticalshield"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:steel_ellipticalshield"
+  ]
+}

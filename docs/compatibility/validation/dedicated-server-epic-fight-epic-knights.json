@@ -1,0 +1,76 @@
+{
+  "pass": true,
+  "results": {
+    "leader": {
+      "pass": true,
+      "reason": "remote swings synchronized and the anvil pickup cleared on this client",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "leader_recipe_count": 1644,
+        "leader_recipes_match_server": true,
+        "leader_epicknights_armet_forged_not_crafted": true,
+        "leader_epicknights_ceremonial_gilding_kept": true,
+        "leader_epicfight_uchigatana_forged": true,
+        "leader_epicfight_bokken_crafted": true,
+        "leader_epicfight_longsword_forged_not_crafted": true,
+        "leader_loaded_tongs": true,
+        "leader_first_person_tongs_captured": true,
+        "leader_first_person_hammer_captured": true,
+        "leader_remote_tongs_and_hammer_observed": true,
+        "leader_anvil_visible_before_pickup": true,
+        "leader_anvil_server_state": "server_empty=true tongs_loaded=true",
+        "leader_anvil_server_empty_and_tongs_loaded": true,
+        "leader_anvil_empty_after_pickup": true,
+        "leader_tongs_loaded_after_pickup": true
+      }
+    },
+    "peer": {
+      "pass": true,
+      "reason": "remote swings synchronized and the anvil pickup cleared on this client",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "peer_recipe_count": 1644,
+        "peer_recipes_match_server": true,
+        "peer_epicknights_armet_forged_not_crafted": true,
+        "peer_epicknights_ceremonial_gilding_kept": true,
+        "peer_epicfight_uchigatana_forged": true,
+        "peer_epicfight_bokken_crafted": true,
+        "peer_epicfight_longsword_forged_not_crafted": true,
+        "remote_sky_light": 0,
+        "remote_block_light": 0,
+        "fixture_lighting": "vanilla night vision for pose inspection; station lighting tested separately",
+        "remote_loaded_tongs": true,
+        "remote_loaded_tongs_swing_observed": true,
+        "remote_tongs_capture_swing_tick": 3,
+        "remote_hammer_swing_observed": true,
+        "remote_hammer_capture_swing_tick": 3,
+        "peer_anvil_visible_before_pickup": true,
+        "peer_anvil_server_state": "server_empty=true tongs_loaded=true",
+        "peer_anvil_server_empty_and_tongs_loaded": true,
+        "peer_anvil_empty_after_pickup": true
+      }
+    }
+  },
+  "screenshots": [
+    "leader/screenshots/packtest_multiplayer_first_person_hammer.png",
+    "leader/screenshots/packtest_multiplayer_first_person_tongs.png",
+    "leader/screenshots/packtest_multiplayer_leader_anvil_after_pickup.png",
+    "leader/screenshots/packtest_multiplayer_leader_anvil_before_pickup.png",
+    "leader/screenshots/packtest_multiplayer_leader_loaded_tongs.png",
+    "peer/screenshots/packtest_multiplayer_peer_anvil_after_pickup.png",
+    "peer/screenshots/packtest_multiplayer_peer_anvil_before_pickup.png",
+    "peer/screenshots/packtest_multiplayer_remote_hammer_swing.png",
+    "peer/screenshots/packtest_multiplayer_remote_idle.png",
+    "peer/screenshots/packtest_multiplayer_remote_tongs_swing.png"
+  ],
+  "artifacts": {
+    "immersive-smithing-1.2.0.jar": "fcfe9bfaa9e91a0b6ecb4f0306ddd7171bd9bc6f18dcbcf3ec414c06ff3a7b04",
+    "immersive-smithing-1.2.0-packtest.jar": "ff1a7d3304dcc72d43c63f29d281e9266edb8b5efb8cd677b553c4fd55a5fefe",
+    "epic-fight-KEBfkBat.jar": "69566cf70ae2d91d3f2564c608f014c87e290cef6215c2a27719851165485f73",
+    "epic-knights-shields-armor-and-weapons-gJ59URg4.jar": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+    "architectury-api-1MKTLiiG.jar": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+    "cloth-config-t8TXrZvZ.jar": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2"
+  }
+}

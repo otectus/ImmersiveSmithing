@@ -73,44 +73,18 @@ public class SmithsForgeBlock extends BaseEntityBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty READY = BooleanProperty.create("ready");
 
+    /** Plinth, firebox walls round an open mouth, iron lintel, hearth course and the basin's rim stones (1.2 geometry). */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(4, 0, 0, 12, 2, 2),
-            Block.box(2, 0, 2, 14, 2, 4),
-            Block.box(0, 0, 4, 16, 2, 12),
-            Block.box(2, 0, 12, 14, 2, 14),
-            Block.box(4, 0, 14, 12, 2, 16),
-            Block.box(4, 2, 0, 5, 7, 2),
-            Block.box(11, 2, 0, 12, 7, 2),
-            Block.box(4, 7, 0, 12, 9, 2),
-            Block.box(2, 2, 2, 5, 9, 4),
-            Block.box(11, 2, 2, 14, 9, 4),
-            Block.box(0, 2, 4, 3, 9, 12),
-            Block.box(13, 2, 4, 16, 9, 12),
-            Block.box(2, 2, 12, 14, 9, 14),
-            Block.box(4, 2, 14, 12, 9, 16),
-            Block.box(4, 9, 0, 12, 10, 2),
-            Block.box(2, 9, 2, 14, 10, 4),
-            Block.box(0, 9, 4, 16, 10, 12),
-            Block.box(2, 9, 12, 14, 10, 14),
-            Block.box(4, 9, 14, 12, 10, 16),
-            Block.box(4, 10, 0, 12, 13, 2),
-            Block.box(4, 13, 0, 12, 14, 2),
-            Block.box(2, 10, 2, 4, 13, 4),
-            Block.box(2, 13, 2, 4, 14, 4),
-            Block.box(12, 10, 2, 14, 13, 4),
-            Block.box(12, 13, 2, 14, 14, 4),
-            Block.box(0, 10, 4, 2, 13, 12),
-            Block.box(0, 13, 4, 2, 14, 12),
-            Block.box(14, 10, 4, 16, 13, 12),
-            Block.box(14, 13, 4, 16, 14, 12),
-            Block.box(2, 10, 12, 4, 13, 14),
-            Block.box(2, 13, 12, 4, 14, 14),
-            Block.box(12, 10, 12, 14, 13, 14),
-            Block.box(12, 13, 12, 14, 14, 14),
-            Block.box(4, 10, 14, 12, 13, 16),
-            Block.box(4, 13, 14, 12, 14, 16),
-            Block.box(5, 7, 0, 11, 8, 1),
-            Block.box(3, 2, 11, 13, 6, 12)));
+            Block.box(0, 0, 0, 16, 2, 16),
+            Block.box(1, 2, 1, 4, 9, 12),
+            Block.box(12, 2, 1, 15, 9, 12),
+            Block.box(1, 2, 12, 15, 9, 15),
+            Block.box(4, 7, 1, 12, 9, 4),
+            Block.box(1, 9, 1, 15, 10, 15),
+            Block.box(0, 10, 0, 16, 14, 3),
+            Block.box(0, 10, 13, 16, 14, 16),
+            Block.box(0, 10, 3, 3, 14, 13),
+            Block.box(13, 10, 3, 16, 14, 13)));
 
     public SmithsForgeBlock(Properties properties) {
         super(properties);

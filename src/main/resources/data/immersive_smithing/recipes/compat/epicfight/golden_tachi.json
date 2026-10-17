@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicfight"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epicfight:golden_tachi"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "epicfight:golden_tachi"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:katana",
+  "replaces": [
+    "epicfight:golden_tachi"
+  ]
+}

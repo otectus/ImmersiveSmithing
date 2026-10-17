@@ -1,0 +1,39 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:kotsk_gold_cloak_leggings"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:woolen_fabric"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:gilded_steel",
+  "metal_units": 22,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:woolen_fabric"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "ekotsk:kotsk_gold_cloak_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:kotsk_gold_cloak_leggings"
+  ]
+}

@@ -1,0 +1,719 @@
+{
+  "mod": "artillery_addon",
+  "version": "1.16.2",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights_ores_and_alloys",
+    "epicfight",
+    "epicknights_open_helms",
+    "fzzy_config",
+    "geckolib",
+    "jei",
+    "kotlinforforge",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "simplyswords",
+    "simplytooltips",
+    "slavicarmory"
+  ],
+  "tested_version": "1.16.2",
+  "items": [
+    {
+      "id": "artillery_addon:arquebus",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:arquebus_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:boneflask",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:boneflask_ricpe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:bronze_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/bronze_handgonne",
+          "material": "forge:bronze",
+          "units": 18,
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:bronzegonne_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/bronze_handgonne",
+      "acquisition": "Forged; replaces `artillery_addon:bronzegonne_recipe`."
+    },
+    {
+      "id": "artillery_addon:chu_ko_nu",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:dual_wheellock_carbine",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_dualbarrel_carbine",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:dual_wheellock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_dual_barrel_pistol",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:fire_lance",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:firelancerecipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        },
+        {
+          "recipe": "artillery_addon:firelancerecipe_0",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of forge:steel on 3 other parts",
+      "acquisition": "Not predominantly metal: 1 units of forge:steel on 3 other parts."
+    },
+    {
+      "id": "artillery_addon:gunsmithkit",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:gunsmith_kit_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "gunsmith's repair kit (a firearm component)",
+      "acquisition": "Gunsmith's repair kit (a firearm component)."
+    },
+    {
+      "id": "artillery_addon:hackbut",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:hackbut_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:hand_cannon",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/hand_cannon",
+          "material": "forge:steel",
+          "units": 27,
+          "components": [
+            "3x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:handcannonrecipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/hand_cannon",
+      "acquisition": "Forged; replaces `artillery_addon:handcannonrecipe`."
+    },
+    {
+      "id": "artillery_addon:handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/handgonne",
+          "material": "forge:steel",
+          "units": 18,
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:hand_gonne_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/handgonne",
+      "acquisition": "Forged; replaces `artillery_addon:hand_gonne_recipe`."
+    },
+    {
+      "id": "artillery_addon:harquebus",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:harquebus_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:horn_flask",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:goatflask",
+          "type": "minecraft:crafting_shapeless",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:improved_gunsmithkit",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:iron_ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ironramrod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    },
+    {
+      "id": "artillery_addon:iron_wheellock_spanner",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:iron_spanner_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for wheellock firearms",
+      "acquisition": "Loading tool for wheellock firearms."
+    },
+    {
+      "id": "artillery_addon:markmengonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:markgonne",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:matchlock_carbine",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:carbine_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:matchlock_musket",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:matchlock_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:matchlock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:matchloackpistol_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:mini_pistola",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/mini_pistola",
+          "material": "forge:steel",
+          "units": 10,
+          "components": [
+            "1x minecraft:stick",
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:minipistola_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/mini_pistola",
+      "acquisition": "Forged; replaces `artillery_addon:minipistola_recipe`."
+    },
+    {
+      "id": "artillery_addon:noble_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ramrod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    },
+    {
+      "id": "artillery_addon:taccola_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:taccola_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:tiller_gun",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:toradar_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:toradar_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_breechloading_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_breechloader_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_designs",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wheellock_designs_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "firearm blueprint item",
+      "acquisition": "Firearm blueprint item."
+    },
+    {
+      "id": "artillery_addon:wheellock_hand_mortar",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_handmortar",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_hunting_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_hunting_rifle",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_musket",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_musket",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_pistol",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_spanner",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wheellock_spanner_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for wheellock firearms",
+      "acquisition": "Loading tool for wheellock firearms."
+    },
+    {
+      "id": "artillery_addon:wheellock_wallgun",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_wall_gun",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:windlass_crossbow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:wooden_flasks",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:woodenflask",
+          "type": "minecraft:crafting_shapeless",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:worm_ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:worm_rod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "state": "untouched"
+        }
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 4,
+    "native_assembly": 17,
+    "native_nonmetal_recipe": 1,
+    "non_equipment": 10,
+    "protected_loot": 5
+  }
+}

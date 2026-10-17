@@ -43,6 +43,9 @@ public class ImmersiveSmithing {
         ModCreativeTabs.TABS.register(modBus);
         ModLootModifiers.LOOT_MODIFIERS.register(modBus);
 
+        // Used by built-in data before any datapack loads, so it is registered with the mod.
+        net.minecraftforge.common.crafting.CraftingHelper.register(com.otectus.immersivesmithing.compat.ModVersionCondition.Serializer.INSTANCE);
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
 

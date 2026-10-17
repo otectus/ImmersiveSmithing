@@ -24,6 +24,7 @@ public final class ClientSetup {
     public static void init(IEventBus modBus) {
         modBus.addListener(ClientSetup::onClientSetup);
         modBus.addListener(ClientSetup::onRegisterRenderers);
+        modBus.addListener(StationNotices::register);
         modBus.addListener(ClientSetup::onRegisterParticles);
         modBus.addListener(ClientSetup::onRegisterModels);
     }

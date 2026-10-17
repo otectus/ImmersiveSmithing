@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ice_and_fire"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "epic_knights_ice_and_fire:dragonsteel_ice_flamebladedsword"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:ice_dragonsteel",
+  "metal_units": 45,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "tag": "forge:bones/wither"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "epic_knights_ice_and_fire:dragonsteel_ice_flamebladedsword"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:greatsword",
+  "replaces": [
+    "epic_knights_ice_and_fire:dragonsteel_ice_flamebladedsword"
+  ]
+}

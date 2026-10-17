@@ -1,0 +1,47 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "medieval_boomsticks"
+    }
+  ],
+  "mod": "medieval_boomsticks",
+  "tested_version": "1.2",
+  "policies": [
+    {
+      "items": [
+        "medieval_boomsticks:arquebus"
+      ],
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:arbalest",
+        "medieval_boomsticks:eveningstar",
+        "medieval_boomsticks:gotheveningstar",
+        "medieval_boomsticks:handgonne",
+        "medieval_boomsticks:morningstar",
+        "medieval_boomsticks:spikedhandgonne"
+      ],
+      "disposition": "native_assembly",
+      "reason": "needs alloy bars or barrels from Medieval Boomsticks' own smithing furnace: that system makes it"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:smithing_bellows",
+        "medieval_boomsticks:smithing_hammer",
+        "medieval_boomsticks:smithing_tongs"
+      ],
+      "disposition": "non_equipment",
+      "reason": "tool of Medieval Boomsticks' own smithing furnace: crafted as the mod ships it"
+    }
+  ]
+}

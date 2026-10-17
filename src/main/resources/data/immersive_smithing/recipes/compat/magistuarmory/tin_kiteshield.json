@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:tin_kiteshield"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:wood_kiteshield"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:tin",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:wood_kiteshield"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:tin_kiteshield"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:tin_kiteshield"
+  ]
+}

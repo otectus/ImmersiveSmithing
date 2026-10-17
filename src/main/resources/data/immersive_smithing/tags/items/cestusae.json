@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "epicfight:glove",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:lannister_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 72,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:red_carpet"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ingots/gilded_steel"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gilded_steel"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "ekotsk:lannister_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "ekotsk:lannister_chestplate"
+  ]
+}

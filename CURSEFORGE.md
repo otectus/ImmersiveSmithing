@@ -14,7 +14,7 @@ You can start with **stone Smithing Tongs**, a **stone Smithing Hammer** and thr
 
 The optional **Smith's Grindstone** refines finished gear using experience levels. Its recipe uses a regular grindstone, two iron ingots and a diamond. Tongs and hammers come in stone, iron, diamond and netherite versions. Stone tools are enough to begin; better tiers last longer and give you more time in the challenges, but they never grant a free quality bonus.
 
-You'll receive the **Smithing Guide** when you first obtain smithing tools. It explains the stations, metals, timing games and common problems in game. You can also craft another guide with a book and coal or charcoal.
+You'll receive the **Smithing Guide** when you first obtain smithing tools. It explains the stations, metals, timing games and common problems in game, and it reads like a written book. Every Immersive Smithing screen uses Minecraft's own look. You can also craft another guide with a book and coal or charcoal.
 
 ## From ingot to equipment
 
@@ -23,9 +23,9 @@ You'll receive the **Smithing Guide** when you first obtain smithing tools. It e
 3. **Shape it.** Right-click the Smith's Anvil with your loaded tongs to set the workpiece down. Use a Smithing Hammer on the anvil to begin the second challenge. Left-click near each target's center when its closing ring reaches it. Careful strikes improve the Anvil score. Empty tongs can pick a workpiece back up from the anvil.
 4. **Quench it.** Fill the Smith's Trough with a water bucket. One bucket provides four quenches by default. Pick up your shaped workpiece with empty tongs and right-click the trough. Your finished item goes into your inventory, or drops beside the trough if your inventory is full.
 
-![Choose an item at the forge](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/visual-overhaul/after/packtest_forge_select.png)
+![Choose an item at the forge](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/vanilla-gui/after/packtest_forge_select.png)
 
-![Shape a workpiece at the anvil](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/visual-overhaul/after/packtest_anvil.png)
+![Shape a workpiece at the anvil](https://raw.githubusercontent.com/otectus/ImmersiveSmithing/main/docs/vanilla-gui/after/packtest_anvil.png)
 
 **A few useful workshop tips:** Netherite melts only with lava. A hot workpiece never cools. If it drops as an item, hold empty tongs and right-click in the air to pick it up. Closing a timing screen cancels that attempt safely; reserved ingredients are returned, and you can retry an unfinished anvil session.
 
@@ -40,7 +40,7 @@ Every forged item has two scores, each from 0 to 100. **Forge quality** controls
 
 If time runs out at the forge, you still get a workpiece, but its Forge score is zero. If the anvil timer runs out before you finish shaping, the result is **Faulty**. Faulty gear still works, but by default it has half the normal durability and 70% of normal performance. Hover over finished equipment, or hold Shift for more quality detail.
 
-Want to improve a good piece? Hold it and use the **Smith's Grindstone** to improve its durability score, or sneak and use it to improve its performance score. The first click shows the experience-level cost; click again within three seconds to confirm. Each refinement adds five points up to 100, and enchantments stay on the item. Faulty equipment cannot be refined, but it can be melted down and forged again.
+Want to improve a good piece? Hold it and use the **Smith's Grindstone** to improve its durability score, or sneak and use it to improve its performance score. The first click shows the experience-level cost; click again within three seconds to confirm. Each refinement adds five points up to 100, and enchantments stay on the item. Gear that was never graded starts from Standard, and nothing changes until you pay. Faulty equipment cannot be refined, but it can be melted down and forged again.
 
 ## Reforge, recycle and leave your mark
 
@@ -52,16 +52,19 @@ Every completed piece records its maker in the tooltip. After quenching, you can
 
 Iron, gold, copper and netherite are built in. The forge also recognizes many metals added by other mods. A nugget counts as one metal unit, an ingot or raw metal as nine, and a storage block as 81. Metals melt at different speeds, and each forge handles one metal family at a time.
 
-Immersive Smithing looks for eligible weapons, tools, armor and metal shields made from a single metal plus ordinary components such as sticks or leather. It gives those items forging recipes and replaces their usual crafting recipes by default. Recipes that mix metals or cannot be identified reliably are left alone. **JEI**, if installed, shows available smithing recipes in a dedicated category, including recipes detected from other mods.
+Immersive Smithing looks for eligible weapons, tools, armor and metal shields made mostly of one metal (the one they are repaired with), plus ordinary components such as sticks, leather or small fittings of another metal. It gives those items forging recipes and, by default, replaces the recipes it can reproduce. Recipes that only reshape a finished piece, such as a sword made into a spear, keep working at the crafting table, and the piece keeps its quality. Recipes that mix metals or cannot be identified reliably are left alone. **JEI**, if installed, shows available smithing recipes in a dedicated category, including recipes detected from other mods.
 
 Some notable integrations include:
 
 - **Spartan Weaponry:** Smith its metal weapons across all 24 weapon types, including throwing weapons, longbows and heavy crossbows. Thrown weapons retain their quality, and arrows or bolts inherit quality from the bow or crossbow that fires them.
+- **Epic Fight:** Built-in forge recipes for every metal weapon, with no setup: longswords, greatswords, tachis, daggers, spears and gloves, and the uchigatana from iron and a diamond. The wooden bokken gets a crafting recipe. Quality counts once, in either hand and in Epic Fight's battle mode.
+- **Epic Knights and its add-ons:** Built-in forge recipes for the metal weapons, armor and shields of Epic Knights, Addon, Slavic Armory, Antique Legacy, Ice and Fire, Ores and Alloys, Dark Ages, Open Helms, Seven Kingdoms, Artilleries and Firearms and Medieval Boomsticks. Costs follow each mod's own recipes. Gilding, darkening, visor swaps, firearms and relics keep their usual route, and transformed pieces keep their quality.
+- **Simply Swords:** Smith its metal weapons on anvil patterns shaped like them, from twinblades to chakrams. Its abilities and thrown weapons use quality too. Runic weapons, rerolls and unique weapons keep their usual way of being obtained, and unique weapons can't be melted down.
 - **Modded metals and upgrades:** Built-in material definitions cover metals from Cataclysm, Ice and Fire, Iron's Spells 'n Spellbooks, Botania and MCA, among others, when those mods are present. Some upgrades are forged directly from the new metal, while others consume an existing piece and add metal to it. Netherite gear is forged directly from netherite ingots without a smithing template or a diamond base. Armor trims remain at the smithing table.
 - **Jade:** Shows useful station information in its block overlay when installed.
 - **Modpacks and datapacks:** Pack makers can add metals, recipes, recycling rules and timing patterns. Existing progression mods can respond when a player finishes smithing an item.
 
-Toolsmiths and Weaponsmiths can sell smithing tools, and they and Armorers can sell forged equipment. Eligible gear found in loot also receives a quality grade, usually Standard under the default settings.
+Toolsmiths and Weaponsmiths can sell smithing tools, and they and Armorers can sell forged equipment. Eligible gear found in loot also receives a quality grade, usually Standard under the default settings. That includes loot-only pieces such as Simply Swords' runic and unique weapons and Epic Knights' relics.
 
 ## Multiplayer, automation and options
 

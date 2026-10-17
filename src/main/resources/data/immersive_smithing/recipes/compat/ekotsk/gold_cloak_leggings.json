@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:gold_cloak_leggings"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:blacked_steel",
+  "metal_units": 40,
+  "result": {
+    "item": "ekotsk:gold_cloak_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:gold_cloak_leggings"
+  ]
+}

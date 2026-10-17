@@ -1,7 +1,9 @@
 package com.otectus.immersivesmithing.block;
 
+import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.quality.QualityData;
+import com.otectus.immersivesmithing.quality.QualityEligibility;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.util.Feedback;
 import com.otectus.immersivesmithing.util.StationEffects;
@@ -36,22 +38,21 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Post-crafting refinement for XP. Use to refine durability, sneak-use to refine efficacy; each refinement is
- * confirmed by a second use. Scores are capped at 100 and Faulty items cannot be refined.
+ * confirmed by a second use. Scores are capped at 100 and Faulty items cannot be refined. An eligible piece without a
+ * grade yet (found or crafted before smithing existed) starts from the neutral grade, which is written only together
+ * with a confirmed, paid refinement, so looking at it never changes it.
  */
 public class SmithsGrindstoneBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    /** Base plank, two uprights, the wheel and its axle (1.2 geometry). */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(1, 0, 3, 4, 2, 13),
-            Block.box(12, 0, 3, 15, 2, 13),
+            Block.box(1, 0, 3, 15, 2, 13),
             Block.box(2, 2, 6, 4, 11, 10),
             Block.box(12, 2, 6, 14, 11, 10),
-            Block.box(1, 9, 7, 15, 11, 9),
             Block.box(5, 5, 5, 11, 7, 11),
             Block.box(5, 7, 3, 11, 13, 13),
             Block.box(5, 13, 5, 11, 15, 11),
-            Block.box(4, 5, 1, 12, 6, 3),
-            Block.box(14, 7, 7, 15, 10, 9),
-            Block.box(14, 6, 7, 16, 7, 9)));
+            Block.box(0, 9, 7, 16, 11, 9)));
     private static final long CONFIRM_WINDOW_TICKS = 60;
 
     private record Pending(BlockPos pos, boolean efficacy, int score, long gameTime) {}
@@ -107,9 +108,14 @@ public class SmithsGrindstoneBlock extends Block {
             return;
         }
         QualityData quality = QualityData.get(held).orElse(null);
+        boolean neutralStart = false;
         if (quality == null) {
-            Feedback.info(player, "grindstone_help");
-            return;
+            if (!QualityEligibility.canCarryQuality(held)) {
+                Feedback.info(player, "grindstone_help");
+                return;
+            }
+            quality = QualityEligibility.neutral();
+            neutralStart = true;
         }
         if (quality.faulty()) {
             Feedback.fail(player, "grindstone_faulty");
@@ -123,7 +129,7 @@ public class SmithsGrindstoneBlock extends Block {
             return;
         }
         int step = ServerConfig.get(ServerConfig.GRINDSTONE_SCORE_STEP);
-        int cost = levelCost(score);
+        int cost = levelCost(player, held, score);
         int next = Math.min(100, score + step);
 
         Pending pending = PENDING.get(player.getUUID());
@@ -131,7 +137,8 @@ public class SmithsGrindstoneBlock extends Block {
                 && gameTime - pending.gameTime <= CONFIRM_WINDOW_TICKS;
         if (!confirmed) {
             PENDING.put(player.getUUID(), new Pending(pos.immutable(), efficacy, score, gameTime));
-            Feedback.info(player, "grindstone_confirm", aspect, next - score, cost);
+            if (neutralStart) Feedback.info(player, "grindstone_neutral_start", aspect, next - score, cost);
+            else Feedback.info(player, "grindstone_confirm", aspect, next - score, cost);
             return;
         }
         PENDING.remove(player.getUUID());
@@ -146,6 +153,11 @@ public class SmithsGrindstoneBlock extends Block {
         StationEffects.send(player.serverLevel(), pos, StationEffects.GRIND, 1.0F);
         Feedback.info(player, "grindstone_refined", aspect,
                 (efficacy ? refined.efficacyQuality() : refined.durabilityQuality()).displayName());
+    }
+
+    /** What {@code smith} pays for one refinement of {@code piece}: {@link #levelCost(int)} through the registered cost modifiers. */
+    public static int levelCost(ServerPlayer smith, ItemStack piece, int score) {
+        return ImmersiveSmithingAPI.refinementLevelCost(smith, piece, levelCost(score));
     }
 
     /** XP levels for one refinement: the base cost plus one level per configured band of the current score. */

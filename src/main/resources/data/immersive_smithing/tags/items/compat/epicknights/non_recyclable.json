@@ -1,0 +1,97 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "ekotsk:aegon_crown_decoration",
+      "required": false
+    },
+    {
+      "id": "ekotsk:aegon_dagger",
+      "required": false
+    },
+    {
+      "id": "ekotsk:blackfyre",
+      "required": false
+    },
+    {
+      "id": "ekotsk:brightroar",
+      "required": false
+    },
+    {
+      "id": "ekotsk:crab_pincer",
+      "required": false
+    },
+    {
+      "id": "ekotsk:dark_sister",
+      "required": false
+    },
+    {
+      "id": "ekotsk:dawn",
+      "required": false
+    },
+    {
+      "id": "ekotsk:heartsbane",
+      "required": false
+    },
+    {
+      "id": "ekotsk:ice",
+      "required": false
+    },
+    {
+      "id": "ekotsk:lady_forlorn",
+      "required": false
+    },
+    {
+      "id": "ekotsk:lamentation",
+      "required": false
+    },
+    {
+      "id": "ekotsk:longclaw",
+      "required": false
+    },
+    {
+      "id": "ekotsk:nightfall",
+      "required": false
+    },
+    {
+      "id": "ekotsk:orphanmaker",
+      "required": false
+    },
+    {
+      "id": "ekotsk:red_rain",
+      "required": false
+    },
+    {
+      "id": "ekotsk:robert_hammer",
+      "required": false
+    },
+    {
+      "id": "ekotsk:sandoq",
+      "required": false
+    },
+    {
+      "id": "ekotsk:truth",
+      "required": false
+    },
+    {
+      "id": "ekotsk:valyrian_steel_boots",
+      "required": false
+    },
+    {
+      "id": "ekotsk:valyrian_steel_chestplate",
+      "required": false
+    },
+    {
+      "id": "ekotsk:valyrian_steel_helmet",
+      "required": false
+    },
+    {
+      "id": "ekotsk:valyrian_steel_leggings",
+      "required": false
+    },
+    {
+      "id": "ekotsk:vigilance",
+      "required": false
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Visual overhaul validation
 
+> **History.** This documents the 1.0.0 visual overhaul. Its station models and effects are still current. Its iron-framed screens are not: the Stoneborn theme (`91170a4`) replaced them, and 1.1.0 replaced Stoneborn with Minecraft's own look. For the current screens, see [the vanilla GUI review](../vanilla-gui/REVIEW.md).
+
 Work started from clean `main`, commit `3840ff0`, origin `https://github.com/otectus/Smithing.git`. Minecraft 1.20.1 / Forge 47.4.23 / Java 17. The baseline client ran before source edits; its 13 screenshots and result are in [before](before/). See the [before/after gallery](GALLERY.md).
 
 ## Delivered implementation

@@ -4,6 +4,66 @@
     {
       "id": "cataclysm:ancient_spear",
       "required": false
+    },
+    {
+      "id": "epicfight:diamond_spear",
+      "required": false
+    },
+    {
+      "id": "epicfight:golden_spear",
+      "required": false
+    },
+    {
+      "id": "epicfight:iron_spear",
+      "required": false
+    },
+    {
+      "id": "epicfight:netherite_spear",
+      "required": false
+    },
+    {
+      "id": "epicfight:stone_spear",
+      "required": false
+    },
+    {
+      "id": "epicfight:wooden_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:diamond_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gloampiercer",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:magispear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_spear",
+      "required": false
+    },
+    {
+      "id": "simplyswords:sword_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "simplyswords:wickpiercer",
+      "required": false
     }
   ]
 }

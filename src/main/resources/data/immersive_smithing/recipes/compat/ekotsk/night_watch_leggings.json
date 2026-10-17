@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:night_watch_leggings"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:black_leather"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:blacked_steel",
+  "metal_units": 31,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "ekotsk:black_leather"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "ekotsk:night_watch_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:night_watch_leggings"
+  ]
+}

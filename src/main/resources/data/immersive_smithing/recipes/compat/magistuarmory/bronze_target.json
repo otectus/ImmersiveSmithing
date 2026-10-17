@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:bronze_target"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:bronze",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:ingots/steel"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:bronze_target"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:bronze_target"
+  ]
+}

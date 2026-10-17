@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Run two real Forge clients against a disposable local server and verify remote tool swings."""
+"""Run two real Forge clients against a disposable local server and verify remote tool swings and that an anvil
+workpiece taken with tongs disappears on both clients.
+
+--extra-mods puts more (production, not dev-deobfuscated) mod jars into the server and both clients, and --expect
+passes the pack-test expectations to the clients, which then also compare their synced recipes with the server's:
+  --extra-mods <epic-fight.jar> <epic-knights.jar> --expect epicfight,epicknights
+"""
 import argparse
 import hashlib
 import json
@@ -71,10 +77,16 @@ def main():
                         help='use Minecraft fullscreen for landscape captures under tiling window managers')
     parser.add_argument('--server-libraries', type=pathlib.Path, default=INSTALL / 'libraries',
                         help='libraries directory from a Forge 47.4.23 dedicated-server installation')
+    parser.add_argument('--extra-mods', type=pathlib.Path, nargs='*', default=[],
+                        help='production mod jars loaded by the server and both clients')
+    parser.add_argument('--expect', default='', help='pack-test expectations for the clients, e.g. epicfight,epicknights')
     args = parser.parse_args()
     work = args.work_dir.resolve()
     if work.exists():
         raise SystemExit(f'Refusing to reuse {work}')
+    missing = [str(jar) for jar in args.extra_mods if not jar.is_file()]
+    if missing:
+        raise SystemExit(f'Extra mod jars not found: {missing}')
     if args.xvfb is not None and not args.xvfb.is_file():
         raise SystemExit(f'Headless X server not found: {args.xvfb}')
     server_libraries = args.server_libraries.resolve()
@@ -97,7 +109,7 @@ def main():
     def prepare(folder):
         folder.mkdir()
         (folder / 'mods').mkdir()
-        for artifact in (mod, agent):
+        for artifact in (mod, agent, *args.extra_mods):
             shutil.copy2(artifact, folder / 'mods' / artifact.name)
 
     server = work / 'server'
@@ -177,7 +189,8 @@ def main():
                      '-Dimmersive_smithing.packtest.multiplayer=true',
                      f'-Dimmersive_smithing.packtest.role={role}',
                      f'-Dimmersive_smithing.packtest.server=127.0.0.1:{port}',
-                     f'-Dimmersive_smithing.packtest.shared={shared}']
+                     f'-Dimmersive_smithing.packtest.shared={shared}',
+                     f'-Dimmersive_smithing.packtest.expect={args.expect}']
             command = (['java', '-Xmx2G', '-Xms256M', *props,
                         *expand(vanilla['arguments']['jvm'] + forge['arguments']['jvm'], values), forge['mainClass'],
                         *expand(vanilla['arguments']['game'] + forge['arguments']['game'], values),
@@ -197,14 +210,15 @@ def main():
         if dedicated.wait(timeout=60) != 0:
             raise RuntimeError('Dedicated server exited with an error')
         screenshots = sorted(str(path.relative_to(work)) for path in work.glob('*/screenshots/packtest_multiplayer_*.png'))
-        passed = all(result.get('pass') for result in results.values()) and len(screenshots) >= 4
+        anvil_shots = [shot for shot in screenshots if '_anvil_after_pickup' in shot]
+        passed = all(result.get('pass') for result in results.values()) and len(screenshots) >= 4 and len(anvil_shots) == 2
         summary = {'pass': passed, 'results': results, 'screenshots': screenshots,
                    'artifacts': {artifact.name: hashlib.sha256(artifact.read_bytes()).hexdigest()
-                                 for artifact in (mod, agent)}}
+                                 for artifact in (mod, agent, *args.extra_mods)}}
         (work / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
         if not passed:
             raise RuntimeError(f'Multiplayer visual assertions failed; inspect {work / "summary.json"}')
-        print('PASS: remote loaded-tongs and hammer swings synchronized across two real clients')
+        print('PASS: remote loaded-tongs and hammer swings synchronized, and the anvil pickup cleared on both real clients')
         print(f'Evidence: {work}')
     finally:
         for process in reversed(processes):

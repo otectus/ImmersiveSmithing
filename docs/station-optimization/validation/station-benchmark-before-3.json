@@ -1,0 +1,319 @@
+{
+  "settings": {
+    "window": "1280x720",
+    "vsync": false,
+    "frame_limit": 260,
+    "render_distance": 8,
+    "gl_renderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+    "gl_version": "4.6.0 NVIDIA 615.78.08",
+    "java": "17.0.20.1",
+    "warmup_frames": 120,
+    "sample_frames_min": 600,
+    "sample_seconds_min": 5
+  },
+  "geometry": {
+    "block.immersive_smithing.smiths_forge": [
+      22,
+      25,
+      22,
+      22
+    ],
+    "block.immersive_smithing.smiths_anvil": [
+      32,
+      32,
+      32,
+      36
+    ],
+    "block.immersive_smithing.smiths_trough": [
+      11,
+      11,
+      11,
+      11
+    ],
+    "block.immersive_smithing.smiths_grindstone": [
+      13,
+      13,
+      13,
+      13
+    ]
+  },
+  "structure": {
+    "block.immersive_smithing.smiths_forge": {
+      "baked_quads": 222,
+      "outline_boxes": 22,
+      "outline_edges": 108
+    },
+    "block.immersive_smithing.smiths_anvil": {
+      "baked_quads": 162,
+      "outline_boxes": 32,
+      "outline_edges": 270
+    },
+    "block.immersive_smithing.smiths_trough": {
+      "baked_quads": 66,
+      "outline_boxes": 11,
+      "outline_edges": 96
+    },
+    "block.immersive_smithing.smiths_grindstone": {
+      "baked_quads": 66,
+      "outline_boxes": 13,
+      "outline_edges": 150
+    }
+  },
+  "meshing": {
+    "block.immersive_smithing.smiths_forge": {
+      "vertices": 888,
+      "median_us": 356.64,
+      "batches_us": [
+        344.67,
+        345.78,
+        356.64,
+        358.53,
+        363.91
+      ]
+    },
+    "block.immersive_smithing.smiths_anvil": {
+      "vertices": 648,
+      "median_us": 259.79,
+      "batches_us": [
+        253.6,
+        258.83,
+        259.79,
+        271.5,
+        278.87
+      ]
+    },
+    "block.immersive_smithing.smiths_trough": {
+      "vertices": 264,
+      "median_us": 105.92,
+      "batches_us": [
+        101.44,
+        103.87,
+        105.92,
+        106.11,
+        107.32
+      ]
+    },
+    "block.immersive_smithing.smiths_grindstone": {
+      "vertices": 264,
+      "median_us": 112.23,
+      "batches_us": [
+        96.24,
+        100.45,
+        112.23,
+        114.21,
+        126.04
+      ]
+    },
+    "smooth_lighting": true
+  },
+  "single_idle": {
+    "frames": 5192,
+    "seconds": 5.04,
+    "average_fps": 1029.77,
+    "p50_frame_ms": 0.45,
+    "p95_frame_ms": 4.84,
+    "p99_frame_ms": 6.43,
+    "p50_render_tick_ms": 0.23,
+    "p95_render_tick_ms": 0.66,
+    "heap_used_mb_before": 675,
+    "heap_used_mb_after": 674,
+    "stations": 1,
+    "active": false,
+    "crosshair": "block.immersive_smithing.smiths_forge"
+  },
+  "workshop_idle": {
+    "frames": 4901,
+    "seconds": 5.02,
+    "average_fps": 975.66,
+    "p50_frame_ms": 0.49,
+    "p95_frame_ms": 5.15,
+    "p99_frame_ms": 6.58,
+    "p50_render_tick_ms": 0.19,
+    "p95_render_tick_ms": 0.54,
+    "heap_used_mb_before": 842,
+    "heap_used_mb_after": 762,
+    "stations": 4,
+    "active": false,
+    "crosshair": "none"
+  },
+  "outline_forge": {
+    "frames": 4325,
+    "seconds": 5.01,
+    "average_fps": 862.84,
+    "p50_frame_ms": 0.69,
+    "p95_frame_ms": 4.54,
+    "p99_frame_ms": 6.0,
+    "p50_render_tick_ms": 0.57,
+    "p95_render_tick_ms": 1.25,
+    "heap_used_mb_before": 683,
+    "heap_used_mb_after": 576,
+    "stations": 4,
+    "active": false,
+    "crosshair": "block.immersive_smithing.smiths_forge"
+  },
+  "outline_anvil": {
+    "frames": 3752,
+    "seconds": 5.01,
+    "average_fps": 749.19,
+    "p50_frame_ms": 0.97,
+    "p95_frame_ms": 3.77,
+    "p99_frame_ms": 5.32,
+    "p50_render_tick_ms": 0.86,
+    "p95_render_tick_ms": 1.71,
+    "heap_used_mb_before": 1016,
+    "heap_used_mb_after": 862,
+    "stations": 4,
+    "active": false,
+    "crosshair": "block.immersive_smithing.smiths_anvil"
+  },
+  "outline_trough": {
+    "frames": 4631,
+    "seconds": 5.02,
+    "average_fps": 921.86,
+    "p50_frame_ms": 0.55,
+    "p95_frame_ms": 5.07,
+    "p99_frame_ms": 6.5,
+    "p50_render_tick_ms": 0.31,
+    "p95_render_tick_ms": 0.84,
+    "heap_used_mb_before": 756,
+    "heap_used_mb_after": 664,
+    "stations": 4,
+    "active": false,
+    "crosshair": "block.immersive_smithing.smiths_trough"
+  },
+  "outline_grindstone": {
+    "frames": 4679,
+    "seconds": 5.03,
+    "average_fps": 929.66,
+    "p50_frame_ms": 0.58,
+    "p95_frame_ms": 4.94,
+    "p99_frame_ms": 6.42,
+    "p50_render_tick_ms": 0.4,
+    "p95_render_tick_ms": 0.97,
+    "heap_used_mb_before": 584,
+    "heap_used_mb_after": 1102,
+    "stations": 4,
+    "active": false,
+    "crosshair": "block.immersive_smithing.smiths_grindstone"
+  },
+  "workshop_active": {
+    "frames": 5149,
+    "seconds": 5.02,
+    "average_fps": 1026.55,
+    "p50_frame_ms": 0.47,
+    "p95_frame_ms": 5.05,
+    "p99_frame_ms": 7.24,
+    "p50_render_tick_ms": 0.21,
+    "p95_render_tick_ms": 0.59,
+    "heap_used_mb_before": 1142,
+    "heap_used_mb_after": 1105,
+    "stations": 4,
+    "active": true,
+    "crosshair": "none"
+  },
+  "grid32_idle": {
+    "frames": 4847,
+    "seconds": 5.01,
+    "average_fps": 967.91,
+    "p50_frame_ms": 0.54,
+    "p95_frame_ms": 4.89,
+    "p99_frame_ms": 6.13,
+    "p50_render_tick_ms": 0.27,
+    "p95_render_tick_ms": 0.73,
+    "heap_used_mb_before": 1123,
+    "heap_used_mb_after": 944,
+    "stations": 32,
+    "active": false,
+    "crosshair": "none"
+  },
+  "grid32_active": {
+    "frames": 5017,
+    "seconds": 5.03,
+    "average_fps": 996.84,
+    "p50_frame_ms": 0.55,
+    "p95_frame_ms": 4.32,
+    "p99_frame_ms": 6.28,
+    "p50_render_tick_ms": 0.38,
+    "p95_render_tick_ms": 1.01,
+    "heap_used_mb_before": 1129,
+    "heap_used_mb_after": 530,
+    "stations": 32,
+    "active": true,
+    "crosshair": "none"
+  },
+  "grid128_idle": {
+    "frames": 4496,
+    "seconds": 5.01,
+    "average_fps": 896.98,
+    "p50_frame_ms": 0.6,
+    "p95_frame_ms": 5.01,
+    "p99_frame_ms": 6.49,
+    "p50_render_tick_ms": 0.39,
+    "p95_render_tick_ms": 1.04,
+    "heap_used_mb_before": 701,
+    "heap_used_mb_after": 862,
+    "stations": 128,
+    "active": false,
+    "crosshair": "none"
+  },
+  "grid128_active": {
+    "frames": 4189,
+    "seconds": 5.03,
+    "average_fps": 833.36,
+    "p50_frame_ms": 0.76,
+    "p95_frame_ms": 4.29,
+    "p99_frame_ms": 6.04,
+    "p50_render_tick_ms": 0.65,
+    "p95_render_tick_ms": 1.43,
+    "heap_used_mb_before": 965,
+    "heap_used_mb_after": 961,
+    "stations": 128,
+    "active": true,
+    "crosshair": "none"
+  },
+  "grid128_active_rotating": {
+    "frames": 3967,
+    "seconds": 5.01,
+    "average_fps": 791.05,
+    "p50_frame_ms": 0.86,
+    "p95_frame_ms": 4.18,
+    "p99_frame_ms": 6.32,
+    "p50_render_tick_ms": 0.74,
+    "p95_render_tick_ms": 1.63,
+    "heap_used_mb_before": 1082,
+    "heap_used_mb_after": 1010,
+    "stations": 128,
+    "active": true,
+    "crosshair": "none"
+  },
+  "grid128_active_night": {
+    "frames": 3577,
+    "seconds": 5.01,
+    "average_fps": 714.43,
+    "p50_frame_ms": 0.99,
+    "p95_frame_ms": 4.12,
+    "p99_frame_ms": 5.68,
+    "p50_render_tick_ms": 0.89,
+    "p95_render_tick_ms": 1.81,
+    "heap_used_mb_before": 510,
+    "heap_used_mb_after": 596,
+    "stations": 128,
+    "active": true,
+    "crosshair": "none"
+  },
+  "grid128_active_no_particles": {
+    "frames": 3675,
+    "seconds": 5.02,
+    "average_fps": 732.45,
+    "p50_frame_ms": 0.94,
+    "p95_frame_ms": 4.11,
+    "p99_frame_ms": 6.31,
+    "p50_render_tick_ms": 0.84,
+    "p95_render_tick_ms": 1.79,
+    "heap_used_mb_before": 814,
+    "heap_used_mb_after": 893,
+    "stations": 128,
+    "active": true,
+    "crosshair": "none"
+  }
+}

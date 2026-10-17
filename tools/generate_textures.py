@@ -12,6 +12,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'src/main/resources/assets/immersive_smithing/textures'
+# Textures of the retired Stoneborn GUI. The screens draw Minecraft's own GUI textures now; these must never come back.
+RETIRED = ['gui/stone.png', 'gui/slot.png', 'gui/guide.png']
 
 
 def check_model_uvs():
@@ -65,6 +67,12 @@ def main():
             with Image.open(path) as actual:
                 if actual.size != expected.size or actual.convert('RGBA').tobytes() != expected.tobytes():
                     mismatches.append(name)
+    for name in RETIRED:
+        path = OUTPUT / name
+        if args.write and path.exists():
+            path.unlink()
+        elif path.exists():
+            mismatches.append(name + ' (retired)')
     if mismatches:
         raise SystemExit('Artwork differs from source (no files written): ' + ', '.join(mismatches))
     count = check_model_uvs()

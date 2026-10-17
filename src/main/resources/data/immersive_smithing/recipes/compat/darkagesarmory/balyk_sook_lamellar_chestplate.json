@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "darkagesarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "darkagesarmory:balyk_sook_lamellar_chestplate"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 31,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/gold"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "magistuarmory:leather_strips"
+      },
+      "count": 21
+    }
+  ],
+  "result": {
+    "item": "darkagesarmory:balyk_sook_lamellar_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "darkagesarmory:balyk_sook_lamellar_chestplate"
+  ]
+}

@@ -26,7 +26,8 @@ import java.util.List;
  *   "auxiliary": [{"ingredient": {"item": "minecraft:stick"}, "count": 2}],
  *   "result": {"item": "minecraft:iron_pickaxe"},
  *   "forge_pattern": "immersive_smithing:standard",
- *   "anvil_pattern": "immersive_smithing:pickaxe"
+ *   "anvil_pattern": "immersive_smithing:pickaxe",
+ *   "keep_base_data": true
  * }
  * </pre>
  */
@@ -49,7 +50,16 @@ public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe
                 ? new ResourceLocation(GsonHelper.getAsString(json, "forge_pattern")) : ForgePattern.STANDARD;
         ResourceLocation anvilPattern = json.has("anvil_pattern")
                 ? new ResourceLocation(GsonHelper.getAsString(json, "anvil_pattern")) : null;
-        return new SmithingRecipe(id, family, units, aux, result, forgePattern, anvilPattern, false, null);
+        return new SmithingRecipe(id, family, units, aux, result, forgePattern, anvilPattern, false, null)
+                .keepBaseData(GsonHelper.getAsBoolean(json, "keep_base_data", true))
+                .sources(ids(json, "replaces"), ids(json, "derived_from"));
+    }
+
+    private static List<ResourceLocation> ids(JsonObject json, String key) {
+        if (!json.has(key)) return List.of();
+        List<ResourceLocation> out = new ArrayList<>();
+        for (JsonElement e : GsonHelper.getAsJsonArray(json, key)) out.add(new ResourceLocation(GsonHelper.convertToString(e, key)));
+        return out;
     }
 
     @Override

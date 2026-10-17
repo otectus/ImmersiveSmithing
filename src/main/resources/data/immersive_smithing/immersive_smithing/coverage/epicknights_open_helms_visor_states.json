@@ -1,0 +1,439 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicknights_open_helms"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quick_swap"
+    }
+  ],
+  "mod": "epicknights_open_helms",
+  "policies": [
+    {
+      "items": [
+        "epicknights_open_helms:open_armet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:armet, switched with Swappable Helms",
+      "state_of": "magistuarmory:armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmory:bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_ceremonial_armet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:ceremonialarmet, switched with Swappable Helms",
+      "state_of": "magistuarmory:ceremonialarmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_grand_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:grand_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmory:grand_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_maximilian_helmet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmory:maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_bellows_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:bellows_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:bellows_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_bicoque_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:bicoque, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:bicoque"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_british_armet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:british_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:british_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_close_helm_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:close_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:close_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_gilded_dark_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_gilded_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_gilded_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_dark_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_gothic_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_gothic_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_dark_grand_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_grand_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_grand_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_dark_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_dark_armet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_knight_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_knight_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_late_dark_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_late_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_late_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_dark_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:dark_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:dark_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_blue_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:darkblued_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:darkblued_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_blued_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:darkblued_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:darkblued_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_blued_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:darkblued_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:darkblued_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_devilish_grotesque_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:devilish_grotesque_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:devilish_grotesque_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_engraved_close_helm_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:engraved_close_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:engraved_close_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:exquisite_maximilian_helmet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:exquisite_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:exquisite_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:facial_grotesque_maximillian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:facial_grotesque_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:facial_grotesque_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fox_grotesque_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fox_grotesque_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fox_grotesque_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fully_glided_armet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fully_glided_grand_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_grand_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_grand_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fully_glided_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fully_glided_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_milanese_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_milanese_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_milanese_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_fully_glided_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:fully_gilded_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:fully_gilded_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_german_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:german_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:german_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_close_helm_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_close_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_close_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_dark_helm_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_dark_close_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_dark_close_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_dark_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_dark_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_dark_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_blue_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_darkblued_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_darkblued_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_fox_grotesque_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_fox_grotesque_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_fox_grotesque_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_grand_bascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_grand_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_grand_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_glided_sugarloaf_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:gilded_sugarloaf_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:gilded_sugarloaf_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_greenwich_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:greenwich_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:greenwich_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_klappvisor_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:klappvisor_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:klappvisor_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_latebascinet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:late_bascinet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:late_bascinet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_late_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:late_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:late_sallet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_burgonet_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:maximilian_burgonet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:maximilian_burgonet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_milanese_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:milanese_armet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:milanese_armet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_sallet_without_neck_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:sallet_without_neck_protection, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:sallet_without_neck_protection"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_savoyard_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:savoyard_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:savoyard_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_silvered_dark_bellows_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:silvered_dark_bellows_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:silvered_dark_bellows_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_silvered_maximilian_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:silvered_dark_maximilian_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:silvered_dark_maximilian_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_sugarloaf_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:sugarloaf_helmet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:sugarloaf_helmet"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:open_two_eye_sallet_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmoryaddon:two_eye_slits_sallet, switched with Swappable Helms",
+      "state_of": "magistuarmoryaddon:two_eye_slits_sallet"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:copper_buckler"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:copper",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:ingots/steel"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:copper_buckler"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:copper_buckler"
+  ]
+}

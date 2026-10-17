@@ -1,0 +1,105 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    }
+  ],
+  "mod": "ekotsk",
+  "tested_version": "1.20.1_1.5.0",
+  "policies": [
+    {
+      "items": [
+        "ekotsk:weirwood_longbow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient"
+    },
+    {
+      "items": [
+        "ekotsk:night_watch_hat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:blacked_steel)"
+    },
+    {
+      "items": [
+        "ekotsk:dornish_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)"
+    },
+    {
+      "items": [
+        "ekotsk:fancy_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:leather"
+    },
+    {
+      "items": [
+        "ekotsk:kotsk_gold_cloak_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 2 units of forge:gilded_steel on 4 other parts"
+    },
+    {
+      "items": [
+        "ekotsk:kingsguard_baratheon_boots",
+        "ekotsk:kingsguard_baratheon_chestplate",
+        "ekotsk:kingsguard_baratheon_helmet",
+        "ekotsk:kingsguard_baratheon_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with ekotsk:gilded_steel_ingot"
+    },
+    {
+      "items": [
+        "ekotsk:lannister_lord_chestplate",
+        "ekotsk:lannister_lord_helmet",
+        "ekotsk:lannister_lord_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "ekotsk:kotsk_kingsguard_boots",
+        "ekotsk:kotsk_kingsguard_chestplate",
+        "ekotsk:kotsk_kingsguard_helmet",
+        "ekotsk:kotsk_kingsguard_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "made from another piece: whitening with minecraft:white_dye"
+    },
+    {
+      "items": [
+        "ekotsk:aegon_crown_decoration",
+        "ekotsk:aegon_dagger",
+        "ekotsk:blackfyre",
+        "ekotsk:brightroar",
+        "ekotsk:crab_pincer",
+        "ekotsk:dark_sister",
+        "ekotsk:dawn",
+        "ekotsk:heartsbane",
+        "ekotsk:ice",
+        "ekotsk:lady_forlorn",
+        "ekotsk:lamentation",
+        "ekotsk:longclaw",
+        "ekotsk:nightfall",
+        "ekotsk:orphanmaker",
+        "ekotsk:red_rain",
+        "ekotsk:robert_hammer",
+        "ekotsk:sandoq",
+        "ekotsk:truth",
+        "ekotsk:valyrian_steel_boots",
+        "ekotsk:valyrian_steel_chestplate",
+        "ekotsk:valyrian_steel_helmet",
+        "ekotsk:valyrian_steel_leggings",
+        "ekotsk:vigilance"
+      ],
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down"
+    }
+  ]
+}

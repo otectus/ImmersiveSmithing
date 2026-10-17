@@ -1,5 +1,6 @@
 package com.otectus.immersivesmithing.client.screen;
 
+import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.material.MaterialUnits;
 import com.otectus.immersivesmithing.minigame.ForgeMinigame;
 import com.otectus.immersivesmithing.minigame.ForgeRun;
@@ -12,7 +13,6 @@ import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
 import com.otectus.immersivesmithing.network.packet.SelectForgeRecipePacket;
 import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
 import com.otectus.immersivesmithing.quality.SmithingQuality;
-import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.registry.ModTags;
 import net.minecraft.ChatFormatting;
@@ -20,41 +20,46 @@ import net.minecraft.Util;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.fml.ModList;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 /**
- * The Forge screen: recipe selection, a short countdown, the forming-rhythm minigame and the result. The
- * client predicts feedback locally but only ever sends input events; the score shown at the end is the
- * server's.
+ * The Forge screen: recipe selection, a short countdown, the forming-rhythm minigame and the result, on a vanilla
+ * container panel. Recipes are vanilla button rows (as in a villager's trade list) under a vanilla search field, with
+ * the creative scroller; the timing track sits in a dark display so its zones stay clear. The client predicts feedback
+ * locally but only ever sends input events; the score shown at the end is the server's.
  */
 public class ForgeMinigameScreen extends WorkshopScreen {
     private enum Stage { SELECT, WAITING, READY, PLAYING, RESULT }
 
-    private static final int MAX_WIDTH = 360;
-    private static final int MAX_HEIGHT = 228;
-    private static final int ROW_HEIGHT = 28;
-    private static final int LIST_TOP = 46;
+    private static final int ROW_HEIGHT = 26;
+    private static final int ROW_INNER = 24;
 
     private final OpenForgeScreenPacket offer;
     private final List<OpenForgeScreenPacket.Entry> filtered = new ArrayList<>();
     private Stage stage = Stage.SELECT;
     private EditBox search;
     private Button doneButton;
+    private Button helpButton;
     private int scroll;
     private int selectedIndex;
     private int left;
     private int top;
     private int panelWidth;
     private int panelHeight;
+    private int listTop;
     private int listRows;
     private boolean draggingScrollbar;
 
@@ -65,13 +70,16 @@ public class ForgeMinigameScreen extends WorkshopScreen {
     private final List<Float> phaseResults = new ArrayList<>();
     private float lastAccuracy = -1F;
     private long lastFeedbackMs;
+    private long earlyMs = Long.MIN_VALUE;
+    /** Action keys held down: their key repeats are not new presses. */
+    private final Set<Integer> heldKeys = new HashSet<>();
     private boolean markerInZone;
     private int resultScore;
     private boolean resultTimedOut;
     private boolean closedByServer;
 
     public ForgeMinigameScreen(OpenForgeScreenPacket offer) {
-        super(Component.translatable("screen.immersive_smithing.forge"), 380, 244);
+        super(Component.translatable("screen.immersive_smithing.forge"), 320, 240);
         this.offer = offer;
     }
 
@@ -81,37 +89,86 @@ public class ForgeMinigameScreen extends WorkshopScreen {
 
     @Override
     protected void initPanel() {
-        panelWidth = Math.min(MAX_WIDTH, canvasWidth - 20);
-        panelHeight = Math.min(MAX_HEIGHT, canvasHeight - 16);
-        left = (canvasWidth - panelWidth) / 2;
-        top = (canvasHeight - panelHeight) / 2;
-        listRows = Math.max(3, (panelHeight - LIST_TOP - 32) / ROW_HEIGHT);
+        panelWidth = Math.min(340, canvasWidth - 12);
         String previous = search != null ? search.getValue() : "";
-        search = new EditBox(font, left + 60, top + 27, panelWidth - 76, 12, Component.translatable("screen.immersive_smithing.forge.search"));
-        search.setBordered(false);
-        search.setTextColor(SmithingGui.TEXT);
-        search.setTextColorUneditable(SmithingGui.TEXT_DIM);
-        search.setHint(Component.translatable("screen.immersive_smithing.forge.search_hint").withStyle(ChatFormatting.GRAY));
+        search = VanillaGui.editBox(font, 0, 0, panelWidth - 16, Component.translatable("screen.immersive_smithing.forge.search"));
+        search.setHint(Component.translatable("screen.immersive_smithing.forge.search_hint").withStyle(ChatFormatting.DARK_GRAY));
         search.setValue(previous);
         search.setResponder(s -> refilter());
         search.visible = stage == Stage.SELECT;
         addRenderableWidget(search);
-        doneButton = SmithingGui.button(left + panelWidth / 2 - 45, top + panelHeight - 27, 90, 20,
-                Component.translatable("gui.done"), b -> onClose());
+        doneButton = VanillaGui.button(0, 0, 100, 20, Component.translatable("gui.done"), b -> onClose());
         doneButton.visible = stage == Stage.RESULT;
         addRenderableWidget(doneButton);
+        helpButton = VanillaGui.button(0, 0, 16, 14, Component.literal("?"), b -> {});
+        helpButton.setTooltip(Tooltip.create(Component.translatable(stage == Stage.SELECT
+                ? "screen.immersive_smithing.forge.help_select" : "screen.immersive_smithing.forge.help_play")));
+        addRenderableWidget(helpButton);
+        layout();
         refilter();
-        if (stage == Stage.SELECT) setFocused(search);
+        if (stage == Stage.SELECT) setInitialFocus(search);
     }
 
+    /**
+     * Fits the panel to its stage: the full height for the recipe list, and one compact height for every forging stage
+     * (the tallest of them), so the panel holds still from the countdown to the result.
+     */
+    private void layout() {
+        panelHeight = Math.min(stage == Stage.SELECT ? 236 : forgingHeight(), canvasHeight - 4);
+        left = (canvasWidth - panelWidth) / 2;
+        top = (canvasHeight - panelHeight) / 2;
+        listTop = top + 46;
+        listRows = Math.max(3, (panelHeight - 46 - 22) / ROW_HEIGHT);
+        search.setPosition(left + 8, top + 22);
+        doneButton.setPosition(left + panelWidth / 2 - 50, top + panelHeight - 26);
+        helpButton.setPosition(left + panelWidth - 22, top + 4);
+    }
+
+    /** Bottom of the lowest content in the countdown, minigame and result stages, plus a bottom margin. */
+    private int forgingHeight() {
+        int track = Math.round(16 * SmithingGui.markerScale());
+        int playing = 98 + track + 42 + 6 + 10 * lines("screen.immersive_smithing.forge.instructions", panelWidth - 24) + 8;
+        int ready = 122 + 10 * lines("screen.immersive_smithing.forge.instructions", panelWidth - 32) + 6
+                + 10 * lines("screen.immersive_smithing.forge.durability_explainer", panelWidth - 32) + 8;
+        int result = 124 + 10 * lines("screen.immersive_smithing.forge.next", panelWidth - 40) + 6 + 26;
+        return Math.max(playing, Math.max(ready, result));
+    }
+
+    private int lines(String key, int width) {
+        return font.split(Component.translatable(key), width).size();
+    }
+
+    /** Every word must appear in the item's name; a word starting with @ must match its mod instead, as in JEI. */
     private void refilter() {
         filtered.clear();
         String query = search == null ? "" : search.getValue().trim().toLowerCase(Locale.ROOT);
+        List<String> words = new ArrayList<>();
+        List<String> mods = new ArrayList<>();
+        for (String token : query.split("\\s+")) {
+            if (token.startsWith("@")) {
+                String mod = squash(token.substring(1));
+                if (!mod.isEmpty()) mods.add(mod);
+            } else if (!token.isEmpty()) {
+                words.add(token);
+            }
+        }
         for (OpenForgeScreenPacket.Entry e : offer.entries()) {
-            if (query.isEmpty() || e.result().getHoverName().getString().toLowerCase(Locale.ROOT).contains(query)) filtered.add(e);
+            String name = e.result().getHoverName().getString().toLowerCase(Locale.ROOT);
+            if (words.stream().allMatch(name::contains) && mods.stream().allMatch(mod -> fromMod(e.result(), mod))) filtered.add(e);
         }
         scroll = Mth.clamp(scroll, 0, maxScroll());
         selectedIndex = Mth.clamp(selectedIndex, 0, Math.max(0, filtered.size() - 1));
+    }
+
+    /** Whether {@code stack} comes from a mod whose id or name contains {@code mod} (letters and digits only). */
+    private static boolean fromMod(ItemStack stack, String mod) {
+        String namespace = BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace();
+        return squash(namespace).contains(mod) || ModList.get().getModContainerById(namespace)
+                .map(container -> squash(container.getModInfo().getDisplayName()).contains(mod)).orElse(false);
+    }
+
+    private static String squash(String text) {
+        return text.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]", "");
     }
 
     private int maxScroll() {
@@ -135,6 +192,8 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         stage = Stage.READY;
         search.visible = false;
         setFocused(null);
+        layout();
+        helpButton.setTooltip(Tooltip.create(Component.translatable("screen.immersive_smithing.forge.help_play")));
     }
 
     public void onActionResult(ForgeActionResultPacket packet) {
@@ -150,6 +209,7 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         resultScore = packet.score();
         resultTimedOut = packet.timedOut();
         stage = Stage.RESULT;
+        layout();
         doneButton.visible = true;
         SmithingGui.playUi(ModSounds.FORGE_READY.get(), 1.0F, 0.8F);
     }
@@ -164,7 +224,7 @@ public class ForgeMinigameScreen extends WorkshopScreen {
     @Override
     protected boolean panelClicked(double mouseX, double mouseY, int button) {
         if (stage == Stage.SELECT && button == 0) {
-            if (overScrollbar(mouseX, mouseY) && maxScroll() > 0) {
+            if (VanillaGui.onScrollbar(mouseX, mouseY, scrollbarX(), listTop, listRows * ROW_HEIGHT) && maxScroll() > 0) {
                 draggingScrollbar = true;
                 scrollFromMouse(mouseY);
                 return true;
@@ -176,7 +236,7 @@ public class ForgeMinigameScreen extends WorkshopScreen {
                 return true;
             }
         }
-        if (stage == Stage.PLAYING && button == 0 && inside(mouseX, mouseY)) {
+        if (stage == Stage.PLAYING && button == 0 && inside(mouseX, mouseY) && !helpButton.isMouseOver(mouseX, mouseY)) {
             act();
             return true;
         }
@@ -185,8 +245,10 @@ public class ForgeMinigameScreen extends WorkshopScreen {
 
     @Override
     public boolean keyPressed(int key, int scanCode, int modifiers) {
-        if (stage == Stage.PLAYING && (key == GLFW.GLFW_KEY_SPACE || key == GLFW.GLFW_KEY_ENTER)) {
-            act();
+        boolean actionKey = key == GLFW.GLFW_KEY_SPACE || key == GLFW.GLFW_KEY_ENTER || key == GLFW.GLFW_KEY_KP_ENTER;
+        boolean fresh = !actionKey || heldKeys.add(key);
+        if (stage == Stage.PLAYING && actionKey) {
+            if (fresh) act();
             return true;
         }
         if (stage == Stage.SELECT && !filtered.isEmpty()) {
@@ -196,11 +258,13 @@ public class ForgeMinigameScreen extends WorkshopScreen {
                 revealSelection();
                 return true;
             }
-            if (key == GLFW.GLFW_KEY_ENTER) {
+            if ((key == GLFW.GLFW_KEY_ENTER || key == GLFW.GLFW_KEY_KP_ENTER) && fresh) {
                 select(filtered.get(selectedIndex));
                 return true;
             }
         }
+        // Outside the minigame an action key never presses a focused button by accident.
+        if (actionKey && stage != Stage.RESULT && getFocused() instanceof Button) return true;
         return super.keyPressed(key, scanCode, modifiers);
     }
 
@@ -232,8 +296,16 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         selected = entry.result();
         stage = Stage.WAITING;
         search.visible = false;
+        setFocused(null);
+        layout();
         ModNetwork.CHANNEL.sendToServer(new SelectForgeRecipePacket(offer.sessionId(), entry.recipeId()));
         SmithingGui.playUi(ModSounds.TONGS_GRAB.get(), 1.0F, 0.6F);
+    }
+
+    @Override
+    public boolean keyReleased(int key, int scanCode, int modifiers) {
+        heldKeys.remove(key);
+        return super.keyReleased(key, scanCode, modifiers);
     }
 
     private void act() {
@@ -242,7 +314,11 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         if (now < 0 || now > allowedMs) return;
         int phase = run.index();
         float accuracy = run.press(now);
-        if (accuracy < 0) return;
+        if (accuracy < 0) {
+            // Between passes: nothing is scored or sent, but the player learns why nothing happened.
+            earlyMs = Util.getMillis();
+            return;
+        }
         ModNetwork.CHANNEL.sendToServer(new ForgeActionPacket(offer.sessionId(), phase, now));
         phaseResults.add(accuracy);
         lastAccuracy = accuracy;
@@ -262,24 +338,28 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         return x >= left && x < left + panelWidth && y >= top && y < top + panelHeight;
     }
 
+    private int listX() {
+        return left + 8;
+    }
+
+    private int listWidth() {
+        return panelWidth - 16 - 16;
+    }
+
+    private int scrollbarX() {
+        return listX() + listWidth() + 2;
+    }
+
     private int rowAt(double x, double y) {
-        int rx = left + 10;
-        int ry = top + LIST_TOP;
-        if (x < rx || x >= rx + panelWidth - 20 || y < ry || y >= ry + listRows * ROW_HEIGHT) return -1;
-        int index = scroll + (int) ((y - ry) / ROW_HEIGHT);
+        if (x < listX() || x >= listX() + listWidth() || y < listTop || y >= listTop + listRows * ROW_HEIGHT) return -1;
+        int offset = (int) (y - listTop);
+        if (offset % ROW_HEIGHT >= ROW_INNER) return -1;
+        int index = scroll + offset / ROW_HEIGHT;
         return index < filtered.size() ? index : -1;
     }
 
-    private boolean overScrollbar(double x, double y) {
-        int sx = left + panelWidth - 16;
-        int sy = top + LIST_TOP;
-        return x >= sx && x < sx + 6 && y >= sy && y < sy + listRows * ROW_HEIGHT;
-    }
-
     private void scrollFromMouse(double mouseY) {
-        int trackTop = top + LIST_TOP;
-        int trackHeight = listRows * ROW_HEIGHT;
-        float ratio = (float) ((mouseY - trackTop) / trackHeight);
+        float ratio = (float) ((mouseY - listTop - 7) / Math.max(1, listRows * ROW_HEIGHT - 15));
         scroll = Mth.clamp(Math.round(ratio * maxScroll()), 0, maxScroll());
     }
 
@@ -288,6 +368,7 @@ public class ForgeMinigameScreen extends WorkshopScreen {
     @Override
     public void tick() {
         if (stage == Stage.READY && elapsed() >= 0) stage = Stage.PLAYING;
+        if (search != null) search.tick();
     }
 
     @Override
@@ -307,136 +388,102 @@ public class ForgeMinigameScreen extends WorkshopScreen {
 
     @Override
     protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        SmithingGui.panel(g, left, top, panelWidth, panelHeight);
+        VanillaGui.panel(g, left, top, panelWidth, panelHeight);
         Component title = Component.translatable("screen.immersive_smithing.forge.title", offer.familyName());
-        Component units = MaterialUnits.describe(offer.moltenUnits());
-        int titleWidth = panelWidth - 34 - font.width(units);
-        g.drawString(font, SmithingGui.clipped(font, title, titleWidth), left + 12, top + 9, SmithingGui.TEXT_WARM, false);
-        g.drawString(font, units, left + panelWidth - 12 - font.width(units), top + 9, SmithingGui.TEXT_DIM, false);
-        SmithingGui.rule(g, left + 10, top + 21, panelWidth - 20);
+        Component units = Component.translatable("screen.immersive_smithing.forge.molten", MaterialUnits.describe(offer.moltenUnits()));
+        int titleWidth = panelWidth - 40 - font.width(units);
+        g.drawString(font, VanillaGui.clipped(font, title, titleWidth), left + 8, top + 7, VanillaGui.LABEL, false);
+        g.drawString(font, units, left + panelWidth - 26 - font.width(units), top + 7, VanillaGui.LABEL_DIM, false);
 
         switch (stage) {
             case SELECT -> renderSelection(g, mouseX, mouseY);
             case WAITING -> renderWaiting(g);
-            case READY -> renderReady(g);
+            case READY -> renderReady(g, mouseX, mouseY);
             case PLAYING -> renderPlaying(g);
             case RESULT -> renderResult(g);
         }
         super.renderPanel(g, mouseX, mouseY, partialTick);
-        if (stage == Stage.SELECT) renderRowTooltip(g, mouseX, mouseY);
-        renderHeaderTooltip(g, mouseX, mouseY);
+        if (VanillaGui.isClipped(font, title, titleWidth) && mouseX >= left + 8 && mouseX < left + 8 + titleWidth
+                && mouseY >= top + 5 && mouseY < top + 17) {
+            tooltip(title);
+        }
     }
 
     private void renderSelection(GuiGraphics g, int mouseX, int mouseY) {
-        int x = left + 10;
-        int y = top + LIST_TOP;
-        int w = panelWidth - 20;
-        StonebornGui.well(g, x - 1, y - 1, w + 2, listRows * ROW_HEIGHT + 2);
-        SmithingGui.well(g, left + 11, top + 24, panelWidth - 22, 18);
-        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.search_label"), left + 17, top + 29, SmithingGui.TEXT_DIM, false);
-        SmithingGui.well(g, x - 2, y - 2, w + 4, listRows * ROW_HEIGHT + 4);
+        int x = listX();
+        int w = listWidth();
+        int listHeight = listRows * ROW_HEIGHT;
+        VanillaGui.inset(g, x - 1, listTop - 1, w + 2, listHeight + 1);
         if (filtered.isEmpty()) {
-            g.drawCenteredString(font, Component.translatable("screen.immersive_smithing.forge.no_match"), left + panelWidth / 2, y + 40, SmithingGui.TEXT_DIM);
+            VanillaGui.wrappedCentered(g, font, Component.translatable(offer.entries().isEmpty()
+                            ? "screen.immersive_smithing.forge.nothing_offered" : "screen.immersive_smithing.forge.no_match"),
+                    x + w / 2, listTop + listHeight / 2 - 8, w - 16, VanillaGui.LABEL, false);
         }
-        scissor(g, x, y, x + w - 7, y + listRows * ROW_HEIGHT);
+        int hovered = rowAt(mouseX, mouseY);
+        scissor(g, x, listTop, x + w, listTop + listHeight);
         for (int row = 0; row < listRows; row++) {
             int index = scroll + row;
             if (index >= filtered.size()) break;
             OpenForgeScreenPacket.Entry e = filtered.get(index);
-            int ry = y + row * ROW_HEIGHT;
-            boolean hovered = rowAt(mouseX, mouseY) == index;
-            if (index == selectedIndex) g.fill(x, ry, x + w - 7, ry + ROW_HEIGHT, SmithingGui.ROW_FOCUSED);
-            if (hovered) g.fill(x, ry, x + w - 7, ry + ROW_HEIGHT, SmithingGui.ROW_HOVER);
-            if (index == selectedIndex) g.fill(x, ry, x + 2, ry + ROW_HEIGHT, SmithingGui.BRONZE);
-            g.renderItem(e.result(), x + 5, ry + 6);
+            int ry = listTop + row * ROW_HEIGHT;
+            boolean highlighted = hovered == index || (index == selectedIndex && hovered < 0);
+            VanillaGui.row(g, x, ry, w, ROW_INNER, true, highlighted);
+            g.renderItem(e.result(), x + 4, ry + 4);
             int shownAux = Math.min(4, e.auxiliary().size());
-            int auxSpace = shownAux * 18 + (e.auxiliary().size() > shownAux ? 17 : 0);
-            int textWidth = Math.max(48, w - 38 - auxSpace);
-            g.drawString(font, SmithingGui.clipped(font, e.result().getHoverName(), textWidth), x + 27, ry + 4, SmithingGui.TEXT, false);
+            int auxSpace = shownAux * 17 + (e.auxiliary().size() > shownAux ? 14 : 0);
+            int textWidth = Math.max(40, w - 30 - auxSpace - 6);
+            String marker = index == selectedIndex ? "» " : "";
+            g.drawString(font, marker + VanillaGui.clipped(font, e.result().getHoverName(), textWidth - font.width(marker)),
+                    x + 24, ry + 3, VanillaGui.ROW_TEXT, true);
             Component cost = Component.translatable("screen.immersive_smithing.forge.cost", MaterialUnits.describe(e.metalUnits()),
                     MaterialUnits.describe(offer.moltenUnits() - e.metalUnits()));
-            g.drawString(font, SmithingGui.clipped(font, cost, textWidth), x + 27, ry + 15, SmithingGui.TEXT_DIM, false);
-            int ax = x + w - 27;
+            g.drawString(font, VanillaGui.clipped(font, cost, textWidth), x + 24, ry + 13, VanillaGui.ROW_TEXT_DIM, true);
+            int ax = x + w - 20;
             for (int i = 0; i < shownAux; i++) {
                 ItemStack aux = e.auxiliary().get(i);
-                g.renderItem(aux, ax, ry + 6);
-                g.renderItemDecorations(font, aux, ax, ry + 6);
-                ax -= 18;
+                g.renderItem(aux, ax, ry + 4);
+                g.renderItemDecorations(font, aux, ax, ry + 4);
+                ax -= 17;
             }
             if (e.auxiliary().size() > shownAux) {
                 Component more = Component.translatable("screen.immersive_smithing.forge.more_components", e.auxiliary().size() - shownAux);
-                g.drawString(font, more, ax + 1, ry + 10, SmithingGui.TEXT_DIM, false);
+                g.drawString(font, more, ax + 16 - font.width(more), ry + 8, VanillaGui.ROW_TEXT, true);
             }
-            if (row > 0) g.fill(x + 4, ry, x + w - 11, ry + 1, 0x3049382E);
         }
         g.disableScissor();
-        // scrollbar
-        if (filtered.size() > listRows) {
-            int trackH = listRows * ROW_HEIGHT;
-            int barH = Math.max(12, trackH * listRows / filtered.size());
-            int barY = y + (trackH - barH) * scroll / Math.max(1, filtered.size() - listRows);
-            g.fill(x + w - 4, y, x + w - 1, y + trackH, 0x40000000);
-            g.fill(x + w - 4, barY, x + w - 1, barY + barH, SmithingGui.BRONZE);
-        }
+        VanillaGui.scrollbar(g, scrollbarX(), listTop - 1, listHeight + 1, maxScroll() == 0 ? 0F : scroll / (float) maxScroll(), maxScroll() > 0);
         Component hint = Component.translatable("screen.immersive_smithing.forge.choose", offer.timeMs() / 1000);
-        g.drawCenteredString(font, SmithingGui.clipped(font, hint, panelWidth - 24), left + panelWidth / 2, top + panelHeight - 17, SmithingGui.TEXT_DIM);
+        VanillaGui.centered(g, font, Component.literal(VanillaGui.clipped(font, hint, panelWidth - 16)), left + panelWidth / 2,
+                top + panelHeight - 14, VanillaGui.LABEL_DIM);
+        if (hovered >= 0) rowTooltip(filtered.get(hovered), mouseX);
     }
 
-    private void renderRowTooltip(GuiGraphics g, int mouseX, int mouseY) {
-        int index = rowAt(mouseX, mouseY);
-        if (index < 0) return;
-        OpenForgeScreenPacket.Entry e = filtered.get(index);
-        int x = left + 10;
-        int w = panelWidth - 20;
-        if (mouseX < x + 24) {
-            g.renderTooltip(font, e.result(), mouseX, mouseY);
+    private void rowTooltip(OpenForgeScreenPacket.Entry e, int mouseX) {
+        int x = listX();
+        if (mouseX < x + 22) {
+            tooltip(e.result());
             return;
         }
-        int ax = x + w - 26;
+        int ax = x + listWidth() - 20;
         for (int i = 0; i < Math.min(4, e.auxiliary().size()); i++) {
-            ItemStack aux = e.auxiliary().get(i);
             if (mouseX >= ax && mouseX < ax + 16) {
-                g.renderTooltip(font, aux, mouseX, mouseY);
+                tooltip(e.auxiliary().get(i));
                 return;
             }
-            ax -= 18;
+            ax -= 17;
         }
-        List<net.minecraft.util.FormattedCharSequence> lines = new ArrayList<>();
-        int tooltipWidth = Math.min(260, canvasWidth - 24);
-        lines.addAll(font.split(e.result().getHoverName(), tooltipWidth));
-        Component cost = Component.translatable("screen.immersive_smithing.forge.cost", MaterialUnits.describe(e.metalUnits()),
-                MaterialUnits.describe(offer.moltenUnits() - e.metalUnits())).withStyle(ChatFormatting.GRAY);
-        lines.addAll(font.split(cost, tooltipWidth));
+        List<Component> lines = new ArrayList<>();
+        lines.add(e.result().getHoverName());
+        lines.add(Component.translatable("screen.immersive_smithing.forge.cost", MaterialUnits.describe(e.metalUnits()),
+                MaterialUnits.describe(offer.moltenUnits() - e.metalUnits())).withStyle(ChatFormatting.GRAY));
         if (!e.auxiliary().isEmpty()) {
-            lines.addAll(font.split(Component.translatable("screen.immersive_smithing.forge.components").withStyle(ChatFormatting.GOLD), tooltipWidth));
+            lines.add(Component.translatable("screen.immersive_smithing.forge.components").withStyle(ChatFormatting.GOLD));
             for (ItemStack auxiliary : e.auxiliary()) {
-                lines.addAll(font.split(Component.translatable("screen.immersive_smithing.forge.component_line",
-                        auxiliary.getCount(), auxiliary.getHoverName()).withStyle(ChatFormatting.GRAY), tooltipWidth));
+                lines.add(Component.translatable("screen.immersive_smithing.forge.component_line", auxiliary.getCount(),
+                        auxiliary.getHoverName()).withStyle(ChatFormatting.GRAY));
             }
         }
-        g.renderTooltip(font, lines, mouseX, mouseY);
-    }
-
-    private void renderHeaderTooltip(GuiGraphics g, int mouseX, int mouseY) {
-        Component heading = Component.translatable("screen.immersive_smithing.forge.title", offer.familyName());
-        Component units = MaterialUnits.describe(offer.moltenUnits());
-        int available = panelWidth - 34 - font.width(units);
-        if (font.width(heading) > available && mouseX >= left + 10 && mouseX < left + 12 + available
-                && mouseY >= top + 6 && mouseY < top + 21) {
-            g.renderTooltip(font, heading, mouseX, mouseY);
-        }
-        if (stage == Stage.READY && font.width(selected.getHoverName()) > panelWidth - 30
-                && mouseX >= left + 15 && mouseX < left + panelWidth - 15 && mouseY >= top + 105 && mouseY < top + 122) {
-            g.renderTooltip(font, selected.getHoverName(), mouseX, mouseY);
-        }
-    }
-
-    private void renderWaiting(GuiGraphics g) {
-        int cx = left + panelWidth / 2;
-        renderWorkpiece(g, cx, top + panelHeight / 2 - 28, 3F);
-        g.drawCenteredString(font, Component.translatable("screen.immersive_smithing.preparing"), cx, top + panelHeight / 2 + 10, SmithingGui.TEXT_WARM);
-        SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.preparing_detail"),
-                cx, top + panelHeight / 2 + 24, panelWidth - 40, SmithingGui.TEXT_DIM);
+        tooltip(lines);
     }
 
     private void renderWorkpiece(GuiGraphics g, int cx, int cy, float scale) {
@@ -447,69 +494,91 @@ public class ForgeMinigameScreen extends WorkshopScreen {
         g.pose().popPose();
     }
 
-    private void renderReady(GuiGraphics g) {
+    /** The workpiece in a large slot. */
+    private void framedWorkpiece(GuiGraphics g, int cx, int cy) {
+        VanillaGui.inset(g, cx - 21, cy - 21, 42, 42);
+        renderWorkpiece(g, cx, cy, 2F);
+    }
+
+    private void renderWaiting(GuiGraphics g) {
+        int cx = left + panelWidth / 2;
+        framedWorkpiece(g, cx, top + panelHeight / 2 - 26);
+        VanillaGui.centered(g, font, Component.translatable("screen.immersive_smithing.preparing"), cx, top + panelHeight / 2 + 4, VanillaGui.LABEL);
+        VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.preparing_detail"),
+                cx, top + panelHeight / 2 + 18, panelWidth - 40, VanillaGui.LABEL_DIM, false);
+    }
+
+    private void renderReady(GuiGraphics g, int mouseX, int mouseY) {
         int remaining = -elapsed();
         int cx = left + panelWidth / 2;
-        renderWorkpiece(g, cx, top + 78, 3F);
-        g.drawCenteredString(font, SmithingGui.clipped(font, selected.getHoverName(), panelWidth - 30), cx, top + 110, SmithingGui.TEXT);
+        framedWorkpiece(g, cx, top + 50);
+        Component name = selected.getHoverName();
+        VanillaGui.centered(g, font, Component.literal(VanillaGui.clipped(font, name, panelWidth - 30)), cx, top + 78, VanillaGui.LABEL);
+        if (VanillaGui.isClipped(font, name, panelWidth - 30) && Math.abs(mouseX - cx) < (panelWidth - 30) / 2
+                && mouseY >= top + 76 && mouseY < top + 88) tooltip(name);
         Component ready = Component.translatable("screen.immersive_smithing.ready", Math.max(1, (remaining + 999) / 1000));
-        g.drawCenteredString(font, ready, cx, top + 132, SmithingGui.TEXT_WARM);
-        SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.instructions"),
-                cx, top + 150, panelWidth - 32, SmithingGui.TEXT_DIM);
-        SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.durability_explainer"),
-                cx, top + 176, panelWidth - 32, SmithingGui.TEXT_DIM);
+        VanillaGui.display(g, cx - 60, top + 94, 120, 18);
+        VanillaGui.centered(g, font, ready, cx, top + 99, VanillaGui.DISPLAY_TEXT);
+        int y = top + 122;
+        y += 10 * VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.instructions"),
+                cx, y, panelWidth - 32, VanillaGui.LABEL, false) + 6;
+        VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.durability_explainer"),
+                cx, y, panelWidth - 32, VanillaGui.LABEL_DIM, false);
     }
 
     private void renderPlaying(GuiGraphics g) {
         int now = elapsed();
         float remaining = 1F - now / (float) Math.max(1, allowedMs);
-        SmithingGui.timeBar(g, left + 14, top + 29, panelWidth - 28, 6, remaining);
+        int x = left + 8;
+        int w = panelWidth - 16;
+        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.step"), x, top + 22, VanillaGui.LABEL, false);
         Component time = Component.translatable("screen.immersive_smithing.time_remaining", Math.max(0, (allowedMs - now + 999) / 1000));
-        g.drawString(font, time, left + panelWidth - 14 - font.width(time), top + 39, SmithingGui.TEXT_DIM, false);
-        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.step"), left + 14, top + 39, SmithingGui.TEXT_WARM, false);
+        g.drawString(font, time, x + w - font.width(time), top + 22, VanillaGui.LABEL, false);
+        SmithingGui.timeBar(g, x + 1, top + 33, w - 2, 5, remaining);
 
-        SmithingGui.well(g, left + 18, top + 54, 56, 50);
-        renderWorkpiece(g, left + 46, top + 77, 3F);
+        framedWorkpiece(g, x + 21, top + 66);
         int phaseCount = run.phases().size();
         int shown = Math.min(run.index() + 1, phaseCount);
-        int infoX = left + 86;
-        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.phase", shown, phaseCount), infoX, top + 54, SmithingGui.TEXT, false);
-        int cell = Math.min(24, (panelWidth - 102) / Math.max(1, phaseCount));
+        int infoX = x + 50;
+        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.phase", shown, phaseCount), infoX, top + 46, VanillaGui.LABEL, false);
+        int cell = Math.min(24, (w - 50) / Math.max(1, phaseCount));
         for (int i = 0; i < phaseCount; i++) {
             int px = infoX + i * cell;
-            int color = i < phaseResults.size() ? SmithingGui.ratingColor(phaseResults.get(i)) : 0xFF4A4038;
-            g.fill(px, top + 68, px + cell - 3, top + 79, SmithingGui.SOOT_DEEP);
-            g.fill(px, top + 79, px + cell - 3, top + 81, color);
-            if (cell >= 10) g.drawCenteredString(font, Integer.toString(i + 1), px + (cell - 3) / 2, top + 69,
-                    i == run.index() ? SmithingGui.TEXT_WARM : SmithingGui.TEXT_DIM);
-            if (i == run.index()) g.renderOutline(px - 1, top + 67, cell - 1, 15, SmithingGui.BRONZE);
+            VanillaGui.inset(g, px, top + 58, cell - 3, 14);
+            if (i < phaseResults.size()) g.fill(px + 1, top + 59, px + cell - 4, top + 71, SmithingGui.ratingColor(phaseResults.get(i)));
+            if (cell >= 10) {
+                Component number = Component.literal(Integer.toString(i + 1));
+                g.drawString(font, number, px + (cell - 3 - font.width(number)) / 2, top + 61, i < phaseResults.size() ? 0xFF000000 : VanillaGui.LABEL, false);
+            }
+            if (i == run.index()) g.renderOutline(px - 1, top + 57, cell - 1, 16, 0xFF000000);
         }
         if (!phaseResults.isEmpty()) {
             float sum = 0;
             for (float f : phaseResults) sum += f;
             int projected = Math.round(sum / phaseCount * 100F);
-            Component projectedQuality = Component.translatable("screen.immersive_smithing.projected", SmithingQuality.fromScore(projected).displayName());
-            List<net.minecraft.util.FormattedCharSequence> projectedLines = font.split(projectedQuality, panelWidth - 100);
-            for (int i = 0; i < projectedLines.size(); i++) {
-                g.drawString(font, projectedLines.get(i), infoX, top + 89 + i * 10, SmithingGui.TEXT_DIM, false);
-            }
+            // Quality colours (white Standard, aqua Fine) need the dark display to read.
+            VanillaGui.display(g, infoX, top + 76, w - 50, 14);
+            g.drawString(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_smithing.projected",
+                    SmithingQuality.fromScore(projected).displayName().getString()), w - 58), infoX + 4, top + 79, VanillaGui.DISPLAY_TEXT, false);
         }
 
-        // Track
+        // Track, in a dark display so the zone colours stay clear.
         float scale = SmithingGui.markerScale();
         int trackH = Math.round(16 * scale);
-        int trackWidth = panelWidth - 44;
-        int tx = left + 22;
-        int ty = top + 132 - trackH / 2;
-        SmithingGui.well(g, tx - 2, ty - 2, trackWidth + 4, trackH + 4);
-        g.fillGradient(tx, ty, tx + trackWidth, ty + trackH, StonebornGui.SURFACE, StonebornGui.INSET);
+        int displayTop = top + 98;
+        int displayHeight = trackH + 42;
+        VanillaGui.display(g, x, displayTop, w, displayHeight);
+        int trackWidth = w - 24;
+        int tx = x + 12;
+        int ty = displayTop + 10;
+        g.fill(tx, ty, tx + trackWidth, ty + trackH, 0xFF3A3A3A);
         for (int i = 0; i <= 12; i++) {
             int tickX = tx + i * (trackWidth - 1) / 12;
-            g.fill(tickX, ty + trackH - (i % 3 == 0 ? 5 : 3), tickX + 1, ty + trackH, 0xFF6B706B);
+            g.fill(tickX, ty + trackH - (i % 3 == 0 ? 5 : 3), tickX + 1, ty + trackH, 0xFF8B8B8B);
         }
         if (run.isComplete() || now > allowedMs) {
-            g.drawCenteredString(font, Component.translatable(now > allowedMs ? "screen.immersive_smithing.times_up" : "screen.immersive_smithing.finishing"),
-                    left + panelWidth / 2, ty + trackH / 2 - 4, SmithingGui.TEXT_DIM);
+            VanillaGui.centered(g, font, Component.translatable(now > allowedMs ? "screen.immersive_smithing.times_up" : "screen.immersive_smithing.finishing"),
+                    left + panelWidth / 2, ty + trackH / 2 - 4, VanillaGui.DISPLAY_TEXT);
         } else {
             ForgeMinigame.Phase phase = run.phases().get(run.index());
             int zoneL = tx + Math.round((phase.center() - phase.halfWidth()) * trackWidth);
@@ -520,9 +589,9 @@ public class ForgeMinigameScreen extends WorkshopScreen {
             g.fill(zoneL, ty, zoneR, ty + trackH, SmithingGui.zoneColor());
             g.fill(perfL, ty, Math.max(perfR, perfL + 1), ty + trackH, SmithingGui.perfectColor());
             // Brackets and a centre notch make the timing zone readable without relying on hue.
-            g.fill(zoneL, ty - 3, zoneR, ty - 2, SmithingGui.TEXT_WARM);
-            g.fill(zoneL, ty - 3, zoneL + 1, ty, SmithingGui.TEXT_WARM);
-            g.fill(zoneR - 1, ty - 3, zoneR, ty, SmithingGui.TEXT_WARM);
+            g.fill(zoneL, ty - 3, zoneR, ty - 2, VanillaGui.DISPLAY_TEXT);
+            g.fill(zoneL, ty - 3, zoneL + 1, ty, VanillaGui.DISPLAY_TEXT);
+            g.fill(zoneR - 1, ty - 3, zoneR, ty, VanillaGui.DISPLAY_TEXT);
             int centre = tx + Math.round(phase.center() * trackWidth);
             g.fill(centre - 2, ty + trackH + 3, centre + 3, ty + trackH + 5, SmithingGui.perfectColor());
 
@@ -543,27 +612,28 @@ public class ForgeMinigameScreen extends WorkshopScreen {
             }
         }
 
-        SmithingGui.well(g, left + 22, top + 164, panelWidth - 44, 23);
-        boolean feedback = lastAccuracy >= 0 && Util.getMillis() - lastFeedbackMs < 900;
-        g.drawCenteredString(font, feedback ? SmithingGui.rating(lastAccuracy)
-                        : Component.translatable("screen.immersive_smithing.forge.target_label"),
-                left + panelWidth / 2, top + 172, feedback ? SmithingGui.ratingColor(lastAccuracy) : SmithingGui.TEXT);
-        SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.instructions"),
-                left + panelWidth / 2, top + panelHeight - 27, panelWidth - 32, SmithingGui.TEXT_DIM);
+        long wall = Util.getMillis();
+        int labelMs = ClientConfig.get(ClientConfig.FEEDBACK_LABEL_MS);
+        boolean early = earlyMs > lastFeedbackMs && wall - earlyMs < labelMs;
+        boolean feedback = !early && lastAccuracy >= 0 && wall - lastFeedbackMs < labelMs;
+        Component label = early ? Component.translatable("screen.immersive_smithing.forge.too_early")
+                : feedback ? SmithingGui.rating(lastAccuracy) : Component.translatable("screen.immersive_smithing.forge.target_label");
+        VanillaGui.centered(g, font, Component.literal(font.plainSubstrByWidth(label.getString(), w - 16)), left + panelWidth / 2,
+                displayTop + displayHeight - 16, early ? 0xFFFFD66B : feedback ? SmithingGui.ratingColor(lastAccuracy) : VanillaGui.DISPLAY_TEXT);
+        VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.instructions"),
+                left + panelWidth / 2, displayTop + displayHeight + 6, w - 8, VanillaGui.LABEL_DIM, false);
     }
 
     private void renderResult(GuiGraphics g) {
         int cx = left + panelWidth / 2;
-        renderWorkpiece(g, cx, top + 62, 3F);
+        framedWorkpiece(g, cx, top + 50);
         Component headline = Component.translatable(resultTimedOut ? "screen.immersive_smithing.forge.timeout" : "screen.immersive_smithing.forge.complete");
-        g.drawCenteredString(font, headline, cx, top + 94, resultTimedOut ? SmithingGui.missColor() : SmithingGui.TEXT_WARM);
+        VanillaGui.centered(g, font, headline, cx, top + 80, resultTimedOut ? 0xFFAA0000 : VanillaGui.LABEL);
         Component quality = SmithingQuality.fromScore(resultScore).displayName();
         if (ClientConfig.get(ClientConfig.SHOW_NUMERIC_QUALITY_SCORES)) quality = Component.translatable("screen.immersive_smithing.quality_with_score", quality, resultScore);
-        int qualityLines = SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.durability", quality),
-                cx, top + 108, panelWidth - 36, SmithingGui.TEXT);
-        List<net.minecraft.util.FormattedCharSequence> lines = font.split(Component.translatable("screen.immersive_smithing.forge.next"), panelWidth - 40);
-        for (int i = 0; i < lines.size(); i++) {
-            g.drawCenteredString(font, lines.get(i), cx, top + 126 + qualityLines * 10 + i * 10, SmithingGui.TEXT_DIM);
-        }
+        VanillaGui.display(g, left + 16, top + 94, panelWidth - 32, 20);
+        VanillaGui.centered(g, font, Component.translatable("screen.immersive_smithing.forge.durability", quality), cx, top + 100, VanillaGui.DISPLAY_TEXT);
+        VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.next"), cx, top + 124,
+                panelWidth - 40, VanillaGui.LABEL_DIM, false);
     }
 }

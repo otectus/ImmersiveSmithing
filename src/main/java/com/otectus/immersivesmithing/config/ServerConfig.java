@@ -47,6 +47,7 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.IntValue TIMING_TOLERANCE_MS;
     public static final ForgeConfigSpec.IntValue MAX_LATENCY_COMPENSATION_MS;
     public static final ForgeConfigSpec.DoubleValue MAX_STATION_DISTANCE;
+    public static final ForgeConfigSpec.DoubleValue MAX_ASSIST_TIME_MULTIPLIER;
 
     public static final ForgeConfigSpec.DoubleValue MINIMUM_DURABILITY_MULTIPLIER;
     public static final ForgeConfigSpec.DoubleValue MAXIMUM_DURABILITY_MULTIPLIER;
@@ -78,6 +79,11 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.BooleanValue GRANT_GUIDE_BOOK_AUTOMATICALLY;
 
     public static final ForgeConfigSpec.BooleanValue SPARTAN_WEAPONRY_INTEGRATION;
+    public static final ForgeConfigSpec.BooleanValue EPIC_FIGHT_INTEGRATION;
+    public static final ForgeConfigSpec.BooleanValue SIMPLY_SWORDS_INTEGRATION;
+    public static final ForgeConfigSpec.BooleanValue EPIC_KNIGHTS_INTEGRATION;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> EPIC_KNIGHTS_DISABLED_ADDONS;
+    public static final ForgeConfigSpec.BooleanValue TERRAFIRMACRAFT_INTEGRATION;
     public static final ForgeConfigSpec.BooleanValue FIRE_VANILLA_CRAFT_EVENT;
     public static final ForgeConfigSpec.BooleanValue INHERIT_QUALITY_ON_CRAFT;
 
@@ -158,6 +164,9 @@ public final class ServerConfig {
                 .defineInRange("maxLatencyCompensationMs", 400, 0, 5000);
         MAX_STATION_DISTANCE = b.comment("Maximum distance in blocks between a player and the station they are working at.")
                 .defineInRange("maxStationDistance", 6.0, 2.0, 32.0);
+        MAX_ASSIST_TIME_MULTIPLIER = b.comment("Ceiling on the per-player time allowance other mods may grant at the forge and anvil",
+                        "(ISmithingAssistSource). 1 refuses all assistance; 1.5 allows up to half again the tool tier's time.")
+                .defineInRange("maxAssistTimeMultiplier", 1.5, 1.0, 3.0);
         b.pop();
 
         b.comment("Quality multipliers. A score of 50 is the midpoint between minimum and maximum.").push("quality");
@@ -213,13 +222,33 @@ public final class ServerConfig {
         b.comment("Built-in support for other mods. Changes need /reload.").push("integrations");
         SPARTAN_WEAPONRY_INTEGRATION = b.comment("Smith every Spartan Weaponry metal weapon with the built-in recipes. When off, Spartan Weaponry is left to automatic detection like any other mod.")
                 .define("spartanWeaponry", true);
+        EPIC_FIGHT_INTEGRATION = b.comment("Smith Epic Fight's metal weapons with the built-in recipes (the uchigatana included) and disable the crafting",
+                        "and smithing-table recipes they replace; adds a crafting recipe for the bokken. When off, every Epic Fight recipe is",
+                        "left exactly as Epic Fight ships it (automatic detection skips the mod too); weapons already graded keep their quality.")
+                .define("epicFight", true);
+        EPIC_KNIGHTS_INTEGRATION = b.comment("Smith Epic Knights and its add-ons' metal weapons, armour and shields with the built-in recipes and disable the",
+                        "native recipes they replace. Gilding, darkening, visor swaps, decorations and unique relics keep their own acquisition.",
+                        "When off, Epic Knights and every add-on are left exactly as they ship; pieces already graded keep their quality.")
+                .define("epicKnights", true);
+        EPIC_KNIGHTS_DISABLED_ADDONS = b.comment("Epic Knights mods (mod ids, e.g. \"slavicarmory\") to leave exactly as they ship while the others are integrated.")
+                .defineListAllowEmpty("epicKnightsDisabledAddons", List.of(), o -> o instanceof String);
+        TERRAFIRMACRAFT_INTEGRATION = b.comment("TerraFirmaCraft and Epic Knights of TerraFirma have their own metalworking. While false, Immersive Smithing never",
+                        "converts, disables or grades their equipment. True treats them like any other mod (automatic detection).")
+                .define("terraFirmaCraft", false);
+        SIMPLY_SWORDS_INTEGRATION = b.comment("Smith Simply Swords' metal weapons: automatic detection and suppression of its crafting and smithing-table",
+                        "recipes, and quality on its runic and unique weapons. Runic upgrades, rerolls and unique weapons always keep their",
+                        "native acquisition. When off, every Simply Swords recipe is left as shipped; weapons already graded keep their quality.")
+                .define("simplySwords", true);
         FIRE_VANILLA_CRAFT_EVENT = b.comment("Also fire the vanilla ItemCraftedEvent when a piece is quenched, so mods that reward crafting see forged items. ItemSmithedEvent is always posted.")
                 .define("fireVanillaCraftEvent", true);
-        INHERIT_QUALITY_ON_CRAFT = b.comment("When a crafting or smithing-table recipe turns one smithed piece into another (dyeing, an elemental upgrade), the result keeps the quality and the maker's mark.")
+        INHERIT_QUALITY_ON_CRAFT = b.comment("When a crafting recipe turns exactly one graded piece into other equipment (dyeing, an elemental upgrade, a sword",
+                        "made into a spear), the result keeps the quality and the maker's mark, already in the crafting preview.",
+                        "Smithing-table upgrades and rerolls carry the piece's data natively and are not affected by this option.")
                 .define("inheritQualityOnCraft", true);
         b.pop();
 
-        b.comment("Quality on gear found in the world (chests, mob loot tables, treasure bags). Only items the forge can make are graded.").push("lootQuality");
+        b.comment("Quality on gear found in the world (chests, mob loot tables, treasure bags). Graded: items the forge can make, plus",
+                "#immersive_smithing:quality_eligible (loot, runic and unique weapons of the supported weapon mods).").push("lootQuality");
         LOOT_QUALITY_MODE = b.comment("OFF: loot stays ungraded. STANDARD: scores stay inside the Standard band, so Fine and Masterwork are always someone's work. RANDOM: the villager distribution, Masterwork included.")
                 .defineEnum("mode", LootQualityMode.STANDARD);
         LOOT_QUALITY_EXCLUDED_TABLES = b.comment("Loot table ids (namespace:path) or whole namespaces that are never graded.")

@@ -4,6 +4,7 @@ import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.api.ISmithingEfficacyHandler;
 import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
 import com.otectus.immersivesmithing.compat.spartanweaponry.SpartanCompat;
+import com.otectus.immersivesmithing.registry.ModTags;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -19,7 +20,9 @@ import java.util.Optional;
 /**
  * Carries smithing efficacy to projectiles. A thrown Spartan Weaponry weapon uses its own quality; arrows and
  * bolts use the quality of the bow or crossbow that fired them. Base damage is scaled once, when the projectile
- * first enters a level; a persistent-data flag stops a second scaling after a dimension change.
+ * first enters a level; a persistent-data flag stops a second scaling after a dimension change. Projectiles in
+ * {@code #immersive_smithing:weapon_scaled_projectiles} (Simply Swords' thrown spears and swords) already read their
+ * damage from the thrown weapon's quality-adjusted attack damage at launch and are never scaled again.
  */
 @Mod.EventBusSubscriber(modid = ImmersiveSmithing.MOD_ID)
 public final class ProjectileEfficacy {
@@ -31,6 +34,7 @@ public final class ProjectileEfficacy {
     public static void onJoin(EntityJoinLevelEvent event) {
         if (event.loadedFromDisk() || event.getLevel().isClientSide()) return;
         if (!(event.getEntity() instanceof AbstractArrow arrow) || arrow.getPersistentData().getBoolean(SCALED)) return;
+        if (arrow.getType().is(ModTags.WEAPON_SCALED_PROJECTILES)) return;
         double efficacy = efficacy(sourceOf(arrow));
         if (Math.abs(efficacy - 1.0) < 1.0E-6) return;
         arrow.setBaseDamage(arrow.getBaseDamage() * efficacy);

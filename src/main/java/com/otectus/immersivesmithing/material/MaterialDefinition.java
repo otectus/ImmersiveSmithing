@@ -15,7 +15,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/** A material family as written in a datapack, before tags are resolved. */
+/**
+ * A material family as written in a datapack, before tags are resolved. With {@code sources_only} a file only adds
+ * sources to a family another file defines (an add-on's plates for steel); its other fields are ignored.
+ */
 public record MaterialDefinition(
         ResourceLocation family,
         @Nullable Component displayName,
@@ -24,7 +27,13 @@ public record MaterialDefinition(
         boolean requiresIgnition,
         @Nullable TagKey<Item> requiredFuelTag,
         int tint,
-        UpgradePolicy upgradePolicy) {
+        UpgradePolicy upgradePolicy,
+        boolean sourcesOnly) {
+
+    public MaterialDefinition(ResourceLocation family, @Nullable Component displayName, List<SourceDefinition> sources, float meltMultiplier,
+                              boolean requiresIgnition, @Nullable TagKey<Item> requiredFuelTag, int tint, UpgradePolicy upgradePolicy) {
+        this(family, displayName, sources, meltMultiplier, requiresIgnition, requiredFuelTag, tint, upgradePolicy, false);
+    }
 
     public record SourceDefinition(@Nullable TagKey<Item> tag, @Nullable ResourceLocation item, int units) {
         public String describe() {
@@ -75,14 +84,20 @@ public record MaterialDefinition(
         }
         UpgradePolicy policy = json.has("upgrade_policy")
                 ? UpgradePolicy.byId(GsonHelper.getAsString(json, "upgrade_policy")) : UpgradePolicy.SHAPE;
-        return new MaterialDefinition(family, name, List.copyOf(sources), melt, ignition, fuelTag, tint & 0xFFFFFF, policy);
+        return new MaterialDefinition(family, name, List.copyOf(sources), melt, ignition, fuelTag, tint & 0xFFFFFF, policy,
+                GsonHelper.getAsBoolean(json, "sources_only", false));
     }
 
-    /** Combines two definitions of the same family: sources are merged, scalar fields come from {@code later}. */
+    /**
+     * Combines two definitions of the same family: sources are merged, scalar fields come from {@code later} unless it
+     * only adds sources. The result stays sources-only until a full definition joins it.
+     */
     public MaterialDefinition merge(MaterialDefinition later) {
         List<SourceDefinition> merged = new ArrayList<>(sources);
         merged.addAll(later.sources);
-        return new MaterialDefinition(family, later.displayName != null ? later.displayName : displayName, List.copyOf(merged),
-                later.meltMultiplier, later.requiresIgnition, later.requiredFuelTag, later.tint, later.upgradePolicy);
+        MaterialDefinition fields = later.sourcesOnly ? this : later;
+        return new MaterialDefinition(family, fields.displayName != null ? fields.displayName : displayName, List.copyOf(merged),
+                fields.meltMultiplier, fields.requiresIgnition, fields.requiredFuelTag, fields.tint, fields.upgradePolicy,
+                sourcesOnly && later.sourcesOnly);
     }
 }

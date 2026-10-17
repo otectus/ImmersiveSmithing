@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:netherite_roundshield"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:wood_roundshield"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:wood_roundshield"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "magistuarmory:netherite_roundshield"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:shield",
+  "replaces": [
+    "magistuarmory:netherite_roundshield_smithing"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "antiquelegacy"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "antiquelegacy:heddernheim_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:feather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:plates/bronze"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "antiquelegacy:heddernheim_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "antiquelegacy:heddernheim_helmet"
+  ]
+}

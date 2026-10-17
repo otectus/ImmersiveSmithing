@@ -1,6 +1,8 @@
 package com.otectus.immersivesmithing.minigame;
 
 import com.otectus.immersivesmithing.advancement.ModAdvancements;
+import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
+import com.otectus.immersivesmithing.api.SmithingStation;
 import com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.config.ServerConfig;
@@ -18,6 +20,7 @@ import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
 import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
 import com.otectus.immersivesmithing.recipe.AuxInventory;
 import com.otectus.immersivesmithing.recipe.ForgeRecipeSelection;
+import com.otectus.immersivesmithing.recipe.ResultAssembler;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.recipe.SmithingRecipe;
 import com.otectus.immersivesmithing.registry.ModSounds;
@@ -101,11 +104,12 @@ public final class SessionManager {
 
         List<OpenForgeScreenPacket.Entry> entries = new ArrayList<>();
         for (SmithingRecipe r : eligible) {
-            entries.add(new OpenForgeScreenPacket.Entry(r.getId(), r.result().copy(), r.metalUnits(),
+            entries.add(new OpenForgeScreenPacket.Entry(r.getId(), r.result().copy(), ForgeRecipeSelection.unitsFor(player, r),
                     r.auxiliary().stream().map(a -> a.displayStack()).toList()));
         }
         Component familyName = forge.familyData().map(f -> f.displayName()).orElse(Component.literal("?"));
-        send(player, new OpenForgeScreenPacket(session.id, forge.getBlockPos(), familyName, forge.moltenUnits(), tier.forgeTimeMs(), entries));
+        send(player, new OpenForgeScreenPacket(session.id, forge.getBlockPos(), familyName, forge.moltenUnits(),
+                ImmersiveSmithingAPI.assistedTimeMs(player, SmithingStation.FORGE, tier.forgeTimeMs()), entries));
         player.level().playSound(null, forge.getBlockPos(), ModSounds.TONGS_GRAB.get(), SoundSource.PLAYERS, 0.7F, 1.0F);
     }
 
@@ -126,7 +130,14 @@ public final class SessionManager {
             cancel(session, player, true, message("tool_changed"));
             return;
         }
-        if (!forge.isReady() || !recipe.family().equals(forge.family()) || forge.moltenUnits() < recipe.metalUnits()) {
+        // The authoritative gate check: the offer list was filtered, but levels and rules may have moved since.
+        Optional<Component> denied = ImmersiveSmithingAPI.recipeDenial(player, recipe);
+        if (denied.isPresent()) {
+            cancel(session, player, true, denied.get());
+            return;
+        }
+        int units = ImmersiveSmithingAPI.metalUnits(player, recipe);
+        if (!forge.isReady() || !recipe.family().equals(forge.family()) || forge.moltenUnits() < units) {
             cancel(session, player, true, message("not_enough_metal_now"));
             return;
         }
@@ -138,9 +149,11 @@ public final class SessionManager {
         }
         forge.beginSession(player.getUUID(), escrow);
         session.recipe = recipe;
+        session.metalUnits = units;
         session.pattern = PatternRegistry.forge(recipe.forgePattern());
+        // The pattern keeps the recipe's own size: a discount changes the bill, not the work.
         session.run = new ForgeRun(ForgeMinigame.phases(session.pattern, session.seed, recipe.metalUnits()), session.pattern.transitionMs());
-        session.allowedMs = session.tier.forgeTimeMs();
+        session.allowedMs = ImmersiveSmithingAPI.assistedTimeMs(player, SmithingStation.FORGE, session.tier.forgeTimeMs());
         int ready = ServerConfig.get(ServerConfig.READY_DELAY_MS);
         session.startMs = Util.getMillis() + ready;
         send(player, new ForgeStartPacket(session.id, session.seed, session.pattern, recipe.metalUnits(), session.allowedMs, ready, recipe.result().copy()));
@@ -178,11 +191,19 @@ public final class SessionManager {
         }
         int score = timedOut ? 0 : session.run.score();
         SmithingRecipe recipe = session.recipe;
+        // The piece is built from what the escrow really holds before any metal or component is consumed; if that
+        // fails, the session is cancelled and the escrow refunded exactly once.
+        Optional<ItemStack> target = ResultAssembler.assemble(recipe, forge.escrowView());
+        if (target.isEmpty()) {
+            cancel(session, player, true, message("result_unavailable"));
+            return;
+        }
         unregister(session);
-        forge.completeSession(recipe.metalUnits());
+        int units = session.metalUnits > 0 ? session.metalUnits : recipe.metalUnits();
+        forge.completeSession(units);
 
         ItemStack tongs = player.getItemInHand(session.hand);
-        WorkpieceData workpiece = new WorkpieceData(recipe.result().copy(), recipe.getId(), recipe.family(), recipe.metalUnits(),
+        WorkpieceData workpiece = new WorkpieceData(target.get(), recipe.getId(), recipe.family(), units,
                 score, -1, false, WorkpieceState.FORGED, recipe.anvilPattern());
         WorkpieceCodec.setHeld(tongs, workpiece);
         if (!player.getAbilities().instabuild) SmithingToolItem.wearWithoutBreaking(tongs);
@@ -207,7 +228,8 @@ public final class SessionManager {
                 hand, tier, RANDOM.nextLong(), Util.getMillis());
         session.pattern = PatternRegistry.anvil(workpiece.anvilPattern());
         session.run = new AnvilRun(session.pattern, session.seed);
-        session.allowedMs = Math.round(tier.anvilTimeMs() * session.pattern.timeMultiplier());
+        session.allowedMs = ImmersiveSmithingAPI.assistedTimeMs(player, SmithingStation.ANVIL,
+                Math.round(tier.anvilTimeMs() * session.pattern.timeMultiplier()));
         int ready = ServerConfig.get(ServerConfig.READY_DELAY_MS);
         session.startMs = Util.getMillis() + ready;
         register(session);

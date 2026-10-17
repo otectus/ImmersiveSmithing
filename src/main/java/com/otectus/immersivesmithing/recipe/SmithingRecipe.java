@@ -40,6 +40,19 @@ public class SmithingRecipe implements Recipe<Container> {
     private final boolean auto;
     @Nullable
     private final ResourceLocation sourceRecipe;
+    /**
+     * Server side only: whether a consumed equipment auxiliary hands its data (enchantments, name, lore, damage) to the
+     * result, as a smithing-table upgrade does. Explicit recipes default to keeping it ({@code keep_base_data});
+     * automatic ones follow their source recipe. See {@link ResultAssembler}.
+     */
+    private boolean keepBaseData = true;
+    /**
+     * Server side only: the native recipes this recipe takes over ({@code replaces}, disabled while it is active) and the
+     * ones it is merely derived from ({@code derived_from}). A recipe with either list is active only while at least one
+     * of the recipes it names is loaded, so a pack that removes the native recipe also removes the forge alternative.
+     */
+    private List<ResourceLocation> replaces = List.of();
+    private List<ResourceLocation> derivedFrom = List.of();
 
     // Presentation data. Filled in on the server during rebuild and carried to clients over the network.
     private Component familyName;
@@ -70,6 +83,25 @@ public class SmithingRecipe implements Recipe<Container> {
     @Nullable public ResourceLocation explicitAnvilPattern() { return anvilPattern; }
     public boolean isAuto() { return auto; }
     @Nullable public ResourceLocation sourceRecipe() { return sourceRecipe; }
+    public boolean keepsBaseData() { return keepBaseData; }
+    SmithingRecipe keepBaseData(boolean keep) {
+        this.keepBaseData = keep;
+        return this;
+    }
+    /** Native recipes this recipe takes over: disabled while it is active. Server side only. */
+    public List<ResourceLocation> replaces() { return replaces; }
+    /** Every native recipe this recipe follows (replaced or only derived from); empty for a standalone recipe. */
+    public List<ResourceLocation> follows() {
+        if (derivedFrom.isEmpty()) return replaces;
+        List<ResourceLocation> all = new ArrayList<>(replaces);
+        derivedFrom.forEach(id -> { if (!all.contains(id)) all.add(id); });
+        return all;
+    }
+    SmithingRecipe sources(List<ResourceLocation> replaces, List<ResourceLocation> derivedFrom) {
+        this.replaces = List.copyOf(replaces);
+        this.derivedFrom = List.copyOf(derivedFrom);
+        return this;
+    }
     public Component familyName() { return familyName; }
     public List<List<ItemStack>> metalDisplay() { return metalDisplay; }
 

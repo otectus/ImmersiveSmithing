@@ -49,6 +49,7 @@
   "jitter": 0.03,
   "time_multiplier": 1.0,
   "categories": [
-    "spartanweaponry:sabers"
+    "spartanweaponry:sabers",
+    "immersive_smithing:sabers"
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "epicfight:bokken",
+      "required": false
+    },
+    {
+      "id": "epicfight:diamond_tachi",
+      "required": false
+    },
+    {
+      "id": "epicfight:golden_tachi",
+      "required": false
+    },
+    {
+      "id": "epicfight:iron_tachi",
+      "required": false
+    },
+    {
+      "id": "epicfight:netherite_tachi",
+      "required": false
+    },
+    {
+      "id": "epicfight:stone_tachi",
+      "required": false
+    },
+    {
+      "id": "epicfight:uchigatana",
+      "required": false
+    },
+    {
+      "id": "epicfight:wooden_tachi",
+      "required": false
+    },
+    {
+      "id": "simplyswords:diamond_katana",
+      "required": false
+    },
+    {
+      "id": "simplyswords:gold_katana",
+      "required": false
+    },
+    {
+      "id": "simplyswords:iron_katana",
+      "required": false
+    },
+    {
+      "id": "simplyswords:netherite_katana",
+      "required": false
+    },
+    {
+      "id": "simplyswords:runic_katana",
+      "required": false
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package com.otectus.immersivesmithing.packtest;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.item.SmithingTier;
+import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
@@ -22,17 +23,25 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/** Server half of the opt-in two-client remote tool-animation check. */
+/**
+ * Server half of the opt-in two-client check: remote tool animations, then an anvil pickup both clients must see
+ * (the workpiece shown before, gone after, the leader's tongs loaded) on a dedicated server.
+ */
 @Mod.EventBusSubscriber(modid = PackTestAgent.MOD_ID)
 public final class MultiplayerPackTestFixture {
     private static boolean staged;
+    private static boolean anvilStaged;
+    private static boolean anvilPicked;
+    static final BlockPos ANVIL = new BlockPos(2, 84, 1);
     private static boolean hammerStaged;
 
     @SubscribeEvent
     public static void serverTick(TickEvent.ServerTickEvent event) {
         if (!Boolean.getBoolean("immersive_smithing.packtest.multiplayer") || event.phase != TickEvent.Phase.END) return;
         if (staged) {
-            stageHammerWhenReady(event.getServer().getPlayerList().getPlayerByName("VisualLeader"));
+            ServerPlayer leader = event.getServer().getPlayerList().getPlayerByName("VisualLeader");
+            stageHammerWhenReady(leader);
+            anvilPhase(event.getServer().overworld(), leader);
             return;
         }
         if (event.getServer().getPlayerList().getPlayerCount() < 2) return;
@@ -67,6 +76,9 @@ public final class MultiplayerPackTestFixture {
         try {
             Path shared = Path.of(System.getProperty("immersive_smithing.packtest.shared"));
             Files.createDirectories(shared);
+            // Before server-ready, so a client that sees the marker always finds the recipe count.
+            Files.writeString(shared.resolve("server-recipes"), "count=" + event.getServer().getRecipeManager().getRecipes().size()
+                    + "\nsummary=" + SmithingData.current().report().summary() + "\n", StandardCharsets.UTF_8);
             Files.writeString(shared.resolve("server-ready"), "two players staged\n", StandardCharsets.UTF_8);
         } catch (Exception failure) {
             ImmersiveSmithing.LOGGER.error("PACKTEST multiplayer fixture could not write ready marker", failure);
@@ -84,6 +96,37 @@ public final class MultiplayerPackTestFixture {
             Files.writeString(shared.resolve("hammer-ready"), "remote hammer staged\n", StandardCharsets.UTF_8);
         } catch (Exception failure) {
             ImmersiveSmithing.LOGGER.error("PACKTEST multiplayer fixture could not stage hammer", failure);
+        }
+    }
+
+    /** Places a workpiece on an anvil once both clients finished the swing checks, then picks it up with the leader's tongs. */
+    private static void anvilPhase(ServerLevel level, ServerPlayer leader) {
+        if (leader == null || anvilPicked) return;
+        try {
+            Path shared = Path.of(System.getProperty("immersive_smithing.packtest.shared"));
+            if (!anvilStaged && Files.exists(shared.resolve("leader-swings-done")) && Files.exists(shared.resolve("peer-swings-done"))) {
+                level.setBlockAndUpdate(ANVIL, com.otectus.immersivesmithing.registry.ModBlocks.SMITHS_ANVIL.get().defaultBlockState()
+                        .setValue(com.otectus.immersivesmithing.block.SmithsAnvilBlock.FACING, net.minecraft.core.Direction.SOUTH));
+                ((com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity) level.getBlockEntity(ANVIL)).setWorkpiece(
+                        new WorkpieceData(new ItemStack(Items.IRON_SWORD), ImmersiveSmithing.id("packtest"),
+                                new ResourceLocation("minecraft", "iron"), 18, 80, -1, false, WorkpieceState.FORGED,
+                                ImmersiveSmithing.id("sword")));
+                leader.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, new ItemStack(ModItems.tongs(SmithingTier.NETHERITE)));
+                anvilStaged = true;
+                Files.writeString(shared.resolve("anvil-placed"), "workpiece on the anvil, leader holds empty tongs\n", StandardCharsets.UTF_8);
+            }
+            if (anvilStaged && Files.exists(shared.resolve("leader-anvil-seen")) && Files.exists(shared.resolve("peer-anvil-seen"))) {
+                level.getBlockState(ANVIL).use(level, leader, net.minecraft.world.InteractionHand.MAIN_HAND,
+                        new net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3.atCenterOf(ANVIL),
+                                net.minecraft.core.Direction.UP, ANVIL, false));
+                anvilPicked = true;
+                boolean empty = level.getBlockEntity(ANVIL) instanceof com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity anvil
+                        && !anvil.hasWorkpiece();
+                Files.writeString(shared.resolve("anvil-picked"), "server_empty=" + empty + " tongs_loaded="
+                        + WorkpieceCodec.isHolding(leader.getMainHandItem()) + "\n", StandardCharsets.UTF_8);
+            }
+        } catch (Exception failure) {
+            ImmersiveSmithing.LOGGER.error("PACKTEST multiplayer fixture could not run the anvil phase", failure);
         }
     }
 

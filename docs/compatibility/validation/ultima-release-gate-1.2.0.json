@@ -1,0 +1,327 @@
+{
+  "pass": true,
+  "freeze": "OK",
+  "title_seconds": 70.86125469207764,
+  "elapsed_seconds": 244,
+  "exit_code": 0,
+  "agent_result": {
+    "pass": true,
+    "reason": "all visual, data and runtime checks passed",
+    "title_ms": 41548,
+    "world_ms": 111760,
+    "checks": {
+      "pack_screens_settled_ticks": 70,
+      "summary": "20 material families, 326 explicit and 195 automatic smithing recipes, 442 crafting recipes disabled, 5 kept, 21 equipment recipes skipped",
+      "smithing_data_built": true,
+      "vanilla_explicit_recipes": true,
+      "material_families": 20,
+      "iron_sword_crafting_disabled": true,
+      "spartan_iron_longsword": true,
+      "spartan_netherite_longsword": true,
+      "spartan_iron_javelin": true,
+      "spartan_shields_iron_basic": true,
+      "spartan_shields_netherite_upgrade": true,
+      "skipped_equipment": 21,
+      "mods_loaded": 377,
+      "empty_station_count": 32,
+      "gallery_station_count": 52,
+      "inventory_tool_variants": 12,
+      "anvil_pickup_1_server_client_tongs": "false/false/true",
+      "anvil_pickup_1": true,
+      "anvil_place_back_server_client_tongs": "true/true/false",
+      "anvil_place_back": true,
+      "anvil_pickup_2_server_client_tongs": "false/false/true",
+      "anvil_pickup_2": true,
+      "gui_scale_1": {
+        "scale": 1,
+        "width": 1280,
+        "height": 720
+      },
+      "gui_scale_2": {
+        "scale": 2,
+        "width": 480,
+        "height": 360
+      },
+      "gui_scale_3": {
+        "scale": 3,
+        "width": 427,
+        "height": 240
+      },
+      "gui_minimum_320x240": true,
+      "gui_minimum_probe": {
+        "requested_framebuffer": "960x720",
+        "logical_width": 320,
+        "logical_height": 240,
+        "exact_320x240": true
+      },
+      "gui_fitted_minimum_viewport": true,
+      "inventory_quality_tooltip_rendered": true,
+      "guide_search_keyboard_pagination_both_layouts": true,
+      "accessibility_mode": "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles",
+      "accessibility_mode_applied": true,
+      "jei_status": "smithing category opened",
+      "resource_reload": true,
+      "jei_runtime_available": true,
+      "quench_effect_source": "real SmithsTroughBlock.use server action",
+      "grind_effect_source": "real SmithsGrindstoneBlock.use confirmation action",
+      "anvil_effect_source": "server StationEffectPacket injection; minigame strike remains server-authoritative",
+      "frame_measurement_settings": {
+        "vsync": false,
+        "frame_limit": "260 (vanilla maximum/unlimited)",
+        "render_distance": 6,
+        "camera": "fixed spectator",
+        "gl_vendor": "NVIDIA Corporation",
+        "gl_renderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "gl_version": "3.2.0 NVIDIA 615.78.08"
+      },
+      "frame_times_empty": {
+        "label": "empty",
+        "station_count": 32,
+        "warmup_frames": 60,
+        "minimum_sample_frames": 180,
+        "sample_frames": 599,
+        "elapsed_sample_ms": 3029.77,
+        "average_interval_ms": 5.06,
+        "p50_interval_ms": 4.47,
+        "p95_interval_ms": 9.17,
+        "average_render_tick_ms": 4.35,
+        "p50_render_tick_ms": 4.13,
+        "p95_render_tick_ms": 5.85,
+        "average_fps": 197.64
+      },
+      "active_station_count": 32,
+      "frame_times_32_active": {
+        "label": "active",
+        "station_count": 32,
+        "warmup_frames": 60,
+        "minimum_sample_frames": 180,
+        "sample_frames": 862,
+        "elapsed_sample_ms": 3040.44,
+        "average_interval_ms": 3.53,
+        "p50_interval_ms": 3.25,
+        "p95_interval_ms": 6.59,
+        "average_render_tick_ms": 3.04,
+        "p50_render_tick_ms": 2.97,
+        "p95_render_tick_ms": 3.86,
+        "average_fps": 283.4
+      },
+      "frame_measurement_real_render_frames": true,
+      "gui_scale_4": {
+        "scale": 4,
+        "width": 320,
+        "height": 240
+      },
+      "gui_scale_4_rendered": true,
+      "accessibility_settings_restored": true
+    }
+  },
+  "own_stack_frames": [],
+  "own_error_lines": [],
+  "crash_reports": [],
+  "frames": [
+    [
+      30.1,
+      0.0,
+      "0128b4deed644a1dbcc4bbf283335842",
+      "0030.png"
+    ],
+    [
+      35.7,
+      0.0,
+      "0128b4deed644a1dbcc4bbf283335842",
+      "0035.png"
+    ],
+    [
+      41.0,
+      0.0,
+      "0128b4deed644a1dbcc4bbf283335842",
+      "0040.png"
+    ],
+    [
+      46.1,
+      0.932,
+      "c5c5968fe60762b3ab3894e670025b9a",
+      "0046.png"
+    ],
+    [
+      51.3,
+      0.914,
+      "e7197d808c63864728a26c7677be0832",
+      "0051.png"
+    ],
+    [
+      56.4,
+      0.914,
+      "adbcce8f437a2f59a60295f559b8b589",
+      "0056.png"
+    ],
+    [
+      61.5,
+      0.914,
+      "adbcce8f437a2f59a60295f559b8b589",
+      "0061.png"
+    ],
+    [
+      66.7,
+      0.914,
+      "3c320e756dba33fdfdc386f877643326",
+      "0066.png"
+    ],
+    [
+      71.9,
+      0.0,
+      "4f8c036fea78142d12bf5b071ce92a02",
+      "0071.png"
+    ],
+    [
+      77.0,
+      0.0,
+      "4f8c036fea78142d12bf5b071ce92a02",
+      "0077.png"
+    ],
+    [
+      82.2,
+      0.0,
+      "d6570cc5bd27c45086ae1bce25927f41",
+      "0082.png"
+    ],
+    [
+      87.3,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0087.png"
+    ],
+    [
+      92.4,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0092.png"
+    ],
+    [
+      97.5,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0097.png"
+    ],
+    [
+      102.5,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0102.png"
+    ],
+    [
+      107.6,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0107.png"
+    ],
+    [
+      112.7,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0112.png"
+    ],
+    [
+      117.7,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0117.png"
+    ],
+    [
+      122.8,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0122.png"
+    ],
+    [
+      127.9,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0127.png"
+    ],
+    [
+      133.0,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0132.png"
+    ],
+    [
+      138.0,
+      0.0,
+      "1b4ee9d8d65bf03b607a728184cd53bf",
+      "0138.png"
+    ],
+    [
+      178.4,
+      0.0,
+      "ffe4021946e3faca80b574c5ca10364d",
+      "0178.png"
+    ],
+    [
+      183.5,
+      0.0,
+      "c7cb96f308c7ae274dd95e0ac97c61e5",
+      "0183.png"
+    ],
+    [
+      188.6,
+      0.906,
+      "ebb2f754909707ea2dc859c58b80eb9f",
+      "0188.png"
+    ],
+    [
+      193.7,
+      0.906,
+      "ebb2f754909707ea2dc859c58b80eb9f",
+      "0193.png"
+    ],
+    [
+      198.8,
+      0.906,
+      "ebb2f754909707ea2dc859c58b80eb9f",
+      "0198.png"
+    ],
+    [
+      203.8,
+      0.906,
+      "ebb2f754909707ea2dc859c58b80eb9f",
+      "0203.png"
+    ],
+    [
+      208.9,
+      0.906,
+      "ebb2f754909707ea2dc859c58b80eb9f",
+      "0208.png"
+    ],
+    [
+      214.0,
+      0.0,
+      "d6321248bc7e3f0bed7400dcafc12deb",
+      "0214.png"
+    ],
+    [
+      219.1,
+      0.0,
+      "fcf884d78b846841d6c57881beac85a5",
+      "0219.png"
+    ],
+    [
+      224.2,
+      0.0,
+      "3986d91d2daab2ac5db3e30317d90b4f",
+      "0224.png"
+    ],
+    [
+      229.2,
+      0.0,
+      "6fc9950c471cb8b861c05ba54ff4826c",
+      "0229.png"
+    ],
+    [
+      234.4,
+      0.0,
+      "433bb8112cdd7e032b65e7dea5a4c418",
+      "0234.png"
+    ]
+  ]
+}

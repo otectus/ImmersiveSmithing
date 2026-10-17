@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:kotsk_gold_cloak_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:gilded_steel",
+  "metal_units": 22,
+  "result": {
+    "item": "ekotsk:kotsk_gold_cloak_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "ekotsk:kotsk_gold_cloak_helmet"
+  ]
+}

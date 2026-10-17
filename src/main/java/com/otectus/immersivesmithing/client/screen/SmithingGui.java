@@ -6,37 +6,19 @@ import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
-/** Stoneborn workshop surfaces, with minigame colors and cues kept accessible. */
-public final class SmithingGui extends StonebornGui {
+/**
+ * The minigames' own indicators, drawn inside the dark displays of the vanilla screens ({@link VanillaGui#display}):
+ * timing zones, strike targets, ratings and cue sounds. Colours honour the client's high-contrast and colorblind
+ * options, every state also has a label or a shape, and none of this changes a scoring window.
+ */
+public final class SmithingGui {
+    /** Target sprites: ring {@code (96,0,64,64)} and disc {@code (160,0,64,64)}. Replaceable by resource packs. */
     public static final ResourceLocation TEXTURE = ImmersiveSmithing.id("textures/gui/smithing.png");
-
-    public static final int SOOT = SURFACE;
-    public static final int SOOT_DEEP = INSET;
-    public static final int TIMBER = BORDER;
-    public static final int BRONZE = BRASS;
-    public static final int HOT_ORANGE = 0xFFF08A38;
-    public static final int ROW_FOCUSED = ROW_SELECTED;
-
-    public static void panel(GuiGraphics g, int x, int y, int w, int h) {
-        StonebornGui.panel(g, x, y, w, h);
-        g.fill(x + 6, y + 6, x + w - 6, y + 22, SURFACE);
-        g.fill(x + 8, y + 24, x + w - 8, y + h - 8, SURFACE);
-    }
-
-    public static int drawWrappedCentered(GuiGraphics g, net.minecraft.client.gui.Font font, Component text,
-                                          int centerX, int y, int width, int color) {
-        java.util.List<net.minecraft.util.FormattedCharSequence> lines = font.split(text, width);
-        for (int i = 0; i < lines.size(); i++) {
-            g.drawCenteredString(font, lines.get(i), centerX, y + i * 10, color);
-        }
-        return lines.size();
-    }
 
     /** Draws the ring (outline) or disc sprite centred on (cx, cy), tinted with an ARGB colour. */
     public static void circle(GuiGraphics g, float cx, float cy, float radius, boolean ring, int argb) {
@@ -51,14 +33,12 @@ public final class SmithingGui extends StonebornGui {
         RenderSystem.disableBlend();
     }
 
-    /** A horizontal time bar that warms from gold to red as it empties. */
+    /** The time left as a vanilla bar: amber while there is time, then red (orange when colorblind-safe). */
     public static void timeBar(GuiGraphics g, int x, int y, int w, int h, float remaining) {
-        well(g, x - 1, y - 1, w + 2, h + 2);
-        int filled = Math.round(w * Math.max(0F, Math.min(1F, remaining)));
         int color = remaining > 0.25F ? 0xFFE0A030 : (ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFFFF9F1C : 0xFFD04030);
-        if (filled > 0) g.fill(x, y, x + filled, y + h, color);
-        if (filled > 1 && h > 2) g.fill(x, y, x + filled, y + 1, 0xFFFFD999);
-        for (int i = 1; i < 4; i++) g.fill(x + w * i / 4, y, x + w * i / 4 + 1, y + h, 0x80302A24);
+        VanillaGui.bar(g, x, y, w, h, remaining, color);
+        // Quarter marks make the remaining time readable without colour.
+        for (int i = 1; i < 4; i++) g.fill(x + w * i / 4, y, x + w * i / 4 + 1, y + h, 0x80000000);
     }
 
     public static int zoneColor() {
@@ -66,10 +46,9 @@ public final class SmithingGui extends StonebornGui {
         return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFF3D8BFF : 0xFFE07A2C;
     }
 
-    /** Fill of an anvil strike target: the same hot orange as the forge zone, with a yellow centre on top. */
+    /** Fill of an anvil strike target: the same colour as the forge zone, with a bright centre on top. */
     public static int targetColor() {
-        if (ClientConfig.get(ClientConfig.HIGH_CONTRAST_MINIGAMES)) return 0xFFFFFFFF;
-        return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFF3D8BFF : 0xFFE07A2C;
+        return zoneColor();
     }
 
     public static int perfectColor() {
@@ -89,7 +68,7 @@ public final class SmithingGui extends StonebornGui {
         return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFFFF9F1C : 0xFFE04848;
     }
 
-    /** "Perfect!", "Good", "Rough" or "Miss" for an accuracy in 0..1. */
+    /** "Perfect!", "Good", "Rough" or "Miss" for an accuracy in 0..1: the words carry the result, colour only adds to it. */
     public static Component rating(float accuracy) {
         String key = accuracy >= 0.9F ? "perfect" : accuracy >= 0.6F ? "good" : accuracy > 0F ? "rough" : "miss";
         return Component.translatable("minigame.immersive_smithing.rating." + key);

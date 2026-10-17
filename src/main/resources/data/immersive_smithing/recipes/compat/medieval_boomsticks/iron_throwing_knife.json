@@ -1,0 +1,36 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "medieval_boomsticks"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "medieval_boomsticks",
+      "versions": "[1.2,1.3)"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "medieval_boomsticks:iron_throwing_knife"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "medieval_boomsticks:iron_throwing_knife"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:throwing_knife",
+  "replaces": [
+    "medieval_boomsticks:iron_throwing_knife"
+  ]
+}

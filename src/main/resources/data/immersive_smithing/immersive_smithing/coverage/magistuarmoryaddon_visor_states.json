@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmoryaddon"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quick_swap"
+    }
+  ],
+  "mod": "magistuarmoryaddon",
+  "policies": [
+    {
+      "items": [
+        "magistuarmoryaddon:opened_sallet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "the open visor of magistuarmory:sallet, switched with Swappable Helms",
+      "state_of": "magistuarmory:sallet"
+    }
+  ]
+}

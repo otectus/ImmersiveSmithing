@@ -47,7 +47,8 @@ public final class StationGameTests {
     @GameTest(template = "empty")
     public static void roundedStationsKeepPickingSurfaces(GameTestHelper h) {
         var forge = ModBlocks.SMITHS_FORGE.get().defaultBlockState().getShape(h.getLevel(), h.absolutePos(STATION));
-        h.assertTrue(!occupies(forge, 1, 1, 1), "Forge corners should be clear outside its round foundation");
+        h.assertTrue(occupies(forge, 1, 1, 1), "The forge stands on a square plinth out to its corners");
+        h.assertTrue(!occupies(forge, 8, 4, 2), "The firebox mouth is open at the front");
         h.assertTrue(occupies(forge, 8, 1, 8), "Forge foundation supports the hearth");
         h.assertTrue(!occupies(forge, 8, 12, 8), "Forge basin remains open for top loading");
         h.assertTrue(occupies(forge, 8, 13.5, 1), "Forge rim remains pickable");

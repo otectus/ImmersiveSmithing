@@ -1,0 +1,9 @@
+Alternating station benchmark series, 2026-10-14 (load average: 1, 5, 15 minutes, at start and end of each run).
+after-1   11:35:43-11:38:28  load 3.28 -> 4.03
+before-1  11:38:28-11:41:24  load 4.03 -> 3.61
+after-2   11:41:24-11:44:15  load 3.61 -> 4.25
+before-2  11:44:15-11:47:06  load 4.25 -> 5.37
+after-3   11:47:06-11:50:22  load 5.37 -> 11.90
+before-3  11:50:22 early-window handoff failed under load 17.39 (no result); rerun 11:51:20-11:54:47 load 17.25 -> 15.46
+Another session was compiling and packaging an unrelated project on the same machine throughout; runs 3 overlap its
+heaviest phase.

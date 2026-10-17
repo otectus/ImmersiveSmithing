@@ -45,17 +45,35 @@ minecraft {
             mods { immersive_smithing { source sourceSets.main } }
         }
         client {
-            if (project.hasProperty('smokeTest')) {
+            if (project.hasProperty('smokeTest') || project.hasProperty('stationBenchmark')) {
                 property 'immersive_smithing.packtest.output', file('run/packtest').absolutePath
+                // The optional mods put into the run are also checked: their recipes, kept sources and tags.
+                property 'immersive_smithing.packtest.expect', [project.hasProperty('compatMods') ? 'spartan,shields,upgrades' : null,
+                        project.hasProperty('epicFight') ? 'epicfight' : null,
+                        project.hasProperty('epicKnights') ? 'epicknights' : null,
+                        project.hasProperty('simplySwords') ? 'simplyswords' : null].findAll().join(',')
+                // -PstationBenchmark=<label>: the agent measures the station scenes instead of the smoke test and writes
+                // run/packtest/station-benchmark-<label>.json.
+                if (project.hasProperty('stationBenchmark')) {
+                    property 'immersive_smithing.packtest.benchmark', project.property('stationBenchmark').toString() ?: 'current'
+                }
                 mods { immersive_smithing_packtest { source sourceSets.packTest } }
             }
         }
         server { args '--nogui' }
         gameTestServer {
             workingDirectory project.file('run-gametest')
+            // The coverage GameTests compare the live catalogs with these checked-in inventories.
+            property 'immersive_smithing.manifestDir', file('docs/compatibility/inventory').absolutePath
+            // -PregistryDump=ns1,ns2 (or all): RegistryDumpGameTests writes the live registry of those mods to logs/.
+            if (project.hasProperty('registryDump')) property 'immersive_smithing.registryDump', project.property('registryDump').toString()
             mods { immersive_smithing { source sourceSets.gameTest } }
         }
     }
+}
+
+configurations {
+    devRemap { transitive = false }
 }
 
 repositories {
@@ -86,6 +104,106 @@ dependencies {
         runtimeOnly fg.deobf("maven.modrinth:spartan-weaponry:${spartan_weaponry_modrinth_id}")
         runtimeOnly fg.deobf("maven.modrinth:spartan-shields:${spartan_shields_modrinth_id}")
         runtimeOnly fg.deobf("maven.modrinth:immersive-armors:${immersive_armors_modrinth_id}")
+    }
+
+    // Epic Fight and Simply Swords: the main code reaches them only through data, so only the GameTests compile
+    // against them. -PepicFight and -PsimplySwords (alone or together) put the pinned releases into every run.
+    gameTestCompileOnly fg.deobf("maven.modrinth:epic-fight:${epic_fight_modrinth_id}")
+    gameTestCompileOnly fg.deobf("maven.modrinth:simply-swords:${simply_swords_modrinth_id}")
+    if (project.hasProperty('epicFight')) {
+        runtimeOnly fg.deobf("maven.modrinth:epic-fight:${epic_fight_modrinth_id}")
+    }
+    if (project.hasProperty('simplySwords')) {
+        // Built with Architectury Loom: SRG mixin targets without a refmap, so remapDevMods finishes the job.
+        devRemap fg.deobf("maven.modrinth:simply-swords:${simply_swords_modrinth_id}")
+        devRemap fg.deobf("maven.modrinth:architectury-api:${architectury_modrinth_id}")
+        devRemap fg.deobf("maven.modrinth:simply-tooltips:${simply_tooltips_modrinth_id}")
+        runtimeOnly files(fileTree(layout.buildDirectory.dir('devmods')) { include '*.jar' }).builtBy('remapDevMods')
+        runtimeOnly fg.deobf("maven.modrinth:fzzy-config:${fzzy_config_modrinth_id}")
+        runtimeOnly "maven.modrinth:kotlin-for-forge:${kotlin_for_forge_modrinth_id}"
+    }
+
+    // Epic Knights and its add-ons, pinned in gradle.properties. Immersive Smithing ships their recipes as data, so
+    // nothing compiles against them except the GameTests. Every jar goes through remapDevMods: several are built with
+    // Architectury Loom (SRG mixin targets, no refmap) and Medieval Boomsticks has an SRG access transformer.
+    gameTestCompileOnly fg.deobf("maven.modrinth:epic-knights-shields-armor-and-weapons:${epic_knights_modrinth_id}")
+    epicKnightsSelection().each { key ->
+        epicKnightsJars(key).each { coordinate -> devRemap fg.deobf(coordinate) }
+    }
+    if (!epicKnightsSelection().isEmpty()) {
+        runtimeOnly files(fileTree(layout.buildDirectory.dir('devmods')) { include '*.jar' }).builtBy('remapDevMods')
+    }
+}
+
+/**
+ * The Epic Knights run profile. -PepicKnights (or =all) is the base mod with every add-on that needs no other large
+ * mod; =base is Epic Knights alone; a comma list (=addon,slavic or =all,iceandfire) is the base plus those add-ons. The
+ * key iceandfire also loads Ice and Fire and Citadel. FoxRall's Visors is client-only and only joins client runs.
+ */
+List<String> epicKnightsSelection() {
+    if (!project.hasProperty('epicKnights')) return []
+    def all = ['addon', 'antique', 'slavic', 'oresalloys', 'darkages', 'openhelms', 'swappable', 'artillery', 'boomsticks',
+               'sevenkingdoms']
+    def value = project.property('epicKnights').toString().trim()
+    def keys = []
+    (value.isEmpty() || value == 'true' ? ['all'] : value.split(',').collect { it.trim() }.findAll { !it.isEmpty() }).each { key ->
+        if (key == 'all') keys.addAll(all) else if (key != 'base') keys.add(key)
+    }
+    keys = keys.unique()
+    def known = all + ['iceandfire', 'foxrall']
+    keys.each { if (!known.contains(it)) throw new GradleException("Unknown -PepicKnights key '${it}'; known: ${known}") }
+    return ['base'] + keys
+}
+
+List<String> epicKnightsJars(String key) {
+    def curse = { String pinned -> def (slug, file) = pinned.split(':'); "curse.maven:${slug}:${file}".toString() }
+    switch (key) {
+        case 'base': return ["maven.modrinth:epic-knights-shields-armor-and-weapons:${epic_knights_modrinth_id}".toString(),
+                             "maven.modrinth:architectury-api:${architectury_modrinth_id}".toString(),
+                             "maven.modrinth:cloth-config:${cloth_config_modrinth_id}".toString()]
+        case 'addon': return ["maven.modrinth:epic-knights-addon:${ek_addon_modrinth_id}".toString()]
+        case 'antique': return ["maven.modrinth:epic-knights-antique-legacy:${ek_antique_legacy_modrinth_id}".toString()]
+        case 'slavic': return ["maven.modrinth:epic-knights-slavic-armory:${ek_slavic_armory_modrinth_id}".toString()]
+        case 'sevenkingdoms': return ["maven.modrinth:epic-knights-of-the-seven-kingdoms:${ek_seven_kingdoms_modrinth_id}".toString()]
+        case 'oresalloys': return [curse(ek_ores_and_alloys_curse)]
+        case 'darkages': return [curse(ek_dark_ages_curse)]
+        case 'openhelms': return [curse(ek_open_helms_curse)]
+        case 'swappable': return [curse(ek_swappable_helms_curse)]
+        case 'artillery': return [curse(ek_artillery_curse)]
+        case 'boomsticks': return [curse(ek_boomsticks_curse), "maven.modrinth:geckolib:${geckolib_modrinth_id}".toString()]
+        case 'iceandfire': return [curse(ek_ice_and_fire_curse), "maven.modrinth:ice-and-fire-dragons:${ice_and_fire_modrinth_id}".toString(),
+                                   "maven.modrinth:citadel:${citadel_modrinth_id}".toString()]
+        case 'foxrall': return gradle.startParameter.taskNames.any { it.toLowerCase().contains('client') } ? [curse(ek_foxralls_visors_curse)] : []
+        default: throw new GradleException("Unknown Epic Knights key ${key}")
+    }
+}
+
+// Dev runs only: rewrites the SRG member names that fg.deobf leaves in mixin annotations and access transformers.
+tasks.register('remapDevMods', Exec) {
+    dependsOn 'createSrgToMcp'
+    def out = layout.buildDirectory.dir('devmods')
+    inputs.files(configurations.devRemap)
+    inputs.file('tools/devmods/remap_srg_strings.py')
+    outputs.dir(out)
+    onlyIf { !configurations.devRemap.dependencies.isEmpty() }
+    doFirst {
+        delete out
+        commandLine(['python3', file('tools/devmods/remap_srg_strings.py').absolutePath,
+                     layout.buildDirectory.file('createSrgToMcp/output.srg').get().asFile.absolutePath,
+                     out.get().asFile.absolutePath] + configurations.devRemap.files*.absolutePath)
+    }
+}
+tasks.matching { it.name.startsWith('prepareRun') }.configureEach { dependsOn 'remapDevMods' }
+
+// Upstream conflict: Epic Knights: Addon 2.6 and Epic Knights: Ice and Fire 1.1 both name their AutoConfig
+// "epicknightsaddon", so each overwrites the other's config/epicknightsaddon/*.json5 and the next launch with both fails
+// (NullPointerException in AutoConfig). Dev runs that load both start from a fresh folder; players need one or the other.
+tasks.matching { it.name.startsWith('prepareRun') }.configureEach {
+    doFirst {
+        def keys = epicKnightsSelection()
+        if (keys.contains('addon') && keys.contains('iceandfire')) {
+            ['run', 'run-gametest'].each { dir -> delete file("${dir}/config/epicknightsaddon") }
+        }
     }
 }
 

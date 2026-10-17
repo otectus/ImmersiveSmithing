@@ -1,0 +1,51 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ekotsk"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "magistuarmory"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "ekotsk:hotd_kingsguard_leggings"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "magistuarmory:woolen_fabric"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 63,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "magistuarmory:woolen_fabric"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "forge:dyes/white"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "tag": "forge:nuggets/blacked_steel"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "ekotsk:hotd_kingsguard_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "ekotsk:hotd_kingsguard_leggings"
+  ]
+}

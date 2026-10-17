@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epicknights_open_helms"
+    }
+  ],
+  "mod": "epicknights_open_helms",
+  "tested_version": "1.3",
+  "policies": [
+    {
+      "items": [
+        "epicknights_open_helms:gilded_exquiste_maximilian_helmet",
+        "epicknights_open_helms:open_blue_armet_helmet",
+        "epicknights_open_helms:open_patrician_helmet",
+        "epicknights_open_helms:openonepiecesallet_helmet"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "Open Helms registers this visor state, but Swappable Helms' default pairs do not include it (add the pair to quick_swap's HelmetPairs to reach it)"
+    }
+  ]
+}
