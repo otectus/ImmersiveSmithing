@@ -28,6 +28,8 @@ public enum CoverageDisposition {
     MATERIAL_UNAVAILABLE,
     /** Its integration is switched off in the server config; the mod is left exactly as it ships. */
     INTEGRATION_DISABLED,
+    /** A server-config selector keeps the forge away from it (recipe, mod or smithing blacklist, automatic exclusion). */
+    EXCLUDED_BY_CONFIG,
     /** Eligible metal equipment without any route: a gap in Immersive Smithing's support. */
     MISSING_SUPPORT;
 

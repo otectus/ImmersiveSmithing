@@ -80,6 +80,17 @@ public final class RecipePipelineGameTests {
             ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES.set(false);
             SmithingData.rebuild(server);
             h.assertTrue(server.getRecipeManager().byKey(ironSword).isPresent(), "Turning replacement off brings the original back without /reload");
+            ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES.set(true);
+            // Exclusions are repeatable too: the same set twice, and the original set once they are gone.
+            ServerConfig.AUTO_DETECT_EXCLUSIONS.set(List.of("#minecraft:trimmable_armor"));
+            ServerConfig.SMITHING_RECIPE_BLACKLIST.set(List.of("immersive_smithing:smithing/iron_sword"));
+            SmithingData.rebuild(server);
+            Set<ResourceLocation> excluded = managerIds(server);
+            SmithingData.rebuild(server);
+            h.assertTrue(managerIds(server).equals(excluded) && server.getRecipeManager().byKey(ironSword).isPresent(),
+                    "Rebuilding with exclusions is repeatable, and the switched-off recipe's native stays");
+            ServerConfig.AUTO_DETECT_EXCLUSIONS.set(List.of());
+            ServerConfig.SMITHING_RECIPE_BLACKLIST.set(List.of());
         } finally {
             ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES.set(true);
             SmithingData.rebuild(server);

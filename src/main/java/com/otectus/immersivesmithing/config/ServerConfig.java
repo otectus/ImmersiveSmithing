@@ -22,6 +22,8 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> RECIPE_BLACKLIST;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> MATERIAL_FAMILY_BLACKLIST;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> AUTO_DETECT_EXCLUSIONS;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> SMITHING_RECIPE_BLACKLIST;
     public static final ForgeConfigSpec.BooleanValue DEBUG_LOGGING;
 
     public static final ForgeConfigSpec.IntValue BASE_MELT_TIME_TICKS;
@@ -116,12 +118,23 @@ public final class ServerConfig {
                 .define("autoDetectModdedMetals", true);
         AUTO_METAL_EXCLUSIONS = b.comment("forge:ingots/<name> tags that are never turned into material families.")
                 .defineListAllowEmpty("autoMetalExclusions", List.of("brick", "nether_brick"), o -> o instanceof String);
-        RECIPE_BLACKLIST = b.comment("Crafting recipe ids that automatic detection ignores and never disables.")
+        RECIPE_BLACKLIST = b.comment("Native recipe ids (crafting or smithing table, e.g. minecraft:iron_sword) that automatic detection never",
+                        "converts and that are never disabled. Another recipe for the same item may still be converted; this one stays.")
                 .defineListAllowEmpty("recipeBlacklist", List.of(), o -> o instanceof String);
-        MATERIAL_FAMILY_BLACKLIST = b.comment("Material family ids (e.g. forge:steel) that are ignored entirely.")
+        MATERIAL_FAMILY_BLACKLIST = b.comment("Material family ids (e.g. forge:steel) that do not exist for Immersive Smithing: the metal cannot be",
+                        "melted and every smithing recipe in it is inactive. The only material-level switch.")
                 .defineListAllowEmpty("materialFamilyBlacklist", List.of(), o -> o instanceof String);
-        MOD_BLACKLIST = b.comment("Mod ids whose equipment is never auto-detected or disabled.")
+        MOD_BLACKLIST = b.comment("Mod ids (item namespaces) whose equipment is neither auto-detected nor disabled, whichever mod's recipe",
+                        "makes it. Explicit smithing recipes for its items (datapacks, built-in data) still apply.")
                 .defineListAllowEmpty("modBlacklist", List.of(), o -> o instanceof String);
+        AUTO_DETECT_EXCLUSIONS = b.comment("Item ids and #tags (e.g. examplemod:steel_dagger, #examplemod:ceremonial_armor) that automatic detection",
+                        "makes no smithing recipe for: crafting recipes, smithing-table upgrades and upgrade chains. Their native recipes",
+                        "stay, explicit smithing recipes are unaffected, and the items can still be melted down. Tags are read at every reload.")
+                .defineListAllowEmpty("autoDetectExclusions", List.of(), o -> o instanceof String);
+        SMITHING_RECIPE_BLACKLIST = b.comment("Exact smithing recipe ids to switch off: explicit ones (immersive_smithing:smithing/netherite_helmet,",
+                        "immersive_smithing:compat/..., a datapack's) or generated ones (immersive_smithing:auto/<namespace>/<item>). The",
+                        "native recipes they would have replaced stay, and automatic detection does not stand in for an explicit one.")
+                .defineListAllowEmpty("smithingRecipeBlacklist", List.of(), o -> o instanceof String);
         DEBUG_LOGGING = b.comment("Log every detection decision at INFO level instead of DEBUG.")
                 .define("debugLogging", false);
         b.pop();

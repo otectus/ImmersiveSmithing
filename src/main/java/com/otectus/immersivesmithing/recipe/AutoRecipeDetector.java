@@ -2,7 +2,6 @@ package com.otectus.immersivesmithing.recipe;
 
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.compat.Integrations;
-import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.material.MaterialFamily;
 import com.otectus.immersivesmithing.material.MaterialRegistry;
 import com.otectus.immersivesmithing.material.MaterialUnits;
@@ -72,18 +71,44 @@ public final class AutoRecipeDetector {
     /**
      * What detection must leave alone in one rebuild: blacklisted recipe ids, and the item namespaces of blacklisted mods
      * and of integrations that are switched off. Curated namespaces (Epic Fight, Epic Knights) are forged only from their
-     * bundled recipes: detection never generates anything for them, but their native recipes can still be replaced.
+     * bundled recipes: detection never generates anything for them, but their native recipes can still be replaced. The
+     * {@link ConfigSelectors} of the rebuild add excluded items and blacklisted smithing recipe ids; every pass asks them
+     * before it creates a recipe, and once more about the id it would create.
      */
-    public record Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces, Set<String> curatedNamespaces) {
+    public record Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces, Set<String> curatedNamespaces, ConfigSelectors selectors) {
         public Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces) {
             this(recipeBlacklist, skippedNamespaces, Set.of());
         }
 
-        public static Scope fromConfig() {
-            Set<String> namespaces = new HashSet<>(ServerConfig.list(ServerConfig.MOD_BLACKLIST));
+        public Scope(Set<String> recipeBlacklist, Set<String> skippedNamespaces, Set<String> curatedNamespaces) {
+            this(recipeBlacklist, skippedNamespaces, curatedNamespaces, ConfigSelectors.NONE);
+        }
+
+        /** The scope of one rebuild, from the server config; its selectors are registered with the report. */
+        public static Scope fromConfig(CompatibilityReport report) {
+            ConfigSelectors selectors = ConfigSelectors.fromConfig(report);
+            Set<String> namespaces = new HashSet<>(selectors.modBlacklist());
             namespaces.addAll(Integrations.disabledNamespaces());
-            return new Scope(Set.copyOf(ServerConfig.list(ServerConfig.RECIPE_BLACKLIST)), Set.copyOf(namespaces),
-                    Set.copyOf(Integrations.curatedNamespaces()));
+            return new Scope(selectors.recipeBlacklist(), Set.copyOf(namespaces), Set.copyOf(Integrations.curatedNamespaces()), selectors);
+        }
+
+        /**
+         * Why detection makes nothing for this candidate item although it could: its explicit recipe is blacklisted (detection
+         * does not stand in for it), or an {@code autoDetectExclusions} entry names it. {reason, selector}, or null.
+         */
+        @Nullable
+        String[] withholds(Item item) {
+            String withheld = selectors.withheld(item);
+            if (withheld != null) return new String[]{"its explicit smithing recipe is switched off by config; automatic detection does not stand in for it", withheld};
+            String excluded = selectors.autoExclusion(item);
+            if (excluded != null) return new String[]{"excluded from automatic detection by config", excluded};
+            return null;
+        }
+
+        /** The {@code smithingRecipeBlacklist} entry naming a generated id, or null. */
+        @Nullable
+        String blacklisted(ResourceLocation generatedId) {
+            return selectors.smithingBlacklisted(generatedId);
         }
 
         public boolean skipsRecipe(ResourceLocation recipeId) {
@@ -331,6 +356,10 @@ public final class AutoRecipeDetector {
             }
             else if (a.status() == Status.NOT_METAL) continue; // not metal equipment: nothing to report
             else if ((a.status() == Status.UPGRADE_CHAIN || a.status() == Status.EQUIPMENT_INGREDIENT) && a.base() != null) continue; // priced later from the piece's own recipe
+            else if (scope.withholds(item) != null) {
+                reason = scope.withholds(item)[0];
+                selector = scope.withholds(item)[1];
+            }
             else if (a.status() != Status.OK) reason = a.detail();
             else if (a.result().getCount() != 1) reason = "recipe makes more than one item";
             else if (EquipmentClassifier.isShield(a.result()) && !a.result().is(ModTags.SMITHABLE_SHIELDS)
@@ -344,6 +373,12 @@ public final class AutoRecipeDetector {
                 continue;
             }
             ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
+            String blacklisted = scope.blacklisted(id);
+            if (blacklisted != null) {
+                // Melting still uses the crafting analysis; only the forge recipe is switched off.
+                if (reported.add(item)) report.skippedEquipment(item, a.recipeId(), "smithing recipe " + id + " is switched off by config", blacklisted);
+                continue;
+            }
             SmithingRecipe recipe = new SmithingRecipe(id, a.family(), a.units(), a.auxiliary(), a.result().copy(),
                     ForgePattern.STANDARD, null, true, a.recipeId());
             generated.put(item, recipe);
@@ -374,6 +409,15 @@ public final class AutoRecipeDetector {
         final Map<Item, SmithingRecipe> smithable;
         final Map<Item, List<CraftingRecipe>> craftingByResult = new HashMap<>();
         final List<ItemStack> unstackables = new ArrayList<>();
+        /**
+         * What the upgrade and chain passes would have generated for items the config excludes from forging: never offered,
+         * never a base for another recipe, only the items' recycling value (excluding forging never stops melting).
+         */
+        final Map<Item, SmithingRecipe> recyclingOnly = new LinkedHashMap<>();
+
+        public Map<Item, SmithingRecipe> recyclingOnly() {
+            return recyclingOnly;
+        }
 
         public UpgradeContext(net.minecraft.world.item.crafting.RecipeManager manager, RegistryAccess access, MaterialRegistry materials,
                               Map<Item, SmithingRecipe> smithable) {
@@ -469,8 +513,20 @@ public final class AutoRecipeDetector {
                 skippedSilently(report, item, upgrade.getId(), null, "curated integration: forged only from its bundled recipes");
                 continue;
             }
+            String[] withheld = scope.withholds(item);
             try {
+                if (withheld != null) {
+                    report.skippedEquipment(item, upgrade.getId(), withheld[0], withheld[1]);
+                    upgradeRecipe(upgrade, result, context, new CompatibilityReport()).ifPresent(r -> context.recyclingOnly.putIfAbsent(item, r));
+                    continue;
+                }
                 upgradeRecipe(upgrade, result, context, report).ifPresent(r -> {
+                    String blacklisted = scope.blacklisted(r.getId());
+                    if (blacklisted != null) {
+                        report.skippedEquipment(item, upgrade.getId(), "smithing recipe " + r.getId() + " is switched off by config", blacklisted);
+                        context.recyclingOnly.putIfAbsent(item, r);
+                        return;
+                    }
                     generated.put(item, r);
                     report.autoRecipe(r);
                 });
@@ -588,22 +644,32 @@ public final class AutoRecipeDetector {
             }
             if (!added) break;
         }
-        // Then say why the remaining ones were not converted.
+        // Then say why the remaining ones were not converted. One the config excludes still gets its recycling value.
         for (Analysis a : analyses) {
             Piece decision = pieceRecipe(a, context, scope, generated);
             if (decision.reason() != null) report.skippedEquipment(a.result().getItem(), a.recipeId(), decision.reason(), decision.selector());
+            if (decision.excluded()) {
+                Piece unrestricted = pieceRecipe(a, context, new Scope(scope.recipeBlacklist(), scope.skippedNamespaces(), scope.curatedNamespaces()), generated);
+                if (unrestricted.recipe() != null) context.recyclingOnly.putIfAbsent(unrestricted.recipe().resultItem(), unrestricted.recipe());
+            }
         }
         return new ArrayList<>(generated.values());
     }
 
-    /** A recipe built from a piece, or why there is none (null when the decision is silent), and the selector that decided. */
-    private record Piece(@Nullable SmithingRecipe recipe, @Nullable String reason, @Nullable String selector) {
-        static final Piece NONE = new Piece(null, null, null);
+    /**
+     * A recipe built from a piece, or why there is none (null when the decision is silent), the selector that decided, and
+     * whether the config excluded a recipe that would otherwise exist.
+     */
+    private record Piece(@Nullable SmithingRecipe recipe, @Nullable String reason, @Nullable String selector, boolean excluded) {
+        static final Piece NONE = new Piece(null, null, null, false);
         static Piece skip(boolean speak, String reason) {
             return skip(speak, reason, null);
         }
         static Piece skip(boolean speak, String reason, @Nullable String selector) {
-            return new Piece(null, speak ? reason : null, selector);
+            return new Piece(null, speak ? reason : null, selector, false);
+        }
+        static Piece excluded(String reason, String selector) {
+            return new Piece(null, reason, selector, true);
         }
     }
 
@@ -618,6 +684,8 @@ public final class AutoRecipeDetector {
         boolean speak = !transform; // reworking a piece without any metal is not the forge's business
         if (scope.skipsRecipe(a.recipeId())) return Piece.skip(speak, "recipe blacklisted by config", scope.recipeSelector(a.recipeId()));
         if (scope.skipsItem(item)) return Piece.skip(speak, scope.skipReason(item), scope.itemSelector(item));
+        String[] withheld = scope.withholds(item);
+        if (withheld != null) return Piece.excluded(withheld[0], withheld[1]);
         if (a.result().getCount() != 1) return Piece.skip(speak, "recipe makes more than one item");
         ItemStack[] bases = a.base().getItems();
         SmithingRecipe piece = null;
@@ -669,8 +737,10 @@ public final class AutoRecipeDetector {
         }
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
         ResourceLocation id = ImmersiveSmithing.id("auto/" + itemId.getNamespace() + "/" + itemId.getPath());
+        String blacklisted = scope.blacklisted(id);
+        if (blacklisted != null) return Piece.excluded("smithing recipe " + id + " is switched off by config", blacklisted);
         return new Piece(new SmithingRecipe(id, family, metalUnits, auxiliary, a.result().copy(), ForgePattern.STANDARD, null, true,
-                a.recipeId()).keepBaseData(keepBaseData), null, null);
+                a.recipeId()).keepBaseData(keepBaseData), null, null, false);
     }
 
     /** The broad kind a piece can grow within: one armour slot, shields, mining tools or weapons. */

@@ -166,6 +166,10 @@ public final class WeaponCatalog {
             return pair(auto ? CoverageDisposition.FORGE_AUTO : CoverageDisposition.FORGE_DEFAULT,
                     recipes.stream().map(r -> r.getId().toString()).reduce((a, b) -> a + ", " + b).orElse(""));
         }
+        // A server-config selector keeps the forge away from it: a deliberate choice of the pack, not a gap.
+        String excludedBy = data.decisionsFor(item).stream().map(RecipeDecisions.Decision::selector)
+                .filter(selector -> selector != null && selector.startsWith("recipes.")).findFirst().orElse(null);
+        if (excludedBy != null) return pair(CoverageDisposition.EXCLUDED_BY_CONFIG, "excluded from forging by the server config (" + excludedBy + ")");
         List<String> inactive = data.report().inactiveFor(item);
         if (!inactive.isEmpty()) {
             String why = inactive.get(0);

@@ -134,9 +134,10 @@ public final class SmithingData {
         RecipeManager manager = server.getRecipeManager();
         RegistryAccess access = server.registryAccess();
         CompatibilityReport report = new CompatibilityReport();
-        AutoRecipeDetector.Scope scope = AutoRecipeDetector.Scope.fromConfig();
         report.integrations(Integrations.disabledNamespaces());
-        registerSelectors(report);
+        // One parse of every selector per rebuild, after tags are bound; each pass below asks the same object.
+        AutoRecipeDetector.Scope scope = AutoRecipeDetector.Scope.fromConfig(report);
+        ConfigSelectors selectors = scope.selectors();
 
         // 1. Material families.
         List<MaterialDefinition> definitions = new ArrayList<>(MaterialDefinitionLoader.definitions());
@@ -187,10 +188,18 @@ public final class SmithingData {
         explicit.sort(Comparator.comparing(r -> r.getId().toString()));
         Set<ResourceLocation> seenIds = new HashSet<>();
         Set<String> familyBlacklist = Set.copyOf(ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST));
+        // Explicit recipes switched off by id: melting still follows them, and detection does not stand in for them.
+        List<SmithingRecipe> switchedOff = new ArrayList<>();
         for (SmithingRecipe r : explicit) {
             String reason = null;
             String selector = null;
             if (!seenIds.add(r.getId())) reason = "duplicate recipe id";
+            else if (selectors.smithingBlacklisted(r.getId()) != null) {
+                reason = "switched off by config";
+                selector = selectors.smithingBlacklisted(r.getId());
+                selectors.withhold(r.resultItem(), selector);
+                if (materials.family(r.family()).isPresent()) switchedOff.add(r);
+            }
             else if (Integrations.compatRecipeDisabled(r.getId()) != null) {
                 reason = Integrations.compatRecipeDisabled(r.getId());
                 selector = Integrations.configKey(Integrations.compatModOf(r.getId()));
@@ -220,6 +229,7 @@ public final class SmithingData {
         // 3. Crafting analysis, used both for automatic recipes and for recycling values.
         Map<ResourceLocation, AutoRecipeDetector.Analysis> analyses = AutoRecipeDetector.analyzeCrafting(all, access, materials, explicitResults, report);
         List<SmithingRecipe> auto = new ArrayList<>();
+        AutoRecipeDetector.UpgradeContext upgradeContext = null;
         if (ServerConfig.get(ServerConfig.AUTO_DETECT_EQUIPMENT)) {
             auto.addAll(AutoRecipeDetector.generate(analyses.values(), explicitResults, scope, report));
             // Smithing-table upgrades (modded netherite and similar) are redirected into the forge as well.
@@ -227,6 +237,7 @@ public final class SmithingData {
             active.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
             auto.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
             AutoRecipeDetector.UpgradeContext upgrades = new AutoRecipeDetector.UpgradeContext(all, access, materials, smithable);
+            upgradeContext = upgrades;
             List<SmithingRecipe> redirected = AutoRecipeDetector.generateUpgrades(all, upgrades, scope, report);
             redirected.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
             auto.addAll(redirected);
@@ -356,6 +367,23 @@ public final class SmithingData {
             }
         }
 
+        // An automatic-only exclusion of an item an explicit recipe makes changes nothing: say so, with its native recipes' fate.
+        for (Map.Entry<Item, String> exclusion : selectors.autoExclusions().entrySet()) {
+            List<SmithingRecipe> forge = forgeByResult.get(exclusion.getKey());
+            if (forge == null) continue;
+            List<String> disabled = suppressed.entrySet().stream().filter(e -> e.getValue() == exclusion.getKey())
+                    .map(e -> e.getKey().toString()).sorted().toList();
+            String fate = disabled.isEmpty() ? "its native recipes stay" : "its native recipes " + disabled + " are disabled by it";
+            for (SmithingRecipe r : forge) {
+                if (r.isAuto()) continue;
+                String reason = "excluded from automatic detection, but this explicit recipe makes it: the exclusion has no effect; " + fate;
+                report.decision(exclusion.getKey(), r.getId(), RecipeDecisions.Origin.EXPLICIT, RecipeDecisions.Outcome.ACTIVE, r.getId(),
+                        reason, exclusion.getValue());
+                report.note(exclusion.getValue() + " matches " + BuiltInRegistries.ITEM.getKey(exclusion.getKey()) + ", which "
+                        + r.getId() + " makes: the exclusion has no effect; " + fate);
+            }
+        }
+
         // 6. Rewrite the recipe manager: remove disabled/invalid entries, add the automatic recipes.
         List<Recipe<?>> next = new ArrayList<>(all.size() + auto.size());
         for (Recipe<?> r : all) {
@@ -392,6 +420,16 @@ public final class SmithingData {
         }
         for (SmithingRecipe r : auto) {
             recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(), "automatic recipe " + r.getId()));
+        }
+        // Excluding an item from forging never stops it melting: it melts as its forge recipe would have made it.
+        for (SmithingRecipe r : switchedOff) {
+            recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(), "smithing recipe " + r.getId() + " (switched off for forging)"));
+        }
+        if (upgradeContext != null) {
+            for (SmithingRecipe r : upgradeContext.recyclingOnly().values()) {
+                recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(),
+                        "excluded from forging; melts as " + r.getId() + " would make it"));
+            }
         }
         inheritRecyclingValues(all, analyses, access, materials, recycling, report);
         // Another state of the same piece (an opened visor) melts for exactly what the piece melts for.
@@ -432,14 +470,6 @@ public final class SmithingData {
             sourceSnapshot = List.copyOf(fresh);
         }
         return sourceSnapshot;
-    }
-
-    /** The configuration options in effect, so the report can say what each one matched. */
-    private static void registerSelectors(CompatibilityReport report) {
-        ServerConfig.list(ServerConfig.RECIPE_BLACKLIST).forEach(id -> report.selector("recipes.recipeBlacklist = " + id));
-        ServerConfig.list(ServerConfig.MOD_BLACKLIST).forEach(ns -> report.selector("recipes.modBlacklist = " + ns));
-        ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST).forEach(f -> report.selector("recipes.materialFamilyBlacklist = " + f));
-        new java.util.TreeSet<>(Integrations.disabledNamespaces()).forEach(ns -> report.selector(Integrations.configKey(ns)));
     }
 
     /** A native crafting recipe or smithing-table upgrade of candidate equipment: what the forge could stand in for. */
