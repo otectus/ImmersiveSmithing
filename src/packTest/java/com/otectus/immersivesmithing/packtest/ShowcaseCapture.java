@@ -4,19 +4,12 @@ import com.google.gson.GsonBuilder;
 import com.otectus.immersivesmithing.block.SmithsForgeBlock;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
-import com.otectus.immersivesmithing.client.screen.AnvilMinigameScreen;
-import com.otectus.immersivesmithing.client.screen.ForgeMinigameScreen;
 import com.otectus.immersivesmithing.client.screen.GuideScreen;
 import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.item.SmithingTier;
-import com.otectus.immersivesmithing.minigame.AnvilMinigame;
-import com.otectus.immersivesmithing.minigame.AnvilRun;
-import com.otectus.immersivesmithing.minigame.ForgeMinigame;
-import com.otectus.immersivesmithing.minigame.ForgeRun;
 import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.registry.ModBlocks;
 import com.otectus.immersivesmithing.registry.ModItems;
-import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.CameraType;
@@ -50,7 +43,11 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
-/** Opt-in filming fixture, confined to the test agent. It uses actual station actions and server-scored inputs. */
+/**
+ * Opt-in filming fixture, confined to the test agent. After an establishing shot and the melt, {@link SmithDriver} plays one
+ * iron sword through the focused work views from a single standing spot, so the cinematic camera moves between the
+ * stations on screen; every action is a real input, validated and scored by the integrated server.
+ */
 final class ShowcaseCapture {
     private static final String OUTPUT = System.getProperty("immersive_smithing.showcase.output");
     private static final List<Map<String, Object>> MARKERS = new ArrayList<>();
@@ -63,7 +60,7 @@ final class ShowcaseCapture {
     private static int baseY;
     private static BlockPos forge, anvil, trough, grind;
     private static int swordSlot;
-    private static int beforeRefine;
+    private static SmithDriver driver;
     private static boolean finished;
     private static Process encoder;
     private static Thread writer;
@@ -79,7 +76,7 @@ final class ShowcaseCapture {
         if (finished) return;
         if (captureFailure != null) throw captureFailure;
         if (started == 0) started = Util.getMillis();
-        if (Util.getMillis() - started > 150_000) throw new IllegalStateException("Showcase stalled at step " + step);
+        if (Util.getMillis() - started > 300_000) throw new IllegalStateException("Showcase stalled at step " + step);
         if (pending != null && !pending.isDone()) return;
         if (pending != null) { pending.join(); pending = null; }
         long age = Util.getMillis() - entered;
@@ -101,10 +98,16 @@ final class ShowcaseCapture {
                 mc.options.getSoundSourceOptionInstance(SoundSource.MUSIC).set(0D);
                 mc.options.getSoundSourceOptionInstance(SoundSource.MASTER).set(.8D);
                 String audioDevice = mc.getSoundManager().getAvailableSoundDevices().stream()
-                        .filter(name -> name.contains("SmithingShowcase")).findFirst()
-                        .orElseThrow(() -> new IllegalStateException("Dedicated showcase audio device is unavailable"));
-                mc.options.soundDevice().set(audioDevice);
-                mc.getSoundManager().reload();
+                        .filter(name -> name.contains("SmithingShowcase")).findFirst().orElse(null);
+                if (audioDevice != null) {
+                    mc.options.soundDevice().set(audioDevice);
+                    mc.getSoundManager().reload();
+                    EVIDENCE.put("audio", audioDevice);
+                } else {
+                    // The private sink is not reachable from this OpenAL build: film silently rather than play into the desktop.
+                    mc.options.getSoundSourceOptionInstance(SoundSource.MASTER).set(0D);
+                    EVIDENCE.put("audio", "dedicated device unavailable: silent take");
+                }
                 mc.options.setCameraType(CameraType.FIRST_PERSON);
                 mc.options.hideGui = true;
                 ClientConfig.SHOW_NUMERIC_QUALITY_SCORES.set(true);
@@ -129,115 +132,22 @@ final class ShowcaseCapture {
             case 3 -> {
                 if (age > 6500 && mc.level.getBlockEntity(forge) instanceof SmithsForgeBlockEntity block && block.isReady()) {
                     mc.options.hideGui = false;
-                    select(mc, 0);
-                    use(mc, forge);
-                    advance(4, "choose");
+                    ClientConfig.CAMERA_MODE.set(ClientConfig.CameraMode.CINEMATIC);
+                    Vec3 stand = new Vec3(0.5, baseY, 2.4);
+                    driver = new SmithDriver(forge, anvil, trough, grind, Map.of(forge, stand, anvil, stand, trough, stand, grind, stand),
+                            com.otectus.immersivesmithing.ImmersiveSmithing.id("smithing/iron_sword"), "iron sword", Items.IRON_SWORD, true,
+                            name -> markOnce("work_" + name));
+                    advance(4, "hands_on");
                 }
             }
             case 4 -> {
-                if (mc.screen instanceof ForgeMinigameScreen screen) {
-                    if (action == 0 && age > 900) {
-                        screen.children().stream().filter(EditBox.class::isInstance).map(EditBox.class::cast)
-                                .findFirst().orElseThrow().setValue("sword");
-                        action++;
-                    }
-                    if (action == 1 && age > 2400) {
-                        screen.keyPressed(GLFW.GLFW_KEY_ENTER, 0, 0);
-                        advance(5, "forge_countdown");
-                    }
-                }
-            }
-            case 5 -> {
-                if (mc.screen instanceof ForgeMinigameScreen screen) {
-                    String stage = field(screen, "stage").toString();
-                    if (stage.equals("PLAYING")) {
-                        markOnce("forge_play");
-                        ForgeRun run = (ForgeRun) field(screen, "run");
-                        int elapsed = (int) (Util.getMillis() - (long) field(screen, "clientStartMs"));
-                        if (!run.isComplete()) {
-                            var phase = run.phases().get(run.index());
-                            int local = elapsed - run.phaseStartMs();
-                            float accuracy = ForgeMinigame.accuracy(phase, ForgeMinigame.position(phase, local / 1000F));
-                            if (local > 900 && accuracy >= .68F && accuracy <= .93F) screen.keyPressed(GLFW.GLFW_KEY_SPACE, 0, 0);
-                        }
-                    } else if (stage.equals("RESULT")) {
-                        EVIDENCE.put("forge_score", field(screen, "resultScore"));
-                        EVIDENCE.put("forge_timed_out", field(screen, "resultTimedOut"));
-                        advance(6, "forge_result");
-                    }
-                }
-            }
-            case 6 -> {
-                if (age > 1900) {
-                    mc.screen.onClose();
-                    if (!WorkpieceCodec.isHolding(mc.player.getMainHandItem())) throw new IllegalStateException("Forge did not produce a workpiece");
-                    server(mc, (level, player) -> camera(player, anvil, -.8, 2.8, .15));
-                    advance(7, "transfer");
-                }
-            }
-            case 7 -> {
-                if (action == 0 && age > 800) { use(mc, anvil); action++; }
-                if (action == 1 && age > 1800) { select(mc, 1); action++; }
-                if (action == 2 && age > 2500) { use(mc, anvil); advance(8, "anvil_countdown"); }
-            }
-            case 8 -> {
-                if (mc.screen instanceof AnvilMinigameScreen screen) {
-                    String stage = field(screen, "stage").toString();
-                    if (stage.equals("PLAYING")) {
-                        markOnce("anvil_play");
-                        AnvilRun run = (AnvilRun) field(screen, "run");
-                        int elapsed = (int) (Util.getMillis() - (long) field(screen, "clientStartMs"));
-                        if (!run.isComplete() && elapsed - run.spawnMs() >= AnvilMinigame.idealMs(run.pattern()) - 40) {
-                            var target = run.currentTarget();
-                            int x = (int) field(screen, "left") + 12;
-                            int y = (int) field(screen, "top") + 28;
-                            screen.mouseClicked(x + target.x() * 176, y + target.y() * 176, 0);
-                            mark("strike_" + run.index());
-                        }
-                    } else if (stage.equals("RESULT")) {
-                        EVIDENCE.put("anvil_score", field(screen, "resultScore"));
-                        EVIDENCE.put("anvil_faulty", field(screen, "resultFaulty"));
-                        advance(9, "anvil_result");
-                    }
-                }
-            }
-            case 9 -> {
-                if (age > 1800) {
-                    mc.screen.onClose();
-                    select(mc, 0);
-                    advance(10, "pickup");
-                }
-            }
-            case 10 -> {
-                if (action == 0 && age > 300) { use(mc, anvil); action++; }
-                if (action == 1 && age > 1600) {
-                    if (!WorkpieceCodec.isHolding(mc.player.getMainHandItem())) throw new IllegalStateException("Anvil pickup failed");
-                    server(mc, (level, player) -> camera(player, trough, -.6, 2.7, .15));
-                    advance(11, "quench");
-                }
-            }
-            case 11 -> {
-                if (action == 0 && age > 1000) { use(mc, trough); action++; }
-                if (age > 3500) {
+                if (driver.tick(mc)) {
+                    EVIDENCE.put("hands_on", driver.evidence);
                     swordSlot = -1;
                     for (int i = 0; i < 9; i++) if (mc.player.getInventory().getItem(i).is(Items.IRON_SWORD)) swordSlot = i;
-                    if (swordSlot < 0) throw new IllegalStateException("Quench did not produce the sword");
-                    var quality = QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow();
-                    EVIDENCE.put("quenched_quality", quality);
-                    beforeRefine = quality.forgeScore();
+                    if (swordSlot < 0) throw new IllegalStateException("The finished sword is not in the hotbar");
+                    EVIDENCE.put("finished_quality", QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow());
                     select(mc, swordSlot);
-                    server(mc, (level, player) -> camera(player, grind, -.9, 2.8, .05));
-                    advance(12, "refine");
-                }
-            }
-            case 12 -> {
-                if (action == 0 && age > 600) { use(mc, grind); action++; }
-                if (action == 1 && age > 1300) { use(mc, grind); action++; }
-                if (age > 3200) {
-                    var quality = QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow();
-                    EVIDENCE.put("refined_quality", quality);
-                    if (quality.forgeScore() != Math.min(100, beforeRefine + 5) || beforeRefine == 100)
-                        throw new IllegalStateException("Real refinement did not improve the forged item");
                     mc.setScreen(new InventoryScreen(mc.player) {
                         @Override public void render(GuiGraphics g, int mx, int my, float partial) {
                             super.render(g, leftPos + 8 + swordSlot * 18 + 8, topPos + 142 + 8, partial);
@@ -261,7 +171,8 @@ final class ShowcaseCapture {
                 if (age > 4200) {
                     mark("end");
                     EVIDENCE.put("pass", true);
-                    EVIDENCE.put("capture", "Actual game client, scripted inputs, server-authoritative forging, shaping, quenching and refinement");
+                    EVIDENCE.put("capture", "Actual game client, scripted player inputs on the focused work views, server-authoritative "
+                            + "heating, shaping, reheating, quenching, fitting and refinement");
                     EVIDENCE.put("markers", MARKERS);
                     Files.writeString(Path.of(OUTPUT, "result.json"), new GsonBuilder().setPrettyPrinting().create().toJson(EVIDENCE));
                     Files.writeString(Path.of(OUTPUT, "finished"), "success");

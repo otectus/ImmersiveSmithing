@@ -1,0 +1,146 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights_ores_and_alloys"
+    }
+  ],
+  "mod": "epic_knights_ores_and_alloys",
+  "tested_version": "1.1",
+  "policies": [
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:bronze_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:bronze_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:bronze_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:bronze_ingot_r, epic_knights_ores_and_alloys:bronze_ingot_r_2, epic_knights_ores_and_alloys:bronze_ingot_r_3, epic_knights_ores_and_alloys:bronze_ingot_r_4"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:bronze_mixture"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:bronze_mixture_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:bronzenugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:bronze_nugget_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:coppernugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:copper_nugget_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:raw_silver_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:raw_silver_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:raw_silver"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:raw_silver_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:raw_tin_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:raw_tin_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:raw_tin"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:raw_tin_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:silver_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:silver_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:silver_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:silver_ingot_r, epic_knights_ores_and_alloys:silver_ingot_r_2, epic_knights_ores_and_alloys:silver_ingot_r_4, epic_knights_ores_and_alloys:silver_ingot_r_5"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:silver_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:silver_ingot_r_3, epic_knights_ores_and_alloys:silver_nugget_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:steel_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:steel_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:steel_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:steel_ingot_r, epic_knights_ores_and_alloys:steel_ingot_r_2, epic_knights_ores_and_alloys:steel_ingot_r_3"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:steel_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:steel_nugget_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:tin_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:tin_block_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:tin_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:tin_ingot_r, epic_knights_ores_and_alloys:tin_ingot_r_2, epic_knights_ores_and_alloys:tin_ingot_r_3, epic_knights_ores_and_alloys:tin_ingot_r_4, epic_knights_ores_and_alloys:tin_ingot_r_5, epic_knights_ores_and_alloys:tin_ingot_r_6"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:tin_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ores_and_alloys:tin_nugget_r"
+    },
+    {
+      "items": [
+        "epic_knights_ores_and_alloys:silver_ore",
+        "epic_knights_ores_and_alloys:tin_ore"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    }
+  ]
+}

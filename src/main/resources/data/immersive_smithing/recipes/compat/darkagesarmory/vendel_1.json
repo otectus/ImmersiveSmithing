@@ -5,21 +5,18 @@
       "modid": "darkagesarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "darkagesarmory",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "darkagesarmory:vendel_1"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 45,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/gold"
-      },
-      "count": 4
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "darkagesarmory:vendel_1"
   },

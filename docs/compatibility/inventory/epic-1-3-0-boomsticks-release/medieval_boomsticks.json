@@ -1,0 +1,1417 @@
+{
+  "mod": "medieval_boomsticks",
+  "version": "1.01",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "architectury",
+    "cloth_config",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "medieval_boomsticks"
+  ],
+  "loaded_versions": {
+    "architectury": "9.2.14",
+    "cloth_config": "11.1.136",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "medieval_boomsticks": "1.01",
+    "minecraft": "1.20.1"
+  },
+  "tested_version": "1.01",
+  "items": [
+    {
+      "id": "medieval_boomsticks:arbalest",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/arbalest/from/medieval_boomsticks/arbalest",
+          "material": "minecraft:iron",
+          "units": 81,
+          "recoverable_units": 81,
+          "added_content_units": 81,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "medieval_boomsticks:arbalest"
+          ],
+          "components": [
+            "1x minecraft:crossbow (reworked)",
+            "4x minecraft:string",
+            "1x minecraft:stripped_dark_oak_log"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "medieval_boomsticks:arbalest"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:arbalest",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_block"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:crossbow"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_dark_oak_log"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:arbalest\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/arbalest/from/medieval_boomsticks/arbalest",
+      "acquisition": "Forged; replaces `medieval_boomsticks:arbalest`."
+    },
+    {
+      "id": "medieval_boomsticks:arnica",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:arquebus",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/arquebus/from/medieval_boomsticks/arquebus",
+          "material": "minecraft:iron",
+          "units": 243,
+          "recoverable_units": 243,
+          "added_content_units": 243,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:arquebus"
+          ],
+          "components": [
+            "1x medieval_boomsticks:canvas",
+            "1x medieval_boomsticks:finished_oil_bucket",
+            "2x minecraft:stripped_oak_log"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "medieval_boomsticks:arquebus"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:arquebus",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            [],
+            [],
+            {
+              "item": "minecraft:iron_block"
+            },
+            {
+              "item": "minecraft:iron_block"
+            },
+            {
+              "item": "minecraft:iron_block"
+            },
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            {
+              "item": "medieval_boomsticks:finished_oil_bucket"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:arquebus\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "243 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/arquebus/from/medieval_boomsticks/arquebus",
+      "acquisition": "Forged; replaces `medieval_boomsticks:arquebus`."
+    },
+    {
+      "id": "medieval_boomsticks:bulat_bar",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloybulat",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:alloybulat."
+    },
+    {
+      "id": "medieval_boomsticks:canvas",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:canvas",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:canvas\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:canvas",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:canvas."
+    },
+    {
+      "id": "medieval_boomsticks:comfrey",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:dziwer_bar",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloydziwer",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:alloydziwer."
+    },
+    {
+      "id": "medieval_boomsticks:eveningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/eveningstar/from/medieval_boomsticks/eveningstar",
+          "material": "minecraft:iron",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:eveningstar"
+          ],
+          "components": [
+            "1x medieval_boomsticks:finished_shaft",
+            "1x minecraft:netherite_ingot"
+          ],
+          "pattern": "immersive_smithing:flanged_mace",
+          "from": "medieval_boomsticks:eveningstar"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:eveningstar",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "medieval_boomsticks:finished_shaft"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:eveningstar\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/eveningstar/from/medieval_boomsticks/eveningstar",
+      "acquisition": "Forged; replaces `medieval_boomsticks:eveningstar`."
+    },
+    {
+      "id": "medieval_boomsticks:finished_leather",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:finished_leather",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "medieval_boomsticks:finished_oil_bucket"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:finished_leather\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_leather",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:finished_leather."
+    },
+    {
+      "id": "medieval_boomsticks:finished_oil",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:smallfinishedoil",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:smallfinishedoil."
+    },
+    {
+      "id": "medieval_boomsticks:finished_oil_bucket",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:finished_oil_bucket",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            {
+              "item": "minecraft:wheat_seeds"
+            },
+            [],
+            {
+              "item": "minecraft:composter"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:finished_oil_bucket\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_oil_bucket",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:finished_oil_bucket."
+    },
+    {
+      "id": "medieval_boomsticks:finished_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:finished_shaft",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            {
+              "item": "minecraft:stone_sword"
+            },
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "medieval_boomsticks:finished_oil_bucket"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:finished_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_shaft",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:finished_shaft."
+    },
+    {
+      "id": "medieval_boomsticks:gotheveningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/gotheveningstar/from/medieval_boomsticks/gothiceveningstar",
+          "material": "minecraft:netherite",
+          "units": 81,
+          "recoverable_units": 81,
+          "added_content_units": 81,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "medieval_boomsticks:gothiceveningstar"
+          ],
+          "components": [
+            "1x medieval_boomsticks:eveningstar (reworked)",
+            "1x medieval_boomsticks:upgrade_kit"
+          ],
+          "pattern": "immersive_smithing:flanged_mace",
+          "from": "medieval_boomsticks:gothiceveningstar"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:gothiceveningstar",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "medieval_boomsticks:upgrade_kit"
+            },
+            [],
+            {
+              "item": "minecraft:netherite_block"
+            },
+            [],
+            {
+              "item": "medieval_boomsticks:eveningstar"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:gotheveningstar\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/gotheveningstar/from/medieval_boomsticks/gothiceveningstar",
+      "acquisition": "Forged; replaces `medieval_boomsticks:gothiceveningstar`."
+    },
+    {
+      "id": "medieval_boomsticks:handgonne",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/handgonne/from/medieval_boomsticks/handgonne",
+          "material": "minecraft:iron",
+          "units": 81,
+          "recoverable_units": 81,
+          "added_content_units": 81,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:handgonne"
+          ],
+          "components": [
+            "1x medieval_boomsticks:canvas",
+            "2x medieval_boomsticks:finished_shaft"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "medieval_boomsticks:handgonne"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:handgonne",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "minecraft:iron_block"
+            },
+            [],
+            {
+              "item": "medieval_boomsticks:finished_shaft"
+            },
+            [],
+            {
+              "item": "medieval_boomsticks:finished_shaft"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:handgonne\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/handgonne/from/medieval_boomsticks/handgonne",
+      "acquisition": "Forged; replaces `medieval_boomsticks:handgonne`."
+    },
+    {
+      "id": "medieval_boomsticks:heavy_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:heavy_bolt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:raw_iron"
+            },
+            {
+              "item": "minecraft:arrow"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:heavy_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:heavy_bolt",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:heavy_bolt."
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:iron_throwing_axe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_axe"
+            },
+            {
+              "item": "minecraft:iron_axe"
+            },
+            {
+              "item": "minecraft:iron_axe"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"medieval_boomsticks:iron_throwing_axe\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior.",
+      "acquisition": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior.."
+    },
+    {
+      "id": "medieval_boomsticks:iron_throwing_knife",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:iron_throwing_knife",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_sword"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            {
+              "item": "minecraft:iron_sword"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"medieval_boomsticks:iron_throwing_knife\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior.",
+      "acquisition": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior.."
+    },
+    {
+      "id": "medieval_boomsticks:javelin",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/javelin/from/medieval_boomsticks/javelin",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:javelin"
+          ],
+          "components": [
+            "1x minecraft:stick",
+            "1x minecraft:string"
+          ],
+          "pattern": "immersive_smithing:javelin",
+          "from": "medieval_boomsticks:javelin"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:javelin",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:javelin\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/javelin/from/medieval_boomsticks/javelin",
+      "acquisition": "Forged; replaces `medieval_boomsticks:javelin`."
+    },
+    {
+      "id": "medieval_boomsticks:large_throwing_rock",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:large_throwing_rock",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:large_throwing_rock."
+    },
+    {
+      "id": "medieval_boomsticks:lemon_balm",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:limonite_ore",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:limonite_ore_deepslate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:magnitite_ore",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "medieval_boomsticks:magnitite_ore_deepslate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "medieval_boomsticks:morningstar",
+      "kind": "tool",
+      "shape": "immersive_smithing:axe",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/morningstar/from/medieval_boomsticks/morningstar",
+          "material": "minecraft:iron",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:morningstar"
+          ],
+          "components": [
+            "1x medieval_boomsticks:finished_shaft"
+          ],
+          "pattern": "immersive_smithing:flanged_mace",
+          "from": "medieval_boomsticks:morningstar"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:morningstar",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "medieval_boomsticks:finished_shaft"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:morningstar\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/morningstar/from/medieval_boomsticks/morningstar",
+      "acquisition": "Forged; replaces `medieval_boomsticks:morningstar`."
+    },
+    {
+      "id": "medieval_boomsticks:padded_canvas",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:padded_canvas",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            {
+              "item": "medieval_boomsticks:canvas"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:padded_canvas\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:padded_canvas",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:padded_canvas."
+    },
+    {
+      "id": "medieval_boomsticks:pyrite_ore",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:pyrite_ore_deepslate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:quilted_canvas",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:quilted_canvas",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            },
+            {
+              "item": "medieval_boomsticks:padded_canvas"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:quilted_canvas\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:quilted_canvas",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:quilted_canvas."
+    },
+    {
+      "id": "medieval_boomsticks:raw_limonite",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:raw_magnitite",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "medieval_boomsticks:raw_pyrite",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:recurve_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:recurve_bow",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:bow"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:recurve_bow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "medieval_boomsticks:round_ball",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:round_ball",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:round_ball\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:round_ball",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:round_ball."
+    },
+    {
+      "id": "medieval_boomsticks:sage",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:small_throwing_rock",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:small_throwing_rock",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:stone_pickaxe"
+            },
+            {
+              "item": "minecraft:stone_pickaxe"
+            },
+            {
+              "item": "minecraft:stone_pickaxe"
+            },
+            {
+              "item": "minecraft:cobblestone"
+            },
+            {
+              "item": "minecraft:cobblestone"
+            },
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"medieval_boomsticks:small_throwing_rock\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:small_throwing_rock",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:small_throwing_rock."
+    },
+    {
+      "id": "medieval_boomsticks:spikedhandgonne",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/spikedhandgonne/from/medieval_boomsticks/spikedhandgonne",
+          "material": "minecraft:netherite",
+          "units": 45,
+          "recoverable_units": 45,
+          "added_content_units": 45,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "medieval_boomsticks:spikedhandgonne"
+          ],
+          "components": [
+            "1x medieval_boomsticks:handgonne (reworked)",
+            "1x medieval_boomsticks:upgrade_kit"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "medieval_boomsticks:spikedhandgonne"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:spikedhandgonne",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "medieval_boomsticks:handgonne"
+            },
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "medieval_boomsticks:upgrade_kit"
+            },
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:spikedhandgonne\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "45 minecraft:netherite",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/spikedhandgonne/from/medieval_boomsticks/spikedhandgonne",
+      "acquisition": "Forged; replaces `medieval_boomsticks:spikedhandgonne`."
+    },
+    {
+      "id": "medieval_boomsticks:upgrade_kit",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:upgrade_kit",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "item": "minecraft:iron_pickaxe"
+            },
+            {
+              "item": "minecraft:shears"
+            },
+            {
+              "item": "minecraft:iron_axe"
+            },
+            {
+              "item": "medieval_boomsticks:finished_leather"
+            },
+            {
+              "item": "medieval_boomsticks:finished_leather"
+            },
+            {
+              "item": "medieval_boomsticks:finished_leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:upgrade_kit\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:upgrade_kit",
+      "acquisition": "Native non-equipment recipes/processes: medieval_boomsticks:upgrade_kit."
+    },
+    {
+      "id": "medieval_boomsticks:war_dart",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/medieval_boomsticks/release/war_dart/from/medieval_boomsticks/throwing_wardart",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "medieval_boomsticks:throwing_wardart"
+          ],
+          "components": [
+            "1x minecraft:feather",
+            "1x minecraft:stick",
+            "2x minecraft:string"
+          ],
+          "pattern": "immersive_smithing:throwing_knife",
+          "from": "medieval_boomsticks:throwing_wardart"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "medieval_boomsticks:throwing_wardart",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:raw_iron"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"medieval_boomsticks:war_dart\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/medieval_boomsticks/release/war_dart/from/medieval_boomsticks/throwing_wardart",
+      "acquisition": "Forged; replaces `medieval_boomsticks:throwing_wardart`."
+    },
+    {
+      "id": "medieval_boomsticks:yarrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "medieval_boomsticks:yellow_wood_sorrel",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    }
+  ],
+  "dispositions": {
+    "disabled_by_upstream": 3,
+    "forge_default": 9,
+    "native_assembly": 2,
+    "native_nonmetal_recipe": 1,
+    "non_equipment": 26
+  }
+}

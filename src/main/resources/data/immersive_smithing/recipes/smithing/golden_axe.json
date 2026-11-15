@@ -14,5 +14,8 @@
     "item": "minecraft:golden_axe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:axe"
+  "anvil_pattern": "immersive_smithing:axe",
+  "replaces": [
+    "minecraft:golden_axe"
+  ]
 }

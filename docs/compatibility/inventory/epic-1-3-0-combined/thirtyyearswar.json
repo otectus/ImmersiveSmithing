@@ -1,0 +1,3491 @@
+{
+  "mod": "thirtyyearswar",
+  "version": "1.3",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "1.3",
+  "items": [
+    {
+      "id": "thirtyyearswar:baroque_apron_skirt",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_apron_skirt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_apron_skirt\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_apron_skirt_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:baroque_apron_skirt_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_apron_skirt_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_armour/from/thirtyyearswar/knights_baroque_armour",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 72,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_armour"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_cuirass (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "thirtyyearswar:knights_baroque_armour"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_armour",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_cuirass"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_armour\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_armour/from/thirtyyearswar/knights_baroque_armour",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_armour`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_barred_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_barred_closed_burgonet/from/thirtyyearswar/knights_baroque_barred_closed_burgonet",
+          "material": "forge:steel",
+          "units": 9,
+          "recoverable_units": 109,
+          "added_content_units": 9,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_barred_closed_burgonet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_open_closed_burgonet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_barred_closed_burgonet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_barred_closed_burgonet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_open_closed_burgonet"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_barred_closed_burgonet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "109 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_barred_closed_burgonet/from/thirtyyearswar/knights_baroque_barred_closed_burgonet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_barred_closed_burgonet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_barred_lobstertail_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_barred_lobstertail_helmet/from/thirtyyearswar/knights_baroque_barred_lobstertail_helmet",
+          "material": "forge:steel",
+          "units": 9,
+          "recoverable_units": 81,
+          "added_content_units": 9,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_barred_lobstertail_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_lobstertail_helmet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_barred_lobstertail_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_barred_lobstertail_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_lobstertail_helmet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_barred_lobstertail_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_barred_lobstertail_helmet/from/thirtyyearswar/knights_baroque_barred_lobstertail_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_barred_lobstertail_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_bodice",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_bodice",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:baroque_shirt"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_bodice\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_breeches",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_breeches",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_breeches\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_breeches_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:baroque_breeches_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_breeches_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_buff_coat",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_buff_coat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "item": "thirtyyearswar:baroque_coat"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_buff_coat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_buff_waistcoat",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_buff_waistcoat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:baroque_coat"
+            },
+            [],
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_buff_waistcoat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cabasset_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_cabasset_helmet/from/thirtyyearswar/knights_baroque_cabasset_helmet",
+          "material": "forge:steel",
+          "units": 11,
+          "recoverable_units": 55,
+          "added_content_units": 10,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_cabasset_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_skull_cap (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_cabasset_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cabasset_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_skull_cap"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cabasset_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "55 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_cabasset_helmet/from/thirtyyearswar/knights_baroque_cabasset_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_cabasset_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cavalier_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cavalier_hat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:feathers"
+            },
+            {
+              "tag": "forge:feathers"
+            },
+            {
+              "tag": "forge:dyes/black"
+            },
+            {
+              "item": "thirtyyearswar:baroque_slouch_hat"
+            },
+            {
+              "tag": "forge:feathers"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cavalier_hat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cavalry_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cavalry_armour",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cuirass"
+            },
+            {
+              "item": "thirtyyearswar:baroque_buff_coat"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cavalry_armour\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "thirtyyearswar:knights_baroque_cavalry_armour: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Thirtyyearswar:knights_baroque_cavalry_armour: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cavalry_armour_gauntlet",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_cavalry_armour_gauntlet/from/thirtyyearswar/knights_baroque_cavalry_armour_gauntlet",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_cavalry_armour_gauntlet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_cavalry_armour (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "thirtyyearswar:knights_baroque_cavalry_armour_gauntlet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cavalry_armour_gauntlet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cavalry_armour"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cavalry_armour_gauntlet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_cavalry_armour_gauntlet/from/thirtyyearswar/knights_baroque_cavalry_armour_gauntlet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_cavalry_armour_gauntlet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cloak_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cloak",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cloak_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_closed_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_closed_helmet/from/thirtyyearswar/knights_baroque_closed_helmet",
+          "material": "forge:steel",
+          "units": 72,
+          "recoverable_units": 117,
+          "added_content_units": 72,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_closed_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_skull_cap (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_closed_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_closed_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_skull_cap"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_closed_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "117 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_closed_helmet/from/thirtyyearswar/knights_baroque_closed_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_closed_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_coat",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_coat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:baroque_shirt"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_coat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_cuirass/from/thirtyyearswar/knights_baroque_cuirass",
+          "material": "forge:steel",
+          "units": 54,
+          "recoverable_units": 54,
+          "added_content_units": 54,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_cuirass"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "thirtyyearswar:knights_baroque_cuirass"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cuirass",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cuirass\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_cuirass/from/thirtyyearswar/knights_baroque_cuirass",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_cuirass`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_cuirassier_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cuirassier_armour",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:netherite_ingot"
+            },
+            {
+              "item": "thirtyyearswar:baroque_armour"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_buff_waistcoat"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_cuirassier_armour\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "thirtyyearswar:knights_baroque_cuirassier_armour: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Thirtyyearswar:knights_baroque_cuirassier_armour: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_barred_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_barred_closed_burgonet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_barred_closed_burgonet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "109 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_barred_lobstertail_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_barred_lobstertail_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_barred_lobstertail_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cabasset_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_cabasset_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_cabasset_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "55 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cavalry_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_cavalry_armour",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_cavalry_armour\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cavalry_armour_gauntlet",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_cavalry_armour_gauntlet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_cavalry_armour_gauntlet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_closed_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_closed_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_closed_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "117 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cuirassier_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_cuirassier_armour",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_cuirassier_armour\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_death_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_death_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_death_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "137 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_grilled_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_grilled_closed_burgonet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_grilled_closed_burgonet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "127 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_lobstertail_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_lobstertail_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_lobstertail_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_officer_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_officer_armour",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_officer_armour\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_open_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_open_burgonet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_open_burgonet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "73 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_open_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_open_closed_burgonet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_open_closed_burgonet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "100 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_pikeman_armour",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_pikeman_armour\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_pikeman_cuirass",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_pikeman_cuirass\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_pot_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_pikeman_pot_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_pikeman_pot_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "55 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_savoyard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dark_savoyard_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dark_savoyard_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "136 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.",
+      "acquisition": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_death_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_death_helmet/from/thirtyyearswar/knights_baroque_death_helmet",
+          "material": "forge:steel",
+          "units": 1,
+          "recoverable_units": 137,
+          "added_content_units": 1,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_death_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_savoyard_helmet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_death_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_death_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_savoyard_helmet"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_death_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "137 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_death_helmet/from/thirtyyearswar/knights_baroque_death_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_death_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_doublet",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_doublet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:baroque_coat"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_doublet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_dutch_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_dutch_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_dutch_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_flat_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_flat_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_flat_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_grilled_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_grilled_closed_burgonet/from/thirtyyearswar/knights_baroque_grilled_closed_burgonet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 127,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_grilled_closed_burgonet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_open_closed_burgonet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_grilled_closed_burgonet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_grilled_closed_burgonet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_open_closed_burgonet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_grilled_closed_burgonet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "127 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_grilled_closed_burgonet/from/thirtyyearswar/knights_baroque_grilled_closed_burgonet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_grilled_closed_burgonet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_lobstertail_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_lobstertail_helmet/from/thirtyyearswar/knights_baroque_lobstertail_helmet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 72,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_lobstertail_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_skull_cap (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_lobstertail_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_lobstertail_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:baroque_skull_cap"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_lobstertail_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_lobstertail_helmet/from/thirtyyearswar/knights_baroque_lobstertail_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_lobstertail_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_matchlock_musket",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_matchlock_musket/from/thirtyyearswar/knights_baroque_matchlock_musket",
+          "material": "forge:steel",
+          "units": 28,
+          "recoverable_units": 28,
+          "added_content_units": 28,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_matchlock_musket"
+          ],
+          "components": [
+            "1x #forge:string",
+            "2x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "thirtyyearswar:knights_baroque_matchlock_musket"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_matchlock_musket",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:string"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_matchlock_musket\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "28 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_matchlock_musket/from/thirtyyearswar/knights_baroque_matchlock_musket",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_matchlock_musket`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_monmouth_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_monmouth_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_monmouth_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_officer_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_officer_armour",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cuirass"
+            },
+            {
+              "item": "thirtyyearswar:baroque_officer_doublet"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_officer_armour\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "thirtyyearswar:knights_baroque_officer_armour: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Thirtyyearswar:knights_baroque_officer_armour: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "thirtyyearswar:baroque_officer_doublet",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_officer_doublet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:dyes/red"
+            },
+            [],
+            {
+              "tag": "forge:dyes/red"
+            },
+            {
+              "item": "thirtyyearswar:baroque_buff_waistcoat"
+            },
+            {
+              "tag": "forge:dyes/red"
+            },
+            [],
+            {
+              "tag": "forge:dyes/red"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_officer_doublet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_open_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_open_burgonet/from/thirtyyearswar/knights_baroque_open_burgonet",
+          "material": "forge:steel",
+          "units": 29,
+          "recoverable_units": 73,
+          "added_content_units": 28,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_open_burgonet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_skull_cap (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_open_burgonet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_open_burgonet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_skull_cap"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_open_burgonet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "73 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_open_burgonet/from/thirtyyearswar/knights_baroque_open_burgonet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_open_burgonet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_open_cloak_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_open_cloak",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cloak_decoration"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_open_cloak_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_open_closed_burgonet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_open_closed_burgonet/from/thirtyyearswar/knights_baroque_open_closed_burgonet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 100,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_open_closed_burgonet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_open_burgonet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_open_closed_burgonet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_open_closed_burgonet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_open_burgonet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_open_closed_burgonet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "100 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_open_closed_burgonet/from/thirtyyearswar/knights_baroque_open_closed_burgonet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_open_closed_burgonet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_panel_cloak_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_panel_cloak",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cloak_decoration"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_panel_cloak_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_armour",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_pikeman_armour",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_armour"
+            },
+            {
+              "item": "thirtyyearswar:baroque_coat"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_pikeman_armour\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "thirtyyearswar:knights_baroque_pikeman_armour: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Thirtyyearswar:knights_baroque_pikeman_armour: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_pikeman_cuirass",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_cuirass"
+            },
+            {
+              "item": "thirtyyearswar:baroque_coat"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_pikeman_cuirass\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "thirtyyearswar:knights_baroque_pikeman_cuirass: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Thirtyyearswar:knights_baroque_pikeman_cuirass: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_pot_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_pikeman_pot_helmet/from/thirtyyearswar/knights_baroque_pikeman_pot_helmet",
+          "material": "forge:steel",
+          "units": 11,
+          "recoverable_units": 55,
+          "added_content_units": 10,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_pikeman_pot_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_skull_cap (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_pikeman_pot_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_pikeman_pot_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_skull_cap"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_pikeman_pot_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "55 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_pikeman_pot_helmet/from/thirtyyearswar/knights_baroque_pikeman_pot_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_pikeman_pot_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_riders_breeches",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_riders_breeches",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_riders_breeches\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_riders_breeches_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:baroque_riders_breeches_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_riders_breeches_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_ruff_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_savoyard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_savoyard_helmet/from/thirtyyearswar/knights_baroque_savoyard_helmet",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 136,
+          "added_content_units": 36,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_savoyard_helmet"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_open_closed_burgonet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_savoyard_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_savoyard_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_open_closed_burgonet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_savoyard_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "136 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_savoyard_helmet/from/thirtyyearswar/knights_baroque_savoyard_helmet",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_savoyard_helmet`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_shirt",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_shirt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_shirt\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_short_ruff_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_shoulder_sash_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_shoulder_sash",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_shoulder_sash_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_skirt",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_skirt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_skirt\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_skirt_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:baroque_skirt_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_skirt_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_skull_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_skull_cap/from/thirtyyearswar/knights_baroque_skull_cap",
+          "material": "forge:steel",
+          "units": 45,
+          "recoverable_units": 45,
+          "added_content_units": 45,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_skull_cap"
+          ],
+          "components": [
+            "1x thirtyyearswar:woollen_cloth"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "thirtyyearswar:knights_baroque_skull_cap"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_skull_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_skull_cap\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_skull_cap/from/thirtyyearswar/knights_baroque_skull_cap",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_skull_cap`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_slouch_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_slouch_hat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_slouch_hat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_cuphilt_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_cuphilt_rapier/from/thirtyyearswar/knights_baroque_cuphilt_rapier",
+          "material": "forge:steel",
+          "units": 1,
+          "recoverable_units": 32,
+          "added_content_units": 1,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_cuphilt_rapier"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_steel_rapier (reworked)"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "thirtyyearswar:knights_baroque_cuphilt_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_cuphilt_rapier",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:baroque_steel_rapier"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_cuphilt_rapier\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "32 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_cuphilt_rapier/from/thirtyyearswar/knights_baroque_cuphilt_rapier",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_cuphilt_rapier`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_halberd",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_halberd/from/thirtyyearswar/knights_baroque_halberd",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_halberd"
+          ],
+          "components": [
+            "1x #magistuarmory:hilts",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "thirtyyearswar:knights_baroque_halberd"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_halberd",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:hilts"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_halberd\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_halberd/from/thirtyyearswar/knights_baroque_halberd",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_halberd`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_partisan",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_partisan/from/thirtyyearswar/knights_baroque_partisan",
+          "material": "forge:steel",
+          "units": 19,
+          "recoverable_units": 19,
+          "added_content_units": 19,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_partisan"
+          ],
+          "components": [
+            "1x #magistuarmory:hilts",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "thirtyyearswar:knights_baroque_partisan"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_partisan",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:hilts"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_partisan\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "19 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_partisan/from/thirtyyearswar/knights_baroque_partisan",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_partisan`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_pike",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_pike/from/thirtyyearswar/knights_baroque_pike",
+          "material": "forge:steel",
+          "units": 11,
+          "recoverable_units": 11,
+          "added_content_units": 11,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_pike"
+          ],
+          "components": [
+            "2x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:pike",
+          "from": "thirtyyearswar:knights_baroque_pike"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_pike",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "magistuarmory:poles"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_pike\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "11 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_pike/from/thirtyyearswar/knights_baroque_pike",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_pike`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_pollax",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_pollax/from/thirtyyearswar/knights_baroque_pollax",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_pollax"
+          ],
+          "components": [
+            "1x #magistuarmory:hilts",
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "thirtyyearswar:knights_baroque_pollax"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_pollax",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:hilts"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_pollax\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_pollax/from/thirtyyearswar/knights_baroque_pollax",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_pollax`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_rapier/from/thirtyyearswar/knights_baroque_rapier",
+          "material": "forge:steel",
+          "units": 11,
+          "recoverable_units": 31,
+          "added_content_units": 11,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_rapier"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_steel_sidesword (reworked)"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "thirtyyearswar:knights_baroque_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_rapier",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_steel_sidesword"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_rapier\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "31 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_rapier/from/thirtyyearswar/knights_baroque_rapier",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_rapier`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_sidesword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_sidesword/from/thirtyyearswar/knights_baroque_sidesword",
+          "material": "forge:steel",
+          "units": 20,
+          "recoverable_units": 20,
+          "added_content_units": 20,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_sidesword"
+          ],
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword",
+          "from": "thirtyyearswar:knights_baroque_sidesword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_sidesword",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:hilts"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_sidesword\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "20 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_sidesword/from/thirtyyearswar/knights_baroque_sidesword",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_sidesword`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_swepthilt_rapier",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_swepthilt_rapier/from/thirtyyearswar/knights_baroque_swepthilt_rapier",
+          "material": "forge:steel",
+          "units": 1,
+          "recoverable_units": 32,
+          "added_content_units": 1,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_swepthilt_rapier"
+          ],
+          "components": [
+            "1x thirtyyearswar:baroque_steel_rapier (reworked)"
+          ],
+          "pattern": "immersive_smithing:rapier",
+          "from": "thirtyyearswar:knights_baroque_swepthilt_rapier"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_swepthilt_rapier",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "thirtyyearswar:baroque_steel_rapier"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_swepthilt_rapier\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "32 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_swepthilt_rapier/from/thirtyyearswar/knights_baroque_swepthilt_rapier",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_swepthilt_rapier`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_walloon_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_steel_walloon_sword/from/thirtyyearswar/knights_baroque_walloon_sword",
+          "material": "forge:steel",
+          "units": 29,
+          "recoverable_units": 29,
+          "added_content_units": 29,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_walloon_sword"
+          ],
+          "components": [
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:sword",
+          "from": "thirtyyearswar:knights_baroque_walloon_sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_walloon_sword",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "magistuarmory:hilts"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_steel_walloon_sword\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "29 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_steel_walloon_sword/from/thirtyyearswar/knights_baroque_walloon_sword",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_walloon_sword`."
+    },
+    {
+      "id": "thirtyyearswar:baroque_waist_sash_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_waist_sash",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_waist_sash_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_waistcoat",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_waistcoat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            {
+              "item": "thirtyyearswar:baroque_shirt"
+            },
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:felt_fabric"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_waistcoat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:baroque_wheellock_pistol",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/thirtyyearswar/baroque_wheellock_pistol/from/thirtyyearswar/knights_baroque_wheellock_pistol",
+          "material": "forge:steel",
+          "units": 19,
+          "recoverable_units": 19,
+          "added_content_units": 19,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "thirtyyearswar:knights_baroque_wheellock_pistol"
+          ],
+          "components": [
+            "1x minecraft:flint_and_steel",
+            "1x #forge:nuggets/iron",
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "thirtyyearswar:knights_baroque_wheellock_pistol"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_baroque_wheellock_pistol",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:flint_and_steel"
+            },
+            {
+              "tag": "forge:nuggets/iron"
+            },
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:baroque_wheellock_pistol\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "19 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/thirtyyearswar/baroque_wheellock_pistol/from/thirtyyearswar/knights_baroque_wheellock_pistol",
+      "acquisition": "Forged; replaces `thirtyyearswar:knights_baroque_wheellock_pistol`."
+    },
+    {
+      "id": "thirtyyearswar:court_robe_decoration",
+      "kind": "item",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:court_robe_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "minecraft:black_dye"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:court_robe_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:felt_fabric",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_felt_fabric",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            },
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            },
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            },
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            },
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            },
+            {
+              "item": "thirtyyearswar:wool_fibers"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:felt_fabric\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "thirtyyearswar:paper_cartridge",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_paper_cartridge",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "tag": "forge:nuggets/iron"
+            },
+            {
+              "tag": "forge:nuggets/iron"
+            },
+            {
+              "tag": "forge:gunpowder"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"thirtyyearswar:paper_cartridge\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "thirtyyearswar:renaissance_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:renaissance_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "minecraft:black_dye"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:renaissance_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:rich_breeches",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:rich_breeches",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "minecraft:black_dye"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:rich_breeches\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:rich_doublet",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:rich_doublet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            [],
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "minecraft:black_dye"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            },
+            {
+              "item": "thirtyyearswar:woollen_cloth"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"thirtyyearswar:rich_doublet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available.",
+      "acquisition": "Textile or leather clothing/accessory; native tailoring and attachment remain available.."
+    },
+    {
+      "id": "thirtyyearswar:wool_fibers",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_wool_fibers",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "minecraft:wool"
+            }
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"thirtyyearswar:wool_fibers\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "thirtyyearswar:woollen_cloth",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "thirtyyearswar:knights_woollen_cloth",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "minecraft:wool"
+            },
+            {
+              "tag": "minecraft:wool"
+            },
+            {
+              "tag": "minecraft:wool"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"thirtyyearswar:woollen_cloth\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    }
+  ],
+  "dispositions": {
+    "disabled_by_upstream": 2,
+    "forge_default": 26,
+    "native_nonmetal_recipe": 30,
+    "native_transformation": 22,
+    "non_equipment": 4
+  }
+}

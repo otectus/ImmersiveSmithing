@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "thirtyyearswar:baroque_dark_barred_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_barred_lobstertail_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cabasset_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cavalry_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cavalry_armour_gauntlet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_closed_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_cuirassier_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_death_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_grilled_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_lobstertail_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_officer_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_open_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_open_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_cuirass",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_pikeman_pot_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_dark_savoyard_helmet",
+      "required": false
+    }
+  ]
+}

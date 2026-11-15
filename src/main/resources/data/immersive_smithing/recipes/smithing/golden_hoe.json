@@ -14,5 +14,8 @@
     "item": "minecraft:golden_hoe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:hoe"
+  "anvil_pattern": "immersive_smithing:hoe",
+  "replaces": [
+    "minecraft:golden_hoe"
+  ]
 }

@@ -74,6 +74,303 @@
     },
     {
       "items": [
+        "ekotsk:black_leather"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:black_leather"
+    },
+    {
+      "items": [
+        "ekotsk:black_woolen_fabric"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:black_woolen_fabric"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_chainmail"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_chainmail"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot, ekotsk:blacked_steel_nuggets_to_ingot"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot_to_nuggets"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_lamellar"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_lamellar"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_plate"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_ring"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ring"
+    },
+    {
+      "items": [
+        "ekotsk:blacked_steel_small_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_small_plate"
+    },
+    {
+      "items": [
+        "ekotsk:dragon_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:dragon_decoration"
+    },
+    {
+      "items": [
+        "ekotsk:fancy_cape_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:fancy_cape_decoration"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_chainmail"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_chainmail"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot, ekotsk:gilded_steel_nuggets_to_ingot"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot_to_nuggets"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_plate"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_ring"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ring"
+    },
+    {
+      "items": [
+        "ekotsk:gilded_steel_small_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_small_plate"
+    },
+    {
+      "items": [
+        "ekotsk:gold_cloak_left_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gold_cloak_left_decoration"
+    },
+    {
+      "items": [
+        "ekotsk:gold_cloak_right_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gold_cloak_right_decoration"
+    },
+    {
+      "items": [
+        "ekotsk:night_watch_cape_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:night_watch_cape_decoration"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_arrow"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_button"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_button"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_door"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_door"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_fence"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_fence"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_fence_gate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_fence_gate"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_hanging_sign"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_hanging_sign"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_planks"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_planks"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_pressure_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_pressure_plate"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_sign"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_sign"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_slab"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_slab"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_stairs"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_stairs"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_stick"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_stick"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_trapdoor"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_trapdoor"
+    },
+    {
+      "items": [
+        "ekotsk:weirwood_wood"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_wood"
+    },
+    {
+      "items": [
+        "ekotsk:whitening_template"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:whitening_template, ekotsk:whitening_template_copy"
+    },
+    {
+      "items": [
+        "ekotsk:apple_pattern",
+        "ekotsk:arrows_pattern",
+        "ekotsk:arryn_pattern",
+        "ekotsk:beacon_pattern",
+        "ekotsk:bonehand_pattern",
+        "ekotsk:bright_sun_pattern",
+        "ekotsk:carried_shield_pattern",
+        "ekotsk:dornish_sun_pattern",
+        "ekotsk:fallen_star_pattern",
+        "ekotsk:fish_pattern",
+        "ekotsk:grape_pattern",
+        "ekotsk:hightower_pattern",
+        "ekotsk:hives_pattern",
+        "ekotsk:hog_pattern",
+        "ekotsk:horn_pattern",
+        "ekotsk:horse_head_pattern",
+        "ekotsk:hunter_pattern",
+        "ekotsk:kraken_pattern",
+        "ekotsk:lannister_cape_decoration",
+        "ekotsk:lannister_pattern",
+        "ekotsk:moons_pattern",
+        "ekotsk:prancing_horse_pattern",
+        "ekotsk:rose_pattern",
+        "ekotsk:scythe_pattern",
+        "ekotsk:seahorse_pattern",
+        "ekotsk:seven_pattern",
+        "ekotsk:shield_pattern",
+        "ekotsk:spear_pattern",
+        "ekotsk:stag_pattern",
+        "ekotsk:stark_pattern",
+        "ekotsk:stripped_weirwood_log",
+        "ekotsk:stripped_weirwood_wood",
+        "ekotsk:suns_pattern",
+        "ekotsk:sword_pattern",
+        "ekotsk:targaryen_pattern",
+        "ekotsk:three_towers_pattern",
+        "ekotsk:two_towers_pattern",
+        "ekotsk:weirwood_face_easter_egg",
+        "ekotsk:weirwood_face_grim",
+        "ekotsk:weirwood_face_happy",
+        "ekotsk:weirwood_leaves",
+        "ekotsk:weirwood_log",
+        "ekotsk:weirwood_pattern",
+        "ekotsk:weirwood_sapling",
+        "ekotsk:wreaths_pattern",
+        "ekotsk:wyl_pattern"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "ekotsk:aegon_crown_decoration",
         "ekotsk:aegon_dagger",
         "ekotsk:blackfyre",

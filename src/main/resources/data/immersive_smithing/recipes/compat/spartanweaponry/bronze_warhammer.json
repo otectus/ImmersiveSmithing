@@ -34,5 +34,8 @@
     "item": "spartanweaponry:bronze_warhammer"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:warhammer"
+  "anvil_pattern": "immersive_smithing:warhammer",
+  "replaces": [
+    "spartanweaponry:bronze_warhammer"
+  ]
 }

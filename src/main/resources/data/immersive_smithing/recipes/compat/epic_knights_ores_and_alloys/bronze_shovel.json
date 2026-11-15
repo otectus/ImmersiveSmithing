@@ -5,21 +5,18 @@
       "modid": "epic_knights_ores_and_alloys"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "epic_knights_ores_and_alloys",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "epic_knights_ores_and_alloys:bronze_shovel"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:bronze",
-  "metal_units": 9,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:stick"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "epic_knights_ores_and_alloys:bronze_shovel"
   },

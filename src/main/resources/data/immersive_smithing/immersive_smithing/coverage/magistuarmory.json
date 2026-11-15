@@ -156,6 +156,240 @@
     },
     {
       "items": [
+        "magistuarmory:barding",
+        "magistuarmory:chainmail_horse_armor"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native horse armor with no manufacturing recipe; protection remains the upstream direct property and receives no efficacy scaling."
+    },
+    {
+      "items": [
+        "magistuarmory:big_plume_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:big_plume_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:darkening_template"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:darkening_template, magistuarmory:darkening_template_copy"
+    },
+    {
+      "items": [
+        "magistuarmory:ecranche_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:ecranche_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:feathers_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:feathers_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:furnace/steel_ingot_blasting, magistuarmory:steel_ingot_blasting, magistuarmory:steel_nuggets_to_steel_ingot, medieval_boomsticks:magentitesmeltingblast"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:furnace/steel_nugget_blasting, magistuarmory:steel_ingot_to_steel_nuggets, magistuarmoryaddon:furnace/steel_nugget_blasting, slavicarmory:furnace/steel_nugget_blasting"
+    },
+    {
+      "items": [
+        "magistuarmory:gilding_template"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:gilding_template, magistuarmory:gilding_template_copy"
+    },
+    {
+      "items": [
+        "magistuarmory:hilt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:hilt"
+    },
+    {
+      "items": [
+        "magistuarmory:hood_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:hood_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:lamellar_rows"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:lamellar_rows"
+    },
+    {
+      "items": [
+        "magistuarmory:leather_strip"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:leather_strip"
+    },
+    {
+      "items": [
+        "magistuarmory:plume_left_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:plume_left_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:plume_middle_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:plume_middle_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:plume_right_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:plume_right_decoration, magistuarmory:plume_right_decoration_from_left_plume_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:pole"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:pole"
+    },
+    {
+      "items": [
+        "magistuarmory:rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:rondel_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:small_steel_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:small_steel_plate"
+    },
+    {
+      "items": [
+        "magistuarmory:spike_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:spike_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_chain"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:steel_chain"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_chainmail"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:steel_chainmail"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:steel_plate"
+    },
+    {
+      "items": [
+        "magistuarmory:steel_ring"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:steel_ring"
+    },
+    {
+      "items": [
+        "magistuarmory:torse_and_mantle_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:torse_and_mantle_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:torse_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:torse_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:two_plumes_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:two_plumes_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:viking_horns_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:viking_horns_decoration"
+    },
+    {
+      "items": [
+        "magistuarmory:woolen_fabric"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmory:woolen_fabric_from_strings, magistuarmory:woolen_fabric_from_wool"
+    },
+    {
+      "items": [
+        "magistuarmory:antlers_decoration",
+        "magistuarmory:apostolic_cross_pattern",
+        "magistuarmory:bear_decoration",
+        "magistuarmory:bowl_pattern",
+        "magistuarmory:bull_pattern",
+        "magistuarmory:bullhorns_decoration",
+        "magistuarmory:chess_pattern",
+        "magistuarmory:crusader_cross_pattern",
+        "magistuarmory:demon_horns_decoration",
+        "magistuarmory:dragon_decoration",
+        "magistuarmory:dragon_pattern",
+        "magistuarmory:duck_decoration",
+        "magistuarmory:eagle_pattern",
+        "magistuarmory:gazelle_horns_decoration",
+        "magistuarmory:griffin_decoration",
+        "magistuarmory:horse_decoration",
+        "magistuarmory:horse_pattern",
+        "magistuarmory:lily_decoration",
+        "magistuarmory:lily_pattern",
+        "magistuarmory:lion1_pattern",
+        "magistuarmory:lion2_pattern",
+        "magistuarmory:lion_decoration",
+        "magistuarmory:medieval_bag",
+        "magistuarmory:orthodox_cross_pattern",
+        "magistuarmory:snake_pattern",
+        "magistuarmory:sun_pattern",
+        "magistuarmory:swords_pattern",
+        "magistuarmory:tower_pattern",
+        "magistuarmory:tree_pattern",
+        "magistuarmory:two-headed_eagle_pattern",
+        "magistuarmory:unicorn_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "magistuarmory:corruptedroundshield"
       ],
       "disposition": "protected_loot",

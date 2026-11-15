@@ -17,8 +17,10 @@ public final class MaterialResolver {
     public record Resolved(MaterialFamily family, int unitsEach, Kind kind, String rule) {}
 
     public static Optional<Resolved> resolve(ItemStack stack) {
-        if (stack.isEmpty()) return Optional.empty();
+        if (stack.isEmpty() || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)
+                || com.otectus.immersivesmithing.compat.epicknights.LoadedEquipment.hasPayload(stack)) return Optional.empty();
         SmithingData data = SmithingData.current();
+        if (stack.is(ModTags.NON_RECYCLABLE) || data.isRecyclingExcluded(stack.getItem()) || ImmersiveSmithingAPI.isExcluded(stack)) return Optional.empty();
         MaterialRegistry.Entry entry = data.materials().lookup(stack.getItem());
         if (entry != null) {
             return data.materials().family(entry.family())
@@ -38,7 +40,8 @@ public final class MaterialResolver {
 
     /** Recipe/provider value before the per-piece cap; exclusions still apply. */
     static Optional<RecyclingValue> baseRecyclingValue(ItemStack stack) {
-        if (stack.isEmpty() || stack.is(ModTags.NON_RECYCLABLE) || ImmersiveSmithingAPI.isExcluded(stack)) return Optional.empty();
+        if (stack.isEmpty() || stack.is(ModTags.NON_RECYCLABLE) || ImmersiveSmithingAPI.isExcluded(stack)
+                || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)) return Optional.empty();
         SmithingData data = SmithingData.current();
         if (data.isRecyclingExcluded(stack.getItem())) return Optional.empty();
         RecyclingValue value = data.recycling(stack.getItem());

@@ -1,0 +1,2338 @@
+[
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=thirtyyearswar,fletchery,ingots",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-175857.log",
+    "result": "PASS 111/111",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=japanese",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-180011.log",
+    "result": "PASS 111/111",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=boomsticks-release",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-180525.log",
+    "result": "FAIL: 108/111",
+    "build_successful": false,
+    "failures": [
+      "epicknightspiecescomeoutofthewholeloop failed! medieval_boomsticks:javelin has exactly one forge recipe, got []",
+      "forgedknightsgearnevermintsmetal failed! medieval_boomsticks:iron_throwing_axe has exactly one forge recipe, got []",
+      "noeligibleequipmentismissingsupport failed! 4 items lack a route: medieval_boomsticks:iron_throwing_axe (no forge recipe and no reviewed decision for this version of the mod), medieval_boomsticks:iron_throwing_knife (no forge recipe and no reviewed decision for this version of the mod), medieval_boomsticks:javelin (no forge recipe and no reviewed decision for this version of the mod), medieval_boomsticks:war_dart (no forge recipe and no reviewed decision for this version of the mod)"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-180711.log",
+    "result": "FAIL: 110/111",
+    "build_successful": false,
+    "failures": [
+      "castoutputsresolve failed! minecraft:copper nuggets: [Output[item=copper_nugget, unitsEach=1, kind=NUGGET], Output[item=coppernugget, unitsEach=1, kind=NUGGET]]"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=overgeared",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-180845.log",
+    "result": "FAIL: 100/111",
+    "build_successful": false,
+    "failures": [
+      "everyrecipeofequipmenthasadecision failed! Automatic detection gives way to it",
+      "clothbasesarereworkednotpricedasmetal failed! A diamond sword and two diamonds keep their shape: 9 units",
+      "epicknightspiecescomeoutofthewholeloop failed! magistuarmory:armet has exactly one forge recipe, got []",
+      "onlythereplacedrecipeisdisabled failed! The gold recipe of the golden sword is replaced by its gold forge recipe",
+      "castoutputsresolve failed! minecraft:copper nuggets: [Output[item=copper_nugget, unitsEach=1, kind=NUGGET]]",
+      "conventionalrecipesreplaced failed! Iron sword crafting is disabled",
+      "gildinganddarkeningkeepthesmithswork failed! No value present",
+      "autodetectexclusionscovereverypass failed! An explicit recipe is unaffected and still replaces its native recipe",
+      "smithingtableupgradesbecomeforgerecipes failed! Netherite 18 units, got minecraft:netherite 9",
+      "epicknightscostsfollowtheirrecipes failed! magistuarmory:armet has exactly one forge recipe, got []",
+      "rebuildisrepeatableandkeepsoriginals failed! The vanilla iron sword recipe is disabled"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=base"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-181936.log",
+    "result": "FAIL: 108/114",
+    "build_successful": false,
+    "failures": [
+      "platesmeltfortheiringot failed! No value present",
+      "onlythereplacedrecipeisdisabled failed! The kept recipe is reported with its reason: not one of the native recipes the built-in forge recipe replaces (kept by design)",
+      "inventorymatchesthecheckedinfixtures failed! magistuarmory differs from its inventory (396): magistuarmory:armet forge: inventory [{\"recipe\":\"immersive_smithing:compat/magistuarmory/armet\",\"material\":\"forge:steel\",\"units\":72,\"components\":[],\"pattern\":\"immersive_smithing:helmet\"}], live [{\"recipe\":\"immersive_smithing:compat/magistuarmory/armet/from/magistuarmory/armet\",\"material\":\"forge:steel\",\"units\":27,\"components\":[\"1x magistuarmory:barbute (reworked)\"],\"pattern\":\"immersive_smithing:helmet\",\"from\":\"magistuarmory:armet\"}] | magistuarmory:barbedclub forge: inventory [{\"recipe\":\"immersive_smithing:compat/magistuarmory/barbedclub\",\"material\":\"forge:steel\",\"units\":22,\"components\":[\"1x #forge:rods/wooden\"],\"pattern\":\"immersive_smithing:club\"}], live [{\"recipe\":\"immersive_smithing:compat/magistuarmory/barbedclub/from/magistuarmory/barbedclub\",\"material\":\"forge:steel\",\"units\":22,\"components\":[\"1x #forge:rods/wooden\"],\"pattern\":\"immersive_smithing:club\",\"from\":\"magistuarmory:barbedclub\"}] | magistuarmory:barbute forge: inventory [{\"recipe\":\"immersive_smithing:compat/magistuarmory/barbute\",\"material\":\"forge:steel\",\"units\":45,\"components\":[],\"pattern\":\"immersive_smithing:helmet\"}], live [{\"recipe\":\"immersive_smithing:compat/magistuarmory/barbute/from/magistuarmory/barbute\",\"material\":\"forge:steel\",\"units\":45,\"components\":[],\"pattern\":\"immersive_smithing:helmet\",\"from\":\"magistuarmory:barbute\"}] | magistuarmory:bascinet forge: inventory [{\"recipe\":\"immersive_smithing:compat/magistuarmory/bascinet\",\"material\":\"forge:steel\",\"units\":76,\"components\":[],\"pattern\":\"immersive_smithing:helmet\"}], live [{\"recipe\":\"immersive_smithing:compat/magistuarmory/bascinet/from/magistuarmory/bascinet\",\"material\":\"forge:steel\",\"units\":18,\"components\":[\"1x magistuarmory:norman_helmet (reworked)\"],\"pattern\":\"immersive_smithing:helmet\",\"from\":\"magistuarmory:bascinet\"}]",
+      "forgedknightsgearnevermintsmetal failed! immersive_smithing:compat/magistuarmory/armet/from/magistuarmory/armet melts for 72 but costs 27; immersive_smithing:compat/magistuarmory/bascinet/from/magistuarmory/bascinet melts for 76 but costs 18; immersive_smithing:compat/magistuarmory/copper_bastardsword/from/magistuarmory/copper_bastardsword melts for 27 but costs 9; immersive_smithing:compat/magistuarmory/copper_claymore/from/magistuarmory/copper_claymore melts for 27 but costs 9; immersive_smithing:compat/magistuarmory/copper_estoc/from/magistuarmory/copper_estoc melts for 27 but costs 9; immersive_smithing:compat/magistuarmory/copper_guisarme/from/magistuarmory/copper_guisarme melts for 27 but costs 9",
+      "noeligibleequipmentismissingsupport failed! 97 items lack a route: magistuarmory:bronze_ahlspiess (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_bastardsword (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_buckler (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_chainmorgenstern (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_chivalrylance (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_claymore (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_concavehalberd (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_ellipticalshield (no forge recipe and no reviewed decision for this version of the mod)",
+      "epicknightscostsfollowtheirrecipes failed! magistuarmory:armet costs 72 forge:steel, got 27 forge:steel"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-183819.log",
+    "result": "FAIL: 106/114",
+    "build_successful": false,
+    "failures": [
+      "craftinginheritsqualityandmark failed! Title and inscription travel too",
+      "arrowscarrybowquality failed! Masterwork bow: 2.0 x 1.15",
+      "onlythereplacedrecipeisdisabled failed! The kept recipe is reported with its reason: not one of the native recipes the built-in forge recipe replaces (kept by design)",
+      "castoutputsresolve failed! minecraft:copper nuggets: [Output[item=copper_nugget, unitsEach=1, kind=NUGGET], Output[item=coppernugget, unitsEach=1, kind=NUGGET]]",
+      "forgedknightsgearnevermintsmetal failed! immersive_smithing:compat/antiquelegacy/bronze_pilos_closet/from/antiquelegacy/bronze_pilos_closet melts for 65 but costs 20; immersive_smithing:compat/antiquelegacy/iron_sarissa/from/antiquelegacy/iron_sarissa melts for 19 but costs 11; immersive_smithing:compat/ekotsk/dornish_chestplate/from/ekotsk/dornish_chestplate melts for 54 but costs 18; immersive_smithing:compat/ekotsk/dornish_helmet/from/ekotsk/dornish_helmet melts for 72 but costs 27; immersive_smithing:compat/ekotsk/dornish_leggings/from/ekotsk/dornish_leggings melts for 49 but costs 18; immersive_smithing:compat/ekotsk/got_gold_cloak_chestplate/from/ekotsk/got_gold_cloak_chestplate melts for 76 but costs 45",
+      "bundledrecipesdisableexactlywhattheyname failed! epic_knights__japanese_armory:kama was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkama was disabled though no built-in recipe names it; epic_knights__japanese_armory:katana was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkatana was disabled though no built-in recipe names it; epic_knights__japanese_armory:kunai was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkunai was disabled though no built-in recipe names it",
+      "noeligibleequipmentismissingsupport failed! 31 items lack a route: magistuarmory:bronze_flamebladedsword (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:bronze_ranseur (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:copper_flamebladedsword (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:copper_ranseur (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:crusader_chestplate (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:gold_flamebladedsword (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:gold_ranseur (no forge recipe and no reviewed decision for this version of the mod), magistuarmory:iron_flamebladedsword (no forge recipe and no reviewed decision for this version of the mod)",
+      "epicknightscostsfollowtheirrecipes failed! magistuarmory:armet costs 72 forge:steel, got 27 forge:steel"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-184551.log",
+    "result": "FAIL: 115/118",
+    "build_successful": false,
+    "failures": [
+      "realvisorpacketpreservesstateandvalidatessender failed! Cannot invoke \"com.google.common.collect.BiMap.get(Object)\" because \"pairs\" is null",
+      "bundledrecipesdisableexactlywhattheyname failed! epic_knights__japanese_armory:kama was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkama was disabled though no built-in recipe names it; epic_knights__japanese_armory:katana was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkatana was disabled though no built-in recipe names it; epic_knights__japanese_armory:kunai was disabled though no built-in recipe names it; epic_knights__japanese_armory:jkunai was disabled though no built-in recipe names it",
+      "epicknightscostsfollowtheirrecipes failed! magistuarmoryaddon:steel_longsword costs 28 forge:steel, got 10 forge:steel"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-184922.log",
+    "result": "FAIL: 113/118",
+    "build_successful": false,
+    "failures": [
+      "remaindersstaymoltenandcastasnuggets failed! Seven ingots, seven units left",
+      "epicknightspiecescomeoutofthewholeloop failed! no workpiece",
+      "requestsarecheckedlikeeveryinput failed! A duplicate or replayed request is ignored",
+      "castsonlywhattheinventoryholds failed! The forge screen did not open",
+      "areloadbetweenopenandcastrevalidates failed! The metal no longer casts into iron ingots after the reload: refused, nothing taken"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-185156.log",
+    "result": "PASS 118/118",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=boomsticks-release",
+      "-PregistryDump=all",
+      "-PgameTestProfile=boomsticks-release"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-185619.log",
+    "result": "PASS 119/119",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=overgeared",
+      "-PregistryDump=all",
+      "-PgameTestProfile=overgeared"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-190231.log",
+    "result": "PASS 0/0",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=overgeared",
+      "-PregistryDump=all",
+      "-PgameTestProfile=overgeared"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-190943.log",
+    "result": "PASS 3/3",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=artillery",
+      "-PregistryDump=all",
+      "-PgameTestProfile=artillery"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-191210.log",
+    "result": "FAIL: no nonzero passing test summary",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=artillery",
+      "-PregistryDump=all",
+      "-PgameTestProfile=artillery"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-191321.log",
+    "result": "FAIL: 120/121",
+    "build_successful": false,
+    "failures": [
+      "artillerynativethrownrecoveryandbothusepaths failed! Native throw scales once"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-192021.log",
+    "result": "FAIL: 125/127",
+    "build_successful": false,
+    "failures": [
+      "longchainsalternateroutesandcycleshaveconservativecontent failed! java.lang.UnsupportedOperationException",
+      "everyrefundboundaryreturnsthecompletereservedbaseonce failed! Escrow cleared, unspent metal retained: logout"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-192121.log",
+    "result": "FAIL: 126/127",
+    "build_successful": false,
+    "failures": [
+      "everyrefundboundaryreturnsthecompletereservedbaseonce failed! java.lang.UnsupportedOperationException"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=terrafirma",
+      "-PregistryDump=all",
+      "-PgameTestProfile=terrafirma"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-192257.log",
+    "result": "PASS 3/3",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=terrafirmagreg",
+      "-PregistryDump=all",
+      "-PgameTestProfile=terrafirmagreg"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-192436.log",
+    "result": "PASS 3/3",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-193147.log",
+    "result": "FAIL: no nonzero passing test summary",
+    "build_successful": false,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-193244.log",
+    "result": "FAIL: 129/130",
+    "build_successful": false,
+    "failures": [
+      "nativeheraldryanddecorationremovalretainpersonalidentity failed! Native heraldry preserves the exact personal name"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-193811.log",
+    "result": "FAIL: 129/131",
+    "build_successful": false,
+    "failures": [
+      "nativeheraldryanddecorationremovalretainpersonalidentity failed! Native removal preserves name, quality, carry and maker on the gear",
+      "allpinnedartillerylaunchboundariestransform failed! Critical injection failure: Redirector immersive_smithing$snapshot(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Z in immersive_smithing.mixins.json:ArtilleryShotMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). No refMap loaded."
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combined"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194130.log",
+    "result": "FAIL: 131/132",
+    "build_successful": false,
+    "failures": [
+      "allpinnedartillerylaunchboundariestransform failed! Critical injection failure: Redirector immersiveSmithing$snapshot(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;)Z in immersive_smithing.mixins.json:ArtilleryShotMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). No refMap loaded."
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "-PepicKnights=artillery,bettercombat",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combat-artillery"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194300.log",
+    "result": "FAIL: no nonzero passing test summary",
+    "build_successful": false,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=artillery,bettercombat",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combat-artillery"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194423.log",
+    "result": "FAIL: 131/132",
+    "build_successful": false,
+    "failures": [
+      "actualcombosandoffhandattacksscaleoncewithoutchangingpresets failed! Grading keeps the actual loaded preset: iron_lance"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=artillery,bettercombat",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combat-artillery"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194727.log",
+    "result": "FAIL: 131/133",
+    "build_successful": false,
+    "failures": [
+      "actualcombosandoffhandattacksscaleoncewithoutchangingpresets failed! Actual combo iron_lance/0 scales once: 1.0/1.0/1.0",
+      "artillerydelayedshotkeepstheweaponbeforeahandchange failed! Real delayed native shot keeps original high quality after low-quality hand swap"
+    ],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=artillery,rework",
+      "-PregistryDump=all",
+      "-PgameTestProfile=combat-artillery-rework"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194856.log",
+    "result": "PASS 133/133",
+    "build_successful": true,
+    "failures": [],
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "compileJava"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-compileJava-20261031-181734.log",
+    "result": "PASS",
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "compileJava"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-compileJava-20261031-182938.log",
+    "result": "PASS",
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "compileJava"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-compileJava-20261031-183615.log",
+    "result": "PASS",
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "build",
+      "packTestJar",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle"
+    ],
+    "log": "/tmp/gradle-ImmersiveSmithing-build-20261031-194618.log",
+    "result": "PASS",
+    "phase": "development",
+    "argument_provenance": "reconstructed from execution notes and retained logs; final validation below records exact argument arrays"
+  },
+  {
+    "phase": "build",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "build",
+      "packTestJar",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/gradle-ImmersiveSmithing-build-20261031-195538.log"
+  },
+  {
+    "phase": "build",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "build",
+      "packTestJar",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/gradle-ImmersiveSmithing-build-20261031-200513.log"
+  },
+  {
+    "phase": "build",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "build",
+      "packTestJar",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/gradle-ImmersiveSmithing-build-20261031-202003.log"
+  },
+  {
+    "profile": "plain",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-plain"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 51.8,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194958.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/plain-1793490598.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-plain/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "compat",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PcompatMods",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-compat"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 52.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195049.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/compat-1793490649.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-compat/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "base",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=base",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-base"
+    ],
+    "exit_code": 1,
+    "pass": false,
+    "tests": 134,
+    "failures": [
+      "twohandedandmountedweaponsretainnativepenaltiesandattributes failed! Native speed/reach/other attributes unchanged: magistuarmory:steel_zweihander"
+    ],
+    "seconds": 46.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195142.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/base-1793490702.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+    "phase": "profile",
+    "result": "FAIL (134 tests)"
+  },
+  {
+    "profile": "addon",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=addon",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-addon"
+    ],
+    "exit_code": 1,
+    "pass": false,
+    "tests": 134,
+    "failures": [
+      "twohandedandmountedweaponsretainnativepenaltiesandattributes failed! Native speed/reach/other attributes unchanged: magistuarmory:steel_zweihander"
+    ],
+    "seconds": 73.4,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195229.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/addon-1793490749.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-addon/logs",
+    "phase": "profile",
+    "result": "FAIL (134 tests)"
+  },
+  {
+    "profile": "antique",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=antique",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-antique"
+    ],
+    "exit_code": 1,
+    "pass": false,
+    "tests": 0,
+    "failures": [],
+    "seconds": 158.4,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195343.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/antique-1793490823.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-antique/logs",
+    "phase": "profile",
+    "result": "FAIL (0 tests)"
+  },
+  {
+    "profile": "slavic",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=slavic",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-slavic"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 55.5,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195621.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/slavic-1793490981.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-slavic/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "darkages",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=darkages",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-darkages"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 56.8,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195717.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/darkages-1793491037.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-darkages/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "japanese",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=japanese",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-japanese"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 56.2,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195813.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/japanese-1793491093.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-japanese/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "oresalloys",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=oresalloys",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-oresalloys"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 57.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195910.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/oresalloys-1793491150.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-oresalloys/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "ingots",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-ingots"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 48.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200007.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/ingots-1793491207.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-ingots/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "iceandfire",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=iceandfire",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-iceandfire"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 63.1,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200055.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/iceandfire-1793491255.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-iceandfire/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "thirtyyearswar",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=thirtyyearswar",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-thirtyyearswar"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 37.5,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200158.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/thirtyyearswar-1793491318.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-thirtyyearswar/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "fletchery",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=fletchery",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-fletchery"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 48.3,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200235.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/fletchery-1793491355.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-fletchery/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "artillery",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=artillery",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-artillery"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 44.4,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200323.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/artillery-1793491403.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-artillery/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "boomsticks",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=boomsticks",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-boomsticks"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 270.4,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200408.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/boomsticks-1793491448.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "boomsticks-release",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=boomsticks-release",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-boomsticks-release"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 54.7,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200838.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/boomsticks-release-1793491718.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "sevenkingdoms",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=sevenkingdoms",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-sevenkingdoms"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 44.6,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200933.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/sevenkingdoms-1793491773.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-sevenkingdoms/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "bettercombat",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=bettercombat",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-bettercombat"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 53.6,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201017.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/bettercombat-1793491817.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-bettercombat/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "rework",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=rework",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-rework"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 134,
+    "failures": [],
+    "seconds": 49.2,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201111.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/rework-1793491871.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-rework/logs",
+    "phase": "profile",
+    "result": "PASS (134 tests)"
+  },
+  {
+    "profile": "armor",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=addon,slavic,antique,darkages,japanese",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-armor"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 60.8,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201200.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/armor-1793491920.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-armor/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "materials",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=oresalloys,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-materials"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 46.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201301.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/materials-1793491981.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "materials-provider",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=oresalloys,ingots,iceandfire",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-materials-provider"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 55.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201347.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/materials-provider-1793492027.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "ranged",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=thirtyyearswar,fletchery,artillery,boomsticks-release",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-ranged"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 47.1,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201442.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/ranged-1793492082.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-ranged/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "visors",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=openhelms,swappable",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-visors"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 36.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201529.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/visors-1793492129.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-visors/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "visors-addon",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=addon,openhelms,swappable",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-visors-addon"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 45.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201605.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/visors-addon-1793492165.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-visors-addon/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "epicfight",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=base",
+      "-PepicFight",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-epicfight"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 39.5,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201651.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/epicfight-1793492211.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-epicfight/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "combined",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-combined"
+    ],
+    "exit_code": 0,
+    "pass": false,
+    "tests": 0,
+    "failures": [],
+    "seconds": 14.2,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201730.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/combined-1793492250.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+    "phase": "profile",
+    "result": "FAIL (0 tests)"
+  },
+  {
+    "profile": "overgeared",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=overgeared",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-overgeared"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 3,
+    "failures": [],
+    "seconds": 29.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201745.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/overgeared-1793492265.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+    "phase": "profile",
+    "result": "PASS (3 tests)"
+  },
+  {
+    "profile": "terrafirma",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=terrafirma",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-terrafirma"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 3,
+    "failures": [],
+    "seconds": 31.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201815.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/terrafirma-1793492295.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+    "phase": "profile",
+    "result": "PASS (3 tests)"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=terrafirmagreg",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-terrafirmagreg"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 3,
+    "failures": [],
+    "seconds": 44.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201846.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/terrafirmagreg-1793492326.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+    "phase": "profile",
+    "result": "PASS (3 tests)"
+  },
+  {
+    "profile": "base",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=base",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-base"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 36.9,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202036.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/base-1793492436.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "addon",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=addon",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-addon"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 30.3,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202113.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/addon-1793492473.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-addon/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "antique",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=antique",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-antique"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 43.4,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202143.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/antique-1793492503.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-antique/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "boomsticks-release",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=boomsticks-release",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-boomsticks-release"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 23.5,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202226.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/boomsticks-release-1793492546.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "overgeared",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=overgeared",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-overgeared"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 3,
+    "failures": [],
+    "seconds": 20.7,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202250.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/overgeared-1793492570.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+    "phase": "profile",
+    "result": "PASS (3 tests)"
+  },
+  {
+    "profile": "combined",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-combined"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 50.7,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202311.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/combined-1793492591.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "base",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=base",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-base"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 22.0,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202512.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/base-1793492712.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "profile": "combined",
+    "command": [
+      "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+      "/home/otectus/Projects/ImmersiveSmithing",
+      "runGameTestServer",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+      "-PregistryDump=all",
+      "-PgameTestProfile=epic-final-combined"
+    ],
+    "exit_code": 0,
+    "pass": true,
+    "tests": 135,
+    "failures": [],
+    "seconds": 29.8,
+    "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202534.log",
+    "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/combined-1793492734.txt",
+    "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+    "phase": "profile",
+    "result": "PASS (135 tests)"
+  },
+  {
+    "phase": "matrix driver",
+    "command": [
+      "python3",
+      "tools/epic_knights_matrix.py",
+      "--profiles",
+      "plain,compat,base,addon,antique,slavic,darkages,japanese,oresalloys,ingots,iceandfire,thirtyyearswar,fletchery,artillery,boomsticks,boomsticks-release,sevenkingdoms,bettercombat,rework,armor,materials,materials-provider,ranged,visors,visors-addon,epicfight,combined,overgeared,terrafirma,terrafirmagreg",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "--keep-going"
+    ],
+    "exit_code": 1,
+    "result": "FAIL; four attempts subsequently corrected/retried",
+    "log": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/commands.json"
+  },
+  {
+    "phase": "matrix driver",
+    "command": [
+      "python3",
+      "tools/epic_knights_matrix.py",
+      "--profiles",
+      "base,addon,antique,boomsticks-release,overgeared,combined",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+      "--keep-going"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/commands.json"
+  },
+  {
+    "phase": "matrix driver",
+    "command": [
+      "python3",
+      "tools/epic_knights_matrix.py",
+      "--profiles",
+      "base,combined",
+      "--offline",
+      "--init-script",
+      "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/commands.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/visual-test/multiplayer_visual_test.py",
+      "--work-dir",
+      "/home/otectus/Projects/ImmersiveSmithing/build/visual-test/epic-knights-1.3.0-upgrades",
+      "--server-libraries",
+      "/home/otectus/Projects/ImmersiveSmithing/build/prodserver/base/libraries",
+      "--xvfb",
+      "/tmp/ctc-xvfb/usr/bin/Xvfb",
+      "--display",
+      ":97",
+      "--timeout",
+      "600",
+      "--expect",
+      "epicknights",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/thirtyyearswar.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/fletchery.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/architectury-api/1MKTLiiG/a52918a500ff421180a1cbd1a0cabee712134ec4/architectury-api-1MKTLiiG.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/cloth-config/t8TXrZvZ/c65d07748acc57ceb45d53b3964368b84f34d54f/cloth-config-t8TXrZvZ.jar"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/multiplayer-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/visual-test/epic-knights-1.3.0-upgrades",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/visual-test/epic-knights-1.3.0-upgrades/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/ultima_pack_test.py",
+      "--label",
+      "epic-knights-1.3.0-gate",
+      "--expect",
+      "spartan,shields,upgrades,epicknights",
+      "--timeout",
+      "900",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/ultima-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-knights-1.3.0-gate",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-knights-1.3.0-gate/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/client_profile_test.py",
+      "--label",
+      "epic-1-3-0-plain-client",
+      "--timeout",
+      "600",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar"
+    ],
+    "result": "FAIL (agent passed; wrapper attribution/observation defect, corrected later)",
+    "exit_code": 1,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/plain-client-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-plain-client",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-plain-client/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/client_profile_test.py",
+      "--label",
+      "epic-1-3-0-plain-client-retry",
+      "--expect",
+      "",
+      "--timeout",
+      "600",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/plain-client-retry-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-plain-client-retry",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-plain-client-retry/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/client_profile_test.py",
+      "--label",
+      "epic-1-3-0-visors-client",
+      "--expect",
+      "epicknights",
+      "--timeout",
+      "600",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/architectury-api/1MKTLiiG/a52918a500ff421180a1cbd1a0cabee712134ec4/architectury-api-1MKTLiiG.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/cloth-config/t8TXrZvZ/c65d07748acc57ceb45d53b3964368b84f34d54f/cloth-config-t8TXrZvZ.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/foxrall.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/visors-client-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-client",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-client/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/client_profile_test.py",
+      "--label",
+      "epic-1-3-0-visors-addon-client",
+      "--expect",
+      "epicknights",
+      "--timeout",
+      "600",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/thirtyyearswar.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/fletchery.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/architectury-api/1MKTLiiG/a52918a500ff421180a1cbd1a0cabee712134ec4/architectury-api-1MKTLiiG.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/cloth-config/t8TXrZvZ/c65d07748acc57ceb45d53b3964368b84f34d54f/cloth-config-t8TXrZvZ.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/foxrall.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar"
+    ],
+    "result": "FAIL (agent passed; wrapper attribution/observation defect, corrected later)",
+    "exit_code": 1,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/visors-addon-client-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-addon-client",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-addon-client/summary.json"
+  },
+  {
+    "phase": "runtime",
+    "command": [
+      "python3",
+      "tools/packtest/client_profile_test.py",
+      "--label",
+      "epic-1-3-0-visors-addon-final",
+      "--expect",
+      "epicknights",
+      "--timeout",
+      "600",
+      "--extra-mods",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/thirtyyearswar.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/fletchery.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/architectury-api/1MKTLiiG/a52918a500ff421180a1cbd1a0cabee712134ec4/architectury-api-1MKTLiiG.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/cloth-config/t8TXrZvZ/c65d07748acc57ceb45d53b3964368b84f34d54f/cloth-config-t8TXrZvZ.jar",
+      "/tmp/immersive-smithing-epic-knights-audit/foxrall.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/visors-addon-final-wrapper.log",
+    "artifacts": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-addon-final",
+    "summary": "/home/otectus/Projects/ImmersiveSmithing/build/packtest/epic-1-3-0-visors-addon-final/summary.json"
+  },
+  {
+    "profile": "base",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/base",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "base",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-base",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "combined",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/combined",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "combined",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-combined",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ice-and-fire-1151603/5972466/5a749de70ca0feb9b50b663785a2c48ea9e07e60/epic-knights-ice-and-fire-1151603-5972466.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/materials-provider",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-materials-provider",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/5832925/49fff0ec735c027072ed7b50e193f6fc25e329e1/medieval-boomsticks-1123016-5832925.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/boomsticks-release",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-boomsticks-release",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/overgeared-x-epic-knights-1587252/8941802/75f262f7606b87768f715bfbbc9fcf1f759625d2/overgeared-x-epic-knights-1587252-8941802.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/overgeared",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-overgeared",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/knights-of-terrafirma-1092010/8280828/b274c46b7d3400de16b9d0c5bdf109a11171b969/knights-of-terrafirma-1092010-8280828.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirma",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-terrafirma",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-of-terrafirmagreg-1344839/8280833/66d3b1cc73432ad7ecc527daa2982cec189dad96/epic-knights-of-terrafirmagreg-1344839-8280833.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirmagreg",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-terrafirmagreg",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-fixtures.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "base",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/base",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "combined",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/combined",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ice-and-fire-1151603/5972466/5a749de70ca0feb9b50b663785a2c48ea9e07e60/epic-knights-ice-and-fire-1151603-5972466.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/materials-provider",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/5832925/49fff0ec735c027072ed7b50e193f6fc25e329e1/medieval-boomsticks-1123016-5832925.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/boomsticks-release",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/overgeared-x-epic-knights-1587252/8941802/75f262f7606b87768f715bfbbc9fcf1f759625d2/overgeared-x-epic-knights-1587252-8941802.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/overgeared",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/knights-of-terrafirma-1092010/8280828/b274c46b7d3400de16b9d0c5bdf109a11171b969/knights-of-terrafirma-1092010-8280828.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirma",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-of-terrafirmagreg-1344839/8280833/66d3b1cc73432ad7ecc527daa2982cec189dad96/epic-knights-of-terrafirmagreg-1344839-8280833.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirmagreg",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-coverage.log",
+    "phase": "coverage",
+    "result": "PASS"
+  },
+  {
+    "phase": "static",
+    "command": [
+      "python3",
+      "/home/otectus/Projects/.mcmod-tools/check_mod.py",
+      "/home/otectus/Projects/ImmersiveSmithing"
+    ],
+    "result": "PASS: 0 errors, 0 warnings, 13 existing loop-registration/model notes",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/static-check.txt"
+  },
+  {
+    "phase": "generated data",
+    "command": [
+      "python3",
+      "tools/generate_epic_compat.py",
+      "--check"
+    ],
+    "result": "PASS: 1893 reviewed items",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/generator-check.txt"
+  },
+  {
+    "phase": "textures/models",
+    "command": [
+      "python3",
+      "tools/generate_textures.py",
+      "--check"
+    ],
+    "result": "PASS: 31 textures, 185 model faces, 5 emissive models",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/texture-check.txt"
+  },
+  {
+    "phase": "inventory",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "--runtime",
+      "run-gametest/profiles/combined/logs",
+      "--output",
+      "/tmp/immersive-smithing-epic-knights-audit/combined-implemented",
+      "--require-complete"
+    ],
+    "result": "PASS: earlier implemented snapshot, 1835 items / 1971 rows / 0 unresolved; final export also includes 6 dynamic routes",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-implemented/verification.log"
+  },
+  {
+    "phase": "Python syntax",
+    "command": [
+      "python3",
+      "-m",
+      "py_compile",
+      "tools/epic_knights_matrix.py",
+      "tools/epic_knights_inventory.py",
+      "tools/coverage_inventory.py",
+      "tools/packtest/ultima_pack_test.py",
+      "tools/visual-test/multiplayer_visual_test.py"
+    ],
+    "result": "PASS (development revision)",
+    "exit_code": 0,
+    "log": "tool stdout (empty on success)"
+  },
+  {
+    "phase": "Python syntax",
+    "command": [
+      "python3",
+      "-m",
+      "py_compile",
+      "tools/epic_knights_inventory.py",
+      "tools/epic_knights_matrix.py",
+      "tools/coverage_inventory.py",
+      "tools/packtest/ultima_pack_test.py",
+      "tools/packtest/client_profile_test.py"
+    ],
+    "result": "PASS (intermediate revision)",
+    "exit_code": 0,
+    "log": "tool stdout (empty on success)"
+  },
+  {
+    "phase": "Python syntax",
+    "command": [
+      "python3",
+      "-m",
+      "py_compile",
+      "tools/epic_knights_inventory.py",
+      "tools/epic_knights_matrix.py",
+      "tools/coverage_inventory.py",
+      "tools/generate_epic_compat.py",
+      "tools/epic_knights_addons.py",
+      "tools/packtest/ultima_pack_test.py",
+      "tools/packtest/client_profile_test.py",
+      "tools/visual-test/multiplayer_visual_test.py"
+    ],
+    "result": "PASS (final source)",
+    "exit_code": 0,
+    "log": "tool stdout (empty on success)"
+  },
+  {
+    "phase": "diff",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "result": "PASS (intermediate tree)",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/diff-check.txt"
+  },
+  {
+    "phase": "manifest",
+    "command": [
+      "python3",
+      "/tmp/immersive-smithing-epic-knights-audit/publish_manifest.py"
+    ],
+    "result": "PASS: 30 profiles, 41 unique original jars, 0 unresolved provenance",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/profile-manifest-check.txt"
+  },
+  {
+    "phase": "client manifest",
+    "command": [
+      "python3",
+      "/tmp/immersive-smithing-epic-knights-audit/publish_client_manifests.py"
+    ],
+    "result": "PASS: exact hashes for 363 distinct packaged jars; two unrelated Ultima metadata-parser warnings retained",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/client-manifest-check.txt"
+  },
+  {
+    "phase": "harness regression",
+    "command": [
+      "python3",
+      "-"
+    ],
+    "result": "PASS: actual upstream parsing correctly attributed; own code/resource/driver failures still rejected",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/harness-attribution-check.txt",
+    "stdin_summary": "Imported ultima_pack_test.own_traces; checked the full failed Addon client log and three explicit own-code, own-resource and direct-agent trace cases. This check was executed from stdin."
+  },
+  {
+    "phase": "JSON",
+    "command": [
+      "python3",
+      "/tmp/immersive-smithing-epic-knights-audit/finish_validation.py"
+    ],
+    "result": "PASS: 1340 new/changed JSON files parse; coverage and provenance consistency verified",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/changed-json-check.txt"
+  },
+  {
+    "phase": "diff",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/final-diff-check.txt"
+  }
+]

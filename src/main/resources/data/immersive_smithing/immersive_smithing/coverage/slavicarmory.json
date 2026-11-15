@@ -62,6 +62,20 @@
       ],
       "disposition": "native_transformation",
       "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "slavicarmory:belt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: slavicarmory:belt_decoration"
+    },
+    {
+      "items": [
+        "slavicarmory:varangian_bra_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: slavicarmory:varangian_bra_decoration"
     }
   ]
 }

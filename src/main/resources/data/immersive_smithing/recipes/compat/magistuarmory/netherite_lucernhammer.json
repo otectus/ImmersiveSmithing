@@ -5,27 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:netherite_lucernhammer"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:netherite",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:rods/wooden"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:netherite_lucernhammer"
   },

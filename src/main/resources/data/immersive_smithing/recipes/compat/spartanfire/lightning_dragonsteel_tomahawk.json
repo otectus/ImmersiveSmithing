@@ -33,5 +33,8 @@
     "item": "spartanfire:lightning_dragonsteel_tomahawk"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:tomahawk"
+  "anvil_pattern": "immersive_smithing:tomahawk",
+  "replaces": [
+    "spartanfire:lightning_dragonsteel_tomahawk"
+  ]
 }

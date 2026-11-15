@@ -34,5 +34,8 @@
     "item": "spartanweaponry:constantan_parrying_dagger"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:parrying_dagger"
+  "anvil_pattern": "immersive_smithing:parrying_dagger",
+  "replaces": [
+    "spartanweaponry:constantan_parrying_dagger"
+  ]
 }

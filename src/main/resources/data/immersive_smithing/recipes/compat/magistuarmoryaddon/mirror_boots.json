@@ -5,27 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:mirror_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather_boots"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 6
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:mirror_boots"
   },

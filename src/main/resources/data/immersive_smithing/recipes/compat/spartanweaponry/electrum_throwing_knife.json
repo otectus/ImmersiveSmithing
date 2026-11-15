@@ -34,5 +34,8 @@
     "item": "spartanweaponry:electrum_throwing_knife"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:throwing_knife"
+  "anvil_pattern": "immersive_smithing:throwing_knife",
+  "replaces": [
+    "spartanweaponry:electrum_throwing_knife"
+  ]
 }

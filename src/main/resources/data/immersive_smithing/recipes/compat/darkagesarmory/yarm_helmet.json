@@ -5,13 +5,18 @@
       "modid": "darkagesarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "darkagesarmory",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "darkagesarmory:yarm_helmet"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 63,
+  "source_policy": "epic_knights",
   "result": {
     "item": "darkagesarmory:yarm_helmet"
   },

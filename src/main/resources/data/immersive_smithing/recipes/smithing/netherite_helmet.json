@@ -6,5 +6,8 @@
     "item": "minecraft:netherite_helmet"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:helmet"
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "minecraft:netherite_helmet_smithing"
+  ]
 }

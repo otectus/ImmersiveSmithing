@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": { "item": "minecraft:paper" },
+  "base": { "item": "minecraft:iron_helmet" },
+  "addition": { "item": "minecraft:lapis_lazuli" },
+  "result": { "item": "minecraft:chainmail_helmet" }
+}

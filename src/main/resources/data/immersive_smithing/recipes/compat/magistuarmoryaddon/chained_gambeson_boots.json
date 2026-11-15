@@ -5,29 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
-      "type": "forge:mod_loaded",
-      "modid": "magistuarmory"
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
     },
     {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:chained_gambeson_boots"
-    },
-    {
-      "type": "forge:item_exists",
-      "item": "magistuarmory:gambeson_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 1,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "magistuarmory:gambeson_boots"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:chained_gambeson_boots"
   },

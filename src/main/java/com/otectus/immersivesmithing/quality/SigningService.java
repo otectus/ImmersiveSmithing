@@ -28,11 +28,32 @@ public final class SigningService {
         return enabled() && MakersMark.canSign(stack, player, ServerConfig.get(ServerConfig.ALLOW_RESIGNING));
     }
 
+    /** Where each smith opened the engraving screen, for the stamp's effect. */
+    private static final java.util.Map<java.util.UUID, net.minecraft.core.GlobalPos> STAMPS = new java.util.HashMap<>();
+
     /** Opens the screen for the piece in the given inventory slot; silently does nothing when it may not be signed. */
     public static void open(ServerPlayer player, int slot) {
+        open(player, slot, null);
+    }
+
+    /** As {@link #open(ServerPlayer, int)}, engraving at the given anvil (the stamp is struck there). */
+    public static void open(ServerPlayer player, int slot, @org.jetbrains.annotations.Nullable net.minecraft.core.BlockPos anvil) {
         ItemStack stack = slotStack(player.getInventory(), slot);
         if (!canSign(stack, player)) return;
+        if (anvil != null) STAMPS.put(player.getUUID(), net.minecraft.core.GlobalPos.of(player.level().dimension(), anvil.immutable()));
+        else STAMPS.remove(player.getUUID());
+        if (player instanceof net.minecraftforge.common.util.FakePlayer || player.connection == null) return;
         ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), new OpenMakersMarkPacket(slot, stack.copy()));
+    }
+
+    /** Signs exactly the piece the screen was opened for; anything else now in that slot is refused. */
+    public static void sign(ServerPlayer player, int slot, ItemStack expected, String rawTitle, List<String> rawInscription) {
+        ItemStack current = slotStack(player.getInventory(), slot);
+        if (!ItemStack.matches(current, expected)) {
+            Feedback.fail(player, "sign_piece_changed");
+            return;
+        }
+        sign(player, slot, rawTitle, rawInscription);
     }
 
     public static void sign(ServerPlayer player, int slot, String rawTitle, List<String> rawInscription) {
@@ -64,7 +85,15 @@ public final class SigningService {
         MakersMark.sign(stack, title, inscription);
         player.getInventory().setChanged();
         player.containerMenu.broadcastChanges();
-        player.level().playSound(null, player.blockPosition(), ModSounds.ANVIL_STRIKE_PERFECT.get(), SoundSource.PLAYERS, 0.6F, 1.4F);
+        net.minecraft.core.GlobalPos stamp = STAMPS.remove(player.getUUID());
+        if (stamp != null && stamp.dimension().equals(player.level().dimension())
+                && player.distanceToSqr(stamp.pos().getCenter()) < 64 && player.level() instanceof net.minecraft.server.level.ServerLevel level) {
+            // A visible stamp at the anvil the piece was engraved on.
+            com.otectus.immersivesmithing.work.WorkEvents.send(level, stamp.pos(), com.otectus.immersivesmithing.work.WorkEvents.STAMP, player, 0,
+                    com.otectus.immersivesmithing.work.StationLayout.ANVIL_WORK_CENTER, 1F, 0);
+        } else {
+            player.level().playSound(null, player.blockPosition(), ModSounds.STAMP.get(), SoundSource.PLAYERS, 0.6F, 1.2F);
+        }
         Feedback.info(player, "signed", stack.getHoverName());
         ModAdvancements.award(player, ModAdvancements.MAKERS_MARK);
     }

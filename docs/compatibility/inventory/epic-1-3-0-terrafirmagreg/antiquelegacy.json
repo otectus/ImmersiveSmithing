@@ -1,0 +1,4707 @@
+{
+  "mod": "antiquelegacy",
+  "version": "1.13",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "cloth_config",
+    "configuration",
+    "gtceu",
+    "jei",
+    "knightsofterrafirma",
+    "ldlib",
+    "magistuarmory",
+    "patchouli",
+    "tfc"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "cloth_config": "11.1.136",
+    "configuration": "2.2.0",
+    "forge": "47.4.23",
+    "gtceu": "7.5.3",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "knightsofterrafirma": "3.1.2-gregified",
+    "ldlib": "1.0.40.b",
+    "magistuarmory": "10.15",
+    "minecraft": "1.20.1",
+    "patchouli": "1.20.1-85-FORGE",
+    "tfc": "3.2.28"
+  },
+  "tested_version": "1.13",
+  "items": [
+    {
+      "id": "antiquelegacy:agen_port_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_niederbierber_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:agen_port_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:antique_cloak_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:antique_cloak_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:antique_cloak_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_attic_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:attic_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bell_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_bell_cuirass_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bell_cuirass\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:beotian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_beotian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:beotian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:black_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:black_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:black_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:black_celtic_pants\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_apulo_corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_apulo_corinthian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_apulo_corinthian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_coolus",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_coolus_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_coolus\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_hoplon",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/shields/antique/hoplon/bronze_hoplon",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "tag": "forge:double_sheets/bronze"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "knightsofterrafirma:bronze_shield_brace"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:bronze_hoplon\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_horns_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/horns/bronze",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_horns_decoration\",tag:{}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_imperial_scutum",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/shields/antique/imperial_scutum/bronze_imperial_scutum",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:nuggets/iron"
+            },
+            {
+              "item": "knightsofterrafirma:bronze_shield_brace"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:bronze_imperial_scutum\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_ingot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_intercisa",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_intercisa_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_intercisa\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_lamellar_rows",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/bronze_lamellar_rows",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:small_plates/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_lamellar_rows\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_left_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/manika/bronze_left",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_left_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_melos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_melos_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_melos\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_mixture",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_montefortino_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_montefortino_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_montefortino_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_muscle_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_muscle_cuirass_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_muscle_cuirass\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_niederbieber_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_niederbierber_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_niederbieber_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_nugget",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/bronze_nugget",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 6,
+          "result_nbt": "{Count:6b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_nugget\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_phrygian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_phrygian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_pilos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_pilos_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_pilos\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_pilos_closet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_pilos_closet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_pilos_closet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/bronze_plate",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_republic_scutum",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/shields/antique/republic_scutum/bronze_republic_scutum",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "item": "knightsofterrafirma:bronze_shield_brace"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            [],
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:bronze_republic_scutum\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_ridge_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_ridge_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_right_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/manika/bronze_right",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_right_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_roman_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_roman_greaves_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_roman_greaves\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_scythian_scale_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/bronze_scythian_scale_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            [],
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_scythian_scale_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_small_wings_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/wings/bronze",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_small_wings_decoration\",tag:{}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/bronze_squamata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronze_squamata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronze_tureos",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/shields/antique/tureos/bronze_tureos",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "item": "knightsofterrafirma:bronze_shield_brace"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:rods/bronze"
+            },
+            {
+              "tag": "tfc:lumber"
+            },
+            [],
+            {
+              "tag": "tfc:lumber"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:bronze_tureos\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:bronzed_gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/gildening/bronzed_gallea_bronzening",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:bronzed_gallea\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:brown_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:brown_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:brown_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:brown_celtic_pants\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:cardiophylax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_cardiophylax_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:cardiophylax\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:celtic_montefortino_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_celtic_montefortino_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:celtic_montefortino_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:celtic_pants\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:celtic_tunic",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_tunic",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:celtic_tunic\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:celtic_tunic_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_tunic_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:celtic_tunic_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:celtic_tunic_underarmor_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:celtic_tunic_underarmor_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "antiquelegacy:celtic_tunic"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:celtic_tunic_underarmor_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:chalcidian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_chalcidian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:chalcidian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:chiton_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:chiton_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:chiton_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:copper_nugget",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_corinthian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:corinthian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:deepslate_tin_ore",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:eagle_standard",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:eagle_standard",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "forge:nuggets/iron"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:eagle_standard\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "antiquelegacy:eagle_standard_repairing",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:eagle_standard\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:fabric_left_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:fabric_left_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:fabric_left_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:fabric_right_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:fabric_right_hand_manika_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:fabric_right_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:fur_cloak_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_gallea_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:gallea\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:gilded_gallea",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:gilded_gallea_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:gilded_gallea\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/items/gildening/gilded_gallea_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:gilded_gallea\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:golden_laurel_wreath_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/crowns/wreaths/laurel_wreath",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:golden_laurel_wreath_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:golden_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/gildening/golden_ridge_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:golden_ridge_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:greek_crest_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:greek_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:greek_crest_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/greek_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:greek_crest_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:greek_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_greek_greaves_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:greek_greaves\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:greek_high_crest_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:greek_high_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:greek_high_crest_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/greek_high_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:greek_high_crest_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:green_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:green_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:green_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:green_celtic_pants\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:hair_plume_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:hair_plume_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:hair_plume_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/hair_plume_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:hair_plume_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:hamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/hamata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:hamata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:hamata_optio",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/hamata_optio",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:hamata_optio\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:heddernheim_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_heddernheim_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:heddernheim_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:illirian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_illirian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:illirian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/antique_dagger/iron_bronze_antique_dagger_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "knightsofterrafirma:bronze_antique_hilt"
+            },
+            {
+              "item": "knightsofterrafirma:iron_antique_dagger_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_antique_dagger\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/antique_spear/iron_antique_spear_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "tfc:metal/javelin_head/wrought_iron"
+            },
+            {
+              "item": "magistuarmory:pole"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_antique_spear\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_antique_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/antique_sword/bronze_iron_antique_sword_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "knightsofterrafirma:bronze_antique_hilt"
+            },
+            {
+              "item": "knightsofterrafirma:iron_antique_sword_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_antique_sword\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_celtic_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/celtic_sword/iron_bronze_celtic_sword_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_celtic_sword_blade"
+            },
+            {
+              "item": "knightsofterrafirma:bronze_celtic_sword_hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_celtic_sword\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_chainmail",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/iron_chainmail",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            },
+            {
+              "item": "tfc:metal/chain/wrought_iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_chainmail\",tag:{}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_doru",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/doru/iron_doru_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "tfc:metal/javelin_head/wrought_iron"
+            },
+            {
+              "item": "magistuarmory:pole"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_doru\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_early_spatha",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/early_spatha/iron_early_spatha_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_spatha_blade"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_early_spatha\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_gladiator_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/gladiator_sword/iron_gladiator_sword_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_gladiator_sword_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_gladiator_sword\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_gladius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/gladius/iron_gladius_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_gladius_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_gladius\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_intercisa",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_intercisa_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_intercisa\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_kopis",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/kopis/iron_kopis_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_kopis_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_kopis\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_lamellar_rows",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:iron_lamellar_rows",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            },
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            },
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            },
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            },
+            {
+              "tag": "magistuarmory:small_plates/iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_lamellar_rows\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_left_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/manika/iron_left",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_left_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_melos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_melos_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_melos\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_niederbieber_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_niederbieber_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_niederbieber_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_pilos",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_pilos_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_pilos\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/iron_plate",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_republic_gladius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/republic_gladius/iron_republic_gladius_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_republic_gladius_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_republic_gladius\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_retiarius",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/retiarius/iron_retiarius_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "knightsofterrafirma:iron_retiarius_head"
+            },
+            {
+              "item": "magistuarmory:pole"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_retiarius\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_rhomphaia",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/rhomphania/iron_rhomphania_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_rhomphaia_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_rhomphaia\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_ridge_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_ridge_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_ridge_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_right_hand_manika_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/manika/iron_right",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_right_hand_manika_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_ring",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_roman_greaves",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_iron/iron_roman_greaves_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_roman_greaves\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_sarissa",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/sarissa/iron_sarissa_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            {
+              "item": "antiquelegacy:iron_antique_spear"
+            },
+            {
+              "item": "magistuarmory:pole"
+            },
+            {
+              "item": "tfc:metal/javelin_head/wrought_iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_sarissa\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_scythian_scale_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/iron_scythian_scale_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            [],
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_scythian_scale_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_sica",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/sica/iron_sica_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_sica_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_sica\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_single_edged_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/single_edged_sword/iron_single_edged_sword_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_single_edged_sword_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_single_edged_sword\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_spatha",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/spatha/iron_spatha_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_spatha_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_spatha\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/iron_squamata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "antiquelegacy:iron_lamellar_rows"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "antiquelegacy:iron_lamellar_rows"
+            },
+            {
+              "item": "antiquelegacy:iron_lamellar_rows"
+            },
+            {
+              "item": "antiquelegacy:iron_lamellar_rows"
+            },
+            {
+              "item": "antiquelegacy:iron_lamellar_rows"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_squamata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_iron_thorax_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_thorax\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_triarii_spear",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/triarii_spear/iron_triarii_spear_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "tfc:metal/javelin_head/wrought_iron"
+            },
+            {
+              "item": "magistuarmory:pole"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_triarii_spear\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:iron_xiphos",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/items/antique/xiphos/iron_xiphos_crafting",
+          "type": "tfc:advanced_shaped_crafting",
+          "ingredients": [
+            [],
+            {
+              "item": "knightsofterrafirma:iron_xiphos_blade"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:iron_xiphos\",tag:{Damage:0}}",
+          "state": "kept: custom recipe type tfc:advanced_shaped_crafting (net.dries007.tfc.common.recipes.AdvancedShapedRecipe) is never converted"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:kuban_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_kuban_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:kuban_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:la_gorge_meillet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_la_gorge_meillet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:la_gorge_meillet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:late_hamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/late_hamata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            },
+            {
+              "tag": "magistuarmory:chainmails/iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:late_hamata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:laurel_wreath_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:left_gladiator_shoulder_pad_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/shoulder_pads/bronze_left",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:left_gladiator_shoulder_pad_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:linothorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:linothorax",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:linothorax\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:murmillo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_murmillo_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:murmillo_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:musculata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_musculata_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:musculata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:officer_squamata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/officer_squamata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/iron"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:officer_squamata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:open_attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_open_attic_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:open_attic_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:pelta",
+      "kind": "shield",
+      "shape": "immersive_smithing:shield",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:phrygian_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:phrygian_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:white_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:phrygian_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:provocator_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_provocator_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:provocator_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:raw_tin",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:red_celtic_pants",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:red_celtic_pants",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:red_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:red_celtic_pants\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:right_gladiator_shoulder_pad_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/decorations/shoulder_pads/bronze_right",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:right_gladiator_shoulder_pad_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:roman_crest_alt_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:roman_crest_alt_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_crest_alt_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/roman_crest_alt_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_crest_alt_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:roman_crest_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:roman_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_crest_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/roman_crest_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_crest_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:roman_feathers_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:roman_feathers_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_feathers_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/roman_feathers_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_feathers_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:roman_parade_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_roman_parade_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:roman_parade_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:roman_two_feathers_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:roman_two_feathers_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            [],
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_two_feathers_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/roman_two_feathers_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            [],
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:roman_two_feathers_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:sandals",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:sandals",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:sandals\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:sava_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_sava_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:sava_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:scale_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/scale_thorax",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "forge:plates/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:scale_thorax\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:scythian_attic_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_scythian_attic_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:scythian_attic_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:scythian_scale_thorax",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/antique/scythian_scale_thorax",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/bronze"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:scythian_scale_thorax\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:secutor_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_secutor_helmet_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:secutor_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:segmentata",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:welding/armor/antique_bronze/bronze_segmentata_welding",
+          "type": "tfc:welding",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:segmentata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:short_phrygian_cap",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:short_phrygian_cap",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:white_dye"
+            },
+            [],
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:short_phrygian_cap\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:small_bronze_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/small_bronze_plate",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 7,
+          "result_nbt": "{Count:7b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:small_bronze_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:small_iron_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/small_iron_plate",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 7,
+          "result_nbt": "{Count:7b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:small_iron_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:subarmalis_decoration",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:subarmalis_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:subarmalis_decoration\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:thracian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_thracian_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:thracian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:tin_ingot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:tin_nugget",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:tin_ore",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:tinned_muscle_cuirass",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:tinned_muscle_cuirass_tinning",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:tinned_muscle_cuirass\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:tinned_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:tinned_phrygian_helmet_tinning",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:tinned_phrygian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:triple_feather_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:triple_feather_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:triple_feather_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/triple_feather_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:triple_feather_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:two_hair_plumes_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "antiquelegacy:two_hair_plumes_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:two_hair_plumes_decoration\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "knightsofterrafirma:crafting/armor/decorations/two_hair_plumes_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/bronze"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"antiquelegacy:two_hair_plumes_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:waterloo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "knightsofterrafirma:anvil/armor/antique_bronze/bronze_waterloo_helmet_anvil",
+          "type": "tfc:anvil",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"antiquelegacy:waterloo_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [
+        "external workflow owner"
+      ],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:weathered_corinthian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    },
+    {
+      "id": "antiquelegacy:weathered_eagle_standard",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "external_workflow",
+      "reason": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality",
+      "acquisition": "EXTERNAL_WORKFLOW: Epic Knights of TerraFirmaGreg owns manufacturing and equipment quality."
+    }
+  ],
+  "dispositions": {
+    "external_workflow": 139
+  }
+}

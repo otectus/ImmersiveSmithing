@@ -26,5 +26,8 @@
     "item": "spartanweaponry:iron_halberd"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:halberd"
+  "anvil_pattern": "immersive_smithing:halberd",
+  "replaces": [
+    "spartanweaponry:iron_halberd"
+  ]
 }

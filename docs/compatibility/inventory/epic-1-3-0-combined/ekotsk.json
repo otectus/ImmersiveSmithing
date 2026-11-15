@@ -1,0 +1,5122 @@
+{
+  "mod": "ekotsk",
+  "version": "1.20.1_1.5.0",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "1.20.1_1.5.0",
+  "items": [
+    {
+      "id": "ekotsk:aegon_crown_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:aegon_dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:apple_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:arrows_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:arryn_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:beacon_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:black_leather",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:black_leather",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "forge:dyes/black"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:black_leather\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:black_leather",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:black_leather."
+    },
+    {
+      "id": "ekotsk:black_woolen_fabric",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:black_woolen_fabric",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/black"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"ekotsk:black_woolen_fabric\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:black_woolen_fabric",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:black_woolen_fabric."
+    },
+    {
+      "id": "ekotsk:blacked_steel_chainmail",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_chainmail",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            },
+            {
+              "item": "ekotsk:blacked_steel_ring"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:blacked_steel_chainmail\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_chainmail",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_chainmail."
+    },
+    {
+      "id": "ekotsk:blacked_steel_ingot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_ingot",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:dyes/black"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:blacked_steel_ingot\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "ekotsk:blacked_steel_nuggets_to_ingot",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:blacked_steel_ingot\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot, ekotsk:blacked_steel_nuggets_to_ingot",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot, ekotsk:blacked_steel_nuggets_to_ingot."
+    },
+    {
+      "id": "ekotsk:blacked_steel_lamellar",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_lamellar",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            },
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            },
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            },
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            },
+            {
+              "item": "ekotsk:blacked_steel_small_plate"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:blacked_steel_lamellar\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_lamellar",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_lamellar."
+    },
+    {
+      "id": "ekotsk:blacked_steel_nugget",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_ingot_to_nuggets",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            }
+          ],
+          "result_count": 9,
+          "result_nbt": "{Count:9b,id:\"ekotsk:blacked_steel_nugget\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot_to_nuggets",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ingot_to_nuggets."
+    },
+    {
+      "id": "ekotsk:blacked_steel_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_plate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"ekotsk:blacked_steel_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_plate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_plate."
+    },
+    {
+      "id": "ekotsk:blacked_steel_ring",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_ring",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            []
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"ekotsk:blacked_steel_ring\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ring",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_ring."
+    },
+    {
+      "id": "ekotsk:blacked_steel_small_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:blacked_steel_small_plate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            },
+            {
+              "item": "ekotsk:blacked_steel_nugget"
+            }
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"ekotsk:blacked_steel_small_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:blacked_steel_small_plate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:blacked_steel_small_plate."
+    },
+    {
+      "id": "ekotsk:blackfyre",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:bonehand_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:bright_sun_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:brightroar",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:carried_shield_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:crab_pincer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:dark_sister",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:dawn",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:dornish_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:dornish_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "forge:dyes/orange"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:dornish_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)",
+      "acquisition": "No metal ingredient (although repaired with forge:steel)."
+    },
+    {
+      "id": "ekotsk:dornish_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/dornish_chestplate/from/ekotsk/dornish_chestplate",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 54,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:dornish_chestplate"
+          ],
+          "components": [
+            "1x magistuarmory:lamellar_chestplate (reworked)",
+            "2x magistuarmory:woolen_fabric",
+            "1x minecraft:leather",
+            "2x #forge:dyes/orange"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:dornish_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:dornish_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:lamellar_chestplate"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/orange"
+            },
+            [],
+            {
+              "tag": "forge:dyes/orange"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:dornish_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/dornish_chestplate/from/ekotsk/dornish_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:dornish_chestplate`."
+    },
+    {
+      "id": "ekotsk:dornish_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/dornish_helmet/from/ekotsk/dornish_helmet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 72,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:dornish_helmet"
+          ],
+          "components": [
+            "1x magistuarmory:barbute (reworked)",
+            "1x magistuarmory:woolen_fabric",
+            "2x #forge:dyes/orange"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:dornish_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:dornish_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:barbute"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:dyes/orange"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/orange"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:dornish_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/dornish_helmet/from/ekotsk/dornish_helmet",
+      "acquisition": "Forged; replaces `ekotsk:dornish_helmet`."
+    },
+    {
+      "id": "ekotsk:dornish_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/dornish_leggings/from/ekotsk/dornish_leggings",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 49,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:dornish_leggings"
+          ],
+          "components": [
+            "1x magistuarmory:chainmail_leggings (reworked)",
+            "2x magistuarmory:woolen_fabric",
+            "2x #forge:dyes/orange"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:dornish_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:dornish_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:chainmail_leggings"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/orange"
+            },
+            [],
+            {
+              "tag": "forge:dyes/orange"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:dornish_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "49 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/dornish_leggings/from/ekotsk/dornish_leggings",
+      "acquisition": "Forged; replaces `ekotsk:dornish_leggings`."
+    },
+    {
+      "id": "ekotsk:dornish_sun_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:dragon_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:dragon_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:dragon_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:dragon_decoration",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:dragon_decoration."
+    },
+    {
+      "id": "ekotsk:fallen_star_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:fancy_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:fancy_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:fancy_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not metal work: repaired with minecraft:leather",
+      "acquisition": "Not metal work: repaired with minecraft:leather."
+    },
+    {
+      "id": "ekotsk:fancy_cape_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:fancy_cape_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:fancy_cape_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:fancy_cape_decoration",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:fancy_cape_decoration."
+    },
+    {
+      "id": "ekotsk:fish_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:gilded_steel_chainmail",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_chainmail",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            },
+            {
+              "item": "ekotsk:gilded_steel_ring"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gilded_steel_chainmail\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_chainmail",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_chainmail."
+    },
+    {
+      "id": "ekotsk:gilded_steel_ingot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_ingot",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/gold"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            }
+          ],
+          "result_count": 9,
+          "result_nbt": "{Count:9b,id:\"ekotsk:gilded_steel_ingot\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "ekotsk:gilded_steel_nuggets_to_ingot",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gilded_steel_ingot\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot, ekotsk:gilded_steel_nuggets_to_ingot",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot, ekotsk:gilded_steel_nuggets_to_ingot."
+    },
+    {
+      "id": "ekotsk:gilded_steel_nugget",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_ingot_to_nuggets",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/gilded_steel"
+            }
+          ],
+          "result_count": 9,
+          "result_nbt": "{Count:9b,id:\"ekotsk:gilded_steel_nugget\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot_to_nuggets",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ingot_to_nuggets."
+    },
+    {
+      "id": "ekotsk:gilded_steel_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_plate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/gilded_steel"
+            },
+            {
+              "tag": "forge:ingots/gilded_steel"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"ekotsk:gilded_steel_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_plate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_plate."
+    },
+    {
+      "id": "ekotsk:gilded_steel_ring",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_ring",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            []
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"ekotsk:gilded_steel_ring\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ring",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_ring."
+    },
+    {
+      "id": "ekotsk:gilded_steel_small_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gilded_steel_small_plate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            },
+            {
+              "item": "ekotsk:gilded_steel_nugget"
+            }
+          ],
+          "result_count": 8,
+          "result_nbt": "{Count:8b,id:\"ekotsk:gilded_steel_small_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gilded_steel_small_plate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gilded_steel_small_plate."
+    },
+    {
+      "id": "ekotsk:gold_cloak_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/gold_cloak_boots/from/ekotsk/gold_cloak_boots",
+          "material": "forge:blacked_steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:gold_cloak_boots"
+          ],
+          "components": [
+            "2x minecraft:leather",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:gold_cloak_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/gold_cloak_boots/from/ekotsk/gold_cloak_boots",
+      "acquisition": "Forged; replaces `ekotsk:gold_cloak_boots`."
+    },
+    {
+      "id": "ekotsk:gold_cloak_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/gold_cloak_chestplate/from/ekotsk/gold_cloak_chestplate",
+          "material": "forge:blacked_steel",
+          "units": 45,
+          "recoverable_units": 45,
+          "added_content_units": 45,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:gold_cloak_chestplate"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:gold_cloak_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "45 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/gold_cloak_chestplate/from/ekotsk/gold_cloak_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:gold_cloak_chestplate`."
+    },
+    {
+      "id": "ekotsk:gold_cloak_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/gold_cloak_helmet/from/ekotsk/gold_cloak_helmet",
+          "material": "forge:blacked_steel",
+          "units": 46,
+          "recoverable_units": 46,
+          "added_content_units": 46,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:gold_cloak_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:gold_cloak_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "forge:plates/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/blacked_steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "46 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/gold_cloak_helmet/from/ekotsk/gold_cloak_helmet",
+      "acquisition": "Forged; replaces `ekotsk:gold_cloak_helmet`."
+    },
+    {
+      "id": "ekotsk:gold_cloak_left_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_left_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_left_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gold_cloak_left_decoration",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gold_cloak_left_decoration."
+    },
+    {
+      "id": "ekotsk:gold_cloak_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/gold_cloak_leggings/from/ekotsk/gold_cloak_leggings",
+          "material": "forge:blacked_steel",
+          "units": 41,
+          "recoverable_units": 40,
+          "added_content_units": 40,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:gold_cloak_leggings"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:gold_cloak_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/gold_cloak_leggings/from/ekotsk/gold_cloak_leggings",
+      "acquisition": "Forged; replaces `ekotsk:gold_cloak_leggings`."
+    },
+    {
+      "id": "ekotsk:gold_cloak_right_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:gold_cloak_right_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:gold_cloak_right_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:gold_cloak_right_decoration",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:gold_cloak_right_decoration."
+    },
+    {
+      "id": "ekotsk:got_gold_cloak_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/got_gold_cloak_chestplate/from/ekotsk/got_gold_cloak_chestplate",
+          "material": "forge:gilded_steel",
+          "units": 45,
+          "recoverable_units": 76,
+          "added_content_units": 45,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:got_gold_cloak_chestplate"
+          ],
+          "components": [
+            "1x ekotsk:kotsk_gold_cloak_chestplate (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:got_gold_cloak_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:got_gold_cloak_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "item": "ekotsk:kotsk_gold_cloak_chestplate"
+            },
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:got_gold_cloak_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "76 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/got_gold_cloak_chestplate/from/ekotsk/got_gold_cloak_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:got_gold_cloak_chestplate`."
+    },
+    {
+      "id": "ekotsk:got_gold_cloak_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/got_gold_cloak_helmet/from/ekotsk/got_gold_cloak_helmet",
+          "material": "forge:gilded_steel",
+          "units": 41,
+          "recoverable_units": 40,
+          "added_content_units": 40,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:got_gold_cloak_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:got_gold_cloak_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:got_gold_cloak_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:got_gold_cloak_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/got_gold_cloak_helmet/from/ekotsk/got_gold_cloak_helmet",
+      "acquisition": "Forged; replaces `ekotsk:got_gold_cloak_helmet`."
+    },
+    {
+      "id": "ekotsk:got_gold_cloak_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/got_gold_cloak_leggings/from/ekotsk/got_gold_cloak_leggings",
+          "material": "forge:gilded_steel",
+          "units": 41,
+          "recoverable_units": 40,
+          "added_content_units": 40,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:got_gold_cloak_leggings"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:got_gold_cloak_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:got_gold_cloak_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "tag": "forge:ingots/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/gilded_steel"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:got_gold_cloak_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/got_gold_cloak_leggings/from/ekotsk/got_gold_cloak_leggings",
+      "acquisition": "Forged; replaces `ekotsk:got_gold_cloak_leggings`."
+    },
+    {
+      "id": "ekotsk:grape_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:greyjoy_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/greyjoy_boots/from/ekotsk/greyjoy_boots",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:greyjoy_boots"
+          ],
+          "components": [
+            "2x minecraft:leather",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:greyjoy_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:greyjoy_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:greyjoy_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/greyjoy_boots/from/ekotsk/greyjoy_boots",
+      "acquisition": "Forged; replaces `ekotsk:greyjoy_boots`."
+    },
+    {
+      "id": "ekotsk:greyjoy_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:greyjoy_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "item": "magistuarmory:chainmail_chestplate"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:greyjoy_chestplate\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:greyjoy_chestplate: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Ekotsk:greyjoy_chestplate: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "ekotsk:greyjoy_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/greyjoy_helmet/from/ekotsk/greyjoy_helmet",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 76,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:greyjoy_helmet"
+          ],
+          "components": [
+            "1x magistuarmory:norman_helmet (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:greyjoy_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:greyjoy_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:norman_helmet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:greyjoy_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "76 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/greyjoy_helmet/from/ekotsk/greyjoy_helmet",
+      "acquisition": "Forged; replaces `ekotsk:greyjoy_helmet`."
+    },
+    {
+      "id": "ekotsk:greyjoy_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/greyjoy_leggings/from/ekotsk/greyjoy_leggings",
+          "material": "forge:steel",
+          "units": 9,
+          "recoverable_units": 40,
+          "added_content_units": 9,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:greyjoy_leggings"
+          ],
+          "components": [
+            "1x magistuarmory:chainmail_leggings (reworked)",
+            "3x minecraft:leather"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:greyjoy_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:greyjoy_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:steel_chainmail"
+            },
+            {
+              "item": "magistuarmory:chainmail_leggings"
+            },
+            {
+              "item": "magistuarmory:steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:greyjoy_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/greyjoy_leggings/from/ekotsk/greyjoy_leggings",
+      "acquisition": "Forged; replaces `ekotsk:greyjoy_leggings`."
+    },
+    {
+      "id": "ekotsk:hand_sign_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/hand_sign_decoration/from/ekotsk/hand_sign_decoration",
+          "material": "forge:gilded_steel",
+          "units": 6,
+          "recoverable_units": 6,
+          "added_content_units": 6,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:hand_sign_decoration"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:hand_sign_decoration"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:hand_sign_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:hand_sign_decoration\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "6 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/hand_sign_decoration/from/ekotsk/hand_sign_decoration",
+      "acquisition": "Forged; replaces `ekotsk:hand_sign_decoration`."
+    },
+    {
+      "id": "ekotsk:heartsbane",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:hightower_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:hives_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:hog_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:horn_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:horse_head_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:hotd_kingsguard_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/hotd_kingsguard_boots/from/ekotsk/hotd_kingsguard_boots",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:hotd_kingsguard_boots"
+          ],
+          "components": [
+            "3x #forge:nuggets/blacked_steel"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:hotd_kingsguard_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:hotd_kingsguard_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:hotd_kingsguard_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/hotd_kingsguard_boots/from/ekotsk/hotd_kingsguard_boots",
+      "acquisition": "Forged; replaces `ekotsk:hotd_kingsguard_boots`."
+    },
+    {
+      "id": "ekotsk:hotd_kingsguard_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:hotd_kingsguard_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:knight_chestplate"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/white"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:dyes/white"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:hotd_kingsguard_chestplate\",tag:{Damage:0}}",
+          "state": "kept: no unambiguous added primary metal; native transform/assembly and every input retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:hotd_kingsguard_chestplate: no unambiguous added primary metal; native transform/assembly and every input retained",
+      "acquisition": "Ekotsk:hotd_kingsguard_chestplate: no unambiguous added primary metal; native transform/assembly and every input retained."
+    },
+    {
+      "id": "ekotsk:hotd_kingsguard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/hotd_kingsguard_helmet/from/ekotsk/hotd_kingsguard_helmet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 72,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:hotd_kingsguard_helmet"
+          ],
+          "components": [
+            "1x magistuarmory:barbute (reworked)",
+            "3x #forge:nuggets/blacked_steel"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:hotd_kingsguard_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:hotd_kingsguard_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "item": "magistuarmory:barbute"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:hotd_kingsguard_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/hotd_kingsguard_helmet/from/ekotsk/hotd_kingsguard_helmet",
+      "acquisition": "Forged; replaces `ekotsk:hotd_kingsguard_helmet`."
+    },
+    {
+      "id": "ekotsk:hotd_kingsguard_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:hotd_kingsguard_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "tag": "forge:nuggets/blacked_steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:knight_leggings"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/white"
+            },
+            [],
+            {
+              "tag": "forge:dyes/white"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:hotd_kingsguard_leggings\",tag:{Damage:0}}",
+          "state": "kept: no unambiguous added primary metal; native transform/assembly and every input retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:hotd_kingsguard_leggings: no unambiguous added primary metal; native transform/assembly and every input retained",
+      "acquisition": "Ekotsk:hotd_kingsguard_leggings: no unambiguous added primary metal; native transform/assembly and every input retained."
+    },
+    {
+      "id": "ekotsk:hunter_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:ice",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:kingsguard_baratheon_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_baratheon_boots",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_baratheon_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "39 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with ekotsk:gilded_steel_ingot",
+      "acquisition": "Made from another piece: gilding with ekotsk:gilded_steel_ingot."
+    },
+    {
+      "id": "ekotsk:kingsguard_baratheon_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_baratheon_chestplate",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_baratheon_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "123 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with ekotsk:gilded_steel_ingot",
+      "acquisition": "Made from another piece: gilding with ekotsk:gilded_steel_ingot."
+    },
+    {
+      "id": "ekotsk:kingsguard_baratheon_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_baratheon_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_baratheon_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "74 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with ekotsk:gilded_steel_ingot",
+      "acquisition": "Made from another piece: gilding with ekotsk:gilded_steel_ingot."
+    },
+    {
+      "id": "ekotsk:kingsguard_baratheon_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_baratheon_leggings",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_baratheon_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "68 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with ekotsk:gilded_steel_ingot",
+      "acquisition": "Made from another piece: gilding with ekotsk:gilded_steel_ingot."
+    },
+    {
+      "id": "ekotsk:kingsguard_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kingsguard_boots/from/ekotsk/kingsguard_boots",
+          "material": "forge:steel",
+          "units": 39,
+          "recoverable_units": 39,
+          "added_content_units": 39,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:kingsguard_boots"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:kingsguard_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "39 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kingsguard_boots/from/ekotsk/kingsguard_boots",
+      "acquisition": "Forged; replaces `ekotsk:kingsguard_boots`."
+    },
+    {
+      "id": "ekotsk:kingsguard_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kingsguard_chestplate/from/ekotsk/kingsguard_chestplate",
+          "material": "forge:steel",
+          "units": 4,
+          "recoverable_units": 123,
+          "added_content_units": 4,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:kingsguard_chestplate"
+          ],
+          "components": [
+            "1x magistuarmory:gothic_chestplate (reworked)",
+            "2x magistuarmory:woolen_fabric",
+            "2x #forge:dyes/white"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:kingsguard_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:gothic_chestplate"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/white"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:dyes/white"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "123 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kingsguard_chestplate/from/ekotsk/kingsguard_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:kingsguard_chestplate`."
+    },
+    {
+      "id": "ekotsk:kingsguard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kingsguard_helmet/from/ekotsk/kingsguard_helmet",
+          "material": "forge:steel",
+          "units": 29,
+          "recoverable_units": 74,
+          "added_content_units": 29,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:kingsguard_helmet"
+          ],
+          "components": [
+            "1x magistuarmory:barbute (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:kingsguard_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:barbute"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "74 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kingsguard_helmet/from/ekotsk/kingsguard_helmet",
+      "acquisition": "Forged; replaces `ekotsk:kingsguard_helmet`."
+    },
+    {
+      "id": "ekotsk:kingsguard_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kingsguard_leggings/from/ekotsk/kingsguard_leggings",
+          "material": "forge:steel",
+          "units": 3,
+          "recoverable_units": 68,
+          "added_content_units": 3,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:kingsguard_leggings"
+          ],
+          "components": [
+            "1x magistuarmory:gothic_leggings (reworked)",
+            "2x magistuarmory:woolen_fabric",
+            "2x #forge:dyes/white"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:kingsguard_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kingsguard_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:gothic_leggings"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "tag": "forge:dyes/white"
+            },
+            [],
+            {
+              "tag": "forge:dyes/white"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kingsguard_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "68 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kingsguard_leggings/from/ekotsk/kingsguard_leggings",
+      "acquisition": "Forged; replaces `ekotsk:kingsguard_leggings`."
+    },
+    {
+      "id": "ekotsk:kotsk_gold_cloak_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_gold_cloak_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_gold_cloak_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "2 forge:gilded_steel",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 2 units of forge:gilded_steel on 4 other parts",
+      "acquisition": "Not predominantly metal: 2 units of forge:gilded_steel on 4 other parts."
+    },
+    {
+      "id": "ekotsk:kotsk_gold_cloak_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_chestplate/from/ekotsk/kotsk_gold_cloak_chestplate",
+          "material": "forge:gilded_steel",
+          "units": 32,
+          "recoverable_units": 31,
+          "added_content_units": 31,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:kotsk_gold_cloak_chestplate"
+          ],
+          "components": [
+            "1x magistuarmory:gambeson_chestplate (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:kotsk_gold_cloak_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_gold_cloak_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "magistuarmory:gambeson_chestplate"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_gold_cloak_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "31 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_chestplate/from/ekotsk/kotsk_gold_cloak_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:kotsk_gold_cloak_chestplate`."
+    },
+    {
+      "id": "ekotsk:kotsk_gold_cloak_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_helmet/from/ekotsk/kotsk_gold_cloak_helmet",
+          "material": "forge:gilded_steel",
+          "units": 23,
+          "recoverable_units": 22,
+          "added_content_units": 22,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:kotsk_gold_cloak_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:kotsk_gold_cloak_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_gold_cloak_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_gold_cloak_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "22 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_helmet/from/ekotsk/kotsk_gold_cloak_helmet",
+      "acquisition": "Forged; replaces `ekotsk:kotsk_gold_cloak_helmet`."
+    },
+    {
+      "id": "ekotsk:kotsk_gold_cloak_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_leggings/from/ekotsk/kotsk_gold_cloak_leggings",
+          "material": "forge:gilded_steel",
+          "units": 23,
+          "recoverable_units": 22,
+          "added_content_units": 22,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:kotsk_gold_cloak_leggings"
+          ],
+          "components": [
+            "2x magistuarmory:woolen_fabric"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:kotsk_gold_cloak_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_gold_cloak_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:gilded_steel_chainmail"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_gold_cloak_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "22 forge:gilded_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/kotsk_gold_cloak_leggings/from/ekotsk/kotsk_gold_cloak_leggings",
+      "acquisition": "Forged; replaces `ekotsk:kotsk_gold_cloak_leggings`."
+    },
+    {
+      "id": "ekotsk:kotsk_kingsguard_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_kingsguard_boots",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_kingsguard_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: whitening with minecraft:white_dye",
+      "acquisition": "Made from another piece: whitening with minecraft:white_dye."
+    },
+    {
+      "id": "ekotsk:kotsk_kingsguard_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_kingsguard_chestplate",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_kingsguard_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "117 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: whitening with minecraft:white_dye",
+      "acquisition": "Made from another piece: whitening with minecraft:white_dye."
+    },
+    {
+      "id": "ekotsk:kotsk_kingsguard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_kingsguard_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_kingsguard_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "72 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: whitening with minecraft:white_dye",
+      "acquisition": "Made from another piece: whitening with minecraft:white_dye."
+    },
+    {
+      "id": "ekotsk:kotsk_kingsguard_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:kotsk_kingsguard_leggings",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:kotsk_kingsguard_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: whitening with minecraft:white_dye",
+      "acquisition": "Made from another piece: whitening with minecraft:white_dye."
+    },
+    {
+      "id": "ekotsk:kraken_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:lady_forlorn",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:lamentation",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:lannister_cape_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:lannister_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "item": "minecraft:red_carpet"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:ingots/gilded_steel"
+            },
+            {
+              "item": "magistuarmory:halfarmor_chestplate"
+            },
+            {
+              "tag": "forge:ingots/gilded_steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_chestplate\",tag:{Damage:0}}",
+          "state": "kept: no unambiguous added primary metal; native transform/assembly and every input retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:lannister_chestplate: no unambiguous added primary metal; native transform/assembly and every input retained",
+      "acquisition": "Ekotsk:lannister_chestplate: no unambiguous added primary metal; native transform/assembly and every input retained."
+    },
+    {
+      "id": "ekotsk:lannister_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/lannister_helmet/from/ekotsk/lannister_helmet",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:lannister_helmet"
+          ],
+          "components": [
+            "2x #forge:plates/gilded_steel"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:lannister_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/gilded_steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/lannister_helmet/from/ekotsk/lannister_helmet",
+      "acquisition": "Forged; replaces `ekotsk:lannister_helmet`."
+    },
+    {
+      "id": "ekotsk:lannister_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/lannister_leggings/from/ekotsk/lannister_leggings",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 58,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:lannister_leggings"
+          ],
+          "components": [
+            "1x magistuarmory:chainmail_leggings (reworked)",
+            "4x #forge:nuggets/gilded_steel"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:lannister_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:chainmail_leggings"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/gilded_steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/lannister_leggings/from/ekotsk/lannister_leggings",
+      "acquisition": "Forged; replaces `ekotsk:lannister_leggings`."
+    },
+    {
+      "id": "ekotsk:lannister_lord_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_lord_chestplate",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_lord_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "ekotsk:lannister_lord_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_lord_helmet",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_lord_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "ekotsk:lannister_lord_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:lannister_lord_leggings",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:lannister_lord_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "ekotsk:lannister_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:longclaw",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:moons_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:night_watch_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/night_watch_boots/from/ekotsk/night_watch_boots",
+          "material": "forge:blacked_steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:night_watch_boots"
+          ],
+          "components": [
+            "2x ekotsk:black_leather",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:night_watch_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:night_watch_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            [],
+            {
+              "item": "ekotsk:black_leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:night_watch_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/night_watch_boots/from/ekotsk/night_watch_boots",
+      "acquisition": "Forged; replaces `ekotsk:night_watch_boots`."
+    },
+    {
+      "id": "ekotsk:night_watch_cape_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:night_watch_cape_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:black_wool"
+            },
+            [],
+            {
+              "item": "minecraft:black_wool"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:night_watch_cape_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:night_watch_cape_decoration",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:night_watch_cape_decoration."
+    },
+    {
+      "id": "ekotsk:night_watch_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/night_watch_chestplate/from/ekotsk/night_watch_chestplate",
+          "material": "forge:blacked_steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:night_watch_chestplate"
+          ],
+          "components": [
+            "2x ekotsk:black_leather"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "ekotsk:night_watch_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:night_watch_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:night_watch_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/night_watch_chestplate/from/ekotsk/night_watch_chestplate",
+      "acquisition": "Forged; replaces `ekotsk:night_watch_chestplate`."
+    },
+    {
+      "id": "ekotsk:night_watch_hat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:night_watch_hat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            },
+            [],
+            {
+              "item": "ekotsk:black_woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:night_watch_hat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:blacked_steel)",
+      "acquisition": "No metal ingredient (although repaired with forge:blacked_steel)."
+    },
+    {
+      "id": "ekotsk:night_watch_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/night_watch_leggings/from/ekotsk/night_watch_leggings",
+          "material": "forge:blacked_steel",
+          "units": 32,
+          "recoverable_units": 31,
+          "added_content_units": 31,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:night_watch_leggings"
+          ],
+          "components": [
+            "2x ekotsk:black_leather"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "ekotsk:night_watch_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:night_watch_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            {
+              "item": "ekotsk:black_leather"
+            },
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/blacked_steel"
+            },
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            },
+            [],
+            {
+              "item": "ekotsk:blacked_steel_chainmail"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:night_watch_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "31 forge:blacked_steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/night_watch_leggings/from/ekotsk/night_watch_leggings",
+      "acquisition": "Forged; replaces `ekotsk:night_watch_leggings`."
+    },
+    {
+      "id": "ekotsk:nightfall",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:northern_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/northern_boots/from/ekotsk/northern_boots",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "ekotsk:northern_boots"
+          ],
+          "components": [
+            "2x minecraft:leather",
+            "2x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "ekotsk:northern_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:northern_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:northern_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/northern_boots/from/ekotsk/northern_boots",
+      "acquisition": "Forged; replaces `ekotsk:northern_boots`."
+    },
+    {
+      "id": "ekotsk:northern_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:northern_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:chainmail_chestplate"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:northern_chestplate\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:northern_chestplate: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Ekotsk:northern_chestplate: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "ekotsk:northern_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/ekotsk/northern_helmet/from/ekotsk/northern_helmet",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 63,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "ekotsk:northern_helmet"
+          ],
+          "components": [
+            "1x magistuarmory:barbute (reworked)"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "ekotsk:northern_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "ekotsk:northern_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "magistuarmory:barbute"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:northern_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/ekotsk/northern_helmet/from/ekotsk/northern_helmet",
+      "acquisition": "Forged; replaces `ekotsk:northern_helmet`."
+    },
+    {
+      "id": "ekotsk:northern_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:northern_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "magistuarmory:platemail_leggings"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:northern_leggings\",tag:{Damage:0}}",
+          "state": "kept: no unambiguous added primary metal; native transform/assembly and every input retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "40 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "ekotsk:northern_leggings: no unambiguous added primary metal; native transform/assembly and every input retained",
+      "acquisition": "Ekotsk:northern_leggings: no unambiguous added primary metal; native transform/assembly and every input retained."
+    },
+    {
+      "id": "ekotsk:orphanmaker",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:prancing_horse_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:red_rain",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:robert_hammer",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:rose_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:sandoq",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:scythe_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:seahorse_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:seven_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:shield_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:spear_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:stag_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:stark_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:stripped_weirwood_log",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:stripped_weirwood_wood",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:suns_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:sword_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:targaryen_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:three_towers_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:truth",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:two_towers_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:valyrian_steel_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:valyrian_steel_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:valyrian_steel_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:valyrian_steel_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:vigilance",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "world-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down",
+      "acquisition": "World-limited relic of the Seven Kingdoms (unique loot): never manufactured, never melted down."
+    },
+    {
+      "id": "ekotsk:weirwood_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_arrow",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "minecraft:feather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:weirwood_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_arrow",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_arrow."
+    },
+    {
+      "id": "ekotsk:weirwood_button",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_button",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:weirwood_button\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_button",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_button."
+    },
+    {
+      "id": "ekotsk:weirwood_door",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_door",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"ekotsk:weirwood_door\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_door",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_door."
+    },
+    {
+      "id": "ekotsk:weirwood_face_easter_egg",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_face_grim",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_face_happy",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_fence",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_fence",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"ekotsk:weirwood_fence\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_fence",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_fence."
+    },
+    {
+      "id": "ekotsk:weirwood_fence_gate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_fence_gate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:weirwood_fence_gate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_fence_gate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_fence_gate."
+    },
+    {
+      "id": "ekotsk:weirwood_hanging_sign",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_hanging_sign",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:chain"
+            },
+            [],
+            {
+              "item": "minecraft:chain"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            },
+            {
+              "item": "ekotsk:stripped_weirwood_log"
+            }
+          ],
+          "result_count": 6,
+          "result_nbt": "{Count:6b,id:\"ekotsk:weirwood_hanging_sign\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_hanging_sign",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_hanging_sign."
+    },
+    {
+      "id": "ekotsk:weirwood_leaves",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_log",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_longbow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_longbow",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:weirwood_longbow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "ekotsk:weirwood_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_planks",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_planks",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "tag": "ekotsk:weirwood_logs"
+            }
+          ],
+          "result_count": 4,
+          "result_nbt": "{Count:4b,id:\"ekotsk:weirwood_planks\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_planks",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_planks."
+    },
+    {
+      "id": "ekotsk:weirwood_pressure_plate",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_pressure_plate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:weirwood_pressure_plate\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_pressure_plate",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_pressure_plate."
+    },
+    {
+      "id": "ekotsk:weirwood_sapling",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:weirwood_sign",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_sign",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            [],
+            {
+              "item": "ekotsk:weirwood_stick"
+            },
+            []
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"ekotsk:weirwood_sign\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_sign",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_sign."
+    },
+    {
+      "id": "ekotsk:weirwood_slab",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_slab",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 6,
+          "result_nbt": "{Count:6b,id:\"ekotsk:weirwood_slab\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_slab",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_slab."
+    },
+    {
+      "id": "ekotsk:weirwood_stairs",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_stairs",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            [],
+            [],
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            [],
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 4,
+          "result_nbt": "{Count:4b,id:\"ekotsk:weirwood_stairs\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_stairs",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_stairs."
+    },
+    {
+      "id": "ekotsk:weirwood_stick",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_stick",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"ekotsk:weirwood_stick\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_stick",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_stick."
+    },
+    {
+      "id": "ekotsk:weirwood_trapdoor",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_trapdoor",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            },
+            {
+              "item": "ekotsk:weirwood_planks"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"ekotsk:weirwood_trapdoor\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_trapdoor",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_trapdoor."
+    },
+    {
+      "id": "ekotsk:weirwood_wood",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:weirwood_wood",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "ekotsk:weirwood_log"
+            },
+            {
+              "item": "ekotsk:weirwood_log"
+            },
+            {
+              "item": "ekotsk:weirwood_log"
+            },
+            {
+              "item": "ekotsk:weirwood_log"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"ekotsk:weirwood_wood\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:weirwood_wood",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:weirwood_wood."
+    },
+    {
+      "id": "ekotsk:whitening_template",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "ekotsk:whitening_template",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:dyes/white"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"ekotsk:whitening_template\"}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "ekotsk:whitening_template_copy",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:dyes/white"
+            },
+            {
+              "item": "ekotsk:whitening_template"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"ekotsk:whitening_template\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: ekotsk:whitening_template, ekotsk:whitening_template_copy",
+      "acquisition": "Native non-equipment recipes/processes: ekotsk:whitening_template, ekotsk:whitening_template_copy."
+    },
+    {
+      "id": "ekotsk:wreaths_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "ekotsk:wyl_pattern",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 30,
+    "native_nonmetal_recipe": 5,
+    "native_transformation": 17,
+    "non_equipment": 81,
+    "protected_loot": 23
+  }
+}

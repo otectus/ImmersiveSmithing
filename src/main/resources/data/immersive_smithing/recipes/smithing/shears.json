@@ -6,5 +6,8 @@
     "item": "minecraft:shears"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:generic_tool"
+  "anvil_pattern": "immersive_smithing:generic_tool",
+  "replaces": [
+    "minecraft:shears"
+  ]
 }

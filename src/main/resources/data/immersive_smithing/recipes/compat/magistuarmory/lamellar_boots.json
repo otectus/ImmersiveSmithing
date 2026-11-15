@@ -5,27 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:lamellar_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 9,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 8
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:lamellar_boots"
   },

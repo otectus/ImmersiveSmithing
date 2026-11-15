@@ -33,6 +33,10 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.IntValue LAVA_BUCKET_HEAT_TICKS;
     public static final ForgeConfigSpec.IntValue MAX_LAVA_BUCKETS;
 
+    public static final ForgeConfigSpec.BooleanValue CASTING_ENABLED;
+    public static final ForgeConfigSpec.BooleanValue CASTING_ALLOW_NUGGETS;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> CASTING_PREFERRED_NAMESPACES;
+
     public static final ForgeConfigSpec.IntValue STONE_FORGE_TIME_SECONDS;
     public static final ForgeConfigSpec.IntValue IRON_FORGE_TIME_SECONDS;
     public static final ForgeConfigSpec.IntValue DIAMOND_FORGE_TIME_SECONDS;
@@ -45,6 +49,19 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.IntValue IRON_TOOL_DURABILITY;
     public static final ForgeConfigSpec.IntValue DIAMOND_TOOL_DURABILITY;
     public static final ForgeConfigSpec.IntValue NETHERITE_TOOL_DURABILITY;
+    public static final ForgeConfigSpec.IntValue STONE_BLOW_RECOVERY_TICKS;
+    public static final ForgeConfigSpec.IntValue IRON_BLOW_RECOVERY_TICKS;
+    public static final ForgeConfigSpec.IntValue DIAMOND_BLOW_RECOVERY_TICKS;
+    public static final ForgeConfigSpec.IntValue NETHERITE_BLOW_RECOVERY_TICKS;
+
+    public static final ForgeConfigSpec.DoubleValue WORK_HEAT_WEIGHT;
+    public static final ForgeConfigSpec.DoubleValue WORK_COOLING_MULTIPLIER;
+    public static final ForgeConfigSpec.DoubleValue WORK_HEATING_MULTIPLIER;
+    public static final ForgeConfigSpec.IntValue WORK_LEASE_IDLE_SECONDS;
+    public static final ForgeConfigSpec.IntValue WORK_JOB_PRIORITY_SECONDS;
+    public static final ForgeConfigSpec.BooleanValue WORK_OVERHEAT_BURNS;
+    public static final ForgeConfigSpec.DoubleValue TROUGH_QUENCH_TIME_MULTIPLIER;
+    public static final ForgeConfigSpec.IntValue GRINDSTONE_PASS_TICKS;
 
     public static final ForgeConfigSpec.IntValue READY_DELAY_MS;
     public static final ForgeConfigSpec.IntValue TIMING_TOLERANCE_MS;
@@ -85,6 +102,8 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.BooleanValue EPIC_FIGHT_INTEGRATION;
     public static final ForgeConfigSpec.BooleanValue SIMPLY_SWORDS_INTEGRATION;
     public static final ForgeConfigSpec.BooleanValue EPIC_KNIGHTS_INTEGRATION;
+    public static final ForgeConfigSpec.BooleanValue EPIC_KNIGHTS_RANGED_EFFICACY;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> EPIC_KNIGHTS_HELMET_PAIRS;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> EPIC_KNIGHTS_DISABLED_ADDONS;
     public static final ForgeConfigSpec.BooleanValue TERRAFIRMACRAFT_INTEGRATION;
     public static final ForgeConfigSpec.BooleanValue FIRE_VANILLA_CRAFT_EVENT;
@@ -154,33 +173,66 @@ public final class ServerConfig {
                 .defineInRange("maxLavaBuckets", 4, 1, 64);
         b.pop();
 
-        b.comment("Smithing tool tiers: minigame time and durability").push("tools");
-        STONE_FORGE_TIME_SECONDS = b.defineInRange("stoneForgeTimeSeconds", 30, 5, 600);
-        IRON_FORGE_TIME_SECONDS = b.defineInRange("ironForgeTimeSeconds", 35, 5, 600);
-        DIAMOND_FORGE_TIME_SECONDS = b.defineInRange("diamondForgeTimeSeconds", 40, 5, 600);
-        NETHERITE_FORGE_TIME_SECONDS = b.defineInRange("netheriteForgeTimeSeconds", 45, 5, 600);
-        STONE_ANVIL_TIME_SECONDS = b.defineInRange("stoneAnvilTimeSeconds", 30, 5, 600);
-        IRON_ANVIL_TIME_SECONDS = b.defineInRange("ironAnvilTimeSeconds", 35, 5, 600);
-        DIAMOND_ANVIL_TIME_SECONDS = b.defineInRange("diamondAnvilTimeSeconds", 40, 5, 600);
-        NETHERITE_ANVIL_TIME_SECONDS = b.defineInRange("netheriteAnvilTimeSeconds", 45, 5, 600);
+        b.comment("Casting molten metal back into ingots and nuggets at the forge (empty Smithing Tongs, the Cast panel). No hands-on work,",
+                "quality or experience: 9 units make an ingot, 1 unit a nugget. Ignores the recipe options and exclusions.").push("casting");
+        CASTING_ENABLED = b.comment("Offer casting at the forge.")
+                .define("enabled", true);
+        CASTING_ALLOW_NUGGETS = b.comment("Also cast nuggets, for metal that does not make a whole ingot (only families with nugget items).")
+                .define("allowNuggets", true);
+        CASTING_PREFERRED_NAMESPACES = b.comment("When several ingots (or nuggets) of one metal exist, mods listed here come first, in this order;",
+                "then the metal's own namespace, then item ids alphabetically. A material file's \"casting\" entry overrides this.")
+                .defineListAllowEmpty("preferredNamespaces", List.of("minecraft"), o -> o instanceof String);
+        b.pop();
+
+        b.comment("Smithing tool tiers: durability and how quickly a hammer recovers between blows. Stone tools complete every",
+                "process; better tools are more durable and slightly quicker, never better at quality.").push("tools");
+        String deadline = "Deprecated in 1.3.0, no effect: the forge and anvil no longer have deadlines. Kept so existing files stay valid.";
+        STONE_FORGE_TIME_SECONDS = b.comment(deadline).defineInRange("stoneForgeTimeSeconds", 30, 5, 600);
+        IRON_FORGE_TIME_SECONDS = b.comment(deadline).defineInRange("ironForgeTimeSeconds", 35, 5, 600);
+        DIAMOND_FORGE_TIME_SECONDS = b.comment(deadline).defineInRange("diamondForgeTimeSeconds", 40, 5, 600);
+        NETHERITE_FORGE_TIME_SECONDS = b.comment(deadline).defineInRange("netheriteForgeTimeSeconds", 45, 5, 600);
+        STONE_ANVIL_TIME_SECONDS = b.comment(deadline).defineInRange("stoneAnvilTimeSeconds", 30, 5, 600);
+        IRON_ANVIL_TIME_SECONDS = b.comment(deadline).defineInRange("ironAnvilTimeSeconds", 35, 5, 600);
+        DIAMOND_ANVIL_TIME_SECONDS = b.comment(deadline).defineInRange("diamondAnvilTimeSeconds", 40, 5, 600);
+        NETHERITE_ANVIL_TIME_SECONDS = b.comment(deadline).defineInRange("netheriteAnvilTimeSeconds", 45, 5, 600);
+        STONE_BLOW_RECOVERY_TICKS = b.comment("Ticks a stone hammer needs between accepted blows (a heavy blow takes half again as long).")
+                .defineInRange("stoneBlowRecoveryTicks", 12, 4, 40);
+        IRON_BLOW_RECOVERY_TICKS = b.defineInRange("ironBlowRecoveryTicks", 11, 4, 40);
+        DIAMOND_BLOW_RECOVERY_TICKS = b.defineInRange("diamondBlowRecoveryTicks", 10, 4, 40);
+        NETHERITE_BLOW_RECOVERY_TICKS = b.defineInRange("netheriteBlowRecoveryTicks", 9, 4, 40);
         STONE_TOOL_DURABILITY = b.defineInRange("stoneToolDurability", 512, 1, 100000);
         IRON_TOOL_DURABILITY = b.defineInRange("ironToolDurability", 1024, 1, 100000);
         DIAMOND_TOOL_DURABILITY = b.defineInRange("diamondToolDurability", 2048, 1, 100000);
         NETHERITE_TOOL_DURABILITY = b.defineInRange("netheriteToolDurability", 4096, 1, 100000);
         b.pop();
 
-        b.comment("Minigame timing and validation").push("minigames");
-        READY_DELAY_MS = b.comment("Countdown before a minigame starts, in milliseconds.")
-                .defineInRange("readyDelayMs", 1500, 0, 10000);
-        TIMING_TOLERANCE_MS = b.comment("Jitter tolerance applied to client-reported input times.")
-                .defineInRange("timingToleranceMs", 120, 0, 2000);
-        MAX_LATENCY_COMPENSATION_MS = b.comment("Upper bound of the latency compensation granted to a player's inputs.")
-                .defineInRange("maxLatencyCompensationMs", 400, 0, 5000);
-        MAX_STATION_DISTANCE = b.comment("Maximum distance in blocks between a player and the station they are working at.")
+        b.comment("Station reach and validation. (The section keeps its old name so existing files stay valid.)").push("minigames");
+        String timing = "Deprecated in 1.3.0, no effect: station work is simulated on server ticks, without client timestamps.";
+        READY_DELAY_MS = b.comment(timing).defineInRange("readyDelayMs", 1500, 0, 10000);
+        TIMING_TOLERANCE_MS = b.comment(timing).defineInRange("timingToleranceMs", 120, 0, 2000);
+        MAX_LATENCY_COMPENSATION_MS = b.comment(timing).defineInRange("maxLatencyCompensationMs", 400, 0, 5000);
+        MAX_STATION_DISTANCE = b.comment("Maximum distance in blocks between a player's eyes and the station they are working at.")
                 .defineInRange("maxStationDistance", 6.0, 2.0, 32.0);
-        MAX_ASSIST_TIME_MULTIPLIER = b.comment("Ceiling on the per-player time allowance other mods may grant at the forge and anvil",
-                        "(ISmithingAssistSource). 1 refuses all assistance; 1.5 allows up to half again the tool tier's time.")
+        MAX_ASSIST_TIME_MULTIPLIER = b.comment("Ceiling on the assistance other mods may grant a smith (ISmithingAssistSource). Since 1.3.0 it",
+                        "shortens the hammer's recovery between blows instead of extending a deadline. 1 refuses all assistance.")
                 .defineInRange("maxAssistTimeMultiplier", 1.5, 1.0, 3.0);
+        b.pop();
+
+        b.comment("Hands-on station work: heat, shaping, quality and who may work where.").push("work");
+        WORK_HEAT_WEIGHT = b.comment("Share of the forge score that comes from heat preparation; the rest is quench control.")
+                .defineInRange("heatPreparationWeight", 0.70, 0.0, 1.0);
+        WORK_COOLING_MULTIPLIER = b.comment("How fast hot pieces cool in air (applied when a job is committed).")
+                .defineInRange("coolingMultiplier", 1.0, 0.25, 4.0);
+        WORK_HEATING_MULTIPLIER = b.comment("How fast the forge heats a billet or a piece on the reheat rest (applied when a job is committed).")
+                .defineInRange("heatingMultiplier", 1.0, 0.25, 4.0);
+        WORK_LEASE_IDLE_SECONDS = b.comment("A smith's hold on a station lapses after this long without an action. The work itself stays.")
+                .defineInRange("leaseIdleSeconds", 30, 5, 600);
+        WORK_JOB_PRIORITY_SECONDS = b.comment("A committed forge job belongs to its smith for this long after they last worked it (online or not);",
+                        "after that anyone may work, draw or cancel it (components cancelled by someone else drop at the forge).")
+                .defineInRange("jobPrioritySeconds", 300, 0, 86400);
+        WORK_OVERHEAT_BURNS = b.comment("Destructive overheating: metal held above 0.95 heat for three seconds burns and the piece will be Faulty.",
+                        "A warning is shown first. Off: overheating only builds scale, a bounded and recoverable quality loss.")
+                .define("overheatBurns", false);
         b.pop();
 
         b.comment("Quality multipliers. A score of 50 is the midpoint between minimum and maximum.").push("quality");
@@ -204,6 +256,8 @@ public final class ServerConfig {
         b.push("trough");
         TROUGH_QUENCHES_PER_BUCKET = b.defineInRange("troughQuenchesPerBucket", 4, 1, 64);
         TROUGH_CAPACITY_BUCKETS = b.defineInRange("troughCapacityBuckets", 2, 1, 16);
+        TROUGH_QUENCH_TIME_MULTIPLIER = b.comment("Scales every process profile's quench duration.")
+                .defineInRange("quenchTimeMultiplier", 1.0, 0.25, 4.0);
         b.pop();
 
         b.push("grindstone");
@@ -211,6 +265,8 @@ public final class ServerConfig {
         GRINDSTONE_SCORE_STEP = b.comment("Score gained per refinement.").defineInRange("scorePerRefinement", 5, 1, 100);
         GRINDSTONE_BASE_LEVEL_COST = b.comment("XP levels charged for a refinement of a score of 0.").defineInRange("baseLevelCost", 1, 0, 100);
         GRINDSTONE_SCORE_PER_EXTRA_LEVEL = b.comment("Every this many score points add one XP level to the cost.").defineInRange("scorePerExtraLevel", 20, 1, 100);
+        GRINDSTONE_PASS_TICKS = b.comment("How long an edge must be held to the wheel for one refinement, in ticks.")
+                .defineInRange("passTicks", 40, 10, 400);
         b.pop();
 
         b.push("villagers");
@@ -218,7 +274,7 @@ public final class ServerConfig {
         ALLOW_FAULTY_VILLAGER_ITEMS = b.define("allowFaultyVillagerItems", false);
         b.pop();
 
-        b.comment("Automation. Automation can prepare stations but never complete a minigame.").push("automation");
+        b.comment("Automation. Hoppers and pipes can supply stations (metal, fuel, water) but never do the hands-on work.").push("automation");
         ENABLE_AUTOMATION = b.define("enableAutomation", true);
         FORGE_METAL_FACES = b.comment("Faces of the Smith's Forge that accept metal (up, down, north, south, east, west, relative to a north-facing forge).")
                 .defineListAllowEmpty("forgeMetalFaces", List.of("up", "east", "west"), o -> o instanceof String);
@@ -246,6 +302,12 @@ public final class ServerConfig {
                 .define("epicKnights", true);
         EPIC_KNIGHTS_DISABLED_ADDONS = b.comment("Epic Knights mods (mod ids, e.g. \"slavicarmory\") to leave exactly as they ship while the others are integrated.")
                 .defineListAllowEmpty("epicKnightsDisabledAddons", List.of(), o -> o instanceof String);
+        EPIC_KNIGHTS_RANGED_EFFICACY = b.comment("Apply quality once at supported Epic Knights firearm/projectile launch boundaries. Does not change ammunition, spread, reload or armor piercing.")
+                .define("epicKnightsRangedEfficacy", true);
+        EPIC_KNIGHTS_HELMET_PAIRS = b.comment("Server-authorized Swappable Helms pairs (item_A-item_B, both directions). Its own HelmetPairs is CLIENT-only.",
+                        "Defaults match the pinned addon. Configure custom pairs here and in each client's quick_swap config.",
+                        "Only registered head armor is accepted. Equal durability preserves damage; other pairs round proportional wear up.")
+                .defineListAllowEmpty("epicKnightsHelmetPairs", com.otectus.immersivesmithing.compat.epicknights.VisorPairs.DEFAULTS, o -> o instanceof String);
         TERRAFIRMACRAFT_INTEGRATION = b.comment("TerraFirmaCraft and Epic Knights of TerraFirma have their own metalworking. While false, Immersive Smithing never",
                         "converts, disables or grades their equipment. True treats them like any other mod (automatic detection).")
                 .define("terraFirmaCraft", false);
@@ -269,10 +331,12 @@ public final class ServerConfig {
                 .defineListAllowEmpty("excludedLootTables", List.of(), o -> o instanceof String);
         b.pop();
 
-        b.comment("The Maker's Mark: every quenched piece records its smith; the smith may title and inscribe it.").push("signing");
+        b.comment("The Maker's Mark: every finished piece records its smith; the smith may title and inscribe it.").push("signing");
         ENABLE_SIGNING = b.define("enableSigning", true);
-        OPEN_SIGNING_AFTER_QUENCH = b.comment("Open the signing screen right after a quench. Sneak-use the Smith's Anvil with the piece to sign later.")
-                .define("openAfterQuench", true);
+        OPEN_SIGNING_AFTER_QUENCH = b.comment("Legacy preference: open the engraving screen as soon as a piece is finished (collected from the anvil, or",
+                        "lifted from the trough). Off by default since 1.3.0; existing files keep their saved value. Engrave any time by",
+                        "sneak-using the Smith's Anvil with the piece in hand.")
+                .define("openAfterQuench", false);
         ALLOW_RESIGNING = b.comment("Let the smith change a title or inscription they already wrote.")
                 .define("allowResigning", true);
         MAX_TITLE_LENGTH = b.defineInRange("maxTitleLength", 32, 1, 64);

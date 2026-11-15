@@ -14,5 +14,8 @@
     "item": "minecraft:netherite_sword"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:sword"
+  "anvil_pattern": "immersive_smithing:sword",
+  "replaces": [
+    "minecraft:netherite_sword_smithing"
+  ]
 }

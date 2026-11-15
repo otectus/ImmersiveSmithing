@@ -1,0 +1,384 @@
+[
+  {
+    "profile": "base",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/base",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-coverage.log"
+  },
+  {
+    "profile": "base",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-base",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-fixtures.log"
+  },
+  {
+    "profile": "combined",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/combined",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-coverage.log"
+  },
+  {
+    "profile": "combined",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-combined",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-fixtures.log"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ice-and-fire-1151603/5972466/5a749de70ca0feb9b50b663785a2c48ea9e07e60/epic-knights-ice-and-fire-1151603-5972466.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/materials-provider",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-coverage.log"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-materials-provider",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-fixtures.log"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/5832925/49fff0ec735c027072ed7b50e193f6fc25e329e1/medieval-boomsticks-1123016-5832925.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/boomsticks-release",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-coverage.log"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-boomsticks-release",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-fixtures.log"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/overgeared-x-epic-knights-1587252/8941802/75f262f7606b87768f715bfbbc9fcf1f759625d2/overgeared-x-epic-knights-1587252-8941802.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/overgeared",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-coverage.log"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-overgeared",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-fixtures.log"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/knights-of-terrafirma-1092010/8280828/b274c46b7d3400de16b9d0c5bdf109a11171b969/knights-of-terrafirma-1092010-8280828.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirma",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-coverage.log"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-terrafirma",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-fixtures.log"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-of-terrafirmagreg-1344839/8280833/66d3b1cc73432ad7ecc527daa2982cec189dad96/epic-knights-of-terrafirmagreg-1344839-8280833.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirmagreg",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-coverage.log"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "fixtures",
+    "command": [
+      "python3",
+      "tools/coverage_inventory.py",
+      "--profile",
+      "epic-1-3-0-terrafirmagreg",
+      "--logs",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-fixtures.log"
+  },
+  {
+    "profile": "base",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/base",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/base-coverage.log"
+  },
+  {
+    "profile": "combined",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/combined",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/combined-coverage.log"
+  },
+  {
+    "profile": "materials-provider",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ice-and-fire-1151603/5972466/5a749de70ca0feb9b50b663785a2c48ea9e07e60/epic-knights-ice-and-fire-1151603-5972466.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/materials-provider",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/materials-provider-coverage.log"
+  },
+  {
+    "profile": "boomsticks-release",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/5832925/49fff0ec735c027072ed7b50e193f6fc25e329e1/medieval-boomsticks-1123016-5832925.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/boomsticks-release",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/boomsticks-release-coverage.log"
+  },
+  {
+    "profile": "overgeared",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/overgeared-x-epic-knights-1587252/8941802/75f262f7606b87768f715bfbbc9fcf1f759625d2/overgeared-x-epic-knights-1587252-8941802.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/overgeared",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/overgeared-coverage.log"
+  },
+  {
+    "profile": "terrafirma",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/knights-of-terrafirma-1092010/8280828/b274c46b7d3400de16b9d0c5bdf109a11171b969/knights-of-terrafirma-1092010-8280828.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirma",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirma-coverage.log"
+  },
+  {
+    "profile": "terrafirmagreg",
+    "kind": "coverage",
+    "command": [
+      "python3",
+      "tools/epic_knights_inventory.py",
+      "--jars",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-of-terrafirmagreg-1344839/8280833/66d3b1cc73432ad7ecc527daa2982cec189dad96/epic-knights-of-terrafirmagreg-1344839-8280833.jar",
+      "--runtime",
+      "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+      "--output",
+      "/home/otectus/Projects/ImmersiveSmithing/docs/compatibility/epic-knights-1.3.0/terrafirmagreg",
+      "--require-complete"
+    ],
+    "exit_code": 0,
+    "log": "/tmp/immersive-smithing-epic-knights-audit/terrafirmagreg-coverage.log"
+  }
+]

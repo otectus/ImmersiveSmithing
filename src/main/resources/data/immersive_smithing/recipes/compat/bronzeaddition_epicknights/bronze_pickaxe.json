@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "bronzeaddition_epicknights"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "bronzeaddition_epicknights",
+      "versions": "[1.0.61.20.1]"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "bronzeaddition_epicknights:bronze_pickaxe"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "source_policy": "epic_knights",
+  "material": "forge:bronze",
+  "result": {
+    "item": "bronzeaddition_epicknights:bronze_pickaxe"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pickaxe"
+}

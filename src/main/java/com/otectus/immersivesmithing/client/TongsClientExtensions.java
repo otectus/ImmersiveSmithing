@@ -4,9 +4,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.otectus.immersivesmithing.registry.ModTags;
 import com.otectus.immersivesmithing.config.ClientConfig;
+import com.otectus.immersivesmithing.client.renderer.TongsItemRenderer;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
@@ -20,15 +22,22 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
  */
 public final class TongsClientExtensions implements IClientItemExtensions {
     public static final TongsClientExtensions INSTANCE = new TongsClientExtensions();
+    private TongsItemRenderer renderer;
 
     private TongsClientExtensions() {}
+
+    @Override
+    public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+        if (renderer == null) renderer = new TongsItemRenderer();
+        return renderer;
+    }
 
     @Override
     public boolean applyForgeHandTransform(PoseStack pose, LocalPlayer player, HumanoidArm arm, ItemStack stack,
                                            float partialTick, float equipProcess, float swingProcess) {
         float side = arm == HumanoidArm.RIGHT ? 1.0F : -1.0F;
         // Vanilla's arm placement (ItemInHandRenderer#applyItemArmTransform); returning true skips its swing arc.
-        pose.translate(side * 0.56F, -0.52F + equipProcess * -0.6F, -0.72F);
+        pose.translate(side * 0.42F, -0.52F + equipProcess * -0.6F, -0.82F);
         float thrust = thrust(swingProcess);
         float turn = ClientConfig.get(ClientConfig.REDUCED_SCREEN_SHAKE) ? 0F : thrust;
         pose.translate(side * -0.035F * turn, -0.055F * thrust, -0.38F * thrust);

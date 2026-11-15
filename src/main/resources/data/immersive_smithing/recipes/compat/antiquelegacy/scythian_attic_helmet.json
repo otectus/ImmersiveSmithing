@@ -5,27 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:scythian_attic_helmet"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:bronze",
-  "metal_units": 45,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:lamellar_rows/iron"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:scythian_attic_helmet"
   },

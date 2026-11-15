@@ -34,6 +34,12 @@ public final class MultiplayerPackTestFixture {
     private static boolean anvilPicked;
     static final BlockPos ANVIL = new BlockPos(2, 84, 1);
     private static boolean hammerStaged;
+    static final BlockPos UPGRADE_FORGE = new BlockPos(1, 84, -1);
+    private static int upgradeStage;
+    private static int upgradeWait;
+    private static ItemStack reservedBase;
+    private static ResourceLocation upgradeRecipe;
+    private static java.util.concurrent.CompletableFuture<Void> reload;
 
     @SubscribeEvent
     public static void serverTick(TickEvent.ServerTickEvent event) {
@@ -42,6 +48,7 @@ public final class MultiplayerPackTestFixture {
             ServerPlayer leader = event.getServer().getPlayerList().getPlayerByName("VisualLeader");
             stageHammerWhenReady(leader);
             anvilPhase(event.getServer().overworld(), leader);
+            upgradePhase(event.getServer().overworld(), leader);
             return;
         }
         if (event.getServer().getPlayerList().getPlayerCount() < 2) return;
@@ -131,4 +138,91 @@ public final class MultiplayerPackTestFixture {
     }
 
     private MultiplayerPackTestFixture() {}
+
+    /** Two real packet senders contend for a committed decorated base, then reload while its owner holds the job. */
+    private static void upgradePhase(ServerLevel level, ServerPlayer leader) {
+        if (leader == null || !net.minecraftforge.fml.ModList.get().isLoaded("magistuarmory") || upgradeStage == 5) return;
+        try {
+            Path shared = Path.of(System.getProperty("immersive_smithing.packtest.shared"));
+            ServerPlayer peer = level.getServer().getPlayerList().getPlayerByName("VisualPeer");
+            if (peer == null) return;
+            if (upgradeStage == 0) {
+                if (!Files.exists(shared.resolve("leader-anvil-done")) || !Files.exists(shared.resolve("peer-anvil-done"))) return;
+                var recipe = SmithingData.current().recipesProducing(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
+                        new ResourceLocation("magistuarmory", "knight_chestplate"))).stream().findFirst().orElseThrow();
+                reservedBase = recipe.auxiliary().stream().filter(com.otectus.immersivesmithing.recipe.AuxiliaryIngredient::consumesEquipment)
+                        .findFirst().orElseThrow().displayStack();
+                reservedBase.setHoverName(net.minecraft.network.chat.Component.literal("The Reserved Oath"));
+                reservedBase.setDamageValue(19);
+                reservedBase.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 2);
+                new com.otectus.immersivesmithing.quality.QualityData(73, 86, false).apply(reservedBase);
+                com.otectus.immersivesmithing.quality.MakersMark.stamp(reservedBase, leader);
+                reservedBase.getOrCreateTagElement(com.otectus.immersivesmithing.quality.QualityData.ROOT).putDouble(
+                        com.otectus.immersivesmithing.quality.QualityData.CARRY, .375);
+                for (ServerPlayer player : java.util.List.of(leader, peer)) {
+                    player.getInventory().clearContent();
+                    player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, new ItemStack(ModItems.tongs(SmithingTier.NETHERITE)));
+                }
+                leader.getInventory().setItem(9, reservedBase.copy());
+                level.setBlockAndUpdate(UPGRADE_FORGE, com.otectus.immersivesmithing.registry.ModBlocks.SMITHS_FORGE.get().defaultBlockState());
+                var forge = (com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity) level.getBlockEntity(UPGRADE_FORGE);
+                forge.refundCast(recipe.metalUnits(), recipe.family());
+                com.otectus.immersivesmithing.minigame.SessionManager.openForge(leader, forge, net.minecraft.world.InteractionHand.MAIN_HAND, SmithingTier.NETHERITE);
+                var session = com.otectus.immersivesmithing.minigame.SessionManager.byPlayer(leader.getUUID()).orElseThrow();
+                upgradeRecipe = recipe.getId();
+                Files.writeString(shared.resolve("upgrade-offered"), session.id + "\n" + recipe.getId() + "\n");
+                upgradeStage = 1;
+            } else if (upgradeStage == 1) {
+                // The leader chose the upgrade in the book (which pins it) and committed it at the tray.
+                var forge = (com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity) level.getBlockEntity(UPGRADE_FORGE);
+                var job = forge.job();
+                if (job == null) return;
+                require(job.owner.equals(leader.getUUID()), "The job belongs to the smith who committed it");
+                require(job.escrow.size() == 1 && ItemStack.matches(reservedBase, job.escrow.get(0)), "Complete base escrow");
+                require(leader.getInventory().countItem(reservedBase.getItem()) == 0, "Base removed exactly once");
+                require(job.units == 45 && forge.reservedUnits() == 45 && forge.availableUnits() == 0, "The job reserves exactly its metal");
+                Files.writeString(shared.resolve("upgrade-reserved"), "reserved=true\n");
+                upgradeStage = 2;
+            } else if (upgradeStage == 2) {
+                if (!Files.exists(shared.resolve("peer-upgrade-attempt")) || ++upgradeWait < 10) return;
+                var forge = (com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity) level.getBlockEntity(UPGRADE_FORGE);
+                var job = forge.job();
+                require(job != null && job.owner.equals(leader.getUUID()) && job.escrow.size() == 1
+                        && peer.getInventory().countItem(reservedBase.getItem()) == 0,
+                        "Foreign use, book, draw and cancel packets cannot steal the reservation");
+                reload = level.getServer().reloadResources(level.getServer().getPackRepository().getSelectedIds());
+                upgradeStage = 3;
+            } else if (upgradeStage == 3) {
+                if (!reload.isDone()) return;
+                reload.join();
+                var forge = (com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity) level.getBlockEntity(UPGRADE_FORGE);
+                var job = forge.job();
+                require(job != null && job.owner.equals(leader.getUUID()), "Reload preserves the committed job");
+                require(job.units == 45 && job.recipeId.equals(upgradeRecipe) && job.target.is(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
+                        new ResourceLocation("magistuarmory", "knight_chestplate"))), "The job keeps its frozen recipe, cost and result");
+                Files.writeString(shared.resolve("upgrade-reloaded"), "count=" + level.getServer().getRecipeManager().getRecipes().size() + "\n");
+                upgradeStage = 4;
+            } else if (upgradeStage == 4) {
+                if (!Files.exists(shared.resolve("leader-upgrade-cancelled")) || !Files.exists(shared.resolve("peer-upgrade-synced"))) return;
+                var forge = (com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity) level.getBlockEntity(UPGRADE_FORGE);
+                if (forge.job() != null) return;
+                require(leader.getInventory().countItem(reservedBase.getItem()) == 1 && peer.getInventory().countItem(reservedBase.getItem()) == 0
+                        && forge.reservedUnits() == 0 && forge.moltenUnits() == 45, "Refund exactly once to owner with paid metal retained");
+                boolean identical = false;
+                for (int i = 0; i < leader.getInventory().getContainerSize(); i++) identical |= ItemStack.matches(reservedBase, leader.getInventory().getItem(i));
+                require(identical, "Refund retains complete name, wear, enchantment and maker");
+                Files.writeString(shared.resolve("upgrade-result"), "pass=true\nreservation=true\nreload=true\nrefund=true\n");
+                upgradeStage = 5;
+            }
+        } catch (Exception failure) {
+            upgradeStage = 5;
+            ImmersiveSmithing.LOGGER.error("PACKTEST multiplayer upgrade failed", failure);
+            try { Files.writeString(Path.of(System.getProperty("immersive_smithing.packtest.shared"), "upgrade-result"), "pass=false\n" + failure); }
+            catch (Exception ignored) {}
+        }
+    }
+
+    private static void require(boolean condition, String description) {
+        if (!condition) throw new IllegalStateException(description);
+    }
 }

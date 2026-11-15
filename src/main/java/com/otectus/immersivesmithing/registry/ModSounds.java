@@ -15,6 +15,7 @@ public final class ModSounds {
     public static final RegistryObject<SoundEvent> FORGE_DEPOSIT = register("block.smiths_forge.deposit");
     public static final RegistryObject<SoundEvent> FORGE_FUEL = register("block.smiths_forge.fuel");
     public static final RegistryObject<SoundEvent> FORGE_WORK = register("block.smiths_forge.work");
+    public static final RegistryObject<SoundEvent> FORGE_CAST = register("block.smiths_forge.cast");
     public static final RegistryObject<SoundEvent> TONGS_GRAB = register("item.smithing_tongs.grab");
     public static final RegistryObject<SoundEvent> ANVIL_STRIKE = register("block.smiths_anvil.strike");
     public static final RegistryObject<SoundEvent> ANVIL_STRIKE_PERFECT = register("block.smiths_anvil.strike_perfect");
@@ -25,6 +26,18 @@ public final class ModSounds {
     public static final RegistryObject<SoundEvent> GRINDSTONE_REFINE = register("block.smiths_grindstone.refine");
     public static final RegistryObject<SoundEvent> ACTION_FAIL = register("ui.smithing.fail");
     public static final RegistryObject<SoundEvent> TIMING_CUE = register("ui.smithing.timing_cue");
+    public static final RegistryObject<SoundEvent> BELLOWS = register("block.smiths_forge.bellows");
+    public static final RegistryObject<SoundEvent> BILLET_TURN = register("block.smiths_forge.billet_turn");
+    public static final RegistryObject<SoundEvent> FORGE_FIRE_LOOP = register("block.smiths_forge.fire_loop");
+    public static final RegistryObject<SoundEvent> ANVIL_STRIKE_COLD = register("block.smiths_anvil.strike_cold");
+    public static final RegistryObject<SoundEvent> ANVIL_STRIKE_HEAVY = register("block.smiths_anvil.strike_heavy");
+    public static final RegistryObject<SoundEvent> FLIP = register("block.smiths_anvil.flip");
+    public static final RegistryObject<SoundEvent> FIT = register("block.smiths_anvil.fit");
+    public static final RegistryObject<SoundEvent> STAMP = register("block.smiths_anvil.stamp");
+    public static final RegistryObject<SoundEvent> QUENCH_LOOP = register("block.smiths_trough.quench_loop");
+    public static final RegistryObject<SoundEvent> QUENCH_SETTLE = register("block.smiths_trough.quench_settle");
+    public static final RegistryObject<SoundEvent> GRIND_SCRAPE = register("block.smiths_grindstone.scrape");
+    public static final RegistryObject<SoundEvent> WORK_READY = register("ui.smithing.ready");
 
     private static RegistryObject<SoundEvent> register(String name) {
         return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(ImmersiveSmithing.id(name)));

@@ -190,10 +190,17 @@ public final class CostRegressionGameTests {
             h.assertTrue(!decoded.matches(new ResourceLocation("minecraft", "the_nether"), pos, sword)
                     && !decoded.matches(player.level().dimension().location(), pos.above(), sword)
                     && !decoded.matches(player.level().dimension().location(), pos, new ItemStack(Items.IRON_AXE)), "Stale context never matches");
-            TestSupport.use(h, player, 0.8);
-            TestSupport.use(h, player, 0.8);
+            TestSupport.use(h, player, 0.8); // rests the sword at the wheel
+            var stone = (com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity) h.getLevel().getBlockEntity(pos);
+            h.assertTrue(GrindstonePreview.forPlayer(player, pos).orElseThrow().durabilityCost() == decoded.durabilityCost(), "The resting piece is quoted the same");
+            com.otectus.immersivesmithing.work.GrindstoneActions.hold(player, stone);
+            for (int i = 0; i <= stone.passTicks(); i++) {
+                if (stone.contact() != null) com.otectus.immersivesmithing.work.GrindstoneActions.hold(player, stone);
+                com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity.serverTick(h.getLevel(), pos, stone.getBlockState(), stone);
+            }
             h.assertTrue(player.experienceLevel == 20 - decoded.durabilityCost(), "The actual refinement charges the displayed price");
-            h.assertTrue(!decoded.matches(player.level().dimension().location(), pos, player.getMainHandItem()), "Refining invalidates the old quote");
+            h.assertTrue(!decoded.matches(player.level().dimension().location(), pos, stone.piece()), "Refining invalidates the old quote");
+            com.otectus.immersivesmithing.work.GrindstoneActions.take(player, stone);
             player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_SWORD));
             h.assertTrue(GrindstonePreview.forPlayer(player, pos).orElseThrow().durabilityCost()
                     == SmithsGrindstoneBlock.levelCost(player, player.getMainHandItem(), 50), "Ungraded pieces use the discounted neutral price");

@@ -10,12 +10,52 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-/** Which recipes the Forge screen may offer: right family, enough molten metal, auxiliary items on hand. */
+/**
+ * What the Forge screen offers: every recipe of the forge's family, each with what this smith would be charged and what
+ * keeps it from being chosen right now (too little molten metal, a missing component, a progression gate). Recipes that
+ * cannot be chosen are shown dimmed with that reason instead of disappearing, so a forge with too little netherite for
+ * armour says so. {@link #eligible} is the choosable subset.
+ */
 public final class ForgeRecipeSelection {
+
+    /** One recipe as offered: the units charged, the units missing (0 when affordable), the first missing component and any gate refusal. */
+    public record Offer(SmithingRecipe recipe, int units, int shortfall, @Nullable AuxiliaryIngredient missing, @Nullable Component denial) {
+        public boolean selectable() {
+            return shortfall == 0 && missing == null && denial == null;
+        }
+
+        /** Why it cannot be chosen, for the dimmed row; empty when it can. */
+        public Component reason() {
+            if (shortfall > 0) return Component.translatable("screen.immersive_smithing.forge.needs_more", MaterialUnits.describe(shortfall));
+            if (missing != null) {
+                return Component.translatable("screen.immersive_smithing.forge.needs_component", missing.count(), missing.displayStack().getHoverName());
+            }
+            return denial != null ? denial : Component.empty();
+        }
+    }
+
+    /**
+     * Every recipe of the forge's family, those that can be chosen first, each group by result id. A gate is asked only
+     * about recipes the smith can afford and has the components for, as before.
+     */
+    public static List<Offer> offers(Player player, SmithsForgeBlockEntity forge, int protectedSlot) {
+        List<Offer> out = new java.util.ArrayList<>();
+        for (SmithingRecipe r : SmithingData.current().recipesFor(forge.family())) {
+            int units = unitsFor(player, r);
+            int shortfall = Math.max(0, units - forge.moltenUnits());
+            AuxiliaryIngredient missing = shortfall > 0 ? null : AuxInventory.firstMissing(player, r.auxiliary(), protectedSlot).orElse(null);
+            Component denial = shortfall > 0 || missing != null ? null : denial(player, r).orElse(null);
+            out.add(new Offer(r, units, shortfall, missing, denial));
+        }
+        out.sort(Comparator.comparing((Offer o) -> !o.selectable()).thenComparing(o -> BuiltInRegistries.ITEM.getKey(o.recipe().resultItem()).toString()));
+        return out;
+    }
 
     /** The inventory slot holding the tongs, which must never be consumed as an ingredient. */
     public static int protectedSlot(Player player, InteractionHand hand) {

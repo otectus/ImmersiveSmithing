@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_pike"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:pike"
+  "anvil_pattern": "immersive_smithing:pike",
+  "replaces": [
+    "spartanweaponry:netherite_pike_smithing"
+  ]
 }

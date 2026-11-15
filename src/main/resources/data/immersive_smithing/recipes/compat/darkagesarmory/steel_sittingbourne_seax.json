@@ -5,27 +5,18 @@
       "modid": "darkagesarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "darkagesarmory",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "darkagesarmory:steel_sittingbourne_seax"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 10,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/gold"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "darkagesarmory:steel_sittingbourne_seax"
   },

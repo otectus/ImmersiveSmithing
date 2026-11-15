@@ -14,5 +14,8 @@
     "item": "minecraft:iron_hoe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:hoe"
+  "anvil_pattern": "immersive_smithing:hoe",
+  "replaces": [
+    "minecraft:iron_hoe"
+  ]
 }

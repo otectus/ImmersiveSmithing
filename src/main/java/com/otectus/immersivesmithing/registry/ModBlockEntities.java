@@ -3,6 +3,7 @@ package com.otectus.immersivesmithing.registry;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
 import com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
+import com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -24,6 +25,10 @@ public final class ModBlockEntities {
     @SuppressWarnings("DataFlowIssue")
     public static final RegistryObject<BlockEntityType<SmithsTroughBlockEntity>> SMITHS_TROUGH = BLOCK_ENTITIES.register("smiths_trough",
             () -> BlockEntityType.Builder.of(SmithsTroughBlockEntity::new, ModBlocks.SMITHS_TROUGH.get()).build(null));
+
+    @SuppressWarnings("DataFlowIssue")
+    public static final RegistryObject<BlockEntityType<SmithsGrindstoneBlockEntity>> SMITHS_GRINDSTONE = BLOCK_ENTITIES.register("smiths_grindstone",
+            () -> BlockEntityType.Builder.of(SmithsGrindstoneBlockEntity::new, ModBlocks.SMITHS_GRINDSTONE.get()).build(null));
 
     private ModBlockEntities() {}
 }

@@ -34,5 +34,8 @@
     "item": "spartanweaponry:electrum_rapier"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:rapier"
+  "anvil_pattern": "immersive_smithing:rapier",
+  "replaces": [
+    "spartanweaponry:electrum_rapier"
+  ]
 }

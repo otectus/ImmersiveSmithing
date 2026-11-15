@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_scythe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:scythe"
+  "anvil_pattern": "immersive_smithing:scythe",
+  "replaces": [
+    "spartanweaponry:netherite_scythe_smithing"
+  ]
 }

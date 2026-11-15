@@ -5,27 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:pikeman_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 18,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 4
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:pikeman_boots"
   },

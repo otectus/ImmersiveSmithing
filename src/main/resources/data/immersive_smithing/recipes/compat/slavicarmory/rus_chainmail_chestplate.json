@@ -5,27 +5,18 @@
       "modid": "slavicarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "slavicarmory",
+      "versions": "[2.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "slavicarmory:rus_chainmail_chestplate"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:leather"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:woolen_fabrics"
-      },
-      "count": 8
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "slavicarmory:rus_chainmail_chestplate"
   },

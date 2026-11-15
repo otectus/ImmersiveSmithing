@@ -6,6 +6,7 @@ import com.otectus.immersivesmithing.client.renderer.SmithsAnvilRenderer;
 import com.otectus.immersivesmithing.client.renderer.SmithsForgeRenderer;
 import com.otectus.immersivesmithing.client.renderer.SmithsTroughRenderer;
 import com.otectus.immersivesmithing.client.renderer.StationModels;
+import com.otectus.immersivesmithing.client.renderer.TongsItemRenderer;
 import com.otectus.immersivesmithing.item.SmithingTier;
 import com.otectus.immersivesmithing.registry.ModBlockEntities;
 import com.otectus.immersivesmithing.registry.ModItems;
@@ -28,7 +29,22 @@ public final class ClientSetup {
         modBus.addListener(StationNotices::register);
         modBus.addListener(ClientSetup::onRegisterParticles);
         modBus.addListener(ClientSetup::onRegisterModels);
+        modBus.addListener(TongsItemRenderer::modifyModels);
+        modBus.addListener(com.otectus.immersivesmithing.client.work.WorkKeys::register);
+        modBus.addListener(ClientSetup::onRegisterReloadListeners);
+        modBus.addListener(ClientSetup::onRegisterOverlays);
         MinecraftForge.EVENT_BUS.addListener(ClientConfigSync::onLoggingOut);
+        MinecraftForge.EVENT_BUS.register(WorkClientEvents.class);
+    }
+
+    private static void onRegisterReloadListeners(net.minecraftforge.client.event.RegisterClientReloadListenersEvent event) {
+        event.registerReloadListener(new com.otectus.immersivesmithing.client.work.WorkpieceVisuals());
+    }
+
+    /** The World-view work status, drawn under the crosshair while looking at a station with work on it. */
+    private static void onRegisterOverlays(net.minecraftforge.client.event.RegisterGuiOverlaysEvent event) {
+        event.registerAbove(net.minecraftforge.client.gui.overlay.VanillaGuiOverlay.CROSSHAIR.id(), "work_status",
+                (gui, graphics, partialTick, width, height) -> WorkClientEvents.renderWorldStatus(graphics, width, height));
     }
 
     private static void onRegisterModels(ModelEvent.RegisterAdditional event) {
@@ -48,6 +64,7 @@ public final class ClientSetup {
         event.registerBlockEntityRenderer(ModBlockEntities.SMITHS_FORGE.get(), SmithsForgeRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.SMITHS_ANVIL.get(), SmithsAnvilRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.SMITHS_TROUGH.get(), SmithsTroughRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.SMITHS_GRINDSTONE.get(), com.otectus.immersivesmithing.client.renderer.SmithsGrindstoneRenderer::new);
     }
 
     private static void onRegisterParticles(RegisterParticleProvidersEvent event) {

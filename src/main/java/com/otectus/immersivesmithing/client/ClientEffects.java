@@ -60,16 +60,29 @@ public final class ClientEffects {
             case StationEffects.STEAM -> {
                 float fill = level.getBlockEntity(pos) instanceof SmithsTroughBlockEntity trough ? trough.clientFillFraction() : 1F;
                 double surface = y + SmithsTroughRenderer.surfaceHeight(fill);
-                for (int i = 0, n = count(12); i < n; i++) {
+                for (int i = 0, n = count(5); i < n; i++) {
                     double across = (random.nextDouble() - 0.5) * 0.6;
                     double along = (random.nextDouble() - 0.5) * 0.3;
-                    level.addParticle(ParticleTypes.CLOUD, x - fz * across + fx * along, surface, z + fx * across + fz * along,
+                    steam(x - fz * across + fx * along, surface, z + fx * across + fz * along,
                             -fz * across * 0.04, 0.035 + random.nextDouble() * 0.05, fx * across * 0.04);
                 }
                 for (int i = 0, n = count(6); i < n; i++) {
                     level.addParticle(ParticleTypes.SPLASH, x + (random.nextDouble() - 0.5) * 0.3, surface + 0.02,
                             z + (random.nextDouble() - 0.5) * 0.3, (random.nextDouble() - 0.5) * 0.1,
                             0.08 + random.nextDouble() * 0.08, (random.nextDouble() - 0.5) * 0.1);
+                }
+            }
+            case StationEffects.STEAM_CLEAR -> {
+                // The end cue: the hiss stops, a last thin wisp lifts off the water and the surface settles.
+                float fill = level.getBlockEntity(pos) instanceof SmithsTroughBlockEntity trough ? trough.clientFillFraction() : 1F;
+                double surface = y + SmithsTroughRenderer.surfaceHeight(fill);
+                for (int i = 0, n = count(2); i < n; i++) {
+                    double across = (random.nextDouble() - 0.5) * 0.4;
+                    steam(x - fz * across, surface + 0.05, z + fx * across, 0, 0.012 + random.nextDouble() * 0.01, 0);
+                }
+                for (int i = 0, n = count(3); i < n; i++) {
+                    level.addParticle(ParticleTypes.BUBBLE_POP, x + (random.nextDouble() - 0.5) * 0.4, surface + 0.01,
+                            z + (random.nextDouble() - 0.5) * 0.4, 0, 0.01, 0);
                 }
             }
             case StationEffects.FORGE_WORK -> {
@@ -95,6 +108,16 @@ public final class ClientEffects {
         int count = Math.min(remaining, ClientConfig.scaleParticles(requested));
         remaining -= count;
         return count;
+    }
+
+    /** Vanilla cloud sprites, sized for a one-block water basin. The caller owns distance and particle budgets. */
+    public static void steam(double x, double y, double z, double vx, double vy, double vz) {
+        var particle = Minecraft.getInstance().particleEngine.createParticle(ParticleTypes.CLOUD, x, y, z, vx, vy, vz);
+        if (particle != null) {
+            particle.scale(0.28F);
+            particle.setLifetime(16);
+            particle.setColor(0.82F, 0.86F, 0.88F);
+        }
     }
 
     private ClientEffects() {}

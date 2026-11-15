@@ -5,27 +5,18 @@
       "modid": "artillery_addon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "artillery_addon",
+      "versions": "[1.16.2]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "artillery_addon:mini_pistola"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 10,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:stick"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "minecraft:planks"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "artillery_addon:mini_pistola"
   },

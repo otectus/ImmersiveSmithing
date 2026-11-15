@@ -27,6 +27,7 @@ public class SparkParticle extends TextureSheetParticle {
         this.rCol = 1.0F;
         this.gCol = 0.85F;
         this.bCol = 0.45F;
+        this.oRoll = this.roll = random.nextFloat() * ((float) Math.PI * 2F);
         setSpriteFromAge(sprites);
     }
 

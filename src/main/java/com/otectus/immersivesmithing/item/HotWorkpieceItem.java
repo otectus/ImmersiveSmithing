@@ -12,8 +12,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * A hot workpiece left behind when a Smith's Anvil is broken. It cannot be used as equipment; pick it up with
- * Smithing Tongs, place it back on an anvil, or melt it down in a forge.
+ * A workpiece left behind when its station was broken (anvil, trough, forge rest), with its whole process record (or, if it
+ * no longer decodes, its raw data untouched). It cannot be used as equipment; pick it up with Smithing Tongs, place it on an
+ * anvil, or deliberately recycle it at a forge.
  */
 public class HotWorkpieceItem extends Item {
 
@@ -30,8 +31,21 @@ public class HotWorkpieceItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        WorkpieceCodec.getHeld(stack).ifPresent(d -> SmithingTongsItem.appendWorkpiece(d, tooltip));
+        var data = WorkpieceCodec.getHeld(stack);
+        if (data.isPresent()) SmithingTongsItem.appendWorkpiece(data.get(), tooltip);
+        else if (WorkpieceCodec.isHolding(stack)) tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.unreadable").withStyle(ChatFormatting.RED));
         tooltip.add(Component.translatable("tooltip.immersive_smithing.hot_workpiece").withStyle(ChatFormatting.GRAY));
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, net.minecraft.world.entity.Entity entity, int slot, boolean selected) {
+        com.otectus.immersivesmithing.workpiece.HeldWorkpieces.tick(stack, level);
+    }
+
+    @Override
+    public boolean onEntityItemUpdate(ItemStack stack, net.minecraft.world.entity.item.ItemEntity entity) {
+        com.otectus.immersivesmithing.workpiece.HeldWorkpieces.tick(stack, entity.level());
+        return false;
     }
 
     @Override

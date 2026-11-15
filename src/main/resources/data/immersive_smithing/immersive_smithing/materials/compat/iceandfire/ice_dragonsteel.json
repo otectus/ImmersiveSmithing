@@ -29,5 +29,8 @@
   "requires_ignition": false,
   "required_fuel_tag": "immersive_smithing:netherite_fuels",
   "tint": "#AFC7DB",
-  "upgrade_policy": "shape"
+  "upgrade_policy": "shape",
+  "casting": {
+    "ingot": "iceandfire:dragonsteel_ice_ingot"
+  }
 }

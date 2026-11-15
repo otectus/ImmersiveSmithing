@@ -14,5 +14,8 @@
     "item": "minecraft:netherite_hoe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:hoe"
+  "anvil_pattern": "immersive_smithing:hoe",
+  "replaces": [
+    "minecraft:netherite_hoe_smithing"
+  ]
 }

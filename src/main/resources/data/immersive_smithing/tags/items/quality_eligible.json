@@ -16,6 +16,10 @@
     {
       "id": "#immersive_smithing:compat/epicknights/quality_eligible",
       "required": false
+    },
+    {
+      "id": "#immersive_smithing:compat/epic_knights_releases/quality_eligible",
+      "required": false
     }
   ]
 }

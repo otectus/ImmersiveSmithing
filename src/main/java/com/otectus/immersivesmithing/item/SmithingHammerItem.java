@@ -27,6 +27,13 @@ public class SmithingHammerItem extends SmithingToolItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.immersive_smithing.hammer").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("tooltip.immersive_smithing.anvil_time", tier().anvilTimeMs() / 1000).withStyle(ChatFormatting.DARK_GRAY));
+        int recovery = switch (tier()) {
+            case STONE -> com.otectus.immersivesmithing.config.ServerConfig.get(com.otectus.immersivesmithing.config.ServerConfig.STONE_BLOW_RECOVERY_TICKS);
+            case IRON -> com.otectus.immersivesmithing.config.ServerConfig.get(com.otectus.immersivesmithing.config.ServerConfig.IRON_BLOW_RECOVERY_TICKS);
+            case DIAMOND -> com.otectus.immersivesmithing.config.ServerConfig.get(com.otectus.immersivesmithing.config.ServerConfig.DIAMOND_BLOW_RECOVERY_TICKS);
+            case NETHERITE -> com.otectus.immersivesmithing.config.ServerConfig.get(com.otectus.immersivesmithing.config.ServerConfig.NETHERITE_BLOW_RECOVERY_TICKS);
+        };
+        tooltip.add(Component.translatable("tooltip.immersive_smithing.hammer_recovery", String.format(java.util.Locale.ROOT, "%.2f", recovery / 20.0))
+                .withStyle(ChatFormatting.DARK_GRAY));
     }
 }

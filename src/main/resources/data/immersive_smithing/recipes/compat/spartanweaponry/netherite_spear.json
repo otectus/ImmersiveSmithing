@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_spear"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:spear"
+  "anvil_pattern": "immersive_smithing:spear",
+  "replaces": [
+    "spartanweaponry:netherite_spear_smithing"
+  ]
 }

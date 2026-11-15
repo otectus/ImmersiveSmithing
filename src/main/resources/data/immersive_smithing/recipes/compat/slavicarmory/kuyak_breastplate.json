@@ -5,21 +5,18 @@
       "modid": "slavicarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "slavicarmory",
+      "versions": "[2.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "slavicarmory:kuyak_breastplate"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 36,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather_chestplate"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "slavicarmory:kuyak_breastplate"
   },

@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_boomerang"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:boomerang"
+  "anvil_pattern": "immersive_smithing:boomerang",
+  "replaces": [
+    "spartanweaponry:netherite_boomerang_smithing"
+  ]
 }

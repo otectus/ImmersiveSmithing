@@ -1,0 +1,9 @@
+{
+  "family": "immersive_smithing_test:pearlite",
+  "display_name": "Pearlite",
+  "sources": [
+    { "item": "minecraft:ender_pearl", "units": 9 }
+  ],
+  "casting": { "ingot": "minecraft:ender_pearl" },
+  "tint": "#2F8F7F"
+}

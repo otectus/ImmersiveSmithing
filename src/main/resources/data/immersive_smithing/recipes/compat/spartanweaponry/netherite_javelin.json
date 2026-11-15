@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_javelin"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:javelin"
+  "anvil_pattern": "immersive_smithing:javelin",
+  "replaces": [
+    "spartanweaponry:netherite_javelin_smithing"
+  ]
 }

@@ -5,27 +5,18 @@
       "modid": "slavicarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "slavicarmory",
+      "versions": "[2.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "slavicarmory:rus_scale_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:leather"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 6
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "slavicarmory:rus_scale_boots"
   },

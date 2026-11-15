@@ -5,21 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:steel_cutlass"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:steel_cutlass"
   },

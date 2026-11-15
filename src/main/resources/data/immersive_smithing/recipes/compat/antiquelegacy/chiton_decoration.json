@@ -5,21 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:chiton_decoration"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:bronze",
-  "metal_units": 2,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:woolen_fabrics"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:chiton_decoration"
   },

@@ -34,5 +34,8 @@
     "item": "spartanweaponry:platinum_spear"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:spear"
+  "anvil_pattern": "immersive_smithing:spear",
+  "replaces": [
+    "spartanweaponry:platinum_spear"
+  ]
 }

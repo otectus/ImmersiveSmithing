@@ -17,6 +17,16 @@
       ],
       "disposition": "disabled_by_upstream",
       "reason": "Open Helms registers this visor state, but Swappable Helms' default pairs do not include it (add the pair to quick_swap's HelmetPairs to reach it)"
+    },
+    {
+      "items": [
+        "epicknights_open_helms:unfinished_armet",
+        "epicknights_open_helms:unfinished_bascinet",
+        "epicknights_open_helms:unfinished_faceplate",
+        "epicknights_open_helms:unfinished_helmet"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
     }
   ]
 }

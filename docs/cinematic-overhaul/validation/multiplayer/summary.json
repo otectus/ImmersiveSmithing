@@ -1,0 +1,62 @@
+{
+  "pass": true,
+  "results": {
+    "leader": {
+      "pass": true,
+      "reason": "remote swings synchronized and the anvil pickup cleared on this client",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "leader_recipe_count": 1187,
+        "leader_recipes_match_server": true,
+        "leader_loaded_tongs": true,
+        "leader_first_person_tongs_captured": true,
+        "leader_first_person_hammer_captured": true,
+        "leader_remote_tongs_and_hammer_observed": true,
+        "leader_anvil_visible_before_pickup": true,
+        "leader_anvil_server_state": "server_empty=true tongs_loaded=true",
+        "leader_anvil_server_empty_and_tongs_loaded": true,
+        "leader_anvil_empty_after_pickup": true,
+        "leader_tongs_loaded_after_pickup": true
+      }
+    },
+    "peer": {
+      "pass": true,
+      "reason": "remote swings synchronized and the anvil pickup cleared on this client",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "peer_recipe_count": 1187,
+        "peer_recipes_match_server": true,
+        "remote_sky_light": 0,
+        "remote_block_light": 0,
+        "fixture_lighting": "vanilla night vision for pose inspection; station lighting tested separately",
+        "remote_loaded_tongs": true,
+        "remote_loaded_tongs_swing_observed": true,
+        "remote_tongs_capture_swing_tick": 3,
+        "remote_hammer_swing_observed": true,
+        "remote_hammer_capture_swing_tick": 3,
+        "peer_anvil_visible_before_pickup": true,
+        "peer_anvil_server_state": "server_empty=true tongs_loaded=true",
+        "peer_anvil_server_empty_and_tongs_loaded": true,
+        "peer_anvil_empty_after_pickup": true
+      }
+    }
+  },
+  "screenshots": [
+    "leader/screenshots/packtest_multiplayer_first_person_hammer.png",
+    "leader/screenshots/packtest_multiplayer_first_person_tongs.png",
+    "leader/screenshots/packtest_multiplayer_leader_anvil_after_pickup.png",
+    "leader/screenshots/packtest_multiplayer_leader_anvil_before_pickup.png",
+    "leader/screenshots/packtest_multiplayer_leader_loaded_tongs.png",
+    "peer/screenshots/packtest_multiplayer_peer_anvil_after_pickup.png",
+    "peer/screenshots/packtest_multiplayer_peer_anvil_before_pickup.png",
+    "peer/screenshots/packtest_multiplayer_remote_hammer_swing.png",
+    "peer/screenshots/packtest_multiplayer_remote_idle.png",
+    "peer/screenshots/packtest_multiplayer_remote_tongs_swing.png"
+  ],
+  "artifacts": {
+    "immersive-smithing-1.3.0.jar": "0c708774e2f4e3c72ccfea2d5cc9a2a9624ae4f63b65b58aefa881efb0a9768b",
+    "immersive-smithing-1.3.0-packtest.jar": "d962cf7dc14756972209614cb1677bee7698ea0e1a1d6917a88954f9eb01d86c"
+  }
+}

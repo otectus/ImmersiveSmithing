@@ -26,5 +26,8 @@
     "item": "spartanweaponry:iron_throwing_knife"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:throwing_knife"
+  "anvil_pattern": "immersive_smithing:throwing_knife",
+  "replaces": [
+    "spartanweaponry:iron_throwing_knife"
+  ]
 }

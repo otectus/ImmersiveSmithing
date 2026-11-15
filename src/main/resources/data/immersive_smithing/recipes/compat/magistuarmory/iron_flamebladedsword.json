@@ -5,27 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:iron_flamebladedsword"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:iron",
-  "metal_units": 45,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:blaze_powder"
-      },
-      "count": 4
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:iron_flamebladedsword"
   },

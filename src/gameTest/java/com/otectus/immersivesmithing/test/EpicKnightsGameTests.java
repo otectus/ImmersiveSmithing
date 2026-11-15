@@ -94,15 +94,15 @@ public final class EpicKnightsGameTests {
             return;
         }
         // A barbute (3 ingots, 2 plates) and three plates; a plate is one ingot (two ingots make two).
-        costs(h, "magistuarmory:armet", "forge:steel", 72);
+        costs(h, "magistuarmory:armet", "forge:steel", 27, "magistuarmory:barbute", 1);
         // A shortsword (two ingots and a hilt) lengthened by one ingot.
-        costs(h, "magistuarmory:iron_bastardsword", "minecraft:iron", 27, "magistuarmory:hilt", 1);
+        costs(h, "magistuarmory:iron_bastardsword", "minecraft:iron", 9, "magistuarmory:iron_shortsword", 1);
         // Four ingots on a wooden kite shield, which is taken whole as the mod's recipe takes it.
         costs(h, "magistuarmory:iron_kiteshield", "minecraft:iron", 36, "magistuarmory:wood_kiteshield", 1);
         // The steel boss of an iron buckler is a fitting: a component, never refunded as iron.
         costs(h, "magistuarmory:iron_buckler", "minecraft:iron", 36, "magistuarmory:steel_ingot", 1);
-        // Five chainmails of nine rings at half a nugget each: 22.5 units, rounded down.
-        costs(h, "magistuarmory:chainmail_helmet", "forge:steel", 22);
+        // Five chainmails of nine rings at half a nugget each: charge 23 once, recover at most 22.
+        costs(h, "magistuarmory:chainmail_helmet", "forge:steel", 23);
         // Eight lamellar rows: six small plates (3/4 nugget each) and three leather strips per row.
         costs(h, "magistuarmory:lamellar_chestplate", "forge:steel", 36, "magistuarmory:leather_strip", 24);
         // Netherite: the diamond shortsword's shape (two gem slots and a hilt) in netherite, no template.
@@ -131,9 +131,9 @@ public final class EpicKnightsGameTests {
             costs(h, "magistuarmory:tin_shortsword", "forge:tin", 18, "magistuarmory:hilt", 1);
         }
         if (loaded("magistuarmoryaddon")) {
-            costs(h, "magistuarmoryaddon:steel_longsword", "forge:steel", 28, "magistuarmory:hilt", 2);
+            costs(h, "magistuarmoryaddon:steel_longsword", "forge:steel", 10, "magistuarmory:steel_shortsword", 1, "magistuarmory:hilt", 1);
             // Gold ingots on a steel helmet stay gold components; the helmet is steel.
-            costs(h, "magistuarmoryaddon:lion_helmet", "forge:steel", 72, "minecraft:gold_ingot", 2);
+            costs(h, "magistuarmoryaddon:lion_helmet", "forge:steel", 27, "magistuarmory:barbute", 1, "minecraft:gold_ingot", 2);
             notForged(h, "magistuarmoryaddon:fully_gilded_armet");
         }
         if (loaded("slavicarmory")) costs(h, "slavicarmory:steel_bardiche", "forge:steel", 27, "magistuarmory:pole", 1);
@@ -213,10 +213,45 @@ public final class EpicKnightsGameTests {
 
     // ------------------------------------------------------------------ transformations and states
 
+    @GameTest(template = "empty")
+    public static void twoHandedAndMountedWeaponsRetainNativePenaltiesAndAttributes(GameTestHelper h) {
+        if (!loaded(EK)) { h.succeed(); return; }
+        TestSupport.TestPlayer player = TestSupport.fighter(h);
+        LivingEntity target = TestSupport.dummy(h);
+        var horse = h.spawn(net.minecraft.world.entity.EntityType.HORSE, TestSupport.STATION);
+        for (String id : List.of("magistuarmory:steel_zweihander", "magistuarmory:iron_chivalrylance")) {
+            for (boolean mounted : List.of(false, true)) for (boolean occupiedOffhand : List.of(false, true)) {
+                if (mounted) player.startRiding(horse, true); else player.stopRiding();
+                ItemStack nativePiece = new ItemStack(item(id));
+                ItemStack offhand = occupiedOffhand ? new ItemStack(item("magistuarmory:steel_kiteshield")) : ItemStack.EMPTY;
+                TestSupport.hold(player, nativePiece, offhand);
+                float baseline = TestSupport.damageOf(player, target, () -> player.attack(target));
+                for (int score : new int[]{0, 50, 100}) {
+                    ItemStack graded = nativePiece.copy(); new QualityData(score, score, false).apply(graded);
+                    var original = nativePiece.getAttributeModifiers(net.minecraft.world.entity.EquipmentSlot.MAINHAND);
+                    var changed = graded.getAttributeModifiers(net.minecraft.world.entity.EquipmentSlot.MAINHAND);
+                    for (var attribute : original.keySet()) if (attribute != Attributes.ATTACK_DAMAGE) {
+                        var before = original.get(attribute).stream().map(a -> a.getId() + ":" + a.getAmount() + ":" + a.getOperation()).sorted().toList();
+                        var after = changed.get(attribute).stream().map(a -> a.getId() + ":" + a.getAmount() + ":" + a.getOperation()).sorted().toList();
+                        h.assertTrue(before.equals(after), "Native speed/reach/other attributes unchanged: " + id + "/" + attribute + ": " + before + " vs " + after);
+                    }
+                    TestSupport.hold(player, graded, offhand);
+                    float actual = TestSupport.damageOf(player, target, () -> player.attack(target));
+                    double expected = baseline * QualityCalculator.efficacyMultiplier(new QualityData(score, score, false));
+                    h.assertTrue(baseline > 0 && Math.abs(actual - expected) < .05,
+                            "Native mounted/offhand behavior preserved for " + id + "/" + mounted + "/" + occupiedOffhand + ": " + actual + " vs " + expected);
+                }
+            }
+        }
+        player.stopRiding(); horse.discard(); target.discard();
+        TestSupport.hold(player, ItemStack.EMPTY, ItemStack.EMPTY); h.succeed();
+    }
+
     private static ItemStack gradedPiece(String id, FakePlayer smith) {
         ItemStack piece = new ItemStack(item(id));
         new QualityData(80, 90, false).apply(piece);
         MakersMark.stamp(piece, smith);
+        piece.getOrCreateTagElement(QualityData.ROOT).putDouble(QualityData.CARRY, .375);
         piece.enchant(Enchantments.ALL_DAMAGE_PROTECTION, 3);
         piece.enchant(Enchantments.BINDING_CURSE, 1);
         piece.setHoverName(Component.literal("Helm of the Watch"));
@@ -227,6 +262,7 @@ public final class EpicKnightsGameTests {
     private static void sameWork(GameTestHelper h, String what, ItemStack before, ItemStack after) {
         QualityData q = QualityData.get(after).orElse(null);
         h.assertTrue(q != null && q.forgeScore() == 80 && q.anvilScore() == 90, what + " keeps the quality");
+        h.assertTrue(before.getTagElement(QualityData.ROOT).equals(after.getTagElement(QualityData.ROOT)), what + " keeps the complete quality, carry and maker data");
         h.assertTrue(MakersMark.get(after).isPresent() && MakersMark.get(after).get().smithId().equals(MakersMark.get(before).get().smithId()),
                 what + " keeps the maker's mark");
         h.assertTrue(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.ALL_DAMAGE_PROTECTION, after) == 3
@@ -334,7 +370,7 @@ public final class EpicKnightsGameTests {
             RecyclingValue value = MaterialResolver.recyclingValue(r.result()).orElse(null);
             if (value == null) continue;
             if (!value.family().equals(r.family())) problems.add(r.getId() + " melts for another metal " + value.family());
-            else if (value.units() > r.metalUnits()) problems.add(r.getId() + " melts for " + value.units() + " but costs " + r.metalUnits());
+            else if (value.units() > r.recoverableUnits()) problems.add(r.getId() + " melts for " + value.units() + " but contains " + r.recoverableUnits());
         }
         h.assertTrue(problems.isEmpty(), String.join("; ", problems.subList(0, Math.min(6, problems.size()))));
         if (loaded("magistuarmoryaddon")) {
@@ -342,8 +378,9 @@ public final class EpicKnightsGameTests {
             h.assertTrue(lion.family().toString().equals("forge:steel") && lion.units() == 72, "A lion helmet melts for its steel, never its gold");
         }
         if (loaded("medieval_boomsticks")) {
-            // Three throwing axes from three iron axes: each one carries one axe's iron and its nugget.
-            costs(h, "medieval_boomsticks:iron_throwing_axe", "minecraft:iron", 28, "minecraft:stick", 3);
+            // This multi-equipment batch stays native; it cannot become a one-output shortcut.
+            notForged(h, "medieval_boomsticks:iron_throwing_axe");
+            h.assertTrue(present(h, "medieval_boomsticks:iron_throwing_axe"), "Native throwing-axe batch remains available");
         }
         h.succeed();
     }
@@ -365,19 +402,20 @@ public final class EpicKnightsGameTests {
         TestSupport.TestPlayer player = TestSupport.fighter(h);
         LivingEntity target = TestSupport.dummy(h);
         EpicFightTestSupport.battleMode(player);
-        QualityData fine = new QualityData(100, 100, false);
-        double m = QualityCalculator.efficacyMultiplier(fine);
         ItemStack plain = new ItemStack(item("magistuarmory:iron_bastardsword"));
-        ItemStack graded = plain.copy();
-        fine.apply(graded);
         TestSupport.hold(player, plain, ItemStack.EMPTY);
         float base = TestSupport.damageOf(player, target, () -> EpicFightTestSupport.battleAttack(player, target, net.minecraft.world.InteractionHand.MAIN_HAND));
-        TestSupport.hold(player, graded, ItemStack.EMPTY);
-        float scaled = TestSupport.damageOf(player, target, () -> EpicFightTestSupport.battleAttack(player, target, net.minecraft.world.InteractionHand.MAIN_HAND));
-        h.assertTrue(base > 1F && Math.abs(scaled - base * m) < 0.05, "Battle mode: an Epic Knights sword's quality applies once, x" + m
-                + ", got " + scaled / base);
-        double attribute = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
-        h.assertTrue(Math.abs(attribute - base * m) < 0.05, "and the modifiers do not pile up: " + attribute);
+        for (int score : new int[]{0, 50, 100}) {
+            QualityData quality = new QualityData(score, score, false);
+            double m = QualityCalculator.efficacyMultiplier(quality);
+            ItemStack graded = plain.copy(); quality.apply(graded);
+            TestSupport.hold(player, graded, ItemStack.EMPTY);
+            float scaled = TestSupport.damageOf(player, target, () -> EpicFightTestSupport.battleAttack(player, target, net.minecraft.world.InteractionHand.MAIN_HAND));
+            h.assertTrue(base > 1F && Math.abs(scaled - base * m) < 0.05, "Battle mode: quality " + score + " applies once, x" + m
+                    + ", got " + scaled / base);
+            double attribute = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+            h.assertTrue(Math.abs(attribute - base * m) < 0.05, "and the modifiers do not pile up: " + attribute);
+        }
         EpicFightTestSupport.vanillaMode(player);
         TestSupport.hold(player, ItemStack.EMPTY, ItemStack.EMPTY);
         h.succeed();

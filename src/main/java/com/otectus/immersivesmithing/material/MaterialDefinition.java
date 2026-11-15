@@ -17,7 +17,8 @@ import java.util.List;
 
 /**
  * A material family as written in a datapack, before tags are resolved. With {@code sources_only} a file only adds
- * sources to a family another file defines (an add-on's plates for steel); its other fields are ignored.
+ * sources to a family another file defines (an add-on's plates for steel); its other fields are ignored. {@code casting}
+ * is null when the file does not mention it.
  */
 public record MaterialDefinition(
         ResourceLocation family,
@@ -28,12 +29,25 @@ public record MaterialDefinition(
         @Nullable TagKey<Item> requiredFuelTag,
         int tint,
         UpgradePolicy upgradePolicy,
-        boolean sourcesOnly) {
+        boolean sourcesOnly,
+        @Nullable Casting casting) {
 
     public MaterialDefinition(ResourceLocation family, @Nullable Component displayName, List<SourceDefinition> sources, float meltMultiplier,
                               boolean requiresIgnition, @Nullable TagKey<Item> requiredFuelTag, int tint, UpgradePolicy upgradePolicy) {
-        this(family, displayName, sources, meltMultiplier, requiresIgnition, requiredFuelTag, tint, upgradePolicy, false);
+        this(family, displayName, sources, meltMultiplier, requiresIgnition, requiredFuelTag, tint, upgradePolicy, false, null);
     }
+
+    public MaterialDefinition(ResourceLocation family, @Nullable Component displayName, List<SourceDefinition> sources, float meltMultiplier,
+                              boolean requiresIgnition, @Nullable TagKey<Item> requiredFuelTag, int tint, UpgradePolicy upgradePolicy,
+                              boolean sourcesOnly) {
+        this(family, displayName, sources, meltMultiplier, requiresIgnition, requiredFuelTag, tint, upgradePolicy, sourcesOnly, null);
+    }
+
+    /**
+     * The file's {@code "casting"} entry: {@code false} switches casting off for the family; an object may name the
+     * {@code ingot} and {@code nugget} to cast, which must be sources of the family worth 9 and 1 units.
+     */
+    public record Casting(boolean enabled, @Nullable ResourceLocation ingot, @Nullable ResourceLocation nugget) {}
 
     public record SourceDefinition(@Nullable TagKey<Item> tag, @Nullable ResourceLocation item, int units) {
         public String describe() {
@@ -85,7 +99,18 @@ public record MaterialDefinition(
         UpgradePolicy policy = json.has("upgrade_policy")
                 ? UpgradePolicy.byId(GsonHelper.getAsString(json, "upgrade_policy")) : UpgradePolicy.SHAPE;
         return new MaterialDefinition(family, name, List.copyOf(sources), melt, ignition, fuelTag, tint & 0xFFFFFF, policy,
-                GsonHelper.getAsBoolean(json, "sources_only", false));
+                GsonHelper.getAsBoolean(json, "sources_only", false), casting(json));
+    }
+
+    @Nullable
+    private static Casting casting(JsonObject json) {
+        if (!json.has("casting")) return null;
+        JsonElement el = json.get("casting");
+        if (el.isJsonPrimitive() && el.getAsJsonPrimitive().isBoolean()) return new Casting(el.getAsBoolean(), null, null);
+        JsonObject o = GsonHelper.convertToJsonObject(el, "casting");
+        ResourceLocation ingot = o.has("ingot") ? new ResourceLocation(GsonHelper.getAsString(o, "ingot")) : null;
+        ResourceLocation nugget = o.has("nugget") ? new ResourceLocation(GsonHelper.getAsString(o, "nugget")) : null;
+        return new Casting(GsonHelper.getAsBoolean(o, "enabled", true), ingot, nugget);
     }
 
     /**
@@ -96,8 +121,9 @@ public record MaterialDefinition(
         List<SourceDefinition> merged = new ArrayList<>(sources);
         merged.addAll(later.sources);
         MaterialDefinition fields = later.sourcesOnly ? this : later;
+        // Like the display name, a casting entry is kept until a later file sets one of its own.
         return new MaterialDefinition(family, fields.displayName != null ? fields.displayName : displayName, List.copyOf(merged),
                 fields.meltMultiplier, fields.requiresIgnition, fields.requiredFuelTag, fields.tint, fields.upgradePolicy,
-                sourcesOnly && later.sourcesOnly);
+                sourcesOnly && later.sourcesOnly, fields.casting != null ? fields.casting : casting);
     }
 }

@@ -14,19 +14,25 @@ def main():
     scenes=[]
     def add(name,begin,duration,caption,card=False):
         scenes.append(dict(name=name,start=max(0,begin),duration=round(duration*30)/30,caption=caption,card=card))
-    add('intro',m['workshop']+.7,3.5,'A hands-on smithing mod for Minecraft',True)
-    add('heat',m['heat']+.5,min(4,m['choose']-m['heat']-.7),'MELT  /  Fuel the forge. Bring your metal to life.')
-    add('choose',m['choose']+.4,2,'CHOOSE  /  Turn molten metal into equipment.')
-    add('forge',m['forge_play']+.1,min(6.3,m['forge_result']-m['forge_play']-.15),'FORGE  /  Time each pass to improve durability.')
-    add('forge_result',m['forge_result']+.15,1.4,'YOUR TIMING MATTERS  /  Quality starts at the forge.')
-    add('transfer',m['transfer']+.2,2.2,'TRANSFER  /  Carry the hot workpiece with your tongs.')
-    add('anvil',m['anvil_play']+.1,4.2,'SHAPE  /  Aim for the centre. Strike as the rings meet.')
-    add('anvil_finish',m['anvil_result']-3.8,4.7,'EVERY STRIKE COUNTS  /  Shaping sets efficacy.')
-    add('quench',m['quench']+.1,3.2,'QUENCH  /  Cool the shaped metal to finish your item.')
-    add('refine',m['refine']+.1,2.9,'REFINE  /  Spend experience to improve your equipment.')
-    add('quality',m['quality']+.2,2.8,'MADE BY YOU  /  Your work determines the finished quality.')
-    add('guide',m['guide']+.2,3.6,'LEARN THE TRADE  /  A readable, searchable Smithing Guide.')
-    add('outro',m['outro']+.5,3.2,'Minecraft Java Edition  /  Forge 1.20.1',True)
+    def span(a,b,cap):
+        # From marker a until marker b (or cap seconds), when both moments happened in this take.
+        return None if a not in m else min(cap,(m[b]-m[a]-.2) if b in m else cap)
+    def scene(name,marker,offset,duration,caption,card=False):
+        if marker in m and duration and duration>.6:add(name,m[marker]+offset,duration,caption,card)
+    scene('intro','workshop',.7,3.5,'A hands-on smithing mod for Minecraft',True)
+    scene('heat','heat',.5,span('heat','hands_on',4),'MELT  /  Fuel the forge. Bring your metal to life.')
+    scene('choose','work_pattern_book_live',0,span('work_pattern_book_live','work_job_committed',2.6),'CHOOSE  /  Pick a pattern and cast a billet.')
+    scene('forge','work_job_committed',.3,span('work_job_committed','work_billet_ready',6),'HEAT  /  Work the bellows and turn the billet until it glows evenly.')
+    scene('draw','work_billet_ready',0,span('work_billet_ready','work_anvil_first_blows',2.4),'DRAW  /  Take it from the fire at the ideal heat.')
+    scene('anvil','work_anvil_first_blows',-.3,span('work_anvil_first_blows','work_reheat_on_rest',4.5),'SHAPE  /  Strike where the metal needs it. Every blow moves it.')
+    scene('reheat','work_reheat_on_rest',-.2,span('work_reheat_on_rest','work_anvil_half_shaped',2.6),'REHEAT  /  Back on the forge\'s rest. Nothing is lost.')
+    scene('anvil_finish','work_shaped',-4.2,4.6,'EVERY BLOW COUNTS  /  Shaping sets efficacy.')
+    scene('quench','work_quench_lowered',-.3,span('work_quench_lowered','work_fitting',3.4),'QUENCH  /  Hold it under until the hiss fades.')
+    scene('fit','work_fitting',-.2,span('work_fitting','work_finished',2.2),'FIT  /  Add the grip at the anvil.')
+    scene('refine','work_grind_contact',-.4,span('work_grind_contact','quality',2.9),'REFINE  /  Hold the edge to the wheel.')
+    scene('quality','quality',.2,2.8,'MADE BY YOU  /  Your work determines the finished quality.')
+    scene('guide','guide',.2,3.6,'LEARN THE TRADE  /  A readable, searchable Smithing Guide.')
+    scene('outro','outro',.5,3.2,'Minecraft Java Edition  /  Forge 1.20.1',True)
     out=ROOT/'output/sneak-peek';out.mkdir(parents=True,exist_ok=True)
     work=take/'edit';work.mkdir(exist_ok=True)
     def render(args):
@@ -55,7 +61,7 @@ def main():
     final=out/'immersive-smithing-sneak-peek.mp4'
     subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',str(listing),'-c','copy','-movflags','+faststart',str(final)],check=True)
     subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-ss','1.5','-i',str(final),'-frames:v','1',str(out/'preview.png')],check=True)
-    (out/'edit.json').write_text(json.dumps({'footage':'Actual Minecraft client; scripted demonstration using server-scored minigames and real station interactions.','take':a.take,'scenes':scenes,'total_seconds':sum(s['duration'] for s in scenes)},indent=2)+'\n')
+    (out/'edit.json').write_text(json.dumps({'footage':'Actual Minecraft client; scripted player inputs on the focused work views, every action validated and scored by the server.','take':a.take,'scenes':scenes,'total_seconds':sum(s['duration'] for s in scenes)},indent=2)+'\n')
     print(final)
     print('Duration:',round(sum(s['duration'] for s in scenes),2))
 if __name__=='__main__':main()

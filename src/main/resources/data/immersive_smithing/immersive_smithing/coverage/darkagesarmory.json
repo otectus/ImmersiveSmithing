@@ -92,6 +92,125 @@
       ],
       "disposition": "native_transformation",
       "reason": "made from another piece: gilding with minecraft:gold_ingot"
+    },
+    {
+      "items": [
+        "darkagesarmory:black_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:black_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:boar_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:boar_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:brown_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:brown_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:common_wallet_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:common_wallet_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:early_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:early_cloak_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:gilded_boar_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:gilded_boar_decoration_gilding"
+    },
+    {
+      "items": [
+        "darkagesarmory:gilded_hairy_boar_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:gilded_hairy_boar_decoration, darkagesarmory:gilded_hairy_boar_decoration_gilding"
+    },
+    {
+      "items": [
+        "darkagesarmory:green_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:green_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:hairy_boar_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:hairy_boar_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:hedeby_bag_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:hedeby_bag_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:maille_aventail_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:maille_aventail_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:orkney_hood_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:orkney_hood_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:red_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:red_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:valsgarde_vambraces_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:valsgarde_vambraces_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:white_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:white_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:yellow_prachtmantel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: darkagesarmory:yellow_prachtmantel_decoration"
+    },
+    {
+      "items": [
+        "darkagesarmory:pile_woven_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
     }
   ]
 }

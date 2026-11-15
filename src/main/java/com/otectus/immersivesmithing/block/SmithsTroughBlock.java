@@ -16,6 +16,10 @@ import com.otectus.immersivesmithing.material.RecyclingData;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.util.Feedback;
+import com.otectus.immersivesmithing.work.TroughActions;
+import com.otectus.immersivesmithing.registry.ModBlockEntities;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import com.otectus.immersivesmithing.util.StationEffects;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
@@ -53,7 +57,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-/** The Smith's Trough: water in, finished equipment out. No minigame, no cooling over time. */
+/**
+ * The Smith's Trough: water for quenching. A shaped piece is lowered in, held while the hiss subsides and lifted out; the
+ * trough holds it in between ({@link TroughActions}).
+ */
 public class SmithsTroughBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     /** Floor on its feet, staves and ends round an open basin (1.2 geometry; the straps are painted). */
@@ -129,89 +136,27 @@ public class SmithsTroughBlock extends BaseEntityBlock {
     }
 
     private void interact(ServerPlayer player, SmithsTroughBlockEntity trough, ItemStack held, InteractionHand hand) {
-        if (held.is(Items.WATER_BUCKET)) {
-            if (!trough.canAcceptBucket()) {
-                Feedback.fail(player, "trough_full");
-                return;
-            }
-            trough.addBucket();
-            if (!player.getAbilities().instabuild) {
-                player.setItemInHand(hand, ItemUtils.createFilledResult(held, player, new ItemStack(Items.BUCKET)));
-            }
-            player.level().playSound(null, trough.getBlockPos(), ModSounds.TROUGH_FILL.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+        if (trough.occupied() && com.otectus.immersivesmithing.work.WorkLeases.heldByOther(player.level(), trough.getBlockPos(), player.getUUID())) {
+            Feedback.fail(player, "station_in_use");
             return;
         }
-        if (held.is(Items.BUCKET)) {
-            if (trough.takeBucket()) {
-                player.setItemInHand(hand, ItemUtils.createFilledResult(held, player, new ItemStack(Items.WATER_BUCKET)));
-                player.level().playSound(null, trough.getBlockPos(), SoundEvents.BUCKET_FILL, SoundSource.BLOCKS, 1.0F, 1.0F);
-            } else {
-                Feedback.fail(player, "trough_not_enough_water");
-            }
-            return;
-        }
-        if (held.getItem() instanceof SmithingTongsItem) {
-            Optional<WorkpieceData> workpiece = WorkpieceCodec.getHeld(held);
-            if (workpiece.isEmpty()) Feedback.fail(player, "nothing_to_quench");
-            else quench(player, trough, held, hand, workpiece.get());
-            return;
-        }
-        if (held.is(ModItems.HOT_WORKPIECE.get())) {
-            Feedback.fail(player, "use_tongs_to_quench");
-            return;
-        }
-        if (held.isEmpty()) {
-            Feedback.info(player, "trough_status", trough.quenchesLeft());
-            return;
-        }
-        Feedback.fail(player, "trough_only_workpieces");
+        TroughActions.use(player, trough, hand, held);
     }
 
-    private void quench(ServerPlayer player, SmithsTroughBlockEntity trough, ItemStack tongs, InteractionHand hand, WorkpieceData workpiece) {
-        if (!workpiece.isShaped()) {
-            Feedback.fail(player, "hammer_first");
-            return;
-        }
-        if (!trough.consumeQuench()) {
-            Feedback.fail(player, "trough_empty");
-            return;
-        }
-        ItemStack result = workpiece.target().copy();
-        QualityData quality = new QualityData(workpiece.forgeScore(), workpiece.anvilScore(), workpiece.faulty());
-        quality.apply(result);
-        // As if crafted: the crafted statistic, plus items that initialise their NBT on craft (Spartan throwing weapons).
-        result.onCraftedBy(player.level(), player, result.getCount());
-        RecyclingData.record(result, workpiece.family(), workpiece.metalUnits());
-        MakersMark.stamp(result, player);
-        BlockPos pos = trough.getBlockPos();
-        // Progression mods hear about the piece before it lands in the inventory and may still change it.
-        MinecraftForge.EVENT_BUS.post(new ItemSmithedEvent(player, result, quality, workpiece.recipeId(), workpiece.family(),
-                workpiece.metalUnits(), pos));
-        if (ServerConfig.get(ServerConfig.FIRE_VANILLA_CRAFT_EVENT)) {
-            ForgeEventFactory.firePlayerCraftingEvent(player, result, new SimpleContainer(1));
-        }
-        WorkpieceCodec.clearHeld(tongs);
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type, ModBlockEntities.SMITHS_TROUGH.get(), SmithsTroughBlockEntity::clientTick)
+                : createTickerHelper(type, ModBlockEntities.SMITHS_TROUGH.get(), SmithsTroughBlockEntity::serverTick);
+    }
 
-        ItemStack finished = result.copy();
-        if (!player.getInventory().add(result) && !result.isEmpty()) {
-            Containers.dropItemStack(player.level(), pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, result);
+    @Override
+    @SuppressWarnings("deprecation")
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
+        if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof SmithsTroughBlockEntity trough) {
+            com.otectus.immersivesmithing.work.WorkLeases.onStationGone(level, pos);
+            trough.dropContents();
         }
-        // One wear per completed transfer cycle. The tongs are empty now, so wear can safely break them.
-        tongs.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
-
-        player.level().playSound(null, pos, ModSounds.QUENCH.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-        StationEffects.send(player.serverLevel(), pos, StationEffects.STEAM, 1.0F);
-        Feedback.info(player, "quenched", quality.quality().displayName());
-
-        ModAdvancements.award(player, ModAdvancements.HISS);
-        SmithingQuality label = quality.quality();
-        if (label == SmithingQuality.FAULTY) ModAdvancements.award(player, ModAdvancements.THATLL_BUFF_OUT);
-        if (label == SmithingQuality.FINE || label == SmithingQuality.MASTERWORK) ModAdvancements.award(player, ModAdvancements.FINE_WORK);
-        if (label == SmithingQuality.MASTERWORK) ModAdvancements.award(player, ModAdvancements.MASTER_SMITH);
-
-        if (ServerConfig.get(ServerConfig.OPEN_SIGNING_AFTER_QUENCH)) {
-            int slot = player.getInventory().findSlotMatchingItem(finished);
-            if (slot >= 0) SigningService.open(player, slot);
-        }
+        super.onRemove(state, level, pos, newState, moved);
     }
 }

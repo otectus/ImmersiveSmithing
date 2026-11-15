@@ -69,6 +69,192 @@
     },
     {
       "items": [
+        "antiquelegacy:antique_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:antique_cloak_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:bronze_ingot, antiquelegacy:furnace/bronze_ingot_blasting, antiquelegacy:furnace/bronze_ingot_smelting"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_lamellar_rows"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:bronze_lamellar_rows"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_mixture"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:bronze_mixture"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:bronze_nugget, antiquelegacy:furnace/bronze_nugget_blasting"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:bronze_plate"
+    },
+    {
+      "items": [
+        "antiquelegacy:celtic_tunic_underarmor_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:celtic_tunic_underarmor_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:copper_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:copper_nugget"
+    },
+    {
+      "items": [
+        "antiquelegacy:tin_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:furnace/tin_ingot_smelting, antiquelegacy:tin_ingot"
+    },
+    {
+      "items": [
+        "antiquelegacy:greek_crest_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:greek_crest_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:greek_high_crest_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:greek_high_crest_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:hair_plume_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:hair_plume_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:iron_chainmail"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:iron_chainmail"
+    },
+    {
+      "items": [
+        "antiquelegacy:iron_lamellar_rows"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:iron_lamellar_rows"
+    },
+    {
+      "items": [
+        "antiquelegacy:iron_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:iron_plate"
+    },
+    {
+      "items": [
+        "antiquelegacy:iron_ring"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:iron_ring"
+    },
+    {
+      "items": [
+        "antiquelegacy:roman_crest_alt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:roman_crest_alt_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:roman_crest_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:roman_crest_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:roman_feathers_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:roman_feathers_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:roman_two_feathers_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:roman_two_feathers_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:small_bronze_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:small_bronze_plate"
+    },
+    {
+      "items": [
+        "antiquelegacy:small_iron_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:small_iron_plate"
+    },
+    {
+      "items": [
+        "antiquelegacy:tin_nugget"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:tin_nugget"
+    },
+    {
+      "items": [
+        "antiquelegacy:triple_feather_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:triple_feather_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:two_hair_plumes_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: antiquelegacy:two_hair_plumes_decoration"
+    },
+    {
+      "items": [
+        "antiquelegacy:bronze_horns_decoration",
+        "antiquelegacy:bronze_small_wings_decoration",
+        "antiquelegacy:deepslate_tin_ore",
+        "antiquelegacy:raw_tin",
+        "antiquelegacy:tin_ore"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "antiquelegacy:fur_cloak_decoration",
         "antiquelegacy:golden_laurel_wreath_decoration",
         "antiquelegacy:laurel_wreath_decoration"

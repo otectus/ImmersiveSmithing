@@ -1,25 +1,14 @@
-# Epic Fight and Epic Knights integrations
+# Epic Knights ecosystem and Epic Fight
 
-Immersive Smithing ships the recipes, coverage decisions and tags for Epic Fight, Epic Knights and the Epic Knights
-add-ons inside its own jar. They are on by default and need no datapack, no recipe JSON from the player and no generator
-run. Every file is conditional on its mod being loaded, so the same jar works with any subset of these mods or none.
+Immersive Smithing 1.3.0 uses the original installed equipment and active recipes. All integrations are optional;
+no upstream jar, artwork, replacement item, alloying system or new station is distributed.
 
-Server operators can switch the integrations in the server config (`[integrations]`, `/reload` applies a change):
+## Pinned versions and evidence
 
-| Option | Default | Effect |
-| --- | --- | --- |
-| `epicFight` | `true` | Epic Fight's metal weapons are forged with the built-in recipes (the uchigatana included), the crafting and smithing-table recipes they replace are disabled, and the bokken gets a crafting recipe. When off, Epic Fight is left exactly as it ships. |
-| `epicKnights` | `true` | The same for Epic Knights and every add-on below. When off, all of them are left exactly as they ship. |
-| `epicKnightsDisabledAddons` | `[]` | Mod ids (for example `"slavicarmory"`) left exactly as they ship while the others stay integrated. |
-| `terraFirmaCraft` | `false` | TerraFirmaCraft and Epic Knights of TerraFirma keep their own metalworking. `true` treats them like any other mod (automatic detection); no TerraFirmaCraft data is bundled. |
-
-Pieces that were already graded keep their quality when an integration is switched off.
-
-## Tested versions
-
-The bundled data was generated from these jars by `tools/generate_epic_compat.py`. `tools/epic_compat.lock.json`
-records each hash; the generator's `--check` fails when one changes. The Gradle cache holds them after any
-`-PepicFight` or `-PepicKnights` task (see "Test profiles").
+The jar is authoritative when a project page or source head differs. The knight chestplate in Epic Knights 10.15
+uses **five plates, 45 additional steel units, and the exact halfarmor chestplate**. The handoff was corrected accordingly.
+`tools/epic_compat.lock.json` and `tools/epic_knights_addons.json` record reviewed inputs. The inventory tool also
+records jar filenames, hashes, metadata, dependencies, invalid resources, active recipes and registered classes.
 
 | Mod (id) | Version | Source | SHA-256 |
 | --- | --- | --- | --- |
@@ -36,198 +25,177 @@ records each hash; the generator's `--check` fails when one changes. The Gradle 
 | Swappable Helms for Epic Knights (`quick_swap`) | 0.1.0 | CurseForge 1368717 / 7128444 | `44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49` |
 | EK: Artilleries and Firearms (`artillery_addon`) | 1.16.2 | CurseForge 1307540 / 8812944 | `9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2` |
 | Medieval Boomsticks (`medieval_boomsticks`) | 1.2 | CurseForge 1123016 / 6148892 | `732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6` |
-| FoxRall's Visors | - | CurseForge 1365951 / 8171854 | client-only visuals, no items (not a generator input) |
+| FoxRall's Visors (`foxrallsvisors`) | 1.0.0 | CurseForge 1365951 / 8171854 | `9466232b4bdbc8f8d2773d7d1c71d0188fc541437b6c479ba8ca914a49a23a7b` |
 | Ice and Fire (`iceandfire`, support only) | 2.1.13-1.20.1 | Modrinth `EzN8KQYF` | `2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82` |
+| `thirtyyearswar` | 1.3 | CurseForge 1752267 / 9386507 | `58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7` |
+| `fletchery` | 0.7 | CurseForge 1441931 / 9108169 | `df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe` |
+| `epic_knights__japanese_armory` | 1.6.2 | CurseForge 987386 / 5294116 | `d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b` |
+| `bronzeaddition_epicknights` | 1.0.61.20.1 | CurseForge 1035130 / 5418905 | `b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60` |
+| `medieval_boomsticks` | 1.01 | CurseForge 1123016 / 5832925 | `d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab` |
+| `overgeared_epic_knights` | 1.20.1-1.1.1 | CurseForge 1587252 / 8941802 | `459f5fead39eae14270fd798524deeef23b1ab1bd37d302bd49cb08c8dffee23` |
+| `knightsofterrafirma` | 3.1.2 | CurseForge 1092010 / 8280828 | `f85196cfba5e621c4c1b447507c7edbc92d9c76d9ac174e01539c4fd480e78b6` |
+| `knightsofterrafirma` | 3.1.2-gregified | CurseForge 1344839 / 8280833 | `0963674ebdd3dffc049db3aba800c90e1c359771585269374f3521df61330890` |
+| `epic_knights_x_better_combat` | 1.0.1-1.20.1+1.21.1 | CurseForge 1593086 / 8345335 | `b433b596c8079638a3d144e76d4b2839253edaefcbe30cff74c1a97c1252fa0e` |
+| `bettercombat` | 1.9.0+1.20.1 | Modrinth `rnhiaw3t` | `49c69dccf2c641246b4e3deca81ebac21f0ee119e81fc713b838b8e33569eea1` |
+| `playeranimator` | 1.0.2-rc1+1.20 | Modrinth `xe2EVE6q` | `90d9965cb9efdbda29fdc5610be3914cf7008bf5c392ff34f7ab25f96a852691` |
+| `overgeared` | 1.20.1-1.6.37 | Modrinth `tN0TdF4z` | `8d773e58960422f224fc73e4234c4fc2ed470234158bafd7dd4f47f502440645` |
+| `tfc` | 3.2.28 | Modrinth `dR2GA31g` | `daa54cd23c3fdcd0139491ad68a514a91970f075076207909d0ecdc2113e68a3` |
+| `gtceu` | 7.5.3 | Modrinth `yLwvjuvy` | `d6560d8b695828a763389d3f45e0210ef70c1892c7b1633ac458544905df1a0d` |
 
-Minecraft 1.20.1's and Forge 47.4.23's own data jars are inputs too (vanilla tags and recipes), with their hashes in the
-lock file.
+The release and alpha Boomsticks jars are separate profiles. Ingots Addition's actual mod version is
+`1.0.61.20.1`; the download label alone is not its version. The released Seven Kingdoms jar is `1.20.1_1.5.0`,
+not the source branch's 2.0.0. Source commits inspected by the handoff are recorded there; they do not replace jar hashes.
+Unknown versions retain native routes and are reported as unknown. Bytecode adapters are restricted to reviewed versions.
+The Ice and Fire profile uses the pinned original Forge build. No Forge Community Edition combination is claimed.
 
-Other versions of these mods load the same data safely. Every built-in forge recipe names the native recipes it replaces
-or follows and is active only while one of them is loaded, so a version that renames or drops a recipe keeps its own
-route instead of losing the item. Items added by a newer version are never guessed by automatic detection: they keep
-their native recipes until the data is regenerated. Medieval Boomsticks' forge recipes also carry an
-`immersive_smithing:mod_version` condition (`[1.2,1.3)`), because other versions use the same recipe ids with other
-ingredients.
+## Manufacturing and complete coverage
 
-## How equipment is obtained
+Every registered item is catalogued, including components, ammunition, clothing, horse armor and unavailable placeholders.
+Each active acquisition route has its own row in the generated coverage CSV. Item counts and route counts are separate.
+See [the 1.3.0 coverage exports](epic-knights-1.3.0/README.md), [inventory/](inventory/) for runtime catalogs,
+and [INVENTORY.md](INVENTORY.md) for their readable tables.
+`tools/epic_knights_inventory.py --require-complete` fails for an unexplained registered item or missing runtime profile.
 
-Each equipment item of these mods has exactly one disposition. The coverage catalog (`/immersivesmithing catalog
-<modid>`, and the GameTests below) reports it for every item in the live registry:
-
-| Disposition | Meaning |
+| Disposition | Behavior |
 | --- | --- |
-| `forge_default` | Forged with a bundled recipe; the native recipes it names are disabled. |
-| `forge_auto` | Forged with an automatically detected recipe (mods without a curated integration, such as Simply Swords). |
-| `native_nonmetal_recipe` | Not metal work (wood, leather, cloth, stone, diamond): crafted as the mod ships it. The bokken's crafting recipe is bundled because Epic Fight ships none. |
-| `native_transformation` | Made from another piece: gilding, darkening, fluting, whitening and tinning, and visor states. The route stays the mod's own; the result keeps the base piece's quality and recycling value. |
-| `native_assembly` | Firearms and machines assembled from mechanisms (locks, triggers, gunsmith kits), or Medieval Boomsticks pieces from its own smithing furnace: those systems stay with their mod. |
-| `protected_loot` | Unique or loot-only pieces (Seven Kingdoms relics and Valyrian steel, crowns, weathered and rusted finds): never forged; relics can't be melted down. |
-| `non_equipment` | Damageable but not equipment the forge works: powder flasks, ramrods, spanners, the Boomsticks smithing tools, Epic Fight's stray cloth armour. |
-| `disabled_by_upstream` | The mod registers the item but ships no working route (see "Upstream issues"). |
-| `material_unavailable` | The piece's metal has no source in this pack (for example bronze, tin or silver without a mod that adds the ingot): its native recipe stays. |
-| `integration_disabled` | Its integration is switched off in the config. |
-| `missing_support` | An eligible piece with none of the above. Every tested profile has zero. |
+| `forge_default` / `FORGE_BASE` | Verified primary metal and all other inputs create a new piece. |
+| `forge_default` / `FORGE_UPGRADE` | Exact base equipment plus added metal and every fitting are consumed. |
+| `native_transformation` | Gilding, darkening, dyes, heraldry, decorations, trims, visor states and special treatments keep native prerequisites. |
+| `native_assembly` | Native mechanisms, machines, mounted guns, ammunition and gated processing remain native. |
+| `native_nonmetal_recipe` | Cloth, leather, wood, bone, chitin and other nonmetal recipes stay available. |
+| `protected_loot` | No new recipe or salvage bypass for restricted acquisition; unique world limits stay upstream. |
+| `non_equipment` | Materials, ammo, tools and decorative content retain their explicit native route. |
+| `disabled_by_upstream` | No working acquisition in the pinned release; no invented fallback. |
+| `material_unavailable` | Required primary family is not available in this installation; source recipe retained. |
+| `external_workflow` | Overgeared/TerraFirma/TerraFirmaGreg owns production and equipment effects. |
+| `integration_disabled` | Native recipes retained by the configured exclusion. |
+| `missing_support` / `UNRESOLVED` | Fails the completeness gate; never counted as verified support. |
 
-### Coverage of the tested profiles
+Reviewed additions include Thirty Years War metal armor/weapons/firearms, Epic Fletchery's three metal crossbows,
+Japanese Armory's metal weapons and supported armor upgrades, Ingots Addition's equipment and material supply,
+and Boomsticks 1.01 separately from 1.2 alpha. Bows, ammunition, textiles, alloy supply and placeholders stay native.
 
-The largest compatible set (profile `full`: every content add-on except Epic Knights: Ice and Fire, which cannot load
-beside the Addon; see "Upstream issues"):
+## Costs, upgrades and recycling
 
-| Mod | Items | forge_default | nonmetal | transformation | assembly | protected | non_equipment | upstream |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Epic Fight | 36 | 17 | 16 | - | - | - | 3 | - |
-| Epic Knights | 400 | 279 | 96 | 8 | - | 17 | - | - |
-| Addon | 349 | 144 | 60 | 138 | - | 5 | - | 2 |
-| Slavic Armory | 59 | 34 | 7 | 18 | - | - | - | - |
-| Antique Legacy | 109 | 81 | 19 | 4 | - | 5 | - | - |
-| Seven Kingdoms | 75 | 36 | 5 | 11 | - | 23 | - | - |
-| Ores and Alloys | 25 | 25 | - | - | - | - | - | - |
-| Dark Ages | 126 | 59 | 63 | 4 | - | - | - | - |
-| Open Helms | 58 | 1 | - | 53 | - | - | - | 4 |
-| Artilleries and Firearms | 37 | 4 | 1 | - | 17 | 5 | 10 | - |
-| Medieval Boomsticks | 14 | 4 | - | - | 7 | - | 3 | - |
+Saved units remain nugget = 1, ingot = 9, block = 81. Component graphs use exact rational arithmetic at reload.
+Only reviewed components with unambiguous active recipes are expanded. Recipe remainders, custom assembly,
+ambiguous alternatives and gated parts remain actual inputs or cause the route to remain native.
+There is no universal assumption that a Forge plate tag equals one ingot.
 
-Other profiles: Epic Knights alone has 192 forge_default and 87 material_unavailable pieces (its bronze, tin and silver
-pieces need another mod's ingots); with Epic Knights: Ice and Fire, Epic Knights has 221 forged and 58 unavailable, and
-the add-on's 220 items are 60 forged, 60 nonmetal and 100 transformations (its dragonsteel pieces use Ice and Fire's
-dragonsteel). The per-item tables, with costs, patterns, quality and recycling values, are in
-[INVENTORY.md](INVENTORY.md); the fixtures they are generated from are in [inventory/](inventory/).
-
-## Costs
-
-Costs are in units: a nugget is 1, an ingot 9, a block 81.
-
-- A recipe's metal is counted once. Intermediates of the same metal are flattened into it: a plate is 9 (two ingots make
-  two plates), a ring ½ (four nuggets make eight), a chain link three rings, chainmail nine rings, a small plate ¾.
-  An armet is a barbute and three plates, so it costs 72 steel. Fractions are rounded down, never up, so forging never
-  costs more than crafting did.
-- The piece's repair material decides its metal; without one, the recipe's metal does. Fittings of another metal (a
-  steel boss on an iron shield, bronze nuggets on an iron sword) and every non-metal part (hilts, poles, leather strips,
-  fabric, planks) are components, taken whole from the inventory and never refunded.
-- A wooden base shield in a metal shield's recipe is a component: an iron kite shield is 36 iron and a wooden kite shield.
-- Netherite pieces are forged from netherite in the diamond piece's whole shape, without template or base piece.
-- Plates melt down for one ingot of their metal (Epic Knights' steel plate, Antique Legacy's iron and bronze plates, the
-  Seven Kingdoms' blacked and gilded steel plates). Rings are never melted.
-
-Epic Fight:
-
-| Weapon | Cost | Pattern |
+| Pinned 10.15 example | Forge charge and required base | Recoverable primary content |
 | --- | --- | --- |
-| dagger | 9 + stick | dagger |
-| longsword | 36 + stick | longsword |
-| greatsword | 54 + plank | greatsword |
-| spear | 18 + 3 sticks | spear |
-| tachi | 36 + stick | katana |
-| uchigatana | 36 iron + diamond, 2 leather, stick | katana |
-| glove | 2 iron (units) + 2 leather | cestus |
-| bokken | crafted: two planks diagonally and a stick | - |
+| Steel ring | Native batch: four nuggets make eight | Fractional component is not directly melted |
+| Steel chainmail | Native batch content 9/2 per component | Not an unconditional melt source |
+| Chainmail helmet | 23 steel units | At most 22 units before efficiency |
+| Chainmail chestplate | 36 steel units | 36 units before efficiency |
+| Armet | 27 steel units + barbute | Includes proven steel in the consumed barbute |
+| Knight chestplate | 45 steel units + halfarmor chestplate | Includes proven steel in the consumed halfarmor |
+| Steel bastard sword | 9 steel units + steel shortsword | Includes proven steel in the shortsword |
 
-Iron, gold and netherite weapons have these costs. The diamond and wooden weapons keep their recipes. Epic Fight's iron
-and golden spear are also made from a sword and sticks; that recipe adds no metal and stays beside the forge recipe.
+Round the final forge charge up **once**; floor known recoverable content. This can lose less than one nugget per
+manufacturing operation. Integral, pure components may melt at their verified active-recipe value; fractional components
+remain native-only. Secondary metal fittings and minor plating are forfeited on recycling. They never become another
+family of molten metal. Alternate routes cap every copy at the lowest proven content; unknown alternatives and
+unanchored cycles cannot borrow salvage from an expensive route. Explicit recycling overrides take precedence;
+`recyclable: false` also blocks raw source mappings. Saved provenance is capped against current recipe values after reload.
 
-Epic Knights examples (the GameTests check these):
+Structural upgrades reserve complete input stacks before the minigame. The real target preview is assembled from
+that reservation. Enchantments, custom name/lore, repair cost, trim, dye, banner patterns, supported decorations and
+fractional durability carry transfer. Equal durability retains exact damage; otherwise wear rounds proportionally upward.
+Target-required defaults win. Arbitrary capabilities, loaded ammunition and unrelated NBT are not transferred.
+The new minigames supply quality and the completing smith receives the new unsigned maker's mark.
+Cosmetic/equivalent transformations instead retain the original quality, carry, mark and signing rights.
+Cancellation refunds the complete base once. Chunk save/reopen returns persisted escrow once at the forge.
+Active sessions pin their selected recipe and cost; reload cannot change an already reserved upgrade underneath them.
 
-| Piece | Cost |
-| --- | --- |
-| armet | 72 steel |
-| chainmail helmet | 22 steel |
-| lamellar chestplate | 36 steel + 24 leather strips |
-| iron bastard sword | 27 iron + hilt |
-| netherite shortsword | 18 netherite + hilt |
-| iron kite shield | 36 iron + wooden kite shield |
-| iron buckler | 36 iron + steel ingot |
-| heavy crossbow | 27 steel + 2 string, tripwire hook, pole |
-| iron chain morning star | 27 iron + steel chain, stick, hilt (flail pattern) |
+## Native behavior and combat
 
-## Precedence, suppression and reload
+Blocking Epic Knights swords remain weapons; native block capabilities are not removed. Efficacy changes supported
+physical damage once, retaining speed, reach, two-handed rules, elemental effects and original item classes.
+True shields retain native blocking/cooldowns and durability quality. Horse armor and decorations retain native
+protection/effects; no quality-based horse protection bonus is claimed.
 
-- A bundled forge recipe disables only the native recipes it names in `replaces`. Other recipes for the same item are
-  kept and reported: gilding and other transformations, visor swaps, remakes that add no metal, and smithing-table
-  upgrades when `suppressSmithingTableUpgrades` is false. `derived_from` names a recipe the forge recipe follows
-  without disabling it (Epic Fight's spears).
-- A bundled recipe is active only while at least one native recipe it names is loaded. A pack that removes a native
-  recipe (a datapack or KubeJS) removes the forge route with it, and the catalog says so.
-- Datapacks win: a recipe at the same id replaces the bundled one, and a pack can remove one with a false condition.
-  Coverage decisions are data too (`data/<ns>/immersive_smithing/coverage/*.json`; format in [API.md](../API.md)).
-- Automatic detection never runs on Epic Fight or Epic Knights items. The bundled recipes work with
-  `autoDetectEquipment = false`; an item they do not cover keeps its native recipe and shows as `missing_support`.
-- Switching an integration off or on takes effect on `/reload` and on the next server start; the recipe set the
-  clients receive is rebuilt both times.
+The pinned Swappable Helms packet is validated on the server against its sender, equipped helmet and authorized pair.
+Its upstream pair list is a client-only config, so custom pairs must also be authorized in
+`integrations.epicKnightsHelmetPairs`. Defaults mirror the pinned native pairs. Equal-durability pairs retain exact damage;
+unequal pairs round proportional wear up, preventing a repair loop. Pavises use the upstream full-stack block-entity storage.
+FoxRall remains a client visual overlay.
 
-## Quality
+Thirty Years War uses a direct hitscan adapter at its armor-piercing damage boundary. Artilleries and Fletchery snapshot
+the actual weapon argument before projectile insertion. Boomsticks' native impact calculations read the saved launch
+multiplier instead of scaling an unused arrow-damage field. Native projectile count, spread, piercing, reload and secondary
+effects are retained. Artilleries' javelin/throwing cross preserve the complete thrown stack for save/load and pickup,
+and consume the actual used hand. Ammo quality is not multiplied on top of weapon quality.
+Fire/unload weapons natively before destructive upgrading or melting; refinement preserves the loaded stack.
+`integrations.epicKnightsRangedEfficacy` disables these optional ranged effects.
 
-- Forged pieces carry quality like any other: durability from the Forge score, efficacy from the Anvil score.
-- Quality counts once, in either hand and in Epic Fight's battle mode. Epic Knights weapons that can block still count
-  as weapons (their attack damage gets efficacy); a shield is a piece that blocks without dealing damage.
-- Gilded, darkened and other transformed pieces keep the base piece's quality and recycling value. A helmet's open and
-  closed visor states share one value, and switching the visor with Swappable Helms keeps its quality.
-- Relics and other protected loot can carry quality as found loot (the loot quality mode decides); relics can't be
-  melted down.
+Better Combat, Better Combat Rework and Epic Fight are tested separately. Their resources and original IDs remain owned
+by those mods. Rework is a wrapped datapack, not another equipment registry. No simultaneous combat-overhaul profile is claimed.
 
-## Upstream issues and blockers
+## Configuration, ownership and datapacks
 
-None of these is patched here: Immersive Smithing does not modify other mods' files or redistribute their jars.
+`integrations.epicKnights` is the master recipe integration switch; `epicKnightsDisabledAddons` lists excluded addon mod IDs.
+Global `replaceMetalEquipmentRecipes`, alongside-crafting mode, detection controls, material/recipe blacklists and public
+API exclusions remain applicable. Ordinary integration switches preserve existing graded pieces.
 
-- **TerraFirmaCraft and Epic Knights of TerraFirma** have their own metalworking (anvils, welding, heating). They are not
-  integrated and no data is bundled; by default Immersive Smithing does not touch them. A server can opt in with
-  `terraFirmaCraft = true`, which applies automatic detection like any other mod. A curated integration needs its own
-  audit.
-- **Epic Knights: Addon 2.6 and Epic Knights: Ice and Fire 1.0** both name their AutoConfig `epicknightsaddon`. Each
-  overwrites the other's `config/epicknightsaddon/*.json5`, and the next launch with both fails with a
-  NullPointerException in AutoConfig. Use one or the other. Both are tested, in separate profiles.
-- **Addon darkblued armet and sallet**: their darkening recipes use the `minecraft:smithing` recipe type, which 1.20.1
-  removed, so the add-on ships no working route (`disabled_by_upstream`).
-- **Open Helms**: four visor states (`gilded_exquiste_maximilian_helmet`, `open_blue_armet_helmet`,
-  `open_patrician_helmet`, `openonepiecesallet_helmet`) are not in Swappable Helms' default pairs, so they can't be
-  reached (`disabled_by_upstream`). Adding the pairs to Swappable Helms' configuration makes them reachable; their
-  recycling then follows the closed helmet.
-- **Swappable Helms 0.1.0** trusts its client. The swap packet carries a player entity id and a target item id, and the
-  server puts a new stack of that item, with the old helmet's NBT, into that entity's head slot. It checks neither that
-  the item is the helmet's pair nor that the entity is the sender. A modified client can create any item. Immersive
-  Smithing only relies on the NBT copy (quality survives a swap). Server operators should weigh this before installing
-  it on a public server.
-- **Medieval Boomsticks**: the bundled data matches 1.2.x only (see "Tested versions"). The mod needs GeckoLib. Its alloy
-  bars, barrels and the pieces made from them come from its own smithing furnace and stay there.
-- **FoxRall's Visors** is client-only visuals with no items or recipes: there is nothing to integrate. It is loaded in the
-  client test profiles only.
+The Overgeared bridge and the TerraFirma/TerraFirmaGreg bridges take precedence over config, datapacks and providers.
+They retain native manufacturing and quality for their owned Epic/vanilla/TFC/Greg/Overgeared namespaces, including imported
+graded equipment. Their heat or fluid units are never converted to nugget units. The bridges are separate installations;
+there is no untested owner override. The older `terraFirmaCraft` auto-detection option cannot override a detected bridge.
 
-## Test profiles
+A bundled Epic recipe is a version-guarded `source_policy: epic_knights` template. Each loaded source resolves to a distinct
+`<template>/from/<source namespace>/<source path>` ID. Only validated exact source IDs are suppressed. Removing a source
+removes its forge route. A plain datapack replacement at the template ID or an explicit source claim has priority.
+Per-source policies live at `data/<source namespace>/immersive_smithing/recipe_policies/<source path>.json`:
 
-Gradle properties choose the optional mods for `runGameTestServer` and `runClient` (all `compileOnly` or runtime-only
-in development; none ships in the jar):
-
-- `-PepicFight`: Epic Fight.
-- `-PepicKnights` (or `=all`): Epic Knights with every add-on above except Ice and Fire, plus Swappable Helms and the
-  support mods (Architectury, Cloth Config, and GeckoLib for Medieval Boomsticks).
-- `-PepicKnights=base` is Epic Knights alone; a comma list adds keys to it (`addon`, `antique`, `slavic`,
-  `sevenkingdoms`, `oresalloys`, `darkages`, `openhelms`, `swappable`, `artillery`, `boomsticks`, `iceandfire`, `foxrall`),
-  for example `=addon` or `=all,foxrall`. `iceandfire` also loads Ice and Fire and Citadel; `foxrall` only joins client
-  runs.
-- `-PsimplySwords`, `-PcompatMods` (Spartan Weaponry, Spartan Shields, Immersive Armors) as before.
-
-`CoverageGameTests` compares the live catalog with the fixture whose `loaded_mods` match the loaded set exactly
-(`docs/compatibility/inventory/<profile>/`). Refresh a fixture after an intended change with
-`python3 tools/coverage_inventory.py --profile <name>`, which also rebuilds [INVENTORY.md](INVENTORY.md).
-
-## Verification (1.2.0)
-
-| Check | Result |
-| --- | --- |
-| `runGameTestServer`, 18 profiles | All 86 required tests passed in each, with no startup failure: no optional mods; Spartan Weaponry, Spartan Shields and Immersive Armors (`-PcompatMods`); Epic Fight alone; Epic Knights alone; Epic Knights with Epic Fight; Epic Knights with every add-on but without Epic Fight; the largest compatible set (Epic Knights, every add-on except Ice and Fire, Epic Fight and Simply Swords); Epic Knights with Ice and Fire; and each add-on alone (Addon, Slavic Armory, Antique Legacy, Seven Kingdoms, Ores and Alloys, Dark Ages, Open Helms with and without Swappable Helms, Artilleries and Firearms, Medieval Boomsticks). [Results](validation/gametests-1.2.0.txt). |
-| Client, `runClient -PsmokeTest -PepicKnights -PepicFight` | Passed. The armet is forged for 72 steel and its crafting recipe is gone, the ceremonial armet's gilding is kept, the steel plate melts for 9 steel, the uchigatana is forged for 36 iron, and the client's recipe set matches the server's. [Result](validation/client-smoke-epic-knights-epic-fight.json). |
-| Dedicated server with two clients, Epic Fight and Epic Knights (`tools/visual-test/multiplayer_visual_test.py --extra-mods ... --expect epicfight,epicknights`) | Passed. Both clients received the server's 1,644 recipes after the rewrite: the armet and longsword forged, not crafted, the gilding kept, the uchigatana and bokken present. Remote tool swings and an anvil pickup synchronised. [Summary](validation/dedicated-server-epic-fight-epic-knights.json). |
-| Release gate, `python3 tools/packtest/ultima_pack_test.py --expect spartan,shields,upgrades` | Passed on an isolated copy of the Ultima instance (377 mods): freeze check OK, every agent check true, no stack trace or error of Immersive Smithing, no crash report. [Summary](validation/ultima-release-gate-1.2.0.json). |
-| `python3 tools/generate_epic_compat.py --check` | Up to date: 1,509 items, every one decided. |
-| Packaged jar | Version 1.2.0; all bundled recipes, coverage files and tags present; no test, tool or documentation files and no nested jars. |
-
-## Regenerating the data
-
-```
-python3 tools/generate_epic_compat.py            # --check (default): writes nothing, fails if anything differs
-python3 tools/generate_epic_compat.py --write    # regenerate after changing a pin or the manifest
-python3 tools/generate_epic_compat.py --refresh-registry run-gametest/logs
-    # after ./gradlew runGameTestServer -PepicKnights=all,iceandfire -PepicFight -PregistryDump=all
+```json
+{"operation":"native","reason":"This pack owns the construction route"}
 ```
 
-Decisions the rules can't make (patterns, protected loot, assemblies, special recipes) are reviewed policy in
-`tools/epic_compat_manifest.py`. An item the generator can't decide is an error, never a guess.
+`forge` permits normal validation; it cannot bypass unknown costs or create a missing source. Invalid policies fail closed.
+See [API.md](../API.md) for formats, wire protocol 5, saved workpiece version 2 and override precedence.
+Reports include exact sources, added metal derivation, bases, retained templates, recognized versions and ownership.
+JEI and forge tooltips list every ingredient alternative and distinguish new equipment from structural upgrades.
+
+## Reproducible profiles
+
+Use the project's quiet Gradle wrapper; each profile can be isolated with `-PgameTestProfile=<label>`.
+`-PepicKnights=base` loads Epic Knights and its required libraries. Content keys are `addon`, `slavic`, `antique`,
+`darkages`, `japanese`, `oresalloys`, `ingots`, `iceandfire`, `thirtyyearswar`, `artillery`, `fletchery`, `boomsticks`,
+`boomsticks-release`, `sevenkingdoms`, `openhelms`, `swappable`, and client-only `foxrall`.
+`all` retains the established older addon set; add the new keys explicitly. Never combine Boomsticks release and alpha.
+Combat keys are `bettercombat`, `rework`, or the separate `-PepicFight` flag.
+External keys `overgeared`, `terrafirma`, `terrafirmagreg` run the dedicated coexistence tests.
+`-PcompatMods` still means Spartan Weaponry, Spartan Shields and Immersive Armors.
+
+```bash
+/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh /home/otectus/Projects/ImmersiveSmithing runGameTestServer -PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots -PregistryDump=all -PgameTestProfile=combined
+python3 tools/generate_epic_compat.py --check
+python3 tools/epic_knights_matrix.py --keep-going
+# For a cold/offline environment, --offline uses already cached pinned dependencies.
+python3 tools/coverage_inventory.py --profile epic-final-combined --logs run-gametest/profiles/epic-final-combined/logs
+```
+
+Catalog fixtures match both the loaded mod set and exact versions. Historical 1.2.0 validation files are retained as
+historical evidence and do not establish the 1.3.0 gates. Current validation and coverage artifacts are recorded in
+[the 1.3.0 validation report](validation/epic-knights-1.3.0.md). A successful Gradle exit alone is insufficient: require a nonzero passing GameTest count.
+
+## Upstream limitations
+
+- Addon 2.6 and the pinned Ice and Fire addon share an AutoConfig directory. Their restart conflict remains upstream;
+  use separate profiles. No combined claim is made.
+- Addon darkblued armet/sallet use removed `minecraft:smithing` serializers; no fallback is synthesized.
+- Japanese Armory's `sai_2` JSON is truncated. The valid separate `jsai_2` route remains independently accounted for.
+- Ingots Addition references a nonexistent `ekn_add_bronze_pickaxe` in one recipe. Its valid equipment route is separate.
+- Some Slavic/Antique recipes reference missing upstream items; conditional runtime coverage preserves their absence.
+- Artilleries' guide function starts with `/give`, invalid in a function. This upstream load error is distinct from weapon adapters.
+- The client also reports upstream Artilleries oil/mounted-gun model errors, unused Fletchery `item - Copy` paths, and a missing Addon dueling-shield item model. The captured handheld equipment renders; these native assets are not repaired or redistributed here.
+- The pinned TerraFirmaGreg bridge references `gtceu:cast_iron`, absent in the selected GTCEu runtime. Coexistence tests preserve the native workflow; they do not certify that pack’s metallurgy recipes.
+- Four Open Helms states lack default native swap pairs. A server may configure valid pairs; no crafting fallback is added.
+- Boomsticks placeholders and unavailable intermediates retain native/unavailable dispositions. Alpha and release are not interchangeable.
+- One combined startup failed before tests in Architectury's concurrent creative-tab registration (`ArrayList.add` from Thirty Years War). The failed attempt is retained in the command ledger; a passing retry does not establish that this upstream startup race is repaired.
+
+Third-party jars and artwork are never redistributed. Coverage is a statement about the declared installation and active
+routes, not a promise about arbitrary future versions or disabled native content.
+
+The optional `--extra-mods` argument to `tools/packtest/ultima_pack_test.py` adds original pinned jars to the isolated copy only. Use `--expect spartan,shields,upgrades,epicknights` when the base Epic Knights jar is added; install its required dependency closure in the copy. Never add duplicate mod IDs under different filenames. The multiplayer harness with `--expect epicknights` additionally verifies a personalized upgrade reservation, hostile second-client select/cancel packets, resource reload, recipe synchronization, authoritative preview, and exact full-stack refund.

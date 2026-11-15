@@ -1,5 +1,14 @@
 {
-  "parent": "immersive_smithing:block/smiths_grindstone",
+  "parent": "minecraft:block/block",
+  "loader": "forge:composite",
+  "children": {
+    "station": {
+      "parent": "immersive_smithing:block/smiths_grindstone"
+    },
+    "moving_part": {
+      "parent": "immersive_smithing:block/grindstone_wheel"
+    }
+  },
   "display": {
     "gui": {
       "rotation": [

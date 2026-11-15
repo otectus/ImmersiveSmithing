@@ -159,6 +159,7 @@ public final class SmithingData {
 
         // 2. Explicit recipes (datapack), validated against the families that actually exist.
         List<Recipe<?>> all = sourceRecipes(manager);
+        materials = materials.withVerifiedSources(new com.otectus.immersivesmithing.compat.epicknights.ComponentGraph(all, access, materials).integralSources());
         report.decisions().sources(all);
         List<SmithingRecipe> active = new ArrayList<>();
         Set<ResourceLocation> removed = new HashSet<>();
@@ -180,11 +181,17 @@ public final class SmithingData {
         }
         for (ISmithingRecipeProvider provider : ImmersiveSmithingAPI.recipeProviders()) {
             try {
-                explicit.addAll(provider.recipes(materials, access));
+                for (SmithingRecipe recipe : provider.recipes(materials, access)) {
+                    if (loadedIds.contains(recipe.getId())) {
+                        report.note("Provider recipe " + recipe.getId() + " ignored: loaded datapack recipe has priority");
+                    } else explicit.add(recipe);
+                }
             } catch (RuntimeException e) {
                 ImmersiveSmithing.LOGGER.error("Smithing recipe provider failed", e);
             }
         }
+        explicit.sort(Comparator.comparing(r -> r.getId().toString()));
+        explicit = new com.otectus.immersivesmithing.compat.epicknights.EpicRecipeResolver(all, access, materials, report).resolve(explicit, all);
         explicit.sort(Comparator.comparing(r -> r.getId().toString()));
         Set<ResourceLocation> seenIds = new HashSet<>();
         Set<String> familyBlacklist = Set.copyOf(ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST));
@@ -193,10 +200,18 @@ public final class SmithingData {
         for (SmithingRecipe r : explicit) {
             String reason = null;
             String selector = null;
-            if (!seenIds.add(r.getId())) reason = "duplicate recipe id";
-            else if (selectors.smithingBlacklisted(r.getId()) != null) {
+            if (!seenIds.add(r.getId())) {
+                report.note("Duplicate provider recipe " + r.getId() + " ignored; the first valid ID is retained");
+                continue;
+            }
+            if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(r.result())) {
+                reason = com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.reason();
+                selector = "external workflow owner";
+            } else if (selectors.smithingBlacklisted(r.getId()) != null
+                    || (r.policyTemplate() != null && selectors.smithingBlacklisted(r.policyTemplate()) != null)) {
                 reason = "switched off by config";
-                selector = selectors.smithingBlacklisted(r.getId());
+                selector = selectors.smithingBlacklisted(r.getId()) != null ? selectors.smithingBlacklisted(r.getId())
+                        : selectors.smithingBlacklisted(r.policyTemplate());
                 selectors.withhold(r.resultItem(), selector);
                 if (materials.family(r.family()).isPresent()) switchedOff.add(r);
             }
@@ -215,6 +230,13 @@ public final class SmithingData {
             } else if (!r.follows().isEmpty() && r.follows().stream().noneMatch(loadedIds::contains)) {
                 // The pack removed the native recipe (or this version of the mod has none): the forge alternative goes too.
                 reason = "none of the native recipes it follows is loaded " + r.follows();
+            } else if (r.follows().stream().anyMatch(SourceRecipePolicies::preserves)) {
+                reason = "source recipe kept native by a pack recipe policy";
+            } else if (r.metalUnits() <= 0 || r.result().isEmpty() || r.result().getCount() < 1
+                    || r.result().getCount() > r.result().getMaxStackSize()) {
+                reason = "invalid metal charge or result count";
+            } else if (r.auxiliary().stream().anyMatch(a -> a.count() <= 0 || a.ingredient().getItems().length == 0)) {
+                reason = "empty or invalid auxiliary ingredient";
             }
             if (reason != null) {
                 removed.add(r.getId());
@@ -263,6 +285,7 @@ public final class SmithingData {
         active.forEach(r -> {
             forgeByResult.computeIfAbsent(r.resultItem(), k -> new ArrayList<>()).add(r);
             if (!r.replaces().isEmpty()) declared.computeIfAbsent(r.resultItem(), k -> new HashSet<>()).addAll(r.replaces());
+            if (r.sourceRecipe() != null) declared.computeIfAbsent(r.resultItem(), k -> new HashSet<>()).add(r.sourceRecipe());
         });
         Map<ResourceLocation, Item> suppressed = new HashMap<>();
         boolean replace = ServerConfig.get(ServerConfig.REPLACE_METAL_EQUIPMENT_RECIPES)
@@ -293,7 +316,6 @@ public final class SmithingData {
                     continue;
                 }
                 String kept = null;
-                SmithingRecipe by = null;
                 Set<ResourceLocation> named = declared.get(result.getItem());
                 if (named != null) {
                     if (r.getType() != RecipeType.CRAFTING && r.getType() != RecipeType.SMITHING) continue;
@@ -312,47 +334,15 @@ public final class SmithingData {
                                 kept.startsWith("smithing-table upgrades") ? "recipes.suppressSmithingTableUpgrades = false" : null);
                     } else {
                         suppressed.put(r.getId(), result.getItem());
-                        report.suppressed(r.getId(), result.getItem(), forge.stream().filter(f -> f.replaces().contains(r.getId()))
+                        report.suppressed(r.getId(), result.getItem(), forge.stream().filter(f -> f.replaces().contains(r.getId()) || r.getId().equals(f.sourceRecipe()))
                                 .map(SmithingRecipe::getId).findFirst().orElse(null));
                     }
                     continue;
                 }
-                if (r.getType() == RecipeType.CRAFTING) {
-                    AutoRecipeDetector.Analysis a = analyses.get(r.getId());
-                    if (a == null) continue; // custom recipe types are reported by the analysis
-                    if (!a.hasMetal()) {
-                        // No raw metal: it remakes a finished piece (a sword set on a shaft), next to the forge recipe.
-                        if (a.base() != null) report.retained(r.getId(), result.getItem(), "remakes a finished piece without adding metal; kept next to the forge recipe");
-                        continue;
-                    }
-                    by = replacing(forge, r.getId(), a.family());
-                    if (by == null) {
-                        kept = a.family() == null ? a.detail() + "; no forge recipe reproduces it" : "no forge recipe uses its metal " + a.family();
-                    }
-                } else if (r.getType() == RecipeType.SMITHING) {
-                    // Only upgrade recipes. Trim recipes report a sample armor piece as their result.
-                    if (!(r instanceof SmithingTransformRecipe upgrade)) continue;
-                    if (!smithingTable) {
-                        if (SourceRecipes.kind(r) == SourceRecipes.Kind.SMITHING_UPGRADE) {
-                            report.decision(result.getItem(), r.getId(), RecipeDecisions.Origin.NATIVE, RecipeDecisions.Outcome.KEPT, null,
-                                    "smithing-table upgrades are kept by the config", "recipes.suppressSmithingTableUpgrades = false");
-                        }
-                        continue;
-                    }
-                    if (SourceRecipes.kind(r) != SourceRecipes.Kind.SMITHING_UPGRADE) continue; // custom: kept and reported
-                    by = replacingUpgrade(forge, upgrade, materials);
-                    if (by == null) {
-                        kept = "no forge recipe reproduces this upgrade (its addition or base differs)";
-                    }
-                } else {
-                    continue;
+                // An unlinked explicit recipe is an additional route, never permission to remove another one.
+                if (isNativeEquipmentRecipe(r, result)) {
+                    report.retained(r.getId(), result.getItem(), "no validated forge recipe names this exact source ID");
                 }
-                if (kept != null) {
-                    report.retained(r.getId(), result.getItem(), kept);
-                    continue;
-                }
-                suppressed.put(r.getId(), result.getItem());
-                report.suppressed(r.getId(), result.getItem(), by.getId());
             }
         } else {
             // Native recipes stay by the config: say so for every one the forge would otherwise have looked at.
@@ -384,26 +374,19 @@ public final class SmithingData {
             }
         }
 
-        // 6. Rewrite the recipe manager: remove disabled/invalid entries, add the automatic recipes.
-        List<Recipe<?>> next = new ArrayList<>(all.size() + auto.size());
+        // Stage the authoritative manager contents, including providers. Publish only after every index is built.
+        Map<ResourceLocation, Recipe<?>> next = new LinkedHashMap<>();
         for (Recipe<?> r : all) {
-            if (!removed.contains(r.getId()) && !suppressed.containsKey(r.getId())) next.add(r);
+            if (!(r instanceof SmithingRecipe) && !removed.contains(r.getId()) && !suppressed.containsKey(r.getId())) next.put(r.getId(), r);
         }
-        next.addAll(auto);
-        manager.replaceRecipes(next);
-        Set<Recipe<?>> written = Collections.newSetFromMap(new IdentityHashMap<>());
-        written.addAll(manager.getRecipes());
-        lastWritten = written;
+        active.forEach(r -> next.put(r.getId(), r));
 
-        // 7. Recycling values. Exclusions first, then explicit recipes, datapack overrides, crafting analysis.
+        // Recycling exclusions and pack overrides take priority over every inferred source.
         Set<Item> excluded = new HashSet<>();
         Map<Item, RecyclingValue> recycling = new HashMap<>();
         List<RecyclingOverride> overrides = RecyclingOverrideLoader.overrides();
         for (RecyclingOverride o : overrides) {
             if (!o.recyclable()) excluded.addAll(itemsOf(o));
-        }
-        for (SmithingRecipe r : active) {
-            if (!r.isAuto()) recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(), "smithing recipe " + r.getId()));
         }
         for (RecyclingOverride o : overrides) {
             if (!o.recyclable() || o.family() == null) continue;
@@ -413,17 +396,24 @@ public final class SmithingData {
             }
             for (Item item : itemsOf(o)) recycling.putIfAbsent(item, new RecyclingValue(o.family(), o.units(), "recycling override"));
         }
+        Set<Item> overridden = Set.copyOf(recycling.keySet());
+        for (SmithingRecipe r : active) {
+            if (r.isAuto() || overridden.contains(r.resultItem())) continue;
+            RecyclingValue value = new RecyclingValue(r.family(), r.recoverableUnits() / r.result().getCount(), "smithing content " + r.getId());
+            recycling.merge(r.resultItem(), value, (a, b) -> a.family().equals(b.family())
+                    ? (a.units() <= b.units() ? a : b) : new RecyclingValue(a.family(), 0, "conflicting primary metals"));
+        }
         for (AutoRecipeDetector.Analysis a : analyses.values()) {
             if (a.status() != AutoRecipeDetector.Status.OK || a.result().getCount() != 1) continue;
             if (!EquipmentClassifier.isCandidate(a.result())) continue;
             recycling.putIfAbsent(a.result().getItem(), new RecyclingValue(a.family(), a.units(), "crafting recipe " + a.recipeId()));
         }
         for (SmithingRecipe r : auto) {
-            recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(), "automatic recipe " + r.getId()));
+            recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.recoverableUnits() / r.result().getCount(), "automatic recipe " + r.getId()));
         }
         // Excluding an item from forging never stops it melting: it melts as its forge recipe would have made it.
         for (SmithingRecipe r : switchedOff) {
-            recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.metalUnits(), "smithing recipe " + r.getId() + " (switched off for forging)"));
+            if (!r.resolvesEpicSource()) recycling.putIfAbsent(r.resultItem(), new RecyclingValue(r.family(), r.recoverableUnits() / r.result().getCount(), "smithing recipe " + r.getId() + " (switched off for forging)"));
         }
         if (upgradeContext != null) {
             for (SmithingRecipe r : upgradeContext.recyclingOnly().values()) {
@@ -442,6 +432,10 @@ public final class SmithingData {
 
         report.logInactiveBuiltIn();
         SmithingData data = new SmithingData(materials, active, recycling, excluded, suppressed, report.retainedById(), all, report);
+        manager.replaceRecipes(next.values());
+        Set<Recipe<?>> written = Collections.newSetFromMap(new IdentityHashMap<>());
+        written.addAll(manager.getRecipes());
+        lastWritten = written;
         current = data;
         dirty = false;
         ImmersiveSmithing.LOGGER.info("Immersive Smithing: {} ({} ms)", report.summary(), (System.nanoTime() - start) / 1_000_000);
@@ -465,7 +459,7 @@ public final class SmithingData {
         if (!ownOutput) {
             List<Recipe<?>> fresh = new ArrayList<>(currentRecipes.size());
             for (Recipe<?> r : currentRecipes) {
-                if (!(r instanceof SmithingRecipe s && s.isAuto())) fresh.add(r); // stale generated recipe from an earlier pass
+                if (!(r instanceof SmithingRecipe s && (s.isAuto() || s.policyTemplate() != null))) fresh.add(r);
             }
             sourceSnapshot = List.copyOf(fresh);
         }
@@ -491,40 +485,6 @@ public final class SmithingData {
         } catch (RuntimeException e) {
             return ItemStack.EMPTY;
         }
-    }
-
-    /** The forge recipe that replaces a crafting recipe: generated from it, or making its result from the same metal. */
-    @Nullable
-    private static SmithingRecipe replacing(List<SmithingRecipe> forge, ResourceLocation source, @Nullable ResourceLocation family) {
-        for (SmithingRecipe r : forge) {
-            if (source.equals(r.sourceRecipe())) return r;
-        }
-        if (family == null) return null;
-        for (SmithingRecipe r : forge) {
-            if (r.family().equals(family)) return r;
-        }
-        return null;
-    }
-
-    /**
-     * The forge recipe that replaces a vanilla smithing-table upgrade: generated from it, or an explicit recipe in the
-     * addition's metal that either needs no base (the {@code shape} policy) or reworks a base this upgrade accepts.
-     */
-    @Nullable
-    private static SmithingRecipe replacingUpgrade(List<SmithingRecipe> forge, SmithingTransformRecipe upgrade, MaterialRegistry materials) {
-        for (SmithingRecipe r : forge) {
-            if (upgrade.getId().equals(r.sourceRecipe())) return r;
-        }
-        Set<ResourceLocation> additions = AutoRecipeDetector.additionFamilies(upgrade, materials);
-        if (additions.size() != 1) return null;
-        ResourceLocation family = additions.iterator().next();
-        for (SmithingRecipe r : forge) {
-            if (r.isAuto() || !r.family().equals(family)) continue;
-            boolean reworksBase = r.auxiliary().stream().anyMatch(a -> a.consumesEquipment()
-                    && Arrays.stream(a.ingredient().getItems()).anyMatch(upgrade::isBaseIngredient));
-            if (reworksBase || AutoRecipeDetector.policy(materials, family) == UpgradePolicy.SHAPE) return r;
-        }
-        return null;
     }
 
     /**
@@ -570,7 +530,7 @@ public final class SmithingData {
             }
             if (!bases.isEmpty()) sources.computeIfAbsent(result.getItem(), k -> new ArrayList<>()).add(bases.toArray(ItemStack[]::new));
         }
-        for (int pass = 0; pass < 4; pass++) {
+        for (int pass = 0; pass <= sources.size(); pass++) {
             boolean changed = false;
             for (Map.Entry<Item, List<ItemStack[]>> entry : sources.entrySet()) {
                 if (recycling.containsKey(entry.getKey())) continue;

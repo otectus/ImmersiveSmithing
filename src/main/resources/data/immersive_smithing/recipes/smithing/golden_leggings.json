@@ -6,5 +6,8 @@
     "item": "minecraft:golden_leggings"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:leggings"
+  "anvil_pattern": "immersive_smithing:leggings",
+  "replaces": [
+    "minecraft:golden_leggings"
+  ]
 }

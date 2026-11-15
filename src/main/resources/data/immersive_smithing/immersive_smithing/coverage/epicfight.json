@@ -50,6 +50,14 @@
     },
     {
       "items": [
+        "epicfight:skillbook",
+        "epicfight:uchigatana_sheath"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "epicfight:stray_hat",
         "epicfight:stray_pants",
         "epicfight:stray_robe"

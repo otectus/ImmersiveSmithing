@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:digging_plate",
+  "patterns": [
+    "immersive_smithing:shovel",
+    "immersive_smithing:hoe"
+  ],
+  "operations": [
+    {
+      "id": "form_socket",
+      "region": "socket",
+      "kind": "shape",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.3,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "spread_blade",
+      "region": "blade",
+      "kind": "spread",
+      "work": 5,
+      "weight": 3,
+      "face": "front",
+      "area": [
+        0.3,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dish_blade",
+      "region": "dish",
+      "kind": "dish",
+      "work": 2,
+      "weight": 1,
+      "face": "back",
+      "area": [
+        0.4,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "spread_blade"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 50,
+    "immersion_min": 0.65
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "haft"
+    }
+  ]
+}

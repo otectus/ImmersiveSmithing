@@ -21,5 +21,8 @@
   "requires_ignition": false,
   "required_fuel_tag": "immersive_smithing:netherite_fuels",
   "tint": "#34C6A8",
-  "upgrade_policy": "addition"
+  "upgrade_policy": "addition",
+  "casting": {
+    "ingot": "cataclysm:cursium_ingot"
+  }
 }

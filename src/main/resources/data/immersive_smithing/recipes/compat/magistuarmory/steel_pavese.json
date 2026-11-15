@@ -5,25 +5,18 @@
       "modid": "magistuarmory"
     },
     {
-      "type": "forge:item_exists",
-      "item": "magistuarmory:steel_pavese"
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
     },
     {
       "type": "forge:item_exists",
-      "item": "magistuarmory:wood_pavese"
+      "item": "magistuarmory:steel_pavese"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 36,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "magistuarmory:wood_pavese"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:steel_pavese"
   },

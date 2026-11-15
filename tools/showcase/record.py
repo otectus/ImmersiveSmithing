@@ -33,7 +33,7 @@ def main():
             '-thread_queue_size','1024','-f','pulse','-i',sink+'.monitor',
             '-c:a','pcm_s16le',str(out/'audio.wav')],stdout=capture_log,stderr=subprocess.STDOUT)
         (out/'recording-start-ms').write_text(str(round(time.time()*1000)))
-        code=game.wait(timeout=180)
+        code=game.wait(timeout=360)
         if code:raise RuntimeError(f'Client failed: {code}; see {out}/client.log')
         if not (out/'finished').exists():raise RuntimeError('Showcase did not finish successfully')
         record.send_signal(signal.SIGINT)

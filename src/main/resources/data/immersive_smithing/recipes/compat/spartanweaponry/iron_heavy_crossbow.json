@@ -44,5 +44,8 @@
     "item": "spartanweaponry:iron_heavy_crossbow"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:heavy_crossbow"
+  "anvil_pattern": "immersive_smithing:heavy_crossbow",
+  "replaces": [
+    "spartanweaponry:iron_heavy_crossbow"
+  ]
 }

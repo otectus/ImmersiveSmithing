@@ -5,27 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:steel_king_sword"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 36,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/gold"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:steel_king_sword"
   },

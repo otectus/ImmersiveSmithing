@@ -1,15 +1,16 @@
 # Immersive Smithing
 
-Metal equipment is forged, not crafted. Melt metal in the Smith's Forge, shape it on the Smith's Anvil and quench it
-in the Smith's Trough. Your skill in two short minigames decides the durability and efficacy of what you make.
+Metal equipment is forged, not crafted. Melt metal in the Smith's Forge, heat a billet with the bellows, shape it with
+aimed hammer blows on the Smith's Anvil and quench it in the Smith's Trough. The work happens in the world, at the
+stations, and how well you heat, strike and quench decides the durability and efficacy of what you make.
 
 A Forge mod for Minecraft 1.20.1.
 
 ![The four smithing stations](docs/visual-overhaul/after/ultima/packtest_world.png)
 
-| Choosing a recipe | Forge minigame | Anvil minigame |
+| Heating the billet | Shaping on the anvil | Quenching |
 | --- | --- | --- |
-| ![Recipe selection at the forge](docs/vanilla-gui/after/packtest_forge_select.png) | ![Forge minigame](docs/vanilla-gui/after/packtest_forge_play.png) | ![Anvil minigame](docs/vanilla-gui/after/packtest_anvil.png) |
+| ![Bellows and billet at the forge](docs/cinematic-overhaul/screenshots/forge_heating.png) | ![Aimed blows on the anvil](docs/cinematic-overhaul/screenshots/anvil_shaping.png) | ![The quench](docs/cinematic-overhaul/screenshots/trough_quench.png) |
 
 ## How it works
 
@@ -17,13 +18,21 @@ A Forge mod for Minecraft 1.20.1.
    and fuel into the bottom.
 2. Ignite the fuel with Flint and Steel or a Fire Charge and wait for the metal to melt. Lava needs no ignition,
    and netherite melts only with lava.
-3. Use Smithing Tongs on the forge, choose an item and play the **Forge minigame**: press Space or click while the
-   sweeping marker is inside the glowing zone.
-4. Carry the hot workpiece to a Smith's Anvil and play the **Anvil minigame** with a Smithing Hammer: strike each
-   target when the closing ring touches it.
-5. Pick the workpiece up with the tongs and quench it in a Smith's Trough filled with water.
+3. Open the pattern book on the forge and choose an item: its plan is pinned beside the billet tray. Commit it with
+   empty Smithing Tongs; the metal is reserved and a billet is cast on the tray.
+4. **Heat the billet.** Pump the bellows and turn the billet so the cooler end sits over the hottest coals, until all
+   of it glows evenly in the ideal band. Draw it with the tongs.
+5. **Shape it.** Set it on a Smith's Anvil and, with a Smithing Hammer, strike the marked parts of the piece: each blow
+   deforms the metal where it lands, some work needs the piece turned over, and blows on cooling metal do less. Put
+   the piece back on the forge's reheat rest whenever it cools; nothing is lost.
+6. **Quench it.** Lower it into a Smith's Trough and hold it under until the hiss subsides, then lift it out.
+7. **Fit and finish.** Fit its handle or other components at the anvil and collect the finished piece. Optionally,
+   refine it at the Smith's Grindstone or engrave it.
 
-Stone tongs and a stone hammer are enough to start, and the whole process takes about a minute. Most metal weapons,
+Using a station frames it in a **Cinematic** close-up; **Shoulder** and **World** views are also available (the
+camera never moves your character, and you can leave at any moment with Escape or a movement key). Every part can be
+used with the mouse or from the keyboard (arrow keys choose a part, Space acts). Stone tongs and a stone hammer are
+enough to start, and a careful iron sword takes about a minute. Most metal weapons,
 tools and armor can no longer be made at a crafting table. Players receive the Smithing Guide, an in-game book
 with the details, the first time they obtain smithing tongs or a hammer. Every screen uses Minecraft's own look, and
 the guide reads like a written book.
@@ -42,8 +51,8 @@ the guide reads like a written book.
 The four stations are built from few, large boxes (32 model cuboids together), and their outlines and collision
 follow the same shapes.
 
-Tongs and hammers come in stone, iron, diamond and netherite. Higher tiers give more time in the minigames (30,
-35, 40 and 45 seconds) and last longer, but never add quality on their own. They can be repaired with their
+Tongs and hammers come in stone, iron, diamond and netherite. Better hammers recover faster between blows (12, 11,
+10 and 9 ticks) and tools last longer, but never add quality on their own. They can be repaired with their
 material at an anvil and accept Unbreaking and Mending.
 
 ## Quality
@@ -63,7 +72,10 @@ The average of both scores gives the item's label:
 | Fine | 70 to 89 |
 | Masterwork | 90 and above |
 
-If the anvil timer runs out, the item is **Faulty**: half durability and 70% efficacy. The Smith's Grindstone adds
+The forge score comes from how evenly and well the billet was heated (70%) and how the quench went (30%); the anvil
+score from the quality of the blows that shaped each part. There is no timer. With the server option
+`work.overheatBurns`, metal left far too hot for three seconds burns and the piece comes out **Faulty**: half
+durability and 70% efficacy. The Smith's Grindstone adds
 5 points to one score for experience levels, up to 100, and keeps enchantments; it cannot refine Faulty items. A
 piece that has no grade yet but could carry one starts from Standard; that grade is written only when you pay for the
 refinement.
@@ -74,8 +86,8 @@ Simply Swords' runic and unique weapons and Epic Knights' gilded pieces and reli
 
 ### The Maker's Mark
 
-Every quenched piece records who forged it ("Crafted by" in the tooltip). Right after the quench the smith can give
-the piece a title and up to three lines of inscription, or sneak-use the Smith's Anvil with it later. The mark, the
+Every finished piece records who forged it ("Crafted by" in the tooltip). The smith can give it a title and up to
+three lines of inscription by sneak-using the Smith's Anvil with it. The mark, the
 title and the inscription survive repairs, enchanting, dyeing and elemental upgrades; only melting the piece down
 removes them. Faulty work is never signed.
 
@@ -110,11 +122,17 @@ helmet costs one ingot plus the netherite helmet it reworks. Armor trims are nev
   are covered the same way.
 - **Epic Fight** and **Epic Knights** come with built-in forge recipes that need no setup. Epic Knights is covered with
   its add-ons: Addon, Slavic Armory, Antique Legacy, Ice and Fire, Ores and Alloys, Dark Ages, Open Helms, Seven
-  Kingdoms, Artilleries and Firearms and Medieval Boomsticks. Their metal weapons, armour and shields are forged on
+  Kingdoms, Artilleries and Firearms, Medieval Boomsticks release/alpha, Japanese Armory, Ingots Addition, Thirty Years
+  War and Epic Fletchery. Reviewed metal weapons, armour and shields are forged on
   anvil patterns of their shapes. Each forge recipe disables only the native recipes it replaces. Epic Fight's
   uchigatana can be forged (36 iron, a diamond, two leather and a stick), and its bokken is crafted from two planks and
   a stick. Gilding, darkening, visor swaps, firearms assembly, relics and wooden or leather pieces keep their own route,
-  and transformed pieces keep their quality and recycling value. Quality applies once in Epic Fight's battle mode, in
+  and cosmetic transformations keep their quality and original maker. Structural upgrades consume the exact base
+  plus added metal; the knight chestplate needs a halfarmor chestplate and 45 steel units (five plates). Fractional
+  costs round up once and recovery rounds down. Actual firing/thrown stacks supply supported ranged efficacy once.
+  Exact tested profiles, coverage and known upstream limits are in the
+  [1.3.0 compatibility evidence](docs/compatibility/epic-knights-1.3.0/README.md).
+  Quality applies once in Epic Fight's battle mode, in
   the main hand and the off hand.
 - **Simply Swords** weapons are found by automatic detection and forged on patterns that match their shapes, including
   the twinblade, warglaive and chakram patterns. Quality also applies to its abilities and thrown weapons. Runic
@@ -123,7 +141,8 @@ helmet costs one ingot plus the netherite helmet it reworks. Armor trims are nev
 - [docs/compatibility/epic-integrations.md](docs/compatibility/epic-integrations.md) gives the tested versions, costs
   and known upstream issues, and [docs/compatibility/INVENTORY.md](docs/compatibility/INVENTORY.md) lists every piece of
   equipment from these mods with its route, cost, pattern, quality and recycling. Each integration has its own switch
-  in the server config. TerraFirmaCraft keeps its own metalworking unless the server opts in.
+  in the server config. Overgeared, TerraFirma and TerraFirmaGreg bridges keep native manufacturing and equipment
+  effects, with no bypass through generic forging or duplicate quality. Shields and horse armor keep native defense.
 - **Pack metals.** Cataclysm (black steel, ancient metal, witherite, cursium, ignitium), Ice and Fire dragonsteel,
   Iron's mithril and pyrium, Botania's manasteel, terrasteel and elementium and MCA's rose gold have names, tints,
   melt rules and upgrade policies. Fire Sticks, Lit It Up and Hardcore Torches fire starters light the forge.
@@ -134,16 +153,19 @@ helmet costs one ingot plus the netherite helmet it reworks. Armor trims are nev
 - The automated tests also run with Spartan Weaponry, Spartan Shields and Immersive Armors installed, with Epic
   Fight and Simply Swords, and with Epic Knights alone, with each add-on and with the largest compatible set.
 
-Datapacks can add or override material families, smithing recipes, recycling values and minigame patterns. The
-formats and the Java/IMC API are documented in [docs/API.md](docs/API.md).
+Datapacks can add or override material families (with their heat bands), smithing recipes, recycling values and
+process profiles (the operations, quench and components of each kind of piece); resource packs can restyle how pieces
+deform. The formats and the Java/IMC API are documented in [docs/API.md](docs/API.md).
 
 ## Multiplayer and automation
 
-The server runs the minigames: clients only send their key presses, and the server checks timing and scores
-them. While someone works at an anvil, nobody else can take or start its workpiece.
+The server runs the work: clients only send what the smith does (pump, turn, strike here, lower, lift), and the
+server checks reach, sight, tools, heat and timing, and scores it. One smith works a station at a time; a committed
+forge job stays its smith's for five minutes after they last touch it, then anyone may finish or cancel it. Leaving a
+station never loses the work on it.
 
 Hoppers and pipes can feed metal and fuel into a forge and water into a trough, and comparators read both.
-Automation can never choose a recipe, play a minigame, move a workpiece or quench it.
+Automation can never choose a recipe, do the hands-on work, move a workpiece or quench it.
 
 Toolsmiths and Weaponsmiths sell tongs and hammers. They and Armorers also sell iron equipment forged at a random
 quality, never Faulty by default.
@@ -151,15 +173,17 @@ quality, never Faulty by default.
 ## Configuration
 
 `immersive_smithing-server.toml` (per world, synced to clients) covers recipe replacement and automatic detection,
-forge capacity and fuel, minigame times, quality multipliers, recycling, the trough and grindstone, villager
+forge capacity and fuel, heat and cooling rates, blow recovery, station holds and job priority, quality multipliers,
+recycling, quench time, the trough and grindstone, villager
 trades, automation faces, loot quality, the Maker's Mark (signing) and the integrations (Spartan Weaponry, Epic
 Fight, Epic Knights and single add-ons, Simply Swords, TerraFirmaCraft, the vanilla craft event, quality
 inheritance). Run `/reload` after changing recipe or integration options.
 
-`immersive_smithing-client.toml` covers presentation only: numeric quality scores in tooltips, reduced screen shake
-and flashes, particle amount, high-contrast minigames, larger and colorblind-safe targets, timing cue sounds, how long
-a strike's grade stays readable (`feedbackLabelMs`), and station messages kept above the hotbar (`stationNotices`,
-`noticeSeconds`; off uses the action bar). These options never widen scoring windows.
+`immersive_smithing-client.toml` covers presentation only: the work camera (Cinematic, Shoulder or World view, side,
+transition speed, field of view), reduced motion, work guides and expanded numeric status, hold or toggle for held
+actions, effect volume, numeric quality scores in tooltips, reduced screen shake and flashes, particle amount,
+high-contrast guides, larger and colorblind-safe marks, cue sounds, and station messages kept above the hotbar
+(`stationNotices`, `noticeSeconds`; off uses the action bar). These options never change scoring.
 
 ## Commands
 
@@ -172,7 +196,8 @@ Operators (permission level 2):
 | `/immersivesmithing recipe <item>` | Smithing recipes for the item and the recipes they disabled. |
 | `/immersivesmithing quality` | Quality and multipliers of the held item. |
 | `/immersivesmithing report` | Writes `logs/immersive_smithing_report.txt` with every detection decision. |
-| `/immersivesmithing session` | Active minigame sessions. |
+| `/immersivesmithing session` | Open pattern books and which smith holds which station. |
+| `/immersivesmithing process` | Writes `logs/immersive_smithing_process_report.txt`: the process profile of every recipe and how it was chosen. |
 | `/immersivesmithing catalog <modid>` | Writes `logs/immersive_smithing_catalog_<modid>.json`: every piece of equipment the mod registers, how it is obtained (its disposition and the reason), its smithing recipes, what happened to its native recipes, quality and recycling. |
 
 ## Requirements
@@ -188,7 +213,8 @@ Operators (permission level 2):
 ./gradlew runGameTestServer      # headless GameTests
 ./gradlew runGameTestServer -PcompatMods   # the same with Spartan Weaponry, Spartan Shields and Immersive Armors
 ./gradlew runGameTestServer -PepicFight -PsimplySwords   # with Epic Fight and/or Simply Swords (either flag alone works)
-./gradlew runGameTestServer -PepicKnights        # Epic Knights with its add-ons (=base alone, =addon,slavic, =all,iceandfire)
+./gradlew runGameTestServer -PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots -PgameTestProfile=combined
+./gradlew runGameTestServer -PepicKnights=overgeared -PgameTestProfile=overgeared # separate native-workflow checks
 python3 tools/model_preview.py --check           # station model budgets and model/texture resolution
 ```
 

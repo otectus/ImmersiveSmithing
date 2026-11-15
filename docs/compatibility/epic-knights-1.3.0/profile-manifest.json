@@ -1,0 +1,3734 @@
+{
+  "branch": "update/1.3.0",
+  "jars_by_sha256": {
+    "05f7b5d52f6b8f0fd7f8b4822fa07a192d1394d83a264309c9d221d6d4fd21c5": {
+      "coordinates": "maven.modrinth:patchouli:1.20.1-85-forge",
+      "dependencies": {
+        "patchouli": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "versionRange": "[47.1.3,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "versionRange": "[1.20.1,1.21)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/patchouli/1.20.1-85-forge/d4614507d6e4c7cb464bba5eca891978272062ef/patchouli-1.20.1-85-forge.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "patchouli",
+          "version": "1.20.1-85-FORGE"
+        }
+      ],
+      "sha256": "05f7b5d52f6b8f0fd7f8b4822fa07a192d1394d83a264309c9d221d6d4fd21c5"
+    },
+    "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def": {
+      "coordinates": "maven.modrinth:epic-knights-antique-legacy:4DhbZFhg",
+      "dependencies": {
+        "antiquelegacy": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,1.21)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[10.8,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-antique-legacy/4DhbZFhg/de812ad140b67bbace4ef7be33e035c7e1beca89/epic-knights-antique-legacy-4DhbZFhg.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "antiquelegacy",
+          "version": "1.13"
+        }
+      ],
+      "sha256": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def"
+    },
+    "0963674ebdd3dffc049db3aba800c90e1c359771585269374f3521df61330890": {
+      "coordinates": "curse.maven:epic-knights-of-terrafirmagreg-1344839:8280833",
+      "dependencies": {
+        "knightsofterrafirma": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.16,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "antiquelegacy",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.8,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "tfc",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[3.2,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "dfc",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[0.3.0,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-of-terrafirmagreg-1344839/8280833/66d3b1cc73432ad7ecc527daa2982cec189dad96/epic-knights-of-terrafirmagreg-1344839-8280833.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "knightsofterrafirma",
+          "version": "3.1.2-gregified"
+        }
+      ],
+      "sha256": "0963674ebdd3dffc049db3aba800c90e1c359771585269374f3521df61330890"
+    },
+    "0fdf4cb65cda16b9c7a21b96c77d6365a56812ecbd180d75ec72f9b40a67dc67": {
+      "coordinates": "maven.modrinth:gregtechceu-modern:yLwvjuvy",
+      "dependencies": {
+        "ldlib": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "1.20.1"
+          }
+        ]
+      },
+      "embedded_in": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/gregtechceu-modern/yLwvjuvy/2e9de016b74826d43f0d4e619a755e8ec0253784/gregtechceu-modern-yLwvjuvy.jar",
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/gregtechceu-modern/yLwvjuvy/2e9de016b74826d43f0d4e619a755e8ec0253784/gregtechceu-modern-yLwvjuvy.jar!/META-INF/jarjar/ldlib-forge-1.20.1-1.0.40.b.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "ldlib",
+          "version": "1.0.40.b"
+        }
+      ],
+      "sha256": "0fdf4cb65cda16b9c7a21b96c77d6365a56812ecbd180d75ec72f9b40a67dc67"
+    },
+    "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2": {
+      "coordinates": "maven.modrinth:cloth-config:t8TXrZvZ",
+      "dependencies": {
+        "cloth_config": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[45,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/cloth-config/t8TXrZvZ/c65d07748acc57ceb45d53b3964368b84f34d54f/cloth-config-t8TXrZvZ.jar",
+      "loader": "javafml",
+      "loader_range": "[34,)",
+      "mods": [
+        {
+          "id": "cloth_config",
+          "version": "11.1.136"
+        }
+      ],
+      "sha256": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2"
+    },
+    "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af": {
+      "coordinates": "maven.modrinth:architectury-api:1MKTLiiG",
+      "dependencies": {
+        "architectury": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[46,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/architectury-api/1MKTLiiG/a52918a500ff421180a1cbd1a0cabee712134ec4/architectury-api-1MKTLiiG.jar",
+      "loader": "javafml",
+      "loader_range": "[46,)",
+      "mods": [
+        {
+          "id": "architectury",
+          "version": "9.2.14"
+        }
+      ],
+      "sha256": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af"
+    },
+    "21d9d8c6571aaabd6c35ef277449f4c62fe1a8e1737980639150af43f0bfc187": {
+      "coordinates": "maven.modrinth:epic-knights-of-the-seven-kingdoms:eveDj5L8",
+      "dependencies": {
+        "ekotsk": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "architectury",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.2.14,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[9.24,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-of-the-seven-kingdoms/eveDj5L8/59590758987f629d4a4390557d3d5f645bb4c19d/epic-knights-of-the-seven-kingdoms-eveDj5L8.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "ekotsk",
+          "version": "1.20.1_1.5.0"
+        }
+      ],
+      "sha256": "21d9d8c6571aaabd6c35ef277449f4c62fe1a8e1737980639150af43f0bfc187"
+    },
+    "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae": {
+      "coordinates": "curse.maven:epic-knights-dark-ages-addon-1361923:7107406",
+      "dependencies": {
+        "darkagesarmory": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.0,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[8.6,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-dark-ages-addon-1361923/7107406/39e7141f63a61220942a11887eb67a487d8afd6b/epic-knights-dark-ages-addon-1361923-7107406.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "darkagesarmory",
+          "version": "1.1"
+        }
+      ],
+      "sha256": "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae"
+    },
+    "269293a11a13a3bd01bd91ee2817a0ce5740a8ed6eccaec5765c420230717f5d": {
+      "coordinates": "maven.modrinth:immersive-armors:Ivcp8xyi",
+      "dependencies": {
+        "immersive_armors": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.1.0,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/immersive-armors/Ivcp8xyi/5311ad33c339bbed4f1c66830a9f19d285d4cad3/immersive-armors-Ivcp8xyi.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "immersive_armors",
+          "version": "1.7.1+1.20.1"
+        }
+      ],
+      "sha256": "269293a11a13a3bd01bd91ee2817a0ce5740a8ed6eccaec5765c420230717f5d"
+    },
+    "2736ac2dd52a7b3a188df454e61a4154cd36e273fa770f3ab89dcf6e732e88ad": {
+      "coordinates": "maven.modrinth:spartan-weaponry:4U6gwadt",
+      "dependencies": {
+        "spartanweaponry": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          },
+          {
+            "mandatory": false,
+            "modId": "shouldersurfing",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1-4.1.1,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/spartan-weaponry/4U6gwadt/187977cf09972df5773c92b8af5fd342a9d726cb/spartan-weaponry-4U6gwadt.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "spartanweaponry",
+          "version": "3.2.1"
+        }
+      ],
+      "sha256": "2736ac2dd52a7b3a188df454e61a4154cd36e273fa770f3ab89dcf6e732e88ad"
+    },
+    "2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82": {
+      "coordinates": "maven.modrinth:ice-and-fire-dragons:EzN8KQYF",
+      "dependencies": {
+        "iceandfire": [
+          {
+            "mandatory": true,
+            "modId": "citadel",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2.4.1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "side": "BOTH",
+            "versionRange": "[40.1.37,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/ice-and-fire-dragons/EzN8KQYF/7e828cbb046ca3d622e92c68f956bd1c0155dc6f/ice-and-fire-dragons-EzN8KQYF.jar",
+      "loader": "javafml",
+      "loader_range": "[37.0,)",
+      "mods": [
+        {
+          "id": "iceandfire",
+          "version": "2.1.13-1.20.1"
+        }
+      ],
+      "sha256": "2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82"
+    },
+    "2c1c89c8c4d7bb077c5f235e763471e0b4204ffd59aafb950c33e37c90c87c80": {
+      "coordinates": "curse.maven:epic-knights-ice-and-fire-1151603:5972466",
+      "dependencies": {
+        "epic_knights_ice_and_fire": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.0,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "iceandfire",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2.1.13,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[8.6,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ice-and-fire-1151603/5972466/5a749de70ca0feb9b50b663785a2c48ea9e07e60/epic-knights-ice-and-fire-1151603-5972466.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "epic_knights_ice_and_fire",
+          "version": "1.0"
+        }
+      ],
+      "sha256": "2c1c89c8c4d7bb077c5f235e763471e0b4204ffd59aafb950c33e37c90c87c80"
+    },
+    "359d0a93004cd94da7973aff7fd3b64eaa8603ee211acd856b75b1810f806d17": {
+      "coordinates": "maven.modrinth:gregtechceu-modern:yLwvjuvy",
+      "dependencies": {
+        "configuration": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          }
+        ]
+      },
+      "embedded_in": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/gregtechceu-modern/yLwvjuvy/2e9de016b74826d43f0d4e619a755e8ec0253784/gregtechceu-modern-yLwvjuvy.jar",
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/gregtechceu-modern/yLwvjuvy/2e9de016b74826d43f0d4e619a755e8ec0253784/gregtechceu-modern-yLwvjuvy.jar!/META-INF/jarjar/configuration-forge-1.20.1-2.2.0.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "configuration",
+          "version": "2.2.0"
+        }
+      ],
+      "sha256": "359d0a93004cd94da7973aff7fd3b64eaa8603ee211acd856b75b1810f806d17"
+    },
+    "3b1cdbd088cda421c8419ee5b32214d9bdee488819cfa0867d79ee9dfca6401f": {
+      "coordinates": "maven.modrinth:better-combat:rnhiaw3t (embedded MixinExtras)",
+      "dependencies": {},
+      "embedded_in": "/tmp/immersive-smithing-epic-knights-audit/bettercombat.jar",
+      "file": "/tmp/immersive-smithing-epic-knights-audit/bettercombat.jar!/META-INF/jars/mixinextras-forge-0.2.0.jar",
+      "loader": "javafml",
+      "loader_range": "*",
+      "mods": [
+        {
+          "id": "mixinextras",
+          "version": "0.2.0"
+        }
+      ],
+      "sha256": "3b1cdbd088cda421c8419ee5b32214d9bdee488819cfa0867d79ee9dfca6401f"
+    },
+    "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49": {
+      "coordinates": "curse.maven:swappable-helms-for-epic-knights-1368717:7128444",
+      "dependencies": {
+        "quick_swap": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/swappable-helms-for-epic-knights-1368717/7128444/eca5feb0578c69f65d3ede1fbacbc952aed517b4/swappable-helms-for-epic-knights-1368717-7128444.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "quick_swap",
+          "version": "0.1.0"
+        }
+      ],
+      "sha256": "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49"
+    },
+    "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b": {
+      "coordinates": "maven.modrinth:geckolib:aC5KMoNg",
+      "dependencies": {
+        "geckolib": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "geckoanimfix",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[9.removeoculusgeckolibcompat,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/geckolib/aC5KMoNg/50e1407869ef0e909e3bdda9328b8bd7db03fdc0/geckolib-aC5KMoNg.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "geckolib",
+          "version": "4.8.4"
+        }
+      ],
+      "sha256": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b"
+    },
+    "459f5fead39eae14270fd798524deeef23b1ab1bd37d302bd49cb08c8dffee23": {
+      "coordinates": "curse.maven:overgeared-x-epic-knights-1587252:8941802",
+      "dependencies": {
+        "overgeared_epic_knights": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.20.2)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[10.11,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "overgeared",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.6.34.1,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "magistuarmoryaddon",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2.6,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/overgeared-x-epic-knights-1587252/8941802/75f262f7606b87768f715bfbbc9fcf1f759625d2/overgeared-x-epic-knights-1587252-8941802.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "overgeared_epic_knights",
+          "version": "1.20.1-1.1.1"
+        }
+      ],
+      "sha256": "459f5fead39eae14270fd798524deeef23b1ab1bd37d302bd49cb08c8dffee23"
+    },
+    "49c69dccf2c641246b4e3deca81ebac21f0ee119e81fc713b838b8e33569eea1": {
+      "coordinates": "original pinned download; see profile/property manifest",
+      "dependencies": {
+        "bettercombat": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "playeranimator",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "cloth_config",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[11.0.0,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/tmp/immersive-smithing-epic-knights-audit/bettercombat.jar",
+      "loader": "javafml",
+      "loader_range": "[39,)",
+      "mods": [
+        {
+          "id": "bettercombat",
+          "version": "1.9.0+1.20.1"
+        }
+      ],
+      "sha256": "49c69dccf2c641246b4e3deca81ebac21f0ee119e81fc713b838b8e33569eea1"
+    },
+    "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca": {
+      "coordinates": "curse.maven:epic-knights-open-helms-1176829:7493041",
+      "dependencies": {
+        "epicknights_open_helms": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-open-helms-1176829/7493041/7340c45da556a9e493fe27ae4a293ac0ddaab169/epic-knights-open-helms-1176829-7493041.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "epicknights_open_helms",
+          "version": "1.3"
+        }
+      ],
+      "sha256": "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca"
+    },
+    "56c7ab87348a5292583aac787b6cf11b5193e77f02af1d17ea75a96f8640b3ce": {
+      "coordinates": "maven.modrinth:citadel:lTAAe4sZ",
+      "dependencies": {
+        "citadel": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.0.34,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/citadel/lTAAe4sZ/fb0b1fa96ce28e4be77b38ad95d83c3da7ec8316/citadel-lTAAe4sZ.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "citadel",
+          "version": "2.6.3"
+        }
+      ],
+      "sha256": "56c7ab87348a5292583aac787b6cf11b5193e77f02af1d17ea75a96f8640b3ce"
+    },
+    "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7": {
+      "coordinates": "curse.maven:epic-knights-thirty-years-war-1752267:9386507",
+      "dependencies": {
+        "thirtyyearswar": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.20.2)"
+          },
+          {
+            "mandatory": true,
+            "modId": "architectury",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.0.8,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "cloth_config",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[11.0.99,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[10.11,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-thirty-years-war-1752267/9386507/db021361649e10b96e3c82db097cad93a3cb3618/epic-knights-thirty-years-war-1752267-9386507.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "thirtyyearswar",
+          "version": "1.3"
+        }
+      ],
+      "sha256": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7"
+    },
+    "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d": {
+      "coordinates": "maven.modrinth:epic-knights-shields-armor-and-weapons:gJ59URg4",
+      "dependencies": {
+        "magistuarmory": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,1.20.2)"
+          },
+          {
+            "mandatory": true,
+            "modId": "architectury",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.0.8,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "cloth_config",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[11.0.99,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-shields-armor-and-weapons/gJ59URg4/8f6019735436fb5a0056916e25f62b363baddafa/epic-knights-shields-armor-and-weapons-gJ59URg4.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "magistuarmory",
+          "version": "10.15"
+        }
+      ],
+      "sha256": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+    },
+    "69566cf70ae2d91d3f2564c608f014c87e290cef6215c2a27719851165485f73": {
+      "coordinates": "maven.modrinth:epic-fight:KEBfkBat",
+      "dependencies": {
+        "epicfight": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.4.0,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,1.21)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-fight/KEBfkBat/faa8eddad9d80adb9c4ba81fd0a8a21c81989d3d/epic-fight-KEBfkBat.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "epicfight",
+          "version": "20.14.17"
+        }
+      ],
+      "sha256": "69566cf70ae2d91d3f2564c608f014c87e290cef6215c2a27719851165485f73"
+    },
+    "732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6": {
+      "coordinates": "curse.maven:medieval-boomsticks-1123016:6148892",
+      "dependencies": {
+        "medieval_boomsticks": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/6148892/81a26754a4ab1c07d13bd84d87bee64dc6a575da/medieval-boomsticks-1123016-6148892.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "medieval_boomsticks",
+          "version": "1.2"
+        }
+      ],
+      "sha256": "732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6"
+    },
+    "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a": {
+      "coordinates": "mezz.jei:jei-1.20.1-forge:15.20.0.135",
+      "dependencies": {
+        "jei": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47.0,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1, 1.20.2)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/mezz.jei/jei-1.20.1-forge/15.20.0.135/8b04efd5ece93aa463925bb6376b8e0a4369c3e/jei-1.20.1-forge-15.20.0.135.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "jei",
+          "version": "15.20.0.135"
+        }
+      ],
+      "sha256": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a"
+    },
+    "8d773e58960422f224fc73e4234c4fc2ed470234158bafd7dd4f47f502440645": {
+      "coordinates": "maven.modrinth:overgeared:tN0TdF4z",
+      "dependencies": {
+        "overgeared": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1, 1.20.2)"
+          },
+          {
+            "mandatory": false,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.8,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "magistuarmoryaddon",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.22,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "slavicarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.5,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "emi",
+            "ordering": "BEFORE",
+            "side": "BOTH",
+            "versionRange": "[1.1.10+1.20.1,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "quark",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[4.0-462,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "ytech",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1-0.10.6,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "spartanweaponry",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[3.2.0,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "valkyrienskies",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2.4.10,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/overgeared/tN0TdF4z/b6636a7afdadef870c8ce966a045ece5755f8a55/overgeared-tN0TdF4z.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "overgeared",
+          "version": "1.20.1-1.6.37"
+        }
+      ],
+      "sha256": "8d773e58960422f224fc73e4234c4fc2ed470234158bafd7dd4f47f502440645"
+    },
+    "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7": {
+      "coordinates": "curse.maven:epic-knights-ores-and-alloys-1125802:5857444",
+      "dependencies": {
+        "epic_knights_ores_and_alloys": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-ores-and-alloys-1125802/5857444/f518c42c64f472e464adc067da389c0797af141b/epic-knights-ores-and-alloys-1125802-5857444.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "epic_knights_ores_and_alloys",
+          "version": "1.1"
+        }
+      ],
+      "sha256": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7"
+    },
+    "90d9965cb9efdbda29fdc5610be3914cf7008bf5c392ff34f7ab25f96a852691": {
+      "coordinates": "maven.modrinth:playeranimator:xe2EVE6q",
+      "dependencies": {
+        "playeranimator": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/playeranimator/xe2EVE6q/16808f94a41d45d8e986b4e4ea6b02ba57fa058a/playeranimator-xe2EVE6q.jar",
+      "loader": "javafml",
+      "loader_range": "[46.0.0,)",
+      "mods": [
+        {
+          "id": "playeranimator",
+          "version": "1.0.2-rc1+1.20"
+        }
+      ],
+      "sha256": "90d9965cb9efdbda29fdc5610be3914cf7008bf5c392ff34f7ab25f96a852691"
+    },
+    "920368908e26e1a75186e06affd03274d0fe93770d5c5d12c177f53d7aa1deac": {
+      "coordinates": "maven.modrinth:spartan-shields:kDAJWHFl",
+      "dependencies": {
+        "spartanshields": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/spartan-shields/kDAJWHFl/2d1c99c2a5c6116ed17be0ac3cb223a2f46636e8/spartan-shields-kDAJWHFl.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "spartanshields",
+          "version": "3.1.1"
+        }
+      ],
+      "sha256": "920368908e26e1a75186e06affd03274d0fe93770d5c5d12c177f53d7aa1deac"
+    },
+    "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2": {
+      "coordinates": "curse.maven:epic-knights-artillery-addon-1307540:8812944",
+      "dependencies": {
+        "artillery_addon": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-artillery-addon-1307540/8812944/292b5b74afd930fd14850fb7c156f2252811b124/epic-knights-artillery-addon-1307540-8812944.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "artillery_addon",
+          "version": "1.16.2"
+        }
+      ],
+      "sha256": "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2"
+    },
+    "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60": {
+      "coordinates": "curse.maven:ingots-addition-for-epic-knights-1035130:5418905",
+      "dependencies": {
+        "bronzeaddition_epicknights": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/ingots-addition-for-epic-knights-1035130/5418905/1ef78ea3a8f83558c5284d6e9a1cb9e6644a7c8f/ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "bronzeaddition_epicknights",
+          "version": "1.0.61.20.1"
+        }
+      ],
+      "sha256": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60"
+    },
+    "b433b596c8079638a3d144e76d4b2839253edaefcbe30cff74c1a97c1252fa0e": {
+      "coordinates": "original pinned download; see profile/property manifest",
+      "dependencies": {},
+      "embedded_in": null,
+      "file": "/tmp/immersive-smithing-epic-knights-audit/rework.jar",
+      "loader": "lowcodefml",
+      "loader_range": "[40,)",
+      "mods": [
+        {
+          "id": "epic_knights_x_better_combat",
+          "version": "1.0.1-1.20.1+1.21.1"
+        }
+      ],
+      "sha256": "b433b596c8079638a3d144e76d4b2839253edaefcbe30cff74c1a97c1252fa0e"
+    },
+    "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193": {
+      "coordinates": "maven.modrinth:epic-knights-addon:xnYQSIH7",
+      "dependencies": {
+        "magistuarmoryaddon": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,1.21)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[10.8,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-addon/xnYQSIH7/c5d284743d3d59a7ca4cdfdf42e4a01afb10e146/epic-knights-addon-xnYQSIH7.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "magistuarmoryaddon",
+          "version": "2.6"
+        }
+      ],
+      "sha256": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193"
+    },
+    "d6560d8b695828a763389d3f45e0210ef70c1892c7b1633ac458544905df1a0d": {
+      "coordinates": "maven.modrinth:gregtechceu-modern:yLwvjuvy",
+      "dependencies": {
+        "gtceu": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "1.20.1"
+          },
+          {
+            "embedded": true,
+            "mandatory": true,
+            "mc-publish": {
+              "curseforge": "ldlib",
+              "ignore": false,
+              "modrinth": "ldlib"
+            },
+            "modId": "ldlib",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.0.40.b,)"
+          },
+          {
+            "embedded": true,
+            "mandatory": true,
+            "mc-publish": {
+              "curseforge": "configuration",
+              "ignore": false,
+              "modrinth": "configuration"
+            },
+            "modId": "configuration",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2.2.0,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "kubejs",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[2001,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "jei",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[15.20.0.115,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "emi",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.1.13+1.20.1,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "theoneprobe",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1-10.0.1-3,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "jade",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[11.6.3,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/gregtechceu-modern/yLwvjuvy/2e9de016b74826d43f0d4e619a755e8ec0253784/gregtechceu-modern-yLwvjuvy.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "gtceu",
+          "version": "7.5.3"
+        }
+      ],
+      "sha256": "d6560d8b695828a763389d3f45e0210ef70c1892c7b1633ac458544905df1a0d"
+    },
+    "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab": {
+      "coordinates": "curse.maven:medieval-boomsticks-1123016:5832925",
+      "dependencies": {
+        "medieval_boomsticks": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/medieval-boomsticks-1123016/5832925/49fff0ec735c027072ed7b50e193f6fc25e329e1/medieval-boomsticks-1123016-5832925.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "medieval_boomsticks",
+          "version": "1.01"
+        }
+      ],
+      "sha256": "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab"
+    },
+    "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b": {
+      "coordinates": "curse.maven:epic-knights-japanese-armory-987386:5294116",
+      "dependencies": {
+        "epic_knights__japanese_armory": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-knights-japanese-armory-987386/5294116/13b3cfef061bf313d1eddad832cdd77562309580/epic-knights-japanese-armory-987386-5294116.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "epic_knights__japanese_armory",
+          "version": "1.6.2"
+        }
+      ],
+      "sha256": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b"
+    },
+    "daa54cd23c3fdcd0139491ad68a514a91970f075076207909d0ecdc2113e68a3": {
+      "coordinates": "maven.modrinth:terrafirmacraft:dR2GA31g",
+      "dependencies": {
+        "tfc": [
+          {
+            "mandatory": true,
+            "modId": "patchouli",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1-81-FORGE,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "jei",
+            "ordering": "NONE",
+            "side": "CLIENT",
+            "versionRange": "[15.1.0.19,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[47.1.3,47.1.6),[47.1.81,47.2.0),[47.2.6,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.20.2)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/terrafirmacraft/dR2GA31g/62390022b6f961ed5a2765587664c159bae3b53/terrafirmacraft-dR2GA31g.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "tfc",
+          "version": "3.2.28"
+        }
+      ],
+      "sha256": "daa54cd23c3fdcd0139491ad68a514a91970f075076207909d0ecdc2113e68a3"
+    },
+    "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe": {
+      "coordinates": "curse.maven:epic-fletchery-1441931:9108169",
+      "dependencies": {
+        "fletchery": [
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.20.1]"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/epic-fletchery-1441931/9108169/c9daf0752837fea8358017138cda4b7579e3096f/epic-fletchery-1441931-9108169.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "fletchery",
+          "version": "0.7"
+        }
+      ],
+      "sha256": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe"
+    },
+    "edf39b18f803e6201abc7a7c583dd0c9aebb1c638f4e64170505b4837fac8967": {
+      "coordinates": "maven.modrinth:overgeared:tN0TdF4z",
+      "dependencies": {},
+      "embedded_in": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/overgeared/tN0TdF4z/b6636a7afdadef870c8ce966a045ece5755f8a55/overgeared-tN0TdF4z.jar",
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/overgeared/tN0TdF4z/b6636a7afdadef870c8ce966a045ece5755f8a55/overgeared-tN0TdF4z.jar!/META-INF/jarjar/mixinextras-forge-0.3.5.jar",
+      "loader": "javafml",
+      "loader_range": "*",
+      "mods": [
+        {
+          "id": "mixinextras",
+          "version": "0.3.5"
+        }
+      ],
+      "sha256": "edf39b18f803e6201abc7a7c583dd0c9aebb1c638f4e64170505b4837fac8967"
+    },
+    "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d": {
+      "coordinates": "maven.modrinth:epic-knights-slavic-armory:Q5VtlZ47",
+      "dependencies": {
+        "slavicarmory": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20,1.21)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[10.1,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/maven.modrinth/epic-knights-slavic-armory/Q5VtlZ47/e54539d7eee96e5441db89ac580bcb4fc3ae534a/epic-knights-slavic-armory-Q5VtlZ47.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "slavicarmory",
+          "version": "2.1"
+        }
+      ],
+      "sha256": "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d"
+    },
+    "f85196cfba5e621c4c1b447507c7edbc92d9c76d9ac174e01539c4fd480e78b6": {
+      "coordinates": "curse.maven:knights-of-terrafirma-1092010:8280828",
+      "dependencies": {
+        "knightsofterrafirma": [
+          {
+            "mandatory": true,
+            "modId": "forge",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[47,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "minecraft",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "versionRange": "[1.20.1,1.21)"
+          },
+          {
+            "mandatory": true,
+            "modId": "magistuarmory",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[9.16,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "antiquelegacy",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[1.8,)"
+          },
+          {
+            "mandatory": true,
+            "modId": "tfc",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[3.2,)"
+          },
+          {
+            "mandatory": false,
+            "modId": "dfc",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "versionRange": "[0.3.0,)"
+          }
+        ]
+      },
+      "embedded_in": null,
+      "file": "/home/otectus/.gradle/caches/modules-2/files-2.1/curse.maven/knights-of-terrafirma-1092010/8280828/b274c46b7d3400de16b9d0c5bdf109a11171b969/knights-of-terrafirma-1092010-8280828.jar",
+      "loader": "javafml",
+      "loader_range": "[47,)",
+      "mods": [
+        {
+          "id": "knightsofterrafirma",
+          "version": "3.1.2"
+        }
+      ],
+      "sha256": "f85196cfba5e621c4c1b447507c7edbc92d9c76d9ac174e01539c4fd480e78b6"
+    }
+  },
+  "java": 17,
+  "loader": "Forge",
+  "minecraft": "1.20.1",
+  "note": "Hashes identify original upstream jars; ForgeGradle remaps copies for development. Client production launches use originals. Embedded jars retain their containing-jar provenance.",
+  "profiles": {
+    "addon": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "magistuarmoryaddon": "2.6",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "magistuarmoryaddon": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "6b23c886e5e7b7eb0b153178f89602b5d021e07abe1eaa3d163be4d53e403295",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "magistuarmoryaddon": {
+          "catalog_sha256": "c87f58f36316a7293f7660ff2922c8d5f36ba9ea32bb401c2b7255388689c853",
+          "dispositions": {
+            "disabled_by_upstream": 3,
+            "forge_default": 136,
+            "material_unavailable": 2,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 143,
+            "non_equipment": 72,
+            "protected_loot": 5
+          },
+          "items": 421
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=addon",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-addon"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202113.log",
+        "pass": true,
+        "profile": "addon",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-addon/logs",
+        "seconds": 30.3,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/addon-1793492473.txt"
+      }
+    },
+    "antique": {
+      "loaded_versions": {
+        "antiquelegacy": "1.13",
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "antiquelegacy": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "antiquelegacy": {
+          "catalog_sha256": "f0f8f6820ac11f75d69356dc46a3ddd5f447ddc2f9e1ce7ca8cde38ea062aa50",
+          "dispositions": {
+            "forge_default": 81,
+            "native_nonmetal_recipe": 19,
+            "native_transformation": 4,
+            "non_equipment": 30,
+            "protected_loot": 5
+          },
+          "items": 139
+        },
+        "magistuarmory": {
+          "catalog_sha256": "3428335c819e98f49169f3033b6f1c51ea0a1e2b5a81163e4ce79523845b3344",
+          "dispositions": {
+            "forge_default": 236,
+            "material_unavailable": 29,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 22,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=antique",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-antique"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202143.log",
+        "pass": true,
+        "profile": "antique",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-antique/logs",
+        "seconds": 43.4,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/antique-1793492503.txt"
+      }
+    },
+    "armor": {
+      "loaded_versions": {
+        "antiquelegacy": "1.13",
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "darkagesarmory": "1.1",
+        "epic_knights__japanese_armory": "1.6.2",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "magistuarmoryaddon": "2.6",
+        "minecraft": "1.20.1",
+        "slavicarmory": "2.1"
+      },
+      "original_jars": {
+        "antiquelegacy": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "darkagesarmory": "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae",
+        "epic_knights__japanese_armory": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "magistuarmoryaddon": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193",
+        "slavicarmory": "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d"
+      },
+      "runtime_classifications": {
+        "antiquelegacy": {
+          "catalog_sha256": "7c8acd46705f0a553406d547b2c0bd6e7299f711fd981a7bf58bb56cf0757c4e",
+          "dispositions": {
+            "forge_default": 81,
+            "native_nonmetal_recipe": 19,
+            "native_transformation": 4,
+            "non_equipment": 30,
+            "protected_loot": 5
+          },
+          "items": 139
+        },
+        "darkagesarmory": {
+          "catalog_sha256": "37899229d40b1e4ff3dda2e31280426061eb3ba2c1a67da1f593b6e09134b57d",
+          "dispositions": {
+            "forge_default": 59,
+            "native_nonmetal_recipe": 63,
+            "native_transformation": 4,
+            "non_equipment": 17
+          },
+          "items": 143
+        },
+        "epic_knights__japanese_armory": {
+          "catalog_sha256": "7a7f5c333a740de9ac477b1f1f676b5f9bb148b37d01d0740d2600d7ce2e574a",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 14,
+            "native_assembly": 1,
+            "native_nonmetal_recipe": 9,
+            "native_transformation": 9,
+            "non_equipment": 3
+          },
+          "items": 37
+        },
+        "magistuarmory": {
+          "catalog_sha256": "b3c3031ba7526d1847af6dabf8d5620a9b0df6efacaed8e6d88e524652ff5148",
+          "dispositions": {
+            "forge_default": 236,
+            "material_unavailable": 29,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 22,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "magistuarmoryaddon": {
+          "catalog_sha256": "a6c6ee6b9d6ccab9e7578df1f113a30d1057f2d55cd52e30ddb678dc94406a9d",
+          "dispositions": {
+            "disabled_by_upstream": 3,
+            "forge_default": 136,
+            "material_unavailable": 2,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 143,
+            "non_equipment": 72,
+            "protected_loot": 5
+          },
+          "items": 421
+        },
+        "slavicarmory": {
+          "catalog_sha256": "fc5cea09487acf4e8cb9bc3f14cd2c0084b5829ea48ce29484e6fb25cb4ab07f",
+          "dispositions": {
+            "forge_default": 33,
+            "native_nonmetal_recipe": 7,
+            "native_transformation": 19,
+            "non_equipment": 2
+          },
+          "items": 61
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=addon,slavic,antique,darkages,japanese",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-armor"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201200.log",
+        "pass": true,
+        "profile": "armor",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-armor/logs",
+        "seconds": 60.8,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/armor-1793491920.txt"
+      }
+    },
+    "artillery": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "artillery_addon": "1.16.2",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "artillery_addon": "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "artillery_addon": {
+          "catalog_sha256": "8a7c9c9c310ceb7eb2890508d5d9b56a66badb5be845444d6c083acde46231c0",
+          "dispositions": {
+            "forge_default": 3,
+            "material_unavailable": 1,
+            "native_assembly": 17,
+            "native_nonmetal_recipe": 1,
+            "non_equipment": 62,
+            "protected_loot": 5
+          },
+          "items": 89
+        },
+        "magistuarmory": {
+          "catalog_sha256": "782727f83f893328b261917308f60ceeb9341ab14a11994defcc29d172db3a94",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=artillery",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-artillery"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200323.log",
+        "pass": true,
+        "profile": "artillery",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-artillery/logs",
+        "seconds": 44.4,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/artillery-1793491403.txt"
+      }
+    },
+    "base": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "7abdc3d1fec677cf1e4a65041cecfdb2b3aa1a3bd0b835746824f2cfb4d49edf",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=base",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-base"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202512.log",
+        "pass": true,
+        "profile": "base",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-base/logs",
+        "seconds": 22.0,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/base-1793492712.txt"
+      }
+    },
+    "bettercombat": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "bettercombat": "1.9.0+1.20.1",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "mixinextras": "0.2.0",
+        "playeranimator": "1.0.2-rc1+1.20"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "bettercombat": "49c69dccf2c641246b4e3deca81ebac21f0ee119e81fc713b838b8e33569eea1",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "mixinextras": "3b1cdbd088cda421c8419ee5b32214d9bdee488819cfa0867d79ee9dfca6401f",
+        "playeranimator": "90d9965cb9efdbda29fdc5610be3914cf7008bf5c392ff34f7ab25f96a852691"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "7087d9b5fff922dfd163cd8997dd7765f78b2c20d18bb2fffb54d3a45f0854c7",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=bettercombat",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-bettercombat"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201017.log",
+        "pass": true,
+        "profile": "bettercombat",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-bettercombat/logs",
+        "seconds": 53.6,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/bettercombat-1793491817.txt"
+      }
+    },
+    "boomsticks": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "geckolib": "4.8.4",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "medieval_boomsticks": "1.2",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "geckolib": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "medieval_boomsticks": "732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "f77b94faeeb37bd3a0b516d7ed1c524a1ede8af143195532edd879aa19a28d68",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "medieval_boomsticks": {
+          "catalog_sha256": "f98f5370791de2dc9140c1c4b989743cc3eae7a43466463845c595923f4dd71c",
+          "dispositions": {
+            "forge_default": 2,
+            "native_assembly": 7,
+            "native_nonmetal_recipe": 1,
+            "native_transformation": 2,
+            "non_equipment": 46
+          },
+          "items": 58
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=boomsticks",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-boomsticks"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200408.log",
+        "pass": true,
+        "profile": "boomsticks",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks/logs",
+        "seconds": 270.4,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/boomsticks-1793491448.txt"
+      }
+    },
+    "boomsticks-release": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "geckolib": "4.8.4",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "medieval_boomsticks": "1.01",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "geckolib": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "medieval_boomsticks": "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "e0b9954d70f744aaf3dcb1acf79d524bd9b46d14dd8c18f2e238f91361e2a28d",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "medieval_boomsticks": {
+          "catalog_sha256": "b5a90b1e67be816aaa83bffd608910b08215f84eb01e0d8b29c9726557d57b9c",
+          "dispositions": {
+            "disabled_by_upstream": 3,
+            "forge_default": 9,
+            "native_assembly": 2,
+            "native_nonmetal_recipe": 1,
+            "non_equipment": 26
+          },
+          "items": 41
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=boomsticks-release",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-boomsticks-release"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202226.log",
+        "pass": true,
+        "profile": "boomsticks-release",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-boomsticks-release/logs",
+        "seconds": 23.5,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/boomsticks-release-1793492546.txt"
+      }
+    },
+    "combined": {
+      "loaded_versions": {
+        "antiquelegacy": "1.13",
+        "architectury": "9.2.14",
+        "artillery_addon": "1.16.2",
+        "bronzeaddition_epicknights": "1.0.61.20.1",
+        "cloth_config": "11.1.136",
+        "darkagesarmory": "1.1",
+        "ekotsk": "1.20.1_1.5.0",
+        "epic_knights__japanese_armory": "1.6.2",
+        "epic_knights_ores_and_alloys": "1.1",
+        "epicknights_open_helms": "1.3",
+        "fletchery": "0.7",
+        "forge": "47.4.23",
+        "geckolib": "4.8.4",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "magistuarmoryaddon": "2.6",
+        "medieval_boomsticks": "1.2",
+        "minecraft": "1.20.1",
+        "quick_swap": "0.1.0",
+        "slavicarmory": "2.1",
+        "thirtyyearswar": "1.3"
+      },
+      "original_jars": {
+        "antiquelegacy": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "artillery_addon": "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2",
+        "bronzeaddition_epicknights": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "darkagesarmory": "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae",
+        "ekotsk": "21d9d8c6571aaabd6c35ef277449f4c62fe1a8e1737980639150af43f0bfc187",
+        "epic_knights__japanese_armory": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b",
+        "epic_knights_ores_and_alloys": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7",
+        "epicknights_open_helms": "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca",
+        "fletchery": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe",
+        "geckolib": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "magistuarmoryaddon": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193",
+        "medieval_boomsticks": "732939d7efb9419ac6a7c88d76e78c6359021a42edfe8bb0309c148f06b510b6",
+        "quick_swap": "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49",
+        "slavicarmory": "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d",
+        "thirtyyearswar": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7"
+      },
+      "runtime_classifications": {
+        "antiquelegacy": {
+          "catalog_sha256": "5e157426fca182f7ecc8fee32d9f90f6da69b847bb98116939b58f26597e9ba3",
+          "dispositions": {
+            "forge_default": 81,
+            "native_nonmetal_recipe": 19,
+            "native_transformation": 4,
+            "non_equipment": 30,
+            "protected_loot": 5
+          },
+          "items": 139
+        },
+        "artillery_addon": {
+          "catalog_sha256": "008db89766d7112b93047cfeac7a0765c5a9ebfca5f1a7b02b0b9f2de3e27606",
+          "dispositions": {
+            "forge_default": 4,
+            "native_assembly": 17,
+            "native_nonmetal_recipe": 1,
+            "non_equipment": 62,
+            "protected_loot": 5
+          },
+          "items": 89
+        },
+        "bronzeaddition_epicknights": {
+          "catalog_sha256": "4614b8ce0a154064bc045748887ca86d83d2a5d20c198fdcb886bd4b9ed92d85",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 13,
+            "non_equipment": 8
+          },
+          "items": 22
+        },
+        "darkagesarmory": {
+          "catalog_sha256": "74b80dd17f50131c02da43ca34d68e4ecce07bfa2757b4a0f7dbdb92fac74209",
+          "dispositions": {
+            "forge_default": 59,
+            "native_nonmetal_recipe": 63,
+            "native_transformation": 4,
+            "non_equipment": 17
+          },
+          "items": 143
+        },
+        "ekotsk": {
+          "catalog_sha256": "12f361c3f894f9a23600e19f22b2e9b2f6acf1a7b9ac608dfca39fc8cda138eb",
+          "dispositions": {
+            "forge_default": 30,
+            "native_nonmetal_recipe": 5,
+            "native_transformation": 17,
+            "non_equipment": 81,
+            "protected_loot": 23
+          },
+          "items": 156
+        },
+        "epic_knights__japanese_armory": {
+          "catalog_sha256": "ec2740e05a136348633c086d0bf989ebeed545c529d1496d437ec90afac0bbce",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 14,
+            "native_assembly": 1,
+            "native_nonmetal_recipe": 9,
+            "native_transformation": 9,
+            "non_equipment": 3
+          },
+          "items": 37
+        },
+        "epic_knights_ores_and_alloys": {
+          "catalog_sha256": "db953c3d30c51397b3365d6d49fd0aeada605a6549b229a8807b852561913bf1",
+          "dispositions": {
+            "forge_default": 25,
+            "non_equipment": 20
+          },
+          "items": 45
+        },
+        "epicknights_open_helms": {
+          "catalog_sha256": "9059d0ec57e1130a1c6b45f2346454ed74d2246cf785c85b030f4c2b568246a9",
+          "dispositions": {
+            "disabled_by_upstream": 4,
+            "forge_default": 1,
+            "native_transformation": 53,
+            "non_equipment": 4
+          },
+          "items": 62
+        },
+        "fletchery": {
+          "catalog_sha256": "b11db1c3f2d755a9eb78d7ea2a3fc7eb6c540ceb93f5932813d27fda1e444fcc",
+          "dispositions": {
+            "disabled_by_upstream": 5,
+            "forge_default": 3,
+            "native_nonmetal_recipe": 25,
+            "non_equipment": 25
+          },
+          "items": 58
+        },
+        "magistuarmory": {
+          "catalog_sha256": "0c53b10390010fc05c9bcd75c79fb656e46d319d6f5f6264112c37db1407668e",
+          "dispositions": {
+            "forge_default": 263,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 24,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "magistuarmoryaddon": {
+          "catalog_sha256": "0e5bde3ccf9ee73433158bd3580552d47805092def975d0c3da4c3113d21368f",
+          "dispositions": {
+            "disabled_by_upstream": 2,
+            "forge_default": 138,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 144,
+            "non_equipment": 72,
+            "protected_loot": 5
+          },
+          "items": 421
+        },
+        "medieval_boomsticks": {
+          "catalog_sha256": "cde76655e5b734ec6b986a7dc26a668e5bc54b376350a6883739ae26163c3f4e",
+          "dispositions": {
+            "forge_default": 2,
+            "native_assembly": 7,
+            "native_nonmetal_recipe": 1,
+            "native_transformation": 2,
+            "non_equipment": 46
+          },
+          "items": 58
+        },
+        "slavicarmory": {
+          "catalog_sha256": "8be5c8c8853707b922c1eedb3513a08085b4de17f7da0a529c0f2f9fef75b78f",
+          "dispositions": {
+            "forge_default": 33,
+            "native_nonmetal_recipe": 7,
+            "native_transformation": 19,
+            "non_equipment": 2
+          },
+          "items": 61
+        },
+        "thirtyyearswar": {
+          "catalog_sha256": "ab05246b001ec9eb8836f69b53b4213c231c1bc9711d580ba4bc4f48c239d25b",
+          "dispositions": {
+            "disabled_by_upstream": 2,
+            "forge_default": 26,
+            "native_nonmetal_recipe": 30,
+            "native_transformation": 22,
+            "non_equipment": 4
+          },
+          "items": 84
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=all,thirtyyearswar,fletchery,japanese,ingots",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-combined"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202534.log",
+        "pass": true,
+        "profile": "combined",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-combined/logs",
+        "seconds": 29.8,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/combined-1793492734.txt"
+      }
+    },
+    "compat": {
+      "loaded_versions": {
+        "forge": "47.4.23",
+        "immersive_armors": "1.7.1+1.20.1",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "minecraft": "1.20.1",
+        "mixinextras": "0.3.5",
+        "spartanshields": "3.1.1",
+        "spartanweaponry": "3.2.1"
+      },
+      "original_jars": {
+        "immersive_armors": "269293a11a13a3bd01bd91ee2817a0ce5740a8ed6eccaec5765c420230717f5d",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "mixinextras": "edf39b18f803e6201abc7a7c583dd0c9aebb1c638f4e64170505b4837fac8967",
+        "spartanshields": "920368908e26e1a75186e06affd03274d0fe93770d5c5d12c177f53d7aa1deac",
+        "spartanweaponry": "2736ac2dd52a7b3a188df454e61a4154cd36e273fa770f3ab89dcf6e732e88ad"
+      },
+      "runtime_classifications": {},
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PcompatMods",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-compat"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195049.log",
+        "pass": true,
+        "profile": "compat",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-compat/logs",
+        "seconds": 52.9,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/compat-1793490649.txt"
+      }
+    },
+    "darkages": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "darkagesarmory": "1.1",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "darkagesarmory": "227279de86f19e44be7a05f4ea187dd3b083d17e321179d3b8da224ed545c6ae",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "darkagesarmory": {
+          "catalog_sha256": "a0073aab62bee3c6e3a305e9e3428e19587c03bf2582206c8b8238eeadb86101",
+          "dispositions": {
+            "forge_default": 59,
+            "native_nonmetal_recipe": 63,
+            "native_transformation": 4,
+            "non_equipment": 17
+          },
+          "items": 143
+        },
+        "magistuarmory": {
+          "catalog_sha256": "024a8c9edd8761053bcaba5705a0965c274424d4d9f859f0088b0e0006ad4065",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=darkages",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-darkages"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195717.log",
+        "pass": true,
+        "profile": "darkages",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-darkages/logs",
+        "seconds": 56.8,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/darkages-1793491037.txt"
+      }
+    },
+    "epicfight": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "epicfight": "20.14.17",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epicfight": "69566cf70ae2d91d3f2564c608f014c87e290cef6215c2a27719851165485f73",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "epicfight": {
+          "catalog_sha256": "cacd1130862c4b180aada882d1b230e794a5fd2c8466c076cc486eded0565a56",
+          "dispositions": {
+            "forge_default": 17,
+            "native_nonmetal_recipe": 16,
+            "non_equipment": 5
+          },
+          "items": 38
+        },
+        "magistuarmory": {
+          "catalog_sha256": "22a97182f72f08a672d9e7b2417eca6a2f0e5b9485a92f81b11957c758199687",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=base",
+          "-PepicFight",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-epicfight"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201651.log",
+        "pass": true,
+        "profile": "epicfight",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-epicfight/logs",
+        "seconds": 39.5,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/epicfight-1793492211.txt"
+      }
+    },
+    "fletchery": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "fletchery": "0.7",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "fletchery": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "fletchery": {
+          "catalog_sha256": "b6cfa8ef632bcefa0dbf74eb4bd2dba68d0cce8bfdb2cd42f4e1c8b5d78268a2",
+          "dispositions": {
+            "disabled_by_upstream": 5,
+            "forge_default": 3,
+            "native_nonmetal_recipe": 25,
+            "non_equipment": 25
+          },
+          "items": 58
+        },
+        "magistuarmory": {
+          "catalog_sha256": "02d186f1cc33de29dcfe983d27ae4f164a29841a96a14bbfcca740955702e483",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=fletchery",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-fletchery"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200235.log",
+        "pass": true,
+        "profile": "fletchery",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-fletchery/logs",
+        "seconds": 48.3,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/fletchery-1793491355.txt"
+      }
+    },
+    "iceandfire": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "citadel": "2.6.3",
+        "cloth_config": "11.1.136",
+        "epic_knights_ice_and_fire": "1.0",
+        "forge": "47.4.23",
+        "iceandfire": "2.1.13-1.20.1",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "citadel": "56c7ab87348a5292583aac787b6cf11b5193e77f02af1d17ea75a96f8640b3ce",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights_ice_and_fire": "2c1c89c8c4d7bb077c5f235e763471e0b4204ffd59aafb950c33e37c90c87c80",
+        "iceandfire": "2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "epic_knights_ice_and_fire": {
+          "catalog_sha256": "faef49ee73999d02f2efdbe2cfa9fcebed2f3cdccf274bd6b01de61b0c0424e4",
+          "dispositions": {
+            "forge_default": 54,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 106,
+            "non_equipment": 1
+          },
+          "items": 221
+        },
+        "magistuarmory": {
+          "catalog_sha256": "87ae1869df214a0f30c5ed050527831f06521cf4ce529a0d2a26680629a31188",
+          "dispositions": {
+            "forge_default": 209,
+            "material_unavailable": 58,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 20,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=iceandfire",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-iceandfire"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200055.log",
+        "pass": true,
+        "profile": "iceandfire",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-iceandfire/logs",
+        "seconds": 63.1,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/iceandfire-1793491255.txt"
+      }
+    },
+    "ingots": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "bronzeaddition_epicknights": "1.0.61.20.1",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "bronzeaddition_epicknights": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "bronzeaddition_epicknights": {
+          "catalog_sha256": "63bbef453c1b89592eda8f3b5393bd90df536dcb30c19a7fd247ecc46b5c53ca",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 13,
+            "non_equipment": 8
+          },
+          "items": 22
+        },
+        "magistuarmory": {
+          "catalog_sha256": "874b0c87eb24bc36bf9d1768b63201c794d1d9785a7c9cea8d486e8406bc15c4",
+          "dispositions": {
+            "forge_default": 263,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 24,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=ingots",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-ingots"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200007.log",
+        "pass": true,
+        "profile": "ingots",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-ingots/logs",
+        "seconds": 48.0,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/ingots-1793491207.txt"
+      }
+    },
+    "japanese": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "epic_knights__japanese_armory": "1.6.2",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights__japanese_armory": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "epic_knights__japanese_armory": {
+          "catalog_sha256": "ff99368c36ee470982b004a1c9477a59d4eebbe846b2bf6ab140711f15995970",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 14,
+            "native_assembly": 1,
+            "native_nonmetal_recipe": 9,
+            "native_transformation": 9,
+            "non_equipment": 3
+          },
+          "items": 37
+        },
+        "magistuarmory": {
+          "catalog_sha256": "3fcbc1c37b9f8f3f1bc9d634a67b55732f3c53884a5f56d0327e44c918380456",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=japanese",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-japanese"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195813.log",
+        "pass": true,
+        "profile": "japanese",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-japanese/logs",
+        "seconds": 56.2,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/japanese-1793491093.txt"
+      }
+    },
+    "materials": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "bronzeaddition_epicknights": "1.0.61.20.1",
+        "cloth_config": "11.1.136",
+        "epic_knights_ores_and_alloys": "1.1",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "bronzeaddition_epicknights": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights_ores_and_alloys": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "bronzeaddition_epicknights": {
+          "catalog_sha256": "ff3efe6cd242b8c57a928a4aad36f5d5dd90af42389d32c0a55fe12724685362",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 13,
+            "non_equipment": 8
+          },
+          "items": 22
+        },
+        "epic_knights_ores_and_alloys": {
+          "catalog_sha256": "ef7fbe1838f9dfc49d5b1a1e7f76fb55d20c3c2230bbcfdef497c57e2a98475a",
+          "dispositions": {
+            "forge_default": 25,
+            "non_equipment": 20
+          },
+          "items": 45
+        },
+        "magistuarmory": {
+          "catalog_sha256": "5943b35ec8add1da24c43186de3ea9f5663eef965eaafa905d0de884f4b7015c",
+          "dispositions": {
+            "forge_default": 263,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 24,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=oresalloys,ingots",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-materials"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201301.log",
+        "pass": true,
+        "profile": "materials",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials/logs",
+        "seconds": 46.0,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/materials-1793491981.txt"
+      }
+    },
+    "materials-provider": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "bronzeaddition_epicknights": "1.0.61.20.1",
+        "citadel": "2.6.3",
+        "cloth_config": "11.1.136",
+        "epic_knights_ice_and_fire": "1.0",
+        "epic_knights_ores_and_alloys": "1.1",
+        "forge": "47.4.23",
+        "iceandfire": "2.1.13-1.20.1",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "bronzeaddition_epicknights": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+        "citadel": "56c7ab87348a5292583aac787b6cf11b5193e77f02af1d17ea75a96f8640b3ce",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights_ice_and_fire": "2c1c89c8c4d7bb077c5f235e763471e0b4204ffd59aafb950c33e37c90c87c80",
+        "epic_knights_ores_and_alloys": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7",
+        "iceandfire": "2b80245fc9b7d6fdc61d71f9892f4c6114eb7f303f65634845aaab25f84d1e82",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "bronzeaddition_epicknights": {
+          "catalog_sha256": "d82ed26f0c93925d38220a80b742647fbe2b0e7b1dba12a48a4f3b7a83828918",
+          "dispositions": {
+            "disabled_by_upstream": 1,
+            "forge_default": 13,
+            "non_equipment": 8
+          },
+          "items": 22
+        },
+        "epic_knights_ice_and_fire": {
+          "catalog_sha256": "5ca8b59963f1928bbe9b43011e1775fe583e013e58295b7bf5af2e967a3c3fd3",
+          "dispositions": {
+            "forge_default": 54,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 106,
+            "non_equipment": 1
+          },
+          "items": 221
+        },
+        "epic_knights_ores_and_alloys": {
+          "catalog_sha256": "380a690ab1e25ef1ddddd608f235cc336589fd29da7330813a5dd8721272d89b",
+          "dispositions": {
+            "forge_default": 25,
+            "non_equipment": 20
+          },
+          "items": 45
+        },
+        "magistuarmory": {
+          "catalog_sha256": "3c1ad248465456d90cf3989e120217e8f7949fad1617ec47923860a597fd6e07",
+          "dispositions": {
+            "forge_default": 263,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 24,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=oresalloys,ingots,iceandfire",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-materials-provider"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201347.log",
+        "pass": true,
+        "profile": "materials-provider",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-materials-provider/logs",
+        "seconds": 55.0,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/materials-provider-1793492027.txt"
+      }
+    },
+    "oresalloys": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "epic_knights_ores_and_alloys": "1.1",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights_ores_and_alloys": "8f493e0f82a6476b97803bed49f518d0486ae4ef367b2f24012e78bcd4160ae7",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "epic_knights_ores_and_alloys": {
+          "catalog_sha256": "e3dd23fb0a42fbc04b6cb1fa2d7b00160a0e8bb5f2fcfbae35d0a25d160c0950",
+          "dispositions": {
+            "forge_default": 25,
+            "non_equipment": 20
+          },
+          "items": 45
+        },
+        "magistuarmory": {
+          "catalog_sha256": "8b4272a2f590d603fdd8adaf07574f25b7e68155dcd70f757e4c1290105c6cb0",
+          "dispositions": {
+            "forge_default": 263,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 24,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=oresalloys",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-oresalloys"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195910.log",
+        "pass": true,
+        "profile": "oresalloys",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-oresalloys/logs",
+        "seconds": 57.0,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/oresalloys-1793491150.txt"
+      }
+    },
+    "overgeared": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "mixinextras": "0.3.5",
+        "overgeared": "1.20.1-1.6.37",
+        "overgeared_epic_knights": "1.20.1-1.1.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "mixinextras": "edf39b18f803e6201abc7a7c583dd0c9aebb1c638f4e64170505b4837fac8967",
+        "overgeared": "8d773e58960422f224fc73e4234c4fc2ed470234158bafd7dd4f47f502440645",
+        "overgeared_epic_knights": "459f5fead39eae14270fd798524deeef23b1ab1bd37d302bd49cb08c8dffee23"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "64b00a8e46d03903d6fac6fb6f9d9d05585d392db9dbf38a96b675a997754ffe",
+          "dispositions": {
+            "external_workflow": 460
+          },
+          "items": 460
+        },
+        "overgeared_epic_knights": {
+          "catalog_sha256": "ff70a7d5e6a5b551b151ea29b5b092d2f82e1587392d4399d08d4abf1fe8dba9",
+          "dispositions": {
+            "external_workflow": 139
+          },
+          "items": 139
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=overgeared",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-overgeared"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-202250.log",
+        "pass": true,
+        "profile": "overgeared",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-overgeared/logs",
+        "seconds": 20.7,
+        "tests": 3,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/overgeared-1793492570.txt"
+      }
+    },
+    "plain": {
+      "loaded_versions": {
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a"
+      },
+      "runtime_classifications": {},
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-plain"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-194958.log",
+        "pass": true,
+        "profile": "plain",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-plain/logs",
+        "seconds": 51.8,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/plain-1793490598.txt"
+      }
+    },
+    "ranged": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "artillery_addon": "1.16.2",
+        "cloth_config": "11.1.136",
+        "fletchery": "0.7",
+        "forge": "47.4.23",
+        "geckolib": "4.8.4",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "medieval_boomsticks": "1.01",
+        "minecraft": "1.20.1",
+        "thirtyyearswar": "1.3"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "artillery_addon": "9cde7b826555b72c5f9ea90b5a89e941a68c16fab47d58850dffb559f7e61cb2",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "fletchery": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe",
+        "geckolib": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "medieval_boomsticks": "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab",
+        "thirtyyearswar": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7"
+      },
+      "runtime_classifications": {
+        "artillery_addon": {
+          "catalog_sha256": "657f21eab3b6fa5dae3d3a9a82fc43ddf7e36674437ae281072d9e8bffbdcded",
+          "dispositions": {
+            "forge_default": 3,
+            "material_unavailable": 1,
+            "native_assembly": 17,
+            "native_nonmetal_recipe": 1,
+            "non_equipment": 62,
+            "protected_loot": 5
+          },
+          "items": 89
+        },
+        "fletchery": {
+          "catalog_sha256": "7dcde637f22d9677fe969126ef6fb1bb1d5000efa0d3f3c325e58fe5eb51342c",
+          "dispositions": {
+            "disabled_by_upstream": 5,
+            "forge_default": 3,
+            "native_nonmetal_recipe": 25,
+            "non_equipment": 25
+          },
+          "items": 58
+        },
+        "magistuarmory": {
+          "catalog_sha256": "bbba062fc7dcc0fb2b1d750eacfec04c38b9da9f47cf2a2ecad08d3071841935",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "medieval_boomsticks": {
+          "catalog_sha256": "4f3ded413186154df1c1a680854784316383411aa85c627e38d2e9028fa96d06",
+          "dispositions": {
+            "disabled_by_upstream": 3,
+            "forge_default": 9,
+            "native_assembly": 2,
+            "native_nonmetal_recipe": 1,
+            "non_equipment": 26
+          },
+          "items": 41
+        },
+        "thirtyyearswar": {
+          "catalog_sha256": "a54fe26ccde4259c9cbfee4be458299350802a550bf57a24e977d8e56a747260",
+          "dispositions": {
+            "disabled_by_upstream": 2,
+            "forge_default": 26,
+            "native_nonmetal_recipe": 30,
+            "native_transformation": 22,
+            "non_equipment": 4
+          },
+          "items": 84
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=thirtyyearswar,fletchery,artillery,boomsticks-release",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-ranged"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201442.log",
+        "pass": true,
+        "profile": "ranged",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-ranged/logs",
+        "seconds": 47.1,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/ranged-1793492082.txt"
+      }
+    },
+    "rework": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "bettercombat": "1.9.0+1.20.1",
+        "cloth_config": "11.1.136",
+        "epic_knights_x_better_combat": "1.0.1-1.20.1+1.21.1",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "mixinextras": "0.2.0",
+        "playeranimator": "1.0.2-rc1+1.20"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "bettercombat": "49c69dccf2c641246b4e3deca81ebac21f0ee119e81fc713b838b8e33569eea1",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epic_knights_x_better_combat": "b433b596c8079638a3d144e76d4b2839253edaefcbe30cff74c1a97c1252fa0e",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "mixinextras": "3b1cdbd088cda421c8419ee5b32214d9bdee488819cfa0867d79ee9dfca6401f",
+        "playeranimator": "90d9965cb9efdbda29fdc5610be3914cf7008bf5c392ff34f7ab25f96a852691"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "735c7d35c90d5a4c990aa90e239118bb91c700d965fce6515378c4b871cfb356",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=rework",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-rework"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201111.log",
+        "pass": true,
+        "profile": "rework",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-rework/logs",
+        "seconds": 49.2,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/rework-1793491871.txt"
+      }
+    },
+    "sevenkingdoms": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "ekotsk": "1.20.1_1.5.0",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "ekotsk": "21d9d8c6571aaabd6c35ef277449f4c62fe1a8e1737980639150af43f0bfc187",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d"
+      },
+      "runtime_classifications": {
+        "ekotsk": {
+          "catalog_sha256": "51d810f03b1a73999e71998beb66a79daf6a23009aa3cd88b3df41d610116eb6",
+          "dispositions": {
+            "forge_default": 30,
+            "native_nonmetal_recipe": 5,
+            "native_transformation": 17,
+            "non_equipment": 81,
+            "protected_loot": 23
+          },
+          "items": 156
+        },
+        "magistuarmory": {
+          "catalog_sha256": "6e90cae9dbb7338f8fb0986b159a3a876b409d4c9c2e9b29aa854a433910f30c",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=sevenkingdoms",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-sevenkingdoms"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200933.log",
+        "pass": true,
+        "profile": "sevenkingdoms",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-sevenkingdoms/logs",
+        "seconds": 44.6,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/sevenkingdoms-1793491773.txt"
+      }
+    },
+    "slavic": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "slavicarmory": "2.1"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "slavicarmory": "f22f6f92475271f515b226f4496fffddacdd712a31f195413afa4b925a35c22d"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "4cd6ed0593ce4fa829783d9070a4f0b29e7d1983d5acac059ca38328bf721e44",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "slavicarmory": {
+          "catalog_sha256": "f4e037a81b9a0e9aa304acfed7a4339f73dfeb98419fc7c1f35e0a8f2df3093d",
+          "dispositions": {
+            "forge_default": 33,
+            "native_nonmetal_recipe": 7,
+            "native_transformation": 19,
+            "non_equipment": 2
+          },
+          "items": 61
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=slavic",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-slavic"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-195621.log",
+        "pass": true,
+        "profile": "slavic",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-slavic/logs",
+        "seconds": 55.5,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/slavic-1793490981.txt"
+      }
+    },
+    "terrafirma": {
+      "loaded_versions": {
+        "antiquelegacy": "1.13",
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "knightsofterrafirma": "3.1.2",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "patchouli": "1.20.1-85-FORGE",
+        "tfc": "3.2.28"
+      },
+      "original_jars": {
+        "antiquelegacy": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "knightsofterrafirma": "f85196cfba5e621c4c1b447507c7edbc92d9c76d9ac174e01539c4fd480e78b6",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "patchouli": "05f7b5d52f6b8f0fd7f8b4822fa07a192d1394d83a264309c9d221d6d4fd21c5",
+        "tfc": "daa54cd23c3fdcd0139491ad68a514a91970f075076207909d0ecdc2113e68a3"
+      },
+      "runtime_classifications": {
+        "antiquelegacy": {
+          "catalog_sha256": "07302514903f21ac06529f0b0d0dbdf9c78c71383d75b16ed7211d605407fdac",
+          "dispositions": {
+            "external_workflow": 139
+          },
+          "items": 139
+        },
+        "knightsofterrafirma": {
+          "catalog_sha256": "946dd68978c2765eca77e45a7c9a2b4fdccc42c842494c641cc64a3cfcd66043",
+          "dispositions": {
+            "external_workflow": 916
+          },
+          "items": 916
+        },
+        "magistuarmory": {
+          "catalog_sha256": "00899ba0ac52edd2b530ab2702b2a65266fe9c1c7cd8edffd2cc56e87451223b",
+          "dispositions": {
+            "external_workflow": 460
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=terrafirma",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-terrafirma"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201815.log",
+        "pass": true,
+        "profile": "terrafirma",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirma/logs",
+        "seconds": 31.9,
+        "tests": 3,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/terrafirma-1793492295.txt"
+      }
+    },
+    "terrafirmagreg": {
+      "loaded_versions": {
+        "antiquelegacy": "1.13",
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "configuration": "2.2.0",
+        "forge": "47.4.23",
+        "gtceu": "7.5.3",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "knightsofterrafirma": "3.1.2-gregified",
+        "ldlib": "1.0.40.b",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "patchouli": "1.20.1-85-FORGE",
+        "tfc": "3.2.28"
+      },
+      "original_jars": {
+        "antiquelegacy": "06bf57a754d93816382fd60a4b2030a84854518918a0553b3f7b38aae33f5def",
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "configuration": "359d0a93004cd94da7973aff7fd3b64eaa8603ee211acd856b75b1810f806d17",
+        "gtceu": "d6560d8b695828a763389d3f45e0210ef70c1892c7b1633ac458544905df1a0d",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "knightsofterrafirma": "0963674ebdd3dffc049db3aba800c90e1c359771585269374f3521df61330890",
+        "ldlib": "0fdf4cb65cda16b9c7a21b96c77d6365a56812ecbd180d75ec72f9b40a67dc67",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "patchouli": "05f7b5d52f6b8f0fd7f8b4822fa07a192d1394d83a264309c9d221d6d4fd21c5",
+        "tfc": "daa54cd23c3fdcd0139491ad68a514a91970f075076207909d0ecdc2113e68a3"
+      },
+      "runtime_classifications": {
+        "antiquelegacy": {
+          "catalog_sha256": "ad8c3e14ef9c2dbf5744eba8744141f006cf6d02bc47c80fa3085858b30df3ee",
+          "dispositions": {
+            "external_workflow": 139
+          },
+          "items": 139
+        },
+        "knightsofterrafirma": {
+          "catalog_sha256": "dd3c7f62ad70f087fde08c301e8e696d9cf14e55e56153baceeebcae95a7c4ec",
+          "dispositions": {
+            "external_workflow": 931
+          },
+          "items": 931
+        },
+        "magistuarmory": {
+          "catalog_sha256": "fc0f93d9658949cfcb864237e3e24071581fd8c26e926f1e6eceda4be5952d98",
+          "dispositions": {
+            "external_workflow": 460
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=terrafirmagreg",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-terrafirmagreg"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201846.log",
+        "pass": true,
+        "profile": "terrafirmagreg",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-terrafirmagreg/logs",
+        "seconds": 44.0,
+        "tests": 3,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/terrafirmagreg-1793492326.txt"
+      }
+    },
+    "thirtyyearswar": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "thirtyyearswar": "1.3"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "thirtyyearswar": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7"
+      },
+      "runtime_classifications": {
+        "magistuarmory": {
+          "catalog_sha256": "88b111f30af44795e3b1152720b2c56a6386e29501104d5ef9603353a5a1d3d3",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "thirtyyearswar": {
+          "catalog_sha256": "a6d5322a80c944e827cb35552ea55f006c23ac57437f7b511fcb7113e20f87cc",
+          "dispositions": {
+            "disabled_by_upstream": 2,
+            "forge_default": 26,
+            "native_nonmetal_recipe": 30,
+            "native_transformation": 22,
+            "non_equipment": 4
+          },
+          "items": 84
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=thirtyyearswar",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-thirtyyearswar"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-200158.log",
+        "pass": true,
+        "profile": "thirtyyearswar",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-thirtyyearswar/logs",
+        "seconds": 37.5,
+        "tests": 134,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/thirtyyearswar-1793491318.txt"
+      }
+    },
+    "visors": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "epicknights_open_helms": "1.3",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "minecraft": "1.20.1",
+        "quick_swap": "0.1.0"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epicknights_open_helms": "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "quick_swap": "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49"
+      },
+      "runtime_classifications": {
+        "epicknights_open_helms": {
+          "catalog_sha256": "688115cc58ca389a862f34500cb8bab951754c36b60dabe282aa5ad8db7e66d1",
+          "dispositions": {
+            "disabled_by_upstream": 4,
+            "forge_default": 1,
+            "native_transformation": 53,
+            "non_equipment": 4
+          },
+          "items": 62
+        },
+        "magistuarmory": {
+          "catalog_sha256": "98974ba5b8896610fdb54602c9e584dff4c242a774395940daf18b8b170d6fde",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=openhelms,swappable",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-visors"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201529.log",
+        "pass": true,
+        "profile": "visors",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-visors/logs",
+        "seconds": 36.0,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/visors-1793492129.txt"
+      }
+    },
+    "visors-addon": {
+      "loaded_versions": {
+        "architectury": "9.2.14",
+        "cloth_config": "11.1.136",
+        "epicknights_open_helms": "1.3",
+        "forge": "47.4.23",
+        "immersive_smithing": "1.3.0",
+        "jei": "15.20.0.135",
+        "magistuarmory": "10.15",
+        "magistuarmoryaddon": "2.6",
+        "minecraft": "1.20.1",
+        "quick_swap": "0.1.0"
+      },
+      "original_jars": {
+        "architectury": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+        "cloth_config": "1e895e85cf5b1e1905ef3178ec155c8badfe22a1577b92c09143a5aa1f4ce0f2",
+        "epicknights_open_helms": "52af6a987c7870ac252abf321a4955a40b50f64d2207fda42c76e11175bee6ca",
+        "jei": "753af01738210e5c9b72da61ed212f7e16caf04a247d4b87545fb9b9cdc04b2a",
+        "magistuarmory": "5923859b45f6f0f8236f09980f1ead9b48ae9824872a429153d928fd10d5835d",
+        "magistuarmoryaddon": "cbaf743ce72199d2007fc9d9199be28d2f805a81a837230cf0d6e8ce828cd193",
+        "quick_swap": "44bc365d8cf928e800aebdfa1c4d597c190da9024f083a56ce2c08bcf9d4bd49"
+      },
+      "runtime_classifications": {
+        "epicknights_open_helms": {
+          "catalog_sha256": "a68c0628cd1d81aa4f841e56d1b29625528675ee43d375192f0443cfd6b1f7c0",
+          "dispositions": {
+            "disabled_by_upstream": 4,
+            "forge_default": 1,
+            "native_transformation": 53,
+            "non_equipment": 4
+          },
+          "items": 62
+        },
+        "magistuarmory": {
+          "catalog_sha256": "f0ed6cb5c1673f4e5ec337855cdda6a6bdb17d963d37e2afaff25a16ba574eda",
+          "dispositions": {
+            "forge_default": 182,
+            "material_unavailable": 87,
+            "native_nonmetal_recipe": 96,
+            "native_transformation": 18,
+            "non_equipment": 60,
+            "protected_loot": 17
+          },
+          "items": 460
+        },
+        "magistuarmoryaddon": {
+          "catalog_sha256": "511b85162139edadbec38861057b72ee8be5d83b1f06bf0bf1a3e242ceb87cfc",
+          "dispositions": {
+            "disabled_by_upstream": 2,
+            "forge_default": 136,
+            "material_unavailable": 2,
+            "native_nonmetal_recipe": 60,
+            "native_transformation": 144,
+            "non_equipment": 72,
+            "protected_loot": 5
+          },
+          "items": 421
+        }
+      },
+      "verification": {
+        "command": [
+          "/home/otectus/Projects/.mcmod-tools/gradlew-quiet.sh",
+          "/home/otectus/Projects/ImmersiveSmithing",
+          "runGameTestServer",
+          "--offline",
+          "--init-script",
+          "/tmp/immersive-smithing-epic-knights-audit/offline-repository/offline.gradle",
+          "-PepicKnights=addon,openhelms,swappable",
+          "-PregistryDump=all",
+          "-PgameTestProfile=epic-final-visors-addon"
+        ],
+        "exit_code": 0,
+        "failures": [],
+        "log": "/tmp/gradle-ImmersiveSmithing-runGameTestServer-20261031-201605.log",
+        "pass": true,
+        "profile": "visors-addon",
+        "runtime_catalogs": "/home/otectus/Projects/ImmersiveSmithing/run-gametest/profiles/epic-final-visors-addon/logs",
+        "seconds": 45.9,
+        "tests": 135,
+        "wrapper_output": "/home/otectus/Projects/ImmersiveSmithing/build/compat-validation/epic-knights-1.3.0/visors-addon-1793492165.txt"
+      }
+    }
+  },
+  "schema": 1,
+  "unresolved_jar_provenance": [],
+  "version": "1.3.0"
+}

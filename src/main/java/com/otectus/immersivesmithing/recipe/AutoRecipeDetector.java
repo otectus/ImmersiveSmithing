@@ -112,7 +112,7 @@ public final class AutoRecipeDetector {
         }
 
         public boolean skipsRecipe(ResourceLocation recipeId) {
-            return recipeBlacklist.contains(recipeId.toString());
+            return recipeBlacklist.contains(recipeId.toString()) || SourceRecipePolicies.preserves(recipeId);
         }
 
         public boolean skipsItem(Item item) {
@@ -127,12 +127,14 @@ public final class AutoRecipeDetector {
         /** Why an item's namespace is skipped, for the report. */
         public String skipReason(Item item) {
             String namespace = BuiltInRegistries.ITEM.getKey(item).getNamespace();
+            if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(namespace)) return com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.reason();
             return Integrations.disabledNamespaces().contains(namespace) ? "integration " + namespace + " is disabled in the config"
                     : "mod blacklisted by config";
         }
 
         /** The configuration selector behind {@link #skipsRecipe}. */
         public String recipeSelector(ResourceLocation recipeId) {
+            if (SourceRecipePolicies.preserves(recipeId)) return "source policy " + recipeId;
             return "recipes.recipeBlacklist = " + recipeId;
         }
 

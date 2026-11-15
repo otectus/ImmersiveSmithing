@@ -46,5 +46,8 @@
     "item": "spartanweaponry:tin_longbow"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:longbow"
+  "anvil_pattern": "immersive_smithing:longbow",
+  "replaces": [
+    "spartanweaponry:tin_longbow"
+  ]
 }

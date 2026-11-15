@@ -26,5 +26,8 @@
     "item": "spartanweaponry:golden_rapier"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:rapier"
+  "anvil_pattern": "immersive_smithing:rapier",
+  "replaces": [
+    "spartanweaponry:golden_rapier"
+  ]
 }

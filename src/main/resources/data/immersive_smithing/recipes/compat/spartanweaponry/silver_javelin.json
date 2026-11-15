@@ -34,5 +34,8 @@
     "item": "spartanweaponry:silver_javelin"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:javelin"
+  "anvil_pattern": "immersive_smithing:javelin",
+  "replaces": [
+    "spartanweaponry:silver_javelin"
+  ]
 }

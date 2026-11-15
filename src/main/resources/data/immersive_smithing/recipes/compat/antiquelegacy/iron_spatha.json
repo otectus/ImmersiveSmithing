@@ -5,21 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:iron_spatha"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:iron",
-  "metal_units": 20,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:iron_spatha"
   },

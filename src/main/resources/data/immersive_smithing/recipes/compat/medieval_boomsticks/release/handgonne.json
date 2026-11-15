@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "medieval_boomsticks"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "medieval_boomsticks",
+      "versions": "[1.01]"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "medieval_boomsticks:handgonne"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "source_policy": "epic_knights",
+  "material": "minecraft:iron",
+  "result": {
+    "item": "medieval_boomsticks:handgonne"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:heavy_crossbow"
+}

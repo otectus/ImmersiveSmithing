@@ -8,8 +8,14 @@ import com.otectus.immersivesmithing.material.MaterialResolver;
 import com.otectus.immersivesmithing.minigame.SessionManager;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.registry.ModBlockEntities;
+import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.registry.ModTags;
+import com.otectus.immersivesmithing.work.ForgeJob;
+import com.otectus.immersivesmithing.work.ProcessState;
+import com.otectus.immersivesmithing.work.ThermalRules;
+import com.otectus.immersivesmithing.work.WorkLeases;
+import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,6 +33,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,12 +52,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * State of a Smith's Forge: the active material family, unmelted deposits (kept as the original stacks so
- * they can be taken back before melting), molten units, fuel or lava, melt progress, and the auxiliary
- * ingredients held in escrow during a forging session.
+ * State of a Smith's Forge: the active material family, unmelted deposits (kept as the original stacks so they can be
+ * taken back before melting), molten units, fuel or lava, melt progress, the bellows' air, the pinned plan, at most one
+ * committed {@link ForgeJob} (reserved metal, escrowed components and the billet on the tray) and the piece on the reheat
+ * rest. Conservation: {@code moltenUnits} always includes the job's reserved units until the billet is drawn.
  */
 public class SmithsForgeBlockEntity extends BlockEntity {
     public static final ItemStack LAVA_HEAT_SOURCE = new ItemStack(Items.LAVA_BUCKET);
+    private static final int SYNC_INTERVAL = 20;
 
     /** Metal put into the forge but not yet melted. */
     public record Deposit(ItemStack stack, int unitsEach) {
@@ -82,10 +91,32 @@ public class SmithsForgeBlockEntity extends BlockEntity {
     private int burnTicksTotal;
     private int lavaTicks;
     private boolean ignited;
-    private final List<ItemStack> escrow = new ArrayList<>();
-    private boolean refundEscrowOnTick;
+    /**
+     * Ticks a lit fire stays banked once nothing is being heated and its current fuel item has burned down: lit but burning
+     * nothing, so a piece put back on the reheat rest (or a new billet) lights the next fuel without a new spark.
+     */
+    private int bankedTicks;
+    private static final int BANKED_TICKS = 1200;
+    /** Escrow from a save made before jobs existed: refunded exactly once on the first tick. */
+    private final List<ItemStack> legacyEscrow = new ArrayList<>();
 
-    // Transient: sessions never survive a restart or chunk unload.
+    private long clock;
+    private int instanceId = new java.util.Random().nextInt();
+    private int air;
+    private long lastPump = -1000;
+    @Nullable
+    private ResourceLocation plan;
+    @Nullable
+    private ForgeJob job;
+    @Nullable
+    private CompoundTag jobRaw;
+    @Nullable
+    private WorkpieceData rest;
+    @Nullable
+    private CompoundTag restRaw;
+    private boolean fireOn;
+
+    // Transient: the pattern-book selection lock never survives a restart or chunk unload.
     @Nullable
     private UUID sessionOwner;
 
@@ -96,10 +127,10 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         super(ModBlockEntities.SMITHS_FORGE.get(), pos, state);
     }
 
-    /** The visible workpiece/pile can rise above the block; retain normal frustum culling. */
+    /** The book, drawing and supply bundle rise above the rim; retain normal frustum culling. */
     @Override
     public net.minecraft.world.phys.AABB getRenderBoundingBox() {
-        return new net.minecraft.world.phys.AABB(worldPosition).expandTowards(0, 0.4, 0);
+        return new net.minecraft.world.phys.AABB(worldPosition).expandTowards(0, 0.5, 0);
     }
 
     // ---------------------------------------------------------------- queries
@@ -127,8 +158,19 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return sum;
     }
 
+    /** Every molten unit in the reservoir, reserved ones included. */
     public int moltenUnits() {
         return moltenUnits;
+    }
+
+    /** Units a committed job holds; they stay in the reservoir until the billet is drawn. */
+    public int reservedUnits() {
+        return job != null ? Math.min(job.units, moltenUnits) : 0;
+    }
+
+    /** Molten units free for casting, a new job or the pattern book. */
+    public int availableUnits() {
+        return Math.max(0, moltenUnits - reservedUnits());
     }
 
     public int totalUnits() {
@@ -167,6 +209,11 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return burnTicks > 0 || (ignited && !fuel.isEmpty());
     }
 
+    /** Whether the fire is heating this tick (fuel the family accepts, or lava). */
+    public boolean fireOn() {
+        return fireOn;
+    }
+
     public float meltProgress() {
         int required = requiredMeltTicks();
         return required <= 0 ? 0F : Math.min(1F, meltTicks / (float) required);
@@ -183,6 +230,45 @@ public class SmithsForgeBlockEntity extends BlockEntity {
     public int requiredMeltTicks() {
         float multiplier = familyData().map(MaterialFamily::meltMultiplier).orElse(1.0F);
         return Math.max(20, Math.round(ServerConfig.get(ServerConfig.BASE_MELT_TIME_TICKS) * multiplier));
+    }
+
+    public long clock() {
+        return clock;
+    }
+
+    public int instanceId() {
+        return instanceId;
+    }
+
+    public int air() {
+        return air;
+    }
+
+    public long lastPump() {
+        return lastPump;
+    }
+
+    @Nullable
+    public ResourceLocation plan() {
+        return plan;
+    }
+
+    @Nullable
+    public ForgeJob job() {
+        return job;
+    }
+
+    public boolean hasUnreadableJob() {
+        return jobRaw != null;
+    }
+
+    @Nullable
+    public WorkpieceData rest() {
+        return rest;
+    }
+
+    public boolean restOccupied() {
+        return rest != null || restRaw != null;
     }
 
     // ---------------------------------------------------------------- metal
@@ -220,7 +306,7 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         if (deposits.isEmpty()) return ItemStack.EMPTY;
         Deposit d = deposits.remove(deposits.size() - 1);
         if (deposits.isEmpty()) meltTicks = 0;
-        if (isEmpty()) family = null;
+        if (isEmpty() && job == null) family = null;
         changed(true);
         return d.stack();
     }
@@ -229,14 +315,16 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return !deposits.isEmpty() && !ignited && !hasUsableLava();
     }
 
-    /** Melts a hot workpiece straight back into molten units (auxiliary ingredients are not recovered). */
+    /** Deliberate recycling: melts a workpiece straight back into molten units. Its progress is destroyed. */
     public Result acceptWorkpiece(WorkpieceData workpiece) {
         if (isLocked()) return Result.LOCKED;
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(workpiece.target())) return Result.UNKNOWN_FAMILY;
         Optional<MaterialFamily> wpFamily = SmithingData.current().materials().family(workpiece.family());
         if (wpFamily.isEmpty()) return Result.UNKNOWN_FAMILY;
         if (family != null && !family.equals(workpiece.family())) return Result.WRONG_FAMILY;
-        if (totalUnits() + workpiece.metalUnits() > capacity()) return Result.FULL;
-        moltenUnits += workpiece.metalUnits();
+        int recovery = workpiece.recoverableNow();
+        if ((long) totalUnits() + recovery > capacity()) return Result.FULL;
+        moltenUnits += recovery;
         family = wpFamily.get().id();
         familyTint = wpFamily.get().tint();
         changed(true);
@@ -297,9 +385,10 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return out;
     }
 
+    /** Lights the fire: there must be something to heat (metal to melt, a billet, or a piece on the rest). */
     public Result ignite() {
         if (isLocked()) return Result.LOCKED;
-        if (deposits.isEmpty()) return Result.NOTHING_TO_MELT;
+        if (!wantsHeat()) return Result.NOTHING_TO_MELT;
         if (lavaTicks > 0) return Result.LAVA_NEEDS_NO_IGNITION;
         if (fuel.isEmpty() && burnTicks <= 0) return Result.NO_FUEL;
         ItemStack source = !fuel.isEmpty() ? fuel : burningFuel;
@@ -318,6 +407,25 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return familyData().map(MaterialFamily::requiredFuelTag).orElse(null);
     }
 
+    /** Whether the current heat source satisfies a family's fuel rule (null: any). */
+    public boolean heatSourceAllows(@Nullable TagKey<Item> required) {
+        if (lavaTicks > 0) return fuelAllowed(required, LAVA_HEAT_SOURCE);
+        return fuelAllowed(required, burningFuel.isEmpty() ? fuel : burningFuel);
+    }
+
+    /**
+     * Whether the forge has a fire that will heat a piece of {@code pieceFamily} from the next tick: lava, or fuel that is
+     * burning or lit, accepted by that metal. ({@link #fireOn()} only says whether something was heated this tick.)
+     */
+    public boolean canHeat(@Nullable ResourceLocation pieceFamily) {
+        Optional<MaterialFamily> own = familyData();
+        boolean lightable = !fuel.isEmpty() && (ignited || own.map(f -> !f.requiresIgnition()).orElse(false));
+        boolean fire = lavaTicks > 0 || burnTicks > 0 || lightable;
+        TagKey<Item> required = pieceFamily == null ? null
+                : SmithingData.current().materials().family(pieceFamily).map(MaterialFamily::requiredFuelTag).orElse(null);
+        return fire && heatSourceAllows(required);
+    }
+
     private boolean hasUsableLava() {
         return lavaTicks > 0 && fuelAllowed(requiredFuelTag(), LAVA_HEAT_SOURCE);
     }
@@ -326,27 +434,40 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return required == null || (!source.isEmpty() && source.is(required));
     }
 
+    private boolean wantsHeat() {
+        return !deposits.isEmpty() || job != null || rest != null;
+    }
+
     // ---------------------------------------------------------------- ticking
 
-    public static void serverTick(net.minecraft.world.level.Level level, BlockPos pos, BlockState state, SmithsForgeBlockEntity be) {
+    public static void serverTick(Level level, BlockPos pos, BlockState state, SmithsForgeBlockEntity be) {
         be.tick();
+    }
+
+    public static void clientTick(Level level, BlockPos pos, BlockState state, SmithsForgeBlockEntity be) {
+        be.clock++;
+        boolean lit = state.hasProperty(SmithsForgeBlock.LIT) && state.getValue(SmithsForgeBlock.LIT);
+        be.simulateHeat(lit, false);
     }
 
     private void tick() {
         if (level == null) return;
-        if (refundEscrowOnTick) {
-            refundEscrowOnTick = false;
-            for (ItemStack stack : escrow) {
+        clock++;
+        if (!legacyEscrow.isEmpty()) {
+            for (ItemStack stack : legacyEscrow) {
                 Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, stack);
             }
-            escrow.clear();
+            legacyEscrow.clear();
             setChanged();
         }
         boolean sync = false;
-        if (!deposits.isEmpty()) {
+        boolean heating = false;
+        if (wantsHeat()) {
             HeatResult heat = consumeHeat();
             sync |= heat.changed;
-            if (heat.heating) {
+            heating = heat.heating;
+            if (heating) bankedTicks = BANKED_TICKS;
+            if (!deposits.isEmpty() && heating) {
                 meltTicks++;
                 if (meltTicks >= requiredMeltTicks()) {
                     completeMelt();
@@ -356,19 +477,66 @@ public class SmithsForgeBlockEntity extends BlockEntity {
                 }
             }
         } else if (burnTicks > 0) {
-            // Nothing left to melt: the current fuel item burns down and the fire goes out.
+            // Nothing left to heat: the current fuel item burns down, then the fire banks (below).
             burnTicks--;
             if (burnTicks == 0) {
                 burningFuel = ItemStack.EMPTY;
-                ignited = false;
                 sync = true;
             }
         } else if (ignited) {
-            ignited = false;
-            sync = true;
+            // A banked fire between heats: it burns no fuel and goes out after a minute, or at once without fuel.
+            if (bankedTicks > 0 && !fuel.isEmpty()) {
+                bankedTicks--;
+                if (bankedTicks % 20 == 0) setChanged();
+            } else {
+                ignited = false;
+                bankedTicks = 0;
+                sync = true;
+            }
         }
+        fireOn = heating;
+        boolean warmWork = simulateHeat(heating, true);
+        if (warmWork && clock % SYNC_INTERVAL == 0) sync = true;
         if (sync) changed(true);
+        else if (warmWork && clock % 100 == 0) setChanged();
         updateBlockState();
+    }
+
+    /**
+     * One tick of the thermal model for the billet and the rest piece; shared by the server and the client mirror. Returns
+     * whether anything is warm and changing.
+     */
+    private boolean simulateHeat(boolean lit, boolean server) {
+        int target = ThermalRules.fireTarget(lit, air);
+        boolean active = air > 0;
+        if (job != null) {
+            for (int z = 0; z < job.heat.length; z++) {
+                job.heat[z] = ThermalRules.heatStep(job.heat[z], ThermalRules.trayExposure(job.position, z), target, job.thermal);
+            }
+            if (server) {
+                job.scale = Math.min(1000, job.scale + ThermalRules.scaleStep(job.heat, job.thermal));
+                if (ServerConfig.get(ServerConfig.WORK_OVERHEAT_BURNS) && ThermalRules.burning(job.heat)) {
+                    if (++job.burnTicks >= 60) job.burnt = true;
+                }
+            }
+            active = true;
+        }
+        if (rest != null) {
+            ProcessState p = rest.process();
+            boolean restLit = lit && (!server || heatSourceAllows(SmithingData.current().materials().family(rest.family())
+                    .map(MaterialFamily::requiredFuelTag).orElse(null)));
+            int restTarget = restLit ? target : 0;
+            for (int z = 0; z < p.heat.length; z++) p.heat[z] = ThermalRules.heatStep(p.heat[z], ThermalRules.REST_EXPOSURE, restTarget, p.thermal);
+            if (server) {
+                p.scale = Math.min(1000, p.scale + ThermalRules.scaleStep(p.heat, p.thermal));
+                if (ServerConfig.get(ServerConfig.WORK_OVERHEAT_BURNS) && ThermalRules.burning(p.heat)) {
+                    if (++p.burnTicks >= 60) p.burnt = true;
+                }
+            }
+            active = true;
+        }
+        air = ThermalRules.airStep(air);
+        return active;
     }
 
     private record HeatResult(boolean heating, boolean changed) {}
@@ -425,42 +593,92 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         }
     }
 
-    // ---------------------------------------------------------------- sessions
+    // ---------------------------------------------------------------- bellows, plan and job
 
-    public void beginSession(UUID player, List<ItemStack> escrowed) {
-        sessionOwner = player;
-        escrow.clear();
-        escrow.addAll(escrowed);
-        setChanged();
+    /** One compression of the bellows. False while the previous stroke is still in progress (not extra air). */
+    public boolean pump() {
+        if (clock - lastPump < ThermalRules.PUMP_COOLDOWN_TICKS) return false;
+        lastPump = clock;
+        air = Math.min(ThermalRules.AIR_MAX, air + ThermalRules.AIR_PER_PUMP);
+        changed(true);
+        return true;
     }
 
-    public void lockForSelection(UUID player) {
-        sessionOwner = player;
+    public void setPlan(@Nullable ResourceLocation recipe) {
+        plan = recipe;
+        changed(true);
     }
 
-    /** Consumes the reserved metal and the escrowed auxiliary ingredients. */
-    public void completeSession(int units) {
-        moltenUnits = Math.max(0, moltenUnits - units);
-        escrow.clear();
-        sessionOwner = null;
+    /** Takes a fully validated job: the caller has already taken the escrow from the smith. */
+    public void beginJob(ForgeJob newJob) {
+        job = newJob;
+        changed(true);
+    }
+
+    /** Moves the billet along the tray. */
+    public void turnBillet(int position) {
+        if (job == null) return;
+        job.position = Math.floorMod(position, ThermalRules.TRAY_POSITIONS);
+        changed(true);
+    }
+
+    /** Cancels a job before its billet is drawn: the reservation lapses and the escrow is handed back exactly once. */
+    public List<ItemStack> cancelJob() {
+        if (job == null) return List.of();
+        List<ItemStack> refund = new ArrayList<>(job.escrow);
+        job = null;
         if (isEmpty()) family = null;
         changed(true);
         updateBlockState();
+        return refund;
     }
 
-    /** Copies of the escrowed components, for building the result before anything is consumed. */
-    public List<ItemStack> escrowView() {
-        List<ItemStack> out = new ArrayList<>(escrow.size());
-        for (ItemStack stack : escrow) out.add(stack.copy());
-        return out;
+    /**
+     * Draws the billet: the reserved units leave the reservoir and the escrow becomes the workpiece's (components to fit,
+     * assimilated bases), all in this one call. Null if there is no job or the reservoir no longer holds its units.
+     */
+    @Nullable
+    public WorkpieceData drawJob() {
+        if (job == null || moltenUnits < job.units) return null;
+        WorkpieceData piece = job.draw();
+        moltenUnits -= job.units;
+        job = null;
+        if (isEmpty()) family = null;
+        changed(true);
+        updateBlockState();
+        return piece;
     }
 
-    /** Hands the escrow back to the caller for refunding and clears it, so it can only be refunded once. */
-    public List<ItemStack> takeEscrow() {
-        List<ItemStack> out = new ArrayList<>(escrow);
-        escrow.clear();
-        setChanged();
-        return out;
+    public void touchJob(long gameTime) {
+        if (job != null) {
+            job.lastTouch = gameTime;
+            setChanged();
+        }
+    }
+
+    public void placeOnRest(WorkpieceData piece) {
+        ProcessState p = piece.process().copy();
+        p.heatTick = ProcessState.ITEM_HELD; // the forge simulates the rest piece tick by tick
+        rest = piece.withProcess(p);
+        changed(true);
+    }
+
+    @Nullable
+    public WorkpieceData takeFromRest() {
+        WorkpieceData out = rest;
+        if (out == null) return null;
+        rest = null;
+        changed(true);
+        ProcessState p = out.process().copy();
+        p.heatTick = ProcessState.ITEM_HELD;
+        p.revision++;
+        return out.withProcess(p);
+    }
+
+    // ---------------------------------------------------------------- selection lock (pattern book)
+
+    public void lockForSelection(UUID player) {
+        sessionOwner = player;
     }
 
     public void endSession() {
@@ -472,18 +690,55 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return sessionOwner;
     }
 
+    // ---------------------------------------------------------------- casting
+
+    /**
+     * Takes molten metal out to be cast into ingots or nuggets: only from a ready forge, never more than is free of a job's
+     * reservation. The family is cleared once the forge is empty. Returns false and changes nothing otherwise.
+     */
+    public boolean castUnits(int units) {
+        if (units <= 0 || !isReady() || units > availableUnits()) return false;
+        moltenUnits -= units;
+        if (isEmpty() && job == null) family = null;
+        changed(true);
+        updateBlockState();
+        return true;
+    }
+
+    /** Puts back units a cast could not deliver, with the family the cast took them from if that emptied the forge. */
+    public void refundCast(int units, ResourceLocation castFamily) {
+        if (units <= 0) return;
+        if (family == null) family = castFamily;
+        moltenUnits += units;
+        changed(true);
+        updateBlockState();
+    }
+
     // ---------------------------------------------------------------- removal
 
-    /** Drops what can be recovered: unmelted deposits, solid fuel and any escrow. Molten metal is lost. */
+    /**
+     * Drops what can be recovered: unmelted deposits, solid fuel, an undrawn job's escrow (refunded, the reservation lapses),
+     * the piece on the rest as a hot workpiece, and any legacy escrow. Molten metal is lost.
+     */
     public void dropContents() {
         if (level == null) return;
         List<ItemStack> drops = new ArrayList<>();
         deposits.forEach(d -> drops.add(d.stack()));
         if (!fuel.isEmpty()) drops.add(fuel);
-        drops.addAll(escrow);
+        if (job != null) drops.addAll(job.escrow);
+        drops.addAll(legacyEscrow);
+        if (rest != null || restRaw != null) {
+            ItemStack piece = new ItemStack(ModItems.HOT_WORKPIECE.get());
+            if (rest != null) WorkpieceCodec.setHeld(piece, rest);
+            else WorkpieceCodec.setRawHeld(piece, restRaw);
+            drops.add(piece);
+        }
         deposits.clear();
         fuel = ItemStack.EMPTY;
-        escrow.clear();
+        job = null;
+        legacyEscrow.clear();
+        rest = null;
+        restRaw = null;
         for (ItemStack stack : drops) {
             Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 0.5, worldPosition.getZ() + 0.5, stack);
         }
@@ -492,7 +747,10 @@ public class SmithsForgeBlockEntity extends BlockEntity {
     @Override
     public void onChunkUnloaded() {
         super.onChunkUnloaded();
-        if (level != null && !level.isClientSide) SessionManager.onStationUnloaded(level, worldPosition);
+        if (level != null && !level.isClientSide) {
+            SessionManager.onStationUnloaded(level, worldPosition);
+            WorkLeases.onStationGone(level, worldPosition);
+        }
     }
 
     // ---------------------------------------------------------------- persistence
@@ -524,14 +782,34 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         burnTicksTotal = tag.getInt("BurnTotal");
         lavaTicks = tag.getInt("Lava");
         ignited = tag.getBoolean("Ignited");
-        escrow.clear();
+        bankedTicks = Math.max(0, Math.min(BANKED_TICKS, tag.getInt("Banked")));
+        clock = Math.max(0, tag.getLong("Clock"));
+        if (tag.contains("Instance", Tag.TAG_INT)) instanceId = tag.getInt("Instance");
+        air = Math.max(0, Math.min(ThermalRules.AIR_MAX, tag.getInt("Air")));
+        lastPump = tag.contains("LastPump") ? tag.getLong("LastPump") : -1000;
+        plan = tag.contains("Plan", Tag.TAG_STRING) ? ResourceLocation.tryParse(tag.getString("Plan")) : null;
+        boolean full = !tag.getBoolean("Partial");
+        job = null;
+        jobRaw = null;
+        if (tag.contains("Job", Tag.TAG_COMPOUND)) {
+            job = ForgeJob.load(tag.getCompound("Job"), full);
+            if (job == null && full) jobRaw = tag.getCompound("Job").copy();
+        }
+        rest = null;
+        restRaw = null;
+        if (tag.contains("Rest", Tag.TAG_COMPOUND)) {
+            WorkpieceCodec.Read read = WorkpieceCodec.read(tag.getCompound("Rest"));
+            if (read.ok()) rest = read.data();
+            else restRaw = tag.getCompound("Rest").copy();
+        }
+        legacyEscrow.clear();
+        // Saves from before jobs: escrow without a job belonged to a minigame session that cannot survive a reload, so it is
+        // refunded at the forge exactly once, as it always was. It is never mistaken for a committed billet.
         ListTag esc = tag.getList("Escrow", Tag.TAG_COMPOUND);
         for (int i = 0; i < esc.size(); i++) {
             ItemStack stack = ItemStack.of(esc.getCompound(i));
-            if (!stack.isEmpty()) escrow.add(stack);
+            if (!stack.isEmpty()) legacyEscrow.add(stack);
         }
-        // A session can never survive a reload, so anything still in escrow belongs back in the world.
-        refundEscrowOnTick = !escrow.isEmpty();
     }
 
     private void writeState(CompoundTag tag, boolean full) {
@@ -553,11 +831,22 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         tag.putInt("BurnTotal", burnTicksTotal);
         tag.putInt("Lava", lavaTicks);
         tag.putBoolean("Ignited", ignited);
-        if (full) {
+        if (bankedTicks > 0) tag.putInt("Banked", bankedTicks);
+        tag.putLong("Clock", clock);
+        tag.putInt("Instance", instanceId);
+        tag.putInt("Air", air);
+        tag.putLong("LastPump", lastPump);
+        if (plan != null) tag.putString("Plan", plan.toString());
+        if (job != null) tag.put("Job", job.save(full));
+        else if (jobRaw != null && full) tag.put("Job", jobRaw);
+        if (rest != null) tag.put("Rest", WorkpieceCodec.save(rest));
+        else if (restRaw != null && full) tag.put("Rest", restRaw);
+        if (full && !legacyEscrow.isEmpty()) {
             ListTag esc = new ListTag();
-            for (ItemStack stack : escrow) esc.add(stack.save(new CompoundTag()));
+            for (ItemStack stack : legacyEscrow) esc.add(stack.save(new CompoundTag()));
             tag.put("Escrow", esc);
         }
+        if (!full) tag.putBoolean("Partial", true);
     }
 
     @Override
@@ -572,11 +861,23 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
+    /** Every update replaces the client copy, so a cancelled job or a taken piece never lingers on screen. */
+    @Override
+    public void onDataPacket(net.minecraft.network.Connection net, ClientboundBlockEntityDataPacket packet) {
+        CompoundTag tag = packet.getTag();
+        if (tag != null) load(tag);
+    }
+
     private void changed(boolean sync) {
         setChanged();
         if (sync && level != null && !level.isClientSide) {
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
         }
+    }
+
+    /** Forces a client update after an external change (a GameTest, a command). */
+    public void sync() {
+        changed(true);
     }
 
     private static int fail(Result[] error, Result result) {
@@ -611,7 +912,7 @@ public class SmithsForgeBlockEntity extends BlockEntity {
         fuelInput.invalidate();
     }
 
-    /** Insert-only handler. Automation can load metal or fuel but never extract or start a session. */
+    /** Insert-only handler. Automation can load metal or fuel but never extract, plan, commit or work a billet. */
     private final class InputHandler implements IItemHandler {
         private final boolean metal;
 

@@ -1,0 +1,2277 @@
+{
+  "mod": "epic_knights__japanese_armory",
+  "version": "1.6.2",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "1.6.2",
+  "items": [
+    {
+      "id": "epic_knights__japanese_armory:blindfold_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:blind",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:blindfold_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:dagger",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/dagger/from/epic_knights__japanese_armory/jsai_2",
+          "material": "minecraft:iron",
+          "units": 10,
+          "recoverable_units": 10,
+          "added_content_units": 10,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jsai_2"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:dagger",
+          "from": "epic_knights__japanese_armory:jsai_2"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jsai_2",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:dagger\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "10 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/dagger/from/epic_knights__japanese_armory/jsai_2",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jsai_2`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:fox_mask_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:fm",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:fox_mask_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:foxmask_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:fox_mask_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:glaive",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/glaive/from/epic_knights__japanese_armory/sasumata",
+          "material": "minecraft:iron",
+          "units": 31,
+          "recoverable_units": 31,
+          "added_content_units": 31,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:sasumata"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:glaive",
+          "from": "epic_knights__japanese_armory:sasumata"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:sasumata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:glaive\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "31 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/glaive/from/epic_knights__japanese_armory/sasumata",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:sasumata`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:hannya_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:hannyamask",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:coal"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "minecraft:coal"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:hannya_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:hyottoko_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:hyottokomask",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:clay_ball"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "minecraft:clay_ball"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:hyottoko_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_kama",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kama/from/epic_knights__japanese_armory/jkama",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jkama"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:scythe",
+          "from": "epic_knights__japanese_armory:jkama"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kama/from/epic_knights__japanese_armory/kama",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:kama"
+          ],
+          "components": [
+            "1x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:scythe",
+          "from": "epic_knights__japanese_armory:kama"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jkama",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_kama\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:kama",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_kama\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kama/from/epic_knights__japanese_armory/jkama, immersive_smithing:compat/epic_knights__japanese_armory/iron_kama/from/epic_knights__japanese_armory/kama",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jkama`, `epic_knights__japanese_armory:kama`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_katana/from/epic_knights__japanese_armory/jkatana",
+          "material": "minecraft:iron",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jkatana"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "epic_knights__japanese_armory:jkatana"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_katana/from/epic_knights__japanese_armory/katana",
+          "material": "minecraft:iron",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:katana"
+          ],
+          "components": [
+            "1x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "epic_knights__japanese_armory:katana"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jkatana",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_katana\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:katana",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "magistuarmory:hilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_katana\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_katana/from/epic_knights__japanese_armory/jkatana, immersive_smithing:compat/epic_knights__japanese_armory/iron_katana/from/epic_knights__japanese_armory/katana",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jkatana`, `epic_knights__japanese_armory:katana`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_kunai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kunai/from/epic_knights__japanese_armory/jkunai",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jkunai"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:dagger",
+          "from": "epic_knights__japanese_armory:jkunai"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kunai/from/epic_knights__japanese_armory/kunai",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:kunai"
+          ],
+          "components": [
+            "1x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:dagger",
+          "from": "epic_knights__japanese_armory:kunai"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jkunai",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_kunai\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:kunai",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_kunai\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_kunai/from/epic_knights__japanese_armory/jkunai, immersive_smithing:compat/epic_knights__japanese_armory/iron_kunai/from/epic_knights__japanese_armory/kunai",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jkunai`, `epic_knights__japanese_armory:kunai`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_naginata",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_naginata/from/epic_knights__japanese_armory/jnaginata",
+          "material": "minecraft:iron",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jnaginata"
+          ],
+          "components": [
+            "2x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:glaive",
+          "from": "epic_knights__japanese_armory:jnaginata"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_naginata/from/epic_knights__japanese_armory/naginata",
+          "material": "minecraft:iron",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:naginata"
+          ],
+          "components": [
+            "2x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:glaive",
+          "from": "epic_knights__japanese_armory:naginata"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jnaginata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_naginata\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:naginata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "magistuarmory:hilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_naginata\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_naginata/from/epic_knights__japanese_armory/jnaginata, immersive_smithing:compat/epic_knights__japanese_armory/iron_naginata/from/epic_knights__japanese_armory/naginata",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jnaginata`, `epic_knights__japanese_armory:naginata`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_sai",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_sai/from/epic_knights__japanese_armory/jsai",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jsai"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:parrying_dagger",
+          "from": "epic_knights__japanese_armory:jsai"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_sai/from/epic_knights__japanese_armory/sai",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:sai"
+          ],
+          "components": [
+            "1x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:parrying_dagger",
+          "from": "epic_knights__japanese_armory:sai"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jsai",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_sai\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:sai",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:hilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_sai\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_sai/from/epic_knights__japanese_armory/jsai, immersive_smithing:compat/epic_knights__japanese_armory/iron_sai/from/epic_knights__japanese_armory/sai",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jsai`, `epic_knights__japanese_armory:sai`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_shuriken",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_tetsubo",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_tetsubo/from/epic_knights__japanese_armory/tetsubo",
+          "material": "minecraft:iron",
+          "units": 4,
+          "recoverable_units": 4,
+          "added_content_units": 4,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:tetsubo"
+          ],
+          "components": [
+            "1x minecraft:stick",
+            "2x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:club",
+          "from": "epic_knights__japanese_armory:tetsubo"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:tetsubo",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_tetsubo\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "4 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_tetsubo/from/epic_knights__japanese_armory/tetsubo",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:tetsubo`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_wakizashi",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_wakizashi/from/epic_knights__japanese_armory/jwakizashi",
+          "material": "minecraft:iron",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jwakizashi"
+          ],
+          "components": [
+            "1x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "epic_knights__japanese_armory:jwakizashi"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_wakizashi/from/epic_knights__japanese_armory/wakizashi",
+          "material": "minecraft:iron",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:wakizashi"
+          ],
+          "components": [
+            "1x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:katana",
+          "from": "epic_knights__japanese_armory:wakizashi"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jwakizashi",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_wakizashi\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:wakizashi",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "magistuarmory:hilt"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_wakizashi\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_wakizashi/from/epic_knights__japanese_armory/jwakizashi, immersive_smithing:compat/epic_knights__japanese_armory/iron_wakizashi/from/epic_knights__japanese_armory/wakizashi",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jwakizashi`, `epic_knights__japanese_armory:wakizashi`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_yari",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_yari/from/epic_knights__japanese_armory/jyari",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:jyari"
+          ],
+          "components": [
+            "2x epic_knights__japanese_armory:japanhilt"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "epic_knights__japanese_armory:jyari"
+        },
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/iron_yari/from/epic_knights__japanese_armory/yari",
+          "material": "minecraft:iron",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "epic_knights__japanese_armory:yari"
+          ],
+          "components": [
+            "2x magistuarmory:hilt"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "epic_knights__japanese_armory:yari"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:jyari",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanhilt"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_yari\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:yari",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "magistuarmory:hilt"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "magistuarmory:hilt"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:iron_yari\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/iron_yari/from/epic_knights__japanese_armory/jyari, immersive_smithing:compat/epic_knights__japanese_armory/iron_yari/from/epic_knights__japanese_armory/yari",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:jyari`, `epic_knights__japanese_armory:yari`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:japanfabric",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:fabric",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:japanfabric\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:japanhilt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:hilt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanleather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:japanhilt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:japanleather",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:leather",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:japanleather\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:kimono_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:kb",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:kimonoboots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:kimono_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:kimonosash",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:ks",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:kimono_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:kc",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:kimonochest",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:kimono_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:onimask_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:oni",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:onimask_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_boots/from/epic_knights__japanese_armory/samuraiboots",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "epic_knights__japanese_armory:samuraiboots"
+          ],
+          "components": [
+            "1x minecraft:iron_boots (reworked)",
+            "2x minecraft:blaze_powder"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "epic_knights__japanese_armory:samuraiboots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:samuraiboots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            [],
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:iron_boots"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:samurai_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_boots/from/epic_knights__japanese_armory/samuraiboots",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:samuraiboots`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_chestplate/from/epic_knights__japanese_armory/samuraichest",
+          "material": "forge:steel",
+          "units": 45,
+          "recoverable_units": 45,
+          "added_content_units": 45,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "epic_knights__japanese_armory:samuraichest"
+          ],
+          "components": [
+            "1x minecraft:iron_chestplate (reworked)",
+            "3x minecraft:blaze_powder"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "epic_knights__japanese_armory:samuraichest"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:samuraichest",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:iron_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:samurai_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_chestplate/from/epic_knights__japanese_armory/samuraichest",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:samuraichest`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_helmet/from/epic_knights__japanese_armory/samuraihelmet",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "epic_knights__japanese_armory:samuraihelmet"
+          ],
+          "components": [
+            "1x minecraft:iron_helmet (reworked)",
+            "2x minecraft:blaze_powder"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "epic_knights__japanese_armory:samuraihelmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:samuraihelmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:samurai_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_helmet/from/epic_knights__japanese_armory/samuraihelmet",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:samuraihelmet`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_leggings/from/epic_knights__japanese_armory/samuraileggings",
+          "material": "forge:steel",
+          "units": 63,
+          "recoverable_units": 63,
+          "added_content_units": 63,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "epic_knights__japanese_armory:samuraileggings"
+          ],
+          "components": [
+            "1x minecraft:iron_leggings (reworked)",
+            "1x minecraft:blaze_powder"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "epic_knights__japanese_armory:samuraileggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:samuraileggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:iron_leggings"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:samurai_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/epic_knights__japanese_armory/samurai_leggings/from/epic_knights__japanese_armory/samuraileggings",
+      "acquisition": "Forged; replaces `epic_knights__japanese_armory:samuraileggings`."
+    },
+    {
+      "id": "epic_knights__japanese_armory:samuraionimask_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:onisamuraihelmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:samurai_helmet"
+            },
+            {
+              "item": "epic_knights__japanese_armory:onimask_helmet"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:samuraionimask_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "Native assembly consumes both the samurai helmet and oni mask; keep both prerequisites.",
+      "acquisition": "Native assembly consumes both the samurai helmet and oni mask; keep both prerequisites.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:shinobi_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:sb",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:iron_boots"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:shinobiboots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:iron_boots"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "36 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:shinobi_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:sc",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:iron_chestplate"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:shinobichest",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:iron_chestplate"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "72 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:shinobi_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:sh",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:shinobihelmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:shinobi_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:shinobileggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "minecraft:iron_leggings"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:sl",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "minecraft:iron_leggings"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:shinobi_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "63 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:tanjiro_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:tanjirochest",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:tanjiro_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:tc",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:tanjiro_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:tanjiro_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:tanjiroleg",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            {
+              "item": "magistuarmory:woolen_fabric"
+            },
+            [],
+            {
+              "item": "magistuarmory:woolen_fabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:tanjiro_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "epic_knights__japanese_armory:tl",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            },
+            [],
+            {
+              "item": "epic_knights__japanese_armory:japanfabric"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:tanjiro_leggings\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:tengu_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:tengumask",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:iron_helmet"
+            },
+            {
+              "item": "minecraft:feather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:tengu_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 minecraft:iron",
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal.",
+      "acquisition": "Native armor-base transformation adds cloth, color or mask components without added primary metal.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:wood_katana",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:wkatana",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:wood_katana\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:wood_naginata",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:wnaginata",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:debug_stick"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:wood_naginata\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Native wooden weapon requires a debug stick; preserve that restricted prerequisite.",
+      "acquisition": "Native wooden weapon requires a debug stick; preserve that restricted prerequisite.."
+    },
+    {
+      "id": "epic_knights__japanese_armory:wood_tonfa",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "epic_knights__japanese_armory:tonfa",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"epic_knights__japanese_armory:wood_tonfa\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.",
+      "acquisition": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction.."
+    }
+  ],
+  "dispositions": {
+    "disabled_by_upstream": 1,
+    "forge_default": 14,
+    "native_assembly": 1,
+    "native_nonmetal_recipe": 9,
+    "native_transformation": 9,
+    "non_equipment": 3
+  }
+}

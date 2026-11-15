@@ -40,6 +40,304 @@
     },
     {
       "items": [
+        "artillery_addon:arquebus_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:arquebus_barrel_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:s_trigger"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:arquebus_trigger"
+    },
+    {
+      "items": [
+        "artillery_addon:clay_hand_grenade"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:claynade"
+    },
+    {
+      "items": [
+        "artillery_addon:throwable_cobblestone"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:cobblerecipe"
+    },
+    {
+      "items": [
+        "artillery_addon:cooked_salmon_guts"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:cooked_salmon_guts_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:early_wallgun"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:earlywallgun_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:empty_cartridge"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:empty_cartridge_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:fire_bomb"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:fire_bomb_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:gold_cog"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gold_cog_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:artilery_guide_book"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:guide_book_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:gunsmithing_table"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gunsmith_table_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:gun_stock"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gunstock_0"
+    },
+    {
+      "items": [
+        "artillery_addon:hair_trigger"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hair_trigger_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:heavy_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:heavybarrel_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:oil_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hot_oil_pot_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:hurlbat"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hurlbatrecipe"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_ball"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_ball_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_bits"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_bits_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_pot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_pot_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:iron_hand_grenade"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:ironnade"
+    },
+    {
+      "items": [
+        "artillery_addon:javelin"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:javelin_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:large_iron_ball"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:largeiron_ball_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:lime_bomb"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:lime_bomb_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:loaded_cartridge"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:loaded_cartridge_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:matchlock_mechanism"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:marchlock_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:match"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:match_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:oil_pot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:oil_pot_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:bottle_of_oil"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:oil_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:pyrite"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:pyrite_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:quartz_dust"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:quartz_dust_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:lime_powder"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:quartz_powder_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:fork_rest"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:restfork_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:ribauldequin_head"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:rib_head"
+    },
+    {
+      "items": [
+        "artillery_addon:ribualdequin_item"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:ribauldequin_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:shatter_shot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:shattershot_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:small_iron_ball"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:smallironball_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:salmonguts"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:solmon_guts_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:francisca"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:throwing_francisca_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:throwing_cross"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:throwingcrossrecipe"
+    },
+    {
+      "items": [
+        "artillery_addon:wheel_lock"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:wheellock_recipe"
+    },
+    {
+      "items": [
+        "artillery_addon:clay_nade_burn",
+        "artillery_addon:double_barrel_gonne",
+        "artillery_addon:fire",
+        "artillery_addon:hot_oil_bucket",
+        "artillery_addon:iron_nade_burn",
+        "artillery_addon:ironbit",
+        "artillery_addon:lime_dust_pro_item",
+        "artillery_addon:windlass",
+        "artillery_addon:windlass_0",
+        "artillery_addon:windlass_1",
+        "artillery_addon:windlass_2",
+        "artillery_addon:windlass_3"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "artillery_addon:wheellock_designs"
       ],
       "disposition": "non_equipment",

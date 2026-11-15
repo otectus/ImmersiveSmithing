@@ -31,4 +31,12 @@ public final class PackTestJeiPlugin implements IModPlugin {
         IJeiRuntime current = runtime;
         if (current != null) current.getRecipesGui().showTypes(List.of(SmithingRecipeCategory.TYPE));
     }
+
+    public static void openRecipes(net.minecraft.world.item.ItemStack output) {
+        IJeiRuntime current = runtime;
+        if (current == null) return;
+        var recipes = current.getRecipeManager().createRecipeLookup(SmithingRecipeCategory.TYPE).get()
+                .filter(recipe -> recipe.result().is(output.getItem())).toList();
+        current.getRecipesGui().showRecipes(current.getRecipeManager().getRecipeCategory(SmithingRecipeCategory.TYPE), recipes, List.of());
+    }
 }

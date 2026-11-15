@@ -1,0 +1,40 @@
+# Immersive Smithing process coverage
+recipes: 33
+by resolution: {PATTERN=33}
+by profile: {immersive_smithing:armor_plate=16, immersive_smithing:chopping_head=3, immersive_smithing:digging_plate=6, immersive_smithing:generic=2, immersive_smithing:pick_head=3, immersive_smithing:straight_blade=3}
+rejected profile files: none
+
+recipe	output	material	units	process	resolved by	visual	visual shipped	auxiliary
+immersive_smithing:auto/minecraft/chainmail_chestplate	minecraft:chainmail_chestplate	immersive_smithing_test:emeraldine	18	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	1x minecraft:iron_chestplate -> assimilated base; 1x minecraft:stick -> socket lining
+immersive_smithing:auto/minecraft/chainmail_helmet	minecraft:chainmail_helmet	immersive_smithing_test:lapisine	45	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:auto/minecraft/chainmail_leggings	minecraft:chainmail_leggings	immersive_smithing_test:lapisine	63	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:auto/minecraft/turtle_helmet	minecraft:turtle_helmet	immersive_smithing_test:emeraldine	9	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	1x minecraft:chainmail_helmet -> assimilated base
+immersive_smithing:smithing/golden_axe	minecraft:golden_axe	minecraft:gold	27	immersive_smithing:chopping_head	pattern	immersive_smithing:chopping_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/golden_boots	minecraft:golden_boots	minecraft:gold	36	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/golden_chestplate	minecraft:golden_chestplate	minecraft:gold	72	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/golden_helmet	minecraft:golden_helmet	minecraft:gold	45	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/golden_hoe	minecraft:golden_hoe	minecraft:gold	18	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/golden_leggings	minecraft:golden_leggings	minecraft:gold	63	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/golden_pickaxe	minecraft:golden_pickaxe	minecraft:gold	27	immersive_smithing:pick_head	pattern	immersive_smithing:pick_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/golden_shovel	minecraft:golden_shovel	minecraft:gold	9	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/golden_sword	minecraft:golden_sword	minecraft:gold	18	immersive_smithing:straight_blade	pattern	immersive_smithing:straight_blade	yes	1x minecraft:stick -> socket grip
+immersive_smithing:smithing/iron_axe	minecraft:iron_axe	minecraft:iron	27	immersive_smithing:chopping_head	pattern	immersive_smithing:chopping_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/iron_boots	minecraft:iron_boots	minecraft:iron	36	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/iron_chestplate	minecraft:iron_chestplate	minecraft:iron	72	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/iron_helmet	minecraft:iron_helmet	minecraft:iron	45	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/iron_hoe	minecraft:iron_hoe	minecraft:iron	18	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/iron_leggings	minecraft:iron_leggings	minecraft:iron	63	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/iron_pickaxe	minecraft:iron_pickaxe	minecraft:iron	27	immersive_smithing:pick_head	pattern	immersive_smithing:pick_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/iron_shovel	minecraft:iron_shovel	minecraft:iron	9	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/iron_sword	minecraft:iron_sword	minecraft:iron	18	immersive_smithing:straight_blade	pattern	immersive_smithing:straight_blade	yes	1x minecraft:stick -> socket grip
+immersive_smithing:smithing/netherite_axe	minecraft:netherite_axe	minecraft:netherite	27	immersive_smithing:chopping_head	pattern	immersive_smithing:chopping_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/netherite_boots	minecraft:netherite_boots	minecraft:netherite	36	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/netherite_chestplate	minecraft:netherite_chestplate	minecraft:netherite	72	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/netherite_helmet	minecraft:netherite_helmet	minecraft:netherite	45	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/netherite_hoe	minecraft:netherite_hoe	minecraft:netherite	18	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/netherite_leggings	minecraft:netherite_leggings	minecraft:netherite	63	immersive_smithing:armor_plate	pattern	immersive_smithing:armor_plate	yes	
+immersive_smithing:smithing/netherite_pickaxe	minecraft:netherite_pickaxe	minecraft:netherite	27	immersive_smithing:pick_head	pattern	immersive_smithing:pick_head	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/netherite_shovel	minecraft:netherite_shovel	minecraft:netherite	9	immersive_smithing:digging_plate	pattern	immersive_smithing:digging_plate	yes	2x minecraft:stick -> socket haft
+immersive_smithing:smithing/netherite_sword	minecraft:netherite_sword	minecraft:netherite	18	immersive_smithing:straight_blade	pattern	immersive_smithing:straight_blade	yes	1x minecraft:stick -> socket grip
+immersive_smithing:smithing/shears	minecraft:shears	minecraft:iron	18	immersive_smithing:generic	pattern	immersive_smithing:generic	yes	
+immersive_smithing_test:follows_present	minecraft:carrot_on_a_stick	minecraft:iron	5	immersive_smithing:generic	pattern	immersive_smithing:generic	yes	1x minecraft:scute -> socket component

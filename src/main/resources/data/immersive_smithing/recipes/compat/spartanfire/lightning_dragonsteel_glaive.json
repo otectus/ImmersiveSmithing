@@ -33,5 +33,8 @@
     "item": "spartanfire:lightning_dragonsteel_glaive"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:glaive"
+  "anvil_pattern": "immersive_smithing:glaive",
+  "replaces": [
+    "spartanfire:lightning_dragonsteel_glaive"
+  ]
 }

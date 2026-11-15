@@ -5,27 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:eagle_standard"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:bronze",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/iron"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:poles"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:eagle_standard"
   },

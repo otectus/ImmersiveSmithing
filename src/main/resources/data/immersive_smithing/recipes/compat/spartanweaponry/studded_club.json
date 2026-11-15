@@ -18,5 +18,8 @@
     "item": "spartanweaponry:studded_club"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:club"
+  "anvil_pattern": "immersive_smithing:club",
+  "replaces": [
+    "spartanweaponry:studded_club"
+  ]
 }

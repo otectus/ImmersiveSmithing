@@ -32,5 +32,8 @@
     "item": "spartanweaponry:netherite_lance"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:lance"
+  "anvil_pattern": "immersive_smithing:lance",
+  "replaces": [
+    "spartanweaponry:netherite_lance_smithing"
+  ]
 }

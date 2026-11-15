@@ -89,7 +89,7 @@ public class MakersMarkScreen extends WorkshopScreen {
     private void sign() {
         List<String> lines = new ArrayList<>();
         for (EditBox box : lineBoxes) lines.add(box.getValue());
-        ModNetwork.CHANNEL.sendToServer(new SignWorkPacket(slot, titleBox.getValue(), lines));
+        ModNetwork.CHANNEL.sendToServer(new SignWorkPacket(slot, piece, titleBox.getValue(), lines));
         onClose();
     }
 

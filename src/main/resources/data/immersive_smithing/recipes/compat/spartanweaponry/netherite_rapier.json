@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_rapier"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:rapier"
+  "anvil_pattern": "immersive_smithing:rapier",
+  "replaces": [
+    "spartanweaponry:netherite_rapier_smithing"
+  ]
 }

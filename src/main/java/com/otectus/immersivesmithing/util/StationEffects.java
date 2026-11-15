@@ -17,6 +17,8 @@ public final class StationEffects {
     public static final int GRIND = 3;
     public static final int MISS = 4;
     public static final int IGNITE = 5;
+    /** The quench's end cue: the steam thins and the hiss settles. */
+    public static final int STEAM_CLEAR = 6;
 
     public static void send(ServerLevel level, BlockPos pos, int type, float strength) {
         ModNetwork.CHANNEL.send(PacketDistributor.TRACKING_CHUNK.with(() -> level.getChunkAt(pos)),

@@ -25,8 +25,18 @@ public final class ClientEvents {
 
     @SubscribeEvent
     public static void onTooltip(ItemTooltipEvent event) {
+        if (com.otectus.immersivesmithing.compat.epicknights.LoadedEquipment.hasPayload(event.getItemStack()))
+            event.getToolTip().add(Component.translatable("tooltip.immersive_smithing.unload_first").withStyle(ChatFormatting.GRAY));
         Optional<QualityData> data = QualityData.get(event.getItemStack());
         if (data.isEmpty()) return;
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(event.getItemStack())) {
+            event.getToolTip().add(Component.translatable("tooltip.immersive_smithing.external_workflow").withStyle(ChatFormatting.GRAY));
+            return;
+        }
+        var role = com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.role(event.getItemStack());
+        boolean neutral = com.otectus.immersivesmithing.quality.QualityHooks.isShield(event.getItemStack())
+                || role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.HORSE_ARMOR
+                || role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.DECORATION;
         QualityData q = data.get();
         List<Component> lines = new ArrayList<>();
         lines.add(Component.translatable("tooltip.immersive_smithing.quality", q.quality().displayName()).withStyle(ChatFormatting.GOLD));
@@ -39,8 +49,9 @@ public final class ClientEvents {
         if (Screen.hasShiftDown()) {
             lines.add(detail("tooltip.immersive_smithing.durability_quality", q.durabilityQuality(), q.forgeScore(), QualityCalculator.durabilityMultiplier(q)));
             lines.add(Component.translatable("tooltip.immersive_smithing.durability_effect").withStyle(ChatFormatting.DARK_GRAY));
-            lines.add(detail("tooltip.immersive_smithing.efficacy_quality", q.efficacyQuality(), q.anvilScore(), QualityCalculator.efficacyMultiplier(q)));
-            lines.add(Component.translatable("tooltip.immersive_smithing.efficacy_effect").withStyle(ChatFormatting.DARK_GRAY));
+            lines.add(detail("tooltip.immersive_smithing.efficacy_quality", q.efficacyQuality(), q.anvilScore(), neutral ? 1 : QualityCalculator.efficacyMultiplier(q)));
+            lines.add(Component.translatable(neutral ? "tooltip.immersive_smithing.native_defence"
+                    : "tooltip.immersive_smithing.efficacy_effect").withStyle(ChatFormatting.DARK_GRAY));
             if (q.faulty()) lines.add(Component.translatable("tooltip.immersive_smithing.faulty_next").withStyle(ChatFormatting.RED));
             if (mark.isEmpty()) lines.add(Component.translatable("tooltip.immersive_smithing.forged_by").withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
         } else {

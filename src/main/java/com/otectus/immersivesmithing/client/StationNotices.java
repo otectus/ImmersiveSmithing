@@ -70,10 +70,21 @@ public final class StationNotices {
         long lifetime = ClientConfig.get(ClientConfig.NOTICE_SECONDS) * 1000L;
         NOTICES.removeIf(n -> now - n.shownMs() > lifetime);
         if (NOTICES.isEmpty() || mc.options.hideGui) return;
+        if (mc.screen != null && !(mc.screen instanceof com.otectus.immersivesmithing.client.work.WorkFocusScreen)) return;
         Font font = mc.font;
-        int wrap = Math.max(80, Math.min(width - 16, 340));
+        // In a work view the status panel takes one side of the screen: centre the messages in the rest of it.
+        int areaLeft = 0, areaRight = width;
+        if (com.otectus.immersivesmithing.client.work.FocusController.active()) {
+            int[] free = com.otectus.immersivesmithing.client.work.WorkHud.freeColumn(width);
+            areaLeft = free[0];
+            areaRight = free[1];
+        }
+        int center = (areaLeft + areaRight) / 2;
+        int wrap = Math.max(80, Math.min(areaRight - areaLeft - 16, 340));
         // Above the action bar and whatever the HUD stacked above the hotbar (health, armour, air, mounts).
-        int bottom = height - Math.max(84, Math.max(gui.leftHeight, gui.rightHeight) + 24);
+        boolean focused = com.otectus.immersivesmithing.client.work.FocusController.active();
+        int bottom = height - Math.max(focused ? 58 : 70, Math.max(gui.leftHeight, gui.rightHeight) + 24);
+        if (focused) bottom = Math.min(bottom, com.otectus.immersivesmithing.client.work.WorkHud.noticeBottom(width, height));
         List<Notice> newestFirst = new ArrayList<>(NOTICES);
         java.util.Collections.reverse(newestFirst);
         // Older notices stop short of the crosshair; the newest is always drawn.
@@ -88,16 +99,19 @@ public final class StationNotices {
             float fade = Mth.clamp((lifetime - (now - notice.shownMs())) / (float) FADE_MS, 0F, 1F);
             int alpha = Math.max(8, Math.round(255 * fade));
             int top = y - lines.size() * 10;
-            int left = (width - lineWidth) / 2;
+            int left = center - lineWidth / 2;
             int background = mc.options.getBackgroundColor(0.5F);
             int backgroundAlpha = Math.round(((background >>> 24) & 0xFF) * fade);
             g.fill(left - 4, top - 2, left + lineWidth + 4, y, (backgroundAlpha << 24) | (background & 0xFFFFFF));
             int color = notice.failure() ? failureColor() : 0xFFFFFF;
             for (int i = 0; i < lines.size(); i++) {
                 FormattedCharSequence line = lines.get(i);
-                g.drawString(font, line, (width - font.width(line)) / 2, top + i * 10, (alpha << 24) | color, true);
+                g.drawString(font, line, center - font.width(line) / 2, top + i * 10, (alpha << 24) | color, true);
             }
             y = top - 4;
+            // The work view already explains the current action. Stale success messages from previous stations
+            // must not stack across the workpiece; retain them in the queue for the normal world HUD.
+            if (focused) break;
         }
     }
 

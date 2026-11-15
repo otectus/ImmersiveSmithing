@@ -1,0 +1,2283 @@
+{
+  "mod": "fletchery",
+  "version": "0.7",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "0.7",
+  "items": [
+    {
+      "id": "fletchery:acacia_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:arrow_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:arrow_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:feather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:arrow_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:birch_hunting_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_hunting_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:birch_hunting_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:birch_long_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_long_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            [],
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:birch_long_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:birch_recurve_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_recurve_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:birch_recurve_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:birch_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stripped_birch_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_birch_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_birch_log"
+            },
+            [],
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"fletchery:birch_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:birch_short_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_short_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:birch_short_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:birch_war_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:birch_war_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:birch_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:birch_war_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:blunt_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:blunt_arrow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:oak_button"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:blunt_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:blunt_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:blunt_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:oak_button"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:blunt_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:bolt_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:bolt_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:feather"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:bolt_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:bow_string",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:bow_string_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:stick"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:bow_string\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:cranequin_crossbow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/fletchery/cranequin_crossbow/from/fletchery/cranequin_crossbow_recipe",
+          "material": "minecraft:iron",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "fletchery:cranequin_crossbow_recipe"
+          ],
+          "components": [
+            "2x fletchery:bow_string",
+            "1x minecraft:lever",
+            "1x minecraft:tripwire_hook",
+            "1x #minecraft:logs"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "fletchery:cranequin_crossbow_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "fletchery:cranequin_crossbow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:tripwire_hook"
+            },
+            {
+              "item": "minecraft:lever"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:cranequin_crossbow\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/fletchery/cranequin_crossbow/from/fletchery/cranequin_crossbow_recipe",
+      "acquisition": "Forged; replaces `fletchery:cranequin_crossbow_recipe`."
+    },
+    {
+      "id": "fletchery:crude_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:crude_arrow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:crude_arrow_head"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:crude_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:crude_arrow_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:crude_arrow_head_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:crude_arrow_head\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:crude_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:crude_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:crude_arrow_head"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:crude_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:dark_oak_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:goatfoot_crossbow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/fletchery/goatfoot_crossbow/from/fletchery/goatfoot_crossbow_recipe",
+          "material": "minecraft:iron",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "fletchery:goatfoot_crossbow_recipe"
+          ],
+          "components": [
+            "2x fletchery:bow_string",
+            "1x minecraft:tripwire_hook",
+            "1x #minecraft:logs"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "fletchery:goatfoot_crossbow_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "fletchery:goatfoot_crossbow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "minecraft:tripwire_hook"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:goatfoot_crossbow\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/fletchery/goatfoot_crossbow/from/fletchery/goatfoot_crossbow_recipe",
+      "acquisition": "Forged; replaces `fletchery:goatfoot_crossbow_recipe`."
+    },
+    {
+      "id": "fletchery:goatfoot_lever",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:goat_foot_lever_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:goatfoot_lever\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native crossbow loading tool; preserve durability and reload mechanics.",
+      "acquisition": "Native crossbow loading tool; preserve durability and reload mechanics.."
+    },
+    {
+      "id": "fletchery:jungle_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:latchet_crossbow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/fletchery/latchet_crossbow/from/fletchery/latchet_crossbow_recipe",
+          "material": "minecraft:iron",
+          "units": 29,
+          "recoverable_units": 29,
+          "added_content_units": 29,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "fletchery:latchet_crossbow_recipe"
+          ],
+          "components": [
+            "1x minecraft:lever",
+            "1x minecraft:redstone",
+            "1x minecraft:tripwire_hook",
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "fletchery:latchet_crossbow_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "fletchery:latchet_crossbow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:tripwire_hook"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:lever"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:latchet_crossbow\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "29 minecraft:iron",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/fletchery/latchet_crossbow/from/fletchery/latchet_crossbow_recipe",
+      "acquisition": "Forged; replaces `fletchery:latchet_crossbow_recipe`."
+    },
+    {
+      "id": "fletchery:logo",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:long_bodkin_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:long_bodkin_arrow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:long_bodkin_arrow_head"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:long_bodkin_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:long_bodkin_arrow_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:long_bodkin_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:long_bodkin_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:long_bodkin_arrow_head"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:long_bodkin_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:mangrove_hunting_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_hunting_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:mangrove_hunting_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:mangrove_long_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_long_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            [],
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:mangrove_long_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:mangrove_recurve_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_recurve_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:mangrove_recurve_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:mangrove_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stripped_mangrove_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_mangrove_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_mangrove_log"
+            },
+            [],
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"fletchery:mangrove_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:mangrove_short_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_short_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:mangrove_short_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:mangrove_war_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:mangrove_war_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:mangrove_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:mangrove_war_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:oak_hunting_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_hunting_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:oak_hunting_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:oak_long_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_long_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            [],
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:oak_long_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:oak_recurve_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_recurve_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:oak_recurve_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:oak_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_oak_log"
+            },
+            [],
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"fletchery:oak_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:oak_short_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_short_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:oak_short_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:oak_war_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:oak_war_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:oak_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:oak_war_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:shaftwood_hunting_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:woodshaft_hunting_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:shaftwood_hunting_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:shaftwood_long_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:woodshaft_long_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            [],
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:shaftwood_long_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:shaftwood_recurve_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:woodshaft_recurve_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:shaftwood_recurve_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:shaftwood_short_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:woodshaft_short_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:shaftwood_short_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:shaftwood_war_bow",
+      "kind": "ranged",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:woodshaft_war_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:wood_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:shaftwood_war_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:short_bodkin_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:short_bodkin_arrow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:short_bodkin_arrow_head"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:short_bodkin_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:short_bodkin_arrow_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:long_bodkin_arrow_head_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "fletchery:swept_arrow_head"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:short_bodkin_arrow_head\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:short_bodkin_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:short_bodkin_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:short_bodkin_arrow_head"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:short_bodkin_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:spruce_hunting_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_hunting_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            [],
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:spruce_hunting_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:spruce_long_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_long_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            [],
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:spruce_long_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:spruce_recurve_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_recurve_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:spruce_recurve_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:spruce_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_shaftrecipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "minecraft:stripped_spruce_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_spruce_log"
+            },
+            [],
+            {
+              "item": "minecraft:stripped_spruce_log"
+            },
+            [],
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"fletchery:spruce_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:spruce_short_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_short_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:spruce_short_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:spruce_war_bow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:spruce_war_bow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            },
+            [],
+            {
+              "item": "fletchery:spruce_shaft"
+            },
+            {
+              "item": "fletchery:bow_string"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:spruce_war_bow\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged.",
+      "acquisition": "Wooden bow; native bow crafting and ammunition remain unchanged.."
+    },
+    {
+      "id": "fletchery:swallowtail_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:swallowtail_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:swallowtail_arrow_head"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swallowtail_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:swallowtail_arrow_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:swallowtail_arrow_head_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "fletchery:crude_arrow_head"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swallowtail_arrow_head\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:swallowtail_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:swallowtail_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:swallowtail_arrow_head"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swallowtail_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:swept_arrow_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:swept_arrow_head_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swept_arrow_head\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:swept_battle_arrow",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:battle_arrow_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:swept_arrow_head"
+            },
+            {
+              "item": "fletchery:arrow_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swept_battle_arrow\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:swept_bolt",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:battle_bolt_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "fletchery:swept_arrow_head"
+            },
+            {
+              "item": "fletchery:bolt_shaft"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"fletchery:swept_bolt\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    },
+    {
+      "id": "fletchery:wood_shaft",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "fletchery:wood_shaft_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "tag": "minecraft:logs"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"fletchery:wood_shaft\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.",
+      "acquisition": "Native component, material, ammunition, plant or block; preserve its acquisition and processing.."
+    }
+  ],
+  "dispositions": {
+    "disabled_by_upstream": 5,
+    "forge_default": 3,
+    "native_nonmetal_recipe": 25,
+    "non_equipment": 25
+  }
+}

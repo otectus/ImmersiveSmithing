@@ -36,6 +36,211 @@
     },
     {
       "items": [
+        "medieval_boomsticks:bulat_bar"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloybulat"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:dziwer_bar"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloydziwer"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:gunmetal_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloygunmetalbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:iron_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloyironbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:large_gunmetal_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloylargegunmetalbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:large_iron_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloylargeironbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:small_gunmetal_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloysmallgunmetalbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:small_iron_barrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:alloysmallironbarrel"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:aqua_fortis"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:aquafortis"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:canvas"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_leather"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_leather"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_oil_bucket"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_oil_bucket"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:finished_shaft"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:gun_trigger"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:guntrigger"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:heavy_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:heavy_bolt"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:large_throwing_rock"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:large_throwing_rock"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:smithing_furnace"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:makealloyingfurnace"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:nitre"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:nitredripstone, medieval_boomsticks:nitrefiltered"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:padded_canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:padded_canvas"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:quilted_canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:quilted_canvas"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:round_ball"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:round_ball"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:small_throwing_rock"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:small_throwing_rock"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_oil"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:smallfinishedoil"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:sulfur_ore_block"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:sulfur"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:sulfur"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:sulfur_ore_block"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:upgrade_kit"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: medieval_boomsticks:upgrade_kit"
+    },
+    {
+      "items": [
+        "medieval_boomsticks:arnica",
+        "medieval_boomsticks:comfrey",
+        "medieval_boomsticks:lemon_balm",
+        "medieval_boomsticks:limonite_ore",
+        "medieval_boomsticks:limonite_ore_deepslate",
+        "medieval_boomsticks:magnetite_ore",
+        "medieval_boomsticks:magnetite_ore_deepslate",
+        "medieval_boomsticks:pyrite_ore",
+        "medieval_boomsticks:pyrite_ore_deepslate",
+        "medieval_boomsticks:raw_limonite",
+        "medieval_boomsticks:raw_magnetite",
+        "medieval_boomsticks:raw_pyrite",
+        "medieval_boomsticks:sage",
+        "medieval_boomsticks:sulfur_ore",
+        "medieval_boomsticks:sulfur_ore_deepslate",
+        "medieval_boomsticks:yarrow",
+        "medieval_boomsticks:yellow_wood_sorrel"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "medieval_boomsticks:smithing_bellows",
         "medieval_boomsticks:smithing_hammer",
         "medieval_boomsticks:smithing_tongs"

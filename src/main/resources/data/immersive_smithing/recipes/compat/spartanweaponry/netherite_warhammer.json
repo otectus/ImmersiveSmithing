@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_warhammer"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:warhammer"
+  "anvil_pattern": "immersive_smithing:warhammer",
+  "replaces": [
+    "spartanweaponry:netherite_warhammer_smithing"
+  ]
 }

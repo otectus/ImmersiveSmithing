@@ -18,6 +18,7 @@ public final class QualityInheritance {
 
     /** Writes the one graded input's quality and mark onto {@code result}; returns whether it did. */
     public static boolean inherit(ItemStack result, Container inputs) {
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(result)) return false;
         RecyclingData.inherit(result, inputs);
         if (!ServerConfig.get(ServerConfig.INHERIT_QUALITY_ON_CRAFT)) return false;
         if (result.isEmpty() || QualityData.has(result) || !EquipmentClassifier.isCandidate(result)) return false;
@@ -29,8 +30,13 @@ public final class QualityInheritance {
             source = input;
         }
         if (source.isEmpty()) return false;
-        QualityData.get(source).ifPresent(q -> q.apply(result));
-        MakersMark.copy(source, result);
+        var decoration = com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.DECORATION;
+        if (com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.role(result) == decoration
+                && com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.role(source) != decoration) return false;
+        com.otectus.immersivesmithing.recipe.UpgradeStackData.transfer(source, result);
+        // Includes fractional durability carry, signing rights, title and inscription, not just the two scores.
+        result.getOrCreateTag().put(QualityData.ROOT, source.getTagElement(QualityData.ROOT).copy());
+        RecyclingData.inherit(result, inputs);
         return true;
     }
 

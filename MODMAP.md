@@ -26,36 +26,39 @@ com.otectus.immersivesmithing.advancement            1 file
 com.otectus.immersivesmithing.api                    12 files
 com.otectus.immersivesmithing.api.event              1 file
 com.otectus.immersivesmithing.block                  5 files
-com.otectus.immersivesmithing.blockentity            3 files
-com.otectus.immersivesmithing.client                 9 files
+com.otectus.immersivesmithing.blockentity            4 files
+com.otectus.immersivesmithing.client                 11 files
 com.otectus.immersivesmithing.client.compat.jei      2 files
 com.otectus.immersivesmithing.client.particle        1 file
-com.otectus.immersivesmithing.client.renderer        6 files
-com.otectus.immersivesmithing.client.screen          7 files
+com.otectus.immersivesmithing.client.renderer        7 files
+com.otectus.immersivesmithing.client.screen          6 files
+com.otectus.immersivesmithing.client.work            15 files
 com.otectus.immersivesmithing.command                1 file
 com.otectus.immersivesmithing.compat                 4 files
+com.otectus.immersivesmithing.compat.epicknights     10 files
 com.otectus.immersivesmithing.compat.jade            1 file
 com.otectus.immersivesmithing.compat.spartanweaponry 1 file
 com.otectus.immersivesmithing.compat.villager        1 file
-com.otectus.immersivesmithing.config                 2 files
+com.otectus.immersivesmithing.config                 3 files
 com.otectus.immersivesmithing.event                  2 files
 com.otectus.immersivesmithing.guide                  1 file
 com.otectus.immersivesmithing.item                   7 files
 com.otectus.immersivesmithing.loot                   1 file
-com.otectus.immersivesmithing.material               11 files
-com.otectus.immersivesmithing.minigame               14 files
-com.otectus.immersivesmithing.mixin                  2 files
-com.otectus.immersivesmithing.mixin.client           1 file
+com.otectus.immersivesmithing.material               12 files
+com.otectus.immersivesmithing.minigame               8 files
+com.otectus.immersivesmithing.mixin                  20 files
+com.otectus.immersivesmithing.mixin.client           2 files
 com.otectus.immersivesmithing.network                1 file
-com.otectus.immersivesmithing.network.packet         16 files
+com.otectus.immersivesmithing.network.packet         15 files
 com.otectus.immersivesmithing.quality                11 files
-com.otectus.immersivesmithing.recipe                 11 files
+com.otectus.immersivesmithing.recipe                 16 files
 com.otectus.immersivesmithing.registry               10 files
-com.otectus.immersivesmithing.util                   2 files
-com.otectus.immersivesmithing.workpiece              3 files
+com.otectus.immersivesmithing.util                   3 files
+com.otectus.immersivesmithing.work                   22 files
+com.otectus.immersivesmithing.workpiece              4 files
 ```
 
-## Registered content (34 entries)
+## Registered content (48 entries)
 
 ### Blocks (4)
 
@@ -77,12 +80,13 @@ com.otectus.immersivesmithing.workpiece              3 files
 | `smiths_grindstone` | `SMITHS_GRINDSTONE` | `Item` | src/main/java/com/otectus/immersivesmithing/registry/ModItems.java |
 | `smiths_trough` | `SMITHS_TROUGH` | `Item` | src/main/java/com/otectus/immersivesmithing/registry/ModItems.java |
 
-### Block entities (3)
+### Block entities (4)
 
 | id | field | type | declared in |
 |---|---|---|---|
 | `smiths_anvil` | `SMITHS_ANVIL` | `BlockEntityType<SmithsAnvilBlockEntity>` | src/main/java/com/otectus/immersivesmithing/registry/ModBlockEntities.java |
 | `smiths_forge` | `SMITHS_FORGE` | `BlockEntityType<SmithsForgeBlockEntity>` | src/main/java/com/otectus/immersivesmithing/registry/ModBlockEntities.java |
+| `smiths_grindstone` | `SMITHS_GRINDSTONE` | `BlockEntityType<SmithsGrindstoneBlockEntity>` | src/main/java/com/otectus/immersivesmithing/registry/ModBlockEntities.java |
 | `smiths_trough` | `SMITHS_TROUGH` | `BlockEntityType<SmithsTroughBlockEntity>` | src/main/java/com/otectus/immersivesmithing/registry/ModBlockEntities.java |
 
 ### Creative tabs (1)
@@ -91,25 +95,38 @@ com.otectus.immersivesmithing.workpiece              3 files
 |---|---|---|---|
 | `main` | `MAIN` | `CreativeModeTab` | src/main/java/com/otectus/immersivesmithing/registry/ModCreativeTabs.java |
 
-### Sounds (16)
+### Sounds (29)
 
 | id | field | type | declared in |
 |---|---|---|---|
 | `block.smiths_anvil.finish` | `ANVIL_FINISH` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_anvil.fit` | `FIT` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_anvil.flip` | `FLIP` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_anvil.miss` | `ANVIL_MISS` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_anvil.stamp` | `STAMP` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_anvil.strike` | `ANVIL_STRIKE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_anvil.strike_cold` | `ANVIL_STRIKE_COLD` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_anvil.strike_heavy` | `ANVIL_STRIKE_HEAVY` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_anvil.strike_perfect` | `ANVIL_STRIKE_PERFECT` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_forge.bellows` | `BELLOWS` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_forge.billet_turn` | `BILLET_TURN` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_forge.cast` | `FORGE_CAST` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.deposit` | `FORGE_DEPOSIT` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_forge.fire_loop` | `FORGE_FIRE_LOOP` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.fuel` | `FORGE_FUEL` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.ignite` | `FORGE_IGNITE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.ready` | `FORGE_READY` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.roar` | `FORGE_ROAR` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_forge.work` | `FORGE_WORK` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_grindstone.refine` | `GRINDSTONE_REFINE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_grindstone.scrape` | `GRIND_SCRAPE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_trough.fill` | `TROUGH_FILL` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `block.smiths_trough.quench` | `QUENCH` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_trough.quench_loop` | `QUENCH_LOOP` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `block.smiths_trough.quench_settle` | `QUENCH_SETTLE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `item.smithing_tongs.grab` | `TONGS_GRAB` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `ui.smithing.fail` | `ACTION_FAIL` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
+| `ui.smithing.ready` | `WORK_READY` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 | `ui.smithing.timing_cue` | `TIMING_CUE` | `SoundEvent` | src/main/java/com/otectus/immersivesmithing/registry/ModSounds.java |
 
 ### Particles (1)
@@ -145,7 +162,7 @@ _No datagen providers detected — assets and data JSON are hand-written._
 | kind | count |
 |---|---|
 | blockstates | 4 |
-| block models | 10 |
+| block models | 12 |
 | item models | 19 |
 | block textures | 15 |
 | item textures | 11 |
@@ -154,7 +171,7 @@ _No datagen providers detected — assets and data JSON are hand-written._
 | block tags | 0 |
 | item tags | 28 |
 | biome modifiers | 0 |
-| lang files | en_us.json |
+| lang files | en_us.json, es_es.json, pt_br.json, ru_ru.json, zh_cn.json |
 
 Also: `sounds.json` present.
 
@@ -165,7 +182,16 @@ Run `check_mod.py` for a full consistency check (missing models, lang keys, text
 
 ## Current focus
 
-1.2.0 has three parts:
+1.3.0 (unreleased, branch `update/1.3.0`) replaces the forge and anvil minigames with hands-on, in-world work: plan
+`docs/plans/2026-11-13-cinematic-overhaul-plan.md`, evidence and migration notes in `docs/cinematic-overhaul/`.
+Domain rules and server services are in `work/` (`ThermalRules`, `ShapingRules`, `QuenchRules`, `WorkQuality`,
+`ProcessState`, `ProcessProfiles`, `ForgeJob`, `WorkLeases`, `SmithingActionService`, `Forge/Anvil/Trough/GrindstoneActions`,
+`SmithingCompletionService`); the client is `client/work/` (`FocusController`, `WorkCamera` + `mixin/client/CameraMixin`,
+`WorkFocusScreen`, `WorkTargets`, `WorkHud`, `WorldViewInput`, `WorkpieceShape/Renderer`, `SceneTools`, `WorkEffects`).
+13 process profiles (data) and 13 workpiece profiles (assets) cover the 44 anvil patterns. The pack-test `SmithDriver`
+plays a whole piece through real client inputs (smoke test, store screenshots, showcase).
+
+1.2.0 had three parts:
 
 - **Epic Fight and Epic Knights.** Curated integrations with bundled data generated by `tools/generate_epic_compat.py`
   (policy in `tools/epic_compat_manifest.py`). Coverage per item: `compat/CoveragePolicies` and `WeaponCatalog`
@@ -189,15 +215,27 @@ Next is in-game playtesting of feel and balance, and the sibling-repo hooks (Run
 
 ## Roadmap
 
-- [ ] Playtest minigame difficulty (zone width, marker speed, target radius/lifetime) with real players.
+- [ ] Playtest the feel of hands-on work with real players: heating rates and bands (`ThermalRules`, material
+  `thermal`), operation `work` values per profile, blow recovery, quench durations, camera framings (`WorkCamera`).
+- [ ] Translate the new and changed 1.3.0 text (other languages fall back to English).
 
 ## Decisions
 
-- 1.1.0 progression hooks (`ISmithingRecipeGate`, `ISmithingCostModifier`, `ISmithingAssistSource`) are consulted at one
-  authoritative point each: `SessionManager.selectRecipe` (gate re-checked and units charged before escrow; the offer
-  list is only a filtered preview), `SmithsGrindstoneBlock.refine` (Jade shows the unmodified base cost) and the two
-  `allowedMs` assignments plus `OpenForgeScreenPacket`. `ForgeSession.metalUnits` carries the charged units into
-  `completeSession` and the workpiece, so `ItemSmithedEvent.getMetalUnits()` reports what was actually paid.
+- 1.3.0: progression hooks are consulted where the work is authorised: the recipe gate and cost modifier when a plan
+  is pinned (`SessionManager.selectRecipe`) and again at `ForgeActions.commit`, which charges the units and freezes them
+  into the `ForgeJob` (so `ItemSmithedEvent.getMetalUnits()` is what was paid); the grindstone cost at
+  `GrindstoneActions.finishPass`; `ISmithingAssistSource` (ANVIL only) divides blow recovery in `AnvilActions.recoveryTicks`.
+- 1.3.0 is a native Forge adapter, not Diegesis: Diegesis stations own library-persisted slots, it would be a hard runtime
+  dependency on a beta library, and it has no Maven artifact (plan, section 2).
+- 1.3.0 state: workpiece schema 3 (`Process` compound) with explicit v1/v2 migration and deterministic legacy ids; an
+  unreadable record is kept raw in its holder. Heat is integer 0..10000 with per-holder work clocks (no offline or
+  unloaded cooling); `StrictMath` keeps client prediction and server results identical.
+- 1.3.0 authority: protocol 6. `WorkActionPacket` carries intents only; `SmithingActionService` validates action, finite
+  numbers, loaded station and instance id, reach and sight from the real eyes, the `WorkLeases` lease (permission via
+  `mayInteract` + `ForgeHooks.onRightClickBlock`), sequence and token budget. Job ownership is a time window
+  (`work.jobPrioritySeconds`), never online state, so fake players and offline owners behave the same.
+- 1.3.0 input: in `WorkFocusScreen` the work keys are handled before the movement keys, because the default action key
+  (Space) is also the default jump key; a key repeat is not another press.
 - Smithing recipes are a real `RecipeType` so they live in `data/<ns>/recipes/` (the plan suggested `data/<ns>/immersive_smithing/recipes/`, which the recipe manager would not load). Automatic recipes are inserted into the recipe manager so clients and JEI receive them.
 - `SmithingData.rebuild` runs on `ServerStartedEvent` and on `OnDatapackSyncEvent` (player == null), because tags are not bound while reload listeners run and that event fires before the recipe packet.
 - Durability quality converts incoming damage (1/multiplier with a stored fractional carry) instead of changing max durability, so arbitrary modded items, Unbreaking and Mending keep working.
@@ -213,13 +251,13 @@ Next is in-game playtesting of feel and balance, and the sibling-repo hooks (Run
 - Suppression is per source recipe (`SmithingData.replacing` / `replacingUpgrade`). A native recipe is removed only when a forge recipe was generated from it (`sourceRecipe`), or makes the same item from the same metal (for upgrades, the addition's). Everything else goes to `report.retained` with a reason. A crafting recipe that adds no metal to a finished piece is a remake: it is kept, and `QualityInheritance` carries the quality.
 - Rebuilds are repeatable. `SmithingData.sourceRecipes` keeps the recipes as the last datapack load produced them (`sourceSnapshot`). It recognises its own previous output by identity (`lastWritten`), so a rebuild never analyses generated recipes or forgets one it removed.
 - The repair material decides the primary metal (`AutoRecipeDetector.primaryMaterial`, via `Item#isValidRepairItem`). Fittings of another metal become auxiliaries only while they total fewer units than the primary. A non-metal repair material is `NON_METAL_PRIMARY`, which is skipped.
-- Forge inputs are never ignored once in order: a lag-clamped input lands at the phase start (a miss) to keep client and server on the same phase.
 - Spartan Weaponry support is generated data (`tools/generate_spartan_compat.py`), not code: one explicit recipe per metal and type under `recipes/compat/spartanweaponry/`, conditions ordered `forge:mod_loaded` then Spartan's `type_disabled` (Forge stops at the first false condition, so Spartan's condition type is never parsed without Spartan). Toggle: server config `integrations.spartanWeaponry`.
 - A shield ingredient is dismissed (neither cost nor auxiliary) when the result is a shield. Other equipment ingredients follow the finished-piece rules in `generateChains`.
 - Smithing-table upgrades are redirected through the public `SmithingTransformRecipe#isBaseIngredient/isAdditionIngredient` (no access transformer); cost = the base item's shape in the addition's metal.
 - Projectile quality multiplies `AbstractArrow` base damage once, on first level join (persistent-data flag), from the thrown weapon or the firing bow/crossbow.
-- Tongs stab: first person via `IClientItemExtensions#applyForgeHandTransform`, third person via `HumanoidModelMixin` (`require = 0`: cosmetic, must never crash a pack). The shared parent model `models/item/tongs.json` holds the tongs along the arm in third person (hanging at rest), because a normal handheld item points forward and would tip upward as the arm thrusts. The forge minigame swing is started by the client (`ForgeMinigameScreen`), not the server.
-- Escrow stays in the forge block entity through chunk unload (the chunk is saved before `onChunkUnloaded`), and is dropped at the forge on the next load, so it is never refunded twice.
+- Tongs stab: first person via `IClientItemExtensions#applyForgeHandTransform`, third person via `HumanoidModelMixin` (`require = 0`: cosmetic, must never crash a pack). The shared parent model `models/item/tongs.json` holds the tongs along the arm in third person (hanging at rest), because a normal handheld item points forward and would tip upward as the arm thrusts. A hammer blow's arm swing is started by the client (`SceneTools.strike`) and broadcast by vanilla.
+- A committed job's escrow is saved with the job in the forge block entity and refunded once on cancel or break. Escrow
+  from a 1.2 minigame session (no job) is loaded as `legacyEscrow` and dropped at the forge on the next tick, once.
 - Upgrades into a metal follow that material's `upgrade_policy`: `shape` (the base's shape in the new metal, no base needed; netherite, dragonsteel) or `addition` (the addition plus the consumed base; ignitium, cursium, witherite, pyrium, terrasteel). A base without a metal shape always uses `addition`. Consumed bases are auxiliaries with `consumesEquipment`, matched by item only, so escrow and refund code is unchanged.
 - Finished pieces in crafting (`AutoRecipeDetector.generateChains`) are handled after the smithing-table pass, with the same `UpgradeContext`. There are three cases:
   - **Growth:** the same metal; the piece's own recipe plus the added metal, within one `equipmentKind`.

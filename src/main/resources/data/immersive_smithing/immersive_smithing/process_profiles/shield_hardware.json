@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:shield_hardware",
+  "patterns": [
+    "immersive_smithing:shield",
+    "immersive_smithing:cestus"
+  ],
+  "operations": [
+    {
+      "id": "spread_rim_a",
+      "region": "rim_left",
+      "kind": "spread",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.35,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dish_boss",
+      "region": "boss",
+      "kind": "dish",
+      "work": 4,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.35,
+        0.65,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "spread_rim_b",
+      "region": "rim_right",
+      "kind": "spread",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.65,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "planish",
+      "region": "surface",
+      "kind": "finish",
+      "work": 2,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.0,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "dish_boss"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 70,
+    "immersion_min": 0.6
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "backing"
+    },
+    {
+      "auxiliary_index": 1,
+      "socket": "strap"
+    }
+  ]
+}

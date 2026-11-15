@@ -34,5 +34,8 @@
     "item": "spartanweaponry:lead_dagger"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:dagger"
+  "anvil_pattern": "immersive_smithing:dagger",
+  "replaces": [
+    "spartanweaponry:lead_dagger"
+  ]
 }

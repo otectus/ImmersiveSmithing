@@ -6,5 +6,8 @@
     "item": "minecraft:golden_boots"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:boots"
+  "anvil_pattern": "immersive_smithing:boots",
+  "replaces": [
+    "minecraft:golden_boots"
+  ]
 }

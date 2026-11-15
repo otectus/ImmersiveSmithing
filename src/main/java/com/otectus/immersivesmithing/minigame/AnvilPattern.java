@@ -16,8 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A data-driven strike pattern for the Anvil minigame. Target coordinates are normalised (0..1, y down) over
- * the workpiece silhouette; targets are visited in order and cycle when {@code strikes} exceeds the point count.
+ * An anvil pattern file ({@code anvil_patterns/}). Since 1.3.0 a pattern is a shape family: its id chooses the process
+ * profile (through each profile's {@code patterns} list) and its {@code categories} still classify items. The strike
+ * fields (points, strikes, radius, timings) belonged to the replaced anvil minigame; they are read for compatibility and
+ * not used in play.
  */
 public record AnvilPattern(ResourceLocation id, List<float[]> points, int strikes, float radius, int lifetimeMs,
                            float idealFraction, int gapMs, float jitter, float timeMultiplier, List<TagKey<Item>> categories) {

@@ -57,6 +57,10 @@ public final class WeaponCatalog {
         ModList.get().getMods().stream().map(m -> m.getModId()).filter(id -> !List.of("minecraft", "forge", "immersive_smithing").contains(id))
                 .sorted().forEach(loaded::add);
         root.add("loaded_mods", loaded);
+        JsonObject versions = new JsonObject();
+        ModList.get().getMods().stream().sorted(Comparator.comparing(m -> m.getModId()))
+                .forEach(m -> versions.addProperty(m.getModId(), m.getVersion().toString()));
+        root.add("loaded_versions", versions);
         String tested = CoveragePolicies.testedVersions().get(namespace);
         if (tested != null) root.addProperty("tested_version", tested);
         JsonArray items = new JsonArray();
@@ -65,10 +69,18 @@ public final class WeaponCatalog {
             if (BuiltInRegistries.ITEM.getKey(item).getNamespace().equals(namespace)) registered.add(item);
         }
         registered.sort(Comparator.comparing(i -> BuiltInRegistries.ITEM.getKey(i).toString()));
+        java.util.Map<Item, List<Recipe<?>>> sources = new java.util.HashMap<>();
+        for (Recipe<?> recipe : data.sourceRecipes()) {
+            if (recipe instanceof SmithingRecipe) continue;
+            try {
+                ItemStack result = recipe.getResultItem(access);
+                if (!result.isEmpty()) sources.computeIfAbsent(result.getItem(), key -> new ArrayList<>()).add(recipe);
+            } catch (RuntimeException ignored) { /* Invalid native results are not an acquisition proof. */ }
+        }
+        sources.values().forEach(list -> list.sort(Comparator.comparing(r -> r.getId().toString())));
         for (Item item : registered) {
             ItemStack stack = new ItemStack(item);
-            if (!isEquipment(stack)) continue;
-            items.add(entry(stack, data, access));
+            items.add(entry(stack, data, access, sources.getOrDefault(item, List.of())));
         }
         root.add("items", items);
         java.util.Map<String, Integer> counts = new java.util.TreeMap<>();
@@ -87,7 +99,7 @@ public final class WeaponCatalog {
         return stack.isDamageableItem() || !stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE).isEmpty();
     }
 
-    private static JsonObject entry(ItemStack stack, SmithingData data, RegistryAccess access) {
+    private static JsonObject entry(ItemStack stack, SmithingData data, RegistryAccess access, List<Recipe<?>> sources) {
         Item item = stack.getItem();
         JsonObject out = new JsonObject();
         out.addProperty("id", BuiltInRegistries.ITEM.getKey(item).toString());
@@ -101,6 +113,12 @@ public final class WeaponCatalog {
             f.addProperty("recipe", r.getId().toString());
             f.addProperty("material", r.family().toString());
             f.addProperty("units", r.metalUnits());
+            f.addProperty("recoverable_units", r.recoverableUnits());
+            f.addProperty("added_content_units", r.addedContentUnits());
+            f.addProperty("operation", r.auxiliary().stream().anyMatch(AuxiliaryIngredient::consumesEquipment) ? "FORGE_UPGRADE" : "FORGE_BASE");
+            JsonArray replaced = new JsonArray();
+            r.replaces().forEach(id -> replaced.add(id.toString()));
+            f.add("replaces", replaced);
             JsonArray aux = new JsonArray();
             r.auxiliary().forEach(a -> aux.add(describe(a)));
             f.add("components", aux);
@@ -110,22 +128,16 @@ public final class WeaponCatalog {
         }
         out.add("forge", forge);
         JsonArray natives = new JsonArray();
-        List<Recipe<?>> sources = new ArrayList<>();
-        for (Recipe<?> r : data.sourceRecipes()) {
-            if (r instanceof SmithingRecipe) continue;
-            try {
-                ItemStack result = r.getResultItem(access);
-                if (!result.isEmpty() && result.getItem() == item) sources.add(r);
-            } catch (RuntimeException ignored) {
-                // a broken third-party recipe makes nothing
-            }
-        }
-        sources.sort(Comparator.comparing(r -> r.getId().toString()));
         for (Recipe<?> r : sources) {
             JsonObject n = new JsonObject();
             n.addProperty("recipe", r.getId().toString());
             ResourceLocation serializer = SourceRecipes.serializerId(r);
             n.addProperty("type", serializer != null ? serializer.toString() : "?");
+            JsonArray ingredients = new JsonArray();
+            r.getIngredients().forEach(ingredient -> ingredients.add(ingredient.toJson()));
+            n.add("ingredients", ingredients);
+            n.addProperty("result_count", r.getResultItem(access).getCount());
+            n.addProperty("result_nbt", r.getResultItem(access).save(new net.minecraft.nbt.CompoundTag()).toString());
             String state;
             if (data.suppressedRecipes().containsKey(r.getId())) state = "disabled: replaced by the forge recipe";
             else if (data.retainedRecipes().containsKey(r.getId())) state = "kept: " + data.retainedRecipes().get(r.getId());
@@ -158,6 +170,9 @@ public final class WeaponCatalog {
     private static String[] disposition(ItemStack stack, List<SmithingRecipe> recipes, List<Recipe<?>> sources, SmithingData data) {
         Item item = stack.getItem();
         String namespace = BuiltInRegistries.ITEM.getKey(item).getNamespace();
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(namespace)) {
+            return pair(CoverageDisposition.EXTERNAL_WORKFLOW, com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.reason());
+        }
         if (!Integrations.enabled(namespace)) {
             return pair(CoverageDisposition.INTEGRATION_DISABLED, "integration switched off in the server config; the mod is left as it ships");
         }
@@ -180,6 +195,10 @@ public final class WeaponCatalog {
         }
         Optional<CoveragePolicies.Policy> policy = CoveragePolicies.policy(item);
         if (policy.isPresent()) return pair(policy.get().disposition(), policy.get().reason());
+        if (!sources.isEmpty() && sources.stream().allMatch(r -> data.retainedRecipes().containsKey(r.getId()))) {
+            return pair(CoverageDisposition.NATIVE_TRANSFORMATION, sources.stream()
+                    .map(r -> r.getId() + ": " + data.retainedRecipes().get(r.getId())).collect(java.util.stream.Collectors.joining("; ")));
+        }
         if (Integrations.forNamespace(namespace).map(Integrations.Integration::curated).orElse(false)) {
             return pair(CoverageDisposition.MISSING_SUPPORT, "no forge recipe and no reviewed decision for this version of the mod");
         }
@@ -203,6 +222,11 @@ public final class WeaponCatalog {
     }
 
     private static String kind(ItemStack stack) {
+        var role = com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.role(stack);
+        if (role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.HORSE_ARMOR) return "horse_armor";
+        if (role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.DECORATION) return "decoration";
+        if (role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.RANGED) return "ranged";
+        if (!isEquipment(stack)) return "item";
         EquipmentSlot slot = EquipmentClassifier.armorSlot(stack);
         if (slot != null) return "armor";
         if (EquipmentClassifier.isShield(stack)) return "shield";

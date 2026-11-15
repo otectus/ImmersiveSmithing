@@ -30,6 +30,8 @@ public enum CoverageDisposition {
     INTEGRATION_DISABLED,
     /** A server-config selector keeps the forge away from it (recipe, mod or smithing blacklist, automatic exclusion). */
     EXCLUDED_BY_CONFIG,
+    /** A manufacturing bridge owns production and quality; Immersive Smithing adds no competing process. */
+    EXTERNAL_WORKFLOW,
     /** Eligible metal equipment without any route: a gap in Immersive Smithing's support. */
     MISSING_SUPPORT;
 

@@ -34,5 +34,8 @@
     "item": "spartanweaponry:constantan_halberd"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:halberd"
+  "anvil_pattern": "immersive_smithing:halberd",
+  "replaces": [
+    "spartanweaponry:constantan_halberd"
+  ]
 }

@@ -34,5 +34,8 @@
     "item": "spartanweaponry:electrum_saber"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:saber"
+  "anvil_pattern": "immersive_smithing:saber",
+  "replaces": [
+    "spartanweaponry:electrum_saber"
+  ]
 }

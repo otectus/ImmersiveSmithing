@@ -1,0 +1,3045 @@
+{
+  "mod": "slavicarmory",
+  "version": "2.1",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "2.1",
+  "items": [
+    {
+      "id": "slavicarmory:andreevski_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/andreevski_helmet/from/slavicarmory/andreevski_helmet",
+          "material": "forge:steel",
+          "units": 54,
+          "recoverable_units": 54,
+          "added_content_units": 54,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:andreevski_helmet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:andreevski_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:andreevski_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:andreevski_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/andreevski_helmet/from/slavicarmory/andreevski_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:andreevski_helmet`."
+    },
+    {
+      "id": "slavicarmory:bahteretz_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:bahteretz_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:bahteretz_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 3/2 units of forge:steel on 4 other parts",
+      "acquisition": "Not predominantly metal: 3/2 units of forge:steel on 4 other parts."
+    },
+    {
+      "id": "slavicarmory:bahteretz_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/bahteretz_chestplate/from/slavicarmory/bahteretz_chestplate",
+          "material": "forge:steel",
+          "units": 6,
+          "recoverable_units": 33,
+          "added_content_units": 6,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:bahteretz_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:rus_chainmail_chestplate (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:bahteretz_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:bahteretz_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "item": "slavicarmory:rus_chainmail_chestplate"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:bahteretz_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "33 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/bahteretz_chestplate/from/slavicarmory/bahteretz_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:bahteretz_chestplate`."
+    },
+    {
+      "id": "slavicarmory:belt_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:belt_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:red_dye"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:belt_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: slavicarmory:belt_decoration",
+      "acquisition": "Native non-equipment recipes/processes: slavicarmory:belt_decoration."
+    },
+    {
+      "id": "slavicarmory:bulgar_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/bulgar_helmet/from/slavicarmory/bulgar_helmet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:bulgar_helmet"
+          ],
+          "components": [
+            "1x #forge:nuggets/gold"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:bulgar_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:bulgar_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/gold"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:bulgar_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/bulgar_helmet/from/slavicarmory/bulgar_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:bulgar_helmet`."
+    },
+    {
+      "id": "slavicarmory:byzantine_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/byzantine_lamellar_chestplate/from/slavicarmory/byzantine_lamellar_chestplate",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 90,
+          "added_content_units": 36,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:byzantine_lamellar_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:lamellar_mail_chestplate (reworked)",
+            "1x minecraft:red_dye"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:byzantine_lamellar_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:byzantine_lamellar_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "item": "minecraft:red_dye"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "item": "slavicarmory:lamellar_mail_chestplate"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:byzantine_lamellar_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "90 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/byzantine_lamellar_chestplate/from/slavicarmory/byzantine_lamellar_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:byzantine_lamellar_chestplate`."
+    },
+    {
+      "id": "slavicarmory:byzantine_scale_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/byzantine_scale_chestplate/from/slavicarmory/byzantine_scale_chestplate",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:byzantine_scale_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:rus_gambeson (reworked)",
+            "18x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:byzantine_scale_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:byzantine_scale_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "slavicarmory:rus_gambeson"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:byzantine_scale_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/byzantine_scale_chestplate/from/slavicarmory/byzantine_scale_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:byzantine_scale_chestplate`."
+    },
+    {
+      "id": "slavicarmory:eastern_kettlehat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/eastern_kettlehat/from/slavicarmory/eastern_kettlehat",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:eastern_kettlehat"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:eastern_kettlehat"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:eastern_kettlehat",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:eastern_kettlehat\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/eastern_kettlehat/from/slavicarmory/eastern_kettlehat",
+      "acquisition": "Forged; replaces `slavicarmory:eastern_kettlehat`."
+    },
+    {
+      "id": "slavicarmory:erikhonka",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/erikhonka/from/slavicarmory/erikhonka",
+          "material": "forge:steel",
+          "units": 46,
+          "recoverable_units": 46,
+          "added_content_units": 46,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:erikhonka"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:erikhonka"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:erikhonka",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:erikhonka\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "46 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/erikhonka/from/slavicarmory/erikhonka",
+      "acquisition": "Forged; replaces `slavicarmory:erikhonka`."
+    },
+    {
+      "id": "slavicarmory:gilded_andreevski_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_andreevski_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_andreevski_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_bahteretz_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_bahteretz_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_bahteretz_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "33 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_byzantine_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_byzantine_lamellar_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_byzantine_lamellar_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "90 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_byzantine_scale_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_byzantine_scale_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_byzantine_scale_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_eastern_kettlehat",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_eastern_kettlehat_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_eastern_kettlehat\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_erikhonka",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_erikhonka_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_erikhonka\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "46 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_gnezdovo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_gnezdovo_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_gnezdovo_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_lamellar_mail_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_lamellar_mail_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_lamellar_mail_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_late_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_late_phrygian_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_late_phrygian_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "59 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_nikolskoe_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_nikolskoe_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_nikolskoe_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_raikovec_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_raikovec_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_raikovec_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_rus_heavy_lamellar_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_rus_heavy_lamellar_boots_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_rus_heavy_lamellar_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_rus_heavy_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_rus_heavy_lamellar_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_rus_heavy_lamellar_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_rus_scale_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_rus_scale_boots_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_rus_scale_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_rus_scale_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_rus_scale_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_rus_scale_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_shater_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_shater_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_shater_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_tagancha_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_tagancha_helmet_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_tagancha_helmet\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gilded_yushman_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:gilded_yushman_chestplate_gilding",
+          "type": "minecraft:smithing_transform",
+          "ingredients": [],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gilded_yushman_chestplate\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "45 forge:steel",
+      "disposition": "native_transformation",
+      "reason": "made from another piece: gilding with minecraft:gold_ingot",
+      "acquisition": "Made from another piece: gilding with minecraft:gold_ingot."
+    },
+    {
+      "id": "slavicarmory:gnezdovo_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/gnezdovo_helmet/from/slavicarmory/gnezdovo_helmet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:gnezdovo_helmet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:gnezdovo_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:gnezdovo_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:gnezdovo_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/gnezdovo_helmet/from/slavicarmory/gnezdovo_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:gnezdovo_helmet`."
+    },
+    {
+      "id": "slavicarmory:kaftan",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:kaftan",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:kaftan\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "slavicarmory:kaftan_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:kaftan_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            [],
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:kaftan_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient",
+      "acquisition": "No metal ingredient."
+    },
+    {
+      "id": "slavicarmory:kuyak_breastplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/kuyak_breastplate/from/slavicarmory/kuyak_breastsplate",
+          "material": "forge:steel",
+          "units": 36,
+          "recoverable_units": 36,
+          "added_content_units": 36,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:kuyak_breastsplate"
+          ],
+          "components": [
+            "1x minecraft:leather_chestplate (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:kuyak_breastsplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:kuyak_breastsplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:kuyak_breastplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "36 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/kuyak_breastplate/from/slavicarmory/kuyak_breastsplate",
+      "acquisition": "Forged; replaces `slavicarmory:kuyak_breastsplate`."
+    },
+    {
+      "id": "slavicarmory:kuyak_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:kuyak_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "slavicarmory:rus_chainmail_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "item": "minecraft:leather_chestplate"
+            },
+            {
+              "tag": "forge:plates/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:kuyak_chestplate\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        },
+        {
+          "recipe": "slavicarmory:kuyak_chestplate_alt",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "slavicarmory:rus_chainmail_chestplate"
+            },
+            {
+              "item": "slavicarmory:kuyak_breastplate"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:kuyak_chestplate\",tag:{Damage:0}}",
+          "state": "kept: assembly consumes several equipment bases; native assembly retained"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_transformation",
+      "reason": "slavicarmory:kuyak_chestplate: assembly consumes several equipment bases; native assembly retained; slavicarmory:kuyak_chestplate_alt: assembly consumes several equipment bases; native assembly retained",
+      "acquisition": "Slavicarmory:kuyak_chestplate: assembly consumes several equipment bases; native assembly retained; slavicarmory:kuyak_chestplate_alt: assembly consumes several equipment bases; native assembly retained."
+    },
+    {
+      "id": "slavicarmory:lamellar_mail_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:lamellar_mail_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:lamellar_mail_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 9/4 units of forge:steel on 4 other parts",
+      "acquisition": "Not predominantly metal: 9/4 units of forge:steel on 4 other parts."
+    },
+    {
+      "id": "slavicarmory:lamellar_mail_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/lamellar_mail_chestplate/from/slavicarmory/lamellar_mail_chestplate",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 54,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:lamellar_mail_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:rus_chainmail_chestplate (reworked)",
+            "20x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:lamellar_mail_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:lamellar_mail_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "slavicarmory:rus_chainmail_chestplate"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:lamellar_mail_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "54 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/lamellar_mail_chestplate/from/slavicarmory/lamellar_mail_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:lamellar_mail_chestplate`."
+    },
+    {
+      "id": "slavicarmory:late_phrygian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/late_phrygian_helmet/from/slavicarmory/late_phrygian_helmet",
+          "material": "forge:steel",
+          "units": 60,
+          "recoverable_units": 59,
+          "added_content_units": 59,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:late_phrygian_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:late_phrygian_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:late_phrygian_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:late_phrygian_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "59 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/late_phrygian_helmet/from/slavicarmory/late_phrygian_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:late_phrygian_helmet`."
+    },
+    {
+      "id": "slavicarmory:nikolskoe_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/nikolskoe_helmet/from/slavicarmory/nikolskoe_helmet",
+          "material": "forge:steel",
+          "units": 63,
+          "recoverable_units": 63,
+          "added_content_units": 63,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:nikolskoe_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:nikolskoe_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:nikolskoe_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:nikolskoe_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/nikolskoe_helmet/from/slavicarmory/nikolskoe_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:nikolskoe_helmet`."
+    },
+    {
+      "id": "slavicarmory:ozernoe_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/ozernoe_helmet/from/slavicarmory/ozernoe_helmet",
+          "material": "forge:steel",
+          "units": 60,
+          "recoverable_units": 59,
+          "added_content_units": 59,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:ozernoe_helmet"
+          ],
+          "components": [
+            "9x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:ozernoe_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:ozernoe_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:ozernoe_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "59 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/ozernoe_helmet/from/slavicarmory/ozernoe_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:ozernoe_helmet`."
+    },
+    {
+      "id": "slavicarmory:raikovec_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/raikovec_helmet/from/slavicarmory/raikovec_helmet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:raikovec_helmet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:raikovec_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:raikovec_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:raikovec_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/raikovec_helmet/from/slavicarmory/raikovec_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:raikovec_helmet`."
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_chainmail_boots/from/slavicarmory/rus_chainmail_boots",
+          "material": "forge:steel",
+          "units": 15,
+          "recoverable_units": 15,
+          "added_content_units": 15,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_chainmail_boots"
+          ],
+          "components": [
+            "2x #forge:leather"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "slavicarmory:rus_chainmail_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_chainmail_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:small_plates/steel"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_chainmail_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "15 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_chainmail_boots/from/slavicarmory/rus_chainmail_boots",
+      "acquisition": "Forged; replaces `slavicarmory:rus_chainmail_boots`."
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_chainmail_chestplate/from/slavicarmory/rus_chainmail_chestplate",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:rus_chainmail_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:rus_gambeson (reworked)"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:rus_chainmail_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_chainmail_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "item": "slavicarmory:rus_gambeson"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_chainmail_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_chainmail_chestplate/from/slavicarmory/rus_chainmail_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:rus_chainmail_chestplate`."
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_coif",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_chainmail_coif/from/slavicarmory/rus_chainmail_coif",
+          "material": "forge:steel",
+          "units": 23,
+          "recoverable_units": 22,
+          "added_content_units": 22,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_chainmail_coif"
+          ],
+          "components": [
+            "3x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:rus_chainmail_coif"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_chainmail_coif",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            [],
+            {
+              "tag": "magistuarmory:leather_strips"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_chainmail_coif\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "22 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_chainmail_coif/from/slavicarmory/rus_chainmail_coif",
+      "acquisition": "Forged; replaces `slavicarmory:rus_chainmail_coif`."
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_hood_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_chainmail_hood_decoration/from/slavicarmory/rus_chainmail_hood_decoration",
+          "material": "forge:steel",
+          "units": 14,
+          "recoverable_units": 13,
+          "added_content_units": 13,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_chainmail_hood_decoration"
+          ],
+          "components": [
+            "1x slavicarmory:rus_chainmail_coif"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:rus_chainmail_hood_decoration"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_chainmail_hood_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "slavicarmory:rus_chainmail_coif"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_chainmail_hood_decoration\"}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "13 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_chainmail_hood_decoration/from/slavicarmory/rus_chainmail_hood_decoration",
+      "acquisition": "Forged; replaces `slavicarmory:rus_chainmail_hood_decoration`."
+    },
+    {
+      "id": "slavicarmory:rus_chainmail_leggings",
+      "kind": "armor",
+      "shape": "immersive_smithing:leggings",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_chainmail_leggings/from/slavicarmory/rus_chainmail_leggings",
+          "material": "forge:steel",
+          "units": 32,
+          "recoverable_units": 31,
+          "added_content_units": 31,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_chainmail_leggings"
+          ],
+          "components": [
+            "1x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:leggings",
+          "from": "slavicarmory:rus_chainmail_leggings"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_chainmail_leggings",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_chainmail_leggings\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "31 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_chainmail_leggings/from/slavicarmory/rus_chainmail_leggings",
+      "acquisition": "Forged; replaces `slavicarmory:rus_chainmail_leggings`."
+    },
+    {
+      "id": "slavicarmory:rus_gambeson",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_gambeson",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_gambeson\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)",
+      "acquisition": "No metal ingredient (although repaired with forge:steel)."
+    },
+    {
+      "id": "slavicarmory:rus_gambeson_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_gambeson_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            [],
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_gambeson_boots\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)",
+      "acquisition": "No metal ingredient (although repaired with forge:steel)."
+    },
+    {
+      "id": "slavicarmory:rus_heavy_lamellar_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_heavy_lamellar_boots/from/slavicarmory/rus_heavy_lamellar_boots",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_heavy_lamellar_boots"
+          ],
+          "components": [
+            "2x #forge:leather",
+            "12x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "slavicarmory:rus_heavy_lamellar_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_heavy_lamellar_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_heavy_lamellar_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_heavy_lamellar_boots/from/slavicarmory/rus_heavy_lamellar_boots",
+      "acquisition": "Forged; replaces `slavicarmory:rus_heavy_lamellar_boots`."
+    },
+    {
+      "id": "slavicarmory:rus_heavy_lamellar_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_heavy_lamellar_chestplate/from/slavicarmory/rus_heavy_lamellar_chestplate",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 81,
+          "added_content_units": 27,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:rus_heavy_lamellar_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:lamellar_mail_chestplate (reworked)",
+            "6x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:rus_heavy_lamellar_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_heavy_lamellar_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "slavicarmory:lamellar_mail_chestplate"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_heavy_lamellar_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "81 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_heavy_lamellar_chestplate/from/slavicarmory/rus_heavy_lamellar_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:rus_heavy_lamellar_chestplate`."
+    },
+    {
+      "id": "slavicarmory:rus_scale_boots",
+      "kind": "armor",
+      "shape": "immersive_smithing:boots",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_scale_boots/from/slavicarmory/rus_scale_boots",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:rus_scale_boots"
+          ],
+          "components": [
+            "2x #forge:leather",
+            "6x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:boots",
+          "from": "slavicarmory:rus_scale_boots"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_scale_boots",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            [],
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:leather"
+            },
+            [],
+            {
+              "tag": "forge:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_scale_boots\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_scale_boots/from/slavicarmory/rus_scale_boots",
+      "acquisition": "Forged; replaces `slavicarmory:rus_scale_boots`."
+    },
+    {
+      "id": "slavicarmory:rus_scale_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/rus_scale_chestplate/from/slavicarmory/rus_scale_chestplate",
+          "material": "forge:steel",
+          "units": 41,
+          "recoverable_units": 40,
+          "added_content_units": 40,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:rus_scale_chestplate"
+          ],
+          "components": [
+            "1x minecraft:leather_chestplate (reworked)",
+            "21x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:rus_scale_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:rus_scale_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "minecraft:leather_chestplate"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:rus_scale_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "40 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/rus_scale_chestplate/from/slavicarmory/rus_scale_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:rus_scale_chestplate`."
+    },
+    {
+      "id": "slavicarmory:shapka",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:shapka",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "minecraft:wool"
+            },
+            {
+              "tag": "minecraft:wool"
+            },
+            {
+              "tag": "minecraft:wool"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:shapka\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "no metal ingredient (although repaired with forge:steel)",
+      "acquisition": "No metal ingredient (although repaired with forge:steel)."
+    },
+    {
+      "id": "slavicarmory:shater_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/shater_helmet/from/slavicarmory/shater_helmet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:shater_helmet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:shater_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:shater_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:shater_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/shater_helmet/from/slavicarmory/shater_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:shater_helmet`."
+    },
+    {
+      "id": "slavicarmory:steel_bardiche",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/steel_bardiche/from/slavicarmory/steel_bardiche",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:steel_bardiche"
+          ],
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:halberd",
+          "from": "slavicarmory:steel_bardiche"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:steel_bardiche",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:steel_bardiche\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/steel_bardiche/from/slavicarmory/steel_bardiche",
+      "acquisition": "Forged; replaces `slavicarmory:steel_bardiche`."
+    },
+    {
+      "id": "slavicarmory:steel_rogatina",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/steel_rogatina/from/slavicarmory/steel_rogatina",
+          "material": "forge:steel",
+          "units": 10,
+          "recoverable_units": 10,
+          "added_content_units": 10,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:steel_rogatina"
+          ],
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "slavicarmory:steel_rogatina"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:steel_rogatina",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:steel_rogatina\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/steel_rogatina/from/slavicarmory/steel_rogatina",
+      "acquisition": "Forged; replaces `slavicarmory:steel_rogatina`."
+    },
+    {
+      "id": "slavicarmory:steel_rus_axe",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/steel_rus_axe/from/slavicarmory/steel_rus_axe",
+          "material": "forge:steel",
+          "units": 27,
+          "recoverable_units": 27,
+          "added_content_units": 27,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:steel_rus_axe"
+          ],
+          "components": [
+            "1x minecraft:stick",
+            "1x #magistuarmory:hilts"
+          ],
+          "pattern": "immersive_smithing:axe",
+          "from": "slavicarmory:steel_rus_axe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:steel_rus_axe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            {
+              "tag": "magistuarmory:hilts"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:steel_rus_axe\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "27 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/steel_rus_axe/from/slavicarmory/steel_rus_axe",
+      "acquisition": "Forged; replaces `slavicarmory:steel_rus_axe`."
+    },
+    {
+      "id": "slavicarmory:steel_rus_sword",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/steel_rus_sword/from/slavicarmory/steel_rus_sword",
+          "material": "forge:steel",
+          "units": 2,
+          "recoverable_units": 20,
+          "added_content_units": 2,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:steel_rus_sword"
+          ],
+          "components": [
+            "1x magistuarmory:steel_shortsword (reworked)"
+          ],
+          "pattern": "immersive_smithing:sword",
+          "from": "slavicarmory:steel_rus_sword"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:steel_rus_sword",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "magistuarmory:steel_shortsword"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:steel_rus_sword\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "20 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/steel_rus_sword/from/slavicarmory/steel_rus_sword",
+      "acquisition": "Forged; replaces `slavicarmory:steel_rus_sword`."
+    },
+    {
+      "id": "slavicarmory:steel_winged_rogatina",
+      "kind": "weapon",
+      "shape": "immersive_smithing:sword",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/steel_winged_rogatina/from/slavicarmory/steel_winged_rogatina",
+          "material": "forge:steel",
+          "units": 12,
+          "recoverable_units": 12,
+          "added_content_units": 12,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:steel_winged_rogatina"
+          ],
+          "components": [
+            "1x #magistuarmory:poles"
+          ],
+          "pattern": "immersive_smithing:spear",
+          "from": "slavicarmory:steel_winged_rogatina"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:steel_winged_rogatina",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "item": "magistuarmory:steel_nugget"
+            },
+            {
+              "item": "magistuarmory:steel_nugget"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "magistuarmory:poles"
+            },
+            {
+              "item": "magistuarmory:steel_nugget"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:steel_winged_rogatina\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "12 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/steel_winged_rogatina/from/slavicarmory/steel_winged_rogatina",
+      "acquisition": "Forged; replaces `slavicarmory:steel_winged_rogatina`."
+    },
+    {
+      "id": "slavicarmory:tagancha_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/tagancha_helmet/from/slavicarmory/tagancha_helmet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:tagancha_helmet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:tagancha_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:tagancha_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:plates/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:tagancha_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/tagancha_helmet/from/slavicarmory/tagancha_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:tagancha_helmet`."
+    },
+    {
+      "id": "slavicarmory:varangian_bra_decoration",
+      "kind": "decoration",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "slavicarmory:varangian_bra_decoration",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:red_dye"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "tag": "magistuarmory:leather_strips"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:varangian_bra_decoration\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: slavicarmory:varangian_bra_decoration",
+      "acquisition": "Native non-equipment recipes/processes: slavicarmory:varangian_bra_decoration."
+    },
+    {
+      "id": "slavicarmory:varangian_guard_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/varangian_guard_helmet/from/slavicarmory/varangian_guard_helmet",
+          "material": "forge:steel",
+          "units": 63,
+          "recoverable_units": 63,
+          "added_content_units": 63,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:varangian_guard_helmet"
+          ],
+          "components": [],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:varangian_guard_helmet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:varangian_guard_helmet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:varangian_guard_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "63 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/varangian_guard_helmet/from/slavicarmory/varangian_guard_helmet",
+      "acquisition": "Forged; replaces `slavicarmory:varangian_guard_helmet`."
+    },
+    {
+      "id": "slavicarmory:varangian_helmet",
+      "kind": "armor",
+      "shape": "immersive_smithing:helmet",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/varangian_helmet/from/slavicarmory/varangian_hemet",
+          "material": "forge:steel",
+          "units": 59,
+          "recoverable_units": 58,
+          "added_content_units": 58,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "slavicarmory:varangian_hemet"
+          ],
+          "components": [
+            "1x #magistuarmory:woolen_fabrics"
+          ],
+          "pattern": "immersive_smithing:helmet",
+          "from": "slavicarmory:varangian_hemet"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:varangian_hemet",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:woolen_fabrics"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            },
+            {
+              "tag": "magistuarmory:chainmails/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:varangian_helmet\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "58 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/varangian_helmet/from/slavicarmory/varangian_hemet",
+      "acquisition": "Forged; replaces `slavicarmory:varangian_hemet`."
+    },
+    {
+      "id": "slavicarmory:yushman_chestplate",
+      "kind": "armor",
+      "shape": "immersive_smithing:chestplate",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/slavicarmory/yushman_chestplate/from/slavicarmory/yushman_chestplate",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 45,
+          "added_content_units": 18,
+          "operation": "FORGE_UPGRADE",
+          "replaces": [
+            "slavicarmory:yushman_chestplate"
+          ],
+          "components": [
+            "1x slavicarmory:rus_chainmail_chestplate (reworked)",
+            "2x minecraft:leather",
+            "6x #magistuarmory:leather_strips"
+          ],
+          "pattern": "immersive_smithing:chestplate",
+          "from": "slavicarmory:yushman_chestplate"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "slavicarmory:yushman_chestplate",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "slavicarmory:rus_chainmail_chestplate"
+            },
+            {
+              "tag": "magistuarmory:lamellar_rows/steel"
+            },
+            {
+              "item": "minecraft:leather"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "item": "minecraft:leather"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"slavicarmory:yushman_chestplate\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "45 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/slavicarmory/yushman_chestplate/from/slavicarmory/yushman_chestplate",
+      "acquisition": "Forged; replaces `slavicarmory:yushman_chestplate`."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 33,
+    "native_nonmetal_recipe": 7,
+    "native_transformation": 19,
+    "non_equipment": 2
+  }
+}

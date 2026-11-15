@@ -82,5 +82,33 @@
     }
   },
   "manifest_sha256": "dfe4e9f486f0338fadc09ab28f335d1c9a080b5f6f6246eea99cef38a7e3d88c",
-  "registry_sha256": "d678b76233ba05db59b16451cf8da6d402398f8e676a01544054a771dd184fc4"
+  "registry_sha256": "d678b76233ba05db59b16451cf8da6d402398f8e676a01544054a771dd184fc4",
+  "addon_inputs": {
+    "thirtyyearswar@1.3": {
+      "file": "epic-knights-thirty-years-war-1752267-9386507.jar",
+      "sha256": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7",
+      "property": "ek_thirty_years_war_curse"
+    },
+    "fletchery@0.7": {
+      "file": "epic-fletchery-1441931-9108169.jar",
+      "sha256": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe",
+      "property": "ek_fletchery_curse"
+    },
+    "bronzeaddition_epicknights@1.0.61.20.1": {
+      "file": "ingots-addition-for-epic-knights-1035130-5418905.jar",
+      "sha256": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+      "property": "ek_ingots_addition_curse"
+    },
+    "epic_knights__japanese_armory@1.6.2": {
+      "file": "epic-knights-japanese-armory-987386-5294116.jar",
+      "sha256": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b",
+      "property": "ek_japanese_armory_curse"
+    },
+    "medieval_boomsticks@1.01": {
+      "file": "medieval-boomsticks-1123016-5832925.jar",
+      "sha256": "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab",
+      "property": "ek_boomsticks_release_curse"
+    }
+  },
+  "addon_manifest_sha256": "b0aee6d67b568e1b901c6ee19c8b9aa9060a0b5f1f24b71e74129a52bd3ffc6d"
 }

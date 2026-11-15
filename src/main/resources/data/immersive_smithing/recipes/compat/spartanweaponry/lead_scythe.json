@@ -34,5 +34,8 @@
     "item": "spartanweaponry:lead_scythe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:scythe"
+  "anvil_pattern": "immersive_smithing:scythe",
+  "replaces": [
+    "spartanweaponry:lead_scythe"
+  ]
 }

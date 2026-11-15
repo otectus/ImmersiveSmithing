@@ -6,7 +6,9 @@
     "rim": "immersive_smithing:block/forge_rim",
     "iron": "immersive_smithing:block/iron_plate",
     "inner": "immersive_smithing:block/forge_inner",
-    "coals": "immersive_smithing:block/forge_inner"
+    "coals": "immersive_smithing:block/forge_inner",
+    "leather": "minecraft:block/brown_wool",
+    "wood": "immersive_smithing:block/worked_timber"
   },
   "elements": [
     {
@@ -126,7 +128,7 @@
       "from": [
         12,
         2,
-        1
+        9
       ],
       "to": [
         15,
@@ -147,6 +149,48 @@
           "uv": [
             4,
             7,
+            7,
+            14
+          ],
+          "texture": "#stone"
+        },
+        "west": {
+          "uv": [
+            9,
+            7,
+            12,
+            14
+          ],
+          "texture": "#inner"
+        }
+      }
+    },
+    {
+      "name": "Bellows wall",
+      "from": [
+        12,
+        2,
+        1
+      ],
+      "to": [
+        13,
+        9,
+        9
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            7,
+            4,
+            14
+          ],
+          "texture": "#stone"
+        },
+        "east": {
+          "uv": [
+            7,
+            7,
             15,
             14
           ],
@@ -156,10 +200,52 @@
           "uv": [
             1,
             7,
-            12,
+            9,
             14
           ],
           "texture": "#inner"
+        }
+      }
+    },
+    {
+      "name": "Bellows",
+      "from": [
+        13,
+        2,
+        1
+      ],
+      "to": [
+        16,
+        5,
+        9
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            11,
+            3,
+            14
+          ],
+          "texture": "#leather"
+        },
+        "east": {
+          "uv": [
+            7,
+            11,
+            15,
+            14
+          ],
+          "texture": "#leather"
+        },
+        "south": {
+          "uv": [
+            13,
+            11,
+            16,
+            14
+          ],
+          "texture": "#leather"
         }
       }
     },
@@ -244,6 +330,57 @@
             15
           ],
           "texture": "#inner"
+        }
+      }
+    },
+    {
+      "name": "Reheat bar",
+      "from": [
+        4,
+        5,
+        1.5
+      ],
+      "to": [
+        12,
+        6,
+        2.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            10,
+            12,
+            11
+          ],
+          "texture": "#iron"
+        },
+        "south": {
+          "uv": [
+            4,
+            10,
+            12,
+            11
+          ],
+          "texture": "#iron"
+        },
+        "up": {
+          "uv": [
+            4,
+            1.5,
+            12,
+            2.5
+          ],
+          "texture": "#iron"
+        },
+        "down": {
+          "uv": [
+            4,
+            13.5,
+            12,
+            14.5
+          ],
+          "texture": "#iron"
         }
       }
     },
@@ -553,6 +690,48 @@
             13
           ],
           "texture": "#stone"
+        }
+      }
+    },
+    {
+      "name": "Tray divider",
+      "from": [
+        3,
+        10,
+        7
+      ],
+      "to": [
+        13,
+        12,
+        8
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            3,
+            7,
+            13,
+            8
+          ],
+          "texture": "#rim"
+        },
+        "north": {
+          "uv": [
+            3,
+            4,
+            13,
+            6
+          ],
+          "texture": "#rim"
+        },
+        "south": {
+          "uv": [
+            3,
+            4,
+            13,
+            6
+          ],
+          "texture": "#rim"
         }
       }
     }

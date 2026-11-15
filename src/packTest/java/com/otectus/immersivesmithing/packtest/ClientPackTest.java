@@ -2,6 +2,7 @@ package com.otectus.immersivesmithing.packtest;
 
 import com.google.gson.GsonBuilder;
 import com.otectus.immersivesmithing.ImmersiveSmithing;
+import com.otectus.immersivesmithing.network.ModNetwork;
 import com.otectus.immersivesmithing.material.MaterialResolver;
 import com.otectus.immersivesmithing.block.SmithsAnvilBlock;
 import com.otectus.immersivesmithing.block.SmithsForgeBlock;
@@ -10,8 +11,9 @@ import com.otectus.immersivesmithing.block.SmithsTroughBlock;
 import com.otectus.immersivesmithing.blockentity.SmithsAnvilBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
-import com.otectus.immersivesmithing.client.screen.AnvilMinigameScreen;
-import com.otectus.immersivesmithing.client.screen.ForgeMinigameScreen;
+import com.otectus.immersivesmithing.client.screen.PatternBookScreen;
+import com.otectus.immersivesmithing.client.work.FocusController;
+import com.otectus.immersivesmithing.client.work.WorkClient;
 import com.otectus.immersivesmithing.client.screen.GuideScreen;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.registry.ModLootModifiers;
@@ -21,13 +23,12 @@ import com.otectus.immersivesmithing.client.screen.MakersMarkScreen;
 import com.otectus.immersivesmithing.quality.MakersMark;
 import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.item.SmithingTier;
-import com.otectus.immersivesmithing.minigame.ForgePattern;
-import com.otectus.immersivesmithing.minigame.PatternRegistry;
-import com.otectus.immersivesmithing.minigame.SmithingSession;
-import com.otectus.immersivesmithing.network.packet.ForgeStartPacket;
-import com.otectus.immersivesmithing.network.packet.OpenAnvilScreenPacket;
 import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
-import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
+import com.otectus.immersivesmithing.work.AnvilActions;
+import com.otectus.immersivesmithing.work.ForgeActions;
+import com.otectus.immersivesmithing.work.ForgeJob;
+import com.otectus.immersivesmithing.work.WorkAction;
+import com.otectus.immersivesmithing.work.WorkLeases;
 import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.recipe.SmithingData;
 import com.otectus.immersivesmithing.registry.ModBlocks;
@@ -39,6 +40,7 @@ import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import com.otectus.immersivesmithing.workpiece.WorkpieceState;
 import net.minecraft.Util;
 import net.minecraft.client.CameraType;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.GuiGraphics;
@@ -55,6 +57,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -156,6 +159,17 @@ public final class ClientPackTest {
     private static int anvilSeenAt = -1;
     private static int anvilPickedAt = -1;
     private static int anvilShotAt = -1;
+    /** The hands-on run: while it plays, the fixed timeline below waits. */
+    private static SmithDriver smithDriver;
+    private static int pausedTicks;
+    private static BlockPos workForge, workAnvil, workTrough, workGrindstone;
+    private static Vec3 workStand;
+    private static ListTag savedInventory;
+    private static ClientConfig.CameraMode originalCameraMode;
+    private static boolean originalReducedMotion;
+    private static boolean originalExpandedStatus;
+    private static int worldViewProgress = -1;
+    private static final ResourceLocation IRON_SWORD = ImmersiveSmithing.id("smithing/iron_sword");
 
     @SubscribeEvent
     public static void onTick(TickEvent.ClientTickEvent event) {
@@ -203,10 +217,16 @@ public final class ClientPackTest {
                 StationBenchmark.tick(mc);
                 return;
             }
-            step(mc, worldTicks - settledAt + 40);
+            if (smithDriver != null && !smithDriver.done()) {
+                pausedTicks++;
+                if (smithDriver.tick(mc)) finishHandsOn(mc);
+                return;
+            }
+            step(mc, worldTicks - settledAt + 40 - pausedTicks);
         } catch (Exception e) {
             ImmersiveSmithing.LOGGER.error("PACKTEST agent failed at world tick {}", worldTicks, e);
             checks.put("agent_exception", e.toString());
+            if (smithDriver != null) checks.put(checks.containsKey("hands_on_flow_completed") ? "grindstone_pass" : "hands_on_flow", smithDriver.evidence);
             finish(mc, false, "agent exception");
         }
     }
@@ -246,6 +266,10 @@ public final class ClientPackTest {
                 originalLargeTargets = ClientConfig.LARGE_MINIGAME_TARGETS.get();
                 originalColorblind = ClientConfig.COLORBLIND_SAFE_TARGETS.get();
                 originalParticles = ClientConfig.PARTICLE_AMOUNT.get();
+                originalCameraMode = ClientConfig.CAMERA_MODE.get();
+                originalReducedMotion = ClientConfig.REDUCED_MOTION.get();
+                originalExpandedStatus = ClientConfig.EXPANDED_STATUS.get();
+                converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.CINEMATIC);
                 originalVsync = mc.options.enableVsync().get();
                 originalFrameLimit = mc.options.framerateLimit().get();
                 originalRenderDistance = mc.options.renderDistance().get();
@@ -294,18 +318,41 @@ public final class ClientPackTest {
                 mc.options.setCameraType(CameraType.FIRST_PERSON);
                 mc.player.setXRot(20F);
             }
-            case 260 -> mc.setScreen(new ForgeMinigameScreen(forgeOffer()));
-            case 285 -> shot(mc, "packtest_forge_select");
-            case 290 -> {
-                if (mc.screen instanceof ForgeMinigameScreen s) {
-                    s.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 0, new ItemStack(Items.IRON_PICKAXE)));
-                }
+            case 260 -> mc.setScreen(new PatternBookScreen(forgeOffer()));
+            case 285 -> shot(mc, "packtest_pattern_book");
+            // The whole piece, played from this client through the focused views; the timeline waits until it is done.
+            case 290 -> beginHandsOn(mc);
+            // World view: the same station status without a camera change, and a real left-click blow.
+            case 291 -> stageWorldView(mc);
+            case 300 -> {
+                worldViewProgress = anvilProgress(mc);
+                shot(mc, "packtest_world_view_anvil");
             }
-            case 317 -> shot(mc, "packtest_forge_play");
-            case 325 -> mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO, new ItemStack(Items.IRON_SWORD),
-                    PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 0)));
-            case 345 -> shot(mc, "packtest_anvil");
-            case 350 -> mc.setScreen(new GuideScreen(2));
+            case 302 -> KeyMapping.click(mc.options.keyAttack.getKey());
+            case 320 -> {
+                int after = anvilProgress(mc);
+                checks.put("world_view_progress", worldViewProgress + " -> " + after);
+                checks.put("world_view_strike_accepted", worldViewProgress >= 0 && after > worldViewProgress);
+                converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.SHOULDER);
+                FocusController.request(workAnvil);
+            }
+            case 340 -> {
+                checks.put("shoulder_view_opened", FocusController.focusedOn(workAnvil));
+                shot(mc, "packtest_anvil_shoulder_view");
+                FocusController.exit(null, true);
+                converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.CINEMATIC);
+            }
+            case 345 -> restoreInventory(mc);
+            // A real grindstone pass on the staged graded sword (94/82): the hands-on sword above came out perfect.
+            case 350 -> {
+                smithDriver = SmithDriver.refineOnly(workGrindstone, workStand, Items.IRON_SWORD, name -> handsOnMoment(mc, name));
+                log("grindstone pass started");
+            }
+            case 351 -> {
+                checks.put("grindstone_pass", smithDriver.evidence);
+                checks.put("grindstone_pass_refined", smithDriver.evidence.keySet().stream().anyMatch(k -> k.startsWith("refined_")));
+                mc.setScreen(new GuideScreen(2));
+            }
             case 370 -> shot(mc, "packtest_guide");
             case 375 -> mc.setScreen(new InventoryScreen(mc.player));
             case 410 -> shot(mc, "packtest_inventory");
@@ -314,36 +361,25 @@ public final class ClientPackTest {
             case 420 -> mc.setScreen(null);
             case 430 -> {
                 setGuiScale(mc, 1);
-                mc.setScreen(new ForgeMinigameScreen(longForgeOffer()));
+                mc.setScreen(new PatternBookScreen(longForgeOffer()));
             }
-            case 450 -> shot(mc, "packtest_forge_long_scale_1");
+            case 450 -> shot(mc, "packtest_pattern_book_long_scale_1");
             case 455 -> setGuiScale(mc, 2);
-            case 475 -> shot(mc, "packtest_forge_long_scale_2");
+            case 475 -> shot(mc, "packtest_pattern_book_long_scale_2");
             case 480 -> setGuiScale(mc, 3);
-            case 500 -> shot(mc, "packtest_forge_long_scale_3");
-            case 505 -> {
-                if (mc.screen instanceof ForgeMinigameScreen s) {
-                    s.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 5_000,
-                            named(Items.IRON_PICKAXE, "An Exceptionally Long Tempered Iron Pickaxe Name")));
-                }
+            case 500 -> shot(mc, "packtest_pattern_book_long_scale_3");
+            // Every station's focused view and status at GUI scale 3.
+            case 505 -> focusStation(mc, workAnvil);
+            case 525 -> focusShot(mc, workAnvil, "packtest_anvil_focus_scale_3");
+            case 530 -> focusStation(mc, workForge);
+            case 550 -> focusShot(mc, workForge, "packtest_forge_focus_scale_3");
+            case 555 -> focusStation(mc, workTrough);
+            case 575 -> focusShot(mc, workTrough, "packtest_trough_focus_scale_3");
+            case 580 -> focusStation(mc, workGrindstone);
+            case 600 -> {
+                focusShot(mc, workGrindstone, "packtest_grindstone_focus_scale_3");
+                FocusController.exit(null, true);
             }
-            case 525 -> shot(mc, "packtest_forge_countdown");
-            case 530 -> {
-                if (mc.screen instanceof ForgeMinigameScreen s) {
-                    s.onResult(new SessionResultPacket(7, SmithingSession.Kind.FORGE, 91, false));
-                }
-            }
-            case 550 -> shot(mc, "packtest_forge_result");
-            case 555 -> mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO,
-                    named(Items.IRON_SWORD, "An Exceptionally Long Tempered Iron Sword Name"),
-                    PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 5_000)));
-            case 575 -> shot(mc, "packtest_anvil_countdown");
-            case 580 -> {
-                if (mc.screen instanceof AnvilMinigameScreen s) {
-                    s.onResult(new SessionResultPacket(8, SmithingSession.Kind.ANVIL, 87, false));
-                }
-            }
-            case 600 -> shot(mc, "packtest_anvil_result");
             case 605 -> mc.setScreen(new GuideScreen(2));
             case 625 -> {
                 shot(mc, "packtest_guide_scale_3");
@@ -376,13 +412,14 @@ public final class ClientPackTest {
             case 704 -> shot(mc, "packtest_inventory_quality_tooltip");
             case 705 -> {
                 setGameMode(mc, GameType.CREATIVE);
-                mc.setScreen(new ForgeMinigameScreen(longForgeOffer()));
+                mc.setScreen(new PatternBookScreen(longForgeOffer()));
             }
-            case 725 -> shot(mc, "packtest_forge_long_320x240");
-            case 730 -> mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO,
-                    named(Items.IRON_SWORD, "An Exceptionally Long Tempered Iron Sword Name"),
-                    PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 5_000)));
-            case 750 -> shot(mc, "packtest_anvil_320x240");
+            case 725 -> shot(mc, "packtest_pattern_book_long_320x240");
+            case 730 -> focusStation(mc, workAnvil);
+            case 750 -> {
+                focusShot(mc, workAnvil, "packtest_anvil_focus_320x240");
+                FocusController.exit(null, true);
+            }
             case 755 -> mc.setScreen(new GuideScreen(2));
             case 775 -> shot(mc, "packtest_guide_320x240");
             case 776 -> exerciseGuideNavigation(mc);
@@ -397,22 +434,22 @@ public final class ClientPackTest {
             case 779 -> shot(mc, "packtest_guide_search");
             case 780 -> {
                 accessibility(true);
-                checks.put("accessibility_mode", "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles");
+                checks.put("accessibility_mode", "high contrast, colorblind-safe, large targets, reduced flash/shake/motion, "
+                        + "expanded status, minimal particles");
                 sizeWindow(mc, originalWindowWidth, originalWindowHeight);
                 setGuiScale(mc, 2);
-                ForgeMinigameScreen screen = new ForgeMinigameScreen(forgeOffer());
-                mc.setScreen(screen);
-                screen.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 0,
-                        new ItemStack(Items.IRON_PICKAXE)));
+                focusStation(mc, workForge);
             }
             case 795 -> accessibility(true);
             case 805 -> {
                 checks.put("accessibility_mode_applied", accessibility(true));
-                shot(mc, "packtest_forge_accessibility");
+                focusShot(mc, workForge, "packtest_forge_accessibility");
             }
-            case 810 -> mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO,
-                    new ItemStack(Items.IRON_SWORD), PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 0)));
-            case 835 -> shot(mc, "packtest_anvil_accessibility");
+            case 810 -> focusStation(mc, workAnvil);
+            case 835 -> {
+                focusShot(mc, workAnvil, "packtest_anvil_accessibility");
+                FocusController.exit(null, true);
+            }
             case 840 -> {
                 accessibility(false);
                 openJei(mc);
@@ -528,7 +565,8 @@ public final class ClientPackTest {
         }
         if (EXPECT.contains("epicknights")) {
             List<SmithingRecipe> armet = data.recipesProducing(item("magistuarmory:armet"));
-            checks.put("epicknights_armet_72_steel", !armet.isEmpty() && armet.get(0).metalUnits() == 72
+            checks.put("epicknights_armet_27_steel_and_barbute", !armet.isEmpty() && armet.get(0).metalUnits() == 27
+                    && armet.get(0).auxiliary().stream().anyMatch(a -> a.consumesEquipment() && a.ingredient().test(new ItemStack(item("magistuarmory:barbute"))))
                     && armet.get(0).family().equals(new ResourceLocation("forge", "steel")));
             checks.put("epicknights_steel_plate_melts_for_9", MaterialResolver.resolve(new ItemStack(item("magistuarmory:steel_plate")))
                     .filter(m -> m.family().id().equals(new ResourceLocation("forge", "steel")) && m.unitsEach() == 9).isPresent());
@@ -542,7 +580,7 @@ public final class ClientPackTest {
                     RecipeManager client = mc.getConnection().getRecipeManager();
                     checks.put("epicknights_client_recipes_match_server", client.getRecipes().size() == recipes.getRecipes().size()
                             && client.byKey(new ResourceLocation("magistuarmory", "armet")).isEmpty()
-                            && client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet")).isPresent());
+                            && client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet/from/magistuarmory/armet")).isPresent());
                 }
             }
         }
@@ -620,6 +658,13 @@ public final class ClientPackTest {
             BlockPos base = player.blockPosition();
             galleryBase = base.offset(0, 0, -14);
             performanceBase = base.offset(0, 0, 48);
+            // The hands-on row behind the player: forge, anvil, trough and grindstone, all worked from one spot.
+            BlockPos row = base.offset(0, 0, 12);
+            workForge = row.offset(-2, 0, 0);
+            workAnvil = row;
+            workTrough = row.offset(2, 0, 0);
+            workGrindstone = row.offset(4, 0, 0);
+            workStand = new Vec3(row.getX() + 1.0, row.getY(), row.getZ() + 2.3);
             for (int x = -34; x <= 34; x++) for (int z = -27; z <= 62; z++) {
                 level.setBlockAndUpdate(base.offset(x, -1, z), Blocks.POLISHED_ANDESITE.defaultBlockState());
                 for (int y = 0; y <= 5; y++) level.setBlockAndUpdate(base.offset(x, y, z), Blocks.AIR.defaultBlockState());
@@ -677,6 +722,139 @@ public final class ClientPackTest {
             checks.put("inventory_tool_variants", slot - 9);
             player.teleportTo(level, base.getX() + 0.5, base.getY(), base.getZ() + 1.5, 180F, 20F);
         });
+    }
+
+    /**
+     * Starts the hands-on run: the four stations in a row, molten iron and a fire, empty tongs and a hammer, then an iron
+     * sword from the pattern book to a grindstone pass, played by {@link SmithDriver} through this client's own inputs.
+     */
+    private static void beginHandsOn(Minecraft mc) {
+        mc.setScreen(null);
+        converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.CINEMATIC);
+        IntegratedServer server = mc.getSingleplayerServer();
+        SmithingRecipe recipe = SmithingData.current().recipe(IRON_SWORD);
+        if (server == null || recipe == null || workAnvil == null) {
+            checks.put("hands_on_flow_completed", false);
+            checks.put("hands_on_flow", server == null ? "no integrated server" : "no iron sword recipe");
+            return;
+        }
+        server.execute(() -> {
+            ServerPlayer player = server.getPlayerList().getPlayers().get(0);
+            savedInventory = player.getInventory().save(new ListTag());
+            SmithDriver.stage(server.overworld(), player, recipe, workForge, workAnvil, workTrough, workGrindstone, Direction.SOUTH,
+                    workStand, GameType.CREATIVE, SmithingTier.NETHERITE);
+        });
+        Map<BlockPos, Vec3> stands = Map.of(workForge, workStand, workAnvil, workStand, workTrough, workStand, workGrindstone, workStand);
+        smithDriver = new SmithDriver(workForge, workAnvil, workTrough, workGrindstone, stands, IRON_SWORD, "iron sword",
+                Items.IRON_SWORD, true, name -> handsOnMoment(mc, name));
+        log("hands-on run started");
+    }
+
+    private static void handsOnMoment(Minecraft mc, String name) {
+        log("hands-on: " + name);
+        String file = switch (name) {
+            case "forge_focus" -> "packtest_forge_focus";
+            case "pattern_book_live" -> "packtest_pattern_book_live";
+            case "forge_heating" -> "packtest_forge_heating";
+            case "billet_ready" -> "packtest_forge_billet_ready";
+            case "anvil_first_blows" -> "packtest_anvil_shaping";
+            case "anvil_half_shaped" -> "packtest_anvil_half_shaped";
+            case "reheat_on_rest" -> "packtest_forge_reheat_rest";
+            case "quench_hiss" -> "packtest_trough_quench";
+            case "fitting" -> "packtest_anvil_fitting";
+            case "grind_contact" -> "packtest_grindstone_pass";
+            default -> null;
+        };
+        if (file != null) shot(mc, file);
+    }
+
+    private static void finishHandsOn(Minecraft mc) {
+        if (checks.containsKey("hands_on_flow_completed")) return; // the grindstone pass reports itself
+        checks.put("hands_on_flow", smithDriver.evidence);
+        checks.put("hands_on_flow_completed", true);
+        log("hands-on run finished: " + smithDriver.evidence);
+    }
+
+    /**
+     * World view: a second iron billet is committed, brought to heat, drawn and set on the anvil through the server's
+     * station actions, and a third is left heating on the tray for the later forge views. The smith takes the hammer.
+     */
+    private static void stageWorldView(Minecraft mc) {
+        IntegratedServer server = mc.getSingleplayerServer();
+        if (server == null || workAnvil == null) return;
+        converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.WORLD);
+        mc.player.getInventory().selected = 1;
+        server.execute(() -> {
+            ServerLevel level = server.overworld();
+            ServerPlayer player = server.getPlayerList().getPlayers().get(0);
+            SmithingRecipe recipe = SmithingData.current().recipe(IRON_SWORD);
+            SmithsForgeBlockEntity forge = (SmithsForgeBlockEntity) level.getBlockEntity(workForge);
+            SmithsAnvilBlockEntity anvil = (SmithsAnvilBlockEntity) level.getBlockEntity(workAnvil);
+            player.getInventory().clearContent();
+            player.getInventory().setItem(0, new ItemStack(ModItems.tongs(SmithingTier.NETHERITE)));
+            player.getInventory().setItem(1, new ItemStack(ModItems.hammer(SmithingTier.NETHERITE)));
+            player.getInventory().setItem(9, new ItemStack(Items.STICK, 2));
+            player.getInventory().selected = 0;
+            forge.refundCast(recipe.metalUnits() * 2, recipe.family());
+            forge.setPlan(recipe.getId());
+            ForgeActions.commit(player, forge, InteractionHand.MAIN_HAND);
+            ForgeJob job = forge.job();
+            if (job != null) java.util.Arrays.fill(job.heat, (job.thermal.optimalMin() + job.thermal.optimalMax()) / 2);
+            ForgeActions.draw(player, forge, InteractionHand.MAIN_HAND, -1);
+            AnvilActions.place(player, anvil, InteractionHand.MAIN_HAND);
+            forge.setPlan(recipe.getId());
+            ForgeActions.commit(player, forge, InteractionHand.MAIN_HAND);
+            WorkLeases.release(player, null);
+            player.getInventory().selected = 1;
+            player.inventoryMenu.broadcastChanges();
+            SmithDriver.lookFrom(player, level, workStand, Vec3.atCenterOf(workAnvil).add(0, 0.45, 0));
+            checks.put("world_view_staged", anvil.workpiece() != null && forge.job() != null);
+        });
+    }
+
+    private static int anvilProgress(Minecraft mc) {
+        return mc.level != null && mc.level.getBlockEntity(workAnvil) instanceof SmithsAnvilBlockEntity anvil && anvil.workpiece() != null
+                ? anvil.workpiece().process().progress() : -1;
+    }
+
+    /** The inventory the visual checks were staged with (tool variants, the quality sword). */
+    private static void restoreInventory(Minecraft mc) {
+        IntegratedServer server = mc.getSingleplayerServer();
+        if (server == null || savedInventory == null) return;
+        mc.player.getInventory().selected = 0;
+        server.execute(() -> {
+            ServerPlayer player = server.getPlayerList().getPlayers().get(0);
+            player.getInventory().clearContent();
+            player.getInventory().load(savedInventory);
+            player.getInventory().selected = 0;
+            player.inventoryMenu.broadcastChanges();
+        });
+    }
+
+    /** Back to the hands-on row as a smith (not a spectator camera), for a focused view. */
+    private static void returnToWorkStand(Minecraft mc) {
+        IntegratedServer server = mc.getSingleplayerServer();
+        if (server == null || workStand == null) return;
+        server.execute(() -> {
+            ServerPlayer player = server.getPlayerList().getPlayers().get(0);
+            player.setGameMode(GameType.CREATIVE);
+            SmithDriver.lookFrom(player, server.overworld(), workStand, Vec3.atCenterOf(workAnvil));
+        });
+    }
+
+    /** Asks for the focused (Cinematic) view of a station, leaving any other one first. */
+    private static void focusStation(Minecraft mc, BlockPos pos) {
+        if (pos == null) return;
+        if (mc.screen != null && !FocusController.active()) mc.setScreen(null);
+        if (FocusController.active()) FocusController.exit(null, true);
+        converge(ClientConfig.CAMERA_MODE, ClientConfig.CameraMode.CINEMATIC);
+        FocusController.request(pos);
+    }
+
+    private static void focusShot(Minecraft mc, BlockPos pos, String name) {
+        boolean open = pos != null && FocusController.focusedOn(pos);
+        checks.put(name + "_view_open", open);
+        shot(mc, name);
     }
 
     private static void stageStationCluster(ServerLevel level, BlockPos center, Direction facing) {
@@ -774,7 +952,8 @@ public final class ClientPackTest {
             }
             case 3 -> {
                 fireEffect(mc, "quench");
-                advance(t, 3);
+                // Steam rises once the piece crosses the water line (half a second after it is lowered).
+                advance(t, 14);
             }
             case 4 -> {
                 shot(mc, "packtest_effect_quench_real_action");
@@ -783,7 +962,7 @@ public final class ClientPackTest {
             }
             case 5 -> {
                 fireEffect(mc, "grind");
-                advance(t, 3);
+                advance(t, 6);
             }
             case 6 -> {
                 shot(mc, "packtest_effect_grind_real_action");
@@ -841,24 +1020,22 @@ public final class ClientPackTest {
                 setGuiScale(mc, 4);
                 checks.put("gui_scale_4_rendered", mc.getWindow().getGuiScale() == 4 && mc.getWindow().getGuiScaledWidth() >= 320
                         && mc.getWindow().getGuiScaledHeight() >= 240);
-                mc.setScreen(new ForgeMinigameScreen(longForgeOffer()));
+                mc.setScreen(new PatternBookScreen(longForgeOffer()));
                 advance(t, 15);
             }
             case 14 -> {
-                shot(mc, "packtest_forge_select_scale_4");
-                if (mc.screen instanceof ForgeMinigameScreen s) {
-                    s.onStart(new ForgeStartPacket(7, 42L, ForgePattern.DEFAULT, 27, 30_000, 0, new ItemStack(Items.IRON_PICKAXE)));
-                }
-                advance(t, 15);
+                shot(mc, "packtest_pattern_book_long_scale_4");
+                mc.setScreen(null);
+                returnToWorkStand(mc);
+                advance(t, 20);
             }
             case 15 -> {
-                shot(mc, "packtest_forge_play_scale_4");
-                mc.setScreen(new AnvilMinigameScreen(new OpenAnvilScreenPacket(8, BlockPos.ZERO, new ItemStack(Items.IRON_SWORD),
-                        PatternRegistry.anvil(ImmersiveSmithing.id("sword")), 42L, 30_000, 0)));
-                advance(t, 15);
+                focusStation(mc, workAnvil);
+                advance(t, 20);
             }
             case 16 -> {
-                shot(mc, "packtest_anvil_scale_4");
+                focusShot(mc, workAnvil, "packtest_anvil_focus_scale_4");
+                FocusController.exit(null, true);
                 mc.setScreen(new GuideScreen(2));
                 advance(t, 15);
             }
@@ -877,12 +1054,103 @@ public final class ClientPackTest {
                 advance(t, 10);
             }
             case 19 -> {
+                checks.put("workpiece_surface_geometry_and_picking", WorkpieceGallery.surfacesAgree());
+                mc.setScreen(new WorkpieceGallery());
+                advance(t, 15);
+            }
+            case 20 -> {
+                shot(mc, "packtest_workpiece_profiles");
+                checks.put("target_blade_silhouettes_loaded", AnvilVisualGallery.silhouettesAvailable());
+                mc.setScreen(new AnvilVisualGallery());
+                advance(t, 15);
+            }
+            case 21 -> {
+                shot(mc, "packtest_anvil_alignment");
+                for (SmithingTier tier : SmithingTier.values()) {
+                    checks.put("tongs_model_" + tier.name().toLowerCase(java.util.Locale.ROOT),
+                            com.otectus.immersivesmithing.client.renderer.TongsItemRenderer.modelContract(new ItemStack(ModItems.tongs(tier))));
+                }
+                setGuiScale(mc, 1);
+                mc.setScreen(new TongsGallery());
+                advance(t, 15);
+            }
+            case 22 -> {
+                shot(mc, "packtest_tongs_alignment");
+                mc.setScreen(null);
+                mc.options.guiScale().set(originalGuiScale);
+                mc.resizeDisplay();
+                advance(t, 2);
+            }
+            case 23 -> {
                 mc.options.enableVsync().set(originalVsync);
                 mc.options.framerateLimit().set(originalFrameLimit);
                 mc.options.renderDistance().set(originalRenderDistance);
                 checks.put("accessibility_settings_restored", accessibility(false));
+                if (EXPECT.contains("epicknights")) {
+                    stageEpicGallery(mc);
+                    advance(t, 25);
+                    return;
+                }
                 boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
                 finish(mc, pass, pass ? "all visual, data and runtime checks passed" : "a check failed");
+            }
+            case 24 -> {
+                mc.setScreen(new InventoryScreen(mc.player));
+                advance(t, 20);
+            }
+            case 25 -> {
+                shot(mc, "packtest_epic_decorated_armor_shield_weapons");
+                mc.setScreen(new PatternBookScreen(epicUpgradeOffer()));
+                advance(t, 20);
+            }
+            case 26 -> {
+                // The book's detail panel shows the complete inputs and the personal preview of the chosen upgrade.
+                shot(mc, "packtest_epic_upgrade_complete_inputs");
+                advance(t, 2);
+            }
+            case 27 -> {
+                PackTestJeiPlugin.openRecipes(new ItemStack(item("magistuarmory:knight_chestplate")));
+                advance(t, 25);
+            }
+            case 28 -> {
+                shot(mc, "packtest_epic_jei_knight_upgrade");
+                mc.setScreen(null);
+                mc.options.setCameraType(CameraType.THIRD_PERSON_FRONT);
+                mc.player.getInventory().selected = 0;
+                mc.player.setXRot(0);
+                advance(t, 20);
+            }
+            case 29 -> {
+                shot(mc, "packtest_epic_long_weapon_and_shield");
+                mc.player.getInventory().selected = 2;
+                if (net.minecraftforge.fml.ModList.get().isLoaded("quick_swap") && net.minecraftforge.fml.ModList.get().isLoaded("epicknights_open_helms")) {
+                    mc.getSingleplayerServer().execute(() -> {
+                        var player = mc.getSingleplayerServer().getPlayerList().getPlayers().get(0);
+                        com.otectus.immersivesmithing.compat.epicknights.VisorSwap.apply(player, player.getId(), "epicknights_open_helms:open_armet_helmet");
+                    });
+                }
+                advance(t, 20);
+            }
+            case 30 -> {
+                shot(mc, "packtest_epic_firearm_and_open_visor");
+                mc.options.setCameraType(CameraType.FIRST_PERSON);
+                swapGalleryHelmet(mc, "magistuarmory:armet");
+                advance(t, 20);
+            }
+            case 31 -> {
+                shot(mc, "packtest_epic_closed_visor_first_person");
+                swapGalleryHelmet(mc, "epicknights_open_helms:open_armet_helmet");
+                advance(t, 20);
+            }
+            case 32 -> {
+                shot(mc, "packtest_epic_open_visor_first_person");
+                stageEpicHorse(mc);
+                advance(t, 25);
+            }
+            case 33 -> {
+                shot(mc, "packtest_epic_horse_armor");
+                boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
+                finish(mc, pass, pass ? "all runtime checks and Epic Knights presentation checks passed" : "a check failed");
             }
             default -> {
             }
@@ -892,6 +1160,72 @@ public final class ClientPackTest {
     private static void advance(int tick, int delay) {
         advancedPhase++;
         advancedAt = tick + delay;
+    }
+
+    private static void swapGalleryHelmet(Minecraft mc, String target) {
+        if (!net.minecraftforge.fml.ModList.get().isLoaded("quick_swap") || !net.minecraftforge.fml.ModList.get().isLoaded("epicknights_open_helms")) return;
+        mc.getSingleplayerServer().execute(() -> {
+            var player = mc.getSingleplayerServer().getPlayerList().getPlayers().get(0);
+            com.otectus.immersivesmithing.compat.epicknights.VisorSwap.apply(player, player.getId(), target);
+        });
+    }
+
+    private static void stageEpicHorse(Minecraft mc) {
+        mc.getSingleplayerServer().execute(() -> {
+            var player = mc.getSingleplayerServer().getPlayerList().getPlayers().get(0);
+            var level = player.serverLevel();
+            BlockPos pos = galleryBase.offset(0, 1, 10);
+            var horse = net.minecraft.world.entity.EntityType.HORSE.create(level);
+            if (horse == null) throw new IllegalStateException("Could not create horse render fixture");
+            horse.setNoAi(true); horse.setTamed(true); horse.setNoGravity(true);
+            horse.moveTo(pos.getX() + .5, pos.getY(), pos.getZ() + .5, 70, 0);
+            ItemStack armor = new ItemStack(item("magistuarmory:chainmail_horse_armor"));
+            if (!horse.getSlot(401).set(armor)) throw new IllegalStateException("Native horse armor slot rejected its item");
+            level.addFreshEntity(horse);
+            player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, ItemStack.EMPTY);
+            player.setGameMode(GameType.SPECTATOR);
+            teleportLookAt(player, level, pos.getX() + 3.5, pos.getY() + 1.5, pos.getZ() + 4.5,
+                    pos.getX() + .5, pos.getY() + .7, pos.getZ() + .5);
+        });
+    }
+
+    private static void stageEpicGallery(Minecraft mc) {
+        mc.getSingleplayerServer().execute(() -> {
+            var player = mc.getSingleplayerServer().getPlayerList().getPlayers().get(0);
+            player.serverLevel().setBlockAndUpdate(player.blockPosition().below(), Blocks.POLISHED_ANDESITE.defaultBlockState());
+            player.setGameMode(GameType.SURVIVAL);
+            player.serverLevel().setDayTime(6000);
+            player.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.NIGHT_VISION, 2400, 0, false, false));
+            ItemStack helmet = new ItemStack(item("magistuarmory:armet"));
+            net.minecraft.nbt.ListTag decorations = new net.minecraft.nbt.ListTag();
+            net.minecraft.nbt.CompoundTag plume = new net.minecraft.nbt.CompoundTag();
+            plume.putString("name", "magistuarmory:plume_middle"); plume.putInt("color", 0x9c263b); decorations.add(plume);
+            helmet.getOrCreateTagElement("ArmorDecoration").put("Items", decorations);
+            player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, helmet);
+            ItemStack chest = new ItemStack(item("magistuarmory:knight_chestplate"));
+            chest.getOrCreateTagElement("BlockEntityTag").putInt("Base", 14);
+            new QualityData(90, 90, false).apply(chest);
+            player.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, chest);
+            player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(item("magistuarmory:steel_pavese")));
+            player.getInventory().setItem(0, new ItemStack(item("magistuarmory:steel_zweihander")));
+            player.getInventory().setItem(1, new ItemStack(item("magistuarmory:steel_halberd")));
+            String gun = net.minecraftforge.fml.ModList.get().isLoaded("thirtyyearswar") ? "thirtyyearswar:baroque_wheellock_pistol"
+                    : net.minecraftforge.fml.ModList.get().isLoaded("artillery_addon") ? "artillery_addon:handgonne" : "magistuarmory:steel_chivalrylance";
+            player.getInventory().setItem(2, new ItemStack(item(gun)));
+        });
+    }
+
+    private static OpenForgeScreenPacket epicUpgradeOffer() {
+        SmithingRecipe recipe = SmithingData.current().recipesProducing(item("magistuarmory:knight_chestplate")).get(0);
+        List<ItemStack> inputs = recipe.auxiliary().stream().map(AuxiliaryIngredient::displayStack).toList();
+        inputs.get(0).setHoverName(Component.literal("The Reserved Oath"));
+        inputs.get(0).setDamageValue(19);
+        inputs.get(0).enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 2);
+        ItemStack preview = com.otectus.immersivesmithing.recipe.ResultAssembler.assemble(recipe, inputs).orElseThrow();
+        var row = new OpenForgeScreenPacket.Entry(recipe.getId(), preview, recipe.metalUnits(), inputs, 7, 0, Component.empty(),
+                recipe.auxiliary().stream().map(a -> java.util.Arrays.stream(a.ingredient().getItems()).map(s -> s.copyWithCount(a.count())).toList()).toList(), true);
+        return new OpenForgeScreenPacket(7, BlockPos.ZERO, SmithingData.current().materials().family(recipe.family()).orElseThrow().displayName(),
+                45, null, List.of(row), List.of());
     }
 
     private static void setDayAndCamera(Minecraft mc, long dayTime, BlockPos center, Direction facing) {
@@ -950,7 +1284,7 @@ public final class ClientPackTest {
                 WorkpieceCodec.setHeld(tongs, workpiece(Items.IRON_SWORD, 18, WorkpieceState.SHAPED, "sword"));
                 player.setItemInHand(InteractionHand.MAIN_HAND, tongs);
                 useStation(level, player, pos);
-                checks.put("quench_effect_source", "real SmithsTroughBlock.use server action");
+                checks.put("quench_effect_source", "real SmithsTroughBlock.use server action (lowering into the water)");
             } else if ("grind".equals(effect)) {
                 BlockPos pos = originalBase.offset(4, 0, -4);
                 ItemStack sword = new ItemStack(Items.IRON_SWORD);
@@ -958,11 +1292,11 @@ public final class ClientPackTest {
                 player.setItemInHand(InteractionHand.MAIN_HAND, sword);
                 useStation(level, player, pos);
                 useStation(level, player, pos);
-                checks.put("grind_effect_source", "real SmithsGrindstoneBlock.use confirmation action");
+                checks.put("grind_effect_source", "real SmithsGrindstoneBlock.use: rest the piece, then hold its edge to the wheel");
             } else {
                 BlockPos pos = originalBase.offset(0, 0, -4);
                 StationEffects.send(level, pos, StationEffects.SPARKS, 1.0F);
-                checks.put("anvil_effect_source", "server StationEffectPacket injection; minigame strike remains server-authoritative");
+                checks.put("anvil_effect_source", "server StationEffectPacket injection; blows themselves are tested in the hands-on run");
             }
         });
     }
@@ -1084,7 +1418,7 @@ public final class ClientPackTest {
     }
 
     /**
-     * Sets the six accessibility options to the full accessibility mode, or back to the player's own values, and
+     * Sets the eight accessibility options to the full accessibility mode, or back to the player's own values, and
      * returns true when every one already matched. Forge autosaves each option and its file watcher reloads the
      * file, so a reload landing between two quick writes can revert one of them; callers converge on later ticks.
      */
@@ -1095,6 +1429,8 @@ public final class ClientPackTest {
         settled &= converge(ClientConfig.LARGE_MINIGAME_TARGETS, mode || originalLargeTargets);
         settled &= converge(ClientConfig.COLORBLIND_SAFE_TARGETS, mode || originalColorblind);
         settled &= converge(ClientConfig.PARTICLE_AMOUNT, mode ? ClientConfig.ParticleAmount.MINIMAL : originalParticles);
+        settled &= converge(ClientConfig.REDUCED_MOTION, mode || originalReducedMotion);
+        settled &= converge(ClientConfig.EXPANDED_STATUS, mode || originalExpandedStatus);
         return settled;
     }
 
@@ -1238,6 +1574,11 @@ public final class ClientPackTest {
         }
         anvilPhaseTicks++;
         if (anvilShotAt >= 0) {
+            if (EXPECT.contains("epicknights")) {
+                marker(role + "-anvil-done");
+                multiplayerUpgradePhase(mc);
+                return;
+            }
             if (anvilPhaseTicks - anvilShotAt >= 10) {
                 boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
                 finish(mc, pass, pass ? "remote swings synchronized and the anvil pickup cleared on this client"
@@ -1288,7 +1629,7 @@ public final class ClientPackTest {
         checks.put(role + "_recipe_count", client.getRecipes().size());
         checks.put(role + "_recipes_match_server", server.contains("count=" + client.getRecipes().size() + "\n"));
         if (EXPECT.contains("epicknights")) {
-            checks.put(role + "_epicknights_armet_forged_not_crafted", client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet")).isPresent()
+            checks.put(role + "_epicknights_armet_forged_not_crafted", client.byKey(ImmersiveSmithing.id("compat/magistuarmory/armet/from/magistuarmory/armet")).isPresent()
                     && client.byKey(new ResourceLocation("magistuarmory", "armet")).isEmpty());
             checks.put(role + "_epicknights_ceremonial_gilding_kept", client.byKey(new ResourceLocation("magistuarmory", "ceremonialarmet")).isPresent());
         }
@@ -1302,6 +1643,83 @@ public final class ClientPackTest {
 
     private static void marker(String name) throws IOException {
         Files.writeString(MULTIPLAYER_SHARED.resolve(name), MULTIPLAYER_ROLE + "\n", StandardCharsets.UTF_8);
+    }
+
+    private static boolean upgradeSelected, upgradeCommitted, upgradeContended, upgradeCancelled, upgradeSynced;
+    private static int upgradeReloadSeen = -1;
+
+    /**
+     * Checks the real server offer and preview, then pins and commits the decorated base through real client packets; the
+     * other smith's inputs (block use, the leader's book session, draw and cancel requests) must not touch the job, a
+     * reload keeps it, and the owner's confirmed cancel refunds the base exactly once.
+     */
+    private static void multiplayerUpgradePhase(Minecraft mc) throws IOException {
+        String role = MULTIPLAYER_ROLE;
+        if (Files.exists(MULTIPLAYER_SHARED.resolve("upgrade-result"))) {
+            String result = Files.readString(MULTIPLAYER_SHARED.resolve("upgrade-result"));
+            checks.put(role + "_upgrade_server_checks", result.contains("pass=true"));
+            shot(mc, "packtest_multiplayer_" + role + "_upgrade_refund");
+            boolean pass = checks.values().stream().noneMatch(v -> v instanceof Boolean b && !b);
+            finish(mc, pass, pass ? "two clients verified reservation, authoritative preview, reload and exact refund" : "a multiplayer upgrade check failed");
+            return;
+        }
+        if (anvilPhaseTicks - anvilShotAt > 1200) { finish(mc, false, "multiplayer upgrade timed out"); return; }
+        Path offered = MULTIPLAYER_SHARED.resolve("upgrade-offered");
+        if (!Files.exists(offered)) return;
+        List<String> request = Files.readAllLines(offered);
+        int session = Integer.parseInt(request.get(0)); ResourceLocation recipe = new ResourceLocation(request.get(1));
+        BlockPos forgePos = MultiplayerPackTestFixture.UPGRADE_FORGE;
+        SmithsForgeBlockEntity forge = mc.level.getBlockEntity(forgePos) instanceof SmithsForgeBlockEntity f ? f : null;
+        if (role.equals("leader") && !upgradeSelected && mc.screen instanceof PatternBookScreen screen) {
+            try {
+                var field = PatternBookScreen.class.getDeclaredField("offer"); field.setAccessible(true);
+                OpenForgeScreenPacket offer = (OpenForgeScreenPacket) field.get(screen);
+                var row = offer.entries().stream().filter(e -> e.recipeId().equals(recipe)).findFirst().orElseThrow();
+                checks.put("leader_upgrade_offer_exact_cost_and_base", row.metalUnits() == 45 && row.upgrade()
+                        && row.auxiliary().stream().anyMatch(s -> s.is(item("magistuarmory:halfarmor_chestplate"))));
+                checks.put("leader_upgrade_offer_personal_name", row.result().getHoverName().getString().equals("The Reserved Oath"));
+                shot(mc, "packtest_multiplayer_leader_upgrade_offer");
+                ModNetwork.CHANNEL.sendToServer(new com.otectus.immersivesmithing.network.packet.SelectForgeRecipePacket(session, recipe));
+                upgradeSelected = true;
+            } catch (ReflectiveOperationException failure) { throw new IOException(failure); }
+        }
+        if (role.equals("leader") && upgradeSelected && !upgradeCommitted && forge != null && recipe.equals(forge.plan())
+                && !(mc.screen instanceof PatternBookScreen)) {
+            // The plan is pinned beside the tray: commit it, as the tray part of the forge does.
+            WorkClient.send(forgePos, WorkAction.COMMIT);
+            upgradeCommitted = true;
+        }
+        if (role.equals("peer") && !upgradeContended && Files.exists(MULTIPLAYER_SHARED.resolve("upgrade-reserved"))) {
+            mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, new net.minecraft.world.phys.BlockHitResult(
+                    Vec3.atCenterOf(forgePos), Direction.UP, forgePos, false));
+            ModNetwork.CHANNEL.sendToServer(new com.otectus.immersivesmithing.network.packet.SelectForgeRecipePacket(session, recipe));
+            ModNetwork.CHANNEL.sendToServer(new com.otectus.immersivesmithing.network.packet.CancelSessionPacket(session));
+            WorkClient.send(forgePos, WorkAction.DRAW);
+            WorkClient.send(forgePos, WorkAction.CANCEL_JOB);
+            WorkClient.send(forgePos, WorkAction.CANCEL_JOB);
+            marker("peer-upgrade-attempt"); upgradeContended = true;
+        }
+        if (!Files.exists(MULTIPLAYER_SHARED.resolve("upgrade-reloaded"))) return;
+        if (upgradeReloadSeen < 0) upgradeReloadSeen = anvilPhaseTicks;
+        if (anvilPhaseTicks - upgradeReloadSeen < 20) return;
+        if (!upgradeSynced) {
+            String counts = Files.readString(MULTIPLAYER_SHARED.resolve("upgrade-reloaded"));
+            checks.put(role + "_upgrade_reload_recipes_match", counts.contains("count=" + mc.getConnection().getRecipeManager().getRecipes().size() + "\n")
+                    && mc.getConnection().getRecipeManager().byKey(recipe).isPresent());
+            upgradeSynced = true; marker(role + "-upgrade-synced");
+        }
+        if (role.equals("leader") && !upgradeCancelled) {
+            ForgeJob job = forge != null ? forge.job() : null;
+            if (job == null) { finish(mc, false, "the committed upgrade was lost on reload"); return; }
+            // The billet on the tray carries the server-assembled result: the base's name, wear and enchantments.
+            ItemStack preview = job.target;
+            checks.put("leader_upgrade_authoritative_preview", preview.is(item("magistuarmory:knight_chestplate"))
+                    && preview.getHoverName().getString().equals("The Reserved Oath") && preview.isEnchanted() && preview.getDamageValue() > 0);
+            shot(mc, "packtest_multiplayer_leader_upgrade_after_reload");
+            WorkClient.send(forgePos, WorkAction.CANCEL_JOB); // asks for confirmation
+            WorkClient.send(forgePos, WorkAction.CANCEL_JOB); // confirms
+            marker("leader-upgrade-cancelled"); upgradeCancelled = true;
+        }
     }
 
     private static final class FrameMeasurement {
@@ -1386,27 +1804,39 @@ public final class ClientPackTest {
                 60, state == WorkpieceState.SHAPED ? 88 : -1, false, state, ImmersiveSmithing.id(pattern));
     }
 
+    /** A recipe row the smith can choose. */
+    private static OpenForgeScreenPacket.Entry entry(ResourceLocation id, ItemStack result, int units, List<ItemStack> auxiliary) {
+        return new OpenForgeScreenPacket.Entry(id, result, units, auxiliary,
+                OpenForgeScreenPacket.AFFORDABLE | OpenForgeScreenPacket.HAS_COMPONENTS | OpenForgeScreenPacket.ALLOWED, 0, Component.empty());
+    }
+
+    /** Iron's cast rows for 108 molten units: 12 ingots, or 108 nuggets. */
+    private static List<OpenForgeScreenPacket.CastOption> ironCasts(int molten) {
+        return List.of(new OpenForgeScreenPacket.CastOption(new ItemStack(Items.IRON_INGOT), 9, molten / 9),
+                new OpenForgeScreenPacket.CastOption(new ItemStack(Items.IRON_NUGGET), 1, molten));
+    }
+
     private static OpenForgeScreenPacket forgeOffer() {
         List<ItemStack> sticks = List.of(new ItemStack(Items.STICK, 2));
-        return new OpenForgeScreenPacket(7, BlockPos.ZERO, Component.translatable("material.immersive_smithing.iron"), 108, 30_000, List.of(
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/iron_axe"), new ItemStack(Items.IRON_AXE), 27, sticks),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/iron_boots"), new ItemStack(Items.IRON_BOOTS), 36, List.of()),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/iron_pickaxe"), new ItemStack(Items.IRON_PICKAXE), 27, sticks),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/iron_sword"), new ItemStack(Items.IRON_SWORD), 18, List.of(new ItemStack(Items.STICK))),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/iron_helmet"), new ItemStack(Items.IRON_HELMET), 45, List.of()),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("smithing/shears"), new ItemStack(Items.SHEARS), 18, List.of())));
+        return new OpenForgeScreenPacket(7, BlockPos.ZERO, Component.translatable("material.immersive_smithing.iron"), 108, null, List.of(
+                entry(ImmersiveSmithing.id("smithing/iron_axe"), new ItemStack(Items.IRON_AXE), 27, sticks),
+                entry(ImmersiveSmithing.id("smithing/iron_boots"), new ItemStack(Items.IRON_BOOTS), 36, List.of()),
+                entry(ImmersiveSmithing.id("smithing/iron_pickaxe"), new ItemStack(Items.IRON_PICKAXE), 27, sticks),
+                entry(ImmersiveSmithing.id("smithing/iron_sword"), new ItemStack(Items.IRON_SWORD), 18, List.of(new ItemStack(Items.STICK))),
+                entry(ImmersiveSmithing.id("smithing/iron_helmet"), new ItemStack(Items.IRON_HELMET), 45, List.of()),
+                entry(ImmersiveSmithing.id("smithing/shears"), new ItemStack(Items.SHEARS), 18, List.of())), ironCasts(108));
     }
 
     private static OpenForgeScreenPacket longForgeOffer() {
         List<ItemStack> sticks = List.of(named(Items.STICK, "Hand Carved Ash Wood Handle with a Very Long Name"));
         return new OpenForgeScreenPacket(7, BlockPos.ZERO,
-                Component.literal("A Very Long Localized Tempered Iron Material Family Name"), 108, 30_000, List.of(
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("packtest/long_pickaxe"),
+                Component.literal("A Very Long Localized Tempered Iron Material Family Name"), 108, null, List.of(
+                entry(ImmersiveSmithing.id("packtest/long_pickaxe"),
                         named(Items.IRON_PICKAXE, "An Exceptionally Long Tempered Iron Pickaxe Name"), 27, sticks),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("packtest/long_chestplate"),
+                entry(ImmersiveSmithing.id("packtest/long_chestplate"),
                         named(Items.IRON_CHESTPLATE, "Reinforced Ceremonial Tempered Iron Chestplate"), 72, List.of()),
-                new OpenForgeScreenPacket.Entry(ImmersiveSmithing.id("packtest/long_sword"),
-                        named(Items.IRON_SWORD, "Master Smith's Exceptionally Long Tempered Iron Sword"), 18, sticks)));
+                entry(ImmersiveSmithing.id("packtest/long_sword"),
+                        named(Items.IRON_SWORD, "Master Smith's Exceptionally Long Tempered Iron Sword"), 18, sticks)), ironCasts(108));
     }
 
     private static void shot(Minecraft mc, String name) {
@@ -1499,6 +1929,8 @@ public final class ClientPackTest {
 
     private static void finish(Minecraft mc, boolean pass, String reason) {
         finished = true;
+        if (FocusController.active()) FocusController.exit(null, true);
+        if (originalCameraMode != null) converge(ClientConfig.CAMERA_MODE, originalCameraMode);
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("pass", pass);
         result.put("reason", reason);

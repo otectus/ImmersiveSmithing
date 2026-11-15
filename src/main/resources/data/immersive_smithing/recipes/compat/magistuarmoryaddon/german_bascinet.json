@@ -5,13 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:german_bascinet"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 76,
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:german_bascinet"
   },

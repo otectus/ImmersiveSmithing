@@ -60,6 +60,24 @@ public final class MaterialRegistry {
         return ambiguous;
     }
 
+    /** Adds reviewed runtime component sources without changing canonical families or the existing casting outputs. */
+    public MaterialRegistry withVerifiedSources(Map<Item, Entry> verified) {
+        Map<Item, Entry> nextLookup = new HashMap<>(lookup);
+        Map<ResourceLocation, MaterialFamily> nextFamilies = new LinkedHashMap<>(families);
+        for (var entry : verified.entrySet()) {
+            if (nextLookup.containsKey(entry.getKey()) || ambiguous.contains(entry.getKey())) continue;
+            Entry value = entry.getValue();
+            MaterialFamily family = nextFamilies.get(value.family());
+            if (family == null) continue;
+            List<MaterialFamily.Source> sources = new ArrayList<>(family.sources());
+            sources.add(new MaterialFamily.Source(entry.getKey(), value.units(), value.rule()));
+            nextFamilies.put(family.id(), new MaterialFamily(family.id(), family.displayName(), family.meltMultiplier(),
+                    family.requiresIgnition(), family.requiredFuelTag(), family.tint(), family.auto(), family.upgradePolicy(), sources, family.casting()));
+            nextLookup.put(entry.getKey(), value);
+        }
+        return new MaterialRegistry(Map.copyOf(nextFamilies), Map.copyOf(nextLookup), ambiguous);
+    }
+
     /** Resolves datapack definitions (explicit) and, when enabled, forge:ingots/* tags (automatic) against bound tags. */
     public static MaterialRegistry build(Collection<MaterialDefinition> definitions, CompatibilityReport report) {
         Set<String> blacklist = new HashSet<>(ServerConfig.list(ServerConfig.MATERIAL_FAMILY_BLACKLIST));
@@ -82,6 +100,7 @@ public final class MaterialRegistry {
                 continue;
             }
             Component name = def.displayName() != null ? def.displayName() : MaterialFamily.defaultName(def.family());
+            builder.casting.put(def.family(), def.casting());
             builder.add(new MaterialFamily(def.family(), name, def.meltMultiplier(), def.requiresIgnition(),
                     def.requiredFuelTag(), def.tint(), false, def.upgradePolicy(), sources));
         }
@@ -142,6 +161,8 @@ public final class MaterialRegistry {
         private final Map<ResourceLocation, MaterialFamily> families = new LinkedHashMap<>();
         private final Map<Item, Entry> lookup = new HashMap<>();
         private final Set<Item> ambiguous = new HashSet<>();
+        /** Each defined family's casting entry (null: not set in its files). */
+        private final Map<ResourceLocation, MaterialDefinition.Casting> casting = new HashMap<>();
 
         Builder(CompatibilityReport report) {
             this.report = report;
@@ -172,6 +193,7 @@ public final class MaterialRegistry {
 
         MaterialRegistry build() {
             Map<ResourceLocation, MaterialFamily> cleaned = new LinkedHashMap<>();
+            List<String> preferred = List.copyOf(ServerConfig.list(ServerConfig.CASTING_PREFERRED_NAMESPACES));
             for (MaterialFamily f : families.values()) {
                 List<MaterialFamily.Source> sources = f.sources().stream()
                         .filter(s -> !ambiguous.contains(s.item()))
@@ -184,8 +206,10 @@ public final class MaterialRegistry {
                     report.skippedFamily(f.id(), "every source item is claimed by another family");
                     continue;
                 }
+                // Cast outputs come from the family's own, unambiguous sources only, so no item is cast for two metals.
+                CastOutputs outputs = CastOutputs.resolve(f.id(), sources, casting.get(f.id()), preferred, report);
                 cleaned.put(f.id(), new MaterialFamily(f.id(), f.displayName(), f.meltMultiplier(), f.requiresIgnition(),
-                        f.requiredFuelTag(), f.tint(), f.auto(), f.upgradePolicy(), sources));
+                        f.requiredFuelTag(), f.tint(), f.auto(), f.upgradePolicy(), sources, outputs));
                 report.family(cleaned.get(f.id()));
             }
             return new MaterialRegistry(Map.copyOf(cleaned), Map.copyOf(lookup), Set.copyOf(ambiguous));

@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_glaive"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:glaive"
+  "anvil_pattern": "immersive_smithing:glaive",
+  "replaces": [
+    "spartanweaponry:netherite_glaive_smithing"
+  ]
 }

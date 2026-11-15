@@ -5,7 +5,9 @@ cannot describe. Everything below is re-read on `/reload` (or `/immersivesmithin
 
 ## Material units
 
-All metal accounting uses integers: nugget = 1, ingot or raw ore = 9, storage block = 81.
+Saved metal accounting uses integers: nugget = 1, ingot or raw ore = 9, storage block = 81.
+Reviewed Epic component graphs use rational arithmetic during reload: round the final forge charge up once and
+known recoverable content down. Fractional components are not direct melt sources; the saved unit scale is unchanged.
 
 ## Smithing recipes
 
@@ -22,22 +24,24 @@ They are synced to clients and shown in JEI.
     { "ingredient": { "item": "minecraft:stick" }, "count": 2 }
   ],
   "result": { "item": "examplemod:steel_pickaxe" },
-  "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:pickaxe"
+  "anvil_pattern": "immersive_smithing:pickaxe",
+  "process_profile": "immersive_smithing:pick_head"
 }
 ```
 
 | Field | Required | Notes |
 |---|---|---|
 | `material` | yes | Material family id. A recipe whose family does not exist is deactivated and reported. |
-| `metal_units` | yes | Positive integer. |
-| `auxiliary` | no | Non-metal ingredients taken from the smith's inventory when forging starts. `count` defaults to 1. With `"consume_equipment": true` the ingredient is a finished piece the recipe reworks (a netherite helmet becoming an ignitium helmet): it is matched by item, whatever its damage or quality, escrowed like any other auxiliary and replaced by the new piece with the quality of the new forging. |
+| `metal_units` | yes, except policy templates | Positive integer; an Epic policy template derives it from its active source. |
+| `source_policy` | no | `epic_knights` marks a reviewed item/family/pattern template. Every supported active native source resolves separately at reload; no static numeric cost is trusted. |
+| `auxiliary` | no | Non-metal ingredients taken from the smith's inventory when the plan is committed at the forge's tray. They wait in the job's escrow until the billet is drawn (cancelling the job hands them back exactly once) and are fitted at the anvil after the quench. `count` defaults to 1. With `"consume_equipment": true` the ingredient is a finished piece the recipe reworks (a netherite helmet becoming an ignitium helmet): it is matched by item, whatever its damage or quality, escrowed like any other auxiliary and replaced by the new piece with the quality of the new forging. |
 | `result` | yes | Standard item-stack JSON; `nbt` is kept on the finished item. |
-| `forge_pattern` | no | Defaults to `immersive_smithing:standard`. |
-| `anvil_pattern` | no | Defaults to the closest pattern family for the result item. |
+| `forge_pattern` | no | Read and kept for compatibility. Since 1.3.0 it changes nothing: heating follows the material's `thermal` block and the process profile. |
+| `anvil_pattern` | no | Defaults to the closest pattern family for the result item. Chooses the [process profile](#process-profiles) unless `process_profile` names one. |
+| `process_profile` | no | 1.3.0. A process profile id that overrides the pattern's. An unknown id falls back to the pattern's profile; `/immersivesmithing process` reports it. |
 | `replaces` | no | Ids of the native recipes this recipe stands in for. While it is active they are disabled (with `replaceMetalEquipmentRecipes` on), and only they: other recipes for the same result are kept and reported. |
 | `derived_from` | no | Ids of native recipes this recipe follows without disabling them (a remake that adds no metal stays beside it). |
-| `keep_base_data` | no | Default `true`. When the recipe reworks exactly one finished piece (`consume_equipment`), the result keeps that piece's data, as a smithing-table upgrade does: enchantments, name, lore, wear and other mods' item data. The old quality and maker's mark are dropped because the quench writes new ones, and the `result`'s own `nbt` keys win. Wear is capped so the piece never arrives broken. `false` makes a fresh `result`. |
+| `keep_base_data` | no | Default `true`. Exactly one reserved `consume_equipment` stack supplies reviewed enchantments, display name/lore/color, repair cost, trim, heraldry and decorations. Target defaults win. Equal durability keeps exact damage; otherwise proportional wear rounds up. Fractional wear carries over. Arbitrary tags/capabilities and loaded ammo are not copied. The quench supplies new quality and maker; `false` creates the declared result. |
 
 An explicit recipe always wins over automatic detection for the same result item. Results tagged
 `immersive_smithing:non_smithable_equipment` are ignored.
@@ -45,6 +49,29 @@ An explicit recipe always wins over automatic detection for the same result item
 A recipe with `replaces` or `derived_from` is active only while at least one of the recipes it names is loaded. When a
 datapack or KubeJS removes the native recipe, the forge recipe that stands in for it goes too, and the report says
 why. A recipe naming neither is active whenever its conditions pass.
+
+### Exact source policy and precedence
+
+An Epic template resolves to `<template ID>/from/<source namespace>/<source path>` for every validated active source,
+retaining distinct variants and complete ingredient alternatives. A plain datapack replacement at the template ID,
+or an explicit recipe claiming the source, has priority. Provider recipes are inserted once into the authoritative
+manager; a loaded datapack recipe at the same ID wins. Sources are suppressed only after validation and publication.
+
+Per-source rules live at `data/<source namespace>/immersive_smithing/recipe_policies/<source path>.json`:
+
+```json
+{"operation":"native","reason":"Owned by this pack's progression"}
+```
+
+`native` vetoes replacement; `forge` permits the usual validation, never missing recipes or unsupported semantics.
+Forge conditions apply; malformed policies preserve the native route. External bridge ownership and explicit server
+exclusions precede every provider or datapack rule. A fresh reload generation never restores removed recipes.
+In-flight sessions pin their recipe, cost, target assembly and escrow; new selections use the new snapshot.
+
+Recovery uses proven primary content, including the consumed same-family base and additions, bounded by actual
+reserved provenance and the lowest compatible route. Unknown custom alternatives and unanchored cycles establish
+no inferred recovery. Explicit recycling overrides beat inference; `recyclable: false` beats positive values and raw
+source mappings. Secondary metals/plating are forfeited. No TFC or Greg fluid units are translated to nuggets.
 
 ### Conditions
 
@@ -77,21 +104,23 @@ go back to the smith.
   "requires_ignition": true,
   "required_fuel_tag": "immersive_smithing:netherite_fuels",
   "tint": "#FF8A3D",
-  "upgrade_policy": "shape"
+  "upgrade_policy": "shape",
+  "thermal": { "workable_min": 0.45, "optimal_min": 0.58, "optimal_max": 0.72, "workable_max": 0.80, "cooling": 1.0, "heating": 1.0 }
 }
 ```
 
 | Field | Required | Notes |
 |---|---|---|
 | `family` | yes | The family id. Several files for the same id are merged in file-id order: sources add up, and the last file sets the other fields. |
-| `sources_only` | no | Default `false`. `true`: the file only adds its sources to a family that another file defines; its other fields are ignored, and a family with nothing but `sources_only` files is not created. Epic Knights' steel plate joins `forge:steel` this way, only where steel exists. |
+| `sources_only` | no | Default `false`. `true`: the file only adds its sources to a family that another file defines; its other fields are ignored, and a family with nothing but `sources_only` files is not created. Reviewed Epic Knights components instead receive their verified active-recipe value at reload; they are not fixed-value plate sources. |
 | `display_name` | no | A translation key (the key itself is shown if untranslated) or a text component object. |
 | `sources` | yes | Each entry has a `tag` or an `item`, plus positive `units`. |
 | `melt_time_multiplier` | no | Multiplies the configured base melt time. Default 1.0. |
 | `requires_ignition` | no | Default `true`. When `false`, solid fuel heats the forge without being lit. |
 | `required_fuel_tag` | no | The heat source must be in this item tag. Lava counts as `minecraft:lava_bucket`. |
 | `tint` | no | Colour of the molten metal, `"#RRGGBB"` or an integer. |
-| `upgrade_policy` | no | How upgrades *into* this metal are priced when their base is another piece of equipment. `shape` (default): the base's whole shape in this metal, base not needed (vanilla netherite). `addition`: only the metal the original recipe asked for, and the base piece is consumed as an auxiliary; right for scarce boss metals. |
+| `thermal` | no | 1.3.0. Heat bands of the metal on a 0..1 scale (1 is the hottest the forge reaches), ordered `workable_min < optimal_min < optimal_max < workable_max`, the optimal band at least 0.02 wide. `cooling` and `heating` (0.1 to 10) scale the base rates. Every field is optional; the defaults are the values shown. A metal without a `thermal` block uses its process profile's `heat` block, then these defaults. Game design, not metallurgy: a fantasy metal may have any ordered bands. |
+| `upgrade_policy` | no | Generic upgrade pricing: `shape` (default) uses the base's whole shape in this metal without consuming the base (vanilla netherite); `addition` consumes the exact base plus added metal. Epic Knights' recipe-level policy takes precedence: structural upgrades consume their bases, native plating retains its template, and only genuine netherite replacement follows this material policy. |
 
 Files support Forge `conditions`. An item claimed by two families is ignored and reported as ambiguous.
 
@@ -150,6 +179,10 @@ every item of a mod has one stated route.
 
 `data/<namespace>/immersive_smithing/anvil_patterns/<name>.json`. The pattern id is the file id.
 
+Since 1.3.0 a pattern is a shape family. Its id chooses the [process profile](#process-profiles) (each profile lists the
+patterns it serves) and its `categories` still classify items. The strike fields below belonged to the replaced anvil
+minigame: they are still read, so existing files stay valid, but nothing in play uses them.
+
 ```json
 {
   "targets": [[0.30, 0.70], [0.46, 0.54], [0.62, 0.38], [0.78, 0.22]],
@@ -166,14 +199,8 @@ every item of a mod has one stated route.
 
 | Field | Default | Notes |
 |---|---|---|
-| `targets` | required | 1 to 64 points `[x, y]`, normalised 0..1 over the workpiece (y points down). Visited in order and repeated when `strikes` is larger. |
-| `strikes` | number of targets | Strikes needed to finish (1 to 64). |
-| `target_radius` | 0.075 | Radius as a fraction of the work area. |
-| `target_lifetime` | 1.8 | Seconds a target stays before it expires and comes back. |
-| `ideal_fraction` | 0.6 | When in the lifetime a strike is perfectly timed. |
-| `gap` | 0.25 | Seconds between a hit and the next target. |
-| `jitter` | 0.03 | Random offset applied to each target from the session seed. |
-| `time_multiplier` | 1.0 | Multiplies the time granted by the hammer tier. |
+| `targets` | required | 1 to 64 points `[x, y]`. Unused since 1.3.0. |
+| `strikes`, `target_radius`, `target_lifetime`, `ideal_fraction`, `gap`, `jitter`, `time_multiplier` | | Unused since 1.3.0. |
 | `categories` | none | Item tags; items in them use this pattern before class-based classification. |
 
 Built-in patterns: `sword`, `axe`, `pickaxe`, `shovel`, `hoe`, `generic_tool`, `helmet`, `chestplate`, `leggings`,
@@ -200,6 +227,9 @@ weapons to them:
 
 `data/<namespace>/immersive_smithing/forge_patterns/<name>.json`
 
+Still read so recipes and datapacks that name a forge pattern stay valid. They parameterised the forming-rhythm minigame
+that 1.3.0 replaced with hands-on heating, and have no effect any more.
+
 ```json
 {
   "base_phases": 3,
@@ -214,8 +244,80 @@ weapons to them:
 }
 ```
 
-Phases = `base_phases + metal_units / units_per_extra_phase`, clamped to `min_phases..max_phases`. Speeds are
-track lengths per second; the marker speeds up by `acceleration` per second while the smith waits.
+## Process profiles
+
+`data/<namespace>/immersive_smithing/process_profiles/<name>.json` (1.3.0). A process profile is the authoritative
+description of how a kind of piece is worked: the operations struck on the anvil, the quench and the components fitted
+afterwards. The server scores against it; clients only draw it. A committed job freezes its profile, so a reload never
+changes a piece in progress.
+
+```json
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:straight_blade",
+  "patterns": ["immersive_smithing:sword", "immersive_smithing:longsword"],
+  "heat": { "optimal_min": 0.6 },
+  "operations": [
+    { "id": "form_tang",  "region": "tang",  "kind": "shape",  "work": 3, "weight": 1, "face": "front", "area": [0.0, 0.27, -0.5, 0.5] },
+    { "id": "draw_blade", "region": "blade", "kind": "draw",   "work": 6, "weight": 3, "face": "front", "area": [0.27, 0.85, -0.5, 0.5] },
+    { "id": "dress_edge", "region": "edge",  "kind": "finish", "work": 3, "weight": 2, "face": "back",  "area": [0.27, 1.0, -0.5, 0.5],
+      "after": ["draw_blade"] }
+  ],
+  "quench": { "duration_ticks": 60, "immersion_min": 0.7 },
+  "assembly": [ { "auxiliary_index": 0, "socket": "grip" } ]
+}
+```
+
+| Field | Default | Notes |
+|---|---|---|
+| `schema_version` | 1 | Must be 1. |
+| `workpiece_profile` | the file id | The [workpiece profile](#workpiece-profiles) clients draw it with. |
+| `patterns` | none | Anvil pattern ids this profile serves. A recipe's `process_profile` wins over this mapping. |
+| `heat` | none | Heat bands for these pieces when their metal defines no `thermal` block (same fields); the metal's own bands win. |
+| `operations` | required | 1 to 12 operations. The smith works them in any order their `after` lists allow. |
+| `operations[].id` | required | 1 to 32 characters of `a-z`, `0-9`, `_`; unique. |
+| `operations[].region` | the id | Name shown to the smith: `operation.immersive_smithing.<region>` when translated, otherwise the region with `_` as spaces. |
+| `operations[].kind` | required | `draw`, `spread`, `punch` (rough work: a heavy blow does more), `shape`, `curve`, `dish`, `finish`. |
+| `operations[].work` | required | Work to finish it, more than 0 and at most 40. One unit is a normal blow on metal at the top of the workable band; cooler metal does less (about 0.87 at the middle of the default ideal band), a heavy blow on rough work 1.6 times as much. Scaled by the piece's size relative to an iron sword. |
+| `operations[].weight` | 1 | 1 to 100. Its share of the anvil score. |
+| `operations[].face` | `any` | `front`, `back` or `any`: the side that must face up (the smith turns the piece over). |
+| `operations[].area` | required | `[u0, u1, v0, v1]`: along the piece 0..1 from the grip end, across it -0.5..0.5. A blow inside the area works it; where inside it lands never changes the rules. |
+| `operations[].after` | none | Ids of earlier operations that must be complete first. |
+| `quench.duration_ticks` | 60 | 20 to 200; scaled by `trough.quenchTimeMultiplier`. |
+| `quench.immersion_min` | 0.65 | 0.1 to 1. How deep the lowered piece is drawn in the water (presentation only; the quench rules are the same). |
+| `assembly` | none | One entry per recipe auxiliary, in order (`auxiliary_index` must equal its position): the socket the component is fitted into at the anvil. At most 8. |
+
+Profiles are validated as a whole; a broken file is skipped with its reason in the log and the other profiles still load.
+Built-in profiles (namespace `immersive_smithing`): `straight_blade`, `short_blade`, `curved_blade`, `chopping_head`,
+`pick_head`, `digging_plate`, `hammer_head`, `polearm_head`, `armor_plate`, `shield_hardware`, `curved_thrown`,
+`ranged_hardware` and `generic`. Together they serve every built-in anvil pattern. A recipe is resolved in this order: its
+own `process_profile`, the profile listing its anvil pattern, the profile of the pattern its result classifies as, then
+`generic`. `/immersivesmithing process` writes `logs/immersive_smithing_process_report.txt` with every recipe's profile,
+how it was chosen and whether its workpiece profile exists.
+
+## Workpiece profiles
+
+`assets/<namespace>/immersive_smithing/workpiece_profiles/<name>.json` (resource pack, 1.3.0). How a kind of piece looks
+while it is worked: presentation only, it never changes an operation's area or rules. The piece is drawn as twelve
+segments along its length, each easing from the billet's size to its target size as the operations over it progress.
+
+```json
+{
+  "billet": { "length": 0.42, "width": 0.12, "thickness": 0.07 },
+  "length": 0.92,
+  "width":     [[0.0, 0.045], [0.27, 0.14], [0.84, 0.095], [1.0, 0.01]],
+  "thickness": [[0.0, 0.05], [0.3, 0.026], [1.0, 0.012]],
+  "curve":     [[0.0, 0.0], [1.0, 0.0]],
+  "lift":      [[0.0, 0.0], [1.0, 0.0]],
+  "dish": 0.0,
+  "sockets": { "grip": [0.06, 0.0] }
+}
+```
+
+Sizes are in blocks. `width`, `thickness`, `curve` (in-plane bend) and `lift` (vertical rise) are 1 to 32 keyframes
+`[u, value]` in increasing `u`, interpolated in between. `dish` (0 to 0.3) cups plates. `sockets` place the components
+named by the process profile's `assembly`; unnamed ones spread along the first fifth. A missing or broken file falls back to
+a plain bar, so a datapack-only profile still works without art.
 
 ## Tags
 
@@ -270,6 +372,7 @@ shield costs only its metal, and the base is not required. Everything else is sk
 `/immersivesmithing report`. Bows, crossbows, fishing rods and tridents are not candidates unless tagged
 `immersive_smithing:smithable_equipment`.
 
+The following generic upgrade rules do not override curated Epic Knights source policies.
 Smithing-table upgrades (`minecraft:smithing_transform`) whose result is candidate equipment without a smithing
 recipe are redirected too, when the addition is a single metal family (for example netherite from any mod). The
 template is never required. Under the addition metal's `shape` policy the cost is the base item's shape in that
@@ -335,16 +438,18 @@ arrow or bolt by the efficacy of the bow or crossbow that fired it.
 
 ### Epic Fight, Epic Knights and Simply Swords
 
-All are optional and work alone or together. Immersive Smithing's code never references them (only their namespaces):
-support is data, so the jar runs unchanged without them. The server options `integrations.epicFight`,
+All integrations are optional. Common classes never eagerly link absent addons. Reviewed version-gated mixins
+handle native visor, hitscan and projectile boundaries; conditional data handles recipe mappings. Unsupported
+versions are reported rather than silently claimed as tested. The server options `integrations.epicFight`,
 `integrations.epicKnights` (with `integrations.epicKnightsDisabledAddons` for single add-ons) and
 `integrations.simplySwords` (default `true`) switch each one off. The mod's recipes are then left exactly as it ships
 them, nothing of it is forged, and its `quality_eligible` entries are ignored. Pieces that already carry quality keep
 it.
 
-- **Epic Fight and Epic Knights are curated.** Their forge recipes are bundled under `recipes/compat/<modid>/`,
-  generated from the pinned jars by `tools/generate_epic_compat.py`, and each one names the native recipes it
-  `replaces` or is `derived_from`. Automatic detection never runs on their items, so a piece the bundled data does not
+- **Epic Fight and Epic Knights are curated.** Data under `recipes/compat/<modid>/` is generated from pinned jars by
+  `tools/generate_epic_compat.py`. Epic Knights policy templates resolve the currently loaded native sources at reload,
+  producing separate recipes with exact `replaces` IDs, complete inputs and rational costs. Epic Fight retains its
+  established bundled recipes. Automatic detection never runs on their items, so a piece the bundled data does not
   cover keeps its native recipe and shows as `missing_support` in the catalog. Everything else (wooden and diamond
   pieces, gilding and other transformations, visor states, firearms, relics) has a coverage decision. Epic Fight's
   uchigatana gets a forge recipe and the bokken a crafting recipe, because Epic Fight ships neither. Costs, versions and
@@ -360,17 +465,17 @@ it.
   runic weapons and uniques, and Epic Knights' metal transformations, visor states and relics.
 - **Recycling.** Runic weapons recycle for the netherite weapon they were made from. A transformed Epic Knights piece
   (gilded, darkened) recycles like its base piece, and a visor state like its helmet (coverage `state_of`). Epic Knights'
-  metal plates melt for one ingot. Simply Swords' uniques and the Seven Kingdoms' relics are tagged `non_recyclable`.
+  integral metal components melt for their verified active-recipe content; fractional/ambiguous components do not. Simply Swords' uniques and the Seven Kingdoms' relics are tagged `non_recyclable`.
   To let a pack melt them, replace that tag in a datapack (`"replace": true`) with only the entries the pack still
   wants, and give each piece a [recycling override](#recycling-overrides) with its metal content.
 - **Inventory.** [`compatibility/INVENTORY.md`](compatibility/INVENTORY.md) and the fixtures under
-  `compatibility/inventory/<profile>/` list every piece of equipment of the tested versions: its route, forge recipe,
+  `compatibility/inventory/<profile>/` list every registered item of the tested versions: its route, forge recipe,
   cost, pattern and components, quality and recycling. The coverage GameTests compare the live game with them, and
   `/immersivesmithing catalog <modid>` writes the same audit for the running game.
 
 When `replaceMetalEquipmentRecipes` is on and `allowVanillaCraftingAlongsideSmithing` is off, crafting recipes
-that produce a smithable item from recognised metal are removed at reload, as are smithing-table upgrade recipes
-(`suppressSmithingTableUpgrades`). Armor trim recipes are never touched. Changing these options needs a `/reload`.
+with validated exact replacement source IDs are removed at reload, including supported smithing-table upgrades
+when `suppressSmithingTableUpgrades` permits it. Sharing an output item is not enough to suppress another route. Armor trim recipes are never touched. Changing these options needs a `/reload`.
 
 ## Loot quality
 
@@ -396,9 +501,15 @@ The Smith's Grindstone refines a graded piece. A piece without a grade starts fr
 forge makes it or it is tagged `quality_eligible`. That starting grade is written only together with a paid
 refinement, so looking at the price changes nothing.
 
+Since 1.3.0 refinement is visible work: the piece rests at the wheel (use the grindstone with it), the smith picks the
+aspect (durability or efficacy, shown with its exact step and price) and holds its edge to the turning wheel for
+`grindstone.passTicks` (default 40 ticks). The levels are taken and the score written together when a pass completes, after
+the piece, the score and the price are checked again; an interrupted pass costs and gives nothing. Step, cost formula, cap
+and the Faulty restriction are unchanged. The piece on the rest belongs to the workshop like a chest's contents.
+
 Jade shows the server's per-player refinement quote, including cost modifiers. Quotes refresh while looking at the
-station and are matched to the dimension, station and held stack; a pending or stale quote never falls back to the
-unmodified price. The quote packet requires network protocol 3 on both sides.
+station and are matched to the dimension, station and piece; a pending or stale quote never falls back to the unmodified
+price. The current wire format is network protocol 6 on both sides.
 
 ## Item data
 
@@ -416,22 +527,56 @@ their original paid cost is unknown. A mismatched recorded material cannot be re
 Crafting repairs and remakes preserve the known input metal even with quality inheritance disabled; native
 smithing-table recipes copy the fields with the base's tag. Reforging writes a new paid amount at the quench.
 
-`SmithName` and `SmithUUID` are written at the quench and never change. A signed piece stores its title as the
+`SmithName` and `SmithUUID` are written when the piece is completed (at the quench, or when its last component is fitted). Cosmetic transformations preserve them; a structural
+forge upgrade writes the completing smith and resets the signature flag. A signed piece stores its title as the
 vanilla `display.Name` (non-italic, in the quality colour) and its inscription as `display.Lore`, so every tooltip
-mod shows them. Only the smith named in the mark can sign, from the screen that opens after the quench or by
-sneak-using the Smith's Anvil with the finished piece; Faulty work is never signed. The server sanitises titles and
+mod shows them. Only the smith named in the mark can sign, by sneak-using the Smith's Anvil with the finished piece (with
+`signing.openAfterQuench` the screen also opens when the piece is collected); Faulty work is never signed. The server sanitises titles and
 inscriptions (formatting codes and control characters are stripped, lengths capped by the `signing` config).
 
 A stack without this compound behaves exactly like Standard quality. Tongs and Hot Workpiece items carry
 `immersive_smithing.HeldWorkpiece` with `Version`, `TargetStack`, `RecipeId`, `MaterialFamily`, `MetalUnits`,
-`ForgeScore`, `AnvilScore`, `Faulty`, `State` (`FORGED` or `SHAPED`) and `AnvilPattern`.
+`RecoverableUnits`, `ForgeScore`, `AnvilScore`, `Faulty`, `State` (`FORGED` or `SHAPED`, the old two-state view, still
+written), `AnvilPattern` and, from schema version 3 (1.3.0), `Process`: the piece's work in progress (id, revision, stage
+`BILLET`/`SHAPING`/`SHAPED`/`QUENCHING`/`COOLED`/`FITTING`, the frozen process profile and heat bands, per-zone `Heat`
+and the holder clock it was last written at, heat preparation, per-operation work, quality and marks, the face up,
+quench progress and control, and component sockets with their stacks). The same record is stored by the anvil, the
+forge's reheat rest and the trough.
+
+Schema version 2 separated recovery from the charged `MetalUnits`; version 1 without `RecoverableUnits` defaults to its
+saved paid units, capped against current recipe content on melting. Version 1 and 2 pieces are migrated when read: a
+`FORGED` piece keeps its forge score and is shaped again on the new anvil; a `SHAPED` one keeps both scores and only needs
+its quench; neither is charged for components again, and each gets a deterministic id from its saved data. A record that
+cannot be read (a missing mod's item, a future version) is kept unchanged as raw data in whatever holds it and reported,
+never deleted. The target stack retains its full supported NBT.
+
+## Hands-on work and protocol
+
+Since 1.3.0 the forge, anvil, trough and grindstone are worked in the world. Clients send intents only
+(`WorkActionPacket`: station position and instance, action, a strictly growing sequence number, target part, a point on
+the piece and flags); the server checks, in order, a known action, finite numbers, a loaded station of a known kind and the
+exact instance the client aimed at, a living smith within `minigames.maxStationDistance` of the real eyes and with line
+of sight, the station's lease (one writer per station, permission checked when taken through the ordinary block-use hook,
+so claim and protection mods apply), the sequence number and a per-smith action budget. Each station then validates tools,
+the piece and timing itself and scores the result. Nothing a client sends carries a score, a heat, a quality or an item.
+
+A lease ends after `work.leaseIdleSeconds` without an action, on death, logout, a dimension change, moving out of reach,
+taking damage while focused, or when the station is removed; an idle World-view hold can be taken over after three seconds.
+A committed forge job belongs to its smith for `work.jobPrioritySeconds` after their last action on it; after that anyone in
+the workshop may work, draw or cancel it (a non-owner's cancel drops the escrow at the forge). Work keeps its own clock per
+holder: a station's piece changes only while its chunk is loaded, a piece in tongs cools as the item ticks, and nothing
+changes offline or unloaded. Network protocol is `6`; 1.2 clients cannot join a 1.3 server.
 
 ## Events
 
 `com.otectus.immersivesmithing.api.event.ItemSmithedEvent` is posted on the Forge bus (server side, not cancellable)
-when a smith quenches a piece, after quality and the maker's mark are written and before the item reaches the
-inventory. It carries the smith, the live result stack (changes stay on the item), the `QualityData`, the smithing
-recipe id, the material family, the units consumed and the trough position. KubeJS scripts can subscribe with
+once per finished piece, when it is completed: at the trough as it is lifted from a correct quench (pieces without
+components, and pieces forged before 1.3.0), or at the anvil when its last component is fitted. Quality and the maker's
+mark are already written and the piece has not reached its output or the inventory. It carries the smith, the live result
+stack (changes stay on the item), the `QualityData`, the smithing recipe id, the material family, the units consumed, the
+trough position (`getTroughPos`) and, since 1.3.0, where it was completed (`getCompletedAt`: `TROUGH` or `ANVIL`, and
+`getCompletionPos`). Timing changed in 1.3.0 for pieces with components: after fitting instead of at the quench.
+Refinement and signing never post it again. KubeJS scripts can subscribe with
 `ForgeEvents.onEvent('com.otectus.immersivesmithing.api.event.ItemSmithedEvent', ...)`. With
 `integrations.fireVanillaCraftEvent` (default on) the vanilla `PlayerEvent.ItemCraftedEvent` is fired too, with a
 one-slot container, so mods that reward crafting see forged items.
@@ -452,8 +597,8 @@ one-slot container, so mods that reward crafting see forged items.
 | `Predicate<ItemStack>` | `exclusion` | Excludes items from detection, suppression, recycling and quality. |
 | `IMeltVeto` | `melt_veto` | Refuses an item at the Smith's Forge (hand and automation) with a player-facing reason, for items whose other data melting would destroy. |
 | `ISmithingRecipeGate` | `recipe_gate` | 1.1.0. Refuses a recipe to a smith with a reason: the Forge screen leaves it out (and shows the first reason when nothing is left), and the selection is refused again before any metal or auxiliary is taken. For progression mods that gate the making of gear. |
-| `ISmithingCostModifier` | `cost_modifier` | 1.1.0. Adjusts the metal units the forge charges (never below one, never above the recipe's own; the minigame keeps the recipe's shape) and the experience levels a Smith's Grindstone refinement costs (never below zero). |
-| `ISmithingAssistSource` | `assist_source` | 1.1.0. Per-player time allowance at the forge and anvil (`SmithingStation`). Answers multiply, clamped to `1.0..minigames.maxAssistTimeMultiplier`; the client receives the final allowance in the start packet, so no protocol change. |
+| `ISmithingCostModifier` | `cost_modifier` | 1.1.0. Adjusts the metal units the forge charges (never below one, never above the recipe's own; the work keeps the recipe's own size) and the experience levels a Smith's Grindstone refinement costs (never below zero). |
+| `ISmithingAssistSource` | `assist_source` | 1.1.0. Per-player assistance (`SmithingStation`). Answers multiply, clamped to `1.0..minigames.maxAssistTimeMultiplier`. Since 1.3.0 the `ANVIL` answer divides the hammer's recovery time between blows (never below four ticks); `FORGE` is not asked. Applied by the server; nothing is sent to clients. |
 
 ```java
 InterModComms.sendTo("immersive_smithing", ImmersiveSmithingAPI.IMC_CLASSIFIER,
@@ -469,7 +614,9 @@ Operators (permission level 2):
 - `/immersivesmithing recipe <item>` - smithing recipes for the item and the conventional recipes they disabled.
 - `/immersivesmithing quality` - quality and multipliers of the held item.
 - `/immersivesmithing report` - writes `logs/immersive_smithing_report.txt` with every detection decision.
-- `/immersivesmithing session` - active minigame sessions.
+- `/immersivesmithing session` - open pattern books and every smith's hold (lease) on a station.
+- `/immersivesmithing process` - writes `logs/immersive_smithing_process_report.txt`: each recipe's process profile, how it
+  was chosen, and whether its workpiece profile exists.
 - `/immersivesmithing catalog <modid>` - writes `logs/immersive_smithing_catalog_<modid>.json`, covering every piece
   of equipment the mod registers: its anvil shape, its forge recipes, what happened to each native recipe, whether it
   carries quality and what it recycles for.

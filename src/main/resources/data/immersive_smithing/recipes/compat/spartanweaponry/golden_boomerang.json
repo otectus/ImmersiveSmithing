@@ -26,5 +26,8 @@
     "item": "spartanweaponry:golden_boomerang"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:boomerang"
+  "anvil_pattern": "immersive_smithing:boomerang",
+  "replaces": [
+    "spartanweaponry:golden_boomerang"
+  ]
 }

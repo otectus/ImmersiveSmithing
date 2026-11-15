@@ -5,21 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:iron_retiarius"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:iron",
-  "metal_units": 12,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:poles"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:iron_retiarius"
   },

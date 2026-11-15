@@ -14,5 +14,8 @@
     "item": "minecraft:golden_shovel"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:shovel"
+  "anvil_pattern": "immersive_smithing:shovel",
+  "replaces": [
+    "minecraft:golden_shovel"
+  ]
 }

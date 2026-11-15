@@ -10,7 +10,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 /**
- * Smithing tool tiers. Higher tiers give more minigame time and durability; they never add quality directly.
+ * Smithing tool tiers. Higher tiers are more durable and recover slightly faster between hammer blows; they never add
+ * quality directly. {@link #forgeTimeMs()} and {@link #anvilTimeMs()} read the deprecated deadline keys and are kept only
+ * for API compatibility.
  */
 public enum SmithingTier implements StringRepresentable {
     STONE("stone", 512, 5, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS), false),

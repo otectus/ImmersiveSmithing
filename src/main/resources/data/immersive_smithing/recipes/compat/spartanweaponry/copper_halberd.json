@@ -34,5 +34,8 @@
     "item": "spartanweaponry:copper_halberd"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:halberd"
+  "anvil_pattern": "immersive_smithing:halberd",
+  "replaces": [
+    "spartanweaponry:copper_halberd"
+  ]
 }

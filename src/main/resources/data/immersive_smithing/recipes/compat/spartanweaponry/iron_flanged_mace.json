@@ -32,5 +32,8 @@
     "item": "spartanweaponry:iron_flanged_mace"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:flanged_mace"
+  "anvil_pattern": "immersive_smithing:flanged_mace",
+  "replaces": [
+    "spartanweaponry:iron_flanged_mace"
+  ]
 }

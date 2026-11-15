@@ -5,29 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
-      "type": "forge:mod_loaded",
-      "modid": "magistuarmory"
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
     },
     {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:chained_gambeson"
-    },
-    {
-      "type": "forge:item_exists",
-      "item": "magistuarmory:gambeson_chestplate"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 4,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "magistuarmory:gambeson_chestplate"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:chained_gambeson"
   },

@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thirtyyearswar"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "thirtyyearswar",
+      "versions": "[1.3]"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "thirtyyearswar:baroque_cabasset_helmet"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "source_policy": "epic_knights",
+  "material": "forge:steel",
+  "result": {
+    "item": "thirtyyearswar:baroque_cabasset_helmet"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:helmet"
+}

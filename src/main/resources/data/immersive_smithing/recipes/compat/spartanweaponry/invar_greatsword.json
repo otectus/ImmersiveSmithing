@@ -34,5 +34,8 @@
     "item": "spartanweaponry:invar_greatsword"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:greatsword"
+  "anvil_pattern": "immersive_smithing:greatsword",
+  "replaces": [
+    "spartanweaponry:invar_greatsword"
+  ]
 }

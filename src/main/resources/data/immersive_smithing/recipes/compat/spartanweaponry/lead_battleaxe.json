@@ -40,5 +40,8 @@
     "item": "spartanweaponry:lead_battleaxe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:battleaxe"
+  "anvil_pattern": "immersive_smithing:battleaxe",
+  "replaces": [
+    "spartanweaponry:lead_battleaxe"
+  ]
 }

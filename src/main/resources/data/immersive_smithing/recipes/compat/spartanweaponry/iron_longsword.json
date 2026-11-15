@@ -26,5 +26,8 @@
     "item": "spartanweaponry:iron_longsword"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:longsword"
+  "anvil_pattern": "immersive_smithing:longsword",
+  "replaces": [
+    "spartanweaponry:iron_longsword"
+  ]
 }

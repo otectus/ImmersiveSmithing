@@ -14,5 +14,8 @@
     "item": "minecraft:netherite_shovel"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:shovel"
+  "anvil_pattern": "immersive_smithing:shovel",
+  "replaces": [
+    "minecraft:netherite_shovel_smithing"
+  ]
 }

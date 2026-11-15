@@ -5,27 +5,18 @@
       "modid": "darkagesarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "darkagesarmory",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "darkagesarmory:rich_byrnie_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 13,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 4
-    },
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/gold"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "darkagesarmory:rich_byrnie_boots"
   },

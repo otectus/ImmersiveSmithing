@@ -26,5 +26,8 @@
     "item": "spartanweaponry:golden_warhammer"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:warhammer"
+  "anvil_pattern": "immersive_smithing:warhammer",
+  "replaces": [
+    "spartanweaponry:golden_warhammer"
+  ]
 }

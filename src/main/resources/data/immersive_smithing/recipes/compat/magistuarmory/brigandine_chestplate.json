@@ -5,21 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:brigandine_chestplate"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 18,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 6
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:brigandine_chestplate"
   },

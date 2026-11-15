@@ -26,5 +26,8 @@
     "item": "spartanweaponry:golden_katana"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:katana"
+  "anvil_pattern": "immersive_smithing:katana",
+  "replaces": [
+    "spartanweaponry:golden_katana"
+  ]
 }

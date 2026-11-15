@@ -6,5 +6,8 @@
     "item": "minecraft:netherite_chestplate"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:chestplate"
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "minecraft:netherite_chestplate_smithing"
+  ]
 }

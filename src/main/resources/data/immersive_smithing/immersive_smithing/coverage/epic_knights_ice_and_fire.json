@@ -203,6 +203,13 @@
       ],
       "disposition": "native_transformation",
       "reason": "made from another piece: template upgrade with iceandfire:myrmex_stinger"
+    },
+    {
+      "items": [
+        "epic_knights_ice_and_fire:witherbone_pole"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: epic_knights_ice_and_fire:witherbone_pole"
     }
   ]
 }

@@ -4,12 +4,31 @@
   "package": "com.otectus.immersivesmithing.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "immersive_smithing.refmap.json",
+  "plugin": "com.otectus.immersivesmithing.mixin.EpicMixinPlugin",
   "mixins": [
     "ItemStackMixin",
-    "CraftingMenuMixin"
+    "CraftingMenuMixin",
+    "EpicHeraldryNameMixin",
+    "EpicDecorationNameMixin",
+    "QuickSwapPacketMixin",
+    "ThirtyYearsWarGunMixin",
+    "BowShotMixin",
+    "CrossbowShotMixin",
+    "FletcheryShotMixin",
+    "ArtilleryShotMixin",
+    "ArtilleryDelayedShotMixin",
+    "ArtilleryThrownUseMixin",
+    "ArtilleryThrownSpawnMixin",
+    "ArtilleryThrownHandMixin",
+    "ArtilleryThrownEntityMixin",
+    "BoomsticksShotMixin",
+    "BoomsticksThrownStackMixin",
+    "BoomsticksProjectileDamageMixin",
+    "BoomsticksThrownDamageMixin"
   ],
   "client": [
-    "client.HumanoidModelMixin"
+    "client.HumanoidModelMixin",
+    "client.CameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1

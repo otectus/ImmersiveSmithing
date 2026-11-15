@@ -18,5 +18,8 @@
     "item": "spartanweaponry:studded_cestus"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:cestus"
+  "anvil_pattern": "immersive_smithing:cestus",
+  "replaces": [
+    "spartanweaponry:studded_cestus"
+  ]
 }

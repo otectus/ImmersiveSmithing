@@ -4,19 +4,14 @@ import com.google.gson.GsonBuilder;
 import com.otectus.immersivesmithing.block.SmithsForgeBlock;
 import com.otectus.immersivesmithing.blockentity.SmithsForgeBlockEntity;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
-import com.otectus.immersivesmithing.client.screen.AnvilMinigameScreen;
-import com.otectus.immersivesmithing.client.screen.ForgeMinigameScreen;
 import com.otectus.immersivesmithing.client.screen.GuideScreen;
 import com.otectus.immersivesmithing.client.screen.MakersMarkScreen;
 import com.otectus.immersivesmithing.item.SmithingTier;
-import com.otectus.immersivesmithing.minigame.AnvilMinigame;
-import com.otectus.immersivesmithing.minigame.AnvilRun;
-import com.otectus.immersivesmithing.minigame.ForgeMinigame;
-import com.otectus.immersivesmithing.minigame.ForgeRun;
+import com.otectus.immersivesmithing.config.ClientConfig;
+import com.otectus.immersivesmithing.quality.SigningService;
 import com.otectus.immersivesmithing.quality.QualityData;
 import com.otectus.immersivesmithing.registry.ModBlocks;
 import com.otectus.immersivesmithing.registry.ModItems;
-import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import net.minecraft.Util;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
@@ -60,8 +55,9 @@ import java.util.function.BiConsumer;
 
 /**
  * Opt-in CurseForge screenshot capture, confined to the test agent and enabled only by
- * {@code -Dimmersive_smithing.screenshots.output=<dir>}. It builds a smithy, drives real station actions and
- * server-scored minigame inputs, and saves framebuffer captures without HUD, chat or toasts.
+ * {@code -Dimmersive_smithing.screenshots.output=<dir>}. It builds a smithy, plays one iron sword through the focused work
+ * views with {@link SmithDriver} (real inputs, server-scored), and saves framebuffer captures without the vanilla HUD,
+ * chat or toasts; the work views' own status is part of the picture.
  */
 @Mod.EventBusSubscriber(modid = PackTestAgent.MOD_ID, value = Dist.CLIENT)
 public final class StoreScreenshots {
@@ -72,7 +68,10 @@ public final class StoreScreenshots {
     private static CompletableFuture<Void> pending;
     private static int step, action, baseY, swordSlot;
     private static long entered, started;
-    private static boolean finished, hideHud = true, forgeShot, anvilShot, renamed;
+    private static boolean finished, hideHud = true, renamed;
+    private static SmithDriver driver;
+    private static String delayedShot;
+    private static long shotAt;
     private static BlockPos forge, anvil, trough, grind;
     private static volatile float lockYaw = Float.NaN, lockPitch;
 
@@ -97,36 +96,11 @@ public final class StoreScreenshots {
         }
     }
 
-    /** Forge presses are timed per frame; client ticks are too coarse to land inside the zone's centre. */
+    /** Keeps the scripted camera pinned between frames (released while the work views own the camera). */
     @SubscribeEvent
     public static void onRenderTick(TickEvent.RenderTickEvent event) {
         if (!enabled() || event.phase != TickEvent.Phase.START) return;
         lockView(Minecraft.getInstance());
-        if (step != 4 || !(Minecraft.getInstance().screen instanceof ForgeMinigameScreen screen)) return;
-        try {
-            if (!field(screen, "stage").toString().equals("PLAYING")) return;
-            ForgeRun run = (ForgeRun) field(screen, "run");
-            if (run.isComplete()) return;
-            int elapsed = (int) (Util.getMillis() - (long) field(screen, "clientStartMs"));
-            var phase = run.phases().get(run.index());
-            int local = elapsed - run.phaseStartMs();
-            float accuracy = ForgeMinigame.accuracy(phase, ForgeMinigame.position(phase, local / 1000F));
-            if (!forgeShot && run.index() == 2) {
-                // Hold the last pass until the marker is caught approaching the zone.
-                if (local > 700 && accuracy > .3F && accuracy < .85F) {
-                    shot(Minecraft.getInstance(), "forge_play");
-                    forgeShot = true;
-                }
-                return;
-            }
-            if (local > 900 && accuracy >= (local > 6000 ? .8F : .97F)) {
-                // The screen ignores held keys, so each work stroke is a full press and release.
-                screen.keyPressed(GLFW.GLFW_KEY_SPACE, 0, 0);
-                screen.keyReleased(GLFW.GLFW_KEY_SPACE, 0, 0);
-            }
-        } catch (Exception e) {
-            throw new IllegalStateException("Forge input failed", e);
-        }
     }
 
     static void tick(Minecraft mc) throws Exception {
@@ -138,6 +112,12 @@ public final class StoreScreenshots {
         if (mc.screen != null && !(mc.screen instanceof InventoryScreen)) parkCursor(mc);
         if (pending != null && !pending.isDone()) return;
         if (pending != null) { pending.join(); pending = null; }
+        if (delayedShot != null) {
+            if (Util.getMillis() < shotAt) return;
+            shot(mc, delayedShot);
+            delayedShot = null;
+            return;
+        }
         long age = Util.getMillis() - entered;
         switch (step) {
             case 0 -> {
@@ -156,7 +136,7 @@ public final class StoreScreenshots {
                 mc.options.pauseOnLostFocus = false;
                 mc.options.getSoundSourceOptionInstance(SoundSource.MASTER).set(0D);
                 mc.options.setCameraType(CameraType.FIRST_PERSON);
-                mc.options.hideGui = false;
+                mc.options.hideGui = true;
                 mc.getTutorial().setStep(TutorialSteps.NONE);
                 server(mc, StoreScreenshots::buildSmithy);
                 select(mc, 1);
@@ -178,126 +158,80 @@ public final class StoreScreenshots {
             case 2 -> {
                 if (age > 5000 && mc.level.getBlockEntity(forge) instanceof SmithsForgeBlockEntity block && block.isReady()) {
                     shot(mc, "forge_burning");
-                    select(mc, 0);
-                    use(mc, forge);
+                    mc.options.hideGui = false;
+                    lockYaw = Float.NaN; // the work views own the camera from here
+                    ClientConfig.CAMERA_MODE.set(ClientConfig.CameraMode.CINEMATIC);
+                    Map<BlockPos, Vec3> stands = Map.of(
+                            forge, new Vec3(-2.5, baseY, -0.7),
+                            anvil, new Vec3(-3.5, baseY, 2.2),
+                            trough, new Vec3(2.5, baseY, 0.2),
+                            grind, new Vec3(5.5, baseY, 0.2));
+                    driver = new SmithDriver(forge, anvil, trough, grind, stands,
+                            com.otectus.immersivesmithing.ImmersiveSmithing.id("smithing/iron_sword"), "iron sword", Items.IRON_SWORD, true,
+                            name -> moment(mc, name));
                     advance(3);
                 }
             }
             case 3 -> {
-                if (mc.screen instanceof ForgeMinigameScreen screen) {
-                    if (action == 0 && age > 1300) { shot(mc, "forge_select"); action++; }
-                    if (action == 1 && age > 1600) {
-                        screen.children().stream().filter(EditBox.class::isInstance).map(EditBox.class::cast)
-                                .findFirst().orElseThrow().setValue("iron sword");
-                        action++;
-                    }
-                    if (action == 2 && age > 2600) { shot(mc, "forge_select_search"); screen.keyPressed(GLFW.GLFW_KEY_ENTER, 0, 0); screen.keyReleased(GLFW.GLFW_KEY_ENTER, 0, 0); advance(4); }
-                }
-            }
-            case 4 -> {
-                if (!(mc.screen instanceof ForgeMinigameScreen screen)) break;
-                // Strokes and the play shot are taken per frame in onRenderTick; this step only waits for the verdict.
-                if (field(screen, "stage").toString().equals("RESULT")) {
-                    if (action == 0) { EVIDENCE.put("forge_score", field(screen, "resultScore")); action++; entered = Util.getMillis(); }
-                    else if (age > 1600) {
-                        shot(mc, "forge_result");
-                        mc.screen.onClose();
-                        advance(5);
-                    }
+                if (driver.tick(mc)) {
+                    EVIDENCE.put("hands_on", driver.evidence);
+                    // The forged sword can score 100/100, leaving nothing for the stone to refine. Show an actual
+                    // refining pass on a separate graded tool, keeping the sword's earned quality intact.
+                    server(mc, (level, player) -> {
+                        ItemStack axe = new ItemStack(Items.IRON_AXE);
+                        new QualityData(86, 82, false).apply(axe);
+                        player.getInventory().setItem(6, axe);
+                        player.inventoryMenu.broadcastChanges();
+                    });
+                    advance(5);
                 }
             }
             case 5 -> {
-                if (action == 0 && age > 600) {
-                    if (!WorkpieceCodec.isHolding(mc.player.getMainHandItem())) throw new IllegalStateException("Forge did not produce a workpiece");
-                    server(mc, (level, player) -> look(player, -2.6, 1.75, 2.6, -3.5, 0.6, 0.5));
-                    action++;
+                if (age > 1000) {
+                    driver = SmithDriver.refineOnly(grind, new Vec3(5.5, baseY, 0.2), Items.IRON_AXE,
+                            name -> moment(mc, name));
+                    advance(6);
                 }
-                if (action == 1 && age > 1400) { use(mc, anvil); action++; }
-                if (action == 2 && age > 2300) {
-                    select(mc, 1);
-                    server(mc, (level, player) -> {
-                        // A fresh charge: the forge only lights while it holds unmelted metal.
-                        var block = (SmithsForgeBlockEntity) level.getBlockEntity(forge);
-                        block.insertMetal(new ItemStack(Items.IRON_INGOT, 3), 3, false, null);
-                        block.insertFuel(new ItemStack(Items.COAL, 4), 4, false, null);
-                        EVIDENCE.put("hero_reignite", block.ignite().toString());
-                        look(player, -1.1, 1.45, 2.3, -3.0, 0.7, -0.5);
-                    });
-                    action++;
-                }
-                if (action == 3 && age > 4200) { shot(mc, "anvil_workpiece"); action++; }
-                if (action == 4 && age > 4500) {
-                    server(mc, (level, player) -> look(player, -2.6, 1.75, 2.6, -3.5, 0.6, 0.5));
-                    action++;
-                }
-                if (action == 5 && age > 5200) { use(mc, anvil); advance(6); }
             }
             case 6 -> {
-                if (!(mc.screen instanceof AnvilMinigameScreen screen)) break;
-                String stage = field(screen, "stage").toString();
-                if (stage.equals("PLAYING")) {
-                    AnvilRun run = (AnvilRun) field(screen, "run");
-                    int elapsed = (int) (Util.getMillis() - (long) field(screen, "clientStartMs"));
-                    if (run.isComplete()) break;
-                    int ideal = AnvilMinigame.idealMs(run.pattern());
-                    int into = elapsed - run.spawnMs();
-                    if (!anvilShot && run.index() == 3 && into >= ideal * 0.55) { shot(mc, "anvil_play"); anvilShot = true; }
-                    if (into >= ideal - 40) {
-                        var target = run.currentTarget();
-                        int x = (int) field(screen, "left") + 12;
-                        int y = (int) field(screen, "top") + 28;
-                        screen.mouseClicked(x + target.x() * 176, y + target.y() * 176, 0);
-                    }
-                } else if (stage.equals("RESULT")) {
-                    if (action == 0) { EVIDENCE.put("anvil_score", field(screen, "resultScore")); action++; entered = Util.getMillis(); }
-                    else if (age > 1600) {
-                        shot(mc, "anvil_result");
-                        mc.screen.onClose();
-                        select(mc, 0);
-                        advance(7);
-                    }
+                if (driver.tick(mc)) {
+                    EVIDENCE.put("grindstone_pass", driver.evidence);
+                    advance(4);
                 }
             }
-            case 7 -> {
-                if (action == 0 && age > 500) { use(mc, anvil); action++; }
-                if (action == 1 && age > 1500) {
-                    if (!WorkpieceCodec.isHolding(mc.player.getMainHandItem())) throw new IllegalStateException("Anvil pickup failed");
-                    server(mc, (level, player) -> look(player, 2.4, 1.8, 0.7, 2.5, 0.45, -1.5));
+            case 4 -> {
+                if (action == 0 && age > 800) {
+                    swordSlot = slotOf(mc, Items.IRON_SWORD);
+                    if (swordSlot < 0) throw new IllegalStateException("The finished sword is not in the inventory");
+                    int slot = swordSlot;
+                    // Engraving is voluntary: the smith opens it at the anvil with the finished piece.
+                    server(mc, (level, player) -> SigningService.open(player, slot, anvil));
                     action++;
                 }
-                if (action == 2 && age > 2600) { use(mc, trough); action++; }
-                if (action == 3 && age > 3300 && mc.screen instanceof MakersMarkScreen screen) {
+                if (action == 1 && age > 1800 && mc.screen instanceof MakersMarkScreen screen) {
                     ((EditBox) field(screen, "titleBox")).setValue("Emberfang");
                     @SuppressWarnings("unchecked") var lines = (List<EditBox>) field(screen, "lineBoxes");
                     lines.get(0).setValue("Tempered at dusk in Ashford");
                     lines.get(1).setValue("for the Warden of the Vale");
                     action++;
                 }
-                if (action == 4 && age > 4300) {
+                if (action == 2 && age > 2800) {
                     shot(mc, "makers_mark");
                     var sign = MakersMarkScreen.class.getDeclaredMethod("sign");
                     sign.setAccessible(true);
                     sign.invoke(mc.screen);
                     action++;
                 }
-                if (action == 5 && age > 5300) {
+                if (action == 3 && age > 3800) {
                     if (mc.screen != null) mc.screen.onClose();
-                    swordSlot = -1;
-                    for (int i = 0; i < 9; i++) if (mc.player.getInventory().getItem(i).is(Items.IRON_SWORD)) swordSlot = i;
-                    if (swordSlot < 0) throw new IllegalStateException("Quench did not produce the sword");
-                    EVIDENCE.put("quenched_quality", QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow());
-                    select(mc, swordSlot);
-                    server(mc, (level, player) -> look(player, 4.6, 1.8, 0.8, 5.5, 0.5, -1.5));
-                    action++;
-                }
-                if (action == 6 && age > 6200) { use(mc, grind); action++; }
-                if (action == 7 && age > 6900) { use(mc, grind); action++; }
-                if (action == 8 && age > 8700) {
-                    EVIDENCE.put("refined_quality", QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow());
+                    swordSlot = slotOf(mc, Items.IRON_SWORD);
+                    EVIDENCE.put("finished_quality", QualityData.get(mc.player.getInventory().getItem(swordSlot)).orElseThrow());
+                    if (swordSlot < 9) select(mc, swordSlot);
                     hideJeiOverlay();
                     mc.setScreen(new InventoryScreen(mc.player) {
                         @Override public void render(GuiGraphics g, int mx, int my, float partial) {
-                            super.render(g, leftPos + 8 + swordSlot * 18 + 8, topPos + 142 + 8, partial);
+                            int slot = swordSlot < 9 ? swordSlot : 0;
+                            super.render(g, leftPos + 8 + slot * 18 + 8, topPos + 142 + 8, partial);
                         }
                     });
                     advance(8);
@@ -322,6 +256,7 @@ public final class StoreScreenshots {
                 if (age > 1800) {
                     shot(mc, "guide");
                     mc.setScreen(null);
+                    mc.options.hideGui = true;
                     select(mc, 1);
                     server(mc, (level, player) -> look(player, 3.2, 2.6, 5.6, -0.8, 0.6, -1.6));
                     advance(10);
@@ -338,6 +273,41 @@ public final class StoreScreenshots {
                 }
             }
         }
+    }
+
+    /** The driver's notable moments become store shots. */
+    private static void moment(Minecraft mc, String name) {
+        String file = switch (name) {
+            case "pattern_book_live" -> "pattern_book";
+            case "pattern_book_search" -> "pattern_book_search";
+            case "forge_heating" -> "forge_heating";
+            case "billet_ready" -> "forge_billet_ready";
+            case "anvil_first_blows" -> "anvil_shaping";
+            case "anvil_half_shaped" -> "anvil_half_shaped";
+            case "shaped" -> "anvil_shaped";
+            case "reheat_on_rest" -> "forge_reheat";
+            case "quench_lowered" -> "quench_lowering";
+            case "quench_hiss" -> "quench";
+            case "fitting" -> "anvil_fitting";
+            case "finished_on_anvil" -> "anvil_finished";
+            case "grind_contact" -> "grindstone_pass";
+            default -> null;
+        };
+        if (file != null) {
+            if (name.equals("finished_on_anvil") || name.equals("quench_lowered")) {
+                // Let the lowering pose render before capturing it, or let completion particles clear before the
+                // driver collects the sword. These are ordinary game frames; no image cleanup is applied afterward.
+                delayedShot = file;
+                shotAt = Util.getMillis() + (name.equals("finished_on_anvil") ? 4000 : 150);
+            } else shot(mc, file);
+        }
+    }
+
+    private static int slotOf(Minecraft mc, net.minecraft.world.item.Item item) {
+        for (int i = 0; i < mc.player.getInventory().items.size(); i++) {
+            if (mc.player.getInventory().items.get(i).is(item)) return i;
+        }
+        return -1;
     }
 
     private static void shot(Minecraft mc, String name) {
@@ -511,6 +481,7 @@ public final class StoreScreenshots {
         player.getInventory().setItem(12, new ItemStack(Items.IRON_INGOT, 5));
         player.getInventory().setItem(20, new ItemStack(Items.WATER_BUCKET));
         player.getInventory().selected = 1;
+        player.giveExperienceLevels(30);
         player.inventoryMenu.broadcastChanges();
         look(player, 2.8, 2.3, 6.4, -1.0, 0.8, -2.0);
     }

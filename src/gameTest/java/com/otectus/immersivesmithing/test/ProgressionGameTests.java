@@ -180,7 +180,10 @@ public final class ProgressionGameTests {
             ItemStack tongs = new ItemStack(ModItems.tongs(SmithingTier.IRON));
             WorkpieceCodec.setHeld(tongs, TestSupport.workpiece(new ItemStack(Items.IRON_SWORD), 80, 95, false, WorkpieceState.SHAPED));
             player.setItemInHand(InteractionHand.MAIN_HAND, tongs);
-            TestSupport.use(h, player, 0.5);
+            TestSupport.use(h, player, 0.5); // lower
+            SmithingRun.tick(h, trough, com.otectus.immersivesmithing.work.QuenchRules.BOUNDARY_TICKS + trough.quenchDuration());
+            h.assertTrue(smithed.get() == 0, "Nothing is finished while it is still in the water");
+            TestSupport.use(h, player, 0.5); // lift
         } finally {
             MinecraftForge.EVENT_BUS.unregister(onSmithed);
             MinecraftForge.EVENT_BUS.unregister(onCrafted);

@@ -15,21 +15,20 @@ records the hash of every input; --check fails when an input changed.
 Outputs (deterministic, sorted, committed):
   src/main/resources/data/immersive_smithing/recipes/compat/<mod>/<item>.json        forge recipes (and the bokken)
   src/main/resources/data/immersive_smithing/immersive_smithing/coverage/<mod>.json  decisions for items not forged
-  src/main/resources/data/immersive_smithing/immersive_smithing/materials/compat/... plate sources, new families
+  src/main/resources/data/immersive_smithing/immersive_smithing/materials/compat/... additional families/suppliers
   src/main/resources/data/immersive_smithing/tags/items/compat/<integration>/...     quality, recycling, candidates
 
 Rules (docs/compatibility/epic-integrations.md explains them for players):
-- A recipe's metal is counted exactly once, as fractions: an ingot 9 units, a nugget 1, a plate 9 (two ingots make two),
-  a ring 1/2 (four nuggets make eight), a chain link 3 rings, chainmail 9 rings, a small plate 3/4, lamellar rows six
-  small plates and three leather strips. Intermediates and finished pieces of the same metal are flattened (an armet is
-  a barbute and three plates: 72 steel); the total is rounded down, never up.
-- The item's repair material decides its metal. Fittings of another metal (a steel boss on an iron shield, gold nuggets
-  on a steel hilt) and every non-metal part (hilts, poles, leather, fabric, planks) stay components, never refunded.
-- Netherite upgrades are forged from netherite in the diamond piece's whole shape, like vanilla netherite gear.
-- Gilding, darkening, fluting and other template transformations, visor states and unique loot keep their own route.
-- Every forge recipe lists the native recipes it replaces (disabled while it is active) or follows; it is active only
-  while one of them is loaded, so a pack that removes the native recipe removes the forge one too.
-- An item the rules cannot decide is an error: add a decision to the manifest.
+- Epic Knights outputs are version-guarded policy templates. The reload resolver reads each active source recipe,
+  keeps its exact equipment base, computes rational component costs, rounds the final charge upward once and
+  recoverable content downward. Historical static valuation below selects reviewed family/pattern only.
+- All nonmetal fittings and secondary-metal parts remain actual inputs. Ambiguous components are not flattened.
+- Native template transformations, visor states, ammunition, alloys and unique loot keep their original route.
+- Each resolved forge recipe has a stable source-derived ID and suppresses only that validated source. Removed
+  native recipes are never reintroduced. Explicit pack recipes and per-source native policies have priority.
+- Epic Fight retains its separate established shape policy; it is not an Epic Knights addon.
+- Every registered item receives an explicit disposition; an undecided item is an error.
+
 """
 import argparse
 import hashlib
@@ -599,8 +598,14 @@ def forge_json(world, d):
     f = d.forge
     referenced = [i for ing, _ in f['aux'] for i in referenced_items(ing)]
     mod = d.item.split(':')[0]
-    obj = {'conditions': conditions_for(world, d.item, referenced, world.m.VERSION_RANGES.get(mod)),
+    version = world.m.VERSION_RANGES.get(mod)
+    if world.m.MODS[mod][0] == 'epicknights':
+        version = '[' + world.registry['mods'][mod] + ']'
+        referenced = []  # the active source, not historical fittings, determines dependencies
+    obj = {'conditions': conditions_for(world, d.item, referenced, version),
            'type': 'immersive_smithing:smithing', 'material': f['family'], 'metal_units': f['units']}
+    if world.m.MODS[mod][0] == 'epicknights':
+        obj['source_policy'] = 'epic_knights'
     if f['aux']:
         obj['auxiliary'] = [{'ingredient': ing, 'count': n} for ing, n in f['aux']]
     obj['result'] = {'item': d.item}
@@ -610,6 +615,10 @@ def forge_json(world, d):
         obj['replaces'] = d.replaces
     if d.derived:
         obj['derived_from'] = d.derived
+    if world.m.MODS[mod][0] == 'epicknights':
+        # A policy template is not a playable recipe. Live sources provide costs and complete ingredients.
+        obj.pop('metal_units')
+        obj.pop('auxiliary', None)
     return obj
 
 
@@ -651,7 +660,14 @@ def generate(world, valuer, swappable):
     errors = []
     for item in sorted(world.items):
         mod = item.split(':')[0]
-        if mod not in m.MODS or not world.is_equipment(item):
+        if mod not in m.MODS:
+            continue
+        if not world.is_equipment(item):
+            routes = world.by_result.get(item, [])
+            reason = 'Native non-equipment recipes/processes: ' + ', '.join(r.id for r in routes) if routes else 'Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.'
+            if world.info(item).get('class') == 'MedievalHorseArmorItem':
+                reason = 'Native horse armor with no manufacturing recipe; protection remains the upstream direct property and receives no efficacy scaling.'
+            decisions[item] = Decision(item, 'non_equipment', reason)
             continue
         try:
             decisions[item] = decide(world, valuer, item, pairs)
@@ -724,16 +740,7 @@ def generate(world, valuer, swappable):
         files[OUT_TAGS / integration / 'non_recyclable.json'] = dump(
             {'replace': False, 'values': [{'id': i, 'required': False} for i in sorted(items)]})
 
-    for plate, family in sorted(m.PLATE_SOURCES.items()):
-        recipe = valuer.manufacturing_recipe(plate)
-        units = valuer.metal_of(plate).get(family) if recipe else None
-        if units is None or units.denominator != 1:
-            raise GenerationError(f'{plate} is not a whole number of {family} units ({units})')
-        mod = plate.split(':')[0]
-        conditions = [{'type': 'forge:mod_loaded', 'modid': mod}, {'type': 'forge:item_exists', 'item': plate}]
-        files[OUT_MATERIALS / mod / f'{plate.split(":")[1]}.json'] = dump({
-            'conditions': conditions, 'family': family, 'sources_only': True,
-            'sources': [{'item': plate, 'units': int(units)}]})
+    # Component costs are resolved from active runtime recipes. They are not unconditional melt sources.
     for family, spec in sorted(m.NEW_FAMILIES.items()):
         name = family.split(':')[1]
         files[OUT_MATERIALS / spec['mod'] / f'{name}.json'] = dump({
@@ -754,8 +761,8 @@ def owned(path):
 
 def existing_files(m):
     out = set()
-    mods = set(m.MODS)
-    integrations = {v[0] for v in m.MODS.values()}
+    mods = set(m.MODS) | {p['mod'] for p in json.loads((ROOT / 'tools/epic_knights_addons.json').read_text())['profiles']}
+    integrations = {v[0] for v in m.MODS.values()} | {'epic_knights_releases'}
     for mod in mods:
         for root in (OUT_RECIPES / mod, OUT_MATERIALS / mod):
             if root.exists():
@@ -826,10 +833,15 @@ def main():
         world = World(m, registry, [jars['minecraft'], jars['forge']] + [jars[k] for k in sorted(jars) if k not in ('minecraft', 'forge')])
         valuer = Valuer(world)
         files, decisions = generate(world, valuer, jars.get('quick_swap'))
+        from epic_knights_addons import generate_addons
+        addon_files, addon_inputs = generate_addons()
+        files.update(addon_files)
         lock = {'inputs': {mod: {'file': pathlib.Path(p).name, 'sha256': sha256(p), 'version': registry['mods'].get(mod, '-')}
                            for mod, p in sorted(inputs.items())},
                 'manifest_sha256': sha256(ROOT / 'tools/epic_compat_manifest.py'),
                 'registry_sha256': sha256(REGISTRY)}
+        lock['addon_inputs'] = addon_inputs
+        lock['addon_manifest_sha256'] = sha256(ROOT / 'tools/epic_knights_addons.json')
         files[LOCK] = json.dumps(lock, indent=2) + '\n'
     except GenerationError as e:
         print(f'error: {e}', file=sys.stderr)

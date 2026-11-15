@@ -53,6 +53,13 @@ public class SmithingRecipe implements Recipe<Container> {
      */
     private List<ResourceLocation> replaces = List.of();
     private List<ResourceLocation> derivedFrom = List.of();
+    private boolean resolveEpicSource;
+    @Nullable private ResourceLocation policyTemplate;
+    private int recoverableUnits = -1;
+    private int addedContentUnits = -1;
+    /** Optional explicit process profile ({@code process_profile}); otherwise resolved from the pattern. Synced to clients. */
+    @Nullable
+    private ResourceLocation processProfile;
 
     // Presentation data. Filled in on the server during rebuild and carried to clients over the network.
     private Component familyName;
@@ -84,7 +91,7 @@ public class SmithingRecipe implements Recipe<Container> {
     public boolean isAuto() { return auto; }
     @Nullable public ResourceLocation sourceRecipe() { return sourceRecipe; }
     public boolean keepsBaseData() { return keepBaseData; }
-    SmithingRecipe keepBaseData(boolean keep) {
+    public SmithingRecipe keepBaseData(boolean keep) {
         this.keepBaseData = keep;
         return this;
     }
@@ -97,11 +104,23 @@ public class SmithingRecipe implements Recipe<Container> {
         derivedFrom.forEach(id -> { if (!all.contains(id)) all.add(id); });
         return all;
     }
-    SmithingRecipe sources(List<ResourceLocation> replaces, List<ResourceLocation> derivedFrom) {
+    public SmithingRecipe sources(List<ResourceLocation> replaces, List<ResourceLocation> derivedFrom) {
         this.replaces = List.copyOf(replaces);
         this.derivedFrom = List.copyOf(derivedFrom);
         return this;
     }
+    public boolean resolvesEpicSource() { return resolveEpicSource; }
+    public SmithingRecipe resolveEpicSource(boolean resolve) { resolveEpicSource = resolve; return this; }
+    @Nullable public ResourceLocation policyTemplate() { return policyTemplate; }
+    public SmithingRecipe policyTemplate(ResourceLocation id) { policyTemplate = id; return this; }
+    /** Proven total primary metal, including a consumed base; separate from the forge charge. */
+    public int recoverableUnits() { return recoverableUnits >= 0 ? recoverableUnits : metalUnits; }
+    public SmithingRecipe recoverableUnits(int units) { recoverableUnits = Math.max(0, units); return this; }
+    public int addedContentUnits() { return addedContentUnits >= 0 ? addedContentUnits : metalUnits; }
+    /** The recipe's own process profile id, if it names one ({@code process_profile}). */
+    @Nullable public ResourceLocation processProfile() { return processProfile; }
+    public SmithingRecipe processProfile(@Nullable ResourceLocation id) { processProfile = id; return this; }
+    public SmithingRecipe addedContentUnits(int units) { addedContentUnits = Math.max(0, units); return this; }
     public Component familyName() { return familyName; }
     public List<List<ItemStack>> metalDisplay() { return metalDisplay; }
 

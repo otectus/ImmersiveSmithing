@@ -27,8 +27,13 @@ import java.util.List;
  *   "result": {"item": "minecraft:iron_pickaxe"},
  *   "forge_pattern": "immersive_smithing:standard",
  *   "anvil_pattern": "immersive_smithing:pickaxe",
- *   "keep_base_data": true
+ *   "keep_base_data": true,
+ *   "process_profile": "immersive_smithing:straight_blade"
  * }
+ * </pre>
+ * {@code forge_pattern} is still read for compatibility but no longer used; {@code process_profile} is optional (the anvil
+ * pattern, then the equipment classifier, choose one otherwise).
+ * <pre>
  * </pre>
  */
 public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe> {
@@ -36,7 +41,7 @@ public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe
     @Override
     public SmithingRecipe fromJson(ResourceLocation id, JsonObject json) {
         ResourceLocation family = new ResourceLocation(GsonHelper.getAsString(json, "material"));
-        int units = GsonHelper.getAsInt(json, "metal_units");
+        int units = epicPolicy(json) ? 1 : GsonHelper.getAsInt(json, "metal_units");
         if (units <= 0) throw new JsonParseException("metal_units must be positive");
         List<AuxiliaryIngredient> aux = new ArrayList<>();
         if (json.has("auxiliary")) {
@@ -52,7 +57,17 @@ public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe
                 ? new ResourceLocation(GsonHelper.getAsString(json, "anvil_pattern")) : null;
         return new SmithingRecipe(id, family, units, aux, result, forgePattern, anvilPattern, false, null)
                 .keepBaseData(GsonHelper.getAsBoolean(json, "keep_base_data", true))
-                .sources(ids(json, "replaces"), ids(json, "derived_from"));
+                .resolveEpicSource(epicPolicy(json))
+                .sources(ids(json, "replaces"), ids(json, "derived_from"))
+                .processProfile(json.has("process_profile") ? new ResourceLocation(GsonHelper.getAsString(json, "process_profile")) : null);
+    }
+
+    private static boolean epicPolicy(JsonObject json) {
+        if (!json.has("source_policy")) return false;
+        if (!GsonHelper.getAsString(json, "source_policy").equals("epic_knights")) {
+            throw new JsonParseException("Unknown source_policy (expected epic_knights)");
+        }
+        return true;
     }
 
     private static List<ResourceLocation> ids(JsonObject json, String key) {
@@ -75,6 +90,8 @@ public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe
         boolean auto = buf.readBoolean();
         ResourceLocation source = buf.readBoolean() ? buf.readResourceLocation() : null;
         SmithingRecipe recipe = new SmithingRecipe(id, family, units, aux, result, forgePattern, anvilPattern, auto, source);
+        recipe.keepBaseData(buf.readBoolean()).recoverableUnits(buf.readVarInt()).addedContentUnits(buf.readVarInt());
+        recipe.processProfile(buf.readBoolean() ? buf.readResourceLocation() : null);
 
         Component familyName = buf.readComponent();
         int slots = buf.readVarInt();
@@ -103,6 +120,11 @@ public class SmithingRecipeSerializer implements RecipeSerializer<SmithingRecipe
         buf.writeBoolean(recipe.isAuto());
         buf.writeBoolean(recipe.sourceRecipe() != null);
         if (recipe.sourceRecipe() != null) buf.writeResourceLocation(recipe.sourceRecipe());
+        buf.writeBoolean(recipe.keepsBaseData());
+        buf.writeVarInt(recipe.recoverableUnits());
+        buf.writeVarInt(recipe.addedContentUnits());
+        buf.writeBoolean(recipe.processProfile() != null);
+        if (recipe.processProfile() != null) buf.writeResourceLocation(recipe.processProfile());
 
         buf.writeComponent(recipe.familyName());
         buf.writeVarInt(recipe.metalDisplay().size());

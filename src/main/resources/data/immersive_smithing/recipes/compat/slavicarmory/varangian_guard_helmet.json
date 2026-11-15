@@ -5,13 +5,18 @@
       "modid": "slavicarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "slavicarmory",
+      "versions": "[2.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "slavicarmory:varangian_guard_helmet"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 63,
+  "source_policy": "epic_knights",
   "result": {
     "item": "slavicarmory:varangian_guard_helmet"
   },

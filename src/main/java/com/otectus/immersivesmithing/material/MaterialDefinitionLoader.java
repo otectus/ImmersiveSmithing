@@ -42,17 +42,28 @@ public class MaterialDefinitionLoader extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> files, ResourceManager manager, ProfilerFiller profiler) {
         Map<ResourceLocation, MaterialDefinition> byFamily = new LinkedHashMap<>();
+        Map<ResourceLocation, com.otectus.immersivesmithing.work.ThermalProfile> thermals = new java.util.HashMap<>();
         for (Map.Entry<ResourceLocation, JsonElement> entry : new TreeMap<>(files).entrySet()) {
             try {
                 JsonObject json = GsonHelper.convertToJsonObject(entry.getValue(), "material");
                 if (!CraftingHelper.processConditions(json, "conditions", context)) continue;
                 MaterialDefinition def = MaterialDefinition.fromJson(json);
                 byFamily.merge(def.family(), def, MaterialDefinition::merge);
+                // Optional heat behaviour; a bad block is reported and ignored, the metal itself still loads.
+                if (json.has("thermal") && !def.sourcesOnly()) {
+                    try {
+                        thermals.put(def.family(), com.otectus.immersivesmithing.work.ThermalProfile.fromJson(
+                                GsonHelper.getAsJsonObject(json, "thermal"), com.otectus.immersivesmithing.work.ThermalProfile.DEFAULT));
+                    } catch (RuntimeException e) {
+                        ImmersiveSmithing.LOGGER.error("Ignoring the thermal block of smithing material {}: {}", entry.getKey(), e.getMessage());
+                    }
+                }
             } catch (RuntimeException e) {
                 ImmersiveSmithing.LOGGER.error("Skipping malformed smithing material {}: {}", entry.getKey(), e.getMessage());
             }
         }
         definitions = List.copyOf(byFamily.values());
+        com.otectus.immersivesmithing.work.ProcessResolver.installMaterialThermals(thermals);
         SmithingData.markDirty();
         ImmersiveSmithing.LOGGER.debug("Loaded {} smithing material definitions", definitions.size());
     }

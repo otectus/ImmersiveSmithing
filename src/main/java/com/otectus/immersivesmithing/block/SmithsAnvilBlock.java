@@ -9,6 +9,10 @@ import com.otectus.immersivesmithing.quality.SigningService;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.util.Feedback;
+import com.otectus.immersivesmithing.work.AnvilActions;
+import com.otectus.immersivesmithing.registry.ModBlockEntities;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import net.minecraft.core.BlockPos;
@@ -44,8 +48,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 /**
- * The Smith's Anvil: a forging workstation, separate from the vanilla anvil's repair/rename UI. It holds one
- * workpiece; a Smithing Hammer starts the Anvil minigame, Smithing Tongs place and remove the workpiece.
+ * The Smith's Anvil: a forging workstation, separate from the vanilla anvil's repair/rename UI. It holds one workpiece
+ * (or one finished piece waiting to be collected). Hammer blows are aimed at the piece itself; tongs place and remove it;
+ * reserved components are fitted here after the quench. All of it goes through {@link AnvilActions}.
  */
 public class SmithsAnvilBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -107,6 +112,7 @@ public class SmithsAnvilBlock extends BaseEntityBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof SmithsAnvilBlockEntity anvil) {
             SessionManager.onStationRemoved(level, pos);
+            com.otectus.immersivesmithing.work.WorkLeases.onStationGone(level, pos);
             anvil.dropWorkpiece();
         }
         super.onRemove(state, level, pos, newState, moved);
@@ -127,55 +133,18 @@ public class SmithsAnvilBlock extends BaseEntityBlock {
     }
 
     private void interact(ServerPlayer player, SmithsAnvilBlockEntity anvil, ItemStack held, InteractionHand hand) {
-        if (anvil.isLockedFor(player.getUUID())) {
+        if (anvil.isLockedFor(player.getUUID()) && !(player.isSecondaryUseActive() && SigningService.canSign(held, player))) {
             Feedback.fail(player, "station_in_use");
             return;
         }
-        WorkpieceData onAnvil = anvil.workpiece();
-        // A finished piece brought back to the anvil by its smith: sign it, or change the signature.
-        if (player.isSecondaryUseActive() && SigningService.canSign(held, player)) {
-            SigningService.open(player, player.getInventory().selected);
-            return;
-        }
-        if (held.getItem() instanceof SmithingTongsItem) {
-            Optional<WorkpieceData> carried = WorkpieceCodec.getHeld(held);
-            if (carried.isPresent()) {
-                if (onAnvil != null) {
-                    Feedback.fail(player, "anvil_occupied");
-                    return;
-                }
-                anvil.setWorkpiece(carried.get());
-                WorkpieceCodec.clearHeld(held);
-                player.level().playSound(null, anvil.getBlockPos(), ModSounds.TONGS_GRAB.get(), SoundSource.BLOCKS, 0.9F, 1.1F);
-                Feedback.info(player, carried.get().isShaped() ? "workpiece_to_trough" : "use_hammer");
-            } else if (onAnvil != null) {
-                WorkpieceCodec.setHeld(held, anvil.takeWorkpiece());
-                player.level().playSound(null, anvil.getBlockPos(), ModSounds.TONGS_GRAB.get(), SoundSource.BLOCKS, 0.9F, 0.9F);
-            } else {
-                Feedback.fail(player, "anvil_empty");
-            }
-            return;
-        }
-        if (held.getItem() instanceof SmithingHammerItem hammer) {
-            if (onAnvil == null) Feedback.fail(player, "anvil_empty");
-            else if (onAnvil.isShaped()) Feedback.fail(player, "already_shaped");
-            else SessionManager.openAnvil(player, anvil, hand, hammer.tier());
-            return;
-        }
-        if (held.is(ModItems.HOT_WORKPIECE.get())) {
-            Optional<WorkpieceData> data = WorkpieceCodec.getHeld(held);
-            if (onAnvil != null) {
-                Feedback.fail(player, "anvil_occupied");
-            } else if (data.isPresent()) {
-                anvil.setWorkpiece(data.get());
-                held.shrink(1);
-                player.level().playSound(null, anvil.getBlockPos(), ModSounds.TONGS_GRAB.get(), SoundSource.BLOCKS, 0.9F, 1.1F);
-            }
-            return;
-        }
-        if (onAnvil == null) Feedback.info(player, "anvil_empty");
-        else if (onAnvil.isShaped()) Feedback.info(player, "workpiece_to_trough");
-        else Feedback.info(player, "use_hammer");
+        AnvilActions.use(player, anvil, hand, held);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type, ModBlockEntities.SMITHS_ANVIL.get(), SmithsAnvilBlockEntity::clientTick)
+                : createTickerHelper(type, ModBlockEntities.SMITHS_ANVIL.get(), SmithsAnvilBlockEntity::serverTick);
     }
 
     @Override

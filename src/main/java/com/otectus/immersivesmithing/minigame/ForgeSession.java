@@ -12,13 +12,12 @@ import java.util.List;
 import java.util.UUID;
 
 public final class ForgeSession extends SmithingSession {
-    /** Offered recipe ids; a selection outside this list is rejected. */
+    /** Offered recipe ids (choosable or shown dimmed); a selection outside this list is rejected. */
     List<ResourceLocation> offered = List.of();
-    SmithingRecipe recipe;
-    /** Units the forge charges this smith for {@link #recipe}: the recipe's own through the registered cost modifiers. */
-    int metalUnits;
-    ForgePattern pattern;
-    ForgeRun run;
+    /** Cast outputs offered in the selection stage, with the units each costs; a cast of anything else is refused. */
+    List<CastChoice> castOptions = List.of();
+    /** The last accepted cast request: a sequence number at or below it is a duplicate or a replay. */
+    int lastCastSequence;
 
     ForgeSession(int id, UUID playerId, ResourceKey<Level> dimension, BlockPos pos, InteractionHand hand, SmithingTier tier,
                  long seed, long now) {
@@ -30,7 +29,6 @@ public final class ForgeSession extends SmithingSession {
         return Kind.FORGE;
     }
 
-    public SmithingRecipe recipe() {
-        return recipe;
-    }
+    /** An offered cast output: the item and what one costs. */
+    record CastChoice(net.minecraft.world.item.Item item, int unitsEach) {}
 }

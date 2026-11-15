@@ -111,7 +111,7 @@ public final class RecipePipelineGameTests {
                 "The gold recipe of the golden sword is replaced by its gold forge recipe");
         ResourceLocation alt = new ResourceLocation("immersive_smithing_test", "alt_metal_golden_sword");
         h.assertTrue(server.getRecipeManager().byKey(alt).isPresent(), "A golden sword made from iron has no forge equivalent and stays");
-        h.assertTrue(data.retainedRecipes().containsKey(alt) && data.retainedRecipes().get(alt).contains("minecraft:iron"),
+        h.assertTrue(data.retainedRecipes().containsKey(alt) && data.retainedRecipes().get(alt).contains("not one of the native recipes"),
                 "The kept recipe is reported with its reason: " + data.retainedRecipes().get(alt));
         h.succeed();
     }
@@ -238,8 +238,14 @@ public final class RecipePipelineGameTests {
         ItemStack sword = new ItemStack(Items.IRON_SWORD);
         player.setItemInHand(InteractionHand.MAIN_HAND, sword);
         TestSupport.use(h, player, 0.8);
-        h.assertTrue(!QualityData.has(player.getMainHandItem()) && player.experienceLevel == 20, "Asking costs nothing and writes nothing");
-        TestSupport.use(h, player, 0.8);
+        var stone = (com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity) h.getLevel().getBlockEntity(h.absolutePos(TestSupport.STATION));
+        h.assertTrue(!stone.piece().isEmpty() && !QualityData.has(stone.piece()) && player.experienceLevel == 20, "Resting it costs nothing and writes nothing");
+        com.otectus.immersivesmithing.work.GrindstoneActions.hold(player, stone);
+        for (int i = 0; i <= stone.passTicks(); i++) {
+            if (stone.contact() != null) com.otectus.immersivesmithing.work.GrindstoneActions.hold(player, stone);
+            com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity.serverTick(h.getLevel(), stone.getBlockPos(), stone.getBlockState(), stone);
+        }
+        com.otectus.immersivesmithing.work.GrindstoneActions.take(player, stone);
         QualityData refined = QualityData.get(player.getMainHandItem()).orElse(null);
         int base = QualityEligibility.NEUTRAL_SCORE;
         h.assertTrue(refined != null && refined.forgeScore() == base + ServerConfig.get(ServerConfig.GRINDSTONE_SCORE_STEP)
@@ -249,8 +255,8 @@ public final class RecipePipelineGameTests {
         // Equipment that cannot carry quality is left alone.
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.DIAMOND_SWORD));
         TestSupport.use(h, player, 0.8);
-        TestSupport.use(h, player, 0.8);
-        h.assertTrue(!QualityData.has(player.getMainHandItem()), "A diamond sword is not smithing work");
+        h.assertTrue(player.getMainHandItem().is(Items.DIAMOND_SWORD) && stone.piece().isEmpty() && !QualityData.has(player.getMainHandItem()),
+                "A diamond sword is not smithing work: it is not even rested at the wheel");
         h.succeed();
     }
 

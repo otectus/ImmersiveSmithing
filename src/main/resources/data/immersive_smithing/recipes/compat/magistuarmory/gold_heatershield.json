@@ -5,25 +5,18 @@
       "modid": "magistuarmory"
     },
     {
-      "type": "forge:item_exists",
-      "item": "magistuarmory:gold_heatershield"
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
     },
     {
       "type": "forge:item_exists",
-      "item": "magistuarmory:wood_heatershield"
+      "item": "magistuarmory:gold_heatershield"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:gold",
-  "metal_units": 36,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "magistuarmory:wood_heatershield"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:gold_heatershield"
   },

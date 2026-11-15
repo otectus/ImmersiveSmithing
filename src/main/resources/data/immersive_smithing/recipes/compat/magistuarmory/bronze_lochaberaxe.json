@@ -5,21 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:bronze_lochaberaxe"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:bronze",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:poles"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:bronze_lochaberaxe"
   },

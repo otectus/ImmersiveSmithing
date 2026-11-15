@@ -5,21 +5,18 @@
       "modid": "slavicarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "slavicarmory",
+      "versions": "[2.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "slavicarmory:rus_chainmail_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 15,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:leather"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "slavicarmory:rus_chainmail_boots"
   },

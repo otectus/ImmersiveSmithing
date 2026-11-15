@@ -5,25 +5,18 @@
       "modid": "magistuarmory"
     },
     {
-      "type": "forge:item_exists",
-      "item": "magistuarmory:copper_rondache"
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
     },
     {
       "type": "forge:item_exists",
-      "item": "magistuarmory:wood_roundshield"
+      "item": "magistuarmory:copper_rondache"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:copper",
-  "metal_units": 72,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "magistuarmory:wood_roundshield"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:copper_rondache"
   },

@@ -33,5 +33,8 @@
     "item": "spartanfire:fire_dragonsteel_javelin"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:javelin"
+  "anvil_pattern": "immersive_smithing:javelin",
+  "replaces": [
+    "spartanfire:fire_dragonsteel_javelin"
+  ]
 }

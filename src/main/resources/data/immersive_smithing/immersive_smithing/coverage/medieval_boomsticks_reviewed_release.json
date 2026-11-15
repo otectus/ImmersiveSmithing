@@ -1,0 +1,241 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "medieval_boomsticks"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "medieval_boomsticks",
+      "versions": "[1.01]"
+    }
+  ],
+  "mod": "medieval_boomsticks",
+  "tested_version": "1.01",
+  "policies": [
+    {
+      "items": [
+        "medieval_boomsticks:arnica"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:bulat_bar"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:comfrey"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:dziwer_bar"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_leather"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_oil"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_oil_bucket"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:finished_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:heavy_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:iron_throwing_axe"
+      ],
+      "disposition": "native_assembly",
+      "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:iron_throwing_knife"
+      ],
+      "disposition": "native_assembly",
+      "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:large_throwing_rock"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native wooden bow or stone thrown weapon; no metal forging."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:lemon_balm"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:limonite_ore"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:limonite_ore_deepslate"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:magnitite_ore"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:magnitite_ore_deepslate"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:padded_canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:pyrite_ore"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:pyrite_ore_deepslate"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:quilted_canvas"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:raw_limonite"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:raw_magnitite"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:raw_pyrite"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Native wooden bow or stone thrown weapon; no metal forging."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:round_ball"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:sage"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:small_throwing_rock"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Native wooden bow or stone thrown weapon; no metal forging."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:upgrade_kit"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:yarrow"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "medieval_boomsticks:yellow_wood_sorrel"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "bronzeaddition_epicknights"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "bronzeaddition_epicknights",
+      "versions": "[1.0.61.20.1]"
+    }
+  ],
+  "mod": "bronzeaddition_epicknights",
+  "tested_version": "1.0.61.20.1",
+  "policies": [
+    {
+      "items": [
+        "bronzeaddition_epicknights:bronze_plate"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native batch: one bronze ingot makes four plates (9/4 units each); no individual fractional melt value."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:eka_bronze_blockl"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:eka_silver_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:eka_tin_ingot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:eka_tin_prm_ore"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:epic_knights_add_bronze_ignot"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:raw_silver_eka"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:tin_copper_alloy_powder"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    },
+    {
+      "items": [
+        "bronzeaddition_epicknights:z_steel_ingots_seka"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+    }
+  ]
+}

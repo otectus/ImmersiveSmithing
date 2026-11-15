@@ -212,13 +212,15 @@ def main():
         screenshots = sorted(str(path.relative_to(work)) for path in work.glob('*/screenshots/packtest_multiplayer_*.png'))
         anvil_shots = [shot for shot in screenshots if '_anvil_after_pickup' in shot]
         passed = all(result.get('pass') for result in results.values()) and len(screenshots) >= 4 and len(anvil_shots) == 2
+        if 'epicknights' in args.expect.split(','):
+            passed = passed and (shared / 'upgrade-result').is_file() and 'pass=true' in (shared / 'upgrade-result').read_text()
         summary = {'pass': passed, 'results': results, 'screenshots': screenshots,
                    'artifacts': {artifact.name: hashlib.sha256(artifact.read_bytes()).hexdigest()
                                  for artifact in (mod, agent, *args.extra_mods)}}
         (work / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
         if not passed:
             raise RuntimeError(f'Multiplayer visual assertions failed; inspect {work / "summary.json"}')
-        print('PASS: remote loaded-tongs and hammer swings synchronized, and the anvil pickup cleared on both real clients')
+        print('PASS: remote swings, anvil pickup, and requested upgrade reservation/reload checks passed on both real clients')
         print(f'Evidence: {work}')
     finally:
         for process in reversed(processes):

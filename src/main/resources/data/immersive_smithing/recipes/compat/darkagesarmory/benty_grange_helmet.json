@@ -5,27 +5,18 @@
       "modid": "darkagesarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "darkagesarmory",
+      "versions": "[1.1]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "darkagesarmory:benty_grange_helmet"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 45,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "forge:nuggets/gold"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "darkagesarmory:benty_grange_helmet"
   },

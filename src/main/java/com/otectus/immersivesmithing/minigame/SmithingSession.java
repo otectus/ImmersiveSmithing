@@ -10,8 +10,8 @@ import net.minecraft.world.level.Level;
 import java.util.UUID;
 
 /**
- * Common state of a Forge or Anvil minigame session. The session clock starts at {@code startMs}
- * ({@link net.minecraft.Util#getMillis()} on the server) once the ready countdown ends.
+ * Common state of an open station screen session. Since 1.3.0 only the forge's pattern book (choosing a plan and casting)
+ * uses one; the hands-on work itself lives in the stations ({@code work/}).
  */
 public abstract class SmithingSession {
     public enum Kind { FORGE, ANVIL }
@@ -23,10 +23,9 @@ public abstract class SmithingSession {
     public final InteractionHand hand;
     public final SmithingTier tier;
     public final long seed;
-    protected long startMs = -1;
-    protected int allowedMs;
-    protected int lastValidMs;
     protected final long createdMs;
+    /** The last time the smith did something in the selection stage (opening, casting); the selection times out from it. */
+    protected long activityMs;
 
     protected SmithingSession(int id, UUID playerId, ResourceKey<Level> dimension, BlockPos pos, InteractionHand hand,
                               SmithingTier tier, long seed, long now) {
@@ -38,21 +37,10 @@ public abstract class SmithingSession {
         this.tier = tier;
         this.seed = seed;
         this.createdMs = now;
+        this.activityMs = now;
     }
 
     public abstract Kind kind();
-
-    public boolean isPlaying() {
-        return startMs >= 0;
-    }
-
-    public long startMs() {
-        return startMs;
-    }
-
-    public int allowedMs() {
-        return allowedMs;
-    }
 
     public GlobalPos station() {
         return GlobalPos.of(dimension, pos);

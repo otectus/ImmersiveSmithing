@@ -1,54 +1,38 @@
 package com.otectus.immersivesmithing.client;
 
-import com.otectus.immersivesmithing.client.screen.AnvilMinigameScreen;
-import com.otectus.immersivesmithing.client.screen.ForgeMinigameScreen;
 import com.otectus.immersivesmithing.client.screen.MakersMarkScreen;
-import com.otectus.immersivesmithing.network.packet.OpenMakersMarkPacket;
-import com.otectus.immersivesmithing.network.packet.AnvilStrikeResultPacket;
+import com.otectus.immersivesmithing.client.screen.PatternBookScreen;
+import com.otectus.immersivesmithing.client.work.FocusController;
+import com.otectus.immersivesmithing.client.work.WorkEffects;
+import com.otectus.immersivesmithing.network.packet.CastResultPacket;
 import com.otectus.immersivesmithing.network.packet.CloseSessionPacket;
-import com.otectus.immersivesmithing.network.packet.ForgeActionResultPacket;
-import com.otectus.immersivesmithing.network.packet.ForgeStartPacket;
-import com.otectus.immersivesmithing.network.packet.OpenAnvilScreenPacket;
+import com.otectus.immersivesmithing.network.packet.FocusPacket;
 import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
-import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
+import com.otectus.immersivesmithing.network.packet.OpenMakersMarkPacket;
 import com.otectus.immersivesmithing.network.packet.StationEffectPacket;
 import com.otectus.immersivesmithing.network.packet.StationNoticePacket;
+import com.otectus.immersivesmithing.network.packet.WorkEventPacket;
+import com.otectus.immersivesmithing.client.work.WorkFocusScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 
 /** Client handlers for server packets. Runs on the client main thread. */
 public final class ClientPacketHandler {
 
+    /** The pattern book opens over a work view (and returns to it) or on its own. */
     public static void openForge(OpenForgeScreenPacket packet) {
-        Minecraft.getInstance().setScreen(new ForgeMinigameScreen(packet));
+        show(new PatternBookScreen(packet));
     }
 
-    public static void forgeStart(ForgeStartPacket packet) {
-        if (Minecraft.getInstance().screen instanceof ForgeMinigameScreen screen) screen.onStart(packet);
-    }
-
-    public static void forgeActionResult(ForgeActionResultPacket packet) {
-        if (Minecraft.getInstance().screen instanceof ForgeMinigameScreen screen) screen.onActionResult(packet);
-    }
-
-    public static void openAnvil(OpenAnvilScreenPacket packet) {
-        Minecraft.getInstance().setScreen(new AnvilMinigameScreen(packet));
-    }
-
-    public static void anvilStrikeResult(AnvilStrikeResultPacket packet) {
-        if (Minecraft.getInstance().screen instanceof AnvilMinigameScreen screen) screen.onStrikeResult(packet);
-    }
-
-    public static void sessionResult(SessionResultPacket packet) {
-        Screen screen = Minecraft.getInstance().screen;
-        if (screen instanceof ForgeMinigameScreen forge) forge.onResult(packet);
-        else if (screen instanceof AnvilMinigameScreen anvil) anvil.onResult(packet);
+    public static void castResult(CastResultPacket packet) {
+        if (Minecraft.getInstance().screen instanceof PatternBookScreen screen && screen.sessionId() == packet.sessionId()) {
+            screen.onCastResult(packet);
+        }
     }
 
     public static void closeSession(CloseSessionPacket packet) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.screen instanceof ForgeMinigameScreen forge && forge.sessionId() == packet.sessionId()) forge.closeByServer();
-        else if (mc.screen instanceof AnvilMinigameScreen anvil && anvil.sessionId() == packet.sessionId()) anvil.closeByServer();
+        if (mc.screen instanceof PatternBookScreen book && book.sessionId() == packet.sessionId()) book.closeByServer();
         if (mc.player != null && !packet.reason().getString().isEmpty()) StationNotices.show(packet.reason(), true);
     }
 
@@ -58,11 +42,26 @@ public final class ClientPacketHandler {
 
     public static void openMakersMark(OpenMakersMarkPacket packet) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.screen == null || mc.screen instanceof MakersMarkScreen) mc.setScreen(new MakersMarkScreen(packet.slot(), packet.piece()));
+        if (mc.screen == null || mc.screen instanceof MakersMarkScreen || mc.screen instanceof WorkFocusScreen) {
+            show(new MakersMarkScreen(packet.slot(), packet.piece()));
+        }
     }
 
     public static void stationEffect(StationEffectPacket packet) {
         ClientEffects.spawn(packet.pos(), packet.type(), packet.strength());
+    }
+
+    public static void focus(FocusPacket packet) {
+        FocusController.onPacket(packet);
+    }
+
+    public static void workEvent(WorkEventPacket packet) {
+        WorkEffects.onEvent(packet);
+    }
+
+    private static void show(Screen screen) {
+        if (FocusController.active()) FocusController.openOverlay(screen);
+        else Minecraft.getInstance().setScreen(screen);
     }
 
     private ClientPacketHandler() {}

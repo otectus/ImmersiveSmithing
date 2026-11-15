@@ -46,12 +46,23 @@ public class ImmersiveSmithingJeiPlugin implements IModPlugin {
                 .getAllRecipesFor(ModRecipeTypes.SMITHING.get()));
         recipes.sort(Comparator.comparing(r -> BuiltInRegistries.ITEM.getKey(r.resultItem()).toString()));
         registration.addRecipes(SmithingRecipeCategory.TYPE, recipes);
+        for (var item : BuiltInRegistries.ITEM) {
+            String namespace = BuiltInRegistries.ITEM.getKey(item).getNamespace();
+            ItemStack stack = new ItemStack(item);
+            if (namespace.equals("epicknights_open_helms")) {
+                registration.addItemStackInfo(stack, Component.translatable("jei.immersive_smithing.native_visors"));
+            } else if (namespace.equals("ekotsk") && stack.is(com.otectus.immersivesmithing.registry.ModTags.NON_RECYCLABLE)) {
+                registration.addItemStackInfo(stack, Component.translatable("jei.immersive_smithing.unique_acquisition"));
+            }
+        }
 
         for (SmithingTier tier : SmithingTier.values()) {
-            registration.addItemStackInfo(new ItemStack(ModItems.tongs(tier)), Component.translatable("jei.immersive_smithing.info.tongs"));
+            registration.addItemStackInfo(new ItemStack(ModItems.tongs(tier)), Component.translatable("jei.immersive_smithing.info.tongs"),
+                    Component.translatable("jei.immersive_smithing.info.tongs_casting"));
             registration.addItemStackInfo(new ItemStack(ModItems.hammer(tier)), Component.translatable("jei.immersive_smithing.info.hammer"));
         }
-        registration.addItemStackInfo(new ItemStack(ModItems.SMITHS_FORGE.get()), Component.translatable("jei.immersive_smithing.info.forge"));
+        registration.addItemStackInfo(new ItemStack(ModItems.SMITHS_FORGE.get()), Component.translatable("jei.immersive_smithing.info.forge"),
+                Component.translatable("jei.immersive_smithing.info.forge_casting"));
         registration.addItemStackInfo(new ItemStack(ModItems.SMITHS_ANVIL.get()), Component.translatable("jei.immersive_smithing.info.anvil"));
         registration.addItemStackInfo(new ItemStack(ModItems.SMITHS_TROUGH.get()), Component.translatable("jei.immersive_smithing.info.trough"));
         registration.addItemStackInfo(new ItemStack(ModItems.SMITHS_GRINDSTONE.get()), Component.translatable("jei.immersive_smithing.info.grindstone"));

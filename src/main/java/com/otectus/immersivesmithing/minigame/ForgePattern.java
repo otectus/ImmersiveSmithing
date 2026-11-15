@@ -8,8 +8,9 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 
 /**
- * Parameters of the Forge "forming rhythm" minigame. A marker sweeps back and forth along a track, speeding
- * up the longer the smith waits; one input per phase is scored by its distance from the zone centre.
+ * A forge pattern file ({@code forge_patterns/}), still read so recipes and datapacks that name one stay valid. It
+ * parameterised the forming-rhythm minigame that 1.3.0 replaced with hands-on heating; nothing in play uses these values
+ * any more (heat comes from the material's {@code thermal} block and the process profile).
  */
 public record ForgePattern(ResourceLocation id, int basePhases, int unitsPerExtraPhase, int minPhases, int maxPhases,
                            float halfWidth, float minSpeed, float maxSpeed, float acceleration, int transitionMs) {

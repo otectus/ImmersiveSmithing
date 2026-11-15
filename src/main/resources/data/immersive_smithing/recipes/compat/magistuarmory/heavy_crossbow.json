@@ -5,33 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:heavy_crossbow"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 27,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:string"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "item": "minecraft:tripwire_hook"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:poles"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:heavy_crossbow"
   },

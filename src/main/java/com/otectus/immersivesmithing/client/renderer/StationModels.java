@@ -18,7 +18,11 @@ public final class StationModels {
     public static final ResourceLocation HOT_BILLET = ImmersiveSmithing.id("block/hot_billet");
     public static final ResourceLocation HOT_PLATE = ImmersiveSmithing.id("block/hot_plate");
     public static final ResourceLocation HOT_BLADE = ImmersiveSmithing.id("block/hot_blade");
-    public static final List<ResourceLocation> ALL = List.of(BILLET, COAL, HOT_BILLET, HOT_PLATE, HOT_BLADE);
+    /** The bellows' moving board and handle, drawn by the forge renderer as it is pumped. */
+    public static final ResourceLocation BELLOWS_BOARD = ImmersiveSmithing.id("block/forge_bellows_board");
+    /** The grinding wheel, turned by the grindstone renderer while an edge is held to it. */
+    public static final ResourceLocation GRINDSTONE_WHEEL = ImmersiveSmithing.id("block/grindstone_wheel");
+    public static final List<ResourceLocation> ALL = List.of(BILLET, COAL, HOT_BILLET, HOT_PLATE, HOT_BLADE, BELLOWS_BOARD, GRINDSTONE_WHEEL);
 
     public static void render(ResourceLocation id, PoseStack pose, MultiBufferSource buffers, int light, int color) {
         Minecraft mc = Minecraft.getInstance();

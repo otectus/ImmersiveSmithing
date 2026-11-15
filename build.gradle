@@ -62,7 +62,12 @@ minecraft {
         }
         server { args '--nogui' }
         gameTestServer {
-            workingDirectory project.file('run-gametest')
+            if (epicKnightsSelection().any { it in ['overgeared', 'terrafirma', 'terrafirmagreg'] }) {
+                property 'forge.enabledGameTestNamespaces', 'immersive_smithing_coexistence'
+            }
+            def profile = project.findProperty('gameTestProfile')?.toString()
+            if (profile != null && !(profile ==~ /[a-zA-Z0-9_-]+/)) throw new GradleException('gameTestProfile must be a plain label')
+            workingDirectory project.file(profile == null ? 'run-gametest' : "run-gametest/profiles/${profile}")
             // The coverage GameTests compare the live catalogs with these checked-in inventories.
             property 'immersive_smithing.manifestDir', file('docs/compatibility/inventory').absolutePath
             // -PregistryDump=ns1,ns2 (or all): RegistryDumpGameTests writes the live registry of those mods to logs/.
@@ -150,8 +155,18 @@ List<String> epicKnightsSelection() {
         if (key == 'all') keys.addAll(all) else if (key != 'base') keys.add(key)
     }
     keys = keys.unique()
-    def known = all + ['iceandfire', 'foxrall']
+    def known = all + ['iceandfire', 'foxrall', 'thirtyyearswar', 'fletchery', 'japanese', 'ingots', 'boomsticks-release',
+                       'bettercombat', 'rework', 'overgeared', 'terrafirma', 'terrafirmagreg']
     keys.each { if (!known.contains(it)) throw new GradleException("Unknown -PepicKnights key '${it}'; known: ${known}") }
+    if (keys.contains('boomsticks') && keys.contains('boomsticks-release')) {
+        throw new GradleException('Select only one Medieval Boomsticks version: boomsticks (alpha) or boomsticks-release.')
+    }
+    if (keys.count { it in ['overgeared', 'terrafirma', 'terrafirmagreg'] } > 1) {
+        throw new GradleException('Manufacturing bridges must be tested separately: overgeared, terrafirma, terrafirmagreg.')
+    }
+    if (project.hasProperty('epicFight') && keys.any { it in ['bettercombat', 'rework'] }) {
+        throw new GradleException('Test Epic Fight and Better Combat in separate profiles.')
+    }
     return ['base'] + keys
 }
 
@@ -171,11 +186,28 @@ List<String> epicKnightsJars(String key) {
         case 'swappable': return [curse(ek_swappable_helms_curse)]
         case 'artillery': return [curse(ek_artillery_curse)]
         case 'boomsticks': return [curse(ek_boomsticks_curse), "maven.modrinth:geckolib:${geckolib_modrinth_id}".toString()]
+        case 'boomsticks-release': return [curse(ek_boomsticks_release_curse), "maven.modrinth:geckolib:${geckolib_modrinth_id}".toString()]
+        case 'thirtyyearswar': return [curse(ek_thirty_years_war_curse)]
+        case 'fletchery': return [curse(ek_fletchery_curse)]
+        case 'japanese': return [curse(ek_japanese_armory_curse)]
+        case 'ingots': return [curse(ek_ingots_addition_curse)]
+        case 'bettercombat': return ["maven.modrinth:better-combat:${better_combat_modrinth_id}".toString(),
+                                     "maven.modrinth:playeranimator:${playeranimator_modrinth_id}".toString()]
+        case 'rework': return epicKnightsJars('bettercombat') + [curse(ek_better_combat_rework_curse)]
+        case 'overgeared': return [curse(ek_overgeared_bridge_curse), "maven.modrinth:overgeared:${overgeared_modrinth_id}".toString()]
+        case 'terrafirma': return [curse(ek_terrafirma_bridge_curse)] + epicKnightsTerrafirmaDependencies()
+        case 'terrafirmagreg': return [curse(ek_terrafirmagreg_bridge_curse),
+                                      "maven.modrinth:gregtechceu-modern:${gtceu_modrinth_id}".toString()] + epicKnightsTerrafirmaDependencies()
         case 'iceandfire': return [curse(ek_ice_and_fire_curse), "maven.modrinth:ice-and-fire-dragons:${ice_and_fire_modrinth_id}".toString(),
                                    "maven.modrinth:citadel:${citadel_modrinth_id}".toString()]
         case 'foxrall': return gradle.startParameter.taskNames.any { it.toLowerCase().contains('client') } ? [curse(ek_foxralls_visors_curse)] : []
         default: throw new GradleException("Unknown Epic Knights key ${key}")
     }
+}
+
+List<String> epicKnightsTerrafirmaDependencies() {
+    return epicKnightsJars('antique') + ["maven.modrinth:terrafirmacraft:${terrafirmacraft_modrinth_id}".toString(),
+                                        "maven.modrinth:patchouli:${patchouli_modrinth_id}".toString()]
 }
 
 // Dev runs only: rewrites the SRG member names that fg.deobf leaves in mixin annotations and access transformers.

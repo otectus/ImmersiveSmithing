@@ -10,8 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * One smithable metal. Resolved against the current item tags, so the source list is concrete items.
- * Deliberately carries no equipment statistics.
+ * One smithable metal. Resolved against the current item tags, so the source list is concrete items, and so are the
+ * ingots and nuggets its molten metal can be cast into ({@link CastOutputs}). Deliberately carries no equipment statistics.
  */
 public record MaterialFamily(
         ResourceLocation id,
@@ -22,14 +22,20 @@ public record MaterialFamily(
         int tint,
         boolean auto,
         UpgradePolicy upgradePolicy,
-        List<Source> sources) {
+        List<Source> sources,
+        CastOutputs casting) {
 
     public static final int DEFAULT_TINT = 0xFF8A3D;
+
+    public MaterialFamily(ResourceLocation id, Component displayName, float meltMultiplier, boolean requiresIgnition,
+                          @Nullable TagKey<Item> requiredFuelTag, int tint, boolean auto, UpgradePolicy upgradePolicy, List<Source> sources) {
+        this(id, displayName, meltMultiplier, requiresIgnition, requiredFuelTag, tint, auto, upgradePolicy, sources, CastOutputs.NONE);
+    }
 
     /** A concrete item accepted as this material, worth {@code units} material units. */
     public record Source(Item item, int units, String rule) {}
 
-    /** Items worth exactly one ingot (9 units), used for display. */
+    /** Items worth exactly one ingot (9 units), raw ore included: for display only, never for casting ({@link #casting}). */
     public List<Item> ingotItems() {
         return sources.stream().filter(s -> s.units() == MaterialUnits.INGOT).map(Source::item).distinct().toList();
     }

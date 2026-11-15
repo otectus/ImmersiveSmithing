@@ -5,27 +5,18 @@
       "modid": "antiquelegacy"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "antiquelegacy",
+      "versions": "[1.13]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "antiquelegacy:hamata"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "minecraft:iron",
-  "metal_units": 13,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:leather"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "forge:plates/bronze"
-      },
-      "count": 3
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "antiquelegacy:hamata"
   },

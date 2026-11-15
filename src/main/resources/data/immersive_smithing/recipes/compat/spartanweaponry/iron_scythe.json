@@ -26,5 +26,8 @@
     "item": "spartanweaponry:iron_scythe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:scythe"
+  "anvil_pattern": "immersive_smithing:scythe",
+  "replaces": [
+    "spartanweaponry:iron_scythe"
+  ]
 }

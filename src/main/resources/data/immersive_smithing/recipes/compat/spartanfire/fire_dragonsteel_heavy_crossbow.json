@@ -51,5 +51,8 @@
     "item": "spartanfire:fire_dragonsteel_heavy_crossbow"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:heavy_crossbow"
+  "anvil_pattern": "immersive_smithing:heavy_crossbow",
+  "replaces": [
+    "spartanfire:fire_dragonsteel_heavy_crossbow"
+  ]
 }

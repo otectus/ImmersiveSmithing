@@ -10,7 +10,7 @@ block, which has no geometry). Faces are drawn with Minecraft-like directional s
 east/west 0.6, bottom 0.5) in back-to-front order. This is a preview for reviewing silhouettes and texture placement,
 not a replacement for the in-game screenshots the pack-test agent takes.
 
---check enforces the station geometry budgets (cuboids and faces per model and for the four stations together) and
+--check enforces the station geometry budgets (per model and for all four stations including moving meshes) and
 that every blockstate variant, model parent and face texture resolves: model files exist, the variants cover every
 combination of their properties, element bounds, rotations and UVs are legal, and textures exist (vanilla ones are
 looked up in the Forge Gradle client jar when it is in the Gradle cache).
@@ -26,10 +26,13 @@ from PIL import Image, ImageDraw
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'src/main/resources/assets/immersive_smithing'
 STATIONS = ['smiths_forge', 'smiths_forge_lit', 'smiths_anvil', 'smiths_trough', 'smiths_grindstone']
-# (cuboids, faces) per model; the lit forge replaces the forge model, so the total counts the four station models.
+MOVING = ['forge_bellows_board', 'grindstone_wheel']
+# (cuboids, faces) per model; the lit forge replaces the forge model and is counted only once in the total.
 BUDGETS = {'smiths_forge': (14, 84), 'smiths_forge_lit': (14, 84), 'smiths_anvil': (10, 60),
-           'smiths_trough': (7, 42), 'smiths_grindstone': (7, 42)}
-TOTAL_BUDGET = (38, 228)
+           'smiths_trough': (7, 42), 'smiths_grindstone': (7, 42),
+           'forge_bellows_board': (2, 12), 'grindstone_wheel': (5, 30)}
+# Include the moving meshes: two additional wheel courses buy a rounded outline, within the original face ceiling.
+TOTAL_BUDGET = (40, 228)
 BLOCKS = ['smiths_forge', 'smiths_anvil', 'smiths_trough', 'smiths_grindstone']
 VANILLA_JAR = pathlib.Path.home() / '.gradle/caches/forge_gradle/minecraft_repo/versions/1.20.1/client-extra.jar'
 SHADE = {'up': 1.0, 'down': 0.5, 'north': 0.8, 'south': 0.8, 'east': 0.6, 'west': 0.6}
@@ -169,13 +172,13 @@ def check():
         return vanilla is None or f'assets/{ns}/models/{path}.json' in vanilla
 
     totals = [0, 0]
-    for name in STATIONS:
+    for name in STATIONS + MOVING:
         elements, textures = load_model(name)
         cuboids, faces = len(elements), sum(len(e.get('faces', {})) for e in elements)
         max_cuboids, max_faces = BUDGETS[name]
         if cuboids > max_cuboids or faces > max_faces:
             problems.append(f'{name}: {cuboids} cuboids / {faces} faces exceeds {max_cuboids} / {max_faces}')
-        if name in BLOCKS:
+        if name in BLOCKS + MOVING:
             totals[0] += cuboids
             totals[1] += faces
         for i, e in enumerate(elements):
@@ -238,11 +241,11 @@ def main():
     args = parser.parse_args()
     if args.check:
         problems, totals = check()
-        for name in STATIONS:
+        for name in STATIONS + MOVING:
             cuboids, faces, culled, used = stats(name)
             max_cuboids, max_faces = BUDGETS[name]
             print(f'{name:22s} cuboids {cuboids:3d}/{max_cuboids:<3d} faces {faces:4d}/{max_faces:<4d} (cullface {culled:2d})')
-        print(f'{"four stations":22s} cuboids {totals[0]:3d}/{TOTAL_BUDGET[0]:<3d} faces {totals[1]:4d}/{TOTAL_BUDGET[1]:<4d}')
+        print(f'{"stations incl. moving":22s} cuboids {totals[0]:3d}/{TOTAL_BUDGET[0]:<3d} faces {totals[1]:4d}/{TOTAL_BUDGET[1]:<4d}')
         for problem in problems:
             print('FAIL', problem)
         print('Model check:', 'FAILED' if problems else 'passed')

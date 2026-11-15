@@ -5,21 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:tin_zweihander"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:tin",
-  "metal_units": 45,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "magistuarmory:hilts"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:tin_zweihander"
   },

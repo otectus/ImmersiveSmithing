@@ -40,5 +40,8 @@
     "item": "spartanweaponry:bronze_lance"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:lance"
+  "anvil_pattern": "immersive_smithing:lance",
+  "replaces": [
+    "spartanweaponry:bronze_lance"
+  ]
 }

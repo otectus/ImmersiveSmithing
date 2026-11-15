@@ -34,5 +34,8 @@
     "item": "spartanweaponry:bronze_quarterstaff"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:quarterstaff"
+  "anvil_pattern": "immersive_smithing:quarterstaff",
+  "replaces": [
+    "spartanweaponry:bronze_quarterstaff"
+  ]
 }

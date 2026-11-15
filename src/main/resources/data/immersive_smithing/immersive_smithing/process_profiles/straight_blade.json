@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:straight_blade",
+  "patterns": [
+    "immersive_smithing:sword",
+    "immersive_smithing:longsword",
+    "immersive_smithing:greatsword",
+    "immersive_smithing:rapier",
+    "immersive_smithing:twinblade"
+  ],
+  "operations": [
+    {
+      "id": "form_tang",
+      "region": "tang",
+      "kind": "shape",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.27,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "draw_blade",
+      "region": "blade",
+      "kind": "draw",
+      "work": 6,
+      "weight": 3,
+      "face": "front",
+      "area": [
+        0.27,
+        0.85,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "set_point",
+      "region": "tip",
+      "kind": "shape",
+      "work": 2,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.85,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_blade"
+      ]
+    },
+    {
+      "id": "dress_edge",
+      "region": "edge",
+      "kind": "finish",
+      "work": 3,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.27,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_blade"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 60,
+    "immersion_min": 0.7
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "grip"
+    }
+  ]
+}

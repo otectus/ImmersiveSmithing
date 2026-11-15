@@ -179,7 +179,21 @@ public final class CompatibilityReport {
 
     /** The integrations switched off in the server config. */
     public void integrations(java.util.Collection<String> disabled) {
-        for (String modId : disabled) integrations.add(modId + ": disabled in the config, left exactly as the mod ships it");
+        for (String modId : disabled) integrations.add(modId + ": "
+                + (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(modId)
+                ? com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.reason() : "disabled in the config; native routes retained"));
+        var companions = java.util.Map.of("quick_swap", "0.1.0", "overgeared_epic_knights", "1.20.1-1.1.1",
+                "knightsofterrafirma", "3.1.2|3.1.2-gregified", "bettercombat", "1.9.0+1.20.1",
+                "epic_knights_x_better_combat", "1.0.1-1.20.1+1.21.1");
+        net.minecraftforge.fml.ModList.get().getMods().stream().sorted(java.util.Comparator.comparing(m -> m.getModId())).forEach(mod -> {
+            String expected = com.otectus.immersivesmithing.compat.CoveragePolicies.testedVersions().get(mod.getModId());
+            if (expected == null) expected = companions.get(mod.getModId());
+            if (expected == null && !com.otectus.immersivesmithing.compat.Integrations.EPIC_KNIGHTS_NAMESPACES.contains(mod.getModId())) return;
+            String version = mod.getVersion().toString();
+            boolean recognized = expected != null && java.util.Arrays.asList(expected.split("\\|")).contains(version);
+            notes.add("Loaded " + mod.getModId() + " " + version + ": " + (recognized ? "recognized pinned version"
+                    : "UNKNOWN VERSION; guarded mappings/adapters may be inactive, inspect the catalog before claiming support"));
+        });
     }
 
     public void note(String note) {

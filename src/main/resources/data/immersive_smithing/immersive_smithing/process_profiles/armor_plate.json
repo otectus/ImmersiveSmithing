@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:armor_plate",
+  "patterns": [
+    "immersive_smithing:helmet",
+    "immersive_smithing:chestplate",
+    "immersive_smithing:leggings",
+    "immersive_smithing:boots",
+    "immersive_smithing:generic_armor"
+  ],
+  "operations": [
+    {
+      "id": "roll_rim_front",
+      "region": "rim_front",
+      "kind": "curve",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.25,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dish_plate",
+      "region": "plate",
+      "kind": "dish",
+      "work": 6,
+      "weight": 3,
+      "face": "front",
+      "area": [
+        0.25,
+        0.75,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "roll_rim_back",
+      "region": "rim_back",
+      "kind": "curve",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.75,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "planish",
+      "region": "surface",
+      "kind": "finish",
+      "work": 3,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.0,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "dish_plate"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 80,
+    "immersion_min": 0.6
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "strap"
+    },
+    {
+      "auxiliary_index": 1,
+      "socket": "lining"
+    },
+    {
+      "auxiliary_index": 2,
+      "socket": "fitting"
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thirtyyearswar"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "thirtyyearswar",
+      "versions": "[1.3]"
+    }
+  ],
+  "mod": "thirtyyearswar",
+  "tested_version": "1.3",
+  "policies": [
+    {
+      "items": [
+        "thirtyyearswar:baroque_apron_skirt"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_apron_skirt_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_bodice"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_breeches"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_breeches_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_buff_coat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_buff_waistcoat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_cavalier_hat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_cloak_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_coat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_barred_closed_burgonet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_barred_lobstertail_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_cabasset_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_cavalry_armour"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_cavalry_armour_gauntlet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_closed_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_cuirassier_armour"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_death_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_grilled_closed_burgonet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_lobstertail_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_officer_armour"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_open_burgonet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_open_closed_burgonet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_pikeman_armour"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_pikeman_cuirass"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_pikeman_pot_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dark_savoyard_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_doublet"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_dutch_cap"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_flat_cap"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_monmouth_cap"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_officer_doublet"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_open_cloak_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_panel_cloak_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_riders_breeches"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_riders_breeches_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_ruff_decoration"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_shirt"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_short_ruff_decoration"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_shoulder_sash_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_skirt"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_skirt_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_slouch_hat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_waist_sash_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:baroque_waistcoat"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:court_robe_decoration"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:felt_fabric"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "thirtyyearswar:paper_cartridge"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "thirtyyearswar:renaissance_cap"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:rich_breeches"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:rich_doublet"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+    },
+    {
+      "items": [
+        "thirtyyearswar:wool_fibers"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "thirtyyearswar:woollen_cloth"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    }
+  ]
+}

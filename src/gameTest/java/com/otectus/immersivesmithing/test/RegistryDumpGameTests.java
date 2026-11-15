@@ -63,6 +63,25 @@ public final class RegistryDumpGameTests {
         }
         var access = h.getLevel().registryAccess();
         List<Recipe<?>> sources = SmithingData.current().sourceRecipes();
+        java.util.Map<Item, List<Recipe<?>>> byResult = new java.util.HashMap<>();
+        java.util.Map<String, JsonArray> dynamic = new java.util.TreeMap<>();
+        for (Recipe<?> recipe : sources) {
+            if (recipe instanceof SmithingRecipe) continue;
+            try {
+                ItemStack result = recipe.getResultItem(access);
+                if (!result.isEmpty()) byResult.computeIfAbsent(result.getItem(), key -> new ArrayList<>()).add(recipe);
+                else {
+                    JsonObject route = new JsonObject();
+                    route.addProperty("id", recipe.getId().toString());
+                    ResourceLocation serializer = SourceRecipes.serializerId(recipe);
+                    route.addProperty("serializer", serializer == null ? "?" : serializer.toString());
+                    route.addProperty("class", recipe.getClass().getName());
+                    route.addProperty("active", h.getLevel().getServer().getRecipeManager().byKey(recipe.getId()).isPresent());
+                    route.addProperty("suppressed", SmithingData.current().suppressedRecipes().containsKey(recipe.getId()));
+                    dynamic.computeIfAbsent(recipe.getId().getNamespace(), key -> new JsonArray()).add(route);
+                }
+            } catch (RuntimeException ignored) { /* Invalid native result remains recorded by jar inventory. */ }
+        }
         for (String ns : namespaces) {
             JsonArray items = new JsonArray();
             List<Item> registered = new ArrayList<>();
@@ -115,7 +134,7 @@ public final class RegistryDumpGameTests {
                 stack.getTags().map(t -> t.location().toString()).sorted().forEach(tags::add);
                 o.add("tags", tags);
                 JsonArray made = new JsonArray();
-                for (Recipe<?> r : sources) {
+                for (Recipe<?> r : byResult.getOrDefault(item, List.of())) {
                     if (r instanceof SmithingRecipe) continue;
                     ItemStack result;
                     try {
@@ -130,14 +149,23 @@ public final class RegistryDumpGameTests {
                     m.addProperty("serializer", serializer == null ? "?" : serializer.toString());
                     m.addProperty("kind", SourceRecipes.kind(r).name());
                     m.addProperty("count", result.getCount());
+                    m.addProperty("result_nbt", result.save(new net.minecraft.nbt.CompoundTag()).toString());
                     JsonArray ingredients = new JsonArray();
+                    JsonArray completeIngredients = new JsonArray();
                     for (Ingredient ingredient : r.getIngredients()) {
                         if (ingredient.isEmpty()) continue;
                         TreeSet<String> ids = new TreeSet<>();
                         for (ItemStack s : ingredient.getItems()) ids.add(BuiltInRegistries.ITEM.getKey(s.getItem()).toString());
                         ingredients.add(ids.size() <= 3 ? String.join("|", ids) : ids.first() + "|+" + (ids.size() - 1));
+                        JsonObject complete = new JsonObject();
+                        complete.add("definition", ingredient.toJson());
+                        JsonArray bound = new JsonArray();
+                        ids.forEach(bound::add);
+                        complete.add("bound_items", bound);
+                        completeIngredients.add(complete);
                     }
                     m.add("ingredients", ingredients);
+                    m.add("complete_ingredients", completeIngredients);
                     made.add(m);
                 }
                 o.add("recipes", made);
@@ -147,6 +175,10 @@ public final class RegistryDumpGameTests {
             root.addProperty("namespace", ns);
             root.addProperty("version", ModList.get().getModContainerById(ns).map(c -> c.getModInfo().getVersion().toString()).orElse("?"));
             root.add("items", items);
+            JsonArray dynamicRecipes = new JsonArray();
+            java.util.stream.StreamSupport.stream(dynamic.getOrDefault(ns, new JsonArray()).spliterator(), false)
+                    .sorted(Comparator.comparing(e -> e.getAsJsonObject().get("id").getAsString())).forEach(dynamicRecipes::add);
+            root.add("dynamic_recipes", dynamicRecipes);
             Path dir = Path.of("logs");
             Files.createDirectories(dir);
             Files.writeString(dir.resolve("immersive_smithing_registry_" + ns + ".json"),

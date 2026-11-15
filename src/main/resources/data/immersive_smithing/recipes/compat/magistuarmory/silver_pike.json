@@ -5,27 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:silver_pike"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:silver",
-  "metal_units": 9,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "tag": "forge:rods/wooden"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:poles"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:silver_pike"
   },

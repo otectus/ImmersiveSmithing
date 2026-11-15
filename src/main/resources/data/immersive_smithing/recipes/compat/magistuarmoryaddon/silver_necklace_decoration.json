@@ -5,13 +5,18 @@
       "modid": "magistuarmoryaddon"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmoryaddon",
+      "versions": "[2.6]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmoryaddon:silver_necklace_decoration"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:silver",
-  "metal_units": 8,
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmoryaddon:silver_necklace_decoration"
   },

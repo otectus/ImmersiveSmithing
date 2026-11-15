@@ -50,7 +50,8 @@ public final class CoverageGameTests {
     /** Mods with a checked-in inventory. */
     static final List<String> MODS = List.of("epicfight", "simplyswords", "magistuarmory", "magistuarmoryaddon", "slavicarmory",
             "antiquelegacy", "epic_knights_ice_and_fire", "epic_knights_ores_and_alloys", "darkagesarmory", "epicknights_open_helms",
-            "artillery_addon", "medieval_boomsticks", "ekotsk");
+            "artillery_addon", "medieval_boomsticks", "ekotsk", "thirtyyearswar", "fletchery",
+            "bronzeaddition_epicknights", "epic_knights__japanese_armory", "overgeared_epic_knights", "knightsofterrafirma");
     private static final List<String> COMPARED = List.of("kind", "shape", "forge", "native", "quality", "recycling", "disposition");
 
     static List<String> loadedMods() {
@@ -69,17 +70,35 @@ public final class CoverageGameTests {
         List<String> mods = loadedMods();
         // Every catalog is written before anything is compared, so one run regenerates all of them.
         for (String mod : mods) WeaponCatalog.write(Path.of("logs"), mod, h.getLevel().registryAccess());
+        JsonObject metrics = new JsonObject();
+        var snapshot = SmithingData.current();
+        metrics.addProperty("smithing_recipes", snapshot.recipes().size());
+        metrics.addProperty("material_families", snapshot.materials().families().size());
+        metrics.addProperty("suppressed_sources", snapshot.suppressedRecipes().size());
+        var buffer = new net.minecraft.network.FriendlyByteBuf(io.netty.buffer.Unpooled.buffer());
+        long started = System.nanoTime();
+        try {
+            // Real vanilla recipe-sync encoding, restricted to the smithing portion of the snapshot.
+            new net.minecraft.network.protocol.game.ClientboundUpdateRecipesPacket(new ArrayList<Recipe<?>>(snapshot.recipes())).write(buffer);
+            metrics.addProperty("smithing_recipe_packet_bytes", buffer.writerIndex());
+        } finally { buffer.release(); }
+        metrics.addProperty("serialization_microseconds", (System.nanoTime() - started) / 1000);
+        metrics.addProperty("measurement", "Smithing-only ClientboundUpdateRecipesPacket; not the entire native recipe manager or heap size");
+        Files.createDirectories(Path.of("logs"));
+        Files.writeString(Path.of("logs/immersive_smithing_snapshot_metrics.json"), metrics + "\n");
         if (mods.isEmpty()) {
             h.succeed();
             return;
         }
-        JsonElement loaded = WeaponCatalog.build(mods.get(0), h.getLevel().registryAccess()).get("loaded_mods");
+        JsonObject liveProfile = WeaponCatalog.build(mods.get(0), h.getLevel().registryAccess());
+        JsonElement loaded = liveProfile.get("loaded_mods");
         Path dir = null;
         if (Files.isDirectory(root)) {
             try (var profiles = Files.list(root)) {
                 for (Path profile : profiles.filter(Files::isDirectory).sorted().toList()) {
                     Path any = profile.resolve(mods.get(0) + ".json");
-                    if (Files.exists(any) && loaded.equals(JsonParser.parseString(Files.readString(any)).getAsJsonObject().get("loaded_mods"))) {
+                    if (Files.exists(any) && loaded.equals(JsonParser.parseString(Files.readString(any)).getAsJsonObject().get("loaded_mods"))
+                            && liveProfile.get("loaded_versions").equals(JsonParser.parseString(Files.readString(any)).getAsJsonObject().get("loaded_versions"))) {
                         dir = profile;
                         break;
                     }
@@ -273,7 +292,8 @@ public final class CoverageGameTests {
                 if (!named.contains(id) && server.getRecipeManager().byKey(id).isEmpty()) problems.add(r.getId() + " disabled " + id + ", which it only follows");
             }
             data.suppressedRecipes().forEach((id, item) -> {
-                if (item == r.resultItem() && !named.contains(id)) problems.add(id + " was disabled though no built-in recipe names it");
+                if (item == r.resultItem() && bundled().stream().noneMatch(variant -> variant.resultItem() == item && variant.replaces().contains(id)))
+                    problems.add(id + " was disabled though no built-in recipe names it");
             });
         }
         h.assertTrue(problems.isEmpty(), String.join("; ", problems.subList(0, Math.min(6, problems.size()))));

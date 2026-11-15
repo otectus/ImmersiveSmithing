@@ -73,7 +73,7 @@ public final class EquipmentClassifier {
                 default -> GENERIC_ARMOR;
             };
         }
-        if (item instanceof ShieldItem || stack.canPerformAction(ToolActions.SHIELD_BLOCK)) return SHIELD;
+        if (isShield(stack)) return SHIELD;
         if (stack.canPerformAction(ToolActions.SWORD_DIG)) return SWORD;
         if (stack.canPerformAction(ToolActions.PICKAXE_DIG)) return PICKAXE;
         if (stack.canPerformAction(ToolActions.AXE_DIG)) return AXE;
@@ -148,6 +148,9 @@ public final class EquipmentClassifier {
      * weapon: it deals attack damage of its own, so quality scales that damage.
      */
     public static boolean isShield(ItemStack stack) {
+        var role = com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.role(stack);
+        if (role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.WEAPON) return false;
+        if (role == com.otectus.immersivesmithing.compat.epicknights.EpicEquipment.Role.SHIELD) return true;
         if (stack.getItem() instanceof ShieldItem || stack.is(Tags.Items.TOOLS_SHIELDS) || stack.is(ModTags.SMITHABLE_SHIELDS)) return true;
         return stack.canPerformAction(ToolActions.SHIELD_BLOCK) && !hasOwnAttackDamage(stack);
     }

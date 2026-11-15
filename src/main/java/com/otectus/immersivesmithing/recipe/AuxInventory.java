@@ -41,6 +41,17 @@ public final class AuxInventory {
         return taken;
     }
 
+    /** Server preview made from the same inventory plan as reservation; the returned stacks are copies. */
+    public static Optional<List<ItemStack>> preview(Player player, List<AuxiliaryIngredient> auxiliary, int protectedSlot) {
+        int[] take = plan(player, auxiliary, protectedSlot);
+        if (take == null) return Optional.empty();
+        List<ItemStack> stacks = new ArrayList<>();
+        for (int slot = 0; slot < take.length; slot++) {
+            if (take[slot] > 0) stacks.add(player.getInventory().getItem(slot).copyWithCount(take[slot]));
+        }
+        return Optional.of(List.copyOf(stacks));
+    }
+
     @Nullable
     private static int[] plan(Player player, List<AuxiliaryIngredient> auxiliary, int protectedSlot) {
         Inventory inv = player.getInventory();
@@ -56,6 +67,7 @@ public final class AuxInventory {
             for (int slot = 0; slot < size && need > 0; slot++) {
                 if (remaining[slot] <= 0) continue;
                 ItemStack stack = inv.getItem(slot);
+                if (com.otectus.immersivesmithing.compat.epicknights.LoadedEquipment.hasPayload(stack)) continue;
                 if (!aux.ingredient().test(stack)) continue;
                 int t = Math.min(remaining[slot], need);
                 remaining[slot] -= t;

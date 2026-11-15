@@ -10,14 +10,16 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * The smith's title and inscription for a piece in their inventory. The server only accepts it for a piece the
- * sender forged, and sanitises every string itself; the client limits are a convenience.
+ * The smith's title and inscription for a piece in their inventory. {@code expected} is the exact piece the screen was
+ * opened for: the server refuses the request if that slot now holds anything else, so a moved or changed stack is never
+ * signed by mistake. It only accepts a piece the sender forged, and sanitises every string itself.
  */
-public record SignWorkPacket(int slot, String title, List<String> inscription) {
+public record SignWorkPacket(int slot, net.minecraft.world.item.ItemStack expected, String title, List<String> inscription) {
     private static final int WIRE_LIMIT = 256;
 
     public void encode(FriendlyByteBuf buf) {
         buf.writeVarInt(slot);
+        buf.writeItem(expected);
         buf.writeUtf(title, WIRE_LIMIT);
         buf.writeVarInt(Math.min(inscription.size(), 8));
         for (int i = 0; i < Math.min(inscription.size(), 8); i++) buf.writeUtf(inscription.get(i), WIRE_LIMIT);
@@ -25,18 +27,19 @@ public record SignWorkPacket(int slot, String title, List<String> inscription) {
 
     public static SignWorkPacket decode(FriendlyByteBuf buf) {
         int slot = buf.readVarInt();
+        net.minecraft.world.item.ItemStack expected = buf.readItem();
         String title = buf.readUtf(WIRE_LIMIT);
         int n = Math.min(buf.readVarInt(), 8);
         List<String> lines = new ArrayList<>(n);
         for (int i = 0; i < n; i++) lines.add(buf.readUtf(WIRE_LIMIT));
-        return new SignWorkPacket(slot, title, lines);
+        return new SignWorkPacket(slot, expected, title, lines);
     }
 
     public void handle(Supplier<NetworkEvent.Context> ctx) {
         NetworkEvent.Context context = ctx.get();
         ServerPlayer player = context.getSender();
         context.enqueueWork(() -> {
-            if (player != null) SigningService.sign(player, slot, title, inscription);
+            if (player != null) SigningService.sign(player, slot, expected, title, inscription);
         });
         context.setPacketHandled(true);
     }

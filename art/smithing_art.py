@@ -115,13 +115,39 @@ BOOK = [
 '................']
 
 def worked_timber():
-    """Warm worn planks: dark seams every five pixels, knots and lit grain."""
-    im,d=canvas((16,16),'#6b5037')
-    for x in [0,5,10,15]: d.line((x,0,x,15),fill=WOOD[0]);d.line((x+1,0,x+1,15),fill='#97734d')
-    for pts in [[(3,1),(3,5),(2,6),(2,9)],[(8,8),(7,9),(7,13)],[(13,2),(12,3),(12,6)],[(13,10),(13,15)]]:d.line(pts,fill=WOOD[1])
-    for x,y in [(2,1),(7,4),(12,8),(2,12)]:d.line((x,y,x,y+2),fill='#af8957')
-    d.line((2,0,4,0),fill=WOOD[4]);d.line((11,0,14,0),fill=WOOD[4])
-    return im
+    """Four oak staves, with interrupted grain instead of black ladder-like grooves."""
+    return sprite([
+        '3432343234433432', '4542344235433442', '4532344235433452', '3532343234433452',
+        '3432343234433442', '3442344234533442', '3442345234533442', '3432345234433432',
+        '3432344234433432', '4532344235433442', '4532343235433442', '4432343234433452',
+        '3432344234433452', '3442344234533442', '3442343234533442', '3432343234433432',
+    ], dict(zip('012345', ['#382c20','#4c3827','#63492f','#7b5b38','#8b693f','#9d7a4a'])))
+
+
+def masonry(rim=False):
+    """Irregular stone-brick courses; narrow mortar, chipped corners and connected clusters."""
+    ramp = ['#393c38','#4b4e47','#5c6057','#6d7065','#7e8073','#8f9080','#a1a18e']
+    if rim:
+        ramp = ['#464940','#595d51','#6c7060','#7c806d','#8e927b','#9fa28b','#aeb197']
+    return sprite([
+        '0345542044544432', '3454432044333321', '2333421033322210', '1222100122211000',
+        '0000345543203454', '4432454443214544', '3321333332103332', '2210122210001221',
+        '0000000034544320', '4554432045443321', '3443321033332210', '2332210012221000',
+        '1100345543203454', '0002454443214544', '4432333332103332', '3321122210001221',
+    ], dict(zip('0123456', ramp)))
+
+
+def forged_metal(top=False):
+    """Cool iron with broad worked patches and short directional hammer scuffs."""
+    ramp = ['#353c40','#454e52','#535e62','#646f73','#748085','#899498']
+    if top:
+        ramp = ['#4c5559','#606c70','#727f83','#859296','#97a3a5','#aeb8b6']
+    return sprite([
+        '3334444333344433', '4443333334333334', '3322223333222223', '3222333222223333',
+        '2223433222332222', '2233322222344322', '2222223322333222', '2333223322222233',
+        '2344322222233433', '2233222233322232', '2222222344322222', '2233322233222332',
+        '2344322222223432', '2233222333222222', '2222222344322222', '1222221112222221',
+    ], dict(zip('012345', ramp)))
 
 def textures():
     out = {}
@@ -129,13 +155,13 @@ def textures():
         palette = {str(i):v for i,v in enumerate(ramp)} | {'o':IRON[0], 'b':BRONZE[2], 'H':WOOD[4], 'h':WOOD[2]}
         hammer = sprite(HAMMER, palette)
         d = ImageDraw.Draw(hammer)
-        # Material-specific details, not merely recolours: chipped stone, steel peen, inset jewel, bronze collars.
+        # Material-specific wear and facets; the metal stays dominant, as on vanilla tools.
         if tier == 'stone':
             d.point((7,2), fill=ramp[1]); d.point((12,8), fill=ramp[1]); d.point((5,4), fill=ramp[0])
         if tier == 'diamond':
-            d.rectangle((8,5,9,6), fill=ramp[0]); d.point((8,5), fill=ramp[4]); d.point((9,6), fill=ramp[3])
+            d.line((7,4,10,7), fill=ramp[3]); d.point((7,4), fill=ramp[4]); d.point((11,8), fill=ramp[1])
         if tier == 'netherite':
-            d.line((6,3,12,9), fill=BRONZE[2]); d.point((12,9), fill=BRONZE[3]); d.point((3,12), fill=BRONZE[2])
+            d.line((7,4,10,7), fill=ramp[3]); d.line((8,6,11,9),fill=ramp[1]); d.point((6,7), fill=BRONZE[1])
         out[f'item/{tier}_smithing_hammer.png'] = hammer
         tongs = sprite(TONGS, palette)
         if tier == 'netherite':
@@ -144,47 +170,42 @@ def textures():
     hot_palette = dict(zip('012345',HEAT)) | {'o': HEAT[0]}
     out['item/hot_workpiece.png'] = sprite(WORKPIECE, hot_palette)
     out['item/tongs_workpiece.png'] = sprite(LOADED, hot_palette)
-    out['item/smithing_guide.png'] = sprite(BOOK, {'o':IRON[0], 'h':WOOD[2], 'H':WOOD[3], 'm':WOOD[1], 'b':BRONZE[2], 'B':BRONZE[3], 'p':'#dbc9a0', 'q':'#af946c'})
+    book = sprite(BOOK, {'o':IRON[0], 'h':WOOD[2], 'H':WOOD[3], 'm':WOOD[1], 'b':BRONZE[2], 'B':BRONZE[3], 'p':'#dbc9a0', 'q':'#af946c'})
+    d=ImageDraw.Draw(book)
+    d.rectangle((6,5,10,10),fill=WOOD[2])
+    d.rectangle((6,6,10,7),fill=BRONZE[2]); d.line((6,6,9,6),fill=BRONZE[3])
+    d.line((8,8,8,10),fill=BRONZE[3]); d.point((9,10),fill=BRONZE[1])
+    out['item/smithing_guide.png'] = book
 
-    # Uneven fieldstone courses: warm chipped edges, cool soot and restrained moss.
-    stone = ['#262a28', '#414642', '#575b50', '#747465', '#99917b']
-    im,d=canvas((16,16), stone[0])
-    for row,(y,offset) in enumerate([(0,0),(4,4),(8,0),(12,4)]):
-        for n,x in enumerate(range(offset-8,16,8)):
-            d.rectangle((x,y,x+6,y+2), fill=stone[2 if (row+n)%3 else 1])
-            d.line((x+1,y,x+5,y),fill=stone[3]); d.point((x+1,y+1),fill=stone[4])
-            d.line((x+2,y+2,x+5,y+2),fill=stone[1])
-    for x,y in [(3,2),(10,6),(5,14),(13,10)]:
-        d.line((x,y,x+1,y),fill='#59604b')
-    out['block/forge_masonry.png']=im
-    im,d=canvas((16,16),stone[2])
-    for y,offset in [(0,0),(4,4),(8,0),(12,4)]:
-        for x in range(offset-8,16,8):
-            d.rectangle((x,y,x+6,y+2),fill=stone[3]);d.line((x+1,y,x+5,y),fill=stone[4])
-            d.point((x+6,y+2),fill=stone[0])
-    out['block/forge_rim.png']=im
-    im,d=canvas((16,16),IRON[1])
-    d.rectangle((0,0,15,1), fill=IRON[3]); d.line((0,2,15,2), fill=IRON[2]); d.line((0,14,15,14), fill=IRON[0])
-    for x,y in [(2,5),(11,11),(8,3)]: d.line((x,y,x+2,y),fill=IRON[2])
+    out['block/forge_masonry.png']=masonry()
+    out['block/forge_rim.png']=masonry(True)
+    im=forged_metal(); d=ImageDraw.Draw(im)
+    d.line((0,0,15,0),fill=IRON[4]); d.line((0,15,15,15),fill=IRON[1])
+    for x,y in [(2,2),(13,2),(2,13),(13,13)]:
+        d.point((x,y), fill=IRON[4]); d.point((x,y+1),fill=IRON[1])
     out['block/iron_plate.png']=im
-    im,d=canvas((16,16),'#181a1c')
-    for box in [(1,3,5,4),(9,1,12,2),(6,10,12,12),(0,14,3,15)]: d.rectangle(box,fill='#242528')
-    d.line((2,4,4,4),fill='#303136'); d.line((8,10,11,10),fill='#343238')
+    im=sprite([
+        '1222100122210111','2343211234321221','2333212333322342','1222101222212332',
+        '0111010011101221','1222211222100110','2343322343211221','2333222333223432',
+        '1222111222123332','0110010011012221','1221122212101100','2342234333211221',
+        '2332233332223432','1221122221123332','0110011100112221','1221100122210110',
+    ],dict(zip('01234',['#17191a','#202222','#292c2b','#333633','#41443d'])))
     out['block/forge_inner.png']=im
-    im,d=canvas((16,16),'#ed922d')
-    for x,y in [(0,0),(6,1),(12,0),(3,5),(10,5),(0,10),(7,10),(13,12),(3,14)]:
-        d.rectangle((x,y,x+3,y+2),fill='#3a3026')
-        d.line((x,y,x+2,y),fill='#795033');d.point((x+3,y+2),fill='#fff0a0')
-        d.line((x,y+3,x+2,y+3),fill='#ffd45b')
+    im=out['block/forge_inner.png'].copy(); d=ImageDraw.Draw(im)
+    # Small ember seams between charcoal chunks, rather than a bright tiled diagonal lattice.
+    for pts in [[(0,4),(2,4),(3,5)],[(7,0),(7,2)],[(10,7),(12,7)],
+                [(4,10),(5,11),(7,11)],[(12,13),(13,14),(15,14)],[(0,14),(1,15)]]:
+        d.line(pts,fill=HEAT[2])
+    for x,y in [(1,4),(7,1),(11,7),(5,11),(14,14)]: d.point((x,y),fill=HEAT[4])
     out['block/forge_coals.png']=im
-    im,d=canvas((16,16),'#79858c')
-    d.line((0,0,15,0),fill='#d0d1c8');d.line((0,1,0,15),fill='#a8b2b2')
-    d.line((15,1,15,15),fill=IRON[2]);d.line((1,15,14,15),fill=IRON[3])
-    for box in [(4,4,7,4),(8,6,11,6),(3,8,5,8),(7,10,10,10),(10,3,12,3)]:d.rectangle(box,fill='#89979c')
-    d.rectangle((8,11,9,12),fill=IRON[0]); d.line((8,13,10,13),fill=IRON[4])
+    im=forged_metal(True);d=ImageDraw.Draw(im)
+    # The working face samples x 4..12, z 4..15. Put the bevel on those edges, not outside its UVs.
+    d.line((4,4,10,4),fill='#b5bfbc');d.line((4,5,4,13),fill='#9da9a9')
+    d.line((11,4,11,14),fill='#59676b');d.line((5,14,10,14),fill='#647175')
+    # Keep the working face uninterrupted; tiny scuffs already come from the forged-metal source.
     out['block/smiths_anvil_top.png']=im
-    im,d=canvas((16,16),IRON[2]);d.rectangle((0,0,15,2),fill=IRON[3]);d.line((0,0,15,0),fill=IRON[4]);d.rectangle((0,12,15,15),fill=IRON[1])
-    for box in [(2,5,4,5),(10,3,13,3),(7,9,9,9)]: d.rectangle(box,fill=IRON[3])
+    im=forged_metal();d=ImageDraw.Draw(im)
+    d.line((0,0,15,0),fill='#8c989b');d.line((0,2,15,2),fill='#454f54')
     out['block/smiths_anvil_body.png']=im
     out['block/worked_timber.png']=worked_timber()
     # Station details that used to be separate cuboids are painted on the faces that carried them (1.2 geometry pass).
@@ -202,35 +223,56 @@ def textures():
         for y in [7,11,14]: d.point((col,y),fill=BRONZE[2])
     d.line((0,7,15,7),fill=WOOD[1])
     out['block/trough_staves.png']=im
-    im,d=canvas((16,16),WOOD[2])
-    for a,c in [(0,WOOD[0]),(1,WOOD[3]),(3,WOOD[1]),(4,WOOD[4]),(6,WOOD[1])]: d.rectangle((a,a,15-a,15-a),outline=c)
-    d.line((8,0,8,3),fill=WOOD[0]); d.line((13,11,15,13),fill=WOOD[0])
+    im=sprite([
+        '3333344333333333','3444454444444433','3453333333333543','3433444444433543',
+        '3434533333543543','3434534443543543','3434534333543543','3434534343543543',
+        '3434533443543543','3434533333543543','3433444444433543','3433333333333543',
+        '3444443444444543','3333332333333443','3444432344444433','3333323333333333',
+    ],dict(zip('2345',['#63492f','#82623b','#987544','#ab8750'])))
     out['block/timber_end.png']=im
-    im,d=canvas((16,16),'#797a6c')
-    for a,c in [(0,'#454b47'),(1,'#b5ad92'),(3,'#93917e'),(5,'#5e665e')]:d.ellipse((a,a,15-a,15-a),outline=c)
-    d.rectangle((6,6,9,9),fill=IRON[1]); d.rectangle((7,7,8,8),fill=BRONZE[2]);d.point((7,7),fill=BRONZE[3])
-    for p in [(3,2),(12,5),(4,12),(10,10)]: d.point(p,fill='#a3a698')
+    im,d=canvas((16,16),'#85877d')
+    # Wheel side UVs cover [3,3,13,13], centred on the axle at [8,8].
+    for a,c in [(3,'#636b64'),(4,'#a6a799'),(6,'#747d74')]:d.ellipse((a,a,15-a,15-a),outline=c)
+    for x,y in [(5,5),(10,4),(11,7),(9,11),(4,8),(6,10)]:
+        d.point((x,y),fill='#b1b1a1');d.point((x,y+1),fill='#777e73')
+    d.rectangle((7,7,8,8),fill=IRON[2]);d.point((7,7),fill=IRON[4])
     out['block/grinding_wheel_side.png']=im
-    im,d=canvas((16,16),'#797c6d')
-    for y in [1,5,9,13]:d.line((0,y,15,y),fill='#a09e88');d.line((2,y+1,9,y+1),fill='#898d79')
-    for x,y in [(3,3),(11,7),(7,15)]:d.line((x,y,x+2,y),fill='#464e4e')
+    # Restrained grit. No bright hoops across the edge of the turning stone.
+    im=sprite([
+        '3334433332333433','3443332333334332','3332333343333323','2333344333233344',
+        '3334333333344333','3443323334333323','3332333443332333','2333433332333443',
+        '3333332333443333','3443333433332333','3332333332333344','2333344333344333',
+        '3334333323333332','3443332333443323','3332333443332333','2333433332333443',
+    ],dict(zip('234',['#74796e','#878c7e','#9a9e8d'])))
     out['block/grinding_wheel_edge.png']=im
-    im,d=canvas((16,16),IRON[2]); d.rectangle((0,14,15,15),fill=IRON[3]); d.line((0,14,15,14),fill=IRON[4]); d.rectangle((4,6,11,9),fill=IRON[4]); d.line((4,6,11,6),fill=IRON[5]); d.line((4,9,11,9),fill=IRON[2]); d.line((7,7,9,7),fill=IRON[3])
+    # Billet: a light neutral base. Renderers multiply it by the cold metal colour or the heat colour, so it must be pale
+    # for hot metal to glow orange rather than brown.
+    im=sprite([
+        '3333333344333333','3344333333332233','3333322333333333','3333333333443333',
+        '3322333333333333','3333333443332233','3334433333333333','3333333332233333',
+        '3333333333333443','3443333322333333','3333333333333333','3333223333443333',
+        '3333333343333333','3322333333332233','3333333334433333','3333344333333333',
+    ],dict(zip('234',['#bfc1c1','#d7d8d6','#eaebe6'])))
     out['block/billet.png']=im
-    # Molten metal: dark oxide rafts and bright channels. Four discrete, slow frames.
+    # Molten metal: connected oxide islands and narrow hot channels, animated in place in four discrete steps.
+    molten = [
+        '3334433332233333','3345433321123333','3444333221233443','3333322212334543',
+        '3223333223334433','2112333333333333','2123334433332233','3233345433321123',
+        '3333444333321233','3333333333332333','3344333223333344','3454332112333443',
+        '3443332123334433','3333333233333333','3322333334433333','3212333345433333',
+    ]
     im,d=canvas((16,64))
     for f in range(4):
-        d.rectangle((0,f*16,15,f*16+15),fill=HEAT[3])
-        for x,y,w,h in [(1,1,4,2),(9,3,5,3),(3,8,6,2),(11,12,4,2),(0,14,5,2)]:
-            dy=(y+f//2)%16
-            d.rectangle((x,f*16+dy,x+w-1,f*16+min(15,dy+h)),fill=HEAT[2]);d.line((x,f*16+dy,x+w-2,f*16+dy),fill=HEAT[1])
-        for pts in [[(0,5),(4,5),(5,6),(8,6)],[(8,0),(8,1),(7,2)],[(4,12),(7,12),(8,13),(10,13)]]:
-            d.line([(x,f*16+min(15,y+f%2)) for x,y in pts],fill=HEAT[4])
-        d.line((1,f*16+6+f%2,3,f*16+6+f%2),fill=HEAT[5])
+        tile=sprite(molten, dict(zip('012345',HEAT)))
+        td=ImageDraw.Draw(tile)
+        for x,y in [(3,2),(6,7),(12,11)]:
+            td.point((x,y),fill=HEAT[4 if f in (0,3) else 3])
+            td.point((x+1,y),fill=HEAT[3 if f in (0,3) else 4])
+        im.paste(tile,(0,f*16))
     out['block/molten_metal.png']=im
     for frame in range(4):
         im,d=canvas((8,8))
-        for x,y in [(3,2),(3,3),(3,4),(4,3)][:4-frame]:d.point((x,y),fill='white')
+        for x,y in [(3,3),(4,3),(3,4),(4,4)][:max(1,4-frame)]:d.point((x,y),fill='white')
         out[f'particle/spark_{frame}.png']=im
     # Minigame target sprites only: ring (96,0,64,64) and disc (160,0,64,64), a stable resource-pack contract.
     # The screens themselves are drawn from Minecraft's own GUI textures; there is no themed frame any more.

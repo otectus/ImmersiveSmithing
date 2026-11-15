@@ -181,10 +181,15 @@ def main():
     parser.add_argument('--early-window-control', choices=['true', 'false'])
     parser.add_argument('--no-world', action='store_true')
     parser.add_argument('--expect', default='')
+    parser.add_argument('--extra-mods', type=pathlib.Path, nargs='*', default=[],
+                        help='original production jars added only to the isolated test copy (e.g. pinned Epic Knights)')
     parser.add_argument('--timeout', type=int, default=900)
     parser.add_argument('--observe-after-title', type=int, default=30,
                         help='seconds to keep watching after the title screen when no agent runs')
     args = parser.parse_args()
+    for extra in args.extra_mods:
+        if not extra.is_file() or extra.suffix != '.jar':
+            parser.error(f'Extra mod is not a jar: {extra}')
 
     libs = ROOT / 'build' / 'libs'
     mod_jar = agent_jar = None
@@ -197,12 +202,17 @@ def main():
         raise SystemExit(f'Refusing to reuse {work}')
     work.mkdir(parents=True)
     linked = build_instance(work, mod_jar, agent_jar, args.early_window_control)
+    for extra in args.extra_mods:
+        destination = work / 'mods' / extra.name
+        if destination.exists():
+            raise SystemExit(f'Extra jar duplicates a pack filename: {extra.name}')
+        shutil.copy2(extra, destination)
     props = {}
     if agent_jar:
         props = {'immersive_smithing.packtest.output': str(work), 'immersive_smithing.packtest.world': str(not args.no_world).lower(),
                  'immersive_smithing.packtest.expect': args.expect}
     cmd = launch_command(work, props)
-    artifacts = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in [mod_jar, agent_jar] if p}
+    artifacts = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in [mod_jar, agent_jar, *args.extra_mods] if p}
     (work / 'launch.json').write_text(json.dumps({'command': cmd, 'artifacts': artifacts, 'pack_jars': linked,
                                                   'early_window_control': args.early_window_control}, indent=2))
     print(f'[packtest] {work.name}: {linked} pack jars, mod={mod_jar.name if mod_jar else "none"}, '
@@ -226,7 +236,11 @@ def main():
                 except subprocess.TimeoutExpired:
                     proc.kill()
                 break
-            if title_at is None and 'seconds to start' in log_path.read_text(errors='replace'):
+            # FancyMenu logs startup timing in Ultima; the test agent observes the actual
+            # TitleScreen in minimal profiles where FancyMenu is absent.
+            startup_log = log_path.read_text(errors='replace') if title_at is None else ''
+            if title_at is None and ('seconds to start' in startup_log
+                                     or 'PACKTEST title screen reached after ' in startup_log):
                 title_at = now
                 print(f'[packtest] title screen logged at {now:.0f}s', flush=True)
             if now >= next_capture:
@@ -290,7 +304,7 @@ def own_traces(text):
 
     Our frames deeper in a stack do not count: the pack-test agent creating a world is on the stack whenever
     another mod's reload listener logs an exception, and that exception is not ours."""
-    found, current = [], []
+    found, current, resource_owner = [], [], None
     for line in text.splitlines() + ['']:
         stripped = line.strip()
         if stripped.startswith('at '):
@@ -298,9 +312,17 @@ def own_traces(text):
             continue
         if current:
             first = next((f for f in current if not f[3:].startswith(PLATFORM_PACKAGES)), None)
-            if first and first[3:].startswith('com.otectus.immersivesmithing'):
+            # Vanilla parsing of an upstream JSON can have only platform frames before
+            # our test driver's createWorld call. The resource ID in RecipeManager's
+            # error establishes ownership; a deeper test launcher is not the cause.
+            upstream_parse = (resource_owner is not None and resource_owner != 'immersive_smithing'
+                              and first is not None and first[3:].startswith('com.otectus.immersivesmithing.packtest.'))
+            if first and first[3:].startswith('com.otectus.immersivesmithing') and not upstream_parse:
                 found.append(first)
             current = []
+        if line.startswith('['):
+            resource = re.search(r'\[minecraft/RecipeManager\]: Parsing error loading recipe ([a-z0-9_.-]+):', line)
+            resource_owner = resource[1] if resource else None
     return found
 
 

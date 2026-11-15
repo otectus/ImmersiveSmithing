@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:curved_thrown",
+  "patterns": [
+    "immersive_smithing:boomerang",
+    "immersive_smithing:chakram"
+  ],
+  "operations": [
+    {
+      "id": "draw_arm_a",
+      "region": "arm_a",
+      "kind": "draw",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.45,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "draw_arm_b",
+      "region": "arm_b",
+      "kind": "draw",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.55,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bend_join",
+      "region": "join",
+      "kind": "curve",
+      "work": 2,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.45,
+        0.55,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_arm_a",
+        "draw_arm_b"
+      ]
+    },
+    {
+      "id": "balance",
+      "region": "balance",
+      "kind": "finish",
+      "work": 2,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.0,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "bend_join"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 50,
+    "immersion_min": 0.65
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "grip"
+    }
+  ]
+}

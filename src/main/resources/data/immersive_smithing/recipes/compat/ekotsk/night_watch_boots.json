@@ -5,31 +5,18 @@
       "modid": "ekotsk"
     },
     {
-      "type": "forge:item_exists",
-      "item": "ekotsk:night_watch_boots"
+      "type": "immersive_smithing:mod_version",
+      "modid": "ekotsk",
+      "versions": "[1.20.1_1.5.0]"
     },
     {
       "type": "forge:item_exists",
-      "item": "ekotsk:black_leather"
+      "item": "ekotsk:night_watch_boots"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:blacked_steel",
-  "metal_units": 18,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "ekotsk:black_leather"
-      },
-      "count": 2
-    },
-    {
-      "ingredient": {
-        "tag": "magistuarmory:leather_strips"
-      },
-      "count": 2
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "ekotsk:night_watch_boots"
   },

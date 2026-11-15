@@ -1,5 +1,14 @@
 {
-  "parent": "immersive_smithing:block/smiths_forge",
+  "parent": "minecraft:block/block",
+  "loader": "forge:composite",
+  "children": {
+    "station": {
+      "parent": "immersive_smithing:block/smiths_forge"
+    },
+    "moving_part": {
+      "parent": "immersive_smithing:block/forge_bellows_board"
+    }
+  },
   "display": {
     "gui": {
       "rotation": [

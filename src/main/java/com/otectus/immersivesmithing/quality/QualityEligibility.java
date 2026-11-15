@@ -34,7 +34,8 @@ public final class QualityEligibility {
     }
 
     private static boolean canCarryQuality(ItemStack stack, boolean forged) {
-        if (stack.isEmpty() || stack.getMaxStackSize() != 1 || ImmersiveSmithingAPI.isExcluded(stack)) return false;
+        if (stack.isEmpty() || stack.getMaxStackSize() != 1 || ImmersiveSmithingAPI.isExcluded(stack)
+                || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)) return false;
         if (stack.is(ModTags.NON_SMITHABLE_EQUIPMENT)) return false;
         if (forged) return EquipmentClassifier.isCandidate(stack);
         if (!stack.is(ModTags.QUALITY_ELIGIBLE) || !stack.isDamageableItem()) return false;

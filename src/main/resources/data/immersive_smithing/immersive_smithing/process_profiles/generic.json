@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:generic",
+  "patterns": [
+    "immersive_smithing:generic_weapon",
+    "immersive_smithing:generic_tool",
+    "immersive_smithing:generic_equipment"
+  ],
+  "operations": [
+    {
+      "id": "rough_out",
+      "region": "body",
+      "kind": "draw",
+      "work": 5,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.0,
+        0.6,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "form_end",
+      "region": "end",
+      "kind": "shape",
+      "work": 4,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.6,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dress",
+      "region": "surface",
+      "kind": "finish",
+      "work": 3,
+      "weight": 1,
+      "face": "back",
+      "area": [
+        0.0,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "rough_out"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 60,
+    "immersion_min": 0.65
+  }
+}

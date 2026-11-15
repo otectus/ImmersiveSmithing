@@ -262,10 +262,20 @@ public final class DataGameTests {
     private static double shoot(GameTestHelper h, net.minecraftforge.common.util.FakePlayer player, QualityData quality) {
         ItemStack bow = new ItemStack(Items.BOW);
         if (quality != null) quality.apply(bow);
-        player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, bow);
-        Arrow arrow = new Arrow(h.getLevel(), player);
-        h.getLevel().addFreshEntity(arrow);
+        player.setItemInHand(net.minecraft.world.InteractionHand.OFF_HAND, bow);
+        ItemStack unrelated = new ItemStack(Items.CROSSBOW);
+        new QualityData(50, 0, false).apply(unrelated);
+        player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, unrelated);
+        player.getInventory().add(new ItemStack(Items.ARROW, 1));
+        player.startUsingItem(net.minecraft.world.InteractionHand.OFF_HAND);
+        ((net.minecraft.world.item.BowItem) bow.getItem()).releaseUsing(bow, h.getLevel(), player, bow.getUseDuration() - 20);
+        Arrow arrow = h.getLevel().getEntitiesOfClass(Arrow.class, player.getBoundingBox().inflate(2)).stream()
+                .filter(a -> a.getOwner() == player).findFirst().orElseThrow();
         double damage = arrow.getBaseDamage();
+        player.stopUsingItem();
+        player.setItemInHand(net.minecraft.world.InteractionHand.OFF_HAND, ItemStack.EMPTY);
+        com.otectus.immersivesmithing.quality.ProjectileEfficacy.onJoin(new net.minecraftforge.event.entity.EntityJoinLevelEvent(arrow, h.getLevel()));
+        h.assertTrue(near(arrow.getBaseDamage(), damage), "Repeated joins do not rescale the launch snapshot");
         arrow.discard();
         return damage;
     }

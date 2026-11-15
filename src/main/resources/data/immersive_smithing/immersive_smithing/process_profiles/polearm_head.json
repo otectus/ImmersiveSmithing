@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:polearm_head",
+  "patterns": [
+    "immersive_smithing:glaive",
+    "immersive_smithing:halberd",
+    "immersive_smithing:javelin",
+    "immersive_smithing:lance",
+    "immersive_smithing:pike",
+    "immersive_smithing:scythe",
+    "immersive_smithing:spear",
+    "immersive_smithing:quarterstaff"
+  ],
+  "operations": [
+    {
+      "id": "form_socket",
+      "region": "socket",
+      "kind": "punch",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.4,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "draw_head",
+      "region": "head",
+      "kind": "draw",
+      "work": 4,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.4,
+        0.8,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "set_point",
+      "region": "point",
+      "kind": "shape",
+      "work": 2,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.8,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_head"
+      ]
+    },
+    {
+      "id": "dress_edges",
+      "region": "edges",
+      "kind": "finish",
+      "work": 2,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.4,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_head"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 55,
+    "immersion_min": 0.65
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "shaft"
+    }
+  ]
+}

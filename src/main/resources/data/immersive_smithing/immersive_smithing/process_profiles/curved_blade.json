@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:curved_blade",
+  "patterns": [
+    "immersive_smithing:katana",
+    "immersive_smithing:saber",
+    "immersive_smithing:warglaive"
+  ],
+  "operations": [
+    {
+      "id": "form_tang",
+      "region": "tang",
+      "kind": "shape",
+      "work": 2,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.25,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "draw_blade",
+      "region": "blade",
+      "kind": "draw",
+      "work": 5,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.25,
+        0.75,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "set_curve",
+      "region": "curve",
+      "kind": "curve",
+      "work": 3,
+      "weight": 2,
+      "face": "front",
+      "area": [
+        0.75,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_blade"
+      ]
+    },
+    {
+      "id": "dress_edge",
+      "region": "edge",
+      "kind": "finish",
+      "work": 3,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.25,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "set_curve"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 70,
+    "immersion_min": 0.75
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "grip"
+    },
+    {
+      "auxiliary_index": 1,
+      "socket": "guard"
+    }
+  ]
+}

@@ -17,6 +17,8 @@ import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.registry.ModTags;
 import com.otectus.immersivesmithing.util.Feedback;
 import com.otectus.immersivesmithing.util.StationEffects;
+import com.otectus.immersivesmithing.work.ForgeActions;
+import com.otectus.immersivesmithing.work.StationLayout;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
 import net.minecraft.core.BlockPos;
@@ -65,21 +67,29 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 /**
- * The Smith's Forge. The upper half takes metal, the lower half takes fuel and ignition; which half was
- * clicked is decided by the hit position. Empty Smithing Tongs on a ready forge open the Forge minigame.
+ * The Smith's Forge. The basin takes metal, the firebox fuel and ignition; the billet tray, bellows, reheat rest and
+ * pattern-book rest are parts of the same block, chosen from the hit position through {@link StationLayout#forgePart}.
+ * Tool work (planning, committing, the bellows, turning and drawing the billet, reheating, recycling) goes through
+ * {@link ForgeActions}, the same code the focused scene uses.
  */
 public class SmithsForgeBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty READY = BooleanProperty.create("ready");
 
-    /** Plinth, firebox walls round an open mouth, iron lintel, hearth course and the basin's rim stones (1.2 geometry). */
+    /**
+     * Plinth, firebox walls round an open mouth (the right one also enclosing the bellows), the back wall, iron lintel and
+     * the reheat bar across the mouth, hearth and the basin's rim stones: eleven boxes, within the station shape budget in
+     * every facing. The divider between tray and basin, the bellows' outer pixel and its moving board are drawn but have no
+     * collision of their own (their motion is cosmetic).
+     */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
             Block.box(0, 0, 0, 16, 2, 16),
             Block.box(1, 2, 1, 4, 9, 12),
             Block.box(12, 2, 1, 15, 9, 12),
             Block.box(1, 2, 12, 15, 9, 15),
             Block.box(4, 7, 1, 12, 9, 4),
+            Block.box(4, 5, 1.5, 12, 6, 2.5),
             Block.box(1, 9, 1, 15, 10, 15),
             Block.box(0, 10, 0, 16, 14, 3),
             Block.box(0, 10, 13, 16, 14, 16),
@@ -135,7 +145,8 @@ public class SmithsForgeBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? null : createTickerHelper(type, ModBlockEntities.SMITHS_FORGE.get(), SmithsForgeBlockEntity::serverTick);
+        return level.isClientSide ? createTickerHelper(type, ModBlockEntities.SMITHS_FORGE.get(), SmithsForgeBlockEntity::clientTick)
+                : createTickerHelper(type, ModBlockEntities.SMITHS_FORGE.get(), SmithsForgeBlockEntity::serverTick);
     }
 
     @Override
@@ -155,6 +166,7 @@ public class SmithsForgeBlock extends BaseEntityBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof SmithsForgeBlockEntity forge) {
             SessionManager.onStationRemoved(level, pos);
+            com.otectus.immersivesmithing.work.WorkLeases.onStationGone(level, pos);
             forge.dropContents();
         }
         super.onRemove(state, level, pos, newState, moved);
@@ -172,35 +184,38 @@ public class SmithsForgeBlock extends BaseEntityBlock {
         if (!(level.getBlockEntity(pos) instanceof SmithsForgeBlockEntity forge) || !(player instanceof ServerPlayer sp)) {
             return InteractionResult.PASS;
         }
-        boolean upper = hit.getLocation().y - pos.getY() >= 0.5;
-        interact(sp, forge, held, hand, upper);
+        net.minecraft.world.phys.Vec3 local = StationLayout.toLocal(pos, state.getValue(FACING), hit.getLocation());
+        interact(sp, forge, held, hand, local);
         return InteractionResult.CONSUME;
     }
 
-    private void interact(ServerPlayer player, SmithsForgeBlockEntity forge, ItemStack held, InteractionHand hand, boolean upper) {
+    private void interact(ServerPlayer player, SmithsForgeBlockEntity forge, ItemStack held, InteractionHand hand, net.minecraft.world.phys.Vec3 local) {
         if (forge.isLockedFor(player.getUUID())) {
             Feedback.fail(player, "station_in_use");
             return;
         }
         boolean sneaking = player.isSecondaryUseActive();
+        boolean upper = local.y >= 0.5;
+        StationLayout.ForgePart part = StationLayout.forgePart(local);
         Item item = held.getItem();
 
-        if (item instanceof SmithingTongsItem tongs) {
-            Optional<WorkpieceData> workpiece = WorkpieceCodec.getHeld(held);
-            if (workpiece.isPresent()) {
-                if (sneaking) meltBack(player, forge, workpiece.get(), () -> WorkpieceCodec.clearHeld(held));
-                else Feedback.info(player, workpiece.get().isShaped() ? "workpiece_to_trough" : "workpiece_to_anvil");
-            } else {
-                startForging(player, forge, hand, tongs);
-            }
+        if (item instanceof SmithingTongsItem) {
+            ForgeActions.useTongs(player, forge, hand, part, sneaking);
             return;
         }
         if (item == ModItems.HOT_WORKPIECE.get()) {
-            WorkpieceCodec.getHeld(held).ifPresent(wp -> meltBack(player, forge, wp, () -> held.shrink(1)));
+            if (sneaking && part == StationLayout.ForgePart.BASIN) ForgeActions.recycle(player, forge, hand);
+            else Feedback.info(player, "use_tongs_for_workpiece");
+            return;
+        }
+        if (part == StationLayout.ForgePart.BELLOWS && !SmithsForgeBlockEntity.isFuel(held)) {
+            ForgeActions.pump(player, forge, -1);
             return;
         }
         if (held.isEmpty()) {
-            if (!sneaking) describe(player, forge);
+            if (part == StationLayout.ForgePart.BOOK) ForgeActions.openBook(player, forge, hand);
+            else if (sneaking && part == StationLayout.ForgePart.TRAY && forge.job() != null) ForgeActions.cancel(player, forge);
+            else if (!sneaking) describe(player, forge);
             else if (upper) extractDeposit(player, forge);
             else extractFuel(player, forge);
             return;
@@ -227,6 +242,7 @@ public class SmithsForgeBlock extends BaseEntityBlock {
         if (upper) {
             if (metal) insertMetal(player, forge, held, sneaking);
             else if (fuel) Feedback.fail(player, "fuel_goes_below");
+            else if (part == StationLayout.ForgePart.BOOK) ForgeActions.openBook(player, forge, hand);
             else Feedback.fail(player, "not_metal", held.getHoverName());
         } else {
             if (fuel) insertFuel(player, forge, held, sneaking);
@@ -235,26 +251,21 @@ public class SmithsForgeBlock extends BaseEntityBlock {
         }
     }
 
-    private void startForging(ServerPlayer player, SmithsForgeBlockEntity forge, InteractionHand hand, SmithingTongsItem tongs) {
-        if (forge.isLocked()) {
-            Feedback.fail(player, "station_in_use");
-        } else if (!forge.deposits().isEmpty()) {
-            Feedback.fail(player, forge.meltProgress() > 0 ? "still_melting" : "needs_heat");
-        } else if (forge.moltenUnits() <= 0) {
-            Feedback.fail(player, "forge_empty");
-        } else {
-            SessionManager.openForge(player, forge, hand, tongs.tier());
-        }
-    }
-
     private void describe(ServerPlayer player, SmithsForgeBlockEntity forge) {
+        com.otectus.immersivesmithing.work.ForgeJob job = forge.job();
+        if (job != null) {
+            Feedback.info(player, "forge_status_job", job.target.getHoverName(), Component.translatable("heat.immersive_smithing."
+                    + job.thermal.band(com.otectus.immersivesmithing.work.ThermalRules.coolest(job.heat)).key()));
+            return;
+        }
         if (forge.isEmpty()) {
             Feedback.info(player, "forge_status_empty");
             return;
         }
         Component family = familyName(forge);
         if (forge.isReady()) {
-            Feedback.info(player, "forge_status_ready", family, MaterialUnits.describe(forge.moltenUnits()));
+            Feedback.info(player, forge.plan() != null ? "forge_status_ready_plan" : "forge_status_ready", family,
+                    MaterialUnits.describe(forge.moltenUnits()));
         } else if (forge.meltProgress() > 0 && (forge.isBurning() || forge.hasLava())) {
             Feedback.info(player, "forge_status_melting", family, Math.round(forge.meltProgress() * 100));
         } else {
@@ -342,18 +353,6 @@ public class SmithsForgeBlock extends BaseEntityBlock {
             return;
         }
         ItemHandlerHelper.giveItemToPlayer(player, fuel);
-    }
-
-    private void meltBack(ServerPlayer player, SmithsForgeBlockEntity forge, WorkpieceData workpiece, Runnable consume) {
-        SmithsForgeBlockEntity.Result result = forge.acceptWorkpiece(workpiece);
-        if (result != SmithsForgeBlockEntity.Result.OK) {
-            if (result == SmithsForgeBlockEntity.Result.WRONG_FAMILY) Feedback.fail(player, "result.wrong_family", familyName(forge));
-            else Feedback.fail(player, "result." + result.key());
-            return;
-        }
-        consume.run();
-        player.level().playSound(null, forge.getBlockPos(), SoundEvents.LAVA_POP, SoundSource.BLOCKS, 1.0F, 1.0F);
-        Feedback.info(player, "workpiece_melted", MaterialUnits.describe(workpiece.metalUnits()));
     }
 
     private static Component familyName(SmithsForgeBlockEntity forge) {

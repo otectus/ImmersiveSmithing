@@ -1,0 +1,3263 @@
+{
+  "description": "Reviewed item dispositions for independently dumped release profiles. Runtime active recipes determine every cost and source route. No recipe is created from the snapshot alone.",
+  "profiles": [
+    {
+      "mod": "thirtyyearswar",
+      "version": "1.3",
+      "property": "ek_thirty_years_war_curse",
+      "sha256": "58ce0a39a003a37f54abd64507c20fe72c86c2be42221dd68407d9678d8976b7",
+      "items": [
+        {
+          "item": "thirtyyearswar:baroque_apron_skirt",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_apron_skirt",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_apron_skirt_boots",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:baroque_apron_skirt_boots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_armour",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_armour",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_barred_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_barred_closed_burgonet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_barred_lobstertail_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_barred_lobstertail_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_bodice",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_bodice",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_breeches",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_breeches",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_breeches_boots",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:baroque_breeches_boots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_buff_coat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_buff_coat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_buff_waistcoat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_buff_waistcoat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_cabasset_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cabasset_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_cavalier_hat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cavalier_hat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_cavalry_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cavalry_armour",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_cavalry_armour_gauntlet",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cavalry_armour_gauntlet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_cloak_decoration",
+          "class": "com.magistuarmory.forge.item.armor.DyeableWearableArmorDecorationItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cloak",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_closed_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_closed_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_coat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_coat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_cuirass",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cuirass",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_cuirassier_armour",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cuirassier_armour",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_barred_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_barred_closed_burgonet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_barred_lobstertail_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_barred_lobstertail_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_cabasset_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_cabasset_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_cavalry_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_cavalry_armour",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_cavalry_armour_gauntlet",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_cavalry_armour_gauntlet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_closed_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_closed_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_cuirassier_armour",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_cuirassier_armour",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_death_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_death_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_grilled_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_grilled_closed_burgonet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_lobstertail_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_lobstertail_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_officer_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_officer_armour",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_open_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_open_burgonet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_open_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_open_closed_burgonet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_pikeman_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_pikeman_armour",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_pikeman_cuirass",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_pikeman_cuirass",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_pikeman_pot_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_pikeman_pot_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dark_savoyard_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dark_savoyard_helmet",
+              "type": "minecraft:smithing_transform",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native darkening keeps the steel base and the darkening template; no solid-metal substitute."
+        },
+        {
+          "item": "thirtyyearswar:baroque_death_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_death_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_doublet",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_doublet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_dutch_cap",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_dutch_cap",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_flat_cap",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_flat_cap",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_grilled_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_grilled_closed_burgonet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_lobstertail_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_lobstertail_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_matchlock_musket",
+          "class": "com.magistuarmory.thirtyyearswar.forge.WarPlatformImpl$ForgeGun",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_matchlock_musket",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "heavy_crossbow"
+        },
+        {
+          "item": "thirtyyearswar:baroque_monmouth_cap",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_monmouth_cap",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_officer_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_officer_armour",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_officer_doublet",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_officer_doublet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_open_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_open_burgonet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_open_cloak_decoration",
+          "class": "com.magistuarmory.forge.item.armor.DyeableWearableArmorDecorationItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_open_cloak",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_open_closed_burgonet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_open_closed_burgonet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_panel_cloak_decoration",
+          "class": "com.magistuarmory.forge.item.armor.DyeableWearableArmorDecorationItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_panel_cloak",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_pikeman_armour",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_pikeman_armour",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_pikeman_cuirass",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_pikeman_cuirass",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "thirtyyearswar:baroque_pikeman_pot_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_pikeman_pot_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_riders_breeches",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_riders_breeches",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_riders_breeches_boots",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:baroque_riders_breeches_boots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_ruff_decoration",
+          "class": "com.magistuarmory.forge.item.armor.WearableArmorDecorationItemForge",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_savoyard_helmet",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_savoyard_helmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_shirt",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_shirt",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_short_ruff_decoration",
+          "class": "com.magistuarmory.forge.item.armor.WearableArmorDecorationItemForge",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_shoulder_sash_decoration",
+          "class": "com.magistuarmory.item.DyeableArmorDecorationItem",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_shoulder_sash",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_skirt",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_skirt",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_skirt_boots",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:baroque_skirt_boots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_skull_cap",
+          "class": "com.magistuarmory.forge.item.armor.MedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_skull_cap",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "thirtyyearswar:baroque_slouch_hat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_slouch_hat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_cuphilt_rapier",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_cuphilt_rapier",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "rapier"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_halberd",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_halberd",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "halberd"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_partisan",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_partisan",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "spear"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_pike",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_pike",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "pike"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_pollax",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_pollax",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "halberd"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_rapier",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_rapier",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "rapier"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_sidesword",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_sidesword",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "sword"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_swepthilt_rapier",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_swepthilt_rapier",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "rapier"
+        },
+        {
+          "item": "thirtyyearswar:baroque_steel_walloon_sword",
+          "class": "com.magistuarmory.forge.item.MedievalWeaponItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_walloon_sword",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "sword"
+        },
+        {
+          "item": "thirtyyearswar:baroque_waist_sash_decoration",
+          "class": "com.magistuarmory.item.DyeableArmorDecorationItem",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_waist_sash",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_waistcoat",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_waistcoat",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:baroque_wheellock_pistol",
+          "class": "com.magistuarmory.thirtyyearswar.forge.WarPlatformImpl$ForgeGun",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_baroque_wheellock_pistol",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "crossbow"
+        },
+        {
+          "item": "thirtyyearswar:court_robe_decoration",
+          "class": "com.magistuarmory.forge.item.armor.DyeableWearableArmorDecorationItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:court_robe_decoration",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:felt_fabric",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_felt_fabric",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "thirtyyearswar:paper_cartridge",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_paper_cartridge",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "thirtyyearswar:renaissance_cap",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:renaissance_cap",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:rich_breeches",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:rich_breeches",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:rich_doublet",
+          "class": "com.magistuarmory.forge.item.armor.DyeableMedievalArmorItemForge",
+          "routes": [
+            {
+              "id": "thirtyyearswar:rich_doublet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile or leather clothing/accessory; native tailoring and attachment remain available."
+        },
+        {
+          "item": "thirtyyearswar:wool_fibers",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_wool_fibers",
+              "type": "minecraft:crafting_shaped",
+              "count": 8
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "thirtyyearswar:woollen_cloth",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "thirtyyearswar:knights_woollen_cloth",
+              "type": "minecraft:crafting_shaped",
+              "count": 3
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        }
+      ]
+    },
+    {
+      "mod": "fletchery",
+      "version": "0.7",
+      "property": "ek_fletchery_curse",
+      "sha256": "df34f26e06f2948b28d7c6ab1b49870008f984e48d05a6d6e15e990fcdb78dbe",
+      "items": [
+        {
+          "item": "fletchery:acacia_shaft",
+          "class": "net.mcreator.epicfletchery.item.AcaciaShaftItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:arrow_shaft",
+          "class": "net.mcreator.epicfletchery.item.ArrowShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:arrow_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:birch_hunting_bow",
+          "class": "net.mcreator.epicfletchery.item.BirchHuntingBowItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_hunting_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:birch_long_bow",
+          "class": "net.mcreator.epicfletchery.item.BirchLongBowItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_long_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:birch_recurve_bow",
+          "class": "net.mcreator.epicfletchery.item.BirchRecurveBowItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_recurve_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:birch_shaft",
+          "class": "net.mcreator.epicfletchery.item.BirchShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:birch_short_bow",
+          "class": "net.mcreator.epicfletchery.item.BirchShortBowItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_short_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:birch_war_bow",
+          "class": "net.mcreator.epicfletchery.item.BirchWarBowItem",
+          "routes": [
+            {
+              "id": "fletchery:birch_war_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:blunt_arrow",
+          "class": "net.mcreator.epicfletchery.item.BluntArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:blunt_arrow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:blunt_bolt",
+          "class": "net.mcreator.epicfletchery.item.BluntBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:blunt_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:bolt_shaft",
+          "class": "net.mcreator.epicfletchery.item.BoltShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:bolt_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:bow_string",
+          "class": "net.mcreator.epicfletchery.item.BowStringItem",
+          "routes": [
+            {
+              "id": "fletchery:bow_string_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:cranequin_crossbow",
+          "class": "net.mcreator.epicfletchery.item.CranequinCrossbowItem",
+          "routes": [
+            {
+              "id": "fletchery:cranequin_crossbow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "crossbow"
+        },
+        {
+          "item": "fletchery:crude_arrow",
+          "class": "net.mcreator.epicfletchery.item.CrudeArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:crude_arrow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:crude_arrow_head",
+          "class": "net.mcreator.epicfletchery.item.CrudeArrowHeadItem",
+          "routes": [
+            {
+              "id": "fletchery:crude_arrow_head_recipe",
+              "type": "minecraft:crafting_shapeless",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:crude_bolt",
+          "class": "net.mcreator.epicfletchery.item.CrudeBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:crude_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:dark_oak_shaft",
+          "class": "net.mcreator.epicfletchery.item.DarkOakShaftItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:goatfoot_crossbow",
+          "class": "net.mcreator.epicfletchery.item.GoatfootCrossbowItem",
+          "routes": [
+            {
+              "id": "fletchery:goatfoot_crossbow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "crossbow"
+        },
+        {
+          "item": "fletchery:goatfoot_lever",
+          "class": "net.mcreator.epicfletchery.item.GoatfootLeverItem",
+          "routes": [
+            {
+              "id": "fletchery:goat_foot_lever_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native crossbow loading tool; preserve durability and reload mechanics."
+        },
+        {
+          "item": "fletchery:jungle_shaft",
+          "class": "net.mcreator.epicfletchery.item.JungleShaftItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:latchet_crossbow",
+          "class": "net.mcreator.epicfletchery.item.LatchetCrossbowItem",
+          "routes": [
+            {
+              "id": "fletchery:latchet_crossbow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "crossbow"
+        },
+        {
+          "item": "fletchery:logo",
+          "class": "net.mcreator.epicfletchery.item.LogoItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:long_bodkin_arrow",
+          "class": "net.mcreator.epicfletchery.item.LongBodkinArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:long_bodkin_arrow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:long_bodkin_arrow_head",
+          "class": "net.mcreator.epicfletchery.item.LongBodkinArrowHeadItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:long_bodkin_bolt",
+          "class": "net.mcreator.epicfletchery.item.LongBodkinBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:long_bodkin_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:mangrove_hunting_bow",
+          "class": "net.mcreator.epicfletchery.item.MangroveHuntingBowItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_hunting_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:mangrove_long_bow",
+          "class": "net.mcreator.epicfletchery.item.MangroveLongBowItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_long_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:mangrove_recurve_bow",
+          "class": "net.mcreator.epicfletchery.item.MangroveRecurveBowItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_recurve_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:mangrove_shaft",
+          "class": "net.mcreator.epicfletchery.item.MangroveShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:mangrove_short_bow",
+          "class": "net.mcreator.epicfletchery.item.MangroveShortBowItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_short_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:mangrove_war_bow",
+          "class": "net.mcreator.epicfletchery.item.MangroveWarBowItem",
+          "routes": [
+            {
+              "id": "fletchery:mangrove_war_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:oak_hunting_bow",
+          "class": "net.mcreator.epicfletchery.item.OakHuntingBowItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_hunting_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:oak_long_bow",
+          "class": "net.mcreator.epicfletchery.item.OakLongBowItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_long_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:oak_recurve_bow",
+          "class": "net.mcreator.epicfletchery.item.OakRecurveBowItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_recurve_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:oak_shaft",
+          "class": "net.mcreator.epicfletchery.item.OakShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:oak_short_bow",
+          "class": "net.mcreator.epicfletchery.item.OakShortBowItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_short_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:oak_war_bow",
+          "class": "net.mcreator.epicfletchery.item.OakWarBowItem",
+          "routes": [
+            {
+              "id": "fletchery:oak_war_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:shaftwood_hunting_bow",
+          "class": "net.mcreator.epicfletchery.item.ShaftwoodHuntingBowItem",
+          "routes": [
+            {
+              "id": "fletchery:woodshaft_hunting_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:shaftwood_long_bow",
+          "class": "net.mcreator.epicfletchery.item.ShaftwoodLongBowItem",
+          "routes": [
+            {
+              "id": "fletchery:woodshaft_long_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:shaftwood_recurve_bow",
+          "class": "net.mcreator.epicfletchery.item.ShaftwoodRecurveBowItem",
+          "routes": [
+            {
+              "id": "fletchery:woodshaft_recurve_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:shaftwood_short_bow",
+          "class": "net.mcreator.epicfletchery.item.ShaftwoodShortBowItem",
+          "routes": [
+            {
+              "id": "fletchery:woodshaft_short_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:shaftwood_war_bow",
+          "class": "net.mcreator.epicfletchery.item.ShaftwoodWarBowItem",
+          "routes": [
+            {
+              "id": "fletchery:woodshaft_war_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:short_bodkin_arrow",
+          "class": "net.mcreator.epicfletchery.item.ShortBodkinArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:short_bodkin_arrow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:short_bodkin_arrow_head",
+          "class": "net.mcreator.epicfletchery.item.ShortBodkinArrowHeadItem",
+          "routes": [
+            {
+              "id": "fletchery:long_bodkin_arrow_head_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:short_bodkin_bolt",
+          "class": "net.mcreator.epicfletchery.item.ShortBodkinBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:short_bodkin_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:spruce_hunting_bow",
+          "class": "net.mcreator.epicfletchery.item.SpruceHuntingBowItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_hunting_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:spruce_long_bow",
+          "class": "net.mcreator.epicfletchery.item.SpruceLongBowItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_long_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:spruce_recurve_bow",
+          "class": "net.mcreator.epicfletchery.item.SpruceRecurveBowItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_recurve_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:spruce_shaft",
+          "class": "net.mcreator.epicfletchery.item.SpruceShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_shaftrecipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:spruce_short_bow",
+          "class": "net.mcreator.epicfletchery.item.SpruceShortBowItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_short_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:spruce_war_bow",
+          "class": "net.mcreator.epicfletchery.item.SpruceWarBowItem",
+          "routes": [
+            {
+              "id": "fletchery:spruce_war_bow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+        },
+        {
+          "item": "fletchery:swallowtail_arrow",
+          "class": "net.mcreator.epicfletchery.item.SwallowtailArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:swallowtail_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:swallowtail_arrow_head",
+          "class": "net.mcreator.epicfletchery.item.SwallowtailArrowHeadItem",
+          "routes": [
+            {
+              "id": "fletchery:swallowtail_arrow_head_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:swallowtail_bolt",
+          "class": "net.mcreator.epicfletchery.item.SwallowtailBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:swallowtail_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:swept_arrow_head",
+          "class": "net.mcreator.epicfletchery.item.SweptArrowHeadItem",
+          "routes": [
+            {
+              "id": "fletchery:swept_arrow_head_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:swept_battle_arrow",
+          "class": "net.mcreator.epicfletchery.item.SweptBattleArrowItem",
+          "routes": [
+            {
+              "id": "fletchery:battle_arrow_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:swept_bolt",
+          "class": "net.mcreator.epicfletchery.item.SweptBoltItem",
+          "routes": [
+            {
+              "id": "fletchery:battle_bolt_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "fletchery:wood_shaft",
+          "class": "net.mcreator.epicfletchery.item.WoodShaftItem",
+          "routes": [
+            {
+              "id": "fletchery:wood_shaft_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        }
+      ]
+    },
+    {
+      "mod": "bronzeaddition_epicknights",
+      "version": "1.0.61.20.1",
+      "property": "ek_ingots_addition_curse",
+      "sha256": "b17fc5c49b48d19ae36211be7cb871db05ad0e73a213edc8e037064666bbba60",
+      "items": [
+        {
+          "item": "bronzeaddition_epicknights:bronze_armor_boots",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeArmorItem$Boots",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_armor_boots_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "boots"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_armor_chestplate",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeArmorItem$Chestplate",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_armor_chestplate_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_armor_helmet",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeArmorItem$Helmet",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_armor_helmet_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "helmet"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_armor_leggings",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeArmorItem$Leggings",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_armor_leggings_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "leggings"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_axe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeAxeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_axe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "axe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_hoe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeHoeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_hoe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "hoe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_pickaxe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzePickaxeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_pickaxe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "pickaxe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_plate",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzePlateItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_plate_revcipe",
+              "type": "minecraft:crafting_shapeless",
+              "count": 4
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native batch: one bronze ingot makes four plates (9/4 units each); no individual fractional melt value."
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_shovel",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeShovelItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_shovel_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "shovel"
+        },
+        {
+          "item": "bronzeaddition_epicknights:bronze_sword",
+          "class": "net.mcreator.bronzeadditionepicknights.item.BronzeSwordItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_sword_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:bronze",
+          "pattern": "sword"
+        },
+        {
+          "item": "bronzeaddition_epicknights:eka_bronze_blockl",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:eka_bronze_ingot_to_block",
+              "type": "minecraft:crafting_shapeless",
+              "count": 2
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:eka_silver_ingot",
+          "class": "net.mcreator.bronzeadditionepicknights.item.EkaSilverIngotItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:silver_recipe_eka_b",
+              "type": "minecraft:blasting",
+              "count": 1
+            },
+            {
+              "id": "bronzeaddition_epicknights:silver_recipe_eka",
+              "type": "minecraft:smelting",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:eka_tin_ingot",
+          "class": "net.mcreator.bronzeadditionepicknights.item.EkaTinIngotItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:tin_recipe_blest_eka",
+              "type": "minecraft:blasting",
+              "count": 1
+            },
+            {
+              "id": "bronzeaddition_epicknights:tin_ingot_recipe_eka",
+              "type": "minecraft:smelting",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:eka_tin_prm_ore",
+          "class": "net.mcreator.bronzeadditionepicknights.item.EkaTinPrmOreItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:tin_prm_ore_recipe_eka",
+              "type": "minecraft:crafting_shapeless",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:epic_knights_add_bronze_ignot",
+          "class": "net.mcreator.bronzeadditionepicknights.item.EpicKnightsAddBronzeIgnotItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:bronze_ingot_from_copper_recipe_eka",
+              "type": "minecraft:blasting",
+              "count": 1
+            },
+            {
+              "id": "bronzeaddition_epicknights:ekn_add_copper_to_bronze_smelt",
+              "type": "minecraft:blasting",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:raw_silver_eka",
+          "class": "net.mcreator.bronzeadditionepicknights.item.RawSilverEkaItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:ekn_recipe_silver_ingot",
+              "type": "minecraft:crafting_shapeless",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:steel_axe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.SteelAxeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:steel_axe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "axe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:steel_hoe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.SteelHoeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:steel_hoe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "hoe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:steel_pickaxe",
+          "class": "net.mcreator.bronzeadditionepicknights.item.SteelPickaxeItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:steel_pickaxe_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "pickaxe"
+        },
+        {
+          "item": "bronzeaddition_epicknights:steel_shovel",
+          "class": "net.mcreator.bronzeadditionepicknights.item.SteelShovelItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:steel_shovel_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "shovel"
+        },
+        {
+          "item": "bronzeaddition_epicknights:tin_copper_alloy_powder",
+          "class": "net.mcreator.bronzeadditionepicknights.item.TinCopperAlloyPowderItem",
+          "routes": [
+            {
+              "id": "bronzeaddition_epicknights:tc_alloy_eka_recipe",
+              "type": "minecraft:crafting_shapeless",
+              "count": 4
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        },
+        {
+          "item": "bronzeaddition_epicknights:z_steel_ingots_seka",
+          "class": "net.mcreator.bronzeadditionepicknights.item.ZSteelIngotsSekaItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Preserve the supplier's native mining, smelting, alloy and ingot shortcuts; valid Forge tags share canonical families."
+        }
+      ]
+    },
+    {
+      "mod": "epic_knights__japanese_armory",
+      "version": "1.6.2",
+      "property": "ek_japanese_armory_curse",
+      "sha256": "d95ba4a712d9fc3e681e29c912a5ae98d2ff1b6f73a1be57b8aa43312996866b",
+      "items": [
+        {
+          "item": "epic_knights__japanese_armory:blindfold_helmet",
+          "class": "net.epicknightsjapanesearmory.item.BlindfoldItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:blind",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:dagger",
+          "class": "net.epicknightsjapanesearmory.item.DaggerItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:jsai_2",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "dagger"
+        },
+        {
+          "item": "epic_knights__japanese_armory:fox_mask_helmet",
+          "class": "net.epicknightsjapanesearmory.item.FoxMaskItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:fm",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:foxmask_recipe",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:glaive",
+          "class": "net.epicknightsjapanesearmory.item.GlaiveItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:sasumata",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "glaive"
+        },
+        {
+          "item": "epic_knights__japanese_armory:hannya_helmet",
+          "class": "net.epicknightsjapanesearmory.item.HannyaItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:hannyamask",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:hyottoko_helmet",
+          "class": "net.epicknightsjapanesearmory.item.HyottokoItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:hyottokomask",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_kama",
+          "class": "net.epicknightsjapanesearmory.item.IronKamaItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:kama",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:jkama",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "scythe"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_katana",
+          "class": "net.epicknightsjapanesearmory.item.IronKatanaItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:jkatana",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:katana",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "katana"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_kunai",
+          "class": "net.epicknightsjapanesearmory.item.IronKunaiItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:kunai",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:jkunai",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "dagger"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_naginata",
+          "class": "net.epicknightsjapanesearmory.item.IronNaginataItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:jnaginata",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:naginata",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "glaive"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_sai",
+          "class": "net.epicknightsjapanesearmory.item.IronSaiItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:sai",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:jsai",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "parrying_dagger"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_shuriken",
+          "class": "net.epicknightsjapanesearmory.item.IronShurikenItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_tetsubo",
+          "class": "net.epicknightsjapanesearmory.item.IronTetsuboItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:tetsubo",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "club"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_wakizashi",
+          "class": "net.epicknightsjapanesearmory.item.IronWakizashiItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:wakizashi",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:jwakizashi",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "katana"
+        },
+        {
+          "item": "epic_knights__japanese_armory:iron_yari",
+          "class": "net.epicknightsjapanesearmory.item.IronYariItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:yari",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:jyari",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "spear"
+        },
+        {
+          "item": "epic_knights__japanese_armory:japanfabric",
+          "class": "net.epicknightsjapanesearmory.item.JapanfabricItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:fabric",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "epic_knights__japanese_armory:japanhilt",
+          "class": "net.epicknightsjapanesearmory.item.JapanhiltItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:hilt",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "epic_knights__japanese_armory:japanleather",
+          "class": "net.epicknightsjapanesearmory.item.JapanleatherItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:leather",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "epic_knights__japanese_armory:kimono_boots",
+          "class": "net.epicknightsjapanesearmory.item.KimonoItem$Boots",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:kb",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:kimonoboots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:kimono_chestplate",
+          "class": "net.epicknightsjapanesearmory.item.KimonoItem$Chestplate",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:kimonosash",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:ks",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:kimono_leggings",
+          "class": "net.epicknightsjapanesearmory.item.KimonoItem$Leggings",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:kc",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:kimonochest",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:onimask_helmet",
+          "class": "net.epicknightsjapanesearmory.item.OnimaskItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:oni",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:samurai_boots",
+          "class": "net.epicknightsjapanesearmory.item.SamuraiItem$Boots",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:samuraiboots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "boots"
+        },
+        {
+          "item": "epic_knights__japanese_armory:samurai_chestplate",
+          "class": "net.epicknightsjapanesearmory.item.SamuraiItem$Chestplate",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:samuraichest",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "chestplate"
+        },
+        {
+          "item": "epic_knights__japanese_armory:samurai_helmet",
+          "class": "net.epicknightsjapanesearmory.item.SamuraiItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:samuraihelmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "helmet"
+        },
+        {
+          "item": "epic_knights__japanese_armory:samurai_leggings",
+          "class": "net.epicknightsjapanesearmory.item.SamuraiItem$Leggings",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:samuraileggings",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "forge:steel",
+          "pattern": "leggings"
+        },
+        {
+          "item": "epic_knights__japanese_armory:samuraionimask_helmet",
+          "class": "net.epicknightsjapanesearmory.item.SamuraionimaskItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:onisamuraihelmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_assembly",
+          "reason": "Native assembly consumes both the samurai helmet and oni mask; keep both prerequisites."
+        },
+        {
+          "item": "epic_knights__japanese_armory:shinobi_boots",
+          "class": "net.epicknightsjapanesearmory.item.ShinobiItem$Boots",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:shinobiboots",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:sb",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:shinobi_chestplate",
+          "class": "net.epicknightsjapanesearmory.item.ShinobiItem$Chestplate",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:shinobichest",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:sc",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:shinobi_helmet",
+          "class": "net.epicknightsjapanesearmory.item.ShinobiItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:sh",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:shinobihelmet",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:shinobi_leggings",
+          "class": "net.epicknightsjapanesearmory.item.ShinobiItem$Leggings",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:sl",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:shinobileggings",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:tanjiro_chestplate",
+          "class": "net.epicknightsjapanesearmory.item.TanjiroItem$Chestplate",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:tanjirochest",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:tc",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:tanjiro_leggings",
+          "class": "net.epicknightsjapanesearmory.item.TanjiroItem$Leggings",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:tl",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            },
+            {
+              "id": "epic_knights__japanese_armory:tanjiroleg",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:tengu_helmet",
+          "class": "net.epicknightsjapanesearmory.item.TenguItem$Helmet",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:tengumask",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_transformation",
+          "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+        },
+        {
+          "item": "epic_knights__japanese_armory:wood_katana",
+          "class": "net.epicknightsjapanesearmory.item.WoodKatanaItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:wkatana",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        },
+        {
+          "item": "epic_knights__japanese_armory:wood_naginata",
+          "class": "net.epicknightsjapanesearmory.item.WoodNaginataItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:wnaginata",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Native wooden weapon requires a debug stick; preserve that restricted prerequisite."
+        },
+        {
+          "item": "epic_knights__japanese_armory:wood_tonfa",
+          "class": "net.epicknightsjapanesearmory.item.WoodTonfaItem",
+          "routes": [
+            {
+              "id": "epic_knights__japanese_armory:tonfa",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+        }
+      ]
+    },
+    {
+      "mod": "medieval_boomsticks",
+      "version": "1.01",
+      "property": "ek_boomsticks_release_curse",
+      "sha256": "d67a7c143291778560c2a0cead78a1821420909d07e793654cbd548c4051bfab",
+      "items": [
+        {
+          "item": "medieval_boomsticks:arbalest",
+          "class": "com.TBK.medieval_boomsticks.common.items.ArbalestItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:arbalest",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "crossbow"
+        },
+        {
+          "item": "medieval_boomsticks:arnica",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:arquebus",
+          "class": "com.TBK.medieval_boomsticks.common.items.ArquebusItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:arquebus",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "heavy_crossbow"
+        },
+        {
+          "item": "medieval_boomsticks:bulat_bar",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:canvas",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:canvas",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:comfrey",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:dziwer_bar",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:eveningstar",
+          "class": "com.TBK.medieval_boomsticks.common.items.EveningStarItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:eveningstar",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "mace"
+        },
+        {
+          "item": "medieval_boomsticks:finished_leather",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:finished_leather",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:finished_oil",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:finished_oil_bucket",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:finished_oil_bucket",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:finished_shaft",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:finished_shaft",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:gotheveningstar",
+          "class": "com.TBK.medieval_boomsticks.common.items.GotheveningStarItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:gothiceveningstar",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:netherite",
+          "pattern": "mace"
+        },
+        {
+          "item": "medieval_boomsticks:handgonne",
+          "class": "com.TBK.medieval_boomsticks.common.items.HandGonneItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:handgonne",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "heavy_crossbow"
+        },
+        {
+          "item": "medieval_boomsticks:heavy_bolt",
+          "class": "net.minecraft.world.item.ArrowItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:heavy_bolt",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:iron_throwing_axe",
+          "class": "com.TBK.medieval_boomsticks.common.items.ThrowingAxeItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:iron_throwing_axe",
+              "type": "minecraft:crafting_shaped",
+              "count": 3
+            }
+          ],
+          "disposition": "native_assembly",
+          "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior."
+        },
+        {
+          "item": "medieval_boomsticks:iron_throwing_knife",
+          "class": "com.TBK.medieval_boomsticks.common.items.ThrowingKnifeItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:iron_throwing_knife",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "native_assembly",
+          "reason": "Native batch consumes multiple finished weapons and produces multiple thrown weapons; preserve its exact batch and stack behavior."
+        },
+        {
+          "item": "medieval_boomsticks:javelin",
+          "class": "com.TBK.medieval_boomsticks.common.items.JavelinItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:javelin",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "javelin"
+        },
+        {
+          "item": "medieval_boomsticks:large_throwing_rock",
+          "class": "com.TBK.medieval_boomsticks.common.items.ThrowingLargeRockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native wooden bow or stone thrown weapon; no metal forging."
+        },
+        {
+          "item": "medieval_boomsticks:lemon_balm",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:limonite_ore",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:limonite_ore_deepslate",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:magnitite_ore",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:magnitite_ore_deepslate",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:morningstar",
+          "class": "com.TBK.medieval_boomsticks.common.items.MorningStarItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:morningstar",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "mace"
+        },
+        {
+          "item": "medieval_boomsticks:padded_canvas",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:padded_canvas",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:pyrite_ore",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:pyrite_ore_deepslate",
+          "class": "net.minecraft.world.item.BlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:quilted_canvas",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:quilted_canvas",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:raw_limonite",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:raw_magnitite",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:raw_pyrite",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:recurve_bow",
+          "class": "net.minecraft.world.item.BowItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:recurve_bow",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Native wooden bow or stone thrown weapon; no metal forging."
+        },
+        {
+          "item": "medieval_boomsticks:round_ball",
+          "class": "net.minecraft.world.item.ArrowItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:round_ball",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:sage",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:small_throwing_rock",
+          "class": "com.TBK.medieval_boomsticks.common.items.ThrowingSmallRockItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:small_throwing_rock",
+              "type": "minecraft:crafting_shaped",
+              "count": 2
+            }
+          ],
+          "disposition": "native_nonmetal_recipe",
+          "reason": "Native wooden bow or stone thrown weapon; no metal forging."
+        },
+        {
+          "item": "medieval_boomsticks:spikedhandgonne",
+          "class": "com.TBK.medieval_boomsticks.common.items.SpikedHandGonneItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:spikedhandgonne",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:netherite",
+          "pattern": "heavy_crossbow"
+        },
+        {
+          "item": "medieval_boomsticks:upgrade_kit",
+          "class": "net.minecraft.world.item.Item",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:upgrade_kit",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "non_equipment",
+          "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:war_dart",
+          "class": "com.TBK.medieval_boomsticks.common.items.WarDartItem",
+          "routes": [
+            {
+              "id": "medieval_boomsticks:throwing_wardart",
+              "type": "minecraft:crafting_shaped",
+              "count": 1
+            }
+          ],
+          "disposition": "forge_default",
+          "reason": "Reviewed primary family and pattern; resolve each active source independently, retaining bases and complete auxiliary inputs.",
+          "material": "minecraft:iron",
+          "pattern": "throwing_knife"
+        },
+        {
+          "item": "medieval_boomsticks:yarrow",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        },
+        {
+          "item": "medieval_boomsticks:yellow_wood_sorrel",
+          "class": "net.minecraft.world.item.ItemNameBlockItem",
+          "routes": [],
+          "disposition": "disabled_by_upstream",
+          "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+        }
+      ]
+    }
+  ]
+}

@@ -6,5 +6,8 @@
     "item": "minecraft:golden_helmet"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:helmet"
+  "anvil_pattern": "immersive_smithing:helmet",
+  "replaces": [
+    "minecraft:golden_helmet"
+  ]
 }

@@ -24,5 +24,9 @@
   "melt_time_multiplier": 1.5,
   "requires_ignition": true,
   "tint": "#5A6070",
-  "upgrade_policy": "shape"
+  "upgrade_policy": "shape",
+  "casting": {
+    "ingot": "cataclysm:black_steel_ingot",
+    "nugget": "cataclysm:black_steel_nugget"
+  }
 }

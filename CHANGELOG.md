@@ -1,6 +1,77 @@
 # Changelog
 
-## 1.2.0 — Epic Knights, built-in Epic Fight recipes and lighter stations
+## 1.3.0 — Current update (unreleased)
+
+### Hands-on smithing: the work happens at the stations
+
+The forge and anvil minigames are gone. Every step is now physical work at the stations, in the world, scored by the
+server from what the smith actually does.
+
+- **Pattern book and commit.** Using the forge opens the pattern book; choosing an item pins its plan beside the billet
+  tray (nothing is reserved yet). Committing it with empty tongs at the tray checks everything again, reserves the metal,
+  takes the exact components into the job's escrow and casts a billet. Cancelling (asked twice) hands the components back
+  exactly once and releases the metal.
+- **Heating.** Pump the bellows and turn the billet along the tray, cooler end over the hottest coals, until all three
+  zones glow evenly in the ideal band; heat bands come from the metal (`thermal`). How well it was heated is recorded
+  when it is drawn. Each holder keeps its own clock: nothing cools while a chunk is unloaded or the server is off.
+  Between heats a solid-fuel fire banks for a minute instead of going out, so a piece can go back on the rest without a
+  new spark.
+- **Shaping.** Aimed blows on the marked parts of the piece, as many as the piece's process profile asks, with
+  progressive deformation where they land. Some work needs the piece turned over; blows on cooling metal do less; a
+  heavy blow (hold Left Alt) speeds rough work. There is no timer: hammers set the recovery between blows (12, 11, 10
+  and 9 ticks by tier). Put the piece on the forge's reheat rest whenever it cools, without losing progress.
+- **Quench.** Lower the piece into the trough, hold it through the hiss and lift it at the end cue; the window is broad,
+  and lifting early keeps the progress.
+- **Fitting.** Components (handles, grips, bindings) are fitted at the anvil after the quench, then the piece is
+  collected. `ItemSmithedEvent` now fires when the piece is completed: after fitting for pieces with components.
+- **Grindstone.** Rest the piece at the wheel, choose the aspect (its exact step and price are shown) and hold the edge
+  to the turning wheel for one pass; experience is charged only when a pass completes. Engraving is voluntary: sneak-use
+  the anvil with the finished piece (`signing.openAfterQuench` now defaults to off).
+- **Views.** A framed **Cinematic** close-up of the station, a **Shoulder** view, or **World** view with no camera
+  change. The camera never moves the player, avoids walls and falls back to a safer shot or World view; Escape, a
+  movement key, damage or leaving reach ends it at once. Hands, crosshair and outline hide while focused; the station's
+  status (heat in words and bands, work left, the next part) is drawn beside it.
+- **Accessibility.** Every action works with the mouse or the keyboard (arrow keys choose a part, Space acts, R turns
+  the piece over); hold or toggle for held actions; reduced motion (no camera blends or hammer wind-up), expanded
+  numeric status, high-contrast and larger guides, colour-blind-safe bands, narration of the selected part.
+- **Multiplayer.** One smith works a station at a time (claim and protection mods are respected when a hold is
+  taken). A committed job stays its smith's for `work.jobPrioritySeconds` (5 minutes) after they last touch it; then
+  anyone may finish or cancel it. Network protocol 6: clients send intents only (station, part, point, sequence
+  number); the server checks reach and sight from the real eyes, the station instance, the hold, replays and a rate
+  budget, and scores everything itself.
+- **Data.** Process profiles (`data/<ns>/immersive_smithing/process_profiles/`) describe each kind of piece: its
+  operations, quench and component sockets; 13 built-in profiles cover all 44 built-in anvil patterns. Workpiece profiles
+  (`assets/<ns>/immersive_smithing/workpiece_profiles/`) describe how pieces deform. Recipes may name a
+  `process_profile`; materials may define `thermal` heat bands. Forge patterns and the anvil patterns' strike fields are
+  still read but no longer used. `/immersivesmithing process` writes the recipe-to-profile coverage report.
+- **Saves.** Workpieces are schema 3. Pieces from 1.2 migrate: a forged piece keeps its forge score and is shaped again;
+  a shaped one keeps both scores and only needs its quench; components are never charged twice. A record that cannot be
+  read (a missing mod's item, a future version) is kept as raw data and reported, never deleted. Components a 1.2 forge
+  held for an unfinished minigame are dropped at the forge once.
+- **Configuration.** New server section `work` (heat preparation weight, cooling and heating rates, station hold
+  timeout, job priority, destructive overheating, off by default), `tools.*BlowRecoveryTicks`,
+  `trough.quenchTimeMultiplier` and `grindstone.passTicks`. The old `tools.*TimeSeconds` and
+  `minigames.readyDelayMs`/`timingToleranceMs`/`maxLatencyCompensationMs` keys stay in the file but are unused;
+  `maxAssistTimeMultiplier` now caps how much assistance can shorten blow recovery. New client options: camera mode,
+  side, transition speed and field of view, reduced motion, work guides, expanded status, hold to act, effect volume.
+- **Sounds.** Twelve new sound events (bellows, turning the billet, the fire, cold and heavy blows, turning the piece,
+  fitting, stamping, the quench and its settling, the grinding wheel, a readiness cue), mapped to vanilla sounds so
+  resource packs can replace them.
+- New and changed text is in English; the other languages fall back to English for those lines until translated.
+
+### Epic Knights ecosystem compatibility
+
+- Active source recipes now resolve per route, with exact source suppression and pack policy precedence.
+- Structural upgrades consume the exact decorated/enchanted base plus added metal. Knight chestplate: halfarmor + five plates (45 added steel units).
+- Rational component accounting rounds the final charge up once and recoverable content down. Alternate routes, cycles, pack overrides and saved provenance cannot inflate recycling.
+- Added reviewed Thirty Years War, Fletchery, Japanese Armory, Ingots Addition and separate Boomsticks release profiles.
+- Server-validated native visor swaps preserve metadata; targeted hitscan/projectile adapters use the actual weapon once. Artilleries thrown weapons retain the complete stack through save/load and recovery.
+- Overgeared/TerraFirma/TerraFirmaGreg bridges retain native manufacturing and quality ownership.
+- Forge/JEI show complete ingredient alternatives, input-derived previews and upgrade behavior. Guide and tooltips are translated in all five languages.
+- Protocol 5 includes complete preview inputs and recovery policy. Workpiece schema 2 preserves recovery separately from the metal charged; older saved pieces remain readable.
+- Real-mod GameTests, isolated profiles, inventory tooling and runtime evidence are documented in `docs/compatibility/epic-integrations.md`.
+
+### Existing update work: Epic Knights, built-in Epic Fight recipes and lighter stations
 
 ### Epic Fight
 
@@ -17,14 +88,14 @@
   Alloys, Dark Ages, Open Helms with Swappable Helms, Seven Kingdoms, Artilleries and Firearms and Medieval Boomsticks.
   Their metal weapons, armour and shields are forged, each on an anvil pattern of its shape, and each forge recipe
   disables only the native recipes it replaces.
-- **Costs follow the mods' own recipes.** Metal is counted once, intermediates of the same metal flattened (an armet
-  is a barbute and three plates: 72 steel) and rounded down, never up. Hilts, poles, leather strips, base shields and
+- **Costs follow the mods' own recipes.** Metal components are counted once; equipment bases remain actual inputs (an armet
+  consumes a barbute and 27 added steel units). Final charges round up once; recovery rounds down. Hilts, poles, leather strips, base shields and
   fittings of another metal are components.
 - **Kept routes.** Gilding, darkening and other transformations, visor swaps, firearm assembly, Medieval Boomsticks'
   own smithing furnace, wooden and leather pieces and loot keep their mod's route. Transformed pieces and visor states
   keep the base piece's quality and recycling value. Relics can carry quality as loot and can't be melted down.
-- **Plates melt for one ingot** (Epic Knights' steel plate, Antique Legacy's iron and bronze plates, the Seven
-  Kingdoms' blacked and gilded steel plates). New metals: blacked steel and gilded steel.
+- **Verified integral components melt for their active-recipe content.** Fractional and ambiguous components
+  are not unconditional melt sources. New metals: blacked steel and gilded steel.
 - **New anvil pattern**: flail, for chain morning stars and evening stars.
 - **Every item has a stated route.** The catalog gives each piece of equipment a disposition and a reason; the tested
   profiles have none without support. See [docs/compatibility/epic-integrations.md](docs/compatibility/epic-integrations.md)

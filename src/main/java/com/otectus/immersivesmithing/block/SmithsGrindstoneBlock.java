@@ -1,17 +1,15 @@
 package com.otectus.immersivesmithing.block;
 
 import com.otectus.immersivesmithing.api.ImmersiveSmithingAPI;
+import com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity;
 import com.otectus.immersivesmithing.config.ServerConfig;
-import com.otectus.immersivesmithing.quality.QualityData;
-import com.otectus.immersivesmithing.quality.QualityEligibility;
-import com.otectus.immersivesmithing.registry.ModSounds;
+import com.otectus.immersivesmithing.registry.ModBlockEntities;
 import com.otectus.immersivesmithing.util.Feedback;
-import com.otectus.immersivesmithing.util.StationEffects;
+import com.otectus.immersivesmithing.work.GrindstoneActions;
+import com.otectus.immersivesmithing.work.WorkLeases;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -20,10 +18,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -31,33 +34,27 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Post-crafting refinement for XP. Use to refine durability, sneak-use to refine efficacy; each refinement is
- * confirmed by a second use. Scores are capped at 100 and Faulty items cannot be refined. An eligible piece without a
- * grade yet (found or crafted before smithing existed) starts from the neutral grade, which is written only together
- * with a confirmed, paid refinement, so looking at it never changes it.
+ * Optional post-crafting refinement for XP, as physical work: rest a finished piece at the wheel, choose an aspect and
+ * hold the edge to the turning wheel for a pass ({@link GrindstoneActions}). Since 1.3.0 the block has a block entity for
+ * the resting piece and the pass; the registry id, facing and shape are unchanged, and grindstones in older worlds gain
+ * their block entity the first time they are used. Scores are capped at 100 and Faulty items cannot be refined.
  */
-public class SmithsGrindstoneBlock extends Block {
+public class SmithsGrindstoneBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     /** Base plank, two uprights, the wheel and its axle (1.2 geometry). */
     private static final StationShape SHAPE = new StationShape(Shapes.or(
             Block.box(1, 0, 3, 15, 2, 13),
             Block.box(2, 2, 6, 4, 11, 10),
             Block.box(12, 2, 6, 14, 11, 10),
-            Block.box(5, 5, 5, 11, 7, 11),
-            Block.box(5, 7, 3, 11, 13, 13),
-            Block.box(5, 13, 5, 11, 15, 11),
+            Block.box(5, 5, 6, 11, 6, 10),
+            Block.box(5, 6, 4, 11, 8, 12),
+            Block.box(5, 8, 3, 11, 12, 13),
+            Block.box(5, 12, 4, 11, 14, 12),
+            Block.box(5, 14, 6, 11, 15, 10),
             Block.box(0, 9, 7, 16, 11, 9)));
-    private static final long CONFIRM_WINDOW_TICKS = 60;
-
-    private record Pending(BlockPos pos, boolean efficacy, int score, long gameTime) {}
-
-    private static final Map<UUID, Pending> PENDING = new ConcurrentHashMap<>();
 
     public SmithsGrindstoneBlock(Properties properties) {
         super(properties);
@@ -92,67 +89,45 @@ public class SmithsGrindstoneBlock extends Block {
     }
 
     @Override
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new SmithsGrindstoneBlockEntity(pos, state);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type, ModBlockEntities.SMITHS_GRINDSTONE.get(), SmithsGrindstoneBlockEntity::clientTick)
+                : createTickerHelper(type, ModBlockEntities.SMITHS_GRINDSTONE.get(), SmithsGrindstoneBlockEntity::serverTick);
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
+        if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof SmithsGrindstoneBlockEntity stone) {
+            WorkLeases.onStationGone(level, pos);
+            stone.dropContents();
+        }
+        super.onRemove(state, level, pos, newState, moved);
+    }
+
+    @Override
     @SuppressWarnings("deprecation")
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         ItemStack held = player.getItemInHand(hand);
         if (player.isSecondaryUseActive() && held.getItem() instanceof BlockItem) return InteractionResult.PASS;
         if (level.isClientSide) return InteractionResult.SUCCESS;
-        if (player instanceof ServerPlayer sp) refine(sp, pos, held, level.getGameTime());
+        if (player instanceof ServerPlayer sp && level.getBlockEntity(pos) instanceof SmithsGrindstoneBlockEntity stone) {
+            if (WorkLeases.heldByOther(level, pos, sp.getUUID())) Feedback.fail(sp, "station_in_use");
+            else GrindstoneActions.use(sp, stone, hand, held);
+        }
         return InteractionResult.CONSUME;
-    }
-
-    private void refine(ServerPlayer player, BlockPos pos, ItemStack held, long gameTime) {
-        if (!ServerConfig.get(ServerConfig.ENABLE_SMITH_GRINDSTONE)) {
-            Feedback.fail(player, "grindstone_disabled");
-            return;
-        }
-        QualityData quality = QualityData.get(held).orElse(null);
-        boolean neutralStart = false;
-        if (quality == null) {
-            if (!QualityEligibility.canCarryQuality(held)) {
-                Feedback.info(player, "grindstone_help");
-                return;
-            }
-            quality = QualityEligibility.neutral();
-            neutralStart = true;
-        }
-        if (quality.faulty()) {
-            Feedback.fail(player, "grindstone_faulty");
-            return;
-        }
-        boolean efficacy = player.isSecondaryUseActive();
-        int score = efficacy ? quality.anvilScore() : quality.forgeScore();
-        Component aspect = Component.translatable(efficacy ? "quality.immersive_smithing.aspect.efficacy" : "quality.immersive_smithing.aspect.durability");
-        if (score >= 100) {
-            Feedback.fail(player, "grindstone_maxed", aspect);
-            return;
-        }
-        int step = ServerConfig.get(ServerConfig.GRINDSTONE_SCORE_STEP);
-        int cost = levelCost(player, held, score);
-        int next = Math.min(100, score + step);
-
-        Pending pending = PENDING.get(player.getUUID());
-        boolean confirmed = pending != null && pending.pos.equals(pos) && pending.efficacy == efficacy && pending.score == score
-                && gameTime - pending.gameTime <= CONFIRM_WINDOW_TICKS;
-        if (!confirmed) {
-            PENDING.put(player.getUUID(), new Pending(pos.immutable(), efficacy, score, gameTime));
-            if (neutralStart) Feedback.info(player, "grindstone_neutral_start", aspect, next - score, cost);
-            else Feedback.info(player, "grindstone_confirm", aspect, next - score, cost);
-            return;
-        }
-        PENDING.remove(player.getUUID());
-        if (!player.getAbilities().instabuild && player.experienceLevel < cost) {
-            Feedback.fail(player, "grindstone_no_xp", cost);
-            return;
-        }
-        if (!player.getAbilities().instabuild) player.giveExperienceLevels(-cost);
-        QualityData refined = efficacy ? quality.withAnvilScore(next) : quality.withForgeScore(next);
-        refined.apply(held);
-        player.level().playSound(null, pos, ModSounds.GRINDSTONE_REFINE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-        StationEffects.send(player.serverLevel(), pos, StationEffects.GRIND, 1.0F);
-        Feedback.info(player, "grindstone_refined", aspect,
-                (efficacy ? refined.efficacyQuality() : refined.durabilityQuality()).displayName());
     }
 
     /** What {@code smith} pays for one refinement of {@code piece}: {@link #levelCost(int)} through the registered cost modifiers. */

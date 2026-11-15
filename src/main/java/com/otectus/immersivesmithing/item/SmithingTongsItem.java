@@ -5,6 +5,7 @@ import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.workpiece.WorkpieceCodec;
 import com.otectus.immersivesmithing.workpiece.WorkpieceData;
+import com.otectus.immersivesmithing.workpiece.HeldWorkpieces;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -22,7 +23,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-/** Starts forging, and carries hot workpieces between Forge, Anvil and Trough. */
+/**
+ * Commits, turns and draws billets at the forge and carries workpieces between forge, anvil, trough and the reheat rest.
+ * A carried piece cools while the tongs are in a loaded inventory ({@link HeldWorkpieces}).
+ */
 public class SmithingTongsItem extends SmithingToolItem {
 
     public SmithingTongsItem(SmithingTier tier, Properties properties) {
@@ -61,23 +65,26 @@ public class SmithingTongsItem extends SmithingToolItem {
         Optional<WorkpieceData> data = WorkpieceCodec.getHeld(stack);
         if (data.isPresent()) {
             appendWorkpiece(data.get(), tooltip);
+        } else if (WorkpieceCodec.isHolding(stack)) {
+            tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.unreadable").withStyle(ChatFormatting.RED));
         } else {
             tooltip.add(Component.translatable("tooltip.immersive_smithing.tongs.empty").withStyle(ChatFormatting.GRAY));
         }
-        tooltip.add(Component.translatable("tooltip.immersive_smithing.forge_time", tier().forgeTimeMs() / 1000).withStyle(ChatFormatting.DARK_GRAY));
     }
 
     public static void appendWorkpiece(WorkpieceData data, List<Component> tooltip) {
-        tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.holding", data.target().getHoverName())
-                .withStyle(ChatFormatting.GOLD));
-        if (data.isShaped()) {
-            if (data.faulty()) {
-                tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.faulty").withStyle(ChatFormatting.DARK_RED));
-            }
-            tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.shaped").withStyle(ChatFormatting.GRAY));
-        } else {
-            tooltip.add(Component.translatable("tooltip.immersive_smithing.workpiece.forged").withStyle(ChatFormatting.GRAY));
-        }
+        HeldWorkpieces.appendTooltip(data, tooltip);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, net.minecraft.world.entity.Entity entity, int slot, boolean selected) {
+        HeldWorkpieces.tick(stack, level);
+    }
+
+    @Override
+    public boolean onEntityItemUpdate(ItemStack stack, net.minecraft.world.entity.item.ItemEntity entity) {
+        HeldWorkpieces.tick(stack, entity.level());
+        return false;
     }
 
     @Override

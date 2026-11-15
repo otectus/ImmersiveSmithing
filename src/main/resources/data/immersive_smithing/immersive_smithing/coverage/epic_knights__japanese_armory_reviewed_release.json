@@ -1,0 +1,178 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "epic_knights__japanese_armory"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "epic_knights__japanese_armory",
+      "versions": "[1.6.2]"
+    }
+  ],
+  "mod": "epic_knights__japanese_armory",
+  "tested_version": "1.6.2",
+  "policies": [
+    {
+      "items": [
+        "epic_knights__japanese_armory:blindfold_helmet"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:fox_mask_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:hannya_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:hyottoko_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:iron_shuriken"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:japanfabric"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:japanhilt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:japanleather"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:kimono_boots"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:kimono_chestplate"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:kimono_leggings"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:onimask_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:samuraionimask_helmet"
+      ],
+      "disposition": "native_assembly",
+      "reason": "Native assembly consumes both the samurai helmet and oni mask; keep both prerequisites."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:shinobi_boots"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:shinobi_chestplate"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:shinobi_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:shinobi_leggings"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:tanjiro_chestplate"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:tanjiro_leggings"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:tengu_helmet"
+      ],
+      "disposition": "native_transformation",
+      "reason": "Native armor-base transformation adds cloth, color or mask components without added primary metal."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:wood_katana"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:wood_naginata"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Native wooden weapon requires a debug stick; preserve that restricted prerequisite."
+    },
+    {
+      "items": [
+        "epic_knights__japanese_armory:wood_tonfa"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Textile clothing or wooden equipment; iron repair metadata alone does not make it metal construction."
+    }
+  ]
+}

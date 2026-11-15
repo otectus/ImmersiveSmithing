@@ -34,5 +34,8 @@
     "item": "spartanweaponry:steel_glaive"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:glaive"
+  "anvil_pattern": "immersive_smithing:glaive",
+  "replaces": [
+    "spartanweaponry:steel_glaive"
+  ]
 }

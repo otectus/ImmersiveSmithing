@@ -5,33 +5,18 @@
       "modid": "magistuarmory"
     },
     {
+      "type": "immersive_smithing:mod_version",
+      "modid": "magistuarmory",
+      "versions": "[10.15]"
+    },
+    {
       "type": "forge:item_exists",
       "item": "magistuarmory:wingedhussar_chestplate"
     }
   ],
   "type": "immersive_smithing:smithing",
   "material": "forge:steel",
-  "metal_units": 72,
-  "auxiliary": [
-    {
-      "ingredient": {
-        "item": "minecraft:feather"
-      },
-      "count": 6
-    },
-    {
-      "ingredient": {
-        "item": "minecraft:rabbit_hide"
-      },
-      "count": 1
-    },
-    {
-      "ingredient": {
-        "item": "minecraft:stick"
-      },
-      "count": 1
-    }
-  ],
+  "source_policy": "epic_knights",
   "result": {
     "item": "magistuarmory:wingedhussar_chestplate"
   },

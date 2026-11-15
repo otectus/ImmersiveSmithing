@@ -30,6 +30,10 @@ MODS = {
     'epic_knights_ores_and_alloys': 'Epic Knights: Ores and Alloys', 'darkagesarmory': 'Epic Knights: Dark Ages',
     'epicknights_open_helms': 'Epic Knights: Open Helms', 'artillery_addon': 'Epic Knights: Artilleries and Firearms',
     'medieval_boomsticks': 'Medieval Boomsticks', 'ekotsk': 'Epic Knights of the Seven Kingdoms',
+    'thirtyyearswar': 'Epic Knights: Thirty Years War', 'fletchery': 'Epic Fletchery',
+    'epic_knights__japanese_armory': 'Epic Knights: Japanese Armory',
+    'bronzeaddition_epicknights': 'Ingots Addition for Epic Knights',
+    'overgeared_epic_knights': 'Overgeared Epic Knights bridge', 'knightsofterrafirma': 'TerraFirma / TerraFirmaGreg bridge',
 }
 
 
@@ -93,7 +97,7 @@ def section_from(mod, title, catalog):
     items = catalog['items']
     counts = catalog.get('dispositions', {})
     lines = [f'## {title} {catalog["version"]}', '',
-             f'{len(items)} pieces of equipment: ' + ', '.join(f'{v} {k.replace("_", " ")}' for k, v in sorted(counts.items())) + '.',
+             f'{len(items)} registered items: ' + ', '.join(f'{v} {k.replace("_", " ")}' for k, v in sorted(counts.items())) + '.',
              '', '| Item | Route | Forge cost (units + components) | Pattern | Quality | Recycles for | Acquisition |',
              '| --- | --- | --- | --- | --- | --- | --- |']
     for item in items:
@@ -107,12 +111,13 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--profile', help='write the last GameTest run as this profile (docs/compatibility/inventory/<profile>/)')
+    parser.add_argument('--logs', type=pathlib.Path, default=LOGS, help='isolated runtime logs directory')
     args = parser.parse_args()
     if args.profile:
         if not re.fullmatch(r'[a-z0-9_-]+', args.profile):
             sys.exit('profile names are lower-case words')
         target = OUT / args.profile
-        catalogs = [c for c in (LOGS / f'immersive_smithing_catalog_{mod}.json' for mod in MODS) if c.exists()]
+        catalogs = [c for c in (args.logs / f'immersive_smithing_catalog_{mod}.json' for mod in MODS) if c.exists()]
         if not catalogs:
             sys.exit('no catalog: run the GameTests first')
         # Only the last GameTest run counts: its catalogs share the newest one's mod set; older ones belong to other runs.
@@ -122,7 +127,7 @@ def main():
                 old.unlink()
         written = 0
         for mod in MODS:
-            source = LOGS / f'immersive_smithing_catalog_{mod}.json'
+            source = args.logs / f'immersive_smithing_catalog_{mod}.json'
             if not source.exists():
                 continue
             catalog = json.loads(source.read_text())

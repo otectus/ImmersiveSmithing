@@ -39,7 +39,8 @@ public final class Integrations {
     /** The Epic Knights ecosystem: the base mod and the content add-ons whose equipment the bundled data covers. */
     public static final List<String> EPIC_KNIGHTS_NAMESPACES = List.of("magistuarmory", "magistuarmoryaddon", "slavicarmory",
             "antiquelegacy", "epic_knights_ice_and_fire", "epic_knights_ores_and_alloys", "darkagesarmory", "epicknights_open_helms",
-            "artillery_addon", "medieval_boomsticks", "ekotsk");
+            "artillery_addon", "medieval_boomsticks", "ekotsk", "thirtyyearswar", "fletchery",
+            "epic_knights__japanese_armory", "bronzeaddition_epicknights");
 
     public static final List<Integration> ALL = List.of(
             new Integration(EPIC_FIGHT, "Epic Fight", List.of(EPIC_FIGHT), true),
@@ -58,6 +59,7 @@ public final class Integrations {
 
     /** Whether Immersive Smithing may handle the mod with this namespace. True for every namespace without a switch. */
     public static boolean enabled(String namespace) {
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(namespace)) return false;
         return switch (forNamespace(namespace).map(Integration::id).orElse("")) {
             case EPIC_FIGHT -> ServerConfig.get(ServerConfig.EPIC_FIGHT_INTEGRATION);
             case SIMPLY_SWORDS -> ServerConfig.get(ServerConfig.SIMPLY_SWORDS_INTEGRATION);
@@ -71,6 +73,7 @@ public final class Integrations {
     /** Item namespaces that automatic detection, suppression and loot quality skip because their integration is off. */
     public static Set<String> disabledNamespaces() {
         Set<String> out = new LinkedHashSet<>();
+        out.addAll(com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.namespaces());
         for (Integration integration : ALL) {
             for (String namespace : integration.namespaces()) {
                 if (!enabled(namespace)) out.add(namespace);
@@ -93,6 +96,7 @@ public final class Integrations {
 
     /** The server-config option that switches a namespace's integration off, as the report names selectors. */
     public static String configKey(String namespace) {
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(namespace)) return "external workflow owner";
         if (namespace.equals(SPARTAN_WEAPONRY) || namespace.equals(SPARTAN_FIRE)) return "integrations.spartanWeaponry = false";
         return switch (forNamespace(namespace).map(Integration::id).orElse("")) {
             case EPIC_FIGHT -> "integrations.epicFight = false";
@@ -118,6 +122,7 @@ public final class Integrations {
     public static String compatRecipeDisabled(ResourceLocation recipeId) {
         String modId = compatModOf(recipeId);
         if (modId == null) return null;
+        if (com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(modId)) return com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.reason();
         if ((modId.equals(SPARTAN_WEAPONRY) || modId.equals(SPARTAN_FIRE)) && !ServerConfig.get(ServerConfig.SPARTAN_WEAPONRY_INTEGRATION)) {
             return "Spartan Weaponry integration is disabled in the config";
         }

@@ -17,7 +17,9 @@ public record GrindstonePreview(ResourceLocation dimension, BlockPos pos, ItemSt
                 || player.distanceToSqr(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5) > reach * reach
                 || !player.serverLevel().hasChunkAt(pos)
                 || !(player.serverLevel().getBlockState(pos).getBlock() instanceof SmithsGrindstoneBlock)) return Optional.empty();
-        ItemStack piece = player.getMainHandItem();
+        // The piece resting at the wheel is quoted; with none there, the piece in hand (what placing it would cost).
+        ItemStack piece = player.serverLevel().getBlockEntity(pos) instanceof com.otectus.immersivesmithing.blockentity.SmithsGrindstoneBlockEntity stone
+                && !stone.piece().isEmpty() ? stone.piece() : player.getMainHandItem();
         QualityData quality = QualityData.get(piece).orElse(null);
         if (quality == null && QualityEligibility.canCarryQuality(piece)) quality = QualityEligibility.neutral();
         if (quality == null || quality.faulty()) return Optional.empty();

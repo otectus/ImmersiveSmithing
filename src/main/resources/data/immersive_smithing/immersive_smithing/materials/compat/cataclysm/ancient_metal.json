@@ -24,5 +24,9 @@
   "melt_time_multiplier": 1.5,
   "requires_ignition": true,
   "tint": "#CAA252",
-  "upgrade_policy": "shape"
+  "upgrade_policy": "shape",
+  "casting": {
+    "ingot": "cataclysm:ancient_metal_ingot",
+    "nugget": "cataclysm:ancient_metal_nugget"
+  }
 }

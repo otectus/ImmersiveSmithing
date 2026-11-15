@@ -1,0 +1,3383 @@
+{
+  "mod": "artillery_addon",
+  "version": "1.16.2",
+  "integration": "epicknights",
+  "loaded_mods": [
+    "antiquelegacy",
+    "architectury",
+    "artillery_addon",
+    "bronzeaddition_epicknights",
+    "cloth_config",
+    "darkagesarmory",
+    "ekotsk",
+    "epic_knights__japanese_armory",
+    "epic_knights_ores_and_alloys",
+    "epicknights_open_helms",
+    "fletchery",
+    "geckolib",
+    "jei",
+    "magistuarmory",
+    "magistuarmoryaddon",
+    "medieval_boomsticks",
+    "quick_swap",
+    "slavicarmory",
+    "thirtyyearswar"
+  ],
+  "loaded_versions": {
+    "antiquelegacy": "1.13",
+    "architectury": "9.2.14",
+    "artillery_addon": "1.16.2",
+    "bronzeaddition_epicknights": "1.0.61.20.1",
+    "cloth_config": "11.1.136",
+    "darkagesarmory": "1.1",
+    "ekotsk": "1.20.1_1.5.0",
+    "epic_knights__japanese_armory": "1.6.2",
+    "epic_knights_ores_and_alloys": "1.1",
+    "epicknights_open_helms": "1.3",
+    "fletchery": "0.7",
+    "forge": "47.4.23",
+    "geckolib": "4.8.4",
+    "immersive_smithing": "1.3.0",
+    "jei": "15.20.0.135",
+    "magistuarmory": "10.15",
+    "magistuarmoryaddon": "2.6",
+    "medieval_boomsticks": "1.2",
+    "minecraft": "1.20.1",
+    "quick_swap": "0.1.0",
+    "slavicarmory": "2.1",
+    "thirtyyearswar": "1.3"
+  },
+  "tested_version": "1.16.2",
+  "items": [
+    {
+      "id": "artillery_addon:arquebus",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:arquebus_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:s_trigger"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:arquebus\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:arquebus_barrel",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:arquebus_barrel_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:arquebus_barrel\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:arquebus_barrel_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:arquebus_barrel_recipe."
+    },
+    {
+      "id": "artillery_addon:artilery_guide_book",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:guide_book_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:writable_book"
+            },
+            [],
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "minecraft:flint_and_steel"
+            },
+            {
+              "item": "minecraft:redstone"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:artilery_guide_book\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:guide_book_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:guide_book_recipe."
+    },
+    {
+      "id": "artillery_addon:boneflask",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:boneflask_ricpe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:bone"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:bone"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:bone"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:bone"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:boneflask\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:bottle_of_oil",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:oil_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "artillery_addon:cooked_salmon_guts"
+            },
+            {
+              "item": "minecraft:glass_bottle"
+            },
+            {
+              "item": "artillery_addon:cooked_salmon_guts"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:bottle_of_oil\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:oil_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:oil_recipe."
+    },
+    {
+      "id": "artillery_addon:bronze_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/bronze_handgonne/from/artillery_addon/bronzegonne_recipe",
+          "material": "forge:bronze",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "artillery_addon:bronzegonne_recipe"
+          ],
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "artillery_addon:bronzegonne_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:bronzegonne_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:bronze_handgonne\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:bronze",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/bronze_handgonne/from/artillery_addon/bronzegonne_recipe",
+      "acquisition": "Forged; replaces `artillery_addon:bronzegonne_recipe`."
+    },
+    {
+      "id": "artillery_addon:chu_ko_nu",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:clay_hand_grenade",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:claynade",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:clay_ball"
+            },
+            [],
+            {
+              "item": "minecraft:clay_ball"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:clay_ball"
+            },
+            [],
+            {
+              "item": "minecraft:clay_ball"
+            },
+            []
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"artillery_addon:clay_hand_grenade\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:claynade",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:claynade."
+    },
+    {
+      "id": "artillery_addon:clay_nade_burn",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:cooked_salmon_guts",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:cooked_salmon_guts_recipe",
+          "type": "minecraft:blasting",
+          "ingredients": [
+            {
+              "item": "artillery_addon:salmonguts"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:cooked_salmon_guts\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:cooked_salmon_guts_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:cooked_salmon_guts_recipe."
+    },
+    {
+      "id": "artillery_addon:double_barrel_gonne",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:dual_wheellock_carbine",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_dualbarrel_carbine",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "tag": "forge:blocks/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:dual_wheellock_carbine\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:dual_wheellock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_dual_barrel_pistol",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:dual_wheellock_pistol\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:early_wallgun",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:earlywallgun_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:early_wallgun\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:earlywallgun_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:earlywallgun_recipe."
+    },
+    {
+      "id": "artillery_addon:empty_cartridge",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:empty_cartridge_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:empty_cartridge\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:empty_cartridge_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:empty_cartridge_recipe."
+    },
+    {
+      "id": "artillery_addon:fire",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:fire_bomb",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:fire_bomb_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:fire_bomb\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:fire_bomb_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:fire_bomb_recipe."
+    },
+    {
+      "id": "artillery_addon:fire_lance",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:firelancerecipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:bamboo"
+            },
+            {
+              "item": "magistuarmory:pole"
+            },
+            [],
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:fire_lance\",tag:{Damage:0}}",
+          "state": "untouched"
+        },
+        {
+          "recipe": "artillery_addon:firelancerecipe_0",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "magistuarmoryaddon:steel_lance"
+            },
+            {
+              "item": "minecraft:bamboo"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:fire_lance\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_nonmetal_recipe",
+      "reason": "not predominantly metal: 1 units of forge:steel on 3 other parts",
+      "acquisition": "Not predominantly metal: 1 units of forge:steel on 3 other parts."
+    },
+    {
+      "id": "artillery_addon:fork_rest",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:restfork_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            [],
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:fork_rest\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:restfork_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:restfork_recipe."
+    },
+    {
+      "id": "artillery_addon:francisca",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:throwing_francisca_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "magistuarmoryaddon:steel_francisca_axe"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:francisca\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:throwing_francisca_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:throwing_francisca_recipe."
+    },
+    {
+      "id": "artillery_addon:gold_cog",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:gold_cog_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:gold_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:gold_cog\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gold_cog_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:gold_cog_recipe."
+    },
+    {
+      "id": "artillery_addon:gun_stock",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:gunstock_0",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:gun_stock\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gunstock_0",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:gunstock_0."
+    },
+    {
+      "id": "artillery_addon:gunsmithing_table",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:gunsmith_table_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:gunsmithing_table\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:gunsmith_table_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:gunsmith_table_recipe."
+    },
+    {
+      "id": "artillery_addon:gunsmithkit",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:gunsmith_kit_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:ramrod"
+            },
+            {
+              "item": "artillery_addon:iron_ramrod"
+            },
+            [],
+            {
+              "tag": "minecraft:wool"
+            },
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:gunsmithkit\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "gunsmith's repair kit (a firearm component)",
+      "acquisition": "Gunsmith's repair kit (a firearm component)."
+    },
+    {
+      "id": "artillery_addon:hackbut",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:hackbut_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:match"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "tag": "minecraft:logs"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:matchlock_mechanism"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:hackbut\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:hair_trigger",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:hair_trigger_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:tripwire_hook"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:hair_trigger\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hair_trigger_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:hair_trigger_recipe."
+    },
+    {
+      "id": "artillery_addon:hand_cannon",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/hand_cannon/from/artillery_addon/handcannonrecipe",
+          "material": "forge:steel",
+          "units": 9,
+          "recoverable_units": 9,
+          "added_content_units": 9,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "artillery_addon:handcannonrecipe"
+          ],
+          "components": [
+            "1x artillery_addon:arquebus_barrel",
+            "3x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "artillery_addon:handcannonrecipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:handcannonrecipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:hand_cannon\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "9 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/hand_cannon/from/artillery_addon/handcannonrecipe",
+      "acquisition": "Forged; replaces `artillery_addon:handcannonrecipe`."
+    },
+    {
+      "id": "artillery_addon:handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/handgonne/from/artillery_addon/hand_gonne_recipe",
+          "material": "forge:steel",
+          "units": 18,
+          "recoverable_units": 18,
+          "added_content_units": 18,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "artillery_addon:hand_gonne_recipe"
+          ],
+          "components": [
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "artillery_addon:hand_gonne_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:hand_gonne_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:handgonne\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "18 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/handgonne/from/artillery_addon/hand_gonne_recipe",
+      "acquisition": "Forged; replaces `artillery_addon:hand_gonne_recipe`."
+    },
+    {
+      "id": "artillery_addon:harquebus",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:harquebus_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:s_trigger"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:harquebus\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:heavy_barrel",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:heavybarrel_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:heavy_barrel\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:heavybarrel_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:heavybarrel_recipe."
+    },
+    {
+      "id": "artillery_addon:horn_flask",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:goatflask",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "item": "minecraft:goat_horn"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:horn_flask\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:hot_oil_bucket",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:hurlbat",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:hurlbatrecipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:hurlbat\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hurlbatrecipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:hurlbatrecipe."
+    },
+    {
+      "id": "artillery_addon:improved_gunsmithkit",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:iron_ball",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:iron_ball_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_ball\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_ball_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:iron_ball_recipe."
+    },
+    {
+      "id": "artillery_addon:iron_bits",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:iron_bits_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_bits\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_bits_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:iron_bits_recipe."
+    },
+    {
+      "id": "artillery_addon:iron_hand_grenade",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ironnade",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_hand_grenade\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:ironnade",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:ironnade."
+    },
+    {
+      "id": "artillery_addon:iron_nade_burn",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:iron_pot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:iron_pot_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_pot\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:iron_pot_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:iron_pot_recipe."
+    },
+    {
+      "id": "artillery_addon:iron_ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ironramrod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_ramrod\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    },
+    {
+      "id": "artillery_addon:iron_wheellock_spanner",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:iron_spanner_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:iron_wheellock_spanner\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for wheellock firearms",
+      "acquisition": "Loading tool for wheellock firearms."
+    },
+    {
+      "id": "artillery_addon:ironbit",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:javelin",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:javelin_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:stick"
+            }
+          ],
+          "result_count": 3,
+          "result_nbt": "{Count:3b,id:\"artillery_addon:javelin\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:javelin_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:javelin_recipe."
+    },
+    {
+      "id": "artillery_addon:large_iron_ball",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:largeiron_ball_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "artillery_addon:small_iron_ball"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:large_iron_ball\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:largeiron_ball_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:largeiron_ball_recipe."
+    },
+    {
+      "id": "artillery_addon:lime_bomb",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:lime_bomb_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "artillery_addon:lime_powder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:lime_bomb\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:lime_bomb_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:lime_bomb_recipe."
+    },
+    {
+      "id": "artillery_addon:lime_dust_pro_item",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:lime_powder",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:quartz_powder_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "item": "artillery_addon:quartz_dust"
+            },
+            {
+              "item": "minecraft:lime_dye"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:lime_powder\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:quartz_powder_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:quartz_powder_recipe."
+    },
+    {
+      "id": "artillery_addon:loaded_cartridge",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:loaded_cartridge_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:iron_ball"
+            },
+            {
+              "tag": "minecraft:powder_flask"
+            },
+            {
+              "item": "artillery_addon:empty_cartridge"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:loaded_cartridge\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:loaded_cartridge_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:loaded_cartridge_recipe."
+    },
+    {
+      "id": "artillery_addon:markmengonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:markgonne",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            [],
+            [],
+            [],
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:markmengonne\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:match",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:match_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:match\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:match_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:match_recipe."
+    },
+    {
+      "id": "artillery_addon:matchlock_carbine",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:carbine_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:match"
+            },
+            [],
+            {
+              "item": "artillery_addon:matchlock_mechanism"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:matchlock_carbine\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:matchlock_mechanism",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:marchlock_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:blaze_powder"
+            },
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "item": "artillery_addon:s_trigger"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:matchlock_mechanism\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:marchlock_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:marchlock_recipe."
+    },
+    {
+      "id": "artillery_addon:matchlock_musket",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:matchlock_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:match"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "artillery_addon:matchlock_mechanism"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:matchlock_musket\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:matchlock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:matchloackpistol_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:match"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "item": "artillery_addon:matchlock_mechanism"
+            },
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:matchlock_pistol\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:mini_pistola",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [
+        {
+          "recipe": "immersive_smithing:compat/artillery_addon/mini_pistola/from/artillery_addon/minipistola_recipe",
+          "material": "forge:steel",
+          "units": 10,
+          "recoverable_units": 10,
+          "added_content_units": 10,
+          "operation": "FORGE_BASE",
+          "replaces": [
+            "artillery_addon:minipistola_recipe"
+          ],
+          "components": [
+            "1x minecraft:stick",
+            "1x #minecraft:planks"
+          ],
+          "pattern": "immersive_smithing:heavy_crossbow",
+          "from": "artillery_addon:minipistola_recipe"
+        }
+      ],
+      "native": [
+        {
+          "recipe": "artillery_addon:minipistola_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            [],
+            [],
+            {
+              "item": "minecraft:stick"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:mini_pistola\",tag:{Damage:0}}",
+          "state": "disabled: replaced by the forge recipe"
+        }
+      ],
+      "origin": "explicit",
+      "selectors": [],
+      "quality": true,
+      "recycling": "10 forge:steel",
+      "disposition": "forge_default",
+      "reason": "immersive_smithing:compat/artillery_addon/mini_pistola/from/artillery_addon/minipistola_recipe",
+      "acquisition": "Forged; replaces `artillery_addon:minipistola_recipe`."
+    },
+    {
+      "id": "artillery_addon:noble_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:oil_block",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:hot_oil_pot_recipe",
+          "type": "minecraft:smelting",
+          "ingredients": [
+            {
+              "item": "artillery_addon:oil_pot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:oil_block\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:hot_oil_pot_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:hot_oil_pot_recipe."
+    },
+    {
+      "id": "artillery_addon:oil_pot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:oil_pot_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            },
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            },
+            {
+              "item": "artillery_addon:bottle_of_oil"
+            },
+            {
+              "item": "artillery_addon:iron_pot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:oil_pot\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:oil_pot_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:oil_pot_recipe."
+    },
+    {
+      "id": "artillery_addon:pyrite",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:pyrite_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:gold_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:pyrite\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:pyrite_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:pyrite_recipe."
+    },
+    {
+      "id": "artillery_addon:quartz_dust",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:quartz_dust_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:quartz"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:quartz_dust\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:quartz_dust_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:quartz_dust_recipe."
+    },
+    {
+      "id": "artillery_addon:ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ramrod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:ramrod\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    },
+    {
+      "id": "artillery_addon:ribauldequin_head",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:rib_head",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "minecraft:wooden_slabs"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "tag": "minecraft:wooden_slabs"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:ribauldequin_head\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:rib_head",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:rib_head."
+    },
+    {
+      "id": "artillery_addon:ribualdequin_item",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:ribauldequin_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "item": "artillery_addon:ribauldequin_head"
+            },
+            [],
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:iron_block"
+            },
+            {
+              "tag": "minecraft:wooden_slabs"
+            },
+            {
+              "tag": "minecraft:planks"
+            },
+            [],
+            {
+              "tag": "minecraft:wooden_slabs"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:ribualdequin_item\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:ribauldequin_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:ribauldequin_recipe."
+    },
+    {
+      "id": "artillery_addon:s_trigger",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:arquebus_trigger",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:string"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:s_trigger\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:arquebus_trigger",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:arquebus_trigger."
+    },
+    {
+      "id": "artillery_addon:salmonguts",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:solmon_guts_recipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:salmon"
+            },
+            {
+              "item": "minecraft:salmon"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:salmonguts\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:solmon_guts_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:solmon_guts_recipe."
+    },
+    {
+      "id": "artillery_addon:shatter_shot",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:shattershot_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:iron_bits"
+            },
+            {
+              "item": "minecraft:cobblestone"
+            },
+            [],
+            {
+              "item": "artillery_addon:iron_bits"
+            },
+            {
+              "item": "artillery_addon:iron_bits"
+            },
+            {
+              "item": "artillery_addon:iron_bits"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"artillery_addon:shatter_shot\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:shattershot_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:shattershot_recipe."
+    },
+    {
+      "id": "artillery_addon:small_iron_ball",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:smallironball_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:small_iron_ball\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:smallironball_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:smallironball_recipe."
+    },
+    {
+      "id": "artillery_addon:taccola_handgonne",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:taccola_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:handgonne"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:fork_rest"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "minecraft:lead"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:taccola_handgonne\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:throwable_cobblestone",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:cobblerecipe",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:throwable_cobblestone\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:cobblerecipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:cobblerecipe."
+    },
+    {
+      "id": "artillery_addon:throwing_cross",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:throwingcrossrecipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            [],
+            {
+              "item": "magistuarmory:steel_plate"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:throwing_cross\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:throwingcrossrecipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:throwingcrossrecipe."
+    },
+    {
+      "id": "artillery_addon:tiller_gun",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:toradar_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:toradar_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:arquebus_barrel"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "item": "minecraft:stripped_dark_oak_log"
+            },
+            {
+              "item": "minecraft:stripped_dark_oak_log"
+            },
+            {
+              "item": "minecraft:stripped_dark_oak_log"
+            },
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:matchlock_mechanism"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:toradar_rifle\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheel_lock",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wheellock_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "item": "artillery_addon:wheellock_designs"
+            },
+            {
+              "item": "artillery_addon:gunsmithkit"
+            },
+            {
+              "item": "artillery_addon:gold_cog"
+            },
+            {
+              "item": "minecraft:diamond"
+            },
+            {
+              "item": "artillery_addon:wheellock_spanner"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheel_lock\"}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: artillery_addon:wheellock_recipe",
+      "acquisition": "Native non-equipment recipes/processes: artillery_addon:wheellock_recipe."
+    },
+    {
+      "id": "artillery_addon:wheellock_breechloading_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_breechloader_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:nuggets/steel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:improved_gunsmithkit"
+            },
+            {
+              "item": "minecraft:bone"
+            },
+            {
+              "item": "artillery_addon:wheellock_hunting_rifle"
+            },
+            {
+              "item": "minecraft:bone"
+            },
+            {
+              "item": "minecraft:gold_ingot"
+            },
+            {
+              "item": "minecraft:gold_ingot"
+            },
+            {
+              "item": "minecraft:gold_ingot"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_breechloading_rifle\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_designs",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wheellock_designs_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "minecraft:lapis_lazuli"
+            },
+            {
+              "item": "artillery_addon:wheellock_designs"
+            },
+            {
+              "item": "minecraft:charcoal"
+            },
+            {
+              "item": "minecraft:chorus_fruit"
+            },
+            {
+              "item": "minecraft:redstone"
+            },
+            {
+              "item": "minecraft:chorus_fruit"
+            },
+            {
+              "item": "minecraft:lapis_lazuli"
+            },
+            {
+              "item": "minecraft:paper"
+            },
+            {
+              "item": "minecraft:charcoal"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_designs\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "firearm blueprint item",
+      "acquisition": "Firearm blueprint item."
+    },
+    {
+      "id": "artillery_addon:wheellock_hand_mortar",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_handmortar",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            [],
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "minecraft:iron_ingot"
+            },
+            {
+              "tag": "forge:ingots/bronze"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            [],
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_hand_mortar\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_hunting_rifle",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_hunting_rifle",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:hair_trigger"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_hunting_rifle\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_musket",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_musket",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            [],
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "tag": "forge:ingot/steel"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "tag": "minecraft:planks"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_musket\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_pistol",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_pistol",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            [],
+            [],
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            [],
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_pistol\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:wheellock_spanner",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wheellock_spanner_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            [],
+            {
+              "item": "minecraft:copper_ingot"
+            },
+            {
+              "item": "minecraft:copper_ingot"
+            }
+          ],
+          "result_count": 2,
+          "result_nbt": "{Count:2b,id:\"artillery_addon:wheellock_spanner\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for wheellock firearms",
+      "acquisition": "Loading tool for wheellock firearms."
+    },
+    {
+      "id": "artillery_addon:wheellock_wallgun",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:wl_wall_gun",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:pyrite"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            },
+            {
+              "item": "artillery_addon:wheel_lock"
+            },
+            {
+              "tag": "forge:ingots/steel"
+            },
+            {
+              "item": "artillery_addon:gun_stock"
+            },
+            {
+              "item": "artillery_addon:heavy_barrel"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wheellock_wallgun\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "native_assembly",
+      "reason": "firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod",
+      "acquisition": "Firearm assembled from a lock or trigger mechanism and a gunsmith kit: gunsmithing stays with the mod."
+    },
+    {
+      "id": "artillery_addon:windlass",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:windlass_0",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:windlass_1",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:windlass_2",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:windlass_3",
+      "kind": "item",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.",
+      "acquisition": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing.."
+    },
+    {
+      "id": "artillery_addon:windlass_crossbow",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [],
+      "origin": "none",
+      "selectors": [],
+      "quality": true,
+      "recycling": "none",
+      "disposition": "protected_loot",
+      "reason": "Artilleries and Firearms loot or trade item; the mod ships no recipe",
+      "acquisition": "Artilleries and Firearms loot or trade item; the mod ships no recipe."
+    },
+    {
+      "id": "artillery_addon:wooden_flasks",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_weapon",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:woodenflask",
+          "type": "minecraft:crafting_shapeless",
+          "ingredients": [
+            {
+              "tag": "minecraft:planks"
+            },
+            {
+              "item": "minecraft:gunpowder"
+            }
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:wooden_flasks\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "powder flask (ammunition supply)",
+      "acquisition": "Powder flask (ammunition supply)."
+    },
+    {
+      "id": "artillery_addon:worm_ramrod",
+      "kind": "weapon",
+      "shape": "immersive_smithing:generic_equipment",
+      "forge": [],
+      "native": [
+        {
+          "recipe": "artillery_addon:worm_rod_recipe",
+          "type": "minecraft:crafting_shaped",
+          "ingredients": [
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            [],
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            {
+              "item": "minecraft:stick"
+            },
+            {
+              "item": "minecraft:iron_nugget"
+            },
+            []
+          ],
+          "result_count": 1,
+          "result_nbt": "{Count:1b,id:\"artillery_addon:worm_ramrod\",tag:{Damage:0}}",
+          "state": "untouched"
+        }
+      ],
+      "origin": "none",
+      "selectors": [],
+      "quality": false,
+      "recycling": "none",
+      "disposition": "non_equipment",
+      "reason": "loading tool for firearms",
+      "acquisition": "Loading tool for firearms."
+    }
+  ],
+  "dispositions": {
+    "forge_default": 4,
+    "native_assembly": 17,
+    "native_nonmetal_recipe": 1,
+    "non_equipment": 62,
+    "protected_loot": 5
+  }
+}

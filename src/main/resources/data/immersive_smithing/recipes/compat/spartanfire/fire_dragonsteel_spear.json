@@ -33,5 +33,8 @@
     "item": "spartanfire:fire_dragonsteel_spear"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:spear"
+  "anvil_pattern": "immersive_smithing:spear",
+  "replaces": [
+    "spartanfire:fire_dragonsteel_spear"
+  ]
 }

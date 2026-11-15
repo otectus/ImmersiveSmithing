@@ -74,6 +74,7 @@ def smithing(result, family, units, aux, pattern, conds):
     obj['result'] = {'item': result}
     obj['forge_pattern'] = 'immersive_smithing:standard'
     obj['anvil_pattern'] = f'immersive_smithing:{pattern}'
+    obj['replaces'] = [result + ('_smithing' if result.split(':')[1].startswith('netherite_') else '')]
     return obj
 
 

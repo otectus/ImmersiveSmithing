@@ -113,8 +113,17 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
         builder.addSlot(RecipeIngredientRole.OUTPUT, OUTPUT_X + 5, PROCESS_Y - 4)
                 .addItemStack(recipe.result())
                 .setBackground(outputSlot, -5, -5)
-                .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.quality_note")
-                        .withStyle(ChatFormatting.GRAY)));
+                .addTooltipCallback((view, tooltip) -> {
+                    tooltip.add(Component.translatable("jei.immersive_smithing.quality_note").withStyle(ChatFormatting.GRAY));
+                    tooltip.add(Component.translatable(recipe.auxiliary().stream().anyMatch(AuxiliaryIngredient::consumesEquipment)
+                            ? "jei.immersive_smithing.structural_upgrade" : "jei.immersive_smithing.new_equipment").withStyle(ChatFormatting.GOLD));
+                });
+        // Overflow still participates in ingredient lookup/focus; its full alternatives also appear below.
+        for (int i = 6; i < aux.size(); i++) {
+            AuxiliaryIngredient a = aux.get(i);
+            builder.addInvisibleIngredients(RecipeIngredientRole.INPUT)
+                    .addItemStacks(Arrays.stream(a.ingredient().getItems()).map(s -> s.copyWithCount(a.count())).toList());
+        }
     }
 
     @Override
@@ -147,13 +156,13 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
         if (mouseY >= PROCESS_Y - 4 && mouseY < PROCESS_Y + 12) {
             if (mouseX >= PROCESS_X && mouseX < PROCESS_X + 16) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_forge"));
-                tips.add(Component.translatable("jei.immersive_smithing.step.forge").withStyle(ChatFormatting.GRAY));
+                tips.add(Component.translatable("jei.immersive_smithing.step.plan").withStyle(ChatFormatting.GRAY));
             } else if (mouseX >= PROCESS_X + 42 && mouseX < PROCESS_X + 58) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_anvil"));
-                tips.add(Component.translatable("jei.immersive_smithing.step.anvil").withStyle(ChatFormatting.GRAY));
+                tips.add(Component.translatable("jei.immersive_smithing.step.shape").withStyle(ChatFormatting.GRAY));
             } else if (mouseX >= PROCESS_X + 84 && mouseX < PROCESS_X + 100) {
                 tips.add(Component.translatable("block.immersive_smithing.smiths_trough"));
-                tips.add(Component.translatable("jei.immersive_smithing.step.trough").withStyle(ChatFormatting.GRAY));
+                tips.add(Component.translatable("jei.immersive_smithing.step.quench").withStyle(ChatFormatting.GRAY));
             }
         } else if (mouseY >= 59 && mouseY < 70) {
             tips.add(Component.translatable("jei.immersive_smithing.material", recipe.familyName(), MaterialUnits.describe(recipe.metalUnits())));
@@ -162,7 +171,12 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
                 tips.add(Component.translatable("jei.immersive_smithing.components").withStyle(ChatFormatting.GOLD));
                 for (AuxiliaryIngredient auxiliary : recipe.auxiliary()) {
                     ItemStack[] options = auxiliary.ingredient().getItems();
-                    Component name = options.length == 0 ? Component.translatable("jei.immersive_smithing.unknown_component") : options[0].getHoverName();
+                    var name = Component.empty();
+                    if (options.length == 0) name.append(Component.translatable("jei.immersive_smithing.unknown_component"));
+                    for (ItemStack option : options) {
+                        if (!name.getString().isEmpty()) name.append(" / ");
+                        name.append(option.getHoverName());
+                    }
                     tips.add(Component.translatable("jei.immersive_smithing.component_line", auxiliary.count(), name).withStyle(ChatFormatting.GRAY));
                 }
             }

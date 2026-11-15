@@ -51,7 +51,7 @@ public final class QualityHooks {
     public static void onAttributeModifiers(ItemAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
         Optional<QualityData> data = QualityData.get(stack);
-        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack)) return;
+        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack) || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)) return;
         QualityData quality = data.get();
         double efficacy = QualityCalculator.efficacyMultiplier(quality);
         if (Math.abs(efficacy - 1.0) < 1.0E-6) return;
@@ -106,7 +106,7 @@ public final class QualityHooks {
     public static void onBreakSpeed(PlayerEvent.BreakSpeed event) {
         ItemStack stack = event.getEntity().getMainHandItem();
         Optional<QualityData> data = QualityData.get(stack);
-        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack)) return;
+        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack) || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)) return;
         double efficacy = QualityCalculator.efficacyMultiplier(data.get());
         try {
             for (ISmithingEfficacyHandler handler : ImmersiveSmithingAPI.efficacyHandlers()) {
@@ -134,7 +134,7 @@ public final class QualityHooks {
         CompoundTag tag = stack.getTag();
         if (tag == null || !tag.contains(QualityData.ROOT)) return amount;
         Optional<QualityData> data = QualityData.get(stack);
-        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack)) return amount;
+        if (data.isEmpty() || ImmersiveSmithingAPI.isExcluded(stack) || com.otectus.immersivesmithing.compat.epicknights.ExternalWorkflow.owns(stack)) return amount;
         double multiplier = Math.max(0.01, QualityCalculator.durabilityMultiplier(data.get()));
         if (Math.abs(multiplier - 1.0) < 1.0E-6) return amount;
         CompoundTag root = tag.getCompound(QualityData.ROOT);

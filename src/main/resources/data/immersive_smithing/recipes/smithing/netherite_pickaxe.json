@@ -14,5 +14,8 @@
     "item": "minecraft:netherite_pickaxe"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:pickaxe"
+  "anvil_pattern": "immersive_smithing:pickaxe",
+  "replaces": [
+    "minecraft:netherite_pickaxe_smithing"
+  ]
 }

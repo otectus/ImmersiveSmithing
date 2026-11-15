@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "fletchery"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "fletchery",
+      "versions": "[0.7]"
+    },
+    {
+      "type": "forge:item_exists",
+      "item": "fletchery:cranequin_crossbow"
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "source_policy": "epic_knights",
+  "material": "minecraft:iron",
+  "result": {
+    "item": "fletchery:cranequin_crossbow"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:heavy_crossbow"
+}

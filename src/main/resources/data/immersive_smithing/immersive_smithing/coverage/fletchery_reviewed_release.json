@@ -1,0 +1,402 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "fletchery"
+    },
+    {
+      "type": "immersive_smithing:mod_version",
+      "modid": "fletchery",
+      "versions": "[0.7]"
+    }
+  ],
+  "mod": "fletchery",
+  "tested_version": "0.7",
+  "policies": [
+    {
+      "items": [
+        "fletchery:acacia_shaft"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:arrow_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:birch_hunting_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:birch_long_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:birch_recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:birch_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:birch_short_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:birch_war_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:blunt_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:blunt_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:bolt_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:bow_string"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:crude_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:crude_arrow_head"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:crude_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:dark_oak_shaft"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:goatfoot_lever"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native crossbow loading tool; preserve durability and reload mechanics."
+    },
+    {
+      "items": [
+        "fletchery:jungle_shaft"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:logo"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:long_bodkin_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:long_bodkin_arrow_head"
+      ],
+      "disposition": "disabled_by_upstream",
+      "reason": "No active manufacturing recipe in the pinned release; preserve native registration/acquisition and do not invent a forge route. Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:long_bodkin_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_hunting_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_long_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_short_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:mangrove_war_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:oak_hunting_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:oak_long_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:oak_recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:oak_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:oak_short_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:oak_war_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:shaftwood_hunting_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:shaftwood_long_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:shaftwood_recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:shaftwood_short_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:shaftwood_war_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:short_bodkin_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:short_bodkin_arrow_head"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:short_bodkin_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:spruce_hunting_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:spruce_long_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:spruce_recurve_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:spruce_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:spruce_short_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:spruce_war_bow"
+      ],
+      "disposition": "native_nonmetal_recipe",
+      "reason": "Wooden bow; native bow crafting and ammunition remain unchanged."
+    },
+    {
+      "items": [
+        "fletchery:swallowtail_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:swallowtail_arrow_head"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:swallowtail_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:swept_arrow_head"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:swept_battle_arrow"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:swept_bolt"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    },
+    {
+      "items": [
+        "fletchery:wood_shaft"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native component, material, ammunition, plant or block; preserve its acquisition and processing."
+    }
+  ]
+}

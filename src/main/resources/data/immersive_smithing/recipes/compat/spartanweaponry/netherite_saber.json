@@ -26,5 +26,8 @@
     "item": "spartanweaponry:netherite_saber"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:saber"
+  "anvil_pattern": "immersive_smithing:saber",
+  "replaces": [
+    "spartanweaponry:netherite_saber_smithing"
+  ]
 }

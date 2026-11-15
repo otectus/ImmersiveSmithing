@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "workpiece_profile": "immersive_smithing:ranged_hardware",
+  "patterns": [
+    "immersive_smithing:longbow",
+    "immersive_smithing:heavy_crossbow"
+  ],
+  "operations": [
+    {
+      "id": "draw_limb_a",
+      "region": "limb_a",
+      "kind": "draw",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.0,
+        0.4,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "form_riser",
+      "region": "riser",
+      "kind": "shape",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.4,
+        0.6,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "draw_limb_b",
+      "region": "limb_b",
+      "kind": "draw",
+      "work": 3,
+      "weight": 1,
+      "face": "front",
+      "area": [
+        0.6,
+        1.0,
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "temper_limbs",
+      "region": "limbs",
+      "kind": "finish",
+      "work": 2,
+      "weight": 2,
+      "face": "back",
+      "area": [
+        0.0,
+        1.0,
+        -0.5,
+        0.5
+      ],
+      "after": [
+        "draw_limb_a",
+        "draw_limb_b"
+      ]
+    }
+  ],
+  "quench": {
+    "duration_ticks": 60,
+    "immersion_min": 0.7
+  },
+  "assembly": [
+    {
+      "auxiliary_index": 0,
+      "socket": "string"
+    },
+    {
+      "auxiliary_index": 1,
+      "socket": "grip"
+    },
+    {
+      "auxiliary_index": 2,
+      "socket": "stock"
+    }
+  ]
+}

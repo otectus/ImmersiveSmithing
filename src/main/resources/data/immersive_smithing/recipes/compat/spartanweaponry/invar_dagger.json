@@ -34,5 +34,8 @@
     "item": "spartanweaponry:invar_dagger"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:dagger"
+  "anvil_pattern": "immersive_smithing:dagger",
+  "replaces": [
+    "spartanweaponry:invar_dagger"
+  ]
 }

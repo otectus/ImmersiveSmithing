@@ -335,6 +335,498 @@
     },
     {
       "items": [
+        "magistuarmoryaddon:dark_barding"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native horse armor with no manufacturing recipe; protection remains the upstream direct property and receives no efficacy scaling."
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:articulated_pauldrons_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:articulated_pauldrons_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:articulated_shoulder_defenses_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:articulated_shoulder_defenses_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:black_cross_medieval_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:black_cross_medieval_cloak_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:black_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:black_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:blue_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:blue_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:brown_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:brown_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:chainmail_gloves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:chainmail_gloves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:chainmail_hood_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:chainmail_hood_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:codpiece_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:codpiece_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:composite_gloves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:composite_gloves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:cyan_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:cyan_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_codpiece_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_codpiece_decoration_from_codpiece_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_gorget_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_gorget_decoration_from_gorget_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_heavy_shoulder_pad_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_heavy_shoulder_pad_decoration_from_heavy_shoulder_pad_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_helmet_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_helmet_rondel_decoration_from_helmet_rondel_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_plackart_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_plackart_decoration_from_plackart_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_rondel_decoration_from_rondel_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_shoulder_pads_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_shoulder_pads_decoration_from_shoulder_pads_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dark_steel_skirt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dark_steel_skirt_decoration_from_steel_skirt_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:dragon_shoulder_pads_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:dragon_shoulder_pads_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:frontal_feather_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:frontal_feather_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:fully_gilding_template"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:fully_gilding_template_copy"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_chainmail_gloves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_chainmail_gloves_decoration_from_chainmail_gloves_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_chainmail_hood_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_chainmail_hood_decoration_from_chainmail_hood_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_dark_helmet_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_dark_helmet_rondel_decoration_from_dark_helmet_rondel_decoration_gilding, magistuarmoryaddon:gilded_dark_helmet_rondel_decoration_from_gilded_helmet_rondel_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_dark_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_dark_rondel_decoration_from_dark_rondel_decoration_gilding, magistuarmoryaddon:gilded_dark_rondel_decoration_from_gilded_rondel_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_dark_steel_skirt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_dark_steel_skirt_decoration_from_dark_steel_skirt_decoration_gilding, magistuarmoryaddon:gilded_dark_steel_skirt_decoration_from_gilded_steel_skirt_decoration_darkening"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_gorget_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_gorget_decoration_from_gorget_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_helmet_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_helmet_rondel_decoration_from_helmet_rondel_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_plackart_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_plackart_decoration_from_plackart_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_rivited_gauntlets_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_rivited_gauntlets_decoration_from_rivited_gauntlets_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_rondel_decoration_from_rondel_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_shoulder_pads_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_shoulder_pads_decoration_from_shoulder_pads_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gilded_steel_skirt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gilded_steel_skirt_decoration_from_steel_skirt_decoration_gilding"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:giornea_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:giornea_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:golden_ball_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:golden_ball_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:golden_pince_nez_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:golden_pince_nez_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gorget_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gorget_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:gray_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:gray_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:green_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:green_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:hanging_cloth_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:hanging_cloth_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:heavy_shoulder_pad_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:heavy_shoulder_pad_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:helmet_rondel_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:helmet_rondel_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:horse_tail_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:horse_tail_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:landsknecht_feathers_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:landsknecht_feathers_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:leather_gloves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:leather_gloves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:light_gray_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:light_gray_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:lime_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:lime_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:magenta_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:magenta_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:medieval_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:medieval_cloak_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:orange_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:orange_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:pink_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:pink_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:plackart_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:plackart_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:plated_chainmail_gloves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:plated_chainmail_gloves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:puff_and_slash_robe_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:puff_and_slash_robe_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:purple_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:purple_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:red_cross_medieval_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:red_cross_medieval_cloak_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:red_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:red_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:rivited_gauntlets_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:rivited_gauntlets_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:royal_plume_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:royal_plume_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:shoulder_pads_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:shoulder_pads_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:square_besagews_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:square_besagews_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:steel_mustache_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:steel_mustache_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:steel_skirt_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:steel_skirt_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:underarmor_tunic_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:underarmor_tunic_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:white_cross_medieval_cloak_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:white_cross_medieval_cloak_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:white_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:white_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:yellow_puff_and_slash_sleeves_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Native non-equipment recipes/processes: magistuarmoryaddon:yellow_puff_and_slash_sleeves_decoration"
+    },
+    {
+      "items": [
+        "magistuarmoryaddon:goose_decoration",
+        "magistuarmoryaddon:light_blue_puff_and_slash_sleeves_decoration",
+        "magistuarmoryaddon:ram_horns_decoration"
+      ],
+      "disposition": "non_equipment",
+      "reason": "Registered non-equipment with no crafting route; native acquisition/creative access only, no new manufacturing."
+    },
+    {
+      "items": [
         "magistuarmoryaddon:dark_gilded_parade_boots",
         "magistuarmoryaddon:dark_gilded_parade_burgonet",
         "magistuarmoryaddon:dark_gilded_parade_chestplate",

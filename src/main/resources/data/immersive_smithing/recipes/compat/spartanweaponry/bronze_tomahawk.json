@@ -34,5 +34,8 @@
     "item": "spartanweaponry:bronze_tomahawk"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:tomahawk"
+  "anvil_pattern": "immersive_smithing:tomahawk",
+  "replaces": [
+    "spartanweaponry:bronze_tomahawk"
+  ]
 }

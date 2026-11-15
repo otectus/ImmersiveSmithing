@@ -1,0 +1,285 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "bronzeaddition_epicknights:bronze_armor_boots",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_axe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_hoe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_pickaxe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_shovel",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:bronze_sword",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:steel_axe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:steel_hoe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:steel_pickaxe",
+      "required": false
+    },
+    {
+      "id": "bronzeaddition_epicknights:steel_shovel",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:dagger",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:glaive",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_kama",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_katana",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_kunai",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_naginata",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_sai",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_tetsubo",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_wakizashi",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:iron_yari",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_boots",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_chestplate",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_helmet",
+      "required": false
+    },
+    {
+      "id": "epic_knights__japanese_armory:samurai_leggings",
+      "required": false
+    },
+    {
+      "id": "fletchery:cranequin_crossbow",
+      "required": false
+    },
+    {
+      "id": "fletchery:goatfoot_crossbow",
+      "required": false
+    },
+    {
+      "id": "fletchery:latchet_crossbow",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:arbalest",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:arquebus",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:eveningstar",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:gotheveningstar",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:handgonne",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:javelin",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:morningstar",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:spikedhandgonne",
+      "required": false
+    },
+    {
+      "id": "medieval_boomsticks:war_dart",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_barred_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_barred_lobstertail_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_cabasset_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_cavalry_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_cavalry_armour_gauntlet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_closed_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_cuirass",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_cuirassier_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_death_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_grilled_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_lobstertail_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_matchlock_musket",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_officer_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_open_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_open_closed_burgonet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_armour",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_cuirass",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_pikeman_pot_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_savoyard_helmet",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_skull_cap",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_cuphilt_rapier",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_halberd",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_partisan",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_pike",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_pollax",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_rapier",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_sidesword",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_swepthilt_rapier",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_steel_walloon_sword",
+      "required": false
+    },
+    {
+      "id": "thirtyyearswar:baroque_wheellock_pistol",
+      "required": false
+    }
+  ]
+}

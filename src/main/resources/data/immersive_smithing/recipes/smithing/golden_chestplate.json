@@ -6,5 +6,8 @@
     "item": "minecraft:golden_chestplate"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:chestplate"
+  "anvil_pattern": "immersive_smithing:chestplate",
+  "replaces": [
+    "minecraft:golden_chestplate"
+  ]
 }

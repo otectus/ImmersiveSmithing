@@ -26,5 +26,8 @@
     "item": "spartanweaponry:iron_battle_hammer"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:battle_hammer"
+  "anvil_pattern": "immersive_smithing:battle_hammer",
+  "replaces": [
+    "spartanweaponry:iron_battle_hammer"
+  ]
 }

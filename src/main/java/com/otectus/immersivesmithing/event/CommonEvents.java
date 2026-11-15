@@ -62,8 +62,10 @@ public final class CommonEvents {
         event.addListener(new MaterialDefinitionLoader(event.getConditionContext()));
         event.addListener(new RecyclingOverrideLoader(event.getConditionContext()));
         event.addListener(new com.otectus.immersivesmithing.compat.CoveragePolicies(event.getConditionContext()));
+        event.addListener(new com.otectus.immersivesmithing.recipe.SourceRecipePolicies(event.getConditionContext()));
         event.addListener(new PatternLoader(PatternLoader.Kind.FORGE));
         event.addListener(new PatternLoader(PatternLoader.Kind.ANVIL));
+        event.addListener(new com.otectus.immersivesmithing.work.ProcessProfiles.Loader(event.getConditionContext()));
     }
 
     /** Forge has bound the world's own server config by now; a shared file in config/ replaces it for this run. */
@@ -114,6 +116,7 @@ public final class CommonEvents {
     @SubscribeEvent
     public static void onServerStopping(ServerStoppingEvent event) {
         SessionManager.onServerStopping(event.getServer());
+        com.otectus.immersivesmithing.work.WorkLeases.onServerStopping();
     }
 
     @SubscribeEvent
@@ -124,14 +127,16 @@ public final class CommonEvents {
 
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END) SessionManager.tick(event.getServer());
+        if (event.phase != TickEvent.Phase.END) return;
+        SessionManager.tick(event.getServer());
+        com.otectus.immersivesmithing.work.WorkLeases.tick(event.getServer());
     }
 
     /** Jade 11 cannot request data for a block without a block entity. Send the looked-at grindstone's quote ourselves. */
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || !(event.player instanceof ServerPlayer player)
-                || player instanceof FakePlayer || player.tickCount % 10 != 0 || player.getMainHandItem().isEmpty()) return;
+                || player instanceof FakePlayer || player.tickCount % 10 != 0) return;
         if (player.pick(ServerConfig.get(ServerConfig.MAX_STATION_DISTANCE), 1F, false) instanceof BlockHitResult hit) {
             GrindstonePreview.forPlayer(player, hit.getBlockPos()).ifPresent(preview ->
                     ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), new GrindstonePreviewPacket(preview)));
@@ -140,12 +145,19 @@ public final class CommonEvents {
 
     @SubscribeEvent
     public static void onLogout(PlayerEvent.PlayerLoggedOutEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) SessionManager.onLogout(player);
+        if (event.getEntity() instanceof ServerPlayer player) {
+            SessionManager.onLogout(player);
+            com.otectus.immersivesmithing.work.WorkLeases.onLogout(player);
+            com.otectus.immersivesmithing.work.ForgeActions.onLogout(player.getUUID());
+        }
     }
 
     @SubscribeEvent
     public static void onDeath(LivingDeathEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) SessionManager.onDeath(player);
+        if (event.getEntity() instanceof ServerPlayer player) {
+            SessionManager.onDeath(player);
+            com.otectus.immersivesmithing.work.WorkLeases.onDeath(player);
+        }
     }
 
     @SubscribeEvent
@@ -169,16 +181,19 @@ public final class CommonEvents {
         if (!held.isEmpty() && !(held.getItem() instanceof BlockItem)) event.setUseBlock(Event.Result.ALLOW);
     }
 
-    /** A forge holding molten metal cannot be broken in survival; an anvil in use by someone else is protected. */
+    /**
+     * A forge holding molten metal or a committed job cannot be broken in survival; a station another smith is working at is
+     * protected while their lease lasts.
+     */
     @SubscribeEvent
     public static void onBreak(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         if (player == null || player.getAbilities().instabuild) return;
         var be = event.getLevel().getBlockEntity(event.getPos());
-        if (be instanceof SmithsForgeBlockEntity forge && (forge.moltenUnits() > 0 || forge.isLocked())) {
+        if (be instanceof SmithsForgeBlockEntity forge && (forge.moltenUnits() > 0 || forge.isLocked() || forge.job() != null)) {
             event.setCanceled(true);
             Feedback.fail(player, "empty_forge_before_breaking");
-        } else if (be instanceof SmithsAnvilBlockEntity anvil && anvil.isLockedFor(player.getUUID())) {
+        } else if (be != null && com.otectus.immersivesmithing.work.WorkLeases.heldByOther(player.level(), event.getPos(), player.getUUID())) {
             event.setCanceled(true);
             Feedback.fail(player, "station_in_use");
         }

@@ -115,8 +115,9 @@ public final class ImmersiveSmithingAPI {
     }
 
     /**
-     * The time allowance for {@code smith} at {@code station}: {@code baseMs} times every source's answer, the product
-     * clamped to {@code 1.0..maxAssistTimeMultiplier}. Exactly {@code baseMs} with no sources.
+     * {@code baseMs} times every assistance source's answer for {@code smith} at {@code station}, the product clamped to
+     * {@code 1.0..maxAssistTimeMultiplier}. Exactly {@code baseMs} with no sources. The anvil divides its blow recovery by
+     * this factor.
      */
     public static int assistedTimeMs(ServerPlayer smith, SmithingStation station, int baseMs) {
         double product = 1.0;

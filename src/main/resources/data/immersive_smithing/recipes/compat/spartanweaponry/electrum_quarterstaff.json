@@ -34,5 +34,8 @@
     "item": "spartanweaponry:electrum_quarterstaff"
   },
   "forge_pattern": "immersive_smithing:standard",
-  "anvil_pattern": "immersive_smithing:quarterstaff"
+  "anvil_pattern": "immersive_smithing:quarterstaff",
+  "replaces": [
+    "spartanweaponry:electrum_quarterstaff"
+  ]
 }
